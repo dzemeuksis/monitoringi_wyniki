@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wyniki monitoringu mediów samorządowych 2025</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; background: #fff; padding: 20px; }
+    header, section { margin-bottom: 40px; }
+    h1, h2, h3 { color: #333; }
+    figure { margin: 20px 0; text-align: center; }
+    figcaption { font-size: 0.9em; color: #666; }
+    /* Ograniczenie rozmiaru obrazów */
+    figure img { max-width: 800px; max-height: 800px; width: 100%; height: auto; margin: 0 auto; }
+    /* Kontener mapy */
+    .map-container { text-align: center; margin: 20px 0; }
+    .map-container iframe { width: 800px; height: 800px; border: none; }
+    details { background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 5px; }
+    summary { font-weight: bold; cursor: pointer; }
+    ol { padding-left: 20px; }
+    ol li { margin-bottom: 15px; }
+    footer p { font-size: 0.9em; color: #555; }
+    footer a { color: #0066cc; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    /* Sekcja podsumowania */
+    .summary-list li { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Wyniki monitoringu mediów samorządowych 2025</h1>
+      <p>Na podstawie wniosków złożonych 22 kwietnia 2025 roku do 2809 jednostek samorządu terytorialnego uzyskano dane dotyczące prowadzenia mediów samorządowych w latach 2023–2024.</p>
+    </header>
+
+    <section>
+      <h2>Podsumowanie zbiorcze</h2>
+      <ul class="summary-list">
+        <li>Wysłano wnioski do <strong>2809</strong> podmiotów (2479 gmin, 314 powiatów, 16 województw).</li>
+        <li>Otrzymano jakiekolwiek odpowiedzi od <strong>2481</strong> podmiotów (2185 gmin – 88,1%, 281 powiatów – 89,5%, 15 województw – 93,8%).</li>
+        <li>Pełne odpowiedzi na pytania wniosku od <strong>2331</strong> urzędów (2046 gmin – 82,6%, 274 powiatów – 87,3%, 11 województw – 68,8%).</li>
+        <li><strong>855</strong> jednostek potwierdziło prowadzenie przynajmniej jednego tradycyjnego medium (784 gminy – 31,6%, 66 powiatów – 21,0%, 5 województw – 31,3%).</li>
+        <li><strong>379</strong> urzędów przesyła te same informacje do innych mediów, z czego <strong>174</strong> robi to jednocześnie.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Wyniki gmin według województw</h2>
+      <p>Poniżej wykres słupkowy przedstawia procent gmin prowadzących media („Tak”), gmin odmawiających („Nie”) oraz gmin, od których nie uzyskano odpowiedzi.</p>
+      <figure>
+        <img src="media/wojewodztwa_wykres.png" alt="Wykres procentowy odpowiedzi gmin według województw">
+        <figcaption>Rys. 1. Procentowe wartości odpowiedzi gmin w poszczególnych województwach.</figcaption>
+      </figure>
+
+      <p>Mapa prezentuje rozkład odpowiedzi na poziomie województw.</p>
+      <figure>
+        <img src="media/wojewodztwa_mapa.png" alt="Mapa odpowiedzi gmin według województw">
+        <figcaption>Rys. 2. Mapa rozkładu odpowiedzi gmin według województw.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Interaktywna mapa odpowiedzi z gmin</h2>
+      <p>Poniżej znajduje się osadzona mapa interaktywna, pokazująca szczegółowe rozmieszczenie gmin prowadzących tradycyjne media.</p>
+      <div class="map-container">
+        <iframe src="media/media_tradycyjne_gminy_minimum.html" title="Interaktywna mapa mediów tradycyjnych w gminach"></iframe>
+      </div>
+    </section>
+
+    <section id="uwagi">
+      <h2>Uwagi i zastrzeżenia</h2>
+      <ol>
+        <li>
+          <p>Część urzędów odmówiła udzielenia informacji w imieniu jednostek organizacyjnych, co może zaniżać liczbę wykrytych mediów.</p>
+          <details>
+            <summary>Szczegóły</summary>
+            <p>Część urzędów wprost odmówiła odpowiedzi w imieniu jednostek organizacyjnych. Należy się spodziewać, że jakaś część zrobiła podobnie, ale tego nie zaznaczyła. Oznacza to, że statystyka dotycząca prowadzenia mediów ogólnie przez gminę jest <strong>zaniżona</strong>, bo część odpowiedzi negatywnych nie uwzględnia tego, że jakieś media są prowadzone przez jednostki organizacyjne, ale nie zostały ujawnione w odpowiedzi.</p>
+          </details>
+        </li>
+        <li>
+          <p>Niektóre odpowiedzi uwzględniały media internetowe, które nie były przedmiotem wniosku — wykluczanie było obarczone niewielkimi błędami interpretacyjnymi.</p>
+          <details>
+            <summary>Szczegóły</summary>
+            <p>Część urzędów <strong>uwzględniła</strong> <strong>media internetowe</strong>, co nie było naszą intencją. W związku z tym starano się nie wliczać ich do odpowiedzi twierdzącej na pytanie, czy urząd prowadzi media. Jednak odcedzenie ich obarczone jest niewielkim błędem interpretacyjnym, ponieważ nie zawsze było oczywiste, jakiego rodzaju medium urząd w danym przypadku ma na myśli.</p>
+          </details>
+        </li>
+        <li>
+          <p>Różnorodność interpretacji pytań 2 i 3 (dotyczących przesyłania informacji do innych mediów) ogranicza wiarygodność tych danych.</p>
+          <details>
+            <summary>Szczegóły</summary>
+            <p>Wyraźne problemy z interpretacją pytania 2 i - nawet bardziej - 3. Wiele papierowych periodyków wydawanych przez gminy składa się z informacji uprzednio opublikowanych w mediach internetowych. W tym sensie informacje tam przedstawione zostały upublicznione nie tylko jednocześnie ale nawet wcześniej, niż wydano nowy numer papierowej gazety. Różnorodność interpretacji a przy tym niemożność ustalenia rodzaju interpretacji w większości przypadków, sprawia że statystyki związane z tymi pytaniami są praktycznie niewiarygodne.</p>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <footer>
+      <p>Opracowanie: Sieć Obywatelska Watchdog Polska, maj 2025.</p>
+      <p>Źródło danych: <a href="https://fedrowanie.siecobywatelska.pl/monitoringi/monitoring-mediow-samorzadowych-2025" target="_blank">Monitoring mediów samorządowych 2025</a></p>
+    </footer>
+  </div>
+</body>
+</html>
