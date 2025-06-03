@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSV to HTML Table</title>
+    <meta name="author" content="Derek Eder">
+    <meta content="Display any CSV file as a searchable, filterable, pretty HTML table">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <main class="row">
+            <div class="col">
+                <div id="table-container"></div>
+            </div>
+        </main>
+        <footer class="row">
+            <div class="col">
+                <hr>
+                <p class="text-right"><a href="https://github.com/derekeder/csv-to-html-table">CSV to HTML Table</a> by
+                    <a href="http://derekeder.com">Derek
+                        Eder</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.csv.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="js/csv_to_html_table.js"></script>
+
+    <script>
+        function format_link(link) {
+            if (link)
+                return "<a href='" + link + "' target='_blank'>" + link + "</a>";
+            else return "";
+        }
+    
+        function format_nested_csv_as_table(csv_string) {
+            if (!csv_string || typeof csv_string !== 'string' || csv_string.trim() === "") {
+                return "";
+            }
+    
+            const row_separator = '\n';
+            const cell_separator = ',';
+    
+            const rows = csv_string.trim().split(row_separator);
+    
+            if (rows.length === 0) {
+                return "";
+            }
+    
+            let html_table = "<table class='nested-table' style='border-collapse: collapse; margin: 5px; border: 1px solid #ccc;'>";
+            html_table += "<tbody>";
+    
+            rows.forEach(row_content => {
+                if (row_content.trim() === "") return; // Pomiń puste wiersze
+    
+                const data_cells = row_content.split(cell_separator);
+                html_table += "<tr>";
+                data_cells.forEach(cell_value => {
+                    let cleaned_value = cell_value.trim();
+    
+                    // Usuń otaczające cudzysłowy (podwójne lub pojedyncze)
+                    if ((cleaned_value.startsWith('"') && cleaned_value.endsWith('"')) ||
+                        (cleaned_value.startsWith("'") && cleaned_value.endsWith("'"))) {
+                        cleaned_value = cleaned_value.substring(1, cleaned_value.length - 1);
+                    }
+    
+                    html_table += "<td style='border: 1px solid #ddd; padding: 4px; text-align: left;'>" + cleaned_value + "</td>";
+                });
+                html_table += "</tr>";
+            });
+    
+            html_table += "</tbody></table>";
+            return html_table;
+        }
+    
+        CsvToHtmlTable.init({
+            csv_path: "data/wyniki_monitoringu_133.csv",
+            element: "table-container",
+            allow_download: true,
+            csv_options: {
+                separator: ",",
+                delimiter: '"'
+            },
+            datatables_options: {
+                paging: false
+            },
+            custom_formatting: [
+                [2, format_link],
+                [8, format_nested_csv_as_table]
+            ]
+        });
+    </script>
+    
+</body>
+
+</html>

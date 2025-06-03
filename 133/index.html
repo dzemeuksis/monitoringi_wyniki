@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">    
   <title>Wyniki monitoringu mediów samorządowych prowadzonych w latach 2023-2024</title>
   <style>
     body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; line-height: 1.6; }
@@ -16,6 +19,8 @@
     /* Kontener mapy */
     .map-container { text-align: center; margin: 20px 0; }
     .map-container iframe { width: 800px; height: 800px; border: none; }
+    .dane-container { text-align: center; margin: 0px 0; }
+    .dane-container iframe { width: 1200px; height: 800px; border: none; }
     details { background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 5px; }
     summary { font-weight: bold; cursor: pointer; }
     ol { padding-left: 20px; }
@@ -40,7 +45,7 @@
         <li>Wysłano wnioski do <strong>2809</strong> podmiotów (2479 gmin, 314 powiatów, 16 województw).</li>
         <li>Otrzymano jakiekolwiek odpowiedzi od <strong>2481</strong> podmiotów (2185 gmin – 88%, 281 powiatów – 90%, 15 województw – 94%).</li>
         <li>Pełne odpowiedzi na pytania wniosku od <strong>2335</strong> urzędów (2050 gmin – 83%, 274 powiatów – 87%, 11 województw – 69%).</li>
-        <li>Z tego <strong>855</strong> jednostek potwierdziło prowadzenie przynajmniej jednego tradycyjnego medium (786 gminy – <strong>38%</strong>, 66 powiatów – <strong>24%</strong>, 5 województw – <strong>45%</strong>).</li>
+        <li>Z tego <strong>855</strong> jednostek potwierdziło prowadzenie przynajmniej jednego tradycyjnego medium (786 gmin – <strong>38%</strong>, 66 powiatów – <strong>24%</strong>, 5 województw – <strong>45%</strong>).</li>
         <li>A spośród nich <strong>381</strong> urzędów przesyła te same informacje do innych mediów, z czego <strong>174</strong> robi to jednocześnie.</li>
       </ul>
     </section>
@@ -49,13 +54,13 @@
       <h2>Wyniki gmin według województw</h2>
       <p>Poniżej wykres słupkowy przedstawia procent gmin wydających tradycyjne media („Tak”), nie robiących tego („Nie”) oraz gmin, od których nie uzyskano odpowiedzi.</p>
       <figure>
-        <img src="media/wojewodztwa_wykres.png" alt="Wykres procentowy odpowiedzi gmin według województw">
+        <img src="media/wojewodztwa_wykres_0602.png" alt="Wykres procentowy odpowiedzi gmin według województw">
         <figcaption>Rys. 1. Procentowe wartości odpowiedzi gmin w poszczególnych województwach.</figcaption>
       </figure>
 
       <p>Mapa prezentuje rozkład odpowiedzi na poziomie województw.</p>
       <figure>
-        <img src="media/wojewodztwa_mapa.png" alt="Mapa odpowiedzi gmin według województw">
+        <img src="media/wojewodztwa_mapa_0602.png" alt="Mapa odpowiedzi gmin według województw">
         <figcaption>Rys. 2. Mapa rozkładu odpowiedzi gmin według województw.</figcaption>
       </figure>
     </section>
@@ -64,7 +69,7 @@
       <h2>Interaktywna mapa odpowiedzi z gmin</h2>
       <p>Poniżej znajduje się osadzona mapa interaktywna, pokazująca szczegółowe rozmieszczenie gmin prowadzących tradycyjne media.</p>
       <div class="map-container">
-        <iframe src="media/media_tradycyjne_gminy_minimum.html" title="Interaktywna mapa mediów tradycyjnych w gminach"></iframe>
+        <iframe src="media/media_tradycyjne_gminy_minimum_0602.html" title="Interaktywna mapa mediów tradycyjnych w gminach"></iframe>
       </div>
     </section>
 
@@ -93,6 +98,13 @@
           </details>
         </li>
       </ol>
+    </section>
+
+    <section>
+      <h2>Dane</h2>
+      <div class="dane-container">
+        <iframe style="border-style: none;" src="data.html"></iframe>
+      </div>
     </section>
 
     <footer>
