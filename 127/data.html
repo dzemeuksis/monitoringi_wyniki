@@ -46,7 +46,7 @@
         }
         
         CsvToHtmlTable.init({
-            csv_path: "data/wyniki_monitoringu_133.csv",
+            csv_path: "data/wyniki_monitoringu_127.csv",
             element: "table-container",
             allow_download: true,
             csv_options: {
@@ -54,10 +54,10 @@
                 delimiter: '"'
             },
             datatables_options: {
-                paging: false
+                paging: true
             },
             custom_formatting: [
-                [2, format_link],
+                [2, format_link]
             ]
         });
     </script>
