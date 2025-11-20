@@ -3,24 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0"> 
   <title>Kto publikuje swój rejestr umów?</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
+    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; line-height: 1.6; }
     .container { max-width: 1200px; margin: 0 auto; background: #fff; padding: 20px; }
-    header { margin-bottom: 40px; }
-    h1 { color: #333; }
-    ul { list-style: none; padding: 0; }
-    li { margin-bottom: 15px; }
-    a { text-decoration: none; color: #0066cc; font-size: 1.1em; }
-    a:hover { text-decoration: underline; }
+    header, section { margin-bottom: 40px; }
+    h1, h2, h3 { color: #333; }
+    figure { margin: 20px 0; text-align: center; }
+    figcaption { font-size: 0.9em; color: #666; }
+    /* Ograniczenie rozmiaru obrazów */
+    figure img { max-width: 1000px; max-height: 1000px; width: auto; height: auto; margin: 0 auto; }
+    /* Kontener mapy */
+    .map-container { text-align: center; margin: 20px 0; }
+    .map-container iframe { width: 1000px; height: 1000px; border: none; }
+    .dane-container { text-align: center; margin: 0px 0; }
+    .dane-container iframe { width: 1200px; height: 800px; border: none; }
+    details { background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 5px; }
+    summary { font-weight: bold; cursor: pointer; }
+    ol { padding-left: 20px; }
+    ol li { margin-bottom: 15px; }
+    footer p { font-size: 0.9em; color: #555; }
+    footer a { color: #0066cc; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    /* Sekcja podsumowania */
+    .summary-list li { margin-bottom: 10px; }
   </style>
 </head>
 <body>
   <div class="container">
+
     <header>
-      <h1>Kto publikuje swój rejestr umów?</h1>
-      <p><a href="mapa_gmin_rejestr_umow.html">Mapa gmin deklarujących publikowanie i aktualizowanie rejestru umów bez progu kwotowego lub z progiem, ale nie większym niż 20 000 zł.</a></p>
+      <h1>Wyniki monitoringu "Kto publikuje swój rejestr umów?"</h1>
+      <p>Na podstawie wniosków składanych od 29 października 2025 roku do 2809 jednostek samorządu terytorialnego oraz 16 wojewodów, w związku z przeciągającym się wdrożeniem Centralnego Rejestru Umów i kolejnymi pomysłami nowelizacji ustawy jego dotyczącej (nr UD197), sprawdziliśmy, kto już teraz proaktywnie publikuje rejestr umów.</p>
     </header>
+
+    <section>
+      <h2>Interaktywna mapa odpowiedzi z gmin</h2>
+      <p>Mapa interaktywna, pokazująca szczegółowe rozmieszczenie gmin, które odpowiedziały na wniosek, wraz z odpowiedziami, linkami do spraw na Fedrowaniu i rejestrów.</p>
+      <div class="map-container">
+        <iframe src="media/mapa_gmin_rejestr_umow.html" title="Interaktywna mapa mediów tradycyjnych w gminach"></iframe>
+      </div>
+    </section>
+
+    <section>
+      <h2>Marszałkowie</h2>
+      <ul class="summary-list">
+        <li>Liczba urzędów: <strong>16</strong></li>
+        <li>Liczba odpowiedzi: <strong>13</strong></li>
+        <li>Odsetek odpowiadających: <strong>~81%</strong></li>
+        <li>Liczba odpowiadających, którzy zadeklarowali posiadanie i aktualizację rejestrów bez progu lub z progiem nie większym niż 20 000 zł: <strong>2</strong></li>
+        <li>Odsetek posiadających rejestry: <strong>~15%</strong></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Wojewodowie</h2>
+      <ul class="summary-list">
+        <li>Liczba urzędów: <strong>16</strong></li>
+        <li>Liczba odpowiedzi: <strong>14</strong></li>
+        <li>Odsetek odpowiadających: <strong>~87%</strong></li>
+        <li>Liczba odpowiadających, którzy zadeklarowali posiadanie i aktualizację rejestrów bez progu lub z progiem nie większym niż 20&nbsp;000&nbsp;zł: <strong>0</strong></li>
+        <li>Odsetek posiadających rejestry: <strong>0%</strong></li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>Starostwa powiatowe</h2>
+      <ul class="summary-list">
+        <li>Liczba urzędów: <strong>314</strong></li>
+        <li>Liczba odpowiedzi: <strong>287</strong></li>
+        <li>Odsetek odpowiadających: <strong>~91%</strong></li>
+        <li>Liczba odpowiadających, którzy zadeklarowali posiadanie i aktualizację rejestrów bez progu lub z progiem nie większym niż 20&nbsp;000&nbsp;zł: <strong>42</strong></li>
+        <li>Odsetek posiadających rejestry: <strong>~15%</strong></li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>Samorządy gminne</h2>
+      <ul class="summary-list">
+        <li>Liczba urzędów: <strong>2479</strong></li>
+        <li>Liczba odpowiedzi: <strong>2091</strong></li>
+        <li>Odsetek odpowiadających: <strong>~84%</strong></li>
+        <li>Liczba odpowiadających, którzy zadeklarowali posiadanie i aktualizację rejestrów bez progu lub z progiem nie większym niż 20&nbsp;000&nbsp;zł: <strong>354</strong></li>
+        <ul class="summary-list"> 
+          <li>Gminy wiejskie: <strong>154</strong></li>
+          <li>Gminy miejsko-wiejskie: <strong>104</strong></li>
+          <li>Gminy miejskie: <strong>63</strong></li>
+          <li>Miasta na prawach powiatu: <strong>33</strong></li>
+        </ul>
+        <li>Odsetek posiadających rejestry: <strong>~17%</strong></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Kryteria selekcji umów</h2>
+      <ul class="summary-list">
+        <li>Kryteria kwotowe (progi wartości umowy)</li>
+          <ul class="summary-list">
+            <li>wiele urzędów deklarowało brak jakiegokolwiek progu kwotowego</li>
+            <li>podawane progi były zróżnicowane, zaczynały się od 300 zł</li>
+          </ul>
+        <li>Wyłączenia z rejestru dotyczące rodzaju lub charakteru umowy</li>
+          <ul class="summary-list">
+            <li>kadrowe</li>
+            <li>o organizację praktyk/staży</li>
+            <li>z osobami fizycznymi</li>
+            <li>nie generujące zobowiązań</li>
+            <li>o charakterze lokalowym / majątkowym</li>
+            <li>o współpracę zagraniczną</li>
+            <li>z klauzulą poufności</li>
+            <li>zawierające informacje chronione prawnie</li>
+            <li>zawierające tajemnice lub dane wrażliwe</li>
+            <li>w kategorii dokumentów niejawnych</li>
+            <li>dotyczące zakupu energii i gazu</li>
+            <li>dotyczące dostawy wody i odbioru ścieków.</li>
+            <li>na używanie pojazdów prywatnych do celów służbowych</li>
+          </ul>
+        <li>Wyłączenie umów ustnych</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Grupy powodów zaprzestania aktualizacji</h2>
+      <ul class="summary-list">
+        <li>Oczekiwanie na Centralny Rejestr Umów (CRU) i inne zmiany legislacyjne</li>
+        <li>Brak obowiązku prawnego / niejasne przepisy</li>
+        <li>Ochrona danych osobowych, anonimizacja, tajemnice</li>
+        <li>Powody kadrowe i organizacyjne</li>
+        <li>Przyczyny techniczne, systemowe i związane z narzędziami IT</li>
+        <li>Złożoność materii i potrzeba procedur</li>
+      </ul>
+    </section>
+
+    <section id="uwagi">
+      <h2>Uwagi i zastrzeżenia</h2>
+      <ol>
+        <li>
+          <p>Przyjęto arbitralny próg <strong>20&nbsp;000&nbsp;zł</strong> jako granicę, powyżej której urząd nie jest uznawany za prowadzący rejestr w naszym rozumieniu.</p>
+          <details>
+            <summary>Szczegóły</summary>
+            <p>
+              Na potrzeby statystyk zastosowano próg <strong>20&nbsp;000&nbsp;zł</strong> jako granicę, powyżej której uznawano, że urząd nie prowadzi rejestru w rozumieniu przyjętym w tym opracowaniu.
+              W praktyce już nawet znacznie niższe progi mogą prowadzić do <strong>fikcji</strong> jawności, jednak wybór konkretnej wartości jest kwestią sporną i musiał zostać
+              dokonany arbitralnie. Należy mieć na uwadze, że przyjęcie wyłącznie rejestrów bez żadnego progu znacząco obniżyłoby odsetek jednostek, które można wskazywać
+              jako pozytywne przykłady – zwłaszcza jeśli celem jest pokazanie, że część gmin już teraz, bez przymusu, prowadzi stosunkowo szerokie rejestry.
+            </p>
+          </details>
+        </li>
+        <li>
+          <p>Zestawienia dotyczące kryteriów selekcji i powodów zaprzestania aktualizacji rejestrów powstały przy dużym udziale <strong>sztucznej inteligencji</strong> i wymagają weryfikacji w źródłach.</p>
+          <details>
+            <summary>Szczegóły</summary>
+            <p>
+              Zestawienia kryteriów selekcji oraz wskazywanych przez urzędy powodów zaprzestania aktualizacji rejestrów zostały opracowane przy dużym wsparciu
+              <strong>sztucznej inteligencji</strong> (automatycznej analizy odpowiedzi). Oznacza to, że przy interpretowaniu konkretnych przypadków zawsze należy wrócić
+              do <strong>pierwotnych odpowiedzi</strong> urzędów. Zestawienia te powinny być traktowane jako materiał orientacyjny i pomocniczy, a nie jako jedyne,
+              ostateczne źródło informacji.
+            </p>
+          </details>
+        </li>
+      </ol>
+    </section>
+    
+    <footer>
+      <p>Opracowanie: <a href="https://siecobywatelska.pl/" target="_blank">Sieć Obywatelska Watchdog Polska</a>, 20 listopada 2025.</p>
+      <p>Źródło danych: <a href="https://fedrowanie.siecobywatelska.pl/monitoringi/kto-publikuje-swoj-rejestr-umow" target="_blank"> Kto publikuje swój rejestr umów?</a></p>
+    </footer>
+
   </div>
 </body>
 </html>
