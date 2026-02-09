@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raport z monitoringu stosowania testu niezależności i bezstronności sędziów</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #2980b9;
+            --accent-color: #e67e22;
+            --bg-color: #f4f7f6;
+            --container-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --warning-bg: #fff3cd;
+            --warning-border: #ffc107;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--container-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-top: 25px;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .box {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid var(--border-color);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .emoji {
+            font-style: normal;
+            margin-right: 5px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Raport z monitoringu stosowania testu niezależności i bezstronności sędziów</h1>
+        <p style="text-align: center; font-style: italic;">(stan na 31.01.2026)</p>
+    </header>
+<!-- Poczatek ramki wyroznionej -->
+<style>
+    .key-stats-box {
+        background: linear-gradient(to right, #ffffff, #f8fbff);
+        border: 1px solid #dcebf5;
+        border-left: 6px solid #e74c3c; /* Czerwony akcent sugerujący niską skuteczność */
+        border-radius: 8px;
+        padding: 25px;
+        margin: 30px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+    }
+
+    .key-stats-header {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: bold;
+        color: #7f8c8d;
+        margin-bottom: 10px;
+    }
+
+    .key-stats-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .key-percentage {
+        font-size: 4rem;
+        font-weight: 800;
+        color: #2c3e50;
+        line-height: 1;
+    }
+
+    .key-desc {
+        flex: 1;
+        font-size: 1.1rem;
+        min-width: 250px;
+    }
+
+    .key-desc strong {
+        color: #e74c3c;
+    }
+
+    .key-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+    }
+
+    .key-item {
+        text-align: left;
+    }
+
+    .key-item-number {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #2980b9;
+        margin-bottom: 2px;
+    }
+
+    .key-item-label {
+        font-size: 0.85rem;
+        color: #666;
+    }
+    
+    @media (max-width: 500px) {
+        .key-percentage { font-size: 3rem; }
+    }
+</style>
+
+<div class="key-stats-box">
+    <div class="key-stats-header">Najważniejszy wniosek z raportu</div>
+    
+    <div class="key-stats-content">
+        <div class="key-percentage">2,5%</div>
+        <div class="key-desc">
+            Tyle wynosi realna <strong>skuteczność wniosków</strong> o test niezależności.<br/>Na <strong>3517</strong> wszystkich spraw, zaledwie <strong>90</strong> zakończyło się uwzględnieniem wniosku.
+        </div>
+    </div>
+
+    <div class="key-grid">
+        <div class="key-item">
+            <span class="key-item-number">90</span>
+            <span class="key-item-label">✅ Uwzględnione</span>
+        </div>
+        <div class="key-item">
+            <span class="key-item-number">824</span>
+            <span class="key-item-label">⚖️ Oddalone</span>
+        </div>
+        <div class="key-item">
+            <span class="key-item-number">2603</span>
+            <span class="key-item-label">🗑️ Odrzucone / Inne</span>
+        </div>
+    </div>
+</div>
+<!-- Koniec ramki wyroznionej -->
+    <main>
+        <section>
+            <h2>1. Informacje wstępne <span class="emoji">📨</span></h2>
+            <p><a href="https://fedrowanie.siecobywatelska.pl/monitoringi/czy-test-niezawislosci-i-bezstronnosci-sedziego-dziala/template">Wniosek o udostępnienie informacji publicznej</a> został wysłany <strong>25.11.2025</strong> do następujących instytucji:</p>
+            <ul>
+                <li>sądy apelacyjne – 11</li>
+                <li>sądy okręgowe – 47</li>
+                <li>sądy rejonowe – 319</li>
+                <li>wojewódzkie sądy administracyjne – 16</li>
+                <li>Naczelny Sąd Administracyjny – 1</li>
+                <li>Ministerstwo Sprawiedliwości – 1 (<a href="https://fedrowanie.siecobywatelska.pl/listy/423733">odmienna treść wniosku</a>)</li>
+            </ul>
+            <p class="box"><strong>➡️ Łącznie: 395 instytucji</strong></p>
+            <p>Raport sporządzono na podstawie odpowiedzi odnotowanych do dnia 31.01.2026, a więc ponad dwa miesiące od dnia wysłania wniosku.</p>
+        </section>
+
+        <section>
+            <h2>2. Odpowiedzi instytucji <span class="emoji">📬</span></h2>
+            <p>Jakiekolwiek odpowiedzi (w tym odmowne, ale z wyłączeniem automatycznych potwierdzeń) otrzymano z:</p>
+            <ul>
+                <li>sądów apelacyjnych – <strong>11/11 (100%)</strong></li>
+                <li>sądów okręgowych – <strong>43/47 (~91%)</strong></li>
+                <li>sądów rejonowych – <strong>284/319 (~89%)</strong></li>
+                <li>wojewódzkich sądów administracyjnych – <strong>16/16 (100%)</strong></li>
+                <li>Naczelnego Sądu Administracyjnego – <strong>1/1 (100%)</strong></li>
+                <li>Ministerstwa Sprawiedliwości – <strong>1/1 (100%)</strong></li>
+            </ul>
+            <p>Praktycznie wszyscy adresaci udzielili odpowiedzi przynajmniej na pierwsze pytanie. Warto przy tym odnotować, że część tych sądów, które nie prowadzą systematycznej ewidencji wyróżniającej wnioski o przeprowadzenie testu (odpowiedź "NIE" na pierwsze pytanie), podała odpowiedzi na pozostałe pytania, wskazując, że liczba przypadków była na tyle niewielka, iż nie sprawiło to nadmiernych trudności. (brawo! <span class="emoji">👏</span>)</p>
+
+            <div class="warning-box">
+                <h3>Braki odpowiedzi <span class="emoji">⚠️</span></h3>
+                <p>Tylko trzy sądy nie udzieliły odpowiedzi w sposób definitywny:</p>
+                <ul>
+                    <li>w pierwszym przypadku zwrócono się po wyjaśnienia,</li>
+                    <li>w drugim wezwano do uzupełnienia braków formalnych (Sąd Rejonowy Lublin-Wschód w Lublinie z siedzibą w Świdniku),</li>
+                    <li>w trzecim wezwano do wykazania szczególnego interesu (Sąd Okręgowy w Rybniku).</li>
+                </ul>
+                <p>Pozostawiliśmy te wezwania bez odpowiedzi, co oznacza, że być może informacje zostałyby ostatecznie udostępnione.</p>
+            </div>
+            <p>Kilka instytucji skorzystało z możliwości przedłużenia terminu, z czego ostatecznie się wywiązały.</p>
+        </section>
+
+        <section>
+            <h2>3. Źródło raportu i struktura danych <span class="emoji">🧮</span></h2>
+            <p>Raport został przygotowany na podstawie <a href="data/148_test_niezawislosci_odpowiedzi_31_01_2026.xlsx" target="_blank">arkusza kalkulacyjnego</a>, zawierającego wyniki monitoringu <a href="https://fedrowanie.siecobywatelska.pl/monitoringi/czy-test-niezawislosci-i-bezstronnosci-sedziego-dziala">Czy test niezawisłości i bezstronności sędziego działa?</a> (automatycznie wygenerowane przez Fedrowanie, a następnie zweryfikowane w pewnym zakresie przez operatora).</p>
+            <p>Linkowany arkusz źródłowy ma strukturę:</p>
+            <ul>
+                <li>1 wiersz = 1 instytucja,</li>
+                <li>odpowiedzi na poszczególne pytania w osobnych kolumnach,</li>
+                <li>każda odpowiedź w dwóch wersjach: dosłownej (w nagłówkach treści pytań) i ustandaryzowanej (Q1, Q2, itd).</li>
+            </ul>
+            <p>Arkusz nie zawiera wpisów dla instytucji, które nie udzieliły odpowiedzi lub przesłały odpowiedzi w postaci nieczytelnej dla maszynowego przetwarzania stosowanego na Fedrowaniu, które jednocześnie nie zostały wychwycone przez operatora.</p>
+        </section>
+
+        <section>
+            <h2>4. Deklaracje dotyczące zbierania statystyk wniosków o przeprowadzenie testu<span class="emoji">📊</span></h2>
+            <p>Łącznie przeanalizowano <strong>354 odpowiedzi</strong> z sądów.</p>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-number">166</span>
+                    Sądów zadeklarowało zbieranie danych
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">136</span>
+                    Sądów zadeklarowało, że danych nie zbiera
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">52</span>
+                    Odpowiedzi zakwalifikowano jako „inna sytuacja”
+                </div>
+            </div>
+            <p style="margin-top: 15px;">Generalnie <strong>prawie połowa</strong> sądów nie zbiera statystyk wniosków o przeprowadzenie testu niezawisłości i bezstronności sędziego. Za ten wynik odpowiadają jednak głównie <strong>sądy rejonowe</strong>, bo w sądach okręgowych i apelacyjnych znaczna większość dane zbierała a z kolei w administracyjnych przeciwnie, jednak te grupy są znacznie mniej liczne od rejonowych.</p>
+            <p>➡️ Zbiorczo zatem można przyjąć, że <strong>ponad połowa sądów (3 sądy na 5)</strong> zbierała takie dane – w całości lub częściowo.</p>
+
+            <h3>„Inna sytuacja” – co to oznacza? <span class="emoji">🤔</span></h3>
+            <p>Zasadniczno w większości przypadków oznacza to, że dane zbierano w mniejszym zakresie (patrz dalej) lub nie zbierano, ale jednocześnie deklarowano, że nie wpłynęły żadne wnioski o test niezawisłości, bez dopowiedzenia, czy gdyby wpłynęły, to byłyby jakoś specyficznie oznaczane. Nie ma tu jednak pełnej spójności w interpretacji tych odpowiedzi i w niektórych przypadkach mogły być kwalifikowane do kategorii "TAK".</p>
+            <p>Do kategorii "Inna sytuacja" mogła trafić odpowiedź, z której wynikało, że:</p>
+            <ul>
+                <li>dane były zbierane tylko w części okresu 2022–2024, np.</li>
+                    <li style="margin-left: 15px;">zbieranie rozpoczęto w trakcie 2022 r. (najczęściej deklarowano datę 15 lipca),</li>
+                    <li style="margin-left: 15px;">zaprzestano zbierania danych przed końcem 2024 r. (tu różnie, od września do grudnia, często z powołaniem się na pismo Ministerstwa Sprawiedliwości znoszące obowiązek),</li>
+                <li>zbieranie dotyczyło tylko niektórych wydziałów,</li>
+                <li>istniała możliwość ewidencjonowania w systemie informatycznym, ale bez jasności, czy była wykorzystywana,</li>
+                <li>sąd odpowiadał, że „takie sytuacje nie miały miejsca”, bez deklaracji, czy dane są ewidencjonowane.</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="warning-box">
+                <h2>5. Pułapka konstrukcji wniosku <span class="emoji">⚠️</span></h2>
+                <p>Z konstrukcji wniosku i struktury pytań wyniknął potencjalny problem:</p>
+                <ul>
+                    <li>pytanie pierwsze dotyczyło stanu teraźniejszego („czy sąd zbiera dane?”),</li>
+                    <li>pytania szczegółowe dotyczyły lat 2022–2024, ale były warunkowane odpowiedzią „TAK” na pytanie pierwsze.</li>
+                </ul>
+                <p>Tymczasem pod koniec 2024 r. Minister Sprawiedliwości zniósł obowiązek zbierania tych danych. W efekcie sądy, których to dotyczyło, mogły literalnie odmówić odpowiedzi na pytania szczegółowe – i formalnie miałyby ku temu podstawy (wszak w momencie otrzymania wniosku już nie zbierały danych).</p>
+                <p><strong>➡️ W praktyce zdecydowana większość sądów była uprzejma tej pułapki nie wykorzystywać i odpowiadała na pytania szczegółowe, o ile tylko posiadała potrzebne dane lub mogła je stosunkowo łatwo pozyskać.</strong></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>6. Statystyki zbiorcze <span class="emoji">📈</span></h2>
+            
+            <h3>6.1. Zbieranie danych</h3>
+            <ul>
+                <li><strong>TAK</strong> – 166 (47%)</li>
+                <li><strong>NIE</strong> – 136 (38%)</li>
+                <li><strong>Inna sytuacja</strong> – 52 (15%)</li>
+            </ul>
+            <p><strong>➡️ Wniosek:</strong> około połowa sądów w mniejszym lub większym zakresie zbierała dane.</p>
+
+            <h3>6.2. Liczba wniosków</h3>
+            <p>Sądy, które podały jakiekolwiek dane (w tym zerowe): <strong>307 (87%)</strong><br>
+            Sądy, które odnotowały ≥1 wniosek: <strong>220 (62%)</strong></p>
+            <p><em>Spośród sądów raportujących liczby, 72% (220/307) miało przynajmniej jeden wniosek.</em></p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Okres</th>
+                        <th>Liczba wniosków</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2022 (głównie II połowa)</td>
+                        <td>401</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>1254</td>
+                    </tr>
+                    <tr>
+                        <td>2024 (może nie obejmować końcówki)</td>
+                        <td>1497</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Łącznie (2022–2024)</strong></td>
+                        <td><strong>3517</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Po uwzględnieniu niepełnych okresów widać systematyczny wzrost liczby wniosków rok do roku, silniejszy między 2022 a 2023 niż między 2023 a 2024.</p>
+
+            <h4>Według typu sądu:</h4>
+            <ul>
+                <li><strong>sądy rejonowe</strong> – 168 sądów, 1690 wniosków (średnio 10)</li>
+                <li><strong>sądy okręgowe</strong> – 34 sądy, 916 wniosków (średnio 27)</li>
+                <li><strong>sądy apelacyjne</strong> – 9 sądów, 647 wniosków (średnio 72)</li>
+                <li><strong>WSA</strong> – 7 sądów, 237 wniosków (średnio 34)</li>
+            </ul>
+
+            <h3>6.3. Rozstrzygnięcia</h3>
+            <div class="box">
+                <p><strong>Uwzględnione: 90 (≈2,5%)</strong><br>
+                2022: 5 | 2023: 22 | 2024: 62 <br>
+                ➡️ widoczny wzrost odsetka rok do roku.</p>
+
+                <p><strong>Oddalone: 824 (23%)</strong><br>
+                2022: 81 | 2023: 206 | 2024: 441 <br>
+                ➡️ również wzrost odsetka.</p>
+
+                <p><strong>Pozostawione bez rozpoznania: 227 (6%)</strong><br>
+                2022: 27 | 2023: 92 | 2024: 82 <br>
+                ➡️ po początkowym wzroście – wyraźny spadek.</p>
+
+                <p><strong>Inne statusy (np. odrzucone): 2376 (68%)</strong></p>
+            </div>
+
+            <h3>8.4. Uzasadnienia i publikacje</h3>
+            <p>Sądy deklarowały stosunkowo częste sporządzanie uzasadnień, publikacja następowała jednak rzadko. Sądów, w których <strong>sporządzono i opublikowano</strong> przynajmniej jedno uzasadnienie, było około 20, czyli <strong>poniżej 10%</strong> sądów, które obsługiwały przynajmniej jeden wniosek.</p>
+        </section>
+
+        <section>
+            <h2>7. Odpowiedzi organów centralnych <span class="emoji">🏛️</span></h2>
+            
+            <h3>Naczelny Sąd Administracyjny</h3>
+            <ul>
+                <li>brak danych za lata 2022–2023,</li>
+                <li>dane gromadzone od 2024 r.,</li>
+                <li>w 2024 r.: 27 wniosków (uwzględnione – 1, oddalone – 1, pozostawione bez rozpoznania – 0, odrzucone – 24).</li>
+            </ul>
+            <p>NSA wskazał, że orzeczenia są publikowane w CBOSA i podał sposób ich wyszukania.</p>
+
+            <h3>Ministerstwo Sprawiedliwości</h3>
+            <p>Po trzykrotnym przedłużeniu terminu MS poinformowało, że:</p>
+            <ul>
+                <li>nie prowadzi ani nie posiada statystyk dotyczących testu,</li>
+                <li>nie dysponuje listą spraw ani sygnatur,</li>
+                <li>nie wydawało wytycznych, analiz ani raportów dotyczących funkcjonowania testu,</li>
+                <li>jego kompetencje nie obejmują sfery orzekania.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>8. Inne ciekawostki z odpowiedzi sądów <span class="emoji">🧩</span></h2>
+            <p><a href="https://fedrowanie.siecobywatelska.pl/sprawy/czy-test-niezawislosci-i-bezstronnosci-sedziego-dziala-14">Sąd Rejonowy dla Warszawy-Śródmieścia w Warszawie</a>: <i>Ubocznie wskazuję, że w zdecydowanej większości spraw przedmiotowe wnioski składane są przez te same osoby, niejednokrotnie jeszcze przed przydziałem sprawy sędziemu referentowi.</i></p>
+            <p><a href="https://fedrowanie.siecobywatelska.pl/sprawy/czy-test-niezawislosci-i-bezstronnosci-sedziego-dziala-375">Sąd Apelacyjny w Szczecinie</a> wskazał, że dane znajdują się w sprawozdaniach półrocznych i rocznych dostępnych na stronie internetowej, więc nie będą udostępniane na wniosek, ale nie udzielił instrukcji ich wyszukiwania (w odróżnieniu np. od Naczelnego Sądu Administracyjnego), a bez takiej instrukcji trudno osiągnąć choćby przybliżoną pewność kompletności danych.</p>
+            <p>Sądy Okręgowe często odsyłały do statystyk publikowanych na BIPach lub stronach danego sądu. I faktycznie, takie statystyki są publikowane, ale często to są PDFy, przy tym bardzo rozproszone - np. osobno poszczególne kwartały, osobno dla każdego wydziału, itd., do tego niejasności i różnice w klasyfikacji między wydziałami, więc bardzo trudno to wszystko zebrać. W jednym takim przypadku podjęto dwie próby zrobienia tego półautomatycznie, ale rezultaty były zbyt mało wiarygodne (zbyt odległe od siebie), żeby zdecydowano się uwzględnić je w wynikach końcowych.</p>
+        </section>
+
+        <section>
+            <h2>9. Trudności metodologiczne <span class="emoji">⚙️</span></h2>
+            
+            <h3>9.1. Agregacja i format danych</h3>
+            <p>Zbieranie danych liczbowych było utrudnione, ponieważ część sądów nie rozdzieliła danych na poszczególne lata, a z kolei czasem w przypakach, gdzie sąd to rozdzieliły, automat nie radził sobie z tabelką i czasami wszystko wpadało do "jednego wora".</p>
+
+            <h3>9.2. Kategorie statystyczne</h3>
+            <p>Niektóre sądy wskazywały, że wnioski rejestrowane są pod symbolem statystycznym „109 usp”, który – jak wskazał <a href="https://fedrowanie.siecobywatelska.pl/sprawy/czy-test-niezawislosci-i-bezstronnosci-sedziego-dziala-79">Sąd Rejonowy w Gliwicach</a> – jest szerszy niż zakres art. 42a PUSP. Podobne niuanse dotyczące różnic w ewidencjonowaniu spraw i praktykach wydziałowych szczegółowo opisał prezes <a href="https://fedrowanie.siecobywatelska.pl/sprawy/czy-test-niezawislosci-i-bezstronnosci-sedziego-dziala-320">Sądu Okręgowego w Częstochowie</a>.</p>
+            <p><strong>➡️ Wydaje się, że wpływ tego zjawiska na statystyki zbiorcze jest niewielki, tym bardziej że równoważony przez wspomniane już wcześniej niedobory.</strong></p>
+
+            <h3>9.3 Status „uwzględniony”</h3>
+            <p>Nie we wszystkich statystykach istniała wyodrębniona kategoria „uwzględniony”, co może powodować niewielkie zaniżenie tych danych (patrz np. <a href="https://fedrowanie.siecobywatelska.pl/sprawy/czy-test-niezawislosci-i-bezstronnosci-sedziego-dziala-325">Sąd Okręgowy w Gdańsku</a>). Jednocześnie zazwyczaj takich przypadkach i tak wszystkie raportowane statusy sumowały się do zadeklarowanej łącznej liczby wniosków. Pozwala to ostrożnie domniemywać, że uwzględnienia nawet jeśli czasem zostały zgubione przez brak wyróżnienia tego statusu, to i tak bez większego wpływu na ogólną statystykę.</p>         
+         
+            <h3>9.4. Status „odrzucony”</h3>
+            <p>Pytaliśmy o wnioski uwzględnione, oddalone oraz pozostawione bez rozpoznania. Wiele sądów raportowało jeszcze jeden status: odrzucone. Jednak skoro o niego nie pytaliśmy, to nie jest wprost uwzględniony w zebranych danych. Niemniej można go domniemywać w sytuacjach, kiedy wszystkie pozostałe statusy nie sumują się do łącznej liczby wniosków - różnicę wtedy robią najczęściej właśnie wnioski odrzucone (wynika to często z treści odpowiedzi). Jednak, żeby nie było tak prosto, to <a href="https://fedrowanie.siecobywatelska.pl/sprawy/czy-test-niezawislosci-i-bezstronnosci-sedziego-dziala-355">Sąd Okręgowy w Suwałkach</a> we własnej tabelce w rubryce "bez rozpoznania" dodał dopisek "(odrzucone)", jakby się akurat u nich te kategorie jeśli nie były tożsame, to przynajmniej zawierały jedna w drugiej. Nie wydaje się to jednak typowe dla innych sądów.</p>
+
+            <h3>9.5. Kwestia sygnatur</h3>
+            <p>W pytaniu dotyczącym publikacji orzeczeń wiele sądów podawało sygnatury, nawet jeśli orzeczenia nie były publikowane, co było niezgodne z intencją pytania i zaburzyło automatyczne zbieranie danych - tzn. automat wypisał zebrane sygnatury zamiast zignorować jako niezgodne z pytaniem. W konsekwencji pracując z arkuszem kalkulacyjnym należy szczególnie scepytcznie podchodzić do ustandaryzowanych odpowiedzi z pytania czwartego. Przy czym pomyłki popełniano tu w jedną stronę, tzn. jeśli odpowiedź kolumnie z nagłówkiem "Q4" brzmi "b) Brak publikacji z uzasadnieniem", to niemal na pewno jest to prawda. W pozostałych przypadkach najlepiej odwołać się do opisowej odpowiedzi w jednej z wcześniejszych kolumn lub sprawdzić bezpośrednio na Fedrowaniu.</p>
+        </section>
+
+        <section>
+            <h2>10. Potencjalne kierunki do dalszej pracy z danymi <span class="emoji">🖩</span></h2>
+            <p>Przykładowe pytania, na które odpowiedź byłaby obarczona wysoką niepewnością ze względu na zbyt małe próbki danych z poszczególnych sądów lub wymagała dołączenia danych z innych źródeł:</p>
+            <ul>
+                <li>Czy istnieje prosta zależność: wielkość ośrodka -> ilość zarejestrowanych wniosków, czy też zebrane dane kryją jakieś interesujące anomalie?</li>
+                <li>Czy istnieją statystycznie istotne różnice w sposobie obsługi wniosków między sądami? Np. czy gdzieś są uwzględniane wyraźnie częściej a gdzieś indziej wcale?</li>
+                <li>Czy istnieje związek między poziomem informatyzacji sądu a gromadzeniem statystyk dotyczących wniosków o test niezależności i bezstronności sędziego?</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>11. Analiza opublikowanych uzasadnień <span class="emoji">🔍</span></h2>
+            <p>Pełna analiza uzasadnień wykracza poza ramy niniejszego raportu i komptenecje jego autora. Wyrywkowa analiza kilku postanowień NSA wskazuje jednak, że:</p>
+            <ul>
+                <li>wszystkie zakończyły się odrzuceniem,</li>
+                <li>najczęściej z powodu braków formalnych,</li>
+                <li>wnioski opierały się na ogólnym zarzucie powołania sędziego z udziałem obecnej KRS, bez wskazania konkretnych okoliczności,</li>
+                <li>zdarzały się też wnioski dotyczące abstrakcyjnie wielu sędziów, nieuczestniczących w danej sprawie.</li>
+            </ul>
+            <p class="box" style="background-color: #e8f4f8; border: 1px solid #3498db;"><strong>➡️ Czy ledwie 2,5% uwzględnionych wniosków oznacza, że badane narzędzie jest bezzębne, czy raczej, że brakuje instrukcji jego użycia – pozostaje pytaniem otwartym, wymagającym pogłębionej analizy prawnej.</strong></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Źródło danych: <a href="https://fedrowanie.siecobywatelska.pl/monitoringi/czy-test-niezawislosci-i-bezstronnosci-sedziego-dziala" target="_blank"> Czy test niezawisłości i bezstronności sędziego działa?</a></p>
+        <p>Opracowanie: <a href="https://siecobywatelska.pl/" target="_blank">Sieć Obywatelska Watchdog Polska</a>, ostatnia aktualizacja: 31 stycznia 2026.</p>
+    </footer>
+</div>
+
+</body>
+</html>
