@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raport z monitoringu udostępniania akt zakończonych postępowań przygotowawczych</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #c0392b; /* Zmiana na czerwieńszą dla prokuratury, ale można wrócić do niebieskiego */
+            --accent-color: #e67e22;
+            --bg-color: #f4f7f6;
+            --container-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --warning-bg: #fff3cd;
+            --warning-border: #ffc107;
+        }
+        
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #2980b9; 
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--container-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-top: 25px;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .box {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .emoji {
+            font-style: normal;
+            margin-right: 5px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        /* Style ramki wyróżnionej */
+        .key-stats-box {
+            background: linear-gradient(to right, #ffffff, #fdf2f2);
+            border: 1px solid #f5dcdc;
+            border-left: 6px solid #c0392b; /* Czerwony akcent */
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        .key-stats-header {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .key-stats-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .key-percentage {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            line-height: 1;
+        }
+
+        .key-desc {
+            flex: 1;
+            font-size: 1.1rem;
+            min-width: 250px;
+        }
+
+        .key-desc strong {
+            color: #c0392b;
+        }
+
+        .key-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .key-item {
+            text-align: left;
+        }
+
+        .key-item-number {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 2px;
+        }
+
+        .key-item-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            h1 { font-size: 1.5rem; }
+            .key-percentage { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Raport z monitoringu udostępniania akt zakończonych postępowań przygotowawczych</h1>
+        <p style="text-align: center; font-style: italic;">(stan na 12.02.2026)</p>
+    </header>
+
+<!-- Poczatek ramki wyroznionej -->
+<div class="key-stats-box">
+    <div class="key-stats-header">Najważniejszy wniosek z raportu</div>
+    
+    <div class="key-stats-content">
+        <div class="key-percentage">niemierzalne!</div>
+        <div class="key-desc">
+            Sposób prowadzenia ewidencji (systemy informatyczne) oraz niski poziom cyfryzacji akt w prokuraturach <strong>uniemożliwiają ocenę transparentności</strong> w odniesieniu do udostępniania akt zakończonych postępowań przygotowawczych.
+        </div>
+    </div>
+
+    <div class="key-grid">
+        <div class="key-item">
+            <span class="key-item-number">420</span>
+            <span class="key-item-label">🏛️ odpytanych instytucji</span>
+        </div>
+        <div class="key-item">
+            <span class="key-item-number">374</span>
+            <span class="key-item-label">📨 otrzymanych odpowiedzi</span>
+        </div>
+        <div class="key-item">
+            <span class="key-item-number">~50</span>
+            <span class="key-item-label">📊 konkretnych odpowiedzi</span>
+        </div>
+    </div>
+</div>
+<!-- Koniec ramki wyroznionej -->
+
+    <main>
+        <section>
+            <h2>1. Informacje wstępne <span class="emoji">📬</span></h2>
+            <p>W ramach monitoringu <strong>Udostępnianie akt zakończonych postępowań przygotowawczych</strong> wysłano odnośny wniosek o informację łącznie do <strong>420 instytucji</strong>, w tym:</p>
+            <ul>
+                <li>prokuratury rejonowe: 361</li>
+                <li>prokuratury okręgowe: 46</li>
+                <li>prokuratury regionalne: 11</li>
+                <li>Prokuratura Krajowa: 1</li>
+                <li>Ministerstwo Sprawiedliwości: 1</li>
+            </ul>
+        </section>
+
+        <section>
+          <details>
+          <summary style="cursor: pointer; list-style: none;">
+            <h2>2. Treść wniosku <span class="emoji">📝</span>
+            <span style="font-size: 0.6em; color: #777; vertical-align: middle;">(kliknij, aby rozwinąć)</span>
+            </h2>
+            </summary>
+            <div class="box">
+                <p>Na podstawie art. 61 ust. 1 i 2 Konstytucji RP oraz art. 10 ust. 1 ustawy o dostępie do informacji publicznej zwracamy się z wnioskiem o informacje dotyczące <strong>udostępniania akt zakończonych postępowań przygotowawczych</strong>:</p>
+                <ol>
+                    <li>Ile wniosków o udostępnienie akt _z_akończonych postępowań przygotowawczych (lub informacji z tych akt) zostało rozpatrzonych <strong>odmownie</strong> na podstawie <strong>art. 156 § 5</strong> lub <strong>§ 5b k.p.k.</strong> w latach <strong>2023 i 2024</strong>, z podziałem na poszczególne lata? </li>
+                    <li>Ile wniosków o udostępnienie akt zakończonych postępowań przygotowawczych (lub informacji z tych akt) zostało rozpatrzonych <strong>pozytywnie</strong> na podstawie <strong>art. 156 § 5</strong> lub <strong>§ 5b k.p.k.</strong> w latach <strong>2023 i 2024</strong>, z podziałem na poszczególne lata?</li>
+                    <li>Jakie <strong>kategorie uzasadnień odmowy</strong> były najczęściej wskazywane w decyzjach wydanych w latach <strong>2023–2024</strong> na podstawie <strong>art. 156 § 5</strong> lub <strong>§ 5b k.p.k.</strong>, dotyczących akt zakończonych postępowań przygotowawczych – w ujęciu zbiorczym? </li>
+                    <li>W ilu przypadkach, o których mowa w pytaniu 1, odmowa dotyczyła akt zakończonych postępowań przygotowawczych <strong>w sprawach</strong> będących przedmiotem <strong>zainteresowania mediów</strong> lub mających <strong>istotne znaczenie</strong> publiczne?</li>
+                </ol>
+            </div>
+          </details>
+        </section>
+
+        <section>
+            <h2>3. Odpowiedzi i problemy systemowe <span class="emoji">⚙️</span></h2>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-number">374</span>
+                    odpowiedzi na wniosek (w tym odmownych i wezwań)
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">26</span>
+                    samych potwierdzeń odbioru (w tym informacje o usunięciu bez przeczytania), tj. bez odpowiedzi
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">20</span>
+                    przypadków całkowitej ciszy (brak potwierdzenia, brak odpowiedzi)
+                </div>
+            </div>
+
+            <h3>Problem z cyfryzacją <span class="emoji">💻</span></h3>
+            <p>Ogromna większość z 374 odpowiedzi zawierała deklaracje, że żądane statystyki są <strong>niemożliwe do automatycznego wygenerowania</strong> z używanego systemu ewidencji (najczęściej wskazywano system <em>Prok-Sys Libra</em>). W związku z tym prokuratury masowo wzywały do wykazania szczególnego interesu publicznego (argumentując to koniecznością ogromnego nakładu pracy przy ręcznym przeszukiwaniu akt) lub do uzupełnienia braków formalnych (co zwykle oznacza zamiar wydania decyzji odmownej).</p>
+            <p>Prokuratury, które ograniczyły się wyłącznie do takich wezwań, zostały pominięte w <a href="data/150_udostepnianie_akt_zakonczonych_postepowan_12_02_2026.xlsx" target="_blank">arkuszu danych</a>, będącym podstawą dalszej analizy.</p>
+
+            <div class="box">
+                <p>Niezależnie do powyższego <strong>50 prokuratur</strong> podjęło próbę zebrania i udostępnienia przynajmniej części wnioskowanych informacji, często z uzasadnianym przy tym zastrzeżeniem niekompletności. Ewentualnie pisały po prostu, że danych nie mają, bez wzywania do uzasadniania interesu ani uzupełniania braków formalnych. W arkuszu z danymi znajdują się zasadniczo właśnie te prokuratury oraz - dodatkowo - dwa odpytane organy centralne, tj. <a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-420" target="_blank">Prokuratura Krajowa</a> i <a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-421" target="_blank">Ministerstwo Sprawiedliwości</a> (w obu przypadkach nie posiadają, nie dysponują).</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Pytanie 1 i 2: o liczbę wniosków o udostępnienie akt rozpatrzonych odmownie oraz wniosków udostępnionych <span class="emoji">📊</span></h2>
+            
+            <h3>Odmowy dostępu do akt</h3>
+            <p>Dane o odmowach podało <strong>38 prokuratur</strong> (4 okręgowe, 2 regionalne, 32 rejonowe).</p>
+            <ul>
+                <li>z czego <strong>21</strong> zadeklarowało brak jakichkolwiek odmów w badanym okresie.</li>
+                <li>w pozostałych <strong>siedemnastu</strong> przypadkach liczby było to kilka (najwyżej 9), jednak często dotyczyły one liczby <em>zażaleń na odmowy</em>, a nie samych odmów, których zapewne było więcej.</li>
+            </ul>
+
+            <div class="warning-box">
+                <h3>Uwagi metodologiczne<span class="emoji">⚠️</span></h3>
+                <p>Niektóre prokuratury wskazywały, że co prawda nie są w stanie podać liczby odmów, ale za to mogą podać liczbę zażaleń na odmowy. Prawdopodobnie jednak nie każda odmowa skutkowała złożeniem zażalenia.</p>
+                
+               <p>Bywało też, że prokuratura generalnie nie zbierała całościowo takich danych i nie potrafiła ich podać w odniesieniu do całości instytucji, ale podawała dane dla wybranych wydziałów, w których wnioskowane informacje z jakiejś przyczyny były znane.</p>
+                
+                <p>Powyższe sytuacje sprawiają, że patrząc na otrzymane dane całościowo, należy traktować podawane liczby dotyczące odmów i udostępnień, jako wartość minimalną, dolny próg.</p>
+            </div>  
+
+            <h3>Udostępnienia akt</h3>
+            <p>Tylko <strong>11 prokuratur</strong>, które wykazały niezerową liczbę odmów, podało jednocześnie liczbę udostępnień. Dane te charakteryzują się sporym rozrzutem (na kilka odmów przypada od pojedynczych do nawet setek udostępnień) i niską wiarygodnością z kilku powodów:</p>
+            <ul>
+                <li><strong>Mały rozmiar próby:</strong> 11 przypadków to zdecydowanie za mało, żeby w ujęciu statystycznym wyrokować cokolwiek o czymkolwiek.</li>
+                <li><strong>Brak pełnej rejestracji:</strong> wiele wniosków wpływa pocztą tradycyjną, mailem lub ustnie i dotyczy fizycznego udostępnienia, czyli z pominięciem Portalu Przeglądania Akt – po takich wnioskach ślad po nich zostaje tylko w aktach sprawy.</li>
+                <li><strong>Mieszanie spraw w toku i zakończonych:</strong> Część prokuratur wskazywała, że w systemie Prok-Sys Libra nie mają możliwości rozróżnienia, czy udostępnienie dotyczyło sprawy zakończonej, czy trwającej (np. <a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-152">Prokuratura Rejonowa w Krośnie Odrzańskim</a>, <a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-274">Prokuratura Rejonowa w Słupsku</a>). Natomiast w wielu innych przypadkach (np. <a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-106">Prokuratura Rejonowa w Gorlicach</a>), nie pojawiło się tego typu zastrzeżenie (chociaż ogólnie o trudnościach pisano niemal zawsze). Czy to dlatego, że po prostu prokuratury, nie mając pewności, co do naszych celów, chciały podać chociażby przybliżone dane (z czego nie warto robić zarzutu), czy też może w ramach indywidualnej konfiguracji lub dostosowania systemu, niektóre prokuratury takie rozróżniające oznaczenie rejestrują (albo być może używają innego systemu, patrz: <a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-371">Prokuratura Okręgowa w Jeleniej Górze</a>) - trudno powiedzieć. Istnieje więc ryzyko, że wysokie liczby udostępnień w prokuraturach (szczególnie rejonowych, bo może w okręgowych i regionalnych jest naturalnie większa skala zjawiska) wynikają z wliczania wglądów do spraw w toku, co zaburza obraz transparentności postępowań <em>zakończonych</em>. Trudno więc z tego coś wiarygodnego wywnioskować na temat rzeczywistej proporcji między liczbą odmów a liczbą udostępnień akt zakończonych postępowań przygotowawczych.</li>
+            </ul>
+    <p>Poniżej wszystkie przypadki, w których podano niezerową liczbę odmów i jednocześnie niezerową liczbę udostępnień, jednak ze względu na opisane wyżej zastrzeżenia, nie powinno się na tej podstawie oceniać ani skali, ani proporcji zjawiska:</p>
+    <table>
+    <thead>
+        <tr>
+            <th style="width: 40%;">Prokuratura</th>
+            <th style="text-align: center; width: 20%;">Odmowy<br><span style="font-size: 0.8rem; font-weight: normal;">(2023 | 2024)</span></th>
+            <th style="text-align: center; width: 20%;">Udostępnienia<br><span style="font-size: 0.8rem; font-weight: normal;">(2023 | 2024)</span></th>
+            <th style="text-align: center; width: 20%;">Link do sprawy</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Prokuratura Okręgowa w Gliwicach</td>
+            <td style="text-align: center;">1 | 2</td>
+            <td style="text-align: center;">2 | 0</td>
+            <td style="text-align: center;"><a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-369" target="_blank">Zobacz sprawę 🔗</a></td>
+        </tr>
+        <tr>
+            <td>Prokuratura Okręgowa w Nowym Sączu</td>
+            <td style="text-align: center;">4 | 3</td>
+            <td style="text-align: center;">110 | 162</td>
+            <td style="text-align: center;"><a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-382" target="_blank">Zobacz sprawę 🔗</a></td>
+        </tr>
+        <tr>
+            <td>Prokuratura Regionalna w Krakowie</td>
+            <td style="text-align: center;">6 | 3</td>
+            <td style="text-align: center;">71 | 73</td>
+            <td style="text-align: center;"><a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-412" target="_blank">Zobacz sprawę 🔗</a></td>
+        </tr>
+        <tr>
+            <td>Prokuratura Regionalna w Warszawie</td>
+            <td style="text-align: center;">0 | 1</td>
+            <td style="text-align: center;">0 | 2</td>
+            <td style="text-align: center;"><a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-418" target="_blank">Zobacz sprawę 🔗</a></td>
+        </tr>
+        <tr>
+            <td>Prokuratura Rejonowa w Kluczborku</td>
+            <td style="text-align: center;">2 | 0</td>
+            <td style="text-align: center;">8 | 22</td>
+            <td style="text-align: center;"><a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-137" target="_blank">Zobacz sprawę 🔗</a></td>
+        </tr>
+        <tr>
+            <td>Prokuratura Rejonowa w Lubaczowie</td>
+            <td style="text-align: center;">4 | 3</td>
+            <td style="text-align: center;">44 | 34</td>
+            <td style="text-align: center;"><a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-166" target="_blank">Zobacz sprawę 🔗</a></td>
+        </tr>
+        <tr>
+            <td>Prokuratura Rejonowa w Muszynie</td>
+            <td style="text-align: center;">3 | 0</td>
+            <td style="text-align: center;">13 | 49</td>
+            <td style="text-align: center;"><a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-191" target="_blank">Zobacz sprawę 🔗</a></td>
+        </tr>
+        <tr>
+            <td>Prokuratura Rejonowa w Nidzicy</td>
+            <td style="text-align: center;">1 | 2</td>
+            <td style="text-align: center;">21 | 40</td>
+            <td style="text-align: center;"><a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-197" target="_blank">Zobacz sprawę 🔗</a></td>
+        </tr>
+        <tr>
+            <td>Prokuratura Rejonowa w Nowym Sączu</td>
+            <td style="text-align: center;">3 | 1</td>
+            <td style="text-align: center;">33 | 57</td>
+            <td style="text-align: center;"><a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-202" target="_blank">Zobacz sprawę 🔗</a></td>
+        </tr>
+        <tr>
+            <td>Prokuratura Rejonowa w Nowym Targu</td>
+            <td style="text-align: center;">2 | 0</td>
+            <td style="text-align: center;">1 | 0</td>
+            <td style="text-align: center;"><a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-203" target="_blank">Zobacz sprawę 🔗</a></td>
+        </tr>
+        <tr>
+            <td>Prokuratura Rejonowa w Sanoku</td>
+            <td style="text-align: center;">1 | 2</td>
+            <td style="text-align: center;">10 | 8</td>
+            <td style="text-align: center;"><a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-262" target="_blank">Zobacz sprawę 🔗</a></td>
+        </tr>
+    </tbody>
+</table>
+            
+                        <div class="warning-box">
+                <h3>Uwaga<span class="emoji">⚠️</span></h3>
+                <p>Warto też nie traktować liczby wniosków o udostępnienie, jako równoważnej liczbie spraw, których dotyczą. Na podstawie danych z niektórych prokuratur zdaje się wynikać, że jeśli w jakiejś sprawie składano wnioski o udostępnienie akt, to było ich przynajmniej kilka (dostępne dane pokazują średnią od trzech do dziesięciu wniosków na sprawę).</p>
+            </div> 
+            
+        </section>
+
+        <section>
+            <h2>5. Przyczyny odmów (Pytanie 3) <span class="emoji">🚫</span></h2>
+            <p>Odpowiedzi na to pytanie udzieliło <strong>13 prokuratur</strong>.</p>
+            <p>Zidentyfikowane kategorie odmów:</p>
+            <ul>
+                <li><strong>Tajność postępowania przygotowawczego:</strong> dobro postępowania, konieczność niezakłóconego wykonania zaplanowanych czynności procesowych, konieczność gromadzenia i ochrony materiału dowodowego (zbyt wczesny etap), planowane czynności procesowe.</li>
+                <li><strong>Ochrona prawna materiałów:</strong> tajemnica korespondencji, ochrona danych osobowych (RODO), tajemnica przedsiębiorstwa.</li>
+                <li><strong>Status wnioskodawcy:</strong> wniosek złożony przez osobę nieuprawnioną / niebędącą stroną.</li>
+                <li><strong>Brak "wyjątkowego wypadku":</strong> niespełnienie przesłanki z art. 156 § 5 k.p.k. umożliwiającej dostęp osobie niebędącej stroną.</li>
+                <li><strong>Inne:</strong> wielowątkowy charakter sprawy obejmujący zagadnienia niezwiązane z przedmiotem wskazanym przez wnioskodawcę, brak uzasadnionych przesłanek we wniosku.</li>
+            </ul>
+            <p>Warto zauważyć, że niektóre podawane uzasadnienia zdają się dotyczyć postępowań będących w toku, co jeszcze bardziej osłabia pewność, co do pozyskanych liczb, bo nie o takie sytuacje pytaliśmy.</p>
+            <p>Dwie prokuratury wprost odmówiły odpowiedzi na to pytanie. Szesnaście miało problem z brakiem danych - konsekwentnie, jak w pytaniu pierwszym, skoro nie mieli danych do ustalenia liczby odmów, to jasnym jest, że jeszcze trudniej byłoby ustalić kategorie odmów. Dwudziestu jeden przypadków to pytanie nie dotyczyło, w związku z odpowiedzią zero odmów na pytanie pierwsze.</p>
+            <p>W odniesieniu do tego pytania pojawiał się czasem zarzut braku waloru informacji publicznej, co jest już chyba trochę dziwne. O ile można zrozumieć brak takich danych dostępnych od ręki i niechęć do ich zbierania (co faktycznie byłoby mrówczą pracą ze względu na, jak się zdaje, niepełną cyfryzację akt), o tyle trudno zaakceptować stwierdzenie, że to "nie mieści się w sferze faktów (...) pojęcie nieostre, które nie pozwala na odczytanie intencji wnioskodawcy konkretyzowanie o jakie dane wnioskuje".</p>
+        </section>
+
+        <section>
+            <h2>6. Sprawy medialne (Pytanie 4) <span class="emoji">📰</span></h2>
+            <p>Pytanie o odmowy w sprawach będących przedmiotem zainteresowania mediów lub mających istotne znaczenie publiczne okazało się najtrudniejsze.</p>
+            <ul>
+                <li><strong>Tylko</strong> <a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-418">Prokuratura Regionalna w Warszawie</a> zadeklarowała niezerową wartość: jedna taka sytuacja. Pytanie, czy nawet nasza Poradnia nie spotkała więcej takich przypadków?</li>
+                <li>Odmowy wprost były tutaj trzy, z czego dwie wiązały się również z zadeklarowanym brakiem danych na pytanie pierwsze, więc niby można uznać, że to naturalna konsekwencja, ale sprawy medialne są z pewnością pamiętane, więc można to też interpretować jako unik.</li>
+                <li>Brak danych do odpowiedzi zadeklarowało 15 prokuratur (też unik?).</li>
+                <li>Dwudziestu jeden prokuratur pytanie po prostu nie dotyczyło, jako że na pytanie pierwsze zadeklarowały zero odmów. </li>
+                <li>Dwie prokuratury ani nie odmówiły wprost, ani nie odpowiedziały na to pytanie, chociaż zadeklarowały łącznie cztery odmowy (<a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-254">Prokuratura Rejonowa w Rawie Mazowieckiej</a>, <a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-274">Prokuratura Rejonowa w Słupsku</a>).</li>
+            </ul>
+            <div class="box">
+            <p>Wiele prokuratur uznawało pytanie czwarte za spekulatywne i jako takie nie podlegające pod ustawę o dostępie do informacji publicznej. Były jednak też prokuratury zaświadczające, że szczególnie w takich właśnie sprawach, ze względu na dobro publiczne, jeśli tylko nie ma jakichś bardzo poważnych przesłanek do odmowy, to jak najbardziej pozytywnie rozpatrują takie wnioski (np. <a href="https://fedrowanie.siecobywatelska.pl/sprawy/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych-335">Prokuratura Rejonowa w Zawierciu</a>)</p></div>
+        </section>
+        
+        <section>
+            <h2>7. Organy centralne <span class="emoji">🏛️</span></h2>
+            <p>Zarówno <strong>Prokuratura Krajowa</strong>, jak i <strong>Ministerstwo Sprawiedliwości</strong> poinformowały, że nie posiadają i nie dysponują wnioskowanymi danymi statystycznymi.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Źródło danych: <a href="https://fedrowanie.siecobywatelska.pl/monitoringi/udostepnianie-akt-zakonczonych-postepowan-przygotowawczych" target="_blank"> Monitoring: Udostępnianie akt zakończonych postępowań przygotowawczych</a></p>
+        <p>Opracowanie: <a href="https://siecobywatelska.pl/" target="_blank">Sieć Obywatelska Watchdog Polska</a>, ostatnia aktualizacja: 12 lutego 2026.</p>
+    </footer>
+</div>
+
+</body>
+</html>
