@@ -276,7 +276,7 @@
 
     <main>
         <section>
-            <h2>1. Informacje wstępne i statystyki zwrotów <span class="emoji">📊</span></h2>
+            <h2>1. Informacje wstępne <span class="emoji">📊</span></h2>
             <p>W ramach monitoringu wysłano wniosek o informację publiczną do wszystkich szczebli samorządu terytorialnego w Polsce (łącznie do <strong>2809 jednostek</strong>). Osiągnęliśmy bardzo wysoki wskaźnik odpowiedzi, co pozwala na wyciągnięcie wiarygodnych wniosków ogólnopolskich.</p>
             
             <div class="stat-grid">
@@ -314,7 +314,7 @@
         </section>
 
         <section>
-            <h2>3. Analiza i problemy z weryfikacją danych <span class="emoji">🔍</span></h2>
+            <h2>3. Problemy z interpretacją <span class="emoji">🔍</span></h2>
             <p>Początkowa analiza danych wskazała na znacznie większą liczbę deklarowanych transmisji, niż miało to miejsce w rzeczywistości. Konieczna była szczegółowa, ręczna weryfikacja odpowiedzi i podanych linków. Zidentyfikowaliśmy kilka głównych problemów i nieporozumień na linii urząd-wnioskodawca:</p>
 
             <ul>
@@ -330,7 +330,7 @@
             </div>  
 
             <h3>Zestawienie końcowe dla wyników pozytywnych</h3>
-            <p>Spośród ponad 2400 odpowiedzi wyłoniliśmy zaledwie:</p>
+            <p>Spośród przeszło 2400 odpowiedzi wyłoniliśmy zaledwie:</p>
             <ul>
                 <li><strong>22</strong> - w pełni zweryfikowanych odpowiedzi "Tak" (transmisja + zapis wideo w sieci).</li>
                 <li><strong>9</strong> - odpowiedzi "Tak" z kategorii niepewnych (urząd deklaruje transmisję, ale nie publikuje i nie archiwizuje nagrań, co uniemożliwia nam weryfikację). Wśród tej grupy znajduje się tylko 1 starostwo powiatowe.</li>
@@ -340,12 +340,12 @@
         </section>
 
         <section>
-            <h2>4. Wizualizacja Odpowiedzi <span class="emoji">📈</span></h2>
-            <p>Poniższy wykres prezentuje odsetek zweryfikowanych odpowiedzi pozytywnych i częściowych w stosunku do wszystkich 2429 uzyskanych odpowiedzi od samorządów.</p>
-            
+            <h2>4. Wizualizacja odpowiedzi <span class="emoji">📈</span></h2>
+            <p>Poniższy wykres prezentuje odsetek zweryfikowanych odpowiedzi pozytywnych i częściowych w stosunku do wszystkich 2429 uzyskanych odpowiedzi od samorządów.</p>            
             <div class="chart-container">
                 <canvas id="responsesChart"></canvas>
             </div>
+            <p>Uwaga: Jeśli wykres się nie pojawił a chesz go zobaczyć, to kliknij <a href="https://dzemeuksis.github.io/monitoringi_wyniki/153/153_index.html">link do źródła tego raportu</a></p>
         </section>
 
         <section>
@@ -440,7 +440,7 @@
         // Inicjalizacja DataTables
         $('#resultsTable').DataTable({
             language: {
-                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/pl.json',
+                url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/pl.json',
             },
             pageLength: 10,
             responsive: true,
