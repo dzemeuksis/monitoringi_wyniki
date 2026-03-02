@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyniki badania: Transmisje posiedzeń komisji radnych samorządowych</title>
+    
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #16a085; /* Zmieniony akcent na szmaragdowy/transparentny */
+            --accent-color: #e67e22;
+            --bg-color: #f4f7f6;
+            --container-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --warning-bg: #fff3cd;
+            --warning-border: #ffc107;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--container-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-top: 25px;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .box {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .emoji {
+            font-style: normal;
+            margin-right: 5px;
+        }
+
+        /* Style ramki wyróżnionej */
+        .key-stats-box {
+            background: linear-gradient(to right, #ffffff, #f2fdfa);
+            border: 1px solid #dcf5ee;
+            border-left: 6px solid var(--secondary-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        .key-stats-header {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .key-stats-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .key-percentage {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #e74c3c;
+            line-height: 1;
+        }
+
+        .key-desc {
+            flex: 1;
+            font-size: 1.1rem;
+            min-width: 250px;
+        }
+
+        .key-desc strong {
+            color: var(--secondary-color);
+        }
+
+        .key-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .key-item {
+            text-align: left;
+        }
+
+        .key-item-number {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+
+        .key-item-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .chart-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        /* Tabela stylizacja */
+        table.dataTable {
+            width: 100% !important;
+            margin-top: 20px !important;
+        }
+        
+        table.dataTable thead th {
+            background-color: var(--primary-color);
+            color: white;
+            border-bottom: none;
+        }
+
+        .badge-tak { background-color: #27ae60; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.85em; }
+        .badge-nie { background-color: #e74c3c; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.85em; }
+        .badge-czesc { background-color: #f39c12; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.85em; }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            h1 { font-size: 1.5rem; }
+            .key-percentage { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Kto transmituje posiedzenia komisji radnych samorządowych?</h1>
+        <p style="text-align: center; font-style: italic;">(stan na 28.02.2026)</p>
+    </header>
+
+    <!-- Poczatek ramki wyroznionej -->
+    <div class="key-stats-box">
+        <div class="key-stats-header">Najważniejszy wniosek z badania</div>
+        
+        <div class="key-stats-content">
+            <div class="key-percentage">< 2%</div>
+            <div class="key-desc">
+                Transmisja posiedzeń komisji radnych samorządowych to praktyka <strong>ekstremalnie rzadka</strong>. Jedynie niecałe 2% badanych urzędów (szacunkowo max. ~50 na ponad 2400) potwierdziło, że transmituje i udostępnia zapisy ze <strong>wszystkich</strong> posiedzeń komisji radnych.
+            </div>
+        </div>
+
+        <div class="key-grid">
+            <div class="key-item">
+                <span class="key-item-number">2809</span>
+                <span class="key-item-label">📨 wysłanych wniosków</span>
+            </div>
+            <div class="key-item">
+                <span class="key-item-number">2429</span>
+                <span class="key-item-label">🏛️ uzyskanych odpowiedzi (87%)</span>
+            </div>
+            <div class="key-item">
+                <span class="key-item-number">22</span>
+                <span class="key-item-label">✅ w 100% zweryfikowanych "Tak"</span>
+            </div>
+        </div>
+    </div>
+    <!-- Koniec ramki wyroznionej -->
+
+    <main>
+        <section>
+            <h2>1. Informacje wstępne i statystyki zwrotów <span class="emoji">📊</span></h2>
+            <p>W ramach monitoringu wysłano wniosek o informację publiczną do wszystkich szczebli samorządu terytorialnego w Polsce (łącznie do <strong>2809 jednostek</strong>). Osiągnęliśmy bardzo wysoki wskaźnik odpowiedzi, co pozwala na wyciągnięcie wiarygodnych wniosków ogólnopolskich.</p>
+            
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-number">86%</span>
+                    Gminy i miasta na prawach powiatu (2131 odp. z 2479)
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">90%</span>
+                    Starostwa Powiatowe (283 odp. z 314)
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">94%</span>
+                    Urzędy Marszałkowskie (15 odp. z 16)
+                </div>
+            </div>
+        </section>
+
+        <section>
+          <details>
+          <summary style="cursor: pointer; list-style: none; outline: none;">
+            <h2>2. Treść wniosku <span class="emoji">📝</span>
+            <span style="font-size: 0.6em; color: #777; vertical-align: middle;">(kliknij, aby rozwinąć)</span>
+            </h2>
+            </summary>
+            <div class="box">
+                <p>Zwróciliśmy się z wnioskiem o udzielenie odpowiedzi na następujące pytania:</p>
+                <ol>
+                    <li>Czy <strong>wszystkie</strong> posiedzenia komisji rady, które odbyły się <strong>od 1 listopada 2025 r. do dnia złożenia wniosku</strong>, były publicznie transmitowane na żywo (online)?</li>
+                    <li>Czy audiowizualne zapisy (inaczej materiał filmowy) ze <strong>wszystkich</strong> posiedzeń komisji rady, które odbyły się w ww. okresie, zostały udostępnione w Biuletynie Informacji Publicznej (bezpośrednio lub poprzez zamieszczenie linku do zewnętrznego serwisu) lub w innym miejscu?</li>
+                    <li>Jeżeli odpowiedź na poprzednie pytanie jest twierdząca, to prosimy o podanie linku/linków do publikowanych materiałów filmowych (nagrań z posiedzeń).</li>
+                </ol>
+            </div>
+          </details>
+        </section>
+
+        <section>
+            <h2>3. Analiza i problemy z weryfikacją danych <span class="emoji">🔍</span></h2>
+            <p>Początkowa analiza danych wskazała na znacznie większą liczbę deklarowanych transmisji, niż miało to miejsce w rzeczywistości. Konieczna była szczegółowa, ręczna weryfikacja odpowiedzi i podanych linków. Zidentyfikowaliśmy kilka głównych problemów i nieporozumień na linii urząd-wnioskodawca:</p>
+
+            <ul>
+                <li><strong>Mylenie sesji rady z posiedzeniami komisji:</strong> Ogromna większość początkowych odpowiedzi "Tak" na pierwsze pytanie, po bliższym przyjrzeniu się załączonym linkom, okazywała się dotyczyć sesji głównych rady, a nie posiedzeń komisji. Te odpowiedzi zostały skorygowane na "Nie".</li>
+                <li><strong>Rozdźwięk między pytaniem 1 i 2 (ulotne transmisje):</strong> W kilku przypadkach lakoniczna odpowiedź na pierwsze pytanie (czy transmitują) brzmiała "Tak", jednak na drugie (czy udostępniają nagrania w BIP) padło "Nie". Może to wynikać z praktyki, w której komisje są transmitowane na żywo, ale <strong>nie są zapisywane</strong> – możliwość ich obejrzenia znika po zakończeniu obrad. Tego typu odpowiedzi utrudniają weryfikację.</li>
+                <li><strong>Odsyłanie do suchych protokołów:</strong> Część urzędów twierdziła, że udostępnia zapisy, jednak przekazane linki prowadziły jedynie do protokołów tekstowych i wyników głosowań, a nie do faktycznych nagrań audiowizualnych (mimo precyzyjnego zapytania o "materiał filmowy"). Te przypadki również zostały skorygowane na "Nie".</li>
+                <li><strong>Selekcja komisji ("Niektóre"):</strong> Odnotowaliśmy grupę urzędów (20 gmin i 4 powiaty), które zadeklarowały transmisje jedynie wybranych posiedzeń. Zasady bywały różne – np. transmitowane są wyłącznie komisje połączone (wspólne) lub posiedzenia odbywające się w głównej sali (kryterium techniczne/lokalizacyjne).</li>
+            </ul>
+
+            <div class="warning-box">
+                <h3>Szacunek potencjalnego błędu badawczego <span class="emoji">⚠️</span></h3>
+                <p>Należy przyjąć, że obrane przez nas rygorystyczne kryteria weryfikacji (odrzucanie "Tak", gdy brak było wideo pod linkiem) mogły nieznacznie zaniżyć wynik, jeśli urząd praktykował wspomniane "ulotne transmisje" bez zapisu, o czym nie poinformował wprost. Maksymalny błąd w dół szacujemy jednak na zaledwie kilkanaście przypadków. Oznacza to, że łączna liczba zbadanych samorządów faktycznie transmitujących <strong>wszystkie</strong> komisje nie przekracza z całą pewnością bariery 50 podmiotów.</p>
+            </div>  
+
+            <h3>Zestawienie końcowe dla wyników pozytywnych</h3>
+            <p>Spośród ponad 2400 odpowiedzi wyłoniliśmy zaledwie:</p>
+            <ul>
+                <li><strong>22</strong> - w pełni zweryfikowanych odpowiedzi "Tak" (transmisja + zapis wideo w sieci).</li>
+                <li><strong>9</strong> - odpowiedzi "Tak" z kategorii niepewnych (urząd deklaruje transmisję, ale nie publikuje i nie archiwizuje nagrań, co uniemożliwia nam weryfikację). Wśród tej grupy znajduje się tylko 1 starostwo powiatowe.</li>
+                <li><strong>Z łącznej liczby 31 powyższych</strong>: 28 to gminy, 1 powiat, a 2 to miasta na prawach powiatu (z których tylko miasto Chełm zostało w pełni zweryfikowane).</li>
+                <li><strong>24</strong> - urzędy transmitujące posiedzenia "częściowo/wybiórczo".</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Wizualizacja Odpowiedzi <span class="emoji">📈</span></h2>
+            <p>Poniższy wykres prezentuje odsetek zweryfikowanych odpowiedzi pozytywnych i częściowych w stosunku do wszystkich 2429 uzyskanych odpowiedzi od samorządów.</p>
+            
+            <div class="chart-container">
+                <canvas id="responsesChart"></canvas>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Wykaz urzędów deklarujących transmisje <span class="emoji">📋</span></h2>
+            <p>Poniższa interaktywna tabela zawiera listę 55 samorządów, z których potwierdzona odpowiedź na pytanie o prowadzenie transmisji (pytanie 1) wskazuje na "Tak" lub "Niektóre" (częściowo). Nazwa urzędu jest linkiem do korespondencji z urzędem w tej sprawie a w kolumnie "Zapisy wideo" wartości inne niż "Nie" są linkami do przykładowych transmisji. Możesz filtrować, przeszukiwać i sortować dane.</p>
+
+            <table id="resultsTable" class="display responsive nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Urząd</th>
+                        <th>Województwo</th>
+                        <th>Typ Samorządu</th>
+                        <th>Transmisje</th>
+                        <th>Zapisy wideo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2095">Trzemeszno</a></td><td>Wielkopolskie</td><td>gmina miejsko-wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://transmisjaobrad.info/videos/26361/komisje-rady-miejskiej-trzemeszna"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1582">Lipie</a></td><td>Śląskie</td><td>gmina wiejska</td><td><span class="badge-czesc">Niektóre</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-23">Duszniki-Zdrój</a></td><td>Dolnośląskie</td><td>gmina miejska</td><td><span class="badge-czesc">Niektóre</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-176">Białe Błota</a></td><td>Kujawsko-Pomorskie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2395">Kosakowo</a></td><td>Pomorskie</td><td>gmina wiejska</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://www.youtube.com/@gminakosakowo5225"><span class="badge-czesc">Niektóre</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1101">Michałowice</a></td><td>Mazowieckie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://www.michalowice.pl/urzad_gminy/transmisja-obrad-rady-gminy"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-260">Osielsko</a></td><td>Kujawsko-Pomorskie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://esesja.tv/transmisje_z_obrad/1667/rada-gminy-osielsko.htm"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1739">Ożarów</a></td><td>Świętokrzyskie</td><td>gmina miejsko-wiejska</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://ozarow.esesja.pl/"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2093">Trzcianka</a></td><td>Wielkopolskie</td><td>gmina miejsko-wiejska</td><td><span class="badge-czesc">Niektóre</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2112">Wronki</a></td><td>Wielkopolskie</td><td>gmina miejsko-wiejska</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://bip.wronki.pl/4048-rok-2025.html"><span class="badge-czesc">Niektóre</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2341">Trzcianne</a></td><td>Podlaskie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://transmisjaobrad.info/channels/124/gmina-trzcianne/live"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-330">Borzechów</a></td><td>Lubelskie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1409">Jaśliska</a></td><td>Podkarpackie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://www.obradyonline.pl/vod"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2066">Siedlec</a></td><td>Wielkopolskie</td><td>gmina wiejska</td><td><span class="badge-czesc">Niektóre</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-578">Siedlisko</a></td><td>Lubuskie</td><td>gmina wiejska</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://siedlisko.bip.net.pl/kategorie/279-protokoly-z-posiedzen/artykuly/2151-protokol-nr-v2025-z-posiedzenia-komisji-skarg-wnioskow--petycji-z-dnia-121%2012025-r2lang=PL"><span class="badge-czesc">Niektóre</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2091">Tarnowo Podgórne</a></td><td>Wielkopolskie</td><td>gmina wiejska</td><td><span class="badge-czesc">Niektóre</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2244">Bielsk Podlaski</a></td><td>Podlaskie</td><td>gmina miejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://esesja.tv/transmisja/75157/komisja-oswiaty-kultury-sportu-i-rekreacji-oraz-rodziny-zdrowia-promocji-miasta-i-wspolpracy-ze-spolecznosciami-lokalnymi-w-dniu-18-listopada-2025.htm"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1805">Ełk</a></td><td>Warmińsko-Mazurskie</td><td>gmina miejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://bip.elk.warmia.mazury.pl/10343/Komisje/"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-439">Puławy</a></td><td>Lubelskie</td><td>gmina miejska</td><td><span class="badge-czesc">Niektóre</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-374">Kazimierz Dolny</a></td><td>Lubelskie</td><td>gmina miejsko-wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://esesja.tv/transmisje_z_obrad/899/rada-miejska-kazimierz-dolny.htm"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-163">Złotoryja</a></td><td>Dolnośląskie</td><td>gmina miejska</td><td><span class="badge-tak">Tak</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-165">Złoty Stok</a></td><td>Dolnośląskie</td><td>gmina miejsko-wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://portal.posiedzenia.pl/ZLOTYSTOK?action=live"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1969">Konin</a></td><td>Wielkopolskie</td><td>miasto na prawach powiatu</td><td><span class="badge-czesc">Niektóre</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-541">Drezdenko</a></td><td>Lubuskie</td><td>gmina miejsko-wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://transmisja.esesja.pl/drezdenko"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1986">Krzywiń</a></td><td>Wielkopolskie</td><td>gmina miejsko-wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://bip.krzywin.pl/"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1178">Radzymin</a></td><td>Mazowieckie</td><td>gmina miejsko-wiejska</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://esesja.tv/transmisja/78468/komisja-ochrony-srodowiska-i-ladu-przestrzennego-w-dniu-poniedzialek-19-stycznia-2026.htm"><span class="badge-czesc">Niektóre</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-706">Opoczno</a></td><td>Łódzkie</td><td>gmina miejsko-wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://www.youtube.com/watch?v=qcóRIkQkAm8"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2238">Augustów</a></td><td>Podlaskie</td><td>gmina miejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://augustow.esesja.pl/"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1080">Leszno</a></td><td>Mazowieckie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://gminaleszno.pl/sesja/"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1065">Konstancin-Jeziorna</a></td><td>Mazowieckie</td><td>gmina miejsko-wiejska</td><td><span class="badge-tak">Tak</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2170">Kołobrzeg</a></td><td>Zachodniopomorskie</td><td>gmina miejska</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://esesja:tv/transmisje_z_obrad/ 235/rada-miasta-kolobrzeg.htm"><span class="badge-czesc">Niektóre</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1674">Zawiercie</a></td><td>Śląskie</td><td>gmina miejska</td><td><span class="badge-czesc">Niektóre</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1038">Huszlew</a></td><td>Mazowieckie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1221">Stare Babice</a></td><td>Mazowieckie</td><td>gmina wiejska</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://informatykstarebabice-my.sharepoint.com/:v:/g/personal/u_dabek_stare-babice_pl/IQDfXgbOqHUVTrjIuHJdAxJqAa-b5HAbVhpBCV_bNM85EDc?e=K4Gy51"><span class="badge-czesc">Niektóre</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-840">Kęty</a></td><td>Małopolskie</td><td>gmina miejsko-wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://esesja.tv/transmisja_na_zywo/499/rada-miejska-w-ketach.htm"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1081">Lesznowola</a></td><td>Mazowieckie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://bip.lesznowola.pl/category/transmisje-z-komisji/"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1111">Mogielnica</a></td><td>Mazowieckie</td><td>gmina miejsko-wiejska</td><td><span class="badge-tak">Tak</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2535">Star. Pow. w Górze</a></td><td>Dolnośląskie</td><td>powiat</td><td><span class="badge-tak">Tak</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2582">Star. Pow. w Krotoszynie</a></td><td>Wielkopolskie</td><td>powiat</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://esesja.tv/transmisje_z_obrad/111/rada-powiatu-krotoszynskiego.htm"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2619">Star. Pow. w Miliczu</a></td><td>Dolnośląskie</td><td>powiat</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://milicz.posiedzenia.pl/?"><span class="badge-czesc">Niektóre</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2637">Star. Pow. w Nowym Targu</a></td><td>Małopolskie</td><td>powiat</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://www.youtube.com/watch?v=0Fu4hMqKd5U"><span class="badge-czesc">Niektóre</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2666">Star. Pow. w Piotr. Tryb.</a></td><td>Łódzkie</td><td>powiat</td><td><span class="badge-czesc">Niektóre</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-333">Chełm</a></td><td>Lubelskie</td><td>miasto na prawach powiatu</td><td><span class="badge-tak">Tak</span></td><td><a href="https://chelmmiasto.esesja.pl/transmisje_z_obrad_rady"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-138">Świeradów-Zdrój</a></td><td>Dolnośląskie</td><td>gmina miejska</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://bip.swieradowzdroj.pl/artykul/polaczone-komisje-rady-miasta-27-01-2026-r"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1160">Prażmów</a></td><td>Mazowieckie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://prazmow.posiedzenia.pl/"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1668">Wodzisław Śląski</a></td><td>Śląskie</td><td>gmina miejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://bip.wodzislaw-slaski.pl/nagrania-z-komisji"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1419">Korczyna</a></td><td>Podkarpackie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://korczyna.pl/strona-3415-transmisja_posiedzen_rady_gminy_korczyna.html"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2176">Łobez</a></td><td>Zachodniopomorskie</td><td>gmina miejsko-wiejska</td><td><span class="badge-czesc">Niektóre</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1103">Milanówek</a></td><td>Mazowieckie</td><td>gmina miejska</td><td><span class="badge-tak">Tak</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1162">Pruszków</a></td><td>Mazowieckie</td><td>gmina miejska</td><td><span class="badge-czesc">Niektóre</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1149">Płock</a></td><td>Mazowieckie</td><td>miasto na prawach powiatu</td><td><span class="badge-tak">Tak</span></td><td><span class="badge-nie">Nie</span></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1179">Raszyn</a></td><td>Mazowieckie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://raszyn.esesja.pl"><span class="badge-tak">Tak</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1197">Siedlce</a></td><td>Mazowieckie</td><td>miasto na prawach powiatu</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://siedlce.esesja.pl/transmisje_z_obrad_rady"><span class="badge-czesc">Niektóre</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-2188">Nowogard</a></td><td>Zachodniopomorskie</td><td>gmina miejsko-wiejska</td><td><span class="badge-czesc">Niektóre</span></td><td><a href="https://nowogard.esesja.pl/transmisje_z_obrad_rady"><span class="badge-czesc">Niektóre</span></a></td></tr>
+                    <tr><td><a href="https://fedrowanie.siecobywatelska.pl/sprawy/transmisje-posiedzen-komisji-radnych-samorzadowych-1768">Strawczyn</a></td><td>Świętokrzyskie</td><td>gmina wiejska</td><td><span class="badge-tak">Tak</span></td><td><a href="https://youtu.be/JAMTxocMjsY"><span class="badge-tak">Tak</span></a></td></tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Źródło danych: <a href="https://fedrowanie.siecobywatelska.pl/monitoringi/transmisje-posiedzen-komisji-radnych-samorzadowych" target="_blank">Transmisje posiedzeń komisji radnych samorządowych</a></p>
+        <p>Opracowanie: <a href="https://siecobywatelska.pl/" target="_blank">Sieć Obywatelska Watchdog Polska</a>, ostatnia aktualizacja: 28 lutego 2026.</p>
+    </footer>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Inicjalizacja DataTables
+        $('#resultsTable').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/pl.json',
+            },
+            pageLength: 10,
+            responsive: true,
+            order: [[0, 'asc']] // Domyślne sortowanie po nazwie urzędu
+        });
+
+        // Konfiguracja wykresu Chart.js
+        const ctx = document.getElementById('responsesChart').getContext('2d');
+        const responsesChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels:[
+                    'Brak transmisji (~98%)', 
+                    'Selektywnie (~1%)',
+                    'Transmitowane i udostępniane (<1%)',
+                    'Transmitowane (brak archiwizacji) (<0.5%)'
+                ],
+                datasets: [{
+                    data: [2374, 24, 22, 9],
+                    backgroundColor:[
+                        '#e0e0e0',  // Szary dla Braku
+                        '#f39c12',  // Pomarańczowy dla Częściowych
+                        '#27ae60',  // Zielony dla Zweryfikowanych
+                        '#3498db'   // Niebieski dla Ulotnych
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + ' instytucji';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
