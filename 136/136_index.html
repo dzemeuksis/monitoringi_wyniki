@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyniki badania: Odpowiedzialne wykorzystywanie sztucznej inteligencji</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #2980b9;
+            --accent-color: #e67e22;
+            --bg-color: #f4f7f6;
+            --container-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --warning-bg: #fff3cd;
+            --warning-border: #ffc107;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: var(--container-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 20px;
+            margin: 0 0 32px 0;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 42px;
+            margin-bottom: 20px;
+            line-height: 1.35;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-top: 28px;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+            overflow-wrap: anywhere;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0 0 18px 0;
+        }
+
+        li {
+            padding: 6px 0 6px 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .box {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 20px;
+            margin: 22px 0;
+        }
+
+        .placeholder {
+            background: linear-gradient(to right, #ffffff, #f8fbff);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .topic-card {
+            background: #fbfdff;
+            border: 1px solid #dfe8ef;
+            border-radius: 8px;
+            padding: 20px 22px;
+            margin: 18px 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+        }
+
+        .topic-card h3 {
+            margin-top: 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .footer {
+            margin-top: 44px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .container {
+                padding: 22px 18px;
+            }
+
+            h1 {
+                font-size: 1.55rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Style ramki wyróżnionej */
+        .key-stats-box {
+            background: linear-gradient(to right, #ffffff, #f2fdfa);
+            border: 1px solid #dcf5ee;
+            border-left: 6px solid var(--secondary-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        .key-stats-header {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .key-stats-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .key-percentage {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #e74c3c;
+            line-height: 1;
+        }
+
+        .key-desc {
+            flex: 1;
+            font-size: 1.1rem;
+            min-width: 250px;
+        }
+
+        .key-desc strong {
+            color: var(--secondary-color);
+        }
+
+        .key-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .key-item {
+            text-align: left;
+        }
+
+        .key-item-number {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+
+        .key-item-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Style dla tabeli */
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 900px;
+            font-family: Arial, sans-serif;
+        }
+
+        caption {
+            text-align: left;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d7de;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f6f8fa;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #fbfbfb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Kto, do czego i jak korzysta z AI?</h1>
+            <p style="text-align: center; font-style: italic;">(stan na 8.04.2026)</p>
+        </header>
+        <main>
+
+            <!-- Poczatek ramki wyroznionej -->
+            <div class="key-stats-box">
+                <div class="key-stats-header">Najważniejszy wniosek z badania</div>
+
+                <div class="key-stats-content">
+                    <div class="key-percentage">🚨</div>
+                    <div class="key-desc">
+                        Niebezpieczne i szkodliwe zastosowania sztucznej inteligencji można bez trudu ukryć za zasłoną
+                        milczenia lub parawanem tajności, uzasadniając to pozbawioną szczegółów wzmianką o względach
+                        bezpieczeństwa, bądź przyjmując wygodnie wąską interpretację systemu AI.
+                    </div>
+                </div>
+
+                <div class="key-grid">
+                    <div class="key-item">
+                        <span class="key-item-number">5480</span>
+                        <span class="key-item-label">📨 wysłanych wniosków</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-item-number">4042</span>
+                        <span class="key-item-label">🏛️ uzyskanych odpowiedzi (74%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-item-number">345</span>
+                        <span class="key-item-label">✅ (9%) deklaruje korzystanie z AI</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Koniec ramki wyroznionej -->
+
+            <section class="content-section">
+
+
+                <h2>Wprowadzenie</h2>
+
+                <p>W ramach tego badania chcieliśmy dowiedzieć się, które spośród instytucji publicznych w Polsce
+                    korzystają z systemów opartych na sztucznej inteligencji, w jakim celu to robią i na ile są w tym
+                    przejrzyste. W jakim stopniu stosują się do już obowiązujących przepisów AI Aktu w tym zakresie oraz
+                    tych, które mają odsunięty termin realizacji?
+                    Chcieliśmy też sprawdzić, czy instytucje publiczne samodzielnie przyjmują jakieś wewnętrzne
+                    regulacje dotyczące korzystania przez
+                    pracowników z ogólnodostępnych narzędzi tego typu a jeśli tak, to na co zwracają w nich uwagę. W tym
+                    celu latem 2025 roku wysłaliśmy wnioski o informację publiczną do blisko pięciu i pół tysiąca
+                    rozmaitych instytucji.</p>
+
+            </section>
+
+            <section>
+                <details>
+                    <summary style="cursor: pointer; list-style: none; outline: none;">
+                        <h3>Dokładna treść wniosku <span class="emoji">🧾</span>
+                            <span style="font-size: 0.6em; color: #777; vertical-align: middle;">(kliknij, aby
+                                rozwinąć)</span>
+                        </h3>
+                    </summary>
+                    <div>
+                        <div class="email-container"
+                            style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e1e1e1; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                            <div class="header" style="background-color: #ffffff; padding: 20px; text-align: right;"><a
+                                    href="https://siecobywatelska.pl/"> <img
+                                        style="display: inline-block; max-width: 150px;"
+                                        src="https://siecobywatelska.pl//wp-content/uploads/2015/03/logo.png"
+                                        alt="Logo Sieci Obywatelskiej"> </a></div>
+                            <div class="content"
+                                style="padding: 20px; font-size: 16px; line-height: 1.6; font-family: 'GloberSemibold', 'GloberRegular', Helvetica, Arial, sans-serif; color: #333; background-color: #f5f5f5;">
+                                <h1
+                                    style="font-size: 20px; color: #000000; font-family: GloberRegular, Helvetica, Arial, sans-serif; text-align: center;">
+                                    Wniosek o informację</h1>
+                                <div>
+                                    <p><span style="font-weight: 400;">Na podstawie ustawy o dostępie do informacji
+                                            publicznej zwracamy się z wnioskiem o udzielenie informacji w zakresie
+                                            korzystania przez organ z system&oacute;w opartych na sztucznej inteligencji
+                                            (w rozumieniu definicji zawartej w rozporządzeniu Parlamentu Europejskiego i
+                                            Rady (UE) 2024/1689 z dnia 13 czerwca 2024 r.)</span></p>
+                                    <p><span style="font-weight: 400;">W związku z powyższym wnosimy o udzielenie
+                                            odpowiedzi na poniższe pytania:</span></p>
+                                    <p><strong>Pytanie 1.</strong> Czy w <span style="font-weight: 400;">organie</span>
+                                        lub na jego zlecenie są wykorzystywane <strong>systemy informatyczne</strong>,
+                                        kt&oacute;re <strong>automatycznie</strong> przetwarzają dane wejściowe (np.
+                                        tekst, obraz, dźwięk, dane liczbowe), aby <strong>generować</strong> raporty,
+                                        wnioski, przewidywania, rekomendacje lub decyzje, kt&oacute;re <strong>mogą
+                                            wpływać</strong> na działania ludzi lub
+                                        instytucji?<strong><br></strong><strong><br></strong><strong>W przypadku
+                                            odpowiedzi twierdzącej wnosimy o podanie listy takich system&oacute;w z
+                                            nazwą i funkcją.</strong><strong><br></strong><strong><br></strong><em><span
+                                                style="font-weight: 400;">Podpowiedź: systemy te mogą obejmować między
+                                                innymi:</span></em></p>
+                                    <ul>
+                                        <li><em><span style="font-weight: 400;">automatyczne systemy oceny lub
+                                                    klasyfikacji (np. kandydat&oacute;w do pracy, wniosk&oacute;w,
+                                                    pacjent&oacute;w, uczni&oacute;w),</span></em></li>
+                                        <li><em><span style="font-weight: 400;">narzędzia przewidujące ryzyka lub
+                                                    zachowania,</span></em></li>
+                                        <li><em><span style="font-weight: 400;">systemy analizujące dane w celu
+                                                    wspomagania decyzji,</span></em></li>
+                                        <li><em><span style="font-weight: 400;">narzędzia do rozpoznawania tekstu, mowy,
+                                                    obraz&oacute;w, film&oacute;w (np. analiza nagrań z kamer
+                                                    monitoringu)</span></em></li>
+                                        <li><em><span style="font-weight: 400;">chatboty lub wirtualni
+                                                    asystenci,</span></em></li>
+                                        <li><em><span style="font-weight: 400;">inne narzędzia wykorzystujące modele
+                                                    &bdquo;uczenia maszynowego&rdquo; lub &bdquo;sztucznej
+                                                    inteligencji&rdquo;.</span></em></li>
+                                    </ul>
+                                    <p><strong>Pytanie 2.</strong> Czy w organie istnieją <strong>wewnętrzne zasady lub
+                                            zalecenia </strong>dotyczące <strong>korzystania</strong> przez
+                                        pracownik&oacute;w z og&oacute;lnodostępnych narzędzi <strong>opartych na
+                                            sztucznej inteligencji</strong> &ndash; takich jak czaty i asystenci
+                                        tekstowi (np. ChatGPT, NotebookLM), generatory film&oacute;w (np. Sora), muzyki
+                                        (np. Suno AI) oraz inne narzędzia wykorzystujące sztuczną inteligencję
+                                        generatywną?</p>
+                                    <strong>W przypadku odpowiedzi twierdzącej wnosimy o podanie listy takich regulacji
+                                        wraz z datą rozpoczęcia obowiązywania.</strong>
+                                </div>
+                                <div>&nbsp;</div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            <section>
+                <details>
+                    <summary style="cursor: pointer; list-style: none; outline: none;">
+                        <h3>Kogo pytaliśmy? <span class="emoji">🗃️</span>
+                            <span style="font-size: 0.6em; color: #777; vertical-align: middle;">(kliknij, aby
+                                rozwinąć)</span>
+                        </h3>
+                    </summary>
+                    <p>Wnioski wysłaliśmy do 5480 instytucji, w tym:</p>
+                    <h3>do wszystkich (na moment badania):</h3>
+                    <ul>
+                        <li>2479 gmin (w tym miast na prawach powiatu)</li>
+                        <li>314 starostw powiatowych</li>
+                        <li>16 marszałków</li>
+                        <li>16 wojewodów</li>
+                        <li>19 ministerstw</li>
+                        <li>16 komend wojewódzkich policji</li>
+                        <li>1 komendy stołecznej policji</li>
+                        <li>319 sądów rejonowych</li>
+                        <li>47 sądów okręgowych</li>
+                        <li>11 sądów apelacyjnych</li>
+                        <li>16 wojewódzkich sądów administracyjnych</li>
+                        <li>46 prokuratur okręgowych</li>
+                        <li>16 wojewódzkich inspektorów nadzoru budowlanego</li>
+                        <li>16 wojewódzkich inspektoratów ochrony roślin i nasiennictwa</li>
+                        <li>16 wojewódzkich inspektoratów ochrony środowiska</li>
+                        <li>16 wojewódzkich inspektoratów transportu drogowego</li>
+                        <li>16 kuratoriów oświaty</li>
+                        <li>16 regionalnych dyrekcji ochrony środowiska</li>
+                        <li>17 regionalnych dyrekcji Lasów Państwowych</li>
+                        <li>16 regionalnych izb obrachunkowych</li>
+                        <li>16 oddziałów Narodowego Funduszu Zdrowia</li>
+                        <li>23 parków narodowych</li>
+                        <li>341 powiatowych urzędów pracy (w tym czterech miejskich i dwóch grodzkich)</li>
+                        <li>305 powiatowych inspektoratów weterynarii</li>
+                        <li>11 regionalnych zarządów gospodarki wodnej</li>
+                        <li>49 samorządowych kolegiów odwoławczych</li>
+                        <li>63 straży gminnych (z czego 3 okazały się zlikwidowane)</li>
+                        <li>380 straży miejskich</li>
+                        <li>135 uczelni publicznych</li>
+                        <li>16 uczelni kościelnych</li>
+                        <li>9 ośrodków dla cudzoziemców</li>
+                    </ul>
+                    <h3>do wybranych:</h3>
+                    <ul>
+                        <li>142 organów na szczeblu centralnym</li>
+                        <li>14 wojewódzkich urzędów skarbowych</li>
+                        <li>16 izb administracji skarbowej</li>
+                        <li>203 placówek opieki zdrowotnej (szpitali, lecznic i innych)</li>
+                        <li>243 spółek komunalnych</li>
+                        <li>4 samorządowych jednostek budżetowych</li>
+                        <li>10 zakładów budżetowych</li>
+                        <li>70 spółek skarbu państwa</li>
+                    </ul>
+                </details>
+            </section>
+            <section
+                id="responsywnosc-otwartosc-proces-pozyskiwania-informacji-czyli-jak-odpowiadaja-podmioty-zobowiazane"
+                class="content-section">
+                <h2>Responsywność, otwartość, proces pozyskiwania informacji, czyli jak odpowiadają podmioty
+                    zobowiązane?</h2>
+                <h3>Ministerstwa</h3>
+                <p>To, co warto najmocniej przywołać w tym miejscu, to fragment szczerej odpowiedzi z Ministerstwa
+                    Obrony Narodowej, że <i>rozwiązania AI stosowane są w wielu obszarach i systemach, o różnych
+                        <strong>klauzulach niejawności</strong></i>. Oznacza to bowiem, że owszem, wojsko wykorzystuje
+                    technologie oparte na AI, ale - zgodnie z przewidywaniami - najbardziej interesujące i potencjalnie
+                    kontrowersyjne szczegóły nie zostaną ujawnione opinii publicznej. Należy przy tym zauważyć, że
+                    konstrukcja klauzul niejawności w Polsce nie wymaga podawania daty obowiązywania (teoretycznie
+                    powinny być rewidowane co 5 lat) a ponadto nie posiadamy niezależnego organu, który mógłby w
+                    uproszczonym trybie (względem sądowej ścieżki odwoławczej) potwierdzić zasadność nałożenia danej
+                    klauzuli na wnioskowane informacje. Fakt, że Ministerstwo Obrony Narodowej przyjęło <a
+                        href="https://www.gov.pl/web/obrona-narodowa/resortowa-strategia-sztucznej-inteligencji-do-roku-2039"
+                        target="_blank" rel="noopener noreferrer">strategię rozwoju sztucznej inteligencji do roku
+                        2039</a> i jest to dokument publicznie dostępny, niewiele zmienia a wręcz przeciwnie, zapala
+                    czerwone lampki, bo napisano tam między innymi, że <i>wykorzystanie systemów sztucznej inteligencji
+                        w działaniach militarnych będzie dotyczyć m.in. <strong>autonomicznych systemów
+                            bojowych</strong>, które będą mogły prowadzić operacje bez bezpośredniego zaangażowania
+                        człowieka</i> (patrz str. 11 strategii). I chociaż ryzyka związane z wojskowymi zastosowaniami
+                    sztucznej inteligencji wydają się być w tym dokumencie dosyć wyczerpująco zdiagnozowane (patrz str.
+                    16), to przez praktyczny brak nie tylko społecznej, ale jakiejkolwiek zewnętrznej kontroli, ich
+                    mitygacja pozostanie tylko na papierze.</p>
+                <p>Ponadto nie odnotowaliśmy żadnej odpowiedzi z dwóch ministerstw: Ministerstwa Kultury i Dziedzictwa
+                    Narodowego oraz Ministerstwa Przemysłu (co akurat dziwnym nie jest, bo chwilę po naszym wniosku
+                    zostało zlikwidowane). W przypadku kilku innych nie wystarczyło wysłanie wniosku zwykłym mailem,
+                    trzeba było dosłać wersję elektronicznie podpisaną. Pozostałe odpowiadały mniej lub bardziej
+                    wyczerpująco. Ogólnie w dziesięciu przypadkach na siedemnaście odpowiedzi zaprzeczono
+                    wykorzystywaniu systemów AI. Odpowiedzi z siedmiu ministerstw były na tyle ciekawe - z takich, czy
+                    innych powodów - że eksplorowaliśmy temat dalej w kolejnej fazie badania i tam też zostaną szerzej
+                    opisane.</p>
+                <h3>Sądy powszechne</h3>
+                <p>Wiele spośród sądów rejonowych i okręgowych przywołało art. 31a§1a ustawy Prawo o ustroju sądów
+                    powszechnych, na podstawie którego za obsługę informatyczną odpowiedzialny jest stosowny dla danego
+                    obszaru sąd apelacyjny i tam sugerowało słać wnioski w takich sprawach. Niemniej jednak wiele sądów
+                    po prostu odpowiedziało wyczerpująco na pytania, niekiedy przy tym zaznaczając, że mogą nie mieć
+                    pełnej wiedzy. Jeszcze inne po prostu odpowiadały, nic nie wspominając o tym, że powinniśmy pytać
+                    sąd apelacyjny. I, co ważne, w wielu odpowiedziach wskazano jakieś rozwiązania oparte na AI, wśród
+                    nich chatbot Wirtualny asystent, czy transkrypcja mowy na tekst. Jednocześnie sądy apelacyjne
+                    gremialnie zaprzeczyły, by <i>w organie lub na jego zlecenie</i> wykorzystywano systemy AI w
+                    rozumieniu
+                    definicji z AI Act. Pozostaje zatem na ten moment kwestią otwartą, czy niektóre sądy rejonowe i
+                    okręgowe wdrażają jakieś rozwiązania informatyczne na własną rękę, czy raczej interpretacja systemu
+                    AI przez sądy apelacyjne jest wygodnie wąska, czy może sposób zadania pytania we wniosku pozwolił
+                    sądom apelacyjnym ograniczyć się w odpowiedzi stricte do siebie. Warto przy tym zauważyć, że w
+                    naszym pytaniu w zasadzie mieściło się wykorzystanie zewnętrznych narzędzi AI przez pracowników
+                    (<i>czy
+                        w organie […] <strong>są wykorzystywane</strong> systemy informatyczne…</i>), a w tym zakresie
+                    odsyłanie nas do sądu
+                    apelacyjnego nie miało sensu.</p>
+                <h3>Prokuratury</h3>
+                <p>Niemal wszystkie odpowiedzi z prokuratur okręgowych (40 z 44) zawierały po prostu zaprzeczenie
+                    korzystania
+                    z jakichkolwiek systemów AI. Wyjątkiem okazały się Prokuratura Okręgowa Warszawa-Praga i Prokuratura
+                    Okręgowa w Łodzi, które zasygnalizowały korzystanie z narzędzi wspomaganych AI (przy jednoczesnym
+                    braku wewnętrznych regulacji tego obszaru). Niemniej trudno uwierzyć, że nigdzie indziej to się nie
+                    dzieje, znacznie bezpieczniej przyjąć, że tego po prostu w odpowiedziach nie wykazywano. Z kolei
+                    Prokuratura Okręgowa w Radomiu oraz Prokuratura Okręgowa we Włocławku poinformowały, że
+                    administratorem sieci komputerowej wszystkich powszechnych jednostek organizacyjnych jest
+                    Prokuratura Krajowa (która odżegnuje się od wykorzystywania AI i nie posiada wewnętrznych
+                    regulacji).</p>
+                <h3>Ośrodki dla cudzoziemców</h3>
+                <p>Niewiele jest instytucji, które wcale nie odpowiadają na wnioski o informację, dlatego trudno nie
+                    pochylić się nad przypadkiem ośrodków dla cudzoziemców, ponieważ na dziewięć wysłanych wniosków nie
+                    otrzymaliśmy ani jednej (sic!) odpowiedzi. Z Ośrodka dla Cudzoziemców w Bezwoli przyszła
+                    automatyczna zwrotka, że nasza wiadomość z wnioskiem została przeczytana, w Ośrodku dla Cudzoziemców
+                    w Łukowie usunięto ją bez czytania, w przypadku pozostałych kompletna cisza, kamień w wodę.</p>
+                <h3>Niska responsywność</h3>
+                <p>Jest jeszcze kilka typów instytucji, które odpowiadają na wnioski wyraźnie niechętnie, poniżej
+                    średniej (a w przypadku tego konkretnego badania odpowiedziały trzy podmioty na cztery zapytane).
+                    Zazwyczaj ma
+                    to jakieś - mniej lub bardziej sensowne - wytłumaczenie, jak w przypadku straży miejskich i
+                    gminnych, które w większości przypadku stwierdzały, że odpowiedź w ich imieniu została implicite
+                    udzielona przez urząd, któremu podlegają, więc nie będą się powtarzać.</p>
+                <p>Z kolei przypadkiem, którego raczej trudno bronić, są placówki medyczne, odpowiadające w zaledwie
+                    jednym przypadku na trzy. Ponadto niektóre spośród instytucji medycznych niebędących szpitalami, jak
+                    np. Agencja Oceny Technologii Medycznych i Taryfikacji, czy Centrum e-Zdrowia (co więcej, w tych
+                    przypadkach chodzi o organy na szczeblu centralnym), również pozostawiały wniosek bez odpowiedzi (a
+                    przynajmniej takowa do nas nie dotarła). Dla równowagi doceńmy odpowiedzi z Agencji Badań Medycznych
+                    i Centrum Medycznego Kształcenia Podyplomowego, które jakkolwiek mało ciekawe z naszego punktu
+                    widzenia (sprowadzają się do wyliczenia różnych zewnętrznych narzędzi typu asystent), to jednak
+                    bardzo szczegółowe i zdradzające świadomość zagadnienia.</p>
+                <div>
+
+
+                    <section>
+                        <details>
+                            <summary style="cursor: pointer; list-style: none; outline: none;">
+                                <h3>Statystyka odpowiedzi według typu instytucji <span class="emoji">📋</span>
+                                    <span style="font-size: 0.6em; color: #777; vertical-align: middle;">(kliknij, aby
+                                        rozwinąć)</span>
+                                </h3>
+                            </summary>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Typ instytucji</th>
+                                            <th>Liczba wniosków</th>
+                                            <th>Liczba odpowiedzi</th>
+                                            <th>Odsetek odpowiedzi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Komendy wojewódzkie i stołeczna policji</td>
+                                            <td>17</td>
+                                            <td>17</td>
+                                            <td>100%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sądy administracyjne</td>
+                                            <td>17</td>
+                                            <td>17</td>
+                                            <td>100%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wojewodowie</td>
+                                            <td>16</td>
+                                            <td>16</td>
+                                            <td>100%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Regionalne izby obrachunkowe</td>
+                                            <td>16</td>
+                                            <td>16</td>
+                                            <td>100%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sądy apelacyjne</td>
+                                            <td>11</td>
+                                            <td>11</td>
+                                            <td>100%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Prokurartury okręgowe</td>
+                                            <td>46</td>
+                                            <td>44</td>
+                                            <td>96%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wojewódzkie inspektoraty ochrony środowiska</td>
+                                            <td>16</td>
+                                            <td>15</td>
+                                            <td>94%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Regionalne dyrekcje ochrony środowiska</td>
+                                            <td>16</td>
+                                            <td>15</td>
+                                            <td>94%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ministerstwa</td>
+                                            <td>19</td>
+                                            <td>17</td>
+                                            <td>89%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kuratoria oświaty</td>
+                                            <td>16</td>
+                                            <td>14</td>
+                                            <td>88%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Parki narodowe</td>
+                                            <td>23</td>
+                                            <td>20</td>
+                                            <td>87%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Miasta na prawach powiatu</td>
+                                            <td>66</td>
+                                            <td>56</td>
+                                            <td>85%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Starostwa powiatowe</td>
+                                            <td>314</td>
+                                            <td>265</td>
+                                            <td>84%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Uczelnie publiczne</td>
+                                            <td>135</td>
+                                            <td>113</td>
+                                            <td>84%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Regionalne dyrekcje Lasów Państwowych</td>
+                                            <td>17</td>
+                                            <td>14</td>
+                                            <td>82%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Samorządy gminne</td>
+                                            <td>2479</td>
+                                            <td>2027</td>
+                                            <td>82%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marszałkowie</td>
+                                            <td>16</td>
+                                            <td>13</td>
+                                            <td>81%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sądy rejonowe</td>
+                                            <td>319</td>
+                                            <td>256</td>
+                                            <td>80%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Samorządowe kolegia odwoławcze</td>
+                                            <td>49</td>
+                                            <td>39</td>
+                                            <td>80%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Powiatowe urzędy pracy</td>
+                                            <td>341</td>
+                                            <td>268</td>
+                                            <td>79%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Organy centralne</td>
+                                            <td>142</td>
+                                            <td>111</td>
+                                            <td>78%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Powiatowe inspektoraty weterynarii</td>
+                                            <td>305</td>
+                                            <td>233</td>
+                                            <td>76%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wojewódzcy inspektorzy nadzoru budowlanego</td>
+                                            <td>16</td>
+                                            <td>12</td>
+                                            <td>75%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wojewódzkie inspektoraty ochrony roślin</td>
+                                            <td>16</td>
+                                            <td>12</td>
+                                            <td>75%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Oddziały NFZ</td>
+                                            <td>16</td>
+                                            <td>12</td>
+                                            <td>75%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sądy okręgowe</td>
+                                            <td>47</td>
+                                            <td>35</td>
+                                            <td>74%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wojewódzkie inspektoraty transportu drogowego</td>
+                                            <td>16</td>
+                                            <td>11</td>
+                                            <td>69%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Samorządowe jednostki budżetowe</td>
+                                            <td>4</td>
+                                            <td>2</td>
+                                            <td>50%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Spółki komunalne</td>
+                                            <td>243</td>
+                                            <td>117</td>
+                                            <td>48%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Spółki skarbu państwa</td>
+                                            <td>70</td>
+                                            <td>32</td>
+                                            <td>46%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Straże miejskie</td>
+                                            <td>380</td>
+                                            <td>159</td>
+                                            <td>42%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zakłady budżetowe</td>
+                                            <td>10</td>
+                                            <td>4</td>
+                                            <td>40%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Regionalne zarządy gospodarki wodnej</td>
+                                            <td>11</td>
+                                            <td>4</td>
+                                            <td>36%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Szpitale</td>
+                                            <td>203</td>
+                                            <td>71</td>
+                                            <td>35%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Izby administracji skarbowej</td>
+                                            <td>16</td>
+                                            <td>5</td>
+                                            <td>31%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Straże gminne</td>
+                                            <td>60</td>
+                                            <td>18</td>
+                                            <td>30%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Uczelnie kościelne</td>
+                                            <td>16</td>
+                                            <td>4</td>
+                                            <td>25%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wojewódzkie urzędy skarbowe</td>
+                                            <td>14</td>
+                                            <td>1</td>
+                                            <td>7%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Otwarte ośrodki dla cudzoziemców</td>
+                                            <td>9</td>
+                                            <td>0</td>
+                                            <td>0%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </details>
+                    </section>
+
+                </div>
+                <h3>Odmowy udzielenia informacji z różnych powodów</h3>
+                <p>Odnotowaliśmy szereg wprost wyrażonych odmów udzielenia informacji. Są one oczywiście kroplą w morzu
+                    w porównaniu do zwykłego milczenia (wciąż brakuje odpowiedzi z blisko półtora tysiąca podmiotów),
+                    jednak istotne w przypadku potencjalnych odwołań od decyzji, czy skarg na bezczynność a także
+                    potencjalnie niebezpieczne, jako mogące stanowić zły przykład dla innych. Przykładowo Urząd Gminy
+                    Grodziec przywołując wyrok NSA (I OSK 7/14) stwierdził, że <i>dane techniczne dotyczące sposobu
+                        funkcjonowania systemu komputerowego informacją publiczną nie są. Stanowią jedynie techniczną
+                        sferę
+                        funkcjonowania narzędzia, jakim organ posługuje się realizując zadania</i>. Innymi słowy
+                    wykluczył tego
+                    typu kwestie z zakresu obowiązywania ustawy o dostępie do informacji publicznej. Z kolei dyrektor
+                    Izby Administracji Skarbowej we Wrocławiu nawet nie odczuwał potrzeby powoływania się na
+                    jakiekolwiek przepisy, po prostu arbitralnie stwierdził, że <i>Systemy informatyczne i dokumenty
+                        wewnętrzne tj. zalecenia służą wyłącznie usprawnieniu działalności podmiotu i poprawie
+                        funkcjonowania organu. Tym samym nie stanowią źródła informacji o sprawach publicznych, nawet
+                        gdy są
+                        one wykorzystywane do realizacji celów publicznych</i>. Wśród instytucji, które odmówiły
+                    podobnie
+                    argumentując znalazł się również Marszałek Województwa Zachodniopomorskiego.</p>
+                <p>Bardzo ważna jest też odpowiedź Agencji Bezpieczeństwa Wewnętrznego, która odmówiła udzielenia
+                    informacji, ponieważ uznała je za niejawne i chronione prawem. Podkreśliła przy tym, że prawo do
+                    informacji publicznej nie jest bezwzględne i może być ograniczone ze względu na bezpieczeństwo
+                    państwa a w tym przypadku żądane dane mają charakter informacji niejawnych, do których dostęp mają
+                    tylko osoby uprawnione, a wnioskodawca (czyli my) do nich nie należy. Dodatkowo nawet sama odpowiedź
+                    – niezależnie od jej treści – mogłaby zdaniem ABW ujawnić ich metody działania oraz zainteresowania
+                    operacyjne, co mogłoby zaszkodzić interesom państwa. Organ wskazuje też, że przepisy szczególne
+                    wprost zakazują ujawniania informacji o czynnościach operacyjnych, ich metodach i współpracownikach
+                    poza wyjątkowymi sytuacjami, które tutaj nie zachodzą. W konsekwencji ABW uznaje, że nie ma podstaw
+                    prawnych do udzielenia odpowiedzi. Odmowa ta i argumentacja jest o tyle ważna, że prowadzi do
+                    założenia, że jest co ukrywać, wszak gdyby systemy AI nie były stosowane wcale lub nie byłyby
+                    stosowane w związku z działaniami operacyjnymi, to nie byłoby powodu do odmowy.</p>
+                <p>Ponadto były sytuacje, w których zapytany podmiot uznał, że wnioskowana informacja jest informacją
+                    przetworzoną, czyli jest to jakościowo nowa informacja publiczna, która nie istnieje w gotowej
+                    formie w chwili wniosku, a powstaje poprzez analizę, zestawienie lub obróbkę danych źródłowych przez
+                    urząd, czyli wymaga zaangażowania dodatkowych sił, środków i pracy intelektualnej. W takiej sytuacji
+                    (o ile byłaby prawdziwa, tutaj brzmi absurdalnie) podmiot zobowiązany ma prawo zażądać uzasadnienia
+                    szczególnego interesu publicznego, co ignorowaliśmy, bo żądanie było w tym kontekście bezprawne (nie
+                    ma mowy o przetworzeniu), ale też dlatego, że ocena czy ów interes został skutecznie uzasadniony
+                    jest arbitralna i leży po stronie wzywającego do uzasadnienia. Takiego wytrychu użył na przykład
+                    Wojewódzki Szpital Zespolony w Kielcach, czy Akademia Sztuk Pięknych im. Władysława Strzemińskiego w
+                    Łodzi.</p>
+                <p>Jeszcze inny przypadek stanowią spółki komunalne, które - jak się można było spodziewać - sięgały po
+                    tajemnicę przedsiębiorstwa, jako pretekstu do nieudzielenia informacji. Przykładem jest krakowskie
+                    Miejskie Przedsiębiorstwo Wodociągów i Kanalizacji SA, <a
+                        href="https://fedrowanie.siecobywatelska.pl/sprawy/odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-5201"
+                        target="_blank" rel="noopener noreferrer">według którego</a> żądane przez nas informacje
+                    mają charakter strategiczny, a nieprawidłowe ich wykorzystanie mogłoby spowodować niewspółmierną
+                    szkodę dla interesów spółki.
+                    Podobnie Przedsiębiorstwo Wodociągów i Kanalizacji Sp. z o.o. w Koninie <a
+                        href="https://fedrowanie.siecobywatelska.pl/sprawy/odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-5264"
+                        target="_blank" rel="noopener noreferrer">stwierdziło</a>, że żądane
+                    informacje wykraczają poza pojęcie informacji publicznej i stanowią tajemnicę przedsiębiorstwa, a
+                    ujawnianie lub wykorzystywanie tajemnicy przedsiębiorstwa jest zabronione.
+                    Innymi słowy, gdyby traktować te słowa poważnie a nie tylko jako wygodny pretekst do legalnej odmowy
+                    udzielenia informacji, ww. spółki dysponują informacjami, które - gdyby zostały ujawnione - mogłyby
+                    się przyczynić do wzrostu jakości świadczenia usług komunalnych w Polsce (poprzez wykorzystanie ich
+                    przez spółki komunalne działające w innych gminach). Jednak pomimo tego i zapominając, że z racji
+                    swojej specyfiki mają uprzywilejowaną pozycję na rynku, dzięki której dysponują bezpośrednim i na
+                    wyłączność (w zakresie swojego działania) dostępem do portfeli mieszkańców, odmawiają udostępnienia
+                    informacji, snując opowieści o wyimaginowanej konkurencji.</p>
+                <h3>Uchylanie się od odpowiedzi</h3>
+                <p>Standardem jest, że część instytucji sektora publicznego, wciąż udaje, że nie jest podmiotem
+                    zobowiązanym do udostępniania informacji, o jakie wnioskujemy. Takim przypadkiem w tym badaniu
+                    okazał się między innymi Ubezpieczeniowy Fundusz Gwarancyjny, który - jak sam przyznaje - <i>jest
+                        osobą
+                        prawną wykonującą swoje zadania w ścisłych granicach ustawy z dnia 22 maja 2003 r. o
+                        ubezpieczeniach
+                        obowiązkowych, Ubezpieczeniowym Funduszu Gwarancyjnym i Polskim Biurze Ubezpieczycieli
+                        Komunikacyjnych (t.j. Dz. U. z 2025 r. poz. 367), w której m.in. wymieniono zakres gromadzonych
+                        przez Fundusz informacji oraz zamknięty katalog podmiotów, którym UFG może - w określonych
+                        sytuacjach - je udostępniać (przepisy zawarte w art. 102 i nast. ww. ustawy)</i>. Dalej
+                    stwierdza, że
+                    <i>informację publiczną stanowi informacja (...) wytworzona lub odnoszona do innych podmiotów
+                        wykonujących funkcje publiczne w zakresie wykonywania przez nie zadań władzy publicznej i
+                        gospodarowania mieniem komunalnym lub mieniem Skarbu Państwa. Tymczasem UFG, realizując swoje
+                        ustawowe obowiązki, nie gospodaruje mieniem komunalnym lub mieniem Skarbu Państwa. Mając na
+                        uwadze
+                        powyższe, uprzejmie informuję, iż na Funduszu nie ciąży obowiązek udostępniania informacji, o
+                        jakie
+                        Państwo zawnioskowali</i>. Zdania tego nie podzielił Wojewódzki Sąd Administracyjny w Warszawie,
+                    który
+                    rozpatrzył naszą skargę na bezczynność w tej sprawie, zobowiązując UFG do rozpoznania naszego
+                    wniosku o informację i zwrotu kosztów postępowania. Niestety w Polsce to niewiele znaczy, bo podmiot
+                    zobowiązany nadal może rozpoznać wniosek odmownie (pod byle pretekstem) lub odwołać się od wyroku do
+                    Najwyższego Sądu Administracyjnego (co oznacza kilka ładnych lat oczekiwania).
+                </p>
+                <p>Innym ciekawym przypadkiem okazała się niespodziewanie Wojskowa Akademia Techniczna, którą zacytujemy
+                    dosłownie (i bez korekty), żeby uniknąć zarzutu, że coś źle zrozumieliśmy: <i>proszę o przesłanie
+                        wiadomości w formie pisma ułatwi to przekazanie dokumentu do właściwej jednostki
+                        organizacyjnej</i>.
+                    Chodzi o wniosek, przypomnijmy, przesłany mailem. Podobnie mailem otrzymaliśmy cytowaną odpowiedź.
+                    Dlaczego do właściwej jednostki organizacyjnej nie można przesłać maila, tylko potrzeba - jak
+                    rozumiemy - papierowej wersji? Nie wiemy, odpuściliśmy temat.</p>
+                <p>Dyrektor Administracji Skarbowej w Lublinie na pytanie pierwsze odpowiedział, że nie jest
+                    właścicielem systemów teleinformatycznych wykorzystywanych w lzbie Administracji Skarbowej w
+                    Lublinie i podległych jednostkach organizacyjnych i tym samym nie jest właściwy do udzielenia
+                    odpowiedzi w powyższym zakresie. Niestety dyrektor zapomniał dodać, kto w takim razie tym
+                    właścicielem jest. Szczęśliwie bardziej wylewni byli jego koledzy z Krakowa i Olsztyna, którzy
+                    wskazali Ministerstwo Finansów i Centrum Informatyki Resortu Finansów. Niestety Ministerstwo okazało
+                    się niezbyt skore do dzielenia się wiedzą w zakresie wykorzystania AI w kontekście skarbowym, o czym
+                    piszemy dalej.</p>
+                <p>Należy tutaj także odnotować odpowiedzi z urzędów miejskich Gdyni i Kalisza, które odesłały nas do
+                    swoich centrów informatyki. Oznacza to, że mogą istnieć urzędy z podobną sytuacją, które jednak po
+                    prostu zignorowały wniosek, jako błędnie do nich skierowany.</p>
+                <p>Zaskakujące i oryginalne było stanowisko Agencji Bezpieczeństwa Wewnętrznego, bo ile odmowy na
+                    pytanie pierwsze, o korzystanie z systemów AI, poniekąd spodziewaliśmy się (ABW nie słynie z
+                    zamiłowania do jawności), o tyle zaskoczeniem było, że <i>odnośnie pytania nr 2 informacje, których
+                        dotyczy pytanie nie mają charakteru informacji publicznych, zawarte są w dokumentach
+                        wewnętrznych i
+                        nie podlegają udostępnieniu na zasadach określonych w UDIP</i>. Czyli zasłona znanym nam dobrze
+                    skądinąd, ale nie mającym faktycznego oparcia w przepisach pojęciem <i>dokumentu wewnętrznego</i>. O
+                    tyle
+                    dziwne, że pytanie o wewnętrzne zasady lub zalecenia dotyczące korzystania przez pracowników z
+                    ogólnodostępnych narzędzi opartych na sztucznej inteligencji wydaje się raczej niegroźne.</p>
+                <p>Jeszcze inna sytuacja na przykładzie urzędu gminy Konstancin-Jeziorna (było więcej takich), który w
+                    pierwsze tempo odpisał, że <i>wnioskowane informacje zostały wyłączone inną ustawą, bo mogą mieć
+                        znaczenie z punktu widzenia bezpieczeństwa systemów teleinformatycznych — w szczególności w
+                        kontekście ich konfiguracji, funkcjonalności oraz potencjalnych podatności. W związku z
+                        powyższym,
+                        na podstawie art. 37 ust. ustawy z dnia 5 lipca 2018 r. o krajowym systemie cyberbezpieczeństwa
+                        (Dz.U. z 2023 r. poz. 913), szczegóły dotyczące wykorzystywanych narzędzi, ich nazw, funkcji
+                        oraz
+                        ewentualnego udziału mechanizmów sztucznej inteligencji w procesach organizacyjnych, zostały
+                        uznane
+                        za informacje wyłączone z dostępu do informacji publicznej</i>. Co ciekawe urząd nie
+                    odpowiedział z
+                    rozpędu nawet na drugie pytanie, chociaż pozostawało przecież bez związku z podanym uzasadnieniem
+                    odmowy. Odwołaliśmy się i na skutek wyroku Wojewódzkiego Sądu Administracyjnego z dnia 25 lutego
+                    2026 r., sygn. II SAB/Wa 912/25, który zobowiązał urząd do rozpatrzenia wniosku, uzyskaliśmy
+                    odpowiedzi. Jest tu jednak dość duże ale. Otóż warto zauważyć, że odpowiedź z urzędu nie zawiera w
+                    gruncie rzeczy niczego, co by miało ścisły związek z bezpieczeństwem systemów teleinformatycznych -
+                    żadne z trzech wymienionych przez urząd narzędzi AI do tego nie służy. Co więcej, istnieje wiele
+                    narzędzi wspomagających bezpieczeństwo teleinformatyczne z użyciem rozwiązań wykorzystujących
+                    sztuczną inteligencję, co wiemy chociażby z odpowiedzi od innych instytucji. Zachodzi więc
+                    podejrzenie, że urząd poniekąd zmuszony przez sąd do odpowiedzi, postanowił udzielić odpowiedzi
+                    niejawnie niepełnej. Z jednej strony wydaje się to poniekąd uzasadnione, z drugiej, wobec braku
+                    realnej kontroli nad tym, stanowi niebezpieczną furtkę.</p>
+                <p>Wydaje się też, że za unik (bądź przeoczenie, co ostatecznie na jedno wychodzi) można uznać odpowiedź
+                    miasta Katowice, które za pierwszym razem nie wspomniało o znanym nam skądinąd systemie Katowickiego
+                    Inteligentnego Systemu Monitoringu i Analizy, w którym </i>działa komponent odpowiedzialny za
+                    analizę
+                    materiału wideo z kamer miejskiego monitoringu. (...) Platforma w sposób ciągły analizuje strumień
+                    wideo i generuje informacje (metadane) opisujące obrazy z kamery. Na podstawie tych metadanych są
+                    generowane alerty dot. zdarzeń, które w systemie zostały zdefiniowane jako potencjalne niebezpieczne
+                    lub wymagają zainteresowania operatora monitoringu. Następnie operator na podstawie analizy alertu
+                    podejmuje dalsze czynności związane z jego obsługą</i>. W toku dalszej korespondencji z tym
+                    związanej
+                    Katowice wyjaśniały, że pierwotny brak wskazania tego systemu wynikał z faktu, że wiedza o nim jest
+                    publicznie dostępna i zamieszczona w BIP-ie urzędu. Taka sytuacja nie zwalnia jednak urzędu z
+                    obowiązku odniesienia się w odpowiedzi, choćby zdawkowego, do źródeł publicznych.</p>
+                <h3>Rozmycie definicji</h3>
+                <p>Chociaż niektórzy w ramach definicji systemu AI zaproponowanej przez AI Act jak najbardziej widzą
+                    również systemy oparte na tradycyjnych sieciach neuronowych, czy innych modelach z rodziny tzw.
+                    machine learning (ML), to nie wydaje się, żeby istniała co do tego zgoda. A to oznacza, że o wielu
+                    ciekawych systemach wykorzystywanych do w jakimś stopniu zautomatyzowanego podejmowania decyzji
+                    dotyczących obywateli, a więc mających na nich bardzo istotny wpływ, nie dowiedzieliśmy się z
+                    naszego badania ze względu na tego typu różnice interpretacyjne. Możemy się tego domyślać między
+                    innymi na podstawie odpowiedzi z Zakładu Ubezpieczeń Społecznych, który w pierwszym odruchu ujawnił
+                    korzystanie z narzędzia informatycznego, opartego o działanie modelu predykcyjnego i służącego
+                    systemowej analizie danych z wystawionych zaświadczeń lekarskich o czasowej niezdolności do pracy.
+                    Jednak na kolejny wniosek, w którym pytaliśmy o więcej szczegółów wykorzystywanych systemów AI, ww.
+                    narzędzie się nie pojawiło. Dopiero, kiedy ponowiliśmy pytania, wprost wskazując, że oczekujemy
+                    odpowiedzi w kontekście owego narzędzia do analizy zaświadczeń lekarskich, otrzymaliśmy część
+                    odpowiedzi, nadal jednak z zastrzeżeniem, że ZUS jednak nie uważa tego systemu za AI w rozumieniu
+                    definicji z AI Act.</p>
+                <p>Innym podobnym przykładem jest zdefiniowany ustawowo (Ordynacja podatkowa i inne ustawy) system STIR,
+                    na temat którego informacji nie chce udzielać ani Ministerstwo Finansów, ani zajmująca się nim
+                    Krajowa Izba Rozliczeniowa, a tymczasem z uwagi na funkcje, które realizuje (między innymi
+                    wyliczanie wskaźnika ryzyka, będącego podstawą do blokowania kont podatników), trudno uwierzyć, że
+                    nie korzysta z technologii mieszczących się w definicji AI z AI Act. Jednocześnie nie możemy tego z
+                    całą pewnością wykazać, bo nikt nie chce o tym rozmawiać. I koło się zamyka.</p>
+                <p>Z drugiej strony wiele urzędów podawało w odpowiedzi takie systemy, jak rozwiązania do transkrypcji
+                    nagrań z sesji, systemy rozpoznawania tablic rejestracyjnych, czy nawet funkcje OCR stosowane do
+                    zeskanowanych dokumentów. Widać więc szeroką rozpiętość w rozumieniu definicji. Ponadto wiele
+                    urzędów zdawało się wymieniać po prostu szereg stosowanych w urzędzie systemów informatycznych, nie
+                    rozważając, czy zaliczają się systemów AI, jakby woleli bezpieczniej podać wszystko, zamiast męczyć
+                    się z interpretacją i narażać na jej podważanie.</p>
+                <p>Podsumowując, wygląda na to, że istotnie niebezpieczne i szkodliwe zastosowania sztucznej
+                    inteligencji w obecnym stanie prawnym i praktycznym w Polsce bez trudu można ukryć za zasłoną
+                    milczenia lub parawanem tajności, uzasadniając to pozbawioną jakichkolwiek szczegółów wzmianką o
+                    względach bezpieczeństwa, bądź przyjmując wygodnie wąską interpretację systemu AI. Ponadto obecne
+                    polskie władze wydają się nie tylko nie mieć żadnych skrupułów przed militarnym użyciem AI, ale
+                    nawet wydają się tym szczycić. A przy tym nie ma powodów sądzić, że wobec własnych obywateli
+                    stosowane jest odmienne podejście, chociaż w tym przypadku z oczywistych względów nie ma co liczyć
+                    na to, że zostanie to głośno powiedziane. Dlatego ważne jest doprecyzowanie zakresu definicji
+                    systemu AI, powstanie i utrzymywanie publicznego rejestru systemów AI w administracji publicznej
+                    oraz wymóg oznaczania treści wytworzonych z udziałem AI. Każdy z tych wątków jest obecnie
+                    przedmiotem prac i dyskusji zarówno na forum krajowym, jak i europejskim, w tym z naszym i naszych
+                    partnerów udziałem.</p>
+            </section>
+            <section id="kto-i-do-czego-wykorzystuje-ai" class="content-section">
+                <h2>Kto i do czego wykorzystuje AI?</h2>
+                <p>Z 5480 instytucji, do których wysłaliśmy wniosek, odnotowaliśmy odpowiedzi od 4042 (74%). Spośród
+                    otrzymanych odpowiedzi 9% zawierało deklarację używania sztucznej inteligencji, przy czym istnieją
+                    istotne statystycznie różnice w adopcji tej technologii między różnymi typami instytucji bądź gmin.
+                    Przykładowo średnia dla gmin wyniosła 8%, ale jeśli weźmiemy same miasta na prawach powiatu, to tam
+                    jest to 34%. Wyraźnie wyższa od średniej adopcja tej technologii wydaje się cechować też między
+                    innymi organy centralne (20%), czy policję na szczeblu wojewódzkim (przynajmniej 18%), czy starostwa
+                    powiatowe (14%).</p>
+                <p>Patrząc całościowo na jednostki samorządu terytorialnego i konfrontując to z danymi z raportu
+                    Ministerstwo Cyfryzacji <a
+                        href="https://www.gov.pl/web/ai/wdrazanie-technologii-w-samorzadach---raport-z-badania"
+                        target="_blank" rel="noopener noreferrer">opublikowanego</a> w październiku 2023 roku,
+                    gdzie 5% spośród udzielających odpowiedzi w badaniu zadeklarowało używanie sztucznej inteligencji,
+                    to - jak się można było spodziewać - widać wzrost, bo w naszym badaniu odsetek zbiorczy takich JST
+                    wyniósł 9%. Warto przy tym zauważyć, że część urzędów podeszła drobiazgowo do tego pytania,
+                    wymieniając wśród systemów AI również na przykład oprogramowanie typu OCR.</p>
+                <p>Na drugim biegunie znajduje się rzesza urzędów zdecydowanie odżegnujących się od korzystania z AI i
+                    jednocześnie przyznających się do braku wewnętrznych regulacji w tym zakresie (pytanie 2). Zważywszy
+                    na dostępność narzędzi opartych na AI i coraz powszechniejsze ich wykorzystywanie przez zwykłych
+                    użytkowników, taka postawa wydaje się co najmniej bagatelizowaniem sytuacji. Potwierdzeniem tego
+                    jest raport NASKu “AI w e-administracji publicznej”, w którym znajdziemy informację, że w celach
+                    zawodowych w ciągu ostatnich 6 miesięcy (czyli z grubsza w drugiej połowie roku 2025) 46% urzędników
+                    korzystało z generatywnej sztucznej inteligencji.</p>
+                <p>W szczególności w powyższym kontekście warto przywołać przypadki gmin Wyryki (woj. lubelskie, pow.
+                    włodawski), Jarocin (woj. podkarpackie, pow. niżański) i Pysznica (woj. podkarpackie, pow.
+                    stalowowolski), które unisono zaprzeczyły korzystaniu z systemów AI oraz zaprzeczyły lub się nie
+                    odniosły do pytania o posiadanie regulacji w tym zakresie. Jednocześnie dysponujemy odmownymi
+                    decyzjami wydanymi przez te gminy w czasie od kilku do kilkunastu dni od udzielenia przez nie
+                    odpowiedzi na nasz wniosek, które powstały najprawdopodobniej z udziałem systemów AI, ponieważ
+                    zawierają halucynowane przepisy oraz inne cechy na to wskazujące, jak nieuzupełnione tagi, np.
+                    “gmina [nazwa]”.</p>
+                <p>Wspomniane już Ministerstwo Obrony Narodowej przyznało się do korzystania z systemów wykorzystujących
+                    biometrię i technologię rozpoznawania twarzy. Ponadto w Dowództwie Komponentu Wojsk Obrony
+                    Cyberprzestrzeni (DKWOC) wykorzystywane są różne modele AI do realizacji zadań, w tym np. do analizy
+                    obrazów satelitarnych czy przetwarzania tekstu. A w Wojsku Polskim powstaje Centrum Implementacji
+                    Sztucznej Inteligencji, które zostanie utworzone w ramach Dowództwa Komponentu Wojsk Obrony
+                    Cyberprzestrzeni.</p>
+                <p><i>W Zakładzie Ubezpieczeń Społecznych (ZUS, Zakład) jest wykorzystywane narzędzie informatyczne
+                        oparte
+                        o działanie modelu predykcyjnego, służące systemowej analizie danych z wystawionych zaświadczeń
+                        lekarskich o czasowej niezdolności do pracy. Narzędzie to wspomaga wykonywanie ustawowo
+                        określonych
+                        zadań związanych z kontrolą orzecznictwa o czasowej niezdolności do pracy.</i></p>
+                <p><i>W procesie kontroli zaświadczeń lekarskich Zakład wykorzystuje systemową analizę ryzyka (tj.
+                        analiza
+                        rozszerzonego zakresu danych, które mogą wskazywać na prawdopodobieństwo wystąpienia
+                        nieprawidłowości w wystawieniu zaświadczenia lekarskiego). Zaświadczenie lekarskie o czasowej
+                        niezdolności do pracy wpływające do ZUS poddawane jest takiej analizie, i w jej wyniku określone
+                        zostaje prawdopodobieństwo (w postaci wartości scoringowej) wystąpienia nieprawidłowości
+                        związanych
+                        z jego wystawieniem. Wynik analizy systemowej wykonanej przez narzędzie informatyczne jest
+                        udostępniany lekarzom wykonującym zadania związane z kontrolą orzekania o czasowej niezdolności
+                        do
+                        pracy. Jest to jeden z możliwych elementów uwzględnianych w merytorycznej ocenie stanu
+                        faktycznego
+                        sprawy, odnoszącej się do przesłanek podjęcia kontroli.</i></p>
+                <p><i>Należy jednak zaznaczyć, że opisywane narzędzie nie typuje zaświadczeń lekarskich do kontroli.
+                        Każdorazowo decyzja o podjęciu kontroli zaświadczenia lekarskiego (wytypowanie go do kontroli)
+                        podejmowana jest przez głównego lekarza orzecznika po całościowej analizie dostępnych
+                        informacji, a
+                        w szczególności przesłanek medycznych podjęcia kontroli, w tym także jeśli było to zasadne, po
+                        ocenie wskazania narzędzia analitycznego.</i></p>
+                <p>Wśród typów instytucji, które zapytaliśmy wybiórczo, znalazły się placówki medyczne. Wnioski
+                    wysłaliśmy do 203 z nich, głównie szpitali wojewódzkich. Z tego typu placówek odsetek odpowiedzi był
+                    relatywnie niski: odpowiedziało ledwie 71 spośród nich, a więc około 35% (dla porównania w przypadku
+                    gmin ten odsetek przekracza zwykle 80% a w tym badaniu wyniósł 82%). Zaskakująca większość - 66 (93%
+                    odpowiedzi) - zanegowała stosowanie systemów sztucznej inteligencji w rozumieniu AI Act, co jest o
+                    tyle dziwne, że w zastosowaniach medycznych, chociażby przy diagnostyce obrazowej, rozwiązania
+                    oparte na sztucznej inteligencji stosowane są od wielu lat i są starsze niż przełom w generatywnej
+                    AI. Wydaje się, że może to wynikać z braku świadomości lub niechęci do spełniania ewentualnych
+                    nowych obowiązków. Tylko 5 placówek przyznało się do stosowania AI i były to właśnie obszary
+                    związane z diagnostyką obrazową. Dodatkowo jedna z tych odpowiedzi zawierała wzmiankę o voicebocie
+                    używanym w procesie rejestracji wizyt pacjentów. W tym kontekście szczególnie wartościowa jest
+                    odpowiedź Marszałka Województwa Lubuskiego, który - wykraczając w zasadzie poza ściśle rozumiany
+                    zakres wniosku - napisał o realizacji projektu wsparcia diagnostyki i medycyny przez SI (<i>MedBrain
+                        L</i>), w ramach którego zaimplementowano wytworzone rozwiązania w 3 jednostkach ochrony zdrowia
+                    w
+                    regionie.</p>
+                <p>Patrząc zbiorczo na zebrane odpowiedzi, pomimo badania zakrojonego na tak szeroką skalę, nie udało
+                    się zidentyfikować potencjalnie niebezpiecznych zastosowań systemów AI, o których nie wiedzielibyśmy
+                    już wcześniej (jak STIR w KIR, czy system typujący podejrzane zwolnienia lekarskie w ZUS). Zamiast
+                    tego ujawniły się bariery w dostępie do informacji w tym zakresie, tym silniejsze im potencjalnie
+                    bardziej niebezpieczne w kontekście praw człowieka może być zastosowanie AI w danym obszarze (np.
+                    militarnym).</p>
+                <p>Na podstawie otrzymanych odpowiedzi możemy wyróżnić rozmaite obszary zastosowania AI w polskiej
+                    administracji i pozostałych instytucjach realizujących zadania publiczne. Większość z nich wiąże się
+                    z wykorzystaniem zewnętrznych narzędzi, często na poziomie zwykłej aplikacji, nie zaś budowaniem
+                    własnych rozwiązań, czy stawianiem potężnych systemów mocno opartych na AI. Wyjątki dotyczą organów
+                    na szczeblu centralnym, których zasoby pozwalają na sfinansowanie projektów o odpowiednio dużej
+                    skali. Oto, jakie obszary zastosowań AI wyłoniły się z otrzymanych odpowiedzi:</p>
+                <div class="topic-card">
+                    <h3>1. Mowa, nagrania i spotkania 🎤</h3>
+                    <p>Obejmuje wykorzystanie AI do przetwarzania wypowiedzi ustnych i materiałów audio-wideo. Chodzi
+                        przede wszystkim o transkrypcję (najczęściej sesji rady), tworzenie napisów, streszczanie
+                        spotkań i obrad, przygotowywanie notatek oraz poprawę dostępności nagrań, np. przez syntezę
+                        mowy, tłumaczenie czy audiodeskrypcję. Zastosowania te są stosunkowo bezpieczne, dopóki: dotyczą
+                        materiałów jawnych, publicznie i bezwnioskowo dostępnych, są w miarę możliwości weryfikowane i
+                        poprawiane przez człowieka (niektóre urzędy to podkreślały); zawierają wyraźne oznaczenie
+                        wskazujące na sposób wygenerowania oraz nie służą jako podstawa do podejmowania decyzji.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>2. Dokumenty, tekst i wiedza 📚</h3>
+                    <p>W tej grupie mieszczą się zastosowania związane z opracowywaniem, analizą i porządkowaniem treści
+                        pisemnych. AI służy tu do redagowania i streszczania tekstów, wyszukiwania informacji w
+                        dokumentach, ekstrakcji danych, anonimizacji, OCR oraz wspomagania pracy z pismami,
+                        korespondencją i dokumentacją prawną. Szczególnie niebezpieczna wydaje się ta ostatnia sytuacja,
+                        ze względu na wciąż powszechne halucynacje dużych modeli językowych w tego typu zastosowaniach.
+                    </p>
+                </div>
+                <div class="topic-card">
+                    <h3>3. Obsługa mieszkańców, klientów i użytkowników 🤖💬</h3>
+                    <p>To zastosowania, w których AI pełni funkcję pierwszej linii kontaktu z użytkownikiem. Obejmuje to
+                        chatboty i voiceboty udzielające informacji, pomagające znaleźć właściwą usługę, umawiać wizyty,
+                        sprawdzać status spraw lub odpowiadać na pytania mieszkańców, pacjentów, studentów czy
+                        przedsiębiorców. Stosunkowo bezpieczny obszar, w którym korzyści wydają się z nawiązką
+                        przewyższać ryzyka. Ważne, żeby użytkownik miał pełną świadomość, z czym ma do czynienia oraz
+                        łatwą i zawsze dostępną opcję kontaktu z człowiekiem, bez utraty ciągłości i kontekstu rozmowy.
+                    </p>
+                </div>
+                <div class="topic-card">
+                    <h3>4. Komunikacja, promocja i treści kreatywne 📣</h3>
+                    <p>Kategoria dotyczy tworzenia i obróbki treści komunikacyjnych oraz promocyjnych. AI jest tu
+                        wykorzystywana do generowania grafik, prezentacji, materiałów do mediów społecznościowych,
+                        wideo, muzyki i innych form przekazu, a także do poprawy jakości i adaptacji treści do różnych
+                        kanałów. Najpoważniejsze ryzyka w tym obszarze wiążą się z wątpliwościami natury
+                        prawnoautorskiej, więc nie dotyczą bezpośrednio osób ani decyzji, chociaż oczywiście nadal
+                        powinny być starannie mitygowane.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>5. Programowanie i praca techniczna 🧑‍💻</h3>
+                    <p>AI coraz powszechniej wspiera pracę informatyków i osób technicznych przy tworzeniu oraz
+                        utrzymaniu systemów informatycznych. Odnotowane zastosowania obejmują między innymi generowanie
+                        i analizę kodu, debugowanie, pracę z dokumentacją techniczną, automatyzację zadań serwisowych,
+                        czy wsparcie przy projektowaniu aplikacji. Pomimo związanych z tym ryzyk, wydaje się że trend
+                        jest bardzo silny i niemożliwy do powstrzymania. Ponadto AI stanowi tu taki sam rodzaj
+                        narzędzia, jak młotek i tak samo jak mniej istotne od samego młotka jest to, co się udało (lub
+                        nie) zrobić przy jego pomocy, tak i tutaj istnieją stosowne metodyki wytwarzania oprogramowania,
+                        których przestrzeganie gwarantuje odpowiednią jakość końcowego produktu.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>6. Analityka i wsparcie decyzyjne ⚖️</h3>
+                    <p>Ta grupa obejmuje użycie AI do analizowania danych i wspierania decyzji operacyjnych, zarządczych
+                        lub strategicznych. W arkuszu pojawiają się tu raportowanie, prognozowanie, identyfikowanie
+                        trendów, analiza ryzyka, monitorowanie zjawisk oraz predykcyjne utrzymanie infrastruktury i
+                        urządzeń. Wrażliwy obszar z jednej strony, z drugiej w części deklarowanych tutaj zastosowań
+                        niekoniecznie wykorzystywano sztuczną inteligencję wykraczającą poza ściśle zdefiniowane reguły.
+                        Tak, czy owak, jest to obszar bardzo delikatny, bo bliski decyzjom wprost wpływającym na ludzi i
+                        ich otoczenie. Jednocześnie powszechność narzędzi AI sprawia, że trudno tutaj o realną społeczną
+                        kontrolę każdego ich wykorzystania, z konieczności trzeba się skupić na systemowych
+                        rozwiązaniach, takich jak typowanie zwolnień lekarskich do kontroli, czyli - na początek - na
+                        wymuszeniu ujawniania takich sytuacji. Na dzień dzisiejszy wydaje się, że majaczący na
+                        horyzoncie kolejny etap wdrożenia AI Act powoduje paradoksalnie większą niechęć do jawności, bo
+                        stosowanie tego typu rozwiązań oznacza szereg obowiązków do spełnienia i koniecznych ograniczeń.
+                        Wygodnie jest więc z perspektywy urzędu udawać, że dane rozwiązanie nie jest oparte na sztucznej
+                        inteligencji w rozumieniu ww. regulacji.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>7. Rekrutacja, edukacja i nauka 🎓</h3>
+                    <p>W tej kategorii AI wspiera procesy związane z naborem, kształceniem i działalnością badawczą.
+                        Obejmuje to m.in. analizę formularzy rekrutacyjnych i CV, tworzenie materiałów dydaktycznych i
+                        pytań testowych, wyszukiwanie publikacji, ocenę prac oraz narzędzia do wykrywania plagiatu i
+                        użycia AI (przykładem używany przez uczelnie wyższe Jednolity System Plagiatowy). Wiele z tych
+                        zastosowań zasługuje na bliższe przyjrzenie się, ponieważ wiążą się z podejmowaniem decyzji w
+                        odniesieniu do zwykłych osób. Tak drobne, jak może się wydawać, zastosowanie sztucznej
+                        inteligencji, jakim jest chociażby preselekcja CV w rekrutacji, rodzi gigantyczne ryzyka w
+                        kontekście oczywistych i dobrze przebadanych uprzedzeń modeli językowych. Tym bardziej, że osoba
+                        której CV pominięto, raczej nie otrzyma informacji zwrotnej: <i>Twoje CV zostało odrzucone przez
+                            AI</i>, co dawałoby szansę na przynajmniej odwołanie a w szerszym kontekście na ujawnienia
+                        uprzedzenia modelu skutkujące masowym dyskryminującym odrzucaniem dobrych CV.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>8. Obraz, monitoring, geodezja i środowisko 📹</h3>
+                    <p>Są to zastosowania oparte na analizie obrazu, nagrań lub danych przestrzennych. AI służy tu do
+                        rozpoznawania obiektów, tablic i twarzy, analizy monitoringu (wykrywanie określonych zdarzeń),
+                        przetwarzania zdjęć satelitarnych, wspierania geodezji, monitorowania przyrody oraz oceny
+                        procesów zachodzących w przestrzeni publicznej i środowisku. I o ile zastosowania w odniesieniu
+                        do monitorowania środowiska wydają się relatywnie bezpieczne, to już te dotyczące ludzi wymagają
+                        dużej ostrożności. Przykładowo, jaką mamy kontrolę nad danymi: czy są przetwarzane lokalnie, czy
+                        wysyłane na serwery dostawcy usługi? Czy sposób wykorzystywania tych danych, zakres i czas
+                        przechowywania jest zgodny z prawem, czy prywatność jest przy tym poszanowana?</p>
+                </div>
+                <div class="topic-card">
+                    <h3>9. Zdrowie i diagnostyka 🩺</h3>
+                    <p>Ta kategoria dotyczy zastosowań medycznych i okołomedycznych. AI wspiera tu analizę badań
+                        obrazowych, wykrywanie nieprawidłowości, ocenę zmian chorobowych i poprawę jakości diagnostyki.
+                        Istnieje wiele wątpliwości związanych z jakością rozwiązań w tym obszarze i pomimo dużego
+                        postępu nadal wydaje się niezbędnym angażowanie człowieka w proces każdej jednej diagnozy. Tak
+                        jak w wielu podobnych przypadkach, niezbędnym minimum wydaje się skuteczne informowanie osób o
+                        zakresie, w jakim zastosowano sztuczną inteligencję, do diagnozy ich przypadku, a żaden
+                        scenariusz procesu diagnozy w placówce medycznej nie powinien dopuszczać pełnego oparcia w AI.
+                    </p>
+                </div>
+                <div class="topic-card">
+                    <h3>10. Cyberbezpieczeństwo i bezpieczeństwo IT 🛡️</h3>
+                    <p>W tej grupie AI jest wykorzystywana do ochrony systemów, sieci i danych. Obejmuje to wykrywanie
+                        anomalii, analizę incydentów, ochronę poczty, monitorowanie ruchu sieciowego, identyfikację
+                        zagrożeń, klasyfikację złośliwych plików oraz wspomaganie reagowania na zdarzenia
+                        bezpieczeństwa. Pod względem praw człowieka są to rozwiązania w zasadzie neutralne, nie wiążą
+                        się z decyzjami bezpośrednio dotyczącymi obywateli. Ich jakość i bezpieczeństwo to kwestie
+                        odrębne - ważne, ale wykraczające poza zakres naszych kompetencji.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>11. Inne wyspecjalizowane zastosowania administracyjne i sektorowe 🧩</h3>
+                    <p>To kategoria zbiorcza dla szczególnych, branżowych lub jednostkowych zastosowań, które nie tworzą
+                        osobnego bloku tematycznego. Obejmuje ona m.in. wsparcie rozliczeń, podatków, konsultacji
+                        społecznych, analiz patentowych, wykrywania ryzyk w ofertach internetowych czy modeli
+                        predykcyjnych w specyficznych procesach instytucjonalnych.</p>
+                </div>
+            </section>
+            <section id="co-wynika-z-odpowiedzi-na-pytanie-2" class="content-section">
+                <h2>Co wynika z odpowiedzi na pytanie 2</h2>
+                <p>Świadomość powszechności narzędzi AI (pośrednio wynikająca z odpowiedzi na pierwsze pytanie wniosku)
+                    w gminach nie idzie w parze z tworzeniem wewnętrznych regulacji w tym zakresie (odpowiedzi na drugie
+                    pytanie z wniosku). W samorządach gminnych jedynie 20 na 2027 odnotowanych odpowiedzi było
+                    twierdzących na drugie pytanie. Przy czym z tych 20 aż 7 i tak dotyczyło miast na prawach powiatu,
+                    zatem w <i>zwykłych</i> gminach odsetek posiadających własne regulacje wyniósł grubo poniżej 1%. I
+                    generalnie wśród zapytanych rozmaitych innych typów instytucji wiele było takich, wśród których ani
+                    jeden podmiot nie wypracował własnych zasad korzystania z AI. Spośród placówek medycznych na 71
+                    uzyskanych odpowiedzi twierdząca była tylko jedna: z Wojewódzkiego Szpitala Specjalistycznego Nr 5
+                    im. św. Barbary w Sosnowcu, a wprowadzone przez nich zasady sprowadzają się do zakazu korzystania z
+                    ww. narzędzi.</p>
+                <p>Na drugim biegunie znalazły się ministerstwa, uczelnie i spółki skarbu państwa, gdzie ta potrzeba
+                    jest wyraźnie wyższa. Narodowy Fundusz Zdrowia i jego oddziały (a także, sporadycznie, inne
+                    instytucje) z kolei twierdziły, że dostęp do zewnętrznych narzędzi AI jest u nich całkowicie
+                    blokowany na poziomie urządzeń teleinformatycznych, co też można uznać za formę regulacji
+                    (jakkolwiek drastyczną).</p>
+                <p>Najbardziej bodaj dojrzałe podejście w tym obszarze wykazywały (na moment badania, mogło się to
+                    zmienić) uczelnie. Wiele spośród nich ustanowiło zasady korzystania z narzędzi AI, zarówno dla
+                    pracowników, jak i studentów - przy czym czasem są to osobne dokumenty. Niektóre nawet powołały w
+                    tym celu specjalne ciała, np. rektor Uniwersytetu Szczecińskiego powołał Komisję ds. stosowania
+                    narzędzi SI w Uniwersytecie Szczecińskim, która opracowała zbiór dobrych praktyk dla pracowników i
+                    studentów.</p>
+                <p>Zauważalna grupa instytucji deklarowała, że trwają u nich mniej lub bardziej zaawansowane prace nad
+                    wewnętrznymi regulacjami. Jeszcze inne twierdziły, że przepisy związane z ochroną danych osobowych
+                    (na przykład RODO, albo przyjęte polityki), czy ogólniej bezpieczeństwem (na przykład wdrożone w
+                    wielu miejscach Systemy Zarządzania Bezpieczeństwem Informacji), już regulują wykorzystanie
+                    zewnętrznych narzędzi AI. W pewnym sensie i w pewnym zakresie jest to prawda, ale czy to wystarcza?
+                    Czy to skutecznie mityguje wszystkie ryzyka związane z nieumiejętnym wykorzystaniem AI? Wszak nawet
+                    jeśli z istniejących regulacji i przepisów prawa dotyczących ochrony prywatności czy bezpieczeństwa
+                    danych wynika pośrednio zakaz korzystania z zewnętrznych narzędzi AI (np. w kontekście wprowadzania
+                    do nich danych wrażliwych), to nasuwa się pytanie, czy pracownicy danego podmiotu mają tego
+                    świadomość? Czy zostali odpowiednio przeszkoleni albo przynajmniej wyraźnie i wprost poinformowani?
+                    Jak to się ma do kwestii związanych z halucynacjami modeli językowych i podpieraniem się nimi przy
+                    podejmowaniu przez urzędnika rozmaitych decyzji? Te i inne pytania pozostają otwarte. Problemy te
+                    dostrzegła między innymi Akademia Muzyczna w Poznaniu, której <i>pracownicy na okresowych
+                        szkoleniach z
+                        zakresu RODO informowani są o możliwościach wykorzystywania narzędzi AI w pracy, ale także o
+                        towarzyszącym temu zagrożeniu oraz zasadach bezpiecznego ich stosowania, jak również wynikającej
+                        z
+                        tego odpowiedzialności dla każdego użytkownika</i>.</p>
+                <p>Nie rozstrzygamy, czy każda instytucja powinna wobec tego tworzyć własne regulacje dotyczące
+                    wykorzystania AI przez pracowników, bo być może jest to temat do zaopiekowania na wyższym poziomie
+                    (a przynajmniej w odniesieniu do wybranych typów instytucji). Dostrzegamy jednak niebezpieczeństwa
+                    związane z nieumiejętnym posługiwaniem się zewnętrznymi narzędziami opartymi na sztucznej
+                    inteligencji i w związku z tym apelujemy do instytucji publicznych, żeby brały sprawę w swoje ręce i
+                    ze stosownym zaopiekowaniem tematu nie czekały do wystąpienia problemu takiego jak wyciek wrażliwych
+                    danych, czy wydanie decyzji w oparciu o halucynacje AI.</p>
+                <p>Na podstawie analizy regulacji wewnętrznych polskich instytucji publicznych (głównie uczelni wyższych
+                    oraz urzędów administracji samorządowej), najczęstsze zalecenia dotyczące wykorzystywania narzędzi
+                    sztucznej inteligencji można sprowadzić do następujących:</p>
+                <div class="topic-card">
+                    <h3>Transparentność i obowiązek ujawniania użycia AI 👁️</h3>
+
+                    To najpowszechniejsze zalecenie, wymagające od
+                    użytkownika jasnego zadeklarowania, w jakim zakresie i jakie narzędzia zostały wykorzystane w
+                    przygotowaniu pracy, raportu czy dokumentu. Często wymaga się zamieszczenia specjalnego
+                    oświadczenia we wstępie lub w formie załącznika, a w przypadku prac naukowych – wskazania tego w
+                    opisie metodologii.
+                </div>
+
+                <div class="topic-card">
+                    <h3>Pełna odpowiedzialność użytkownika 🧑‍⚖️</h3>
+                    Instytucje podkreślają, że za ostateczną treść dokumentu
+                    przygotowanego z wsparciem AI, jego poprawność merytoryczną oraz ewentualne naruszenia prawa
+                    odpowiedzialność ponosi zawsze i wyłącznie człowiek, a nie algorytm. AI jest traktowane jedynie
+                    jako narzędzie wspomagające, a nie autor.
+                </div>
+
+                <div class="topic-card">
+                    <h3>Krytyczne podejście i weryfikacja wyników 🧠</h3>Ze względu na zjawisko tzw. halucynacji AI
+                    (generowania nieprawdziwych informacji) oraz stronniczość modeli, użytkownicy są zobowiązani do
+                    każdorazowego sprawdzania faktów, źródeł oraz logicznej spójności wygenerowanych treści. Treści
+                    z AI nie mogą być traktowane jako dane źródłowe.
+                </div>
+
+                <div class="topic-card">
+                    <h3>Ochrona danych osobowych i poufnych 🔐</h3>
+                    Bezwzględnie zakazuje się wprowadzania do publicznie
+                    dostępnych narzędzi AI danych osobowych, informacji niepublicznych, finansowych, wrażliwych czy
+                    objętych tajemnicą służbową.
+                </div>
+            </section>
+            <section id="wnioski-i-rekomendacje-notatki" class="content-section">
+                <h2>Wnioski i rekomendacje (notatki)</h2>
+                <p>Doprecyzowanie definicji wydaje się potrzebne. Ponadto wydaje się, że w przypadku rejestru systemów
+                    AI sposobem na uniknięcie dyskusji, czy dany system jest systemem AI (a, jak wiemy z naszego
+                    badania, jest to wymówka po którą organy bardzo chętnie sięgają), może być przesunięcie fokusu z
+                    systemu AI na zastosowanie AI w administracji publicznej. No i koniecznie oznaczanie (znowu, to
+                    powinno dotyczyć jakichkolwiek ADM-ów)</p>
+            </section>
+            <section id="produkty" class="content-section section-products">
+                <h2>Produkty</h2>
+                <div class="product-grid">
+                    <div class="product-card">Raport</div>
+                    <div class="product-card">Wykaz/rejestr</div>
+                </div>
+            </section>
+                        <section id="zrodla" class="content-section">
+                <h2>Źródła</h2>
+<ul>
+                        <li><a href="/data/136_responses_report_odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-w-sprawach-publicznych.xlsx" target="_blank">Arkusz odpowiedziami na wnioski, przygotowany z wykorzystaniem AI</a></li>
+                    <li><a href="/docs/BAB_AI-w-e-administracji-publicznej_04032026.pdf" target="_blank">AI w e-administracji publicznej – perspektywa urzędników i instytucji</a></li>
+                    <li><a href="/docs/Raport_końcowy_z_badania_samorządów_terytorialnych____MC___2023__10_04.pdf" target="_blank" rel="noopener noreferrer">W drodze ku doskonałości cyfrowej</a></li>
+                    <li><a href="/docs/Resortowa_strategia_sztucznej_inteligencji_do_roku_2039.pdf" target="_blank">Resortowa trategia sztucznej inteligencji do roku 2039</a></li>
+                </ul>
+            </section>
+        </main>
+            <footer class="footer">
+        <p>Podstawowe źródło: <a href="https://fedrowanie.siecobywatelska.pl/monitoringi/odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-w-sprawach-publicznych" target="_blank">Odpowiedzialne wykorzystywanie sztucznej inteligencji</a></p>
+        <p>Opracowanie: <a href="https://siecobywatelska.pl/" target="_blank">Sieć Obywatelska Watchdog Polska</a>, ostatnia aktualizacja: 8 kwietnia 2026.</p>
+    </footer>
+    </div>
+</body>
+
+</html>
