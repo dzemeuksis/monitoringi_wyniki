@@ -105,18 +105,36 @@
             margin: 0 0 18px 0;
         }
 
-        li {
+        ul li {
             padding: 6px 0 6px 20px;
             position: relative;
         }
 
-        li::before {
+        ul li::before {
             content: "•";
             color: var(--secondary-color);
             font-weight: bold;
             position: absolute;
             left: 0;
         }
+
+ol {
+    list-style-type: lower-alpha; /* zamiast decimal */
+    padding-left: 20px;
+}
+
+ol li {
+    padding: 6px 0;
+}
+
+ol li::before {
+    content: none;
+}
+
+ol li::marker {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
 
         .box {
             background-color: #f8f9fa;
@@ -1323,7 +1341,7 @@
                     na szczeblu centralnym, których zasoby pozwalają na sfinansowanie projektów o odpowiednio dużej
                     skali. Oto, jakie obszary zastosowań AI wyłoniły się z otrzymanych odpowiedzi:</p>
                 <div class="topic-card">
-                    <h3>1. Mowa, nagrania i spotkania 🎤</h3>
+                    <h3>Mowa, nagrania i spotkania 🎤</h3>
                     <p>Obejmuje wykorzystanie AI do przetwarzania wypowiedzi ustnych i materiałów audio-wideo. Chodzi
                         przede wszystkim o transkrypcję (najczęściej sesji rady), tworzenie napisów, streszczanie
                         spotkań i obrad, przygotowywanie notatek oraz poprawę dostępności nagrań, np. przez syntezę
@@ -1338,7 +1356,7 @@
                     </div>
                 </div>
                 <div class="topic-card">
-                    <h3>2. Dokumenty, tekst i wiedza 📚</h3>
+                    <h3>Dokumenty, tekst i wiedza 📚</h3>
                     <p>W tej grupie mieszczą się zastosowania związane z opracowywaniem, analizą i porządkowaniem treści
                         pisemnych. AI służy tu do redagowania i streszczania tekstów, wyszukiwania informacji w
                         dokumentach, ekstrakcji danych, anonimizacji, OCR oraz wspomagania pracy z pismami,
@@ -1352,7 +1370,7 @@
                     </div>
                 </div>
                 <div class="topic-card">
-                    <h3>3. Obsługa mieszkańców, klientów i użytkowników 🤖💬</h3>
+                    <h3>Obsługa mieszkańców, klientów i użytkowników 🤖💬</h3>
                     <p>To zastosowania, w których AI pełni funkcję pierwszej linii kontaktu z użytkownikiem. Obejmuje to
                         chatboty i voiceboty udzielające informacji, pomagające znaleźć właściwą usługę, umawiać wizyty,
                         sprawdzać status spraw lub odpowiadać na pytania mieszkańców, pacjentów, studentów czy
@@ -1368,7 +1386,7 @@
                     </div>
                 </div>
                 <div class="topic-card">
-                    <h3>4. Komunikacja, promocja i treści kreatywne 📣</h3>
+                    <h3>Komunikacja, promocja i treści kreatywne 📣</h3>
                     <p>Kategoria dotyczy tworzenia i obróbki treści komunikacyjnych oraz promocyjnych. AI jest tu
                         wykorzystywana do generowania grafik, prezentacji, materiałów do mediów społecznościowych,
                         wideo, muzyki i innych form przekazu, a także do poprawy jakości i adaptacji treści do różnych
@@ -1381,7 +1399,7 @@
                     </div>
                 </div>
                 <div class="topic-card">
-                    <h3>5. Programowanie i praca techniczna 🧑‍💻</h3>
+                    <h3>Programowanie i praca techniczna 🧑‍💻</h3>
                     <p>AI coraz powszechniej wspiera pracę informatyków i osób technicznych przy tworzeniu oraz
                         utrzymaniu systemów informatycznych. Odnotowane zastosowania obejmują między innymi generowanie
                         i analizę kodu, debugowanie, pracę z dokumentacją techniczną, automatyzację zadań serwisowych,
@@ -1398,7 +1416,7 @@
                     </div>
                 </div>
                 <div class="topic-card">
-                    <h3>6. Analityka i wsparcie decyzyjne ⚖️</h3>
+                    <h3>Analityka i wsparcie decyzyjne ⚖️</h3>
                     <p>Ta grupa obejmuje użycie AI do analizowania danych i wspierania decyzji operacyjnych, zarządczych
                         lub strategicznych. W odpowiedziach wymieniano takie zadania jak raportowanie, prognozowanie,
                         identyfikowanie
@@ -1427,7 +1445,7 @@
                     </div>
                 </div>
                 <div class="topic-card">
-                    <h3>7. Rekrutacja, edukacja i nauka 🎓</h3>
+                    <h3>Rekrutacja, edukacja i nauka 🎓</h3>
                     <p>W tej kategorii AI wspiera procesy związane z naborem, kształceniem i działalnością badawczą.
                         Obejmuje to m.in. analizę formularzy rekrutacyjnych i CV, tworzenie materiałów dydaktycznych i
                         pytań testowych, wyszukiwanie publikacji, ocenę prac oraz narzędzia do wykrywania plagiatu i
@@ -1451,7 +1469,7 @@
                     </div>
                 </div>
                 <div class="topic-card">
-                    <h3>8. Obraz, monitoring, geodezja i środowisko 📹</h3>
+                    <h3>Obraz, monitoring, geodezja i środowisko 📹</h3>
                     <p>Są to zastosowania oparte na analizie obrazu, nagrań lub danych przestrzennych. AI służy tu do
                         rozpoznawania obiektów, tablic i twarzy, analizy monitoringu (wykrywanie określonych zdarzeń),
                         przetwarzania zdjęć satelitarnych, wspierania geodezji, monitorowania przyrody oraz oceny
@@ -1468,7 +1486,7 @@
                     </div>
                 </div>
                 <div class="topic-card">
-                    <h3>9. Zdrowie i diagnostyka 🩺</h3>
+                    <h3>Zdrowie i diagnostyka 🩺</h3>
                     <p>Ta kategoria dotyczy zastosowań medycznych i okołomedycznych. AI wspiera tu analizę badań
                         obrazowych, wykrywanie nieprawidłowości, ocenę zmian chorobowych i poprawę jakości diagnostyki.
                     </p>
@@ -1485,7 +1503,7 @@
                     </div>
                 </div>
                 <div class="topic-card">
-                    <h3>10. Cyberbezpieczeństwo i bezpieczeństwo IT 🛡️</h3>
+                    <h3>Cyberbezpieczeństwo i bezpieczeństwo IT 🛡️</h3>
                     <p>W tej grupie AI jest wykorzystywana do ochrony systemów, sieci i danych. Obejmuje to wykrywanie
                         anomalii, analizę incydentów, ochronę poczty, monitorowanie ruchu sieciowego, identyfikację
                         zagrożeń, klasyfikację złośliwych plików oraz wspomaganie reagowania na zdarzenia
@@ -1498,7 +1516,7 @@
                     </div>
                 </div>
                 <div class="topic-card">
-                    <h3>11. Inne wyspecjalizowane zastosowania administracyjne i sektorowe 🧩</h3>
+                    <h3>Inne wyspecjalizowane zastosowania administracyjne i sektorowe 🧩</h3>
                     <p>To kategoria zbiorcza dla szczególnych, branżowych lub jednostkowych zastosowań, które nie tworzą
                         osobnego bloku tematycznego. Obejmuje ona m.in. wsparcie rozliczeń, podatków, konsultacji
                         społecznych, analiz patentowych, wykrywania ryzyk w ofertach internetowych czy modeli
@@ -1616,8 +1634,8 @@
                     objętych tajemnicą służbową.
                 </div>
             </section>
-            <section id="wnioski-i-rekomendacje" class="content-section">
-                <h2>Wnioski i rekomendacje</h2>
+            <section id="wnioski" class="content-section">
+                <h2>Wnioski z badania</h2>
 
                 <h3>1. Niska przejrzystość i systemowe bariery w dostępie do informacji</h3>
                 <p>
@@ -1635,20 +1653,8 @@
                 <p>
                     W efekcie im bardziej potencjalnie wrażliwe zastosowanie AI (np. militarne, automatyzujące decyzje),
                     tym
-                    mniejsza jego transparentność.
+                    mniejsza transparentność a tym samym możliwość kontroli społecznej.
                 </p>
-
-                <div class="warning-box">
-                    <p><strong>Rekomendacje</strong><br>
-                    </p>
-                    <p>Wzmocnienie mechanizmów egzekwowania prawa do informacji publicznej, w tym:</p>
-                    <ul>
-                        <li>wprowadzenia uproszczonej, niezależnej ścieżki kontroli zasadności utajnienia informacji,
-                        </li>
-                        <li>egzekwowania obowiązku wyczerpującego uzasadniania odmów,</li>
-                        <li>ograniczenia możliwości nadużywania pojęcia <i>dokumentu wewnętrznego</i>.</li>
-                    </ul>
-                </div>
 
                 <h3>2. Rozmywanie definicji AI jako kluczowy problem regulacyjny</h3>
                 <p>
@@ -1664,20 +1670,6 @@
                     interpretacyjnej.
                 </p>
 
-                <div class="warning-box">
-                    <p><strong>Rekomendacje</strong><br>
-                    </p>
-                    <ul>
-                        <li>doprecyzowanie definicji systemu AI na poziomie krajowym (lub praktycznych wytycznych
-                            interpretacyjnych),</li>
-                        <li>odejście od skupienia wyłącznie na <i>systemie AI</i> na rzecz podejścia opartego na
-                            zastosowaniach AI (use-based approach),</li>
-                        <li>objęcie obowiązkami regulacyjnymi wszystkich zastosowań, które w sposób zautomatyzowany
-                            wpływają na prawa lub
-                            sytuację obywateli – niezależnie od przyjętej klasyfikacji technicznej.</li>
-                    </ul>
-                </div>
-
                 <h3>3. Brak systemowego podejścia do jawności zastosowań AI</h3>
                 <p>
                     Z badania wynika, że nie istnieje żaden spójny mechanizm informowania o tym:
@@ -1688,19 +1680,8 @@
                     <li>jakie są ryzyka i zabezpieczenia.</li>
                 </ul>
                 <p>
-                    To ogranicza możliwość społecznej kontroli oraz audytu.
+                    To znowu ogranicza możliwość społecznej kontroli oraz audytu.
                 </p>
-
-                <div class="warning-box">
-                    <p><strong>Rekomendacje</strong><br>
-                    </p>
-                    <ul>
-                        <li>utworzenie i utrzymywanie publicznego rejestru zastosowań AI w administracji publicznej,
-                        </li>
-                        <li>obowiązek aktualizacji i standaryzacji danych w tym rejestrze,</li>
-                        <li>zapewnienie jego dostępności i użyteczności dla obywateli oraz organizacji społecznych.</li>
-                    </ul>
-                </div>
 
                 <h3>4. Niedostateczne regulacje wewnętrzne w instytucjach</h3>
                 <p>
@@ -1709,67 +1690,25 @@
                 </p>
                 <ul>
                     <li>pracownicy faktycznie korzystają z narzędzi AI,</li>
-                    <li>istnieje wysokie ryzyko przetwarzania danych wrażliwych,</li>
-                    <li>pojawiają się przypadki decyzji opartych na błędnych (halucynowanych) treściach.</li>
+                    <li>istnieje ryzyko podejmowania decyzji opartych na błędnych (halucynowanych) treściach,</li>
+                    <li>istnieje ryzyko przetwarzania danych wrażliwych,</li>
                 </ul>
                 <p>
-                    Regulacje – jeśli istnieją – są często fragmentaryczne lub sprowadzają się do zakazów.
+                    Regulacje – jeśli istnieją – są często fragmentaryczne lub sprowadzają się do wątpliwej skuteczości zakazów.
                 </p>
-
-                <div class="warning-box">
-                    <p><strong>Rekomendacje</strong><br>
-                    </p>
-                    <ul>
-                        <li>opracowanie minimalnych standardów korzystania z AI dla administracji (na poziomie
-                            centralnym),</li>
-                        <li>systemowe szkolenia pracowników.</li>
-                        <li>wprowadzenie obowiązkowych zasad obejmujących:
-                            <ul>
-                                <li>transparentność użycia AI,</li>
-                                <li>odpowiedzialność użytkownika,</li>
-                                <li>weryfikację treści generowanych przez AI,</li>
-                                <li>ochronę danych,</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
 
                 <h3>5. Rosnące wykorzystanie AI przy jednoczesnym niedoszacowaniu ryzyk</h3>
                 <p>
                     AI jest już wykorzystywana w wielu obszarach (m.in. analiza danych, obsługa obywateli, dokumenty,
-                    monitoring), często:
+                    monitoring), a przy tym często jest stosowana w sposób niekontrolowany, czyli:
                 </p>
                 <ul>
                     <li>przy użyciu zewnętrznych narzędzi,</li>
                     <li>bez pełnej świadomości konsekwencji,</li>
                     <li>bez adekwatnych zabezpieczeń.</li>
                 </ul>
-                <p>
-                    Szczególnie wrażliwe są zastosowania:
-                </p>
-                <ul>
-                    <li>analityczne i predykcyjne,</li>
-                    <li>rekrutacyjne,</li>
-                    <li>związane z monitoringiem i danymi osobowymi,</li>
-                    <li>wpływające na decyzje administracyjne.</li>
-                </ul>
 
-                <div class="warning-box">
-                    <p><strong>Rekomendacje</strong><br>
-                    </p>
-                    <ul>
-                        <li>przesunięcie punktu ciężkości z deklaracji instytucji na obiektywne kryteria oceny
-                            zastosowań AI, niezależne od przyjętej przez nie interpretacji,</li>
-                        <li>wprowadzenie obowiązku ujawniania zastosowań systemów analitycznych i predykcyjnych
-                            niezależnie od tego, czy są one formalnie uznawane za AI,</li>
-                        <li>stworzenie mechanizmów umożliwiających zewnętrzną weryfikację, czy dane rozwiązanie powinno
-                            podlegać obowiązkom wynikającym z AI Act,</li>
-                        <li>powiązanie obowiązków regulacyjnych nie tylko z klasyfikacją systemu, ale z faktycznym
-                            wpływem na sytuację obywateli.</li>
-                    </ul>
-                </div>
-
-                <h3>6. Konieczność oznaczania wykorzystania AI</h3>
+                <h3>6. Niewystarczające oznaczanie wykorzystania AI</h3>
                 <p>
                     W wielu przypadkach odbiorca (obywatel, pacjent, użytkownik) nie ma świadomości, że:
                 </p>
@@ -1780,21 +1719,6 @@
                 <p>
                     To ogranicza możliwość reakcji, odwołania lub krytycznej oceny.
                 </p>
-
-                <div class="warning-box">
-                    <p><strong>Rekomendacje</strong><br>
-                    </p>
-                    <ul>
-                        <li>wprowadzenie obowiązku oznaczania treści i decyzji powstałych z udziałem AI,</li>
-                        <li>zapewnienie użytkownikowi:
-                            <ul>
-                                <li>informacji o zakresie użycia AI,</li>
-                                <li>możliwości kontaktu z człowiekiem,</li>
-                                <li>jasnej ścieżki odwoławczej.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
 
                 <h3>7. Potrzeba podejścia systemowego zamiast punktowych działań</h3>
                 <p>
@@ -1809,16 +1733,6 @@
                     konieczne jest podejście systemowe, a nie reaktywne.
                 </p>
 
-                <div class="warning-box">
-                    <p><strong>Rekomendacje</strong><br>
-                    </p>
-                    <ul>
-                        <li>budowa spójnego systemu nadzoru nad wykorzystaniem AI w administracji,</li>
-                        <li>integracja działań regulacyjnych, informacyjnych i edukacyjnych,</li>
-                        <li>współpraca na poziomie krajowym i europejskim.</li>
-                    </ul>
-                </div>
-
                 <h3>Podsumowanie</h3>
                 <p>
                     Kluczowym problemem nie jest fakt wykorzystywania AI w administracji, lecz <strong>niewystarczająca
@@ -1827,6 +1741,98 @@
                     obywateli, pozostając jednocześnie poza społecznym nadzorem.
                 </p>
             </section>
+
+<section id="rekomendacje" class="content-section">
+    <h2>Rekomendacje</h2>
+
+    <h3>1. Transparentność i dostęp do informacji o wykorzystaniu AI</h3>
+    <p>
+        Konieczne jest wzmocnienie jawności wykorzystania systemów AI w administracji publicznej, tak aby
+        obywatele, organizacje społeczne oraz instytucje kontrolne mogli ustalić, gdzie, w jakim celu i z
+        jakim skutkiem stosowane są takie rozwiązania.
+    </p>
+
+    <div class="warning-box">
+        <p><strong>Rekomendacje</strong><br></p>
+        <ol>
+            <li>wprowadzenie jednoznacznego obowiązku ujawniania informacji o wykorzystaniu systemów AI w administracji publicznej, z ograniczeniem możliwości powoływania się na ogólne przesłanki bezpieczeństwa,</li>
+            <li>utworzenie centralnego, publicznego rejestru zastosowań AI w administracji, obejmującego co najmniej informacje o celu systemu, zakresie jego wykorzystania, obszarze zastosowania, podstawowych ryzykach oraz zastosowanych zabezpieczeniach,</li>
+            <li>wprowadzenie obowiązku informowania obywateli o tym, że mają do czynienia z systemem AI albo że AI wspiera dany proces, usługę lub decyzję administracyjną,</li>
+            <li>zapewnienie, aby informacja o wykorzystaniu AI była przekazywana w sposób zrozumiały, widoczny i adekwatny do kontekstu, w szczególności w pismach, systemach teleinformatycznych i bezpośrednich interakcjach z obywatelami,</li>
+            <li>uporządkowanie kwestii <i>dokumentu wewnętrznego</i> w taki sposób, aby nie mogła ona służyć blokowaniu dostępu do informacji o systemach wpływających na prawa, obowiązki lub sytuację obywateli,</li>
+            <li>powiązanie obowiązków informacyjnych z prawem do uzyskania dodatkowych wyjaśnień oraz możliwością zakwestionowania rozstrzygnięcia lub działania wspieranego przez AI.</li>
+        </ol>
+    </div>
+
+    <h3>2. Definicje, kwalifikacja i zakres regulacji</h3>
+    <p>
+        Niezbędne jest ograniczenie dowolności interpretacyjnej w zakresie tego, czym jest system AI i które
+        rozwiązania powinny podlegać obowiązkom regulacyjnym. O kwalifikacji systemu powinny decydować jego
+        funkcje, sposób wykorzystania i wpływ na obywateli, a nie wyłącznie deklaracje instytucji.
+    </p>
+
+    <div class="warning-box">
+        <p><strong>Rekomendacje</strong><br></p>
+        <ol>
+            <li>przyjęcie jednolitej, operacyjnej definicji systemu AI na potrzeby stosowania przepisów w administracji publicznej, ograniczającej możliwość dowolnej interpretacji przez instytucje,</li>
+            <li>wprowadzenie zasady, zgodnie z którą o kwalifikacji systemu decyduje jego funkcjonalność, sposób wykorzystania oraz faktyczny wpływ na sytuację obywateli, a nie wyłącznie nazwa, opis lub deklaracja podmiotu go stosującego,</li>
+            <li>opracowanie katalogu przykładów systemów podlegających obowiązkom regulacyjnym, w tym systemów predykcyjnych, analitycznych, scoringowych i wspierających decyzje,</li>
+            <li>wprowadzenie obowiązku ujawniania zastosowań systemów analitycznych i predykcyjnych niezależnie od tego, czy dana instytucja formalnie uznaje je za AI,</li>
+            <li>ustanowienie mechanizmów umożliwiających niezależną ocenę, czy dane rozwiązanie powinno zostać uznane za system AI i objęte odpowiednimi obowiązkami,</li>
+            <li>powiązanie obowiązków regulacyjnych nie tylko z klasyfikacją techniczną systemu, ale również z poziomem ryzyka oraz wpływem jego działania na prawa i sytuację obywateli.</li>
+        </ol>
+    </div>
+
+    <h3>3. Zarządzanie ryzykiem i praktyki operacyjne w instytucjach</h3>
+    <p>
+        Wykorzystanie AI w administracji powinno odbywać się na podstawie jasnych zasad wewnętrznych,
+        adekwatnych do poziomu ryzyka. Szczególne znaczenie ma ograniczenie zagrożeń związanych z danymi
+        wrażliwymi, błędami systemów oraz wykorzystywaniem narzędzi zewnętrznych bez właściwej kontroli.
+    </p>
+
+    <div class="warning-box">
+        <p><strong>Rekomendacje</strong><br></p>
+        <ol>
+            <li>wprowadzenie obowiązku opracowania i wdrożenia wewnętrznych polityk korzystania z AI w każdej instytucji publicznej, dostosowanych do jej specyfiki, zadań i poziomu ryzyka,</li>
+            <li>określenie jasnych zasad dotyczących przetwarzania danych przy korzystaniu z narzędzi AI, w tym zakazu wprowadzania danych wrażliwych lub prawnie chronionych do nieautoryzowanych narzędzi zewnętrznych,</li>
+            <li>zapewnienie szkoleń dla pracowników w zakresie bezpiecznego, odpowiedzialnego i krytycznego korzystania z AI, obejmujących również rozpoznawanie błędów, ograniczeń i ryzyk związanych z halucynacjami systemów,</li>
+            <li>wprowadzenie procedur obowiązkowej weryfikacji treści generowanych przez AI przed ich wykorzystaniem w działaniach urzędowych, analitycznych, komunikacyjnych lub decyzyjnych,</li>
+            <li>wprowadzenie obowiązku dokonywania oceny ryzyka przed wdrożeniem systemu AI lub podobnego rozwiązania analitycznego, w szczególności gdy może ono wpływać na prawa obywateli, dane osobowe, rekrutację, monitoring lub decyzje administracyjne,</li>
+            <li>określenie minimalnych zabezpieczeń dla zastosowań wysokiego ryzyka, obejmujących m.in. wymóg nadzoru człowieka, dokumentowania działania systemu, testowania poprawności oraz okresowej weryfikacji skutków jego stosowania,</li>
+            <li>ustanowienie mechanizmów nadzoru wewnętrznego oraz odpowiedzialności za nieprawidłowe, nieudokumentowane lub ryzykowne wykorzystanie narzędzi AI.</li>
+        </ol>
+    </div>
+
+    <h3>4. Nadzór, egzekwowanie i koordynacja systemowa</h3>
+    <p>
+        Skuteczność zasad dotyczących AI zależy nie tylko od ich przyjęcia, ale również od istnienia mechanizmów
+        kontroli, egzekwowania i koordynacji działań na poziomie całej administracji publicznej. Potrzebne jest
+        podejście systemowe, a nie wyłącznie reagowanie na pojedyncze przypadki.
+    </p>
+
+    <div class="warning-box">
+        <p><strong>Rekomendacje</strong><br></p>
+        <ol>
+            <li>ustanowienie niezależnego mechanizmu szybkiej weryfikacji zasadności odmów udostępnienia informacji o wykorzystaniu systemów AI,</li>
+            <li>wprowadzenie sankcji lub innych skutecznych mechanizmów egzekwowania obowiązków w przypadku nieuzasadnionego ograniczania dostępu do informacji, nieoznaczania wykorzystania AI lub naruszania przyjętych zasad jego stosowania,</li>
+            <li>zapewnienie regularnych audytów systemów AI oraz okresowej aktualizacji informacji o ich działaniu, ryzykach i zabezpieczeniach, w sposób umożliwiający porównywanie danych między instytucjami,</li>
+            <li>wzmocnienie niezależnych instytucji nadzorczych oraz zapewnienie im kompetencji, zasobów i narzędzi potrzebnych do skutecznej kontroli wykorzystania AI w administracji publicznej,</li>
+            <li>opracowanie i wdrożenie spójnej strategii zarządzania wykorzystaniem AI w administracji publicznej, obejmującej standardy, nadzór, kontrolę oraz zasady odpowiedzialności,</li>
+            <li>zapewnienie koordynacji działań na poziomie centralnym w celu ograniczenia fragmentaryczności regulacji i praktyk oraz ujednolicenia standardów postępowania w instytucjach publicznych,</li>
+            <li>powiązanie obowiązków informacyjnych i nadzorczych z realną kontrolą społeczną, w tym poprzez dostęp do uproszczonych raportów, mechanizmy zgłaszania zastrzeżeń oraz działania zwiększające dostępność wiedzy o wykorzystaniu AI dla obywateli.</li>
+        </ol>
+    </div>
+
+    <h3>Podsumowanie</h3>
+    <p>
+        Rekomendacje te tworzą cztery wzajemnie powiązane filary odpowiedzialnego wykorzystania AI w
+        administracji publicznej: <strong>transparentność</strong>, <strong>jednoznaczne zasady kwalifikacji
+        systemów</strong>, <strong>zarządzanie ryzykiem w praktyce instytucjonalnej</strong> oraz
+        <strong>skuteczny nadzór i egzekwowanie</strong>. Dopiero łączne wdrożenie tych elementów może ograniczyć
+        ryzyko rozwoju nieprzejrzystych i niesprawdzalnych praktyk, które wpływają na prawa obywateli.
+    </p>
+</section>
+
             <section id="rejestr" class="content-section">
                 <h2>Lista systemów AI wykorzystywanych w administracji publicznej</h2>
                 <p><strong>Zastrzeżenie:</strong> Lista zawiera systemy AI, które zostały wymienione w odpowiedzi na
