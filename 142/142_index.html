@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyniki badania: Odpowiedzialne wykorzystywanie sztucznej inteligencji - faza 2</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #2980b9;
+            --accent-color: #e67e22;
+            --bg-color: #f4f7f6;
+            --container-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --warning-bg: #fff3cd;
+            --warning-border: #ffc107;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: var(--container-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .dane-container {
+            text-align: center;
+            margin: 0px 0;
+        }
+
+        .dane-container iframe {
+            width: 900px;
+            height: 1000px;
+            border: none;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 20px;
+            margin: 0 0 32px 0;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 42px;
+            margin-bottom: 20px;
+            line-height: 1.35;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-top: 28px;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+            overflow-wrap: anywhere;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0 0 18px 0;
+        }
+
+        ul li {
+            padding: 6px 0 6px 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        ol {
+            list-style-type: lower-alpha;
+            /* zamiast decimal */
+            padding-left: 20px;
+        }
+
+        ol li {
+            padding: 6px 0;
+        }
+
+        ol li::before {
+            content: none;
+        }
+
+        ol li::marker {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .box {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 20px;
+            margin: 22px 0;
+        }
+
+        .warning-box {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .placeholder {
+            background: linear-gradient(to right, #ffffff, #f8fbff);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .topic-card {
+            background: #fbfdff;
+            border: 1px solid #dfe8ef;
+            border-radius: 8px;
+            padding: 20px 22px;
+            margin: 18px 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+        }
+
+        .topic-card h3 {
+            margin-top: 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .footer {
+            margin-top: 44px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .container {
+                padding: 22px 18px;
+            }
+
+            h1 {
+                font-size: 1.55rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Style ramki wyróżnionej */
+        .key-stats-box {
+            background: linear-gradient(to right, #ffffff, #f2fdfa);
+            border: 1px solid #dcf5ee;
+            border-left: 6px solid var(--secondary-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        .key-stats-header {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .key-stats-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .key-percentage {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #e74c3c;
+            line-height: 1;
+        }
+
+        .key-desc {
+            flex: 1;
+            font-size: 1.1rem;
+            min-width: 250px;
+        }
+
+        .key-desc strong {
+            color: var(--secondary-color);
+        }
+
+        .key-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .key-item {
+            text-align: left;
+        }
+
+        .key-item-number {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+
+        .key-item-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Style dla tabeli */
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 900px;
+            font-family: Arial, sans-serif;
+        }
+
+        caption {
+            text-align: left;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d7de;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f6f8fa;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #fbfbfb;
+        }
+
+        .toc {
+            background: #f8fbff;
+            border: 1px solid #dfe8ef;
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px 22px;
+            margin: 0 0 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            margin-bottom: 14px;
+            border: none;
+            padding-left: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .toc li {
+            padding: 4px 0;
+        }
+
+        .toc li::before {
+            content: none;
+        }
+
+        /* 🔹 H2 (główne sekcje) */
+        .toc a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* 🔸 H3 (podsekcje) */
+        .toc .toc-h3 a {
+            color: #7f8c8d;
+            /* szarawy */
+            font-weight: 400;
+            font-size: 0.95em;
+        }
+
+        /* 🔸 dodatkowe wizualne odróżnienie */
+        .toc .toc-h3 {
+            padding-left: 14px;
+            border-left: 2px solid #e0e0e0;
+            margin-left: 6px;
+        }
+
+        /* hover */
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <noscript>
+        <style>
+            .only-js {
+                display: none;
+            }
+        </style>
+    </noscript>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Czy administracja publiczna korzysta z AI w sposób odpowiedzialny i przejrzysty?</h1>
+            <p style="text-align: center; font-style: italic;">Autor: Michał Zemełka</p>
+            <p style="text-align: center; font-style: italic;">(stan na 21.04.2026)</p>
+        </header>
+        <main>
+
+            <!-- Poczatek ramki wyroznionej -->
+            <div class="key-stats-box">
+                <div class="key-stats-header">Najważniejszy wniosek z badania</div>
+
+                <div class="key-stats-content">
+                    <div class="key-percentage">🚨</div>
+                    <div class="key-desc">
+                        Polskie instytucje nie są wystarczająco przejrzyste i odpowiedzialne w zakresie stosowania
+                        sztucznej inteligencji,
+                        ani przygotowane na kolejne etapy wdrażania przepisów unijnego rozporządzenia o sztucznej
+                        inteligencji (AI Act).
+                    </div>
+                </div>
+
+                <div class="key-grid">
+                    <div class="key-item">
+                        <span class="key-item-number">52</span>
+                        <span class="key-item-label">📨 wysłane wnioski</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-item-number">28</span>
+                        <span class="key-item-label">🤖 odpowiedzi o systemach AI</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-item-number">24</span>
+                        <span class="key-item-label">🙊 odmowy lub milczenie (46%)</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Koniec ramki wyroznionej -->
+
+            <noscript>
+                <nav class="toc" id="toc-container">
+                    <details>
+                        <summary style="cursor: pointer; list-style: none; outline: none;">
+                            <h2>Spis treści [DO POPRAWY WERSJA NOSCRIPT]
+                                <span style="font-size: 0.6em; color: #777; vertical-align: middle;">
+                                    (kliknij, aby rozwinąć)
+                                </span>
+                            </h2>
+                        </summary>
+
+                        <div id="toc-content">
+                            <ul>
+                                <li><a href="#wprowadzenie">Wprowadzenie</a></li>
+
+                                <li class="toc-h3"><a href="#wniosek-tresc">Dokładna treść wniosku 🧾</a></li>
+                                <li class="toc-h3"><a href="#kogo-pytalismy">Kogo pytaliśmy? 🗃️</a></li>
+
+                                <li><a href="#przejrzystosc">Przejrzystość, czyli jak odpowiadały podmioty
+                                        zobowiązane?</a></li>
+                                <li class="toc-h3"><a href="#ministerstwa">Ministerstwa</a></li>
+                                <li class="toc-h3"><a href="#sady-powszechne">Sądy powszechne</a></li>
+                                <li class="toc-h3"><a href="#prokuratury">Prokuratury</a></li>
+                                <li class="toc-h3"><a href="#osrodki-dla-cudzoziemcow">Ośrodki dla cudzoziemców</a></li>
+                                <li class="toc-h3"><a href="#niska-responsywnosc">Niska responsywność</a></li>
+                                <li class="toc-h3"><a href="#statystyka-odpowiedzi">Statystyka odpowiedzi według typu
+                                        instytucji 📋</a></li>
+                                <li class="toc-h3"><a href="#odmowy-udzielenia-informacji">Odmowy udzielenia
+                                        informacji</a></li>
+                                <li class="toc-h3"><a href="#uchylanie-sie-odpowiedzi">Uchylanie się od odpowiedzi</a>
+                                </li>
+                                <li class="toc-h3"><a href="#rozmywanie-definicji">Rozmywanie definicji</a></li>
+                                <li class="toc-h3"><a href="#podsumowanie-nieprzejrzystosci">Podsumowanie
+
+                                        (nie)przejrzystości</a></li>
+                                <!-- Kto i do czego wykorzystuje AI? -->
+                                <li><a href="#kto-i-do-czego-wykorzystuje-ai">Kto i do czego wykorzystuje AI?</a></li>
+                                <li class="toc-h3"><a href="#mowa-nagrania-i-spotkania">Mowa, nagrania i spotkania
+                                        🎤</a></li>
+                                <li class="toc-h3"><a href="#dokumenty-tekst-i-wiedza">Dokumenty, tekst i wiedza 📚</a>
+                                </li>
+                                <li class="toc-h3"><a href="#obsluga-mieszkancow-klientow-i-uzytkownikow">Obsługa
+                                        mieszkańców, klientów i użytkowników 🤖💬</a></li>
+                                <li class="toc-h3"><a href="#komunikacja-promocja-i-tresci-kreatywne">Komunikacja,
+                                        promocja i treści kreatywne 📣</a></li>
+                                <li class="toc-h3"><a href="#programowanie-i-praca-techniczna">Programowanie i praca
+                                        techniczna 🧑‍💻</a></li>
+                                <li class="toc-h3"><a href="#analityka-i-wsparcie-decyzyjne">Analityka i wsparcie
+                                        decyzyjne ⚖️</a></li>
+                                <li class="toc-h3"><a href="#rekrutacja-edukacja-i-nauka">Rekrutacja, edukacja i nauka
+                                        🎓</a></li>
+                                <li class="toc-h3"><a href="#obraz-monitoring-geodezja-i-srodowisko">Obraz, monitoring,
+                                        geodezja i środowisko 📹</a></li>
+                                <li class="toc-h3"><a href="#zdrowie-i-diagnostyka">Zdrowie i diagnostyka 🩺</a></li>
+                                <li class="toc-h3"><a
+                                        href="#cyberbezpieczenstwo-i-bezpieczenstwo-it">Cyberbezpieczeństwo i
+                                        bezpieczeństwo IT 🛡️</a></li>
+                                <li class="toc-h3"><a
+                                        href="#inne-wyspecjalizowane-zastosowania-administracyjne-i-sektorowe">Inne
+                                        wyspecjalizowane zastosowania administracyjne i sektorowe 🧩</a></li>
+
+                                <!-- Regulacje -->
+                                <li><a href="#jak-instytucje-publiczne-reguluja-korzystanie-z-ai">Jak instytucje
+                                        publiczne regulują korzystanie z AI?</a></li>
+                                <li class="toc-h3"><a
+                                        href="#transparentnosc-i-obowiazek-ujawniania-uzycia-ai">Transparentność i
+                                        obowiązek ujawniania użycia AI 👁️</a></li>
+                                <li class="toc-h3"><a href="#pelna-odpowiedzialnosc-uzytkownika">Pełna odpowiedzialność
+                                        użytkownika 🧑‍⚖️</a></li>
+                                <li class="toc-h3"><a href="#krytyczne-podejscie-i-weryfikacja-wynikow">Krytyczne
+                                        podejście i weryfikacja wyników 🧠</a></li>
+                                <li class="toc-h3"><a href="#ochrona-danych-osobowych-i-poufnych">Ochrona danych
+                                        osobowych i poufnych 🔐</a></li>
+
+                                <!-- Wnioski -->
+                                <li><a href="#wnioski-z-badania">Wnioski z badania</a></li>
+                                <li class="toc-h3"><a
+                                        href="#niska-przejrzystosc-i-systemowe-bariery-w-dostepie-do-informacji">1.
+                                        Niska przejrzystość i systemowe bariery w dostępie do informacji</a></li>
+                                <li class="toc-h3"><a
+                                        href="#rozmywanie-definicji-ai-jako-kluczowy-problem-regulacyjny">2. Rozmywanie
+                                        definicji AI jako kluczowy problem regulacyjny</a></li>
+                                <li class="toc-h3"><a href="#brak-systemowego-podejscia-do-jawnosci-zastosowan-ai">3.
+                                        Brak systemowego podejścia do jawności zastosowań AI</a></li>
+                                <li class="toc-h3"><a href="#niedostateczne-regulacje-wewnetrzne-w-instytucjach">4.
+                                        Niedostateczne regulacje wewnętrzne w instytucjach</a></li>
+                                <li class="toc-h3"><a
+                                        href="#rosnace-wykorzystanie-ai-przy-jednoczesnym-niedoszacowaniu-ryzyk">5.
+                                        Rosnące wykorzystanie AI przy jednoczesnym niedoszacowaniu ryzyk</a></li>
+                                <li class="toc-h3"><a href="#niewystarczajace-oznaczanie-wykorzystania-ai">6.
+                                        Niewystarczające oznaczanie wykorzystania AI</a></li>
+                                <li class="toc-h3"><a
+                                        href="#potrzeba-podejscia-systemowego-zamiast-punktowych-dzialan">7. Potrzeba
+                                        podejścia systemowego zamiast punktowych działań</a></li>
+                                <li class="toc-h3"><a href="#podsumowanie-wnioski">Podsumowanie</a></li>
+
+                                <!-- Rekomendacje -->
+                                <li><a href="#rekomendacje">Rekomendacje</a></li>
+                                <li class="toc-h3"><a
+                                        href="#transparentnosc-i-dostep-do-informacji-o-wykorzystaniu-ai">1.
+                                        Transparentność i dostęp do informacji o wykorzystaniu AI</a></li>
+                                <li class="toc-h3"><a href="#definicje-kwalifikacja-i-zakres-regulacji">2. Definicje,
+                                        kwalifikacja i zakres regulacji</a></li>
+                                <li class="toc-h3"><a
+                                        href="#zarzadzanie-ryzykiem-i-praktyki-operacyjne-w-instytucjach">3. Zarządzanie
+                                        ryzykiem i praktyki operacyjne w instytucjach</a></li>
+                                <li class="toc-h3"><a href="#nadzor-egzekwowanie-i-koordynacja-systemowa">4. Nadzór,
+                                        egzekwowanie i koordynacja systemowa</a></li>
+                                <li class="toc-h3"><a href="#podsumowanie-rekomendacje">Podsumowanie</a></li>
+
+
+                                <li><a href="#zrodla">Źródła</a></li>
+                            </ul>
+                        </div>
+                    </details>
+                </nav>
+            </noscript>
+
+            <div class="only-js">
+                <nav class="toc" id="toc-container">
+                    <details>
+                        <summary style="cursor: pointer; list-style: none; outline: none;">
+                            <h2>Spis treści [DO POPRAWY WERSJA NOSCRIPT]
+                                <span style="font-size: 0.6em; color: #777; vertical-align: middle;">(kliknij,
+                                    aby
+                                    rozwinąć)</span>
+                            </h2>
+                        </summary>
+                        <div id="toc-content"></div>
+                    </details>
+                </nav>
+            </div>
+
+            <section class="content-section">
+                <h2 id="wprowadzenie">Wprowadzenie</h2>
+                <p>Prezentujemy omówienie wyników drugiej fazy badania odpowiedzialnego wykorzystania sztucznej
+                    inteligencji przez administrację publiczną (z wynikami I fazy możesz zapoznać się <a
+                        href="https://fedrowanie.siecobywatelska.pl/monitoringi/odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-w-sprawach-publicznych/results"
+                        target="_blank" rel="noopener noreferrer">tutaj</a>). Spośród uprzednio
+                    zidentyfikowanych przypadków wytypowaliśmy potencjalnie szczególnie interesujące do pogłębionego
+                    badania, w ramach którego sprawdzaliśmy poziom przejrzystości w odniesieniu do systemów AI
+                    stosowanych w administracji publicznej. Zastanawiało nas przy tym, na ile poszczególne organy
+                    spełniają bądź są gotowe na spełnienie przyszłych wymogów wynikających z <a
+                        href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/" target="_blank"
+                        rel="noopener noreferrer">AI Act</a> <span class="note"
+                        title="Link prowadzi do strony unijnej. Jeśli jest nieaktualny, to ten dokument możesz również pobrać z innego linku w sekcji 'Źródła' na dole niniejszej strony.">🛈</span>.
+                    Badanie obejmowało
+                    wysyłkę wniosków o informację oraz odniesienie otrzymanych odpowiedzi do informacji
+                    ogólnodostępnych. Zakres i charakter danych, o jakie wnosiliśmy w kontekście systemów AI
+                    wykorzystywanych w danej
+                    instytucji, wynikały zarówno z przepisów AI Act (przykładowo identyfikacja poziomu ryzyka systemu AI
+                    jest niezbędna, żeby wiedzieć, jakie przepisy w danym przypadku znajdują zastosowanie), jak i danych
+                    zbieranych w <a href="https://registerui.danesjenovdan.si/" target="_blank"
+                        rel="noopener noreferrer">słoweńskim rejestrze systemów AI</a>, już wcześniej przygotowanym
+                    przez
+                    organizację Danes je nov dan, jednego z partnerów w projekcie.</p>
+            </section>
+
+            <section>
+                <details>
+                    <summary style="cursor: pointer; list-style: none; outline: none;">
+                        <h3 id="wniosek-tresc">Treść wniosku <span class="emoji">🧾</span>
+                            <span style="font-size: 0.6em; color: #777; vertical-align: middle;">(kliknij, aby
+                                rozwinąć)</span>
+                        </h3>
+                    </summary>
+                    <div>
+                        <div class="email-container"
+                            style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e1e1e1; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                            <div class="header" style="background-color: #ffffff; padding: 20px; text-align: left;"><a
+                                    href="https://siecobywatelska.pl/"> <img
+                                        style="display: inline-block; max-width: 150px;"
+                                        src="https://siecobywatelska.pl//wp-content/uploads/2015/03/logo.png"
+                                        alt="Logo Sieci Obywatelskiej"> </a></div>
+                            <div class="content"
+                                style="padding: 20px; font-size: 16px; line-height: 1.6; font-family: 'GloberSemibold', 'GloberRegular', Helvetica, Arial, sans-serif; color: #333; background-color: #f5f5f5;">
+                                <h1
+                                    style="font-size: 20px; color: #000000; font-family: GloberRegular, Helvetica, Arial, sans-serif; text-align: center;">
+                                    Wniosek o informację</h1>
+                                <div>
+                                    <p>Szanowni Państwo!</p>
+                                    <p>W ramach międzynarodowego projektu badawczego <a
+                                            href="https://siecobywatelska.pl/ai-w-administracji-publicznej/">AI
+                                            Transparency in Public Administration in the CEE region and beyond</a>
+                                        zbieramy informacje dotyczące stosowania sztucznej inteligencji przez podmioty
+                                        publiczne.</p>
+                                    <p>Polska, tak jak inne kraje Unii Europejskiej, znajduje się obecnie w procesie
+                                        wdrażania przepis&oacute;w, wynikających z rozporządzenia zwanego <a
+                                            href="https://eur-lex.europa.eu/legal-content/PL/TXT/HTML/?uri=OJ:L_202401689">Artificial
+                                            Intelligence Act (AI Act)</a>. Regulacja ta nakłada określone obowiązki na
+                                        podmioty publiczne, stosujące systemy informatyczne wspierane sztuczną
+                                        inteligencją - tym większe, im wyższe potencjalne ryzyko związane z ich
+                                        stosowaniem. Naszym celem jest zbadanie poziomu przejrzystości w odniesieniu do
+                                        ww. system&oacute;w oraz potencjalną gotowość organ&oacute;w do spełniania
+                                        wymog&oacute;w ww. rozporządzenia, kt&oacute;re zaczną obowiązywać w nieodległej
+                                        przyszłości.</p>
+                                    <p>W związku z powyższym i na podstawie ustawy o dostępie do informacji publicznej,
+                                        wnosimy o <strong>odpowiedzi na poniższe pytania osobno</strong> w odniesieniu
+                                        do wszystkich system&oacute;w informatycznych i aplikacji, kt&oacute;re zostały
+                                        wytworzone przy udziale organu i w kt&oacute;rych stosowane są elementy szeroko
+                                        rozumianej <strong>sztucznej inteligencji</strong>, a jednocześnie pośrednio lub
+                                        bezpośrednio wspierają <strong>procesy decyzyjne</strong>.</p>
+                                    <ol style="list-style-type: decimal">
+                                        <li>Nazwa systemu AI<br></li>
+                                        <li>Przeznaczenie systemu - kr&oacute;tko, np. rozpoznawanie twarzy.<br>
+                                        </li>
+                                        <li>Opis systemu - do czego og&oacute;lnie cały system służy, jak działa, jakie
+                                            procesy wspiera?<br></li>
+                                        <li>Użycie sztucznej inteligencji - do czego w tym systemie i we wspieranych
+                                            przez system procesach są używane komponenty oparte na sztucznej
+                                            inteligencji?<br></li>
+                                        <li>Kwalifikacja ryzyka - czy przeprowadzono kwalifikację ryzyka w odniesieniu
+                                            do poziom&oacute;w określonych w AI Act? Prosimy o wskazanie jednej
+                                            właściwej odpowiedzi:<br>a) Nie przeprowadzono<br>b) Ryzyko minimalne<br>c)
+                                            Ryzyko ograniczone<br>d) Ryzyko wysokie<br>e) Ryzyko niedopuszczalne<br>
+                                        </li>
+                                        <li>Ocena skutk&oacute;w dla ochrony danych (DPIA) - czy przeprowadzono ocenę
+                                            skutk&oacute;w dla ochrony danych (DPIA), wynikającą z przepis&oacute;w
+                                            RODO? Jeśli odpowiedź brzmi tak, to wnosimy o udostępnienie publicznego
+                                            linku.<br></li>
+                                        <li>Ocena skutk&oacute;w dla praw podstawowych (FRIA) - czy przeprowadzono ocenę
+                                            skutk&oacute;w dla praw podstawowych (FRIA)? Jeśli odpowiedź brzmi tak, to
+                                            wnosimy o udostępnienie publicznego linku. Zdajemy sobie sprawę, że
+                                            oficjalny unijny kwestionariusz nie został jeszcze ogłoszony, jednak być
+                                            może skorzystali Państwo z nieoficjalnych lub zastosowali własną metodę.
+                                            Prosimy o wskazanie i ewentualne uzupełnienie jednej właściwej
+                                            odpowiedzi:<br>a) Nie dotyczy, bo zidentyfikowany dla systemu poziom ryzyka
+                                            tego nie wymaga.<br>b) Nie, ponieważ nie ogłoszono jeszcze
+                                            kwestionariusza.<br>c) Nie, z innych powod&oacute;w...<br>d) Tak,
+                                            link:...<br></li>
+                                        <li>Podręcznik użytkownika / instrukcja - czy użytkownicy systemu dysponują
+                                            jakimś rodzajem podręcznika lub instrukcji? Jeśli tak, to wnosimy o podanie
+                                            linku lub link&oacute;w do publicznego zasobu z tego typu
+                                            dokumentami.<br></li>
+                                        <li>Publiczna wiedza o systemie - czy wedle wiedzy organu w publicznych zasobach
+                                            internetu dostępne są jakiekolwiek wzmianki, opisy, dokumenty związane z
+                                            systemem inne, niż wskazane w poprzednich pytaniach? Jeśli tak, to wnosimy o
+                                            podanie link&oacute;w.<br></li>
+                                        <li>Modele og&oacute;lnego przeznaczenia (GPAI) - czy system korzysta z modeli
+                                            AI og&oacute;lnego przeznaczenia? Jeśli tak, to wnosimy o wyliczenie nazw
+                                            modeli i ich producent&oacute;w.<br></li>
+                                        <li>Dostawca systemu<br></li>
+                                        <li>Koszty wytworzenia i wdrożenia - całkowite łączne koszty brutto ponoszone po
+                                            stronie organu<br></li>
+                                        <li>Koszty utrzymania - koszty brutto ponoszone po stronie organu w ujęciu
+                                            rocznym<br></li>
+                                        <li>Początek obowiązywania licencji<br></li>
+                                        <li>Koniec obowiązywania licencji</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="warning-box">
+                        <h4>Doprecyzowanie</h4>
+                        <p>Pierwsza wersja wniosku zamiast pytań zawierała linka do formularza ankiety online, jednak
+                            niektóre instytucje odmówiły udzielenia odpowiedzi w takiej formie, przez co dosyłaliśmy im
+                            pytania w wersji takiej, jak zaprezentowana powyżej.</p>
+                    </div>
+                </details>
+            </section>
+
+            <section>
+                <details>
+                    <summary style="cursor: pointer; list-style: none; outline: none;">
+                        <h3 id="kogo-pytalismy">Kogo pytaliśmy i czy udzielono informacji? <span
+                                class="emoji">🗃️</span>
+                            <span style="font-size: 0.6em; color: #777; vertical-align: middle;">(kliknij, aby
+                                rozwinąć)</span>
+                        </h3>
+                    </summary>
+                    <p>Wnioski wysłaliśmy do poniższych <strong>52</strong> instytucji. Oznaczamy, czy dana instytucja
+                        odpowiedziała ostatecznie na nasze pytania w kontekście przynajmniej jednego z używanych
+                        systemów AI. Czerwonym kolorem wyróżnione są nazwy instytucji, które - jak się wydaje -
+                        zignorowały wniosek.</p>
+                    <table cellspacing="0" border="0">
+                        <colgroup width="529"></colgroup>
+                        <colgroup width="323"></colgroup>
+                        <tr>
+                            <td height="17" align="left" style="text-align: center"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Nazwa&quot;}">
+                                <strong>Nazwa</strong>
+                            </td>
+                            <td align="left" style="text-align: center"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Czy ujawniono informacje o AI&quot;}">
+                                <strong>Czy ujawniono informacje o AI</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Agencja Restrukturyzacji i Modernizacji Rolnictwa&quot;}">
+                                Agencja Restrukturyzacji i Modernizacji Rolnictwa</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Gdyńskie Centrum Informatyki&quot;}">
+                                Gdyńskie Centrum Informatyki</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Główny Urząd Geodezji i Kartografii&quot;}">
+                                Główny Urząd Geodezji i Kartografii</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Kancelaria Sejmu RP&quot;}">
+                                Kancelaria Sejmu RP</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Komenda Wojewódzka Policji w Białymstoku&quot;}">
+                                Komenda Wojewódzka Policji w Białymstoku</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Komenda Wojewódzka Policji w Szczecinie&quot;}">
+                                Komenda Wojewódzka Policji w Szczecinie</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Miejskie Wodociągi i Kanalizacja w Bydgoszczy - Sp. z o.o.&quot;}">
+                                Miejskie Wodociągi i Kanalizacja w Bydgoszczy - Sp. z o.o.</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ministerstwo Finansów&quot;}">
+                                Ministerstwo Finansów</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ministerstwo Rozwoju i Technologii&quot;}">
+                                Ministerstwo Rozwoju i Technologii</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Regionalna Dyrekcja Lasów Państwowych w Pile&quot;}">
+                                Regionalna Dyrekcja Lasów Państwowych w Pile</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Sąd Rejonowy w Strzelcach Opolskich&quot;}">
+                                Sąd Rejonowy w Strzelcach Opolskich</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Uniwersytet Szczeciński&quot;}">
+                                Uniwersytet Szczeciński</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Gminy Lipnica Wielka&quot;}">
+                                Urząd Gminy Lipnica Wielka</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Gminy Rokietnica&quot;}">
+                                Urząd Gminy Rokietnica</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Gminy w Kaźmierzu&quot;}">
+                                Urząd Gminy w Kaźmierzu</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miasta Katowice&quot;}">
+                                Urząd Miasta Katowice</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miasta Krakowa&quot;}">
+                                Urząd Miasta Krakowa</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miasta Poznania&quot;}">
+                                Urząd Miasta Poznania</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miasta Warszawa&quot;}">
+                                Urząd Miasta Warszawa</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miasta Włocławek&quot;}">
+                                Urząd Miasta Włocławek</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miasta Zgierza&quot;}">
+                                Urząd Miasta Zgierza</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miejski Gminy Rawicz&quot;}">
+                                Urząd Miejski Gminy Rawicz</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miejski w Boguchwale&quot;}">
+                                Urząd Miejski w Boguchwale</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miejski w Grodzisku Mazowieckim&quot;}">
+                                Urząd Miejski w Grodzisku Mazowieckim</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Ochrony Konkurencji i Konsumentów&quot;}">
+                                Urząd Ochrony Konkurencji i Konsumentów</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Patentowy Rzeczypospolitej Polskiej&quot;}">
+                                Urząd Patentowy Rzeczypospolitej Polskiej</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Wojewódzki Inspektorat Ochrony Roślin i Nasiennictwa w Opolu&quot;}">
+                                Wojewódzki Inspektorat Ochrony Roślin i Nasiennictwa w Opolu</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zakład Ubezpieczeń Społecznych&quot;}">
+                                Zakład Ubezpieczeń Społecznych</td>
+                            <td align="left" style="text-align: center; color: green;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;TAK&quot;}">TAK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Akademia Wychowania Fizycznego Józefa Piłsudskiego w Warszawie&quot;}">
+                                Akademia Wychowania Fizycznego Józefa Piłsudskiego w Warszawie</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Dowództwo Komponentu Wojsk Obrony Cyberprzestrzeni&quot;}">
+                                Dowództwo Komponentu Wojsk Obrony Cyberprzestrzeni</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left" style="color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Instytut Badawczy Leśnictwa&quot;}">
+                                Instytut Badawczy Leśnictwa</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Komenda Wojewódzka Policji w Katowicach&quot;}">
+                                Komenda Wojewódzka Policji w Katowicach</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left" style="color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Miejskie Wodociągi i Kanalizacja Spółka z o.o. w Koszalinie&quot;}">
+                                Miejskie Wodociągi i Kanalizacja Spółka z o.o. w Koszalinie</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left" style="color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ministerstwo Cyfryzacji&quot;}">
+                                Ministerstwo Cyfryzacji</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ministerstwo Klimatu i Środowiska&quot;}">
+                                Ministerstwo Klimatu i Środowiska</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ministerstwo Nauki i Szkolnictwa Wyższego&quot;}">
+                                Ministerstwo Nauki i Szkolnictwa Wyższego</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ministerstwo Obrony Narodowej&quot;}">
+                                Ministerstwo Obrony Narodowej</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ministerstwo Spraw Zagranicznych&quot;}">
+                                Ministerstwo Spraw Zagranicznych</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left" style="color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ośrodek Przetwarzania Informacji&quot;}">
+                                Ośrodek Przetwarzania Informacji</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Sąd Okręgowy w Katowicach&quot;}">
+                                Sąd Okręgowy w Katowicach</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Sąd Okręgowy w Rybniku&quot;}">
+                                Sąd Okręgowy w Rybniku</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left" style="color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Starostwo Powiatowe w Mikołowie&quot;}">
+                                Starostwo Powiatowe w Mikołowie</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Straż Miejska w Opolu&quot;}">
+                                Straż Miejska w Opolu</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Uniwersytet Komisji Edukacji Narodowej w Krakowie&quot;}">
+                                Uniwersytet Komisji Edukacji Narodowej w Krakowie</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left" style="color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miasta Siemianowice Śląskie&quot;}">
+                                Urząd Miasta Siemianowice Śląskie</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left" style="color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miasta Stalowej Woli&quot;}">
+                                Urząd Miasta Stalowej Woli</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miasta Szczecin&quot;}">
+                                Urząd Miasta Szczecin</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left" style="color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miasta Torunia&quot;}">
+                                Urząd Miasta Torunia</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miejski w Białymstoku&quot;}">
+                                Urząd Miejski w Białymstoku</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miejski w Chojnicach&quot;}">
+                                Urząd Miejski w Chojnicach</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miejski w Dąbrowie Górniczej&quot;}">
+                                Urząd Miejski w Dąbrowie Górniczej</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="17" align="left"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Urząd Miejski Wrocławia&quot;}">
+                                Urząd Miejski Wrocławia</td>
+                            <td align="left" style="text-align: center; color: red;"
+                                data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NIE&quot;}">NIE
+                            </td>
+                        </tr>
+                    </table>
+                </details>
+            </section>
+            <section class="content-section">
+                <h2 id="odwrot">Odwrót od jawności</h2>
+                <h3 id="zakres">Druga faza badania – zakres i przebieg</h3>
+                <p>Po badaniu przeprowadzonym latem 2025 roku, obejmującym blisko 5,5 tysiąca instytucji, w którym
+                    pytaliśmy ogólnie o korzystanie z AI, wytypowaliśmy
+                    52 podmioty do pogłębionej analizy (wyjąwszy Gdynię, do której wniosek wysłano omyłkowo,
+                    ponieważ już poprzednio w tym zakresie odsyłała do Gdyńskiego Centrum Informatyki).
+                    W rezultacie 1 października 2025 roku skierowaliśmy do wybranych instytucji wniosek zawierający
+                    bardziej
+                    szczegółowe pytania dotyczące wykorzystywania systemów AI. We wniosku specjalnie nie
+                    wskazaliśmy, o jakie konkretnie systemy informatyczne nam chodzi - pomimo że to one właśnie były
+                    głównym kryterium selekcji kandydatów do tej fazy badania - ponieważ chcieliśmy sprawdzić, czy
+                    wybrane instytucje będą z nami tak samo szczere, jak poprzednio. Przeczucie nas nie myliło: okazało
+                    się, że uzyskanie odpowiedzi będzie tym razem znacznie trudniejsze. Konieczne było ponaglanie
+                    instytucji, ponowne przesyłanie pytań w innej formie i podejmowanie dodatkowych prób kontaktu.
+                    Ostatecznie odpowiedzi odnoszących się do używanych systemów AI udzieliło jedynie 28 instytucji,
+                    czyli niewiele więcej niż połowa zapytanych — dokładnie 54%.</p>
+                <h3 id="gdzie">Gdzie zniknęły systemy AI?</h3>
+                <p>W pozostałych przypadkach mieliśmy do czynienia między innymi z milczeniem lub zasłanianiem się
+                    tajemnicą, do czego jeszcze wrócimy. Ponadto jednak pojawiło się zjawisko szczególnie
+                    zastanawiające:
+                    otóż systemy, które jeszcze latem 2025 roku — według deklaracji samych instytucji — były systemami
+                    AI,
+                    jesienią 2025 roku w odpowiedziach tych samych instytucji przestały nimi być.
+                    Dla porządku trzeba odnotować teoretycznie możliwe wyjaśnienie: część tych rozwiązań mogła po prostu
+                    przestać być używana. Żadna z instytucji nie zadeklarowała jednak tego wprost (najbliżej tego było
+                    Ministerstwo Klimatu i Środowiska).
+                    Wyjątkiem w zakresie konsekwencji w nieudzielaniu informacji było Ministerstwo Nauki i Szkolnictwa
+                    Wyższego, które w obu badaniach nie deklarowało
+                    wykorzystywania systemów AI. Do tego przypadku wrócimy w dalszej części raportu.</p>
+                <p>Jak już wspomniano, wiele odpowiedzi sprowadzało się do stwierdzenia, że dana instytucja nie korzysta
+                    z systemów AI. W przypadkach szczególnie dla nas istotnych konfrontowaliśmy te deklaracje z
+                    odpowiedziami z poprzedniej fazy badania, w których te same instytucje wskazywały konkretne
+                    wykorzystywane systemy AI. Wnosiliśmy wówczas o wyjaśnienie, dlaczego rozwiązania te nagle przestały
+                    być uznawane za systemy AI, ewentualnie prosiliśmy o odpowiedź na nasze pytania niezależnie od
+                    przyjętej klasyfikacji danego systemu.
+
+                    Takie działania przynosiły różne rezultaty. Jedno pozostawało jednak niezmienne: korespondencja była
+                    często zarazem ciekawa i pouczająca. Do najciekawszych przypadków wrócimy w dalszej części raportu.
+                </p>
+                <h3 id="gdzie">Problemy z formą wniosku</h3>
+                <p>Trzeba zaznaczyć, że zastosowana przez nas inicjalnie forma ankiety online (przesyłana w postaci
+                    linku
+                    w wiadomości przewodniej) — choć ustawowo dopuszczalna — mogła
+                    dla części instytucji wydawać się problematyczna z perspektywy bezpieczeństwa. Zgodnie z art. 14
+                    ustawy o dostępie do informacji publicznej, udostępnianie informacji publicznej na wniosek następuje
+                    w sposób i w formie zgodnych z wnioskiem. Jednocześnie art. 14 pkt 2 stanowi, że jeżeli informacja
+                    publiczna nie może zostać udostępniona w sposób lub w formie określonych we wniosku, podmiot
+                    obowiązany do jej udostępnienia powinien pisemnie poinformować wnioskodawcę o przyczynach takiego
+                    stanu rzeczy oraz wskazać, w jaki sposób lub w jakiej formie informacja może zostać udostępniona
+                    niezwłocznie.
+                </p>
+                <p>Dlatego gdy otrzymywaliśmy sygnały, że formularz może stanowić problem, przesyłaliśmy pytania z
+                    ankiety e-mailem, prosząc o odpowiedź tym samym kanałem. W kilku przypadkach robiliśmy to nawet z
+                    własnej inicjatywy, mimo braku wyraźnej informacji o trudnościach z wypełnieniem formularza.
+
+                    Nie zmienia to jednak ogólnej oceny sytuacji. Nasz pierwotny wniosek o udzielenie odpowiedzi za
+                    pośrednictwem formularza online nie usprawiedliwia ani całkowitego braku odpowiedzi, ani deklaracji
+                    braku systemów AI, ani odmowy udzielenia informacji. Tymczasem właśnie z takimi reakcjami
+                    spotkaliśmy się w 24 z 52 przypadków. Warto przypomnieć, że każda z tych instytucji jeszcze cztery
+                    miesiące wcześniej deklarowała wykorzystywanie systemów AI — i to na tyle interesujących, że
+                    uznaliśmy za zasadne dopytanie o szczegóły. Co więc zmieniło się przez ten czas?</p>
+                <h3>Opieszałość w odpowiedzi</h3>
+                <p>Pierwotne wnioski w tej sprawie wysłaliśmy 1 października 2025 roku. Mimo podstawowego 14-dniowego
+                    terminu na odpowiedź, korespondencja — często po licznych ponagleniach — spływała jeszcze pod koniec
+                    2025, a ostatnią odpowiedź otrzymaliśmy pod koniec lutego 2026 roku. Była to odpowiedź Ministerstwa
+                    Spraw Zagranicznych — odmowna.
+
+                    Ze względu jednak na to, że pierwotnie wnioskowaliśmy o odpowiedź poprzez formularz online, co mogło
+                    budzić pewne wątpliwości po stronie adresatów, nie będziemy szczegółowo wskazywać instytucji, które
+                    przekroczyły ustawowy termin odpowiedzi.</p>
+            </section>
+
+            <section class="content-section">
+                <h2 id="uzasadnienia">Uzasadnienia zmiany stanowiska</h2>
+                <h3 id="zus">ZUS</h3>
+                <p>W przypadku Zakładu Ubezpieczeń Społecznych instytucja przedstawiła rozbudowane stanowisko dotyczące
+                    rozumienia pojęcia systemu AI, zakończone konkluzją, że w Zakładzie nie są stosowane systemy
+                    spełniające definicję wynikającą z AI Act. W odpowiedzi na to napisaliśmy, że niezależnie od
+                    przyjętej kwalifikacji oczekujemy odpowiedzi na pytania zawarte we wniosku w odniesieniu do
+                    narzędzia opartego na modelu predykcyjnym, wykorzystywanego przez organ do systemowej analizy danych
+                    z wystawionych zaświadczeń lekarskich o czasowej niezdolności do pracy. Następnie ZUS dwukrotnie
+                    przedłużał termin udzielenia odpowiedzi, najpierw do 5 grudnia 2025 r., a następnie do 19 grudnia
+                    2025 r. Ostatecznie instytucja odniosła się do wskazanego systemu predykcyjnego. Jednocześnie
+                    podtrzymała stanowisko, że rozwiązanie to nie stanowi systemu AI, przedstawiając w tym zakresie
+                    obszerne uzasadnienie.</p>
+                <h3 id="ministerstwa">Ministerstwa</h3>
+                <p>Ministerstwo Klimatu i Środowiska w pierwszym etapie korespondencji (tj. jeszcze w czerwcu 2025)
+                    wskazało,
+                    że wykorzystuje system informatyczny Testportal, oparty na sztucznej inteligencji w zakresie
+                    generowania pytań do testów selekcyjnych w procesie rekrutacji. Z przekazanych informacji wynikało,
+                    że system służy do tworzenia treści pytań testowych na podstawie dostarczonych materiałów
+                    źródłowych, takich jak akty prawne, zarządzenia czy dane statystyczne. Dlatego w kolejnej fazie
+                    badania (rozpoczętej w październiku 2025), po dłuższej
+                    wymianie korespondencji (ponaglanie, wyjaśnianie kwestii formalnych, itd., itp.), zwrócilismy się o
+                    udzielenie informacji w
+                    odniesieniu do systemu Testportal. W odpowiedzi Ministerstwo niespodziewanie stwierdziło, że nie
+                    dysponuje i
+                    nie używa systemu o tej nazwie, nie odnosząc się przy tym do przeszłości. Nie wiemy więc, co jest
+                    źródłem niespójności w odpowiedziach Ministerstwa.</p>
+                <p>W przypadku Ministerstwa Nauki i Szkolnictwa Wyższego, po otrzymaniu odpowiedzi, w której urząd nie
+                    odniósł się do znanego nam skądinąd Jednolitego Systemu Antyplagiatowego, zapytaliśmy o powody jego
+                    pominięcia. W odpowiedzi Ministerstwo wyjaśniło, że nie uwzględniło JSA, ponieważ nie
+                    wykorzystuje go w procesie decyzyjnym, ani bezpośrednio, ani pośrednio. Wskazano również, że system
+                    jest udostępniany podmiotom szkolnictwa wyższego i nauki, natomiast dostępna w jego ramach funkcja
+                    analizy wspartej AI ma charakter opcjonalny. Warto przy tym zauważyć, że wytwórcą tego systemu jest
+                    Ośrodek Przetwarzania Informacji, od którego nie odnotowaliśmy żadnej odpowiedzi.</p>
+                <p>Ministerstwo Spraw Zagranicznych początkowo wskazało, że nie korzysta z
+                    systemów spełniających definicję systemów AI w rozumieniu AI Act. W odpowiedzi na to zwróciliśmy
+                    uwagę, że w odrębnej korespondencji z 6 czerwca 2025 r. Ministerstwo informowało o wdrożeniu
+                    narzędzi wykorzystujących mechanizmy sztucznej inteligencji do bieżącej pracy w niektórych
+                    obszarach, w tym w zakresie problematyki sankcyjnej. Po skierowaniu pytania doprecyzowującego
+                    Ministerstwo poinformowało o konieczności przeprowadzenia dodatkowej analizy technicznej oraz
+                    formalnoprawnej i zapowiedziało udzielenie odpowiedzi w późniejszym terminie. Następnie termin
+                    załatwienia sprawy był przedłużany, a w toku postępowania skierowano również wezwanie do
+                    uzupełnienia braków formalnych. Ostatecznie sprawa zakończyła się odmową udzielenia informacji, jako
+                    objętych tajemnicą dyplomatyczną, bo ich ujawnienie mogłoby szkodzić polityce zagranicznej
+                    Rzeczypospolitej Polskiej i naruszać jej wizerunek międzynarodowy.
+                    Warto przy tym odnotować przewlekłość postępowania: od złożenia wniosku 1 października 2025 r. do
+                    wydania odmowy 20 lutego 2026 r. upłynęło niemal pięć miesięcy, mimo że chodziło o podstawowy tryb
+                    dostępu do informacji publicznej, a nie o postępowanie odwoławcze.</p>
+                <h3 id="sady">Sądy</h3>
+                <p>Sąd Okręgowy w Rybniku poinformował, że nie posiada systemu AI i nie
+                    stosuje sztucznej inteligencji. W odpowiedzi na to zwrócilismy uwagę, że we wcześniejszej
+                    korespondencji z 27 czerwca 2025 r. organ wymieniał rozwiązania takie jak SAWA oraz LEX Kara łączna
+                    w kontekście systemów wspomaganych sztuczną inteligencją i w związku z tym zapytaliśmy, czy
+                    oznacza
+                    to, że żadne z tych rozwiązań, pomimo deklaracji z czerwca, nie zawiera jednak elementów
+                    kwalifikujących
+                    oprogramowanie do którejkolwiek z kategorii systemów AI zdefiniowanych w AI Act. W odpowiedzi Sąd
+                    podtrzymał swoje wcześniejsze stanowisko, stwierdzając krótko, że nie posiada
+                    systemu AI i nie stosuje sztucznej inteligencji. Skąd się wzięła w takim razie na
+                    przestrzeniu kilku miesięcy różnica w interpretacji? Nie wiemy, Sąd nie był uprzejmy się odnieść do
+                    tej kwestii.</p>
+                <p>Sąd Okręgowy w Katowicach podobnie oświadczył, że nie wykorzystuje żadnych
+                    systemów wspieranych lub w całości opartych na szeroko rozumianej sztucznej
+                    inteligencji, które pośrednio lub bezpośrednio wspierałyby procesy decyzyjne. W odpowiedzi
+                    przyznaliśmy, że systemy Wirtualny Agent i Czatbot z funkcją Wirtualnego Asystenta,
+                    o których wiedzieliśmy z czerwcowej korespondencji, faktycznie nie wpływają na procesy decyzyjne po
+                    stronie organu, jednak
+                    niezależnie od tego prosimy o udzielenie odpowiedzi w ich kontekście, bo nadal są to systemy
+                    AI. Ponadto zastanawialiśmy się w naszym piśmie, czy
+                    wykorzystywany w Sądzie do przetwarzania mowy na tekst program Newton Dictate 5, nie wpływa
+                    pośrednio na procesy decyzyjne.
+                    Wszak błędy generowane na etapie transkrypcji mogą pośrednio wpływać na dalszą pracę na
+                    przygotowanym materiale, a tym samym na treść
+                    podejmowanych rozstrzygnięć. W związku z tym poprosiliśmy o udzielenie odpowiedzi również w
+                    odniesieniu do tego systemu.
+                    Na to dostaliśmy pismo, w którym Sąd stwierdza, że udzielił już odpowiedzi na wniosek i że nie ma
+                    potrzeby uzupełniania
+                    udzielonej informacji. Tylko czyja potrzeba powinna tu mieć znaczenie? Sądu, czy wnioskodawcy?
+                    Ponadto
+                    zostaliśmy pouczeni, że w przypadku wielokrotnie ponawianych wniosków o udostępnienie tej samej
+                    informacji przez tego samego wnioskodawcę, na adresacie wniosku nie spoczywa obowiązek jej
+                    udzielenia po raz kolejny.
+                    A przeciez to nie był ten sam wniosek, bo zmieniliśmy jego zakres!
+                </p>
+                <h3 id="samorzady">Samorządy</h3>
+                <p>Urząd Miejski w Chojnicach odpisał, że wypełnianie ankiet nie
+                    pozostaje w związku z przedmiotem i trybem udostępniania informacji publicznej, a zatem nie stanowi
+                    informacji publicznej. Jednocześnie, na marginesie, urząd poinformował, że gmina nie korzysta z
+                    systemów AI w rozumieniu definicji zawartej w AI Act. W odpowiedzi zwróciliśmy uwagę na
+                    wykorzystywanie przez urząd programu WPF Asystent, służącego do przygotowywania dokumentów
+                    związanych z
+                    Wieloletnią Prognozą Finansową i zapytaliśmy, czy rozwiązanie to zostało uznane za niespełniające
+                    kryteriów żadnej z kategorii systemów AI określonych w AI Act. W odpowiedzi urząd podtrzymał
+                    stanowisko, że WPF Asystent nie kwalifikuje się jako system sztucznej inteligencji, powołując się
+                    przy tym na informację uzyskaną od dostawcy oprogramowania, zgodnie z którą w systemie ePublink WPF,
+                    dawniej WPF Asystent, nie są wykorzystywane mechanizmy oparte na sieciach neuronowych, uczeniu
+                    maszynowym, modelach językowych ani innych technologiach zaliczanych do szeroko rozumianej sztucznej
+                    inteligencji. Stoi to w sprzeczności z <a
+                        href="https://fedrowanie.siecobywatelska.pl/sprawy/odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-faza-2-12"
+                        target="_blank" rel="noopener noreferrer">odpowiedzią z Boguchwały</a>, aczkolwiek nie mamy
+                    pewności, czy
+                    chodzi o tę samą aplikację.</p>
+                <p>Urząd Miejski Gminy Rawicz początkowo poinformował, że po analizie przepisów AI Act nie
+                    stwierdzono, aby systemy informatyczne wykorzystywane przez urząd spełniały
+                    definicję systemów AI. W odpowiedzi zwróciliśmy uwagę, że we wcześniejszej korespondencji organ
+                    wskazywał na wykorzystywanie systemu monitoringu miejskiego wyposażonego w funkcję inteligentnej
+                    analizy obrazu, obejmującą rozpoznawanie tablic rejestracyjnych oraz rozpoznawanie obiektów, takich
+                    jak człowiek, rowerzysta i pojazd. Po przedłużeniu terminu odpowiedzi urząd doprecyzował, że system
+                    opiera się na kamerach Dahua, które rozpoznają i zapisują numery rejestracyjne pojazdów, natomiast
+                    funkcja odróżniania kategorii <i>pojazd/osoba</i> nie prowadzi do generowania dodatkowych danych ani
+                    do
+                    identyfikacji osób. Organ wskazał zarazem, że w jego ocenie rozwiązanie to najprawdopodobniej nie
+                    kwalifikuje się jako system wysokiego ryzyka w rozumieniu AI Act, ponieważ nie służy do zdalnej
+                    identyfikacji biometrycznej ani nie stanowi komponentu bezpieczeństwa w zarządzaniu ruchem drogowym
+                    lub infrastrukturą krytyczną. Jednocześnie urząd poinformował, że informacje o tym systemie zostały
+                    ostatecznie wprowadzone do ankiety.</p>
+                <p>W przypadku Urzędu Miasta Stalowej Woli, mimo potwierdzenia odczytania korespondencji, nie udzielono
+                    odpowiedzi na
+                    skierowany wniosek. Po upływie czasu wystosowaliśmy przypomnienie, a następnie wezwanie do
+                    niezwłocznego udzielenia odpowiedzi, wskazując, że wniosek dotyczy informacji odnoszących się do
+                    automatycznej analizy sytuacji nietypowych prowadzonej przez system monitoringu miejskiego. Również
+                    to pismo zostało odczytane, jednak organ ponownie nie udzielił odpowiedzi.</p>
+                <p>Urząd Miejski w Dąbrowie Górniczej początkowo wskazał, że na dzień udzielenia odpowiedzi urząd
+                    oraz jednostki podległe nie stosują systemów, które bezpośrednio lub pośrednio wspierałyby procesy
+                    decyzyjne z wykorzystaniem technologii AI. W odpowiedzi na to zwróciliśmy uwagę na system
+                    eRecruiter,
+                    którego niektóre elementy mogą wykorzystywać sztuczną inteligencję do wspierania pracy w obszarze
+                    analizy formularzy rekrutacyjnych i CV kandydatów, a także do tworzenia ogłoszeń o pracę oraz pytań
+                    rekrutacyjnych. Organ wyjaśnił, że system jest wykorzystywany wyłącznie jako narzędzie do obsługi
+                    napływu ofert oraz komunikacji z kandydatami i członkami komisji rekrutacyjnych, natomiast moduły
+                    AI, takie jak preselekcja czy rekomendacje, pozostają w przyjętej konfiguracji nieaktywne i nie
+                    uczestniczą w ocenie kandydatów. Wskazano również, że decyzje o dopuszczeniu do kolejnych etapów
+                    rekrutacji oraz o wyborze kandydata podejmuje wyłącznie komisja rekrutacyjna, w związku z czym
+                    system eRecruiter nie został ujęty w odpowiedzi jako rozwiązanie wspierające procesy decyzyjne.</p>
+                <p>W przypadku Białegostoku urząd początkowo wskazał, że elementy szeroko rozumianej sztucznej
+                    inteligencji nie są wykorzystywane pośrednio ani bezpośrednio przez systemy stosowane przez Urząd
+                    Miejski w Białymstoku oraz nie wspierają realizowanych w nim procesów decyzyjnych. W odpowiedzi
+                    zwrócono jednak uwagę na system klasy RPA, wspomagający Biuro Zarządzania Efektywnością Energetyczną
+                    w analizie faktur, pytając, czy rozwiązanie to zostało uznane za niespełniające kryteriów żadnej z
+                    kategorii systemów AI określonych w AI Act, mimo jego potencjalnego wpływu na proces decyzyjny.
+                    Urząd podtrzymał swoje wcześniejsze stanowisko i wyjaśnił, że stosowany system nie spełnia
+                    przesłanek definicji systemu AI zawartej w AI Act. W uzasadnieniu wskazano, że rozwiązanie to,
+                    należące do klasy RPA, nie jest autonomiczne, nie wykazuje zdolności adaptacyjnych, a także nie jest
+                    zdolne do wnioskowania ani generowania na podstawie danych wejściowych wyników takich jak predykcje,
+                    treści, zalecenia lub decyzje mogące wpływać na środowisko fizyczne lub wirtualne. W konsekwencji
+                    organ uznał, że system ten nie kwalifikuje się jako system AI w rozumieniu rozporządzenia.</p>
+                <p>W przypadku Siemianowic Śląskich, wobec braku odpowiedzi na wniosek także po uprzednim przypomnieniu,
+                    skierowano kolejne pismo wzywające do niezwłocznego udzielenia informacji publicznej dotyczącej
+                    systemów wykorzystujących elementy sztucznej inteligencji. W piśmie wskazano w szczególności na
+                    potrzebę udzielenia odpowiedzi odrębnie w odniesieniu do systemów Milestone XProtect Incident
+                    Manager, Milestone XProtect Rapid REVIEW oraz XProtect License Plate Recognition. Na to wystąpienie
+                    nie udzielono odpowiedzi.</p>
+                <p>W przypadku Szczecina urząd początkowo poinformował, że nie używa systemów AI w rozumieniu definicji
+                    zawartej w AI Act. W odpowiedzi zwrócono jednak uwagę na System Monitoringu Miejskiego z analizą
+                    obrazu, pytając, czy został on uznany za niespełniający kryteriów żadnej z kategorii systemów AI
+                    określonych w rozporządzeniu, mimo jego potencjalnego wpływu na procesy decyzyjne. Dodatkowo
+                    wskazano na tzw. Wirtualną ankieterkę, wykorzystaną na potrzeby konsultacji społecznych prowadzonych
+                    w związku z pracami nad Strategią Rozwoju Miasta, prosząc o odniesienie się również do tego
+                    rozwiązania.
+                    W odpowiedzi urząd wyjaśnił, że system monitoringu wykazuje pewne cechy systemu AI, ponieważ jest
+                    systemem maszynowym i na podstawie danych wejściowych przekazuje wyniki mogące wpływać na środowisko
+                    fizyczne, jednak w jego ocenie nie spełnia podstawowego kryterium wnioskowania. Wskazano, że system
+                    realizuje wyłącznie sztywno zapisane algorytmy i nie wykazuje zdolności adaptacyjnych, wobec czego
+                    nie został uznany za system AI w rozumieniu AI Act. Odnosząc się natomiast do Wirtualnej ankieterki,
+                    urząd podkreślił, że narzędzie to miało charakter edukacyjno-promocyjny, nie wpływało bezpośrednio
+                    na decyzje podmiotu opracowującego strategię i nie służyło agregowaniu wniosków. Zaznaczono również,
+                    że było to jednorazowe, prototypowe przedsięwzięcie przygotowane przez wykonawcę zewnętrznego w celu
+                    zachęcenia mieszkańców do udziału w konsultacjach społecznych. Jednocześnie urząd dopuścił
+                    możliwość, że w przyszłości podobne rozwiązania mogłyby zostać rozwinięte w kierunku pozyskiwania
+                    wniosków.</p>
+                <h3 id="uczelnie">Uczelnie</h3>
+                <p>W przypadku Uniwersytetu Komisji Edukacji Narodowej w Krakowie po wcześniejszej wymianie
+                    korespondencji, w której instytucja deklarowała brak wykorzystywania systemów AI, zwróciliśmy się z
+                    prośbą o wyjaśnienie, czy Uniwersytet nie korzysta
+                    z Jednolitego Systemu Antyplagiatowego, czy też korzysta, ale uznał, że system ten nie należy do
+                    kategorii
+                    rozwiązań wykorzystujących sztuczną inteligencję. Jednocześnie zawnioskowaliśmy, żeby w przypadku
+                    korzystania
+                    z JSA wypełniono naszą ankietę w kontekście tego systemu, niezależnie od przyjętej przez Uniwersytet
+                    klasyfikacji. Od tego momentu nie dostaliśmy już żadnej odpowiedzi.</p>
+                <p>Podobny scenariusz napisała korespondencja z Akademią Wychowania Fizycznego Józefa Piłsudskiego w
+                    Warszawie. Uczelnia najpierw poinformowała,
+                    że obecnie nie stosuje systemów informatycznych ani aplikacji wspieranych sztuczną inteligencją,
+                    które pośrednio lub bezpośrednio wspierają procesy decyzyjne. W odpowiedzi wskazaliśmy, że z
+                    innych informacji uzyskanych od nich wynikało, iż na zlecenie Filii AWF w Białej
+                    Podlaskiej opracowano aplikację Test FUS, opartą na zaawansowanych technologiach przetwarzania
+                    obrazu i uczenia maszynowego. W związku z tym zwrócono się o udzielenie odpowiedzi na pierwotny
+                    wniosek w odniesieniu do tego rozwiązania. Na to również nie otrzymaliśmy odpowiedzi.</p>
+                <h3 id="straz">Straż Miejska w Opolu</h3>
+                <p>W przypadku Straży Miejskiej w Opolu instytucja wskazała, że nie korzysta i nie
+                    wykorzystuje w swojej pracy sztucznej inteligencji. W odpowiedzi zwróciliśmy uwagę, że we
+                    wcześniejszej korespondencji z 7 lipca 2025 r. organ w kontekście systemów AI deklarował
+                    wykorzystanie programu Genetec do
+                    obsługi obrazu z kamer monitoringu, w związku z czym poprosiliśmy o doprecyzowanie, czy program ten
+                    nie jest już obecnie wykorzystywany, czy też nie są w nim używane funkcje wspierane sztuczną
+                    inteligencją. W odpowiedzi Straż Miejska podtrzymała swoje wcześniejsze stanowisko, ograniczając się
+                    do ponownego stwierdzenia, że nie korzysta i nie wykorzystuje w swojej pracy sztucznej inteligencji.
+                    Zatem i tutaj nie dowiedzieliśmy się, dlaczego ten system był systemem AI w czerwcu, ale nie był już
+                    nim w październiku.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2 id="wyniki">Co wynika z udostępnionych informacji?</h2>
+                <h3 id="glowny_wniosek">Główny wniosek</h3>
+                <p>Analiza wyników badania w kontekście przepisów AI Act oraz - szerzej - ochrony praw
+                    człowieka ujawnia szereg wyzwań dotyczących przejrzystości, kwalifikacji ryzyka i gotowości
+                    instytucji do nowych obowiązków regulacyjnych.</p>
+                <p>Widać, że polskie instytucje publiczne zaczynają identyfikować użycie AI, ale
+                    przejrzystość jest nadal reaktywna, nierówna i mocno zależna od kontekstu. To problem, bo AI Act
+                    opiera
+                    się na założeniu, że AI ma być technologią zorientowaną na człowieka, zgodną z Kartą praw
+                    podstawowych, demokracją i praworządnością. W szerszym standardzie Rady Europy przejrzystość
+                    oznacza nie tylko udzielenie odpowiedzi na wniosek, ale też dokumentowanie użycia AI,
+                    udostępnianie informacji osobom dotkniętym, możliwość zakwestionowania decyzji oraz informowanie, że
+                    ktoś wchodzi w interakcję z systemem AI.</p>
+                <h3 id="kwalifikacja">Kwalifikacja systemu, kwalifikacja ryzyka</h3>
+                <p>Zebrane informacje z 28 instytucji dotyczącą 37 systemów. Z tego w 19 przypadkach wskazano, że nie
+                    przeprowadzono kwalifikacji ryzyka. I to
+                    jest kluczowy sygnał ostrzegawczy: bez kwalifikacji ryzyka instytucja nie będzie wiedziała, czy
+                    powinna w danym kontekście przestrzegać obowiązków wynikających przykładowo z
+                    art. 26–27 AI Act: między innymi czy musi informować osoby, rejestrować użycie systemu,
+                    przeprowadzić FRIA czy uwzględnić nadzór człowieka w procesach wspieranych przez dany system.</p>
+                <p>Niepokojącym zjawiskiem jest przy tym tendencja niektórych podmiotów do zaprzeczania, że ich
+                    rozwiązania są <i>systemami AI</i> w rozumieniu Aktu o AI, co może służyć uniknięciu rygorystycznych
+                    obowiązków. Przykładowo ZUS twierdzi, że jego system SOS AI do typowania zwolnień lekarskich nie
+                    jest oparty na
+                    AI, lecz jest <i>narzędziem analitycznym</i>, mimo że wykorzystuje modele predykcyjne do oceny
+                    prawdopodobieństwa nadużyć. A zgodnie z wytycznymi, kluczową cechą AI jest zdolność do wnioskowania
+                    (interferencji), która wykracza poza proste przetwarzanie danych. Takie podejście uderza w
+                    przejrzystość, ponieważ uniemożliwia obywatelom zrozumienie, w jaki sposób algorytmy wpływają na ich
+                    sytuację prawną (np. prawo do zasiłku).</p>
+                <p>I dalej, w odniesieniu do 12 systemów ryzyko uznano za minimalne, w 5 za ograniczone, a
+                    tylko w 1 za wysokie. Przy czym AI Act klasyfikuje jako wysokiego ryzyka m.in. systemy w obszarach
+                    biometrii, infrastruktury krytycznej, zatrudnienia, podstawowych usług publicznych, ścigania
+                    przestępstw i wymiaru sprawiedliwości. W praktyce oznacza to, że część odpowiedzi wymagałaby
+                    dokładniejszej
+                    weryfikacji, bo z opisu systemu wynika, że ryzyko może być większe, niż zadeklarowano.</p>
+                <p>Przykładowo systemy dotyczące monitoringu wizyjnego, ANPR, kontroli zwolnień
+                    lekarskich, rekrutacji, świadczeń, bezpieczeństwa publicznego czy infrastruktury wodnej mogą nie być
+                    automatycznie wysokiego ryzyka, ale ich kontekst użycia jest dokładnie tym, który AI Act uznaje za
+                    wrażliwy prawnoczłowieczo. W przypadku świadczeń publicznych wysokim ryzykiem mogą być systemy
+                    służące do oceny kwalifikowalności, przyznawania, ograniczania, cofania lub żądania zwrotu
+                    świadczeń; w zatrudnieniu — systemy do selekcji kandydatów lub oceny osób; w ściganiu — systemy
+                    wspierające ocenę dowodów, profilowanie lub ocenę ryzyka osób .</p>
+                <h3 id="dpia">Ocena skutków dla ochrony danych (DPIA, od ang. Data Protection Impact Assessment)</h3>
+                <p>Zgodnie z przepisami RODO (które AI Act uzupełnia, a nie zastępuje), to administrator danych –
+                    czyli podmiot, który decyduje o celach i sposobach przetwarzania danych osobowych – jest zobowiązany
+                    do przeprowadzenia DPIA. W ekosystemie AI podmiotem tym jest zazwyczaj podmiot stosujący system AI.
+                    Stąd częstą odpowiedzią, tłumaczącą niedopełnienie tego obowiazku było zaprzeczenie przetwarzania
+                    danych osobowych przez dany system.
+                <p>I o ile w przypadku dajmy na to Systemu Identyfikacji Roślin AI
+                    przypuszczalnie tak właśnie jest w istocie,
+                    o tyle w przypadku chatbotów, czy voicebotów używanych do komunikacji z obywatelami, założenie że
+                    żaden użytkownik nigdy sam z siebie nie ujawni danych osobowych tak samo naturalnie, jakby to
+                    zrobił w rozmowie z urzędnikiem, jest nierealistyczne. Ponadto system może przecież
+                    przetwarzać dane pośrednie pozyskane w procesie interakcji (i
+                    prawdopodobnie to robi w mniejszym lub większy zakresie, chociażby ze względów audytowych), które
+                    również mogą być danymi osobowymi (np. adres
+                    IP, dane o urządzeniu, dane behawioralne).</p>
+                <p>Czy więc brak przeprowadzenia DPIA w takich
+                    przypadkach nie jest jednak niezgodny z RODO i może stanowić naruszenie praw osób, których dane
+                    dotyczą? Czy system, który służy do składania ofert pracy na ogłoszenia naborze w formie
+                    elektronicznej nie przetwarza danych osobowych? Co z monitoringiem obiektów typu osoba na obszarze
+                    kąpieliska? Co z systemami rozpoznającymi tablice rejestracyjne? A mamy szereg tego typu przypadków,
+                    gdzie jednocześnie zadeklarowano brak przeprowadzenia DPIA, z czego w części z nich zapewniano
+                    jednocześnie o
+                    braku przetwarzania danych osobowych (sic!).</p>
+                <p>Przejdźmy teraz do omówienia sytuacji, w których zadeklarowano przeprowadzenie DPIA. Otóż takich
+                    przypadków było... całe osiem, z czego tylko w <strong>trzech</strong> instytucja była uprzejma udostępnić treść oceny.
+                    Oznacza to, że w praktyce audyt społeczny DPIA w odniesieniu do systemów AI jest niemożliwy często nawet
+                    tam, gdzie taką ocenę przeprowadzono, a
+                    obywatele nie wiedzą w jaki sposób i w jakim zakresie ich dane osobowe są przetwarzane, jakie
+                    zindetyfikowano ryzyka i jakie zastosowano środki zaradcze.</p>
+                <p>Podsumowując. Co się dzieje z
+                    naszym wizerunkiem przetwarzanym przez coraz bardziej zaawansowane systemy monitoringu? Dokąd
+                    trafiają i jak są przetwarzane odczyty tablic rejestracyjnych? Jakie dane behawioralne są
+                    zbierane przez chatboty i w jaki sposób są wykorzystywane? To są pytania, na które nie
+                    mamy odpowiedzi, bo instytucje żadko udostępniają treści DPIA, o ile w ogóle została przeprowadzona.
+                </p>
+
+
+                <h3 id="fria">Ocena wpływu na prawa podstawowe (FRIA, ang. Fundamental Rights Impact Assessment)</h3>
+                <p>Prawie żadna instytucja nie przeprowadziła oceny skutków dla praw podstawowych (FRIA), tłumacząc to
+                    brakiem oficjalnego unijnego kwestionariusza lub niskim ryzykiem, Tymczasem podmioty publiczne
+                    stosujące systemy wysokiego ryzyka (np. w infrastrukturze krytycznej czy ściganiu przestępstw) będą
+                    miały obowiązek przeprowadzenia FRIA przed wdrożeniem.</p>
+
+
+
+
+
+                <p>Ujawniono tylko jeden system, którego ryzyko w klasyfikacji AI Act zidentyfikowano jako wysokie i
+                    jest to, co ciekawe, używany w Agencji Restrukturyzacji i Modernizacji Rolnictwa System
+                    Identyfikacji Roślin AI. System wykorzystuje algorytmy uczenia maszynowego do klasyfikacji zdjęć
+                    polowych według rozpoznanego gatunku lub typu uprawy. Wspiera procesy oceny i weryfikacji danych
+                    terenowych wykorzystywanych przez Agencję Restrukturyzacji i Modernizacji Rolnictwa w ramach obsługi
+                    świadczeń. Oznacza to, że wpływa na udzielane świadczenia, co zapewne jest przyczyną, dla której
+                    ryzyko zostało uznane za wysokie (przywołać przepis AI Akt).</p>
+                <p>chatboty (ryzyko minimalne lub ograniczone) - oznaczone w miarę jasno, ale jeśli chodzi o przejście
+                    do kontaktu z człowiekiem bez utraty kontekstu, to już gorzej (Zgierz, Geoportal raczej totalnie
+                    słabo). Gdynia chyba ok, pogłębić test, podobnie wirtualny asystent przedsiębiorcy (upewniłbym się,
+                    że rozmawiam z człowiekiem).</p>
+                <p>Nie przeprowadzono analizy ryzyka dla nawet takich jak eRecruiter (bo moduł AI nie włączony - a jak
+                    go włączą? a jak się włączy automatycznie po jakiejś aktualizacji?), czy SOS zusowy. Dla LEXów też
+                    to się nie dzieje.</p>
+                <p>FRIA tylko w dwóch przypadkach przeprowadzona - chatbot MRiTu i AXON w Rokietnicy (zrobiono, ale
+                    według nich nie podlega udostępnieniu). AXON służy do: Rozpoznawanie wymienionych zdarzeń: wypadek,
+                    osoba leżąca, zatrzymanie ruchu, rozpoznawanie numerów tablic rejestracyjnych a komponent AI wspiera
+                    analizę behawioralną</p>
+            </section>
+
+            <section class="content-section">
+                <h2 id="oznaczanie">Oznaczanie</h2>
+                <p>Jeszcze we wrześniu 2024 Ministerstwo Cyfryzacji w zamieszczonych na stronie internetowej poradach
+                    https://www.gov.pl/web/ai/generatywna-sztuczna-inteligencja-w-sluzbie-pracownikow-administracji-publicznej---pierwsze-kroki
+                    pisało Jeżeli chcesz udostępnić treść wygenerowaną przez GenAI oznacz ją. I dalej, co prawda
+                    bardziej w obawie o potencjalne naruszenia prawa autorskiego, niż w kontekście przejrzystości i
+                    prawa do informacji, ale jednak:
+                    W przypadku wykorzystania wyników w dalszej pracy, zawsze informuj, że treści, które przekazujesz
+                    były stworzone lub przetworzone z wykorzystaniem narzędzi GenAI.
+                    Oznacz fragmenty wprost zaczerpnięte z tego narzędzia, np. wskazując w przypisie „Treść została
+                    wygenerowana przez GenAI [tu wstaw nazwę narzędzia i datę wygenerowania]”
+                    Jeżeli na bazie informacji pozyskanych z Gen AI tworzysz własne treści zaznacz: „Ten dokument
+                    powstał z wykorzystaniem GenAI [tu wstaw nazwę narzędzia i datę wygenerowania]”. (ostatni snapshot
+                    na webarchive w momencie pisania tych słów:
+                    https://web.archive.org/web/20250416192919/https://www.gov.pl/web/ai/generatywna-sztuczna-inteligencja-w-sluzbie-pracownikow-administracji-publicznej---pierwsze-kroki)
+                    Porady te, chociaż nie wyczerpują w pełni zagadnienia, pozostają w duchu artykułu 50 AI Aktu, który
+                    poświęcony jest obowiązkom oznaczania treści generowanych z użyciem AI.
+                </p>
+                <p>Opublikowana 4 marca 2026 roku 99-stronicowa wersja Przewodnika po Sztucznej Inteligencji dla
+                    Administracji Publicznej https://ai.gov.pl/aktualnosci/przewodnik-dla-administracji-publicznej
+                    pomimo że znacznie bardziej obszerna i szczegółowa, niż ww. zestaw porad, stosunkowo ogólnie odnosi
+                    się akurat do obowiązków oznaczania treści generowanych z użyciem AI, nakładanych przez art. 50 AI
+                    Aktu. Właściwie związane wprost z oznaczaniem są bodaj tylko dwa fragmenty:
+                    Zapewnij przejrzystość wobec mieszkańców. Należy informować mieszkańców o wykorzystywaniu systemów
+                    AI w danym procesie (...)
+                    Informacje o stosowaniu rozwiązań opartych na AI (w szczególności chatbotów) powinny być
+                    przekazywane mieszkańcom w sposób jasny i zrozumiały.
+                </p>
+                <p>Tyle mówi teoria. Bardzo trudno jest ją zweryfikować, ponieważ nie sposób ustalić, jaki odsetek
+                    dokumentów wytwarzanych przez administrację powstaje przy mniejszym lub większym udziale sztucznej
+                    inteligencji, tym bardziej że przeważająca część takich zastosowań należy do tzw. shadowy AI, czyli
+                    zjawiska nieformalnego wspierania się zewnętrznymi narzędziami AI przez pracowników administracji.
+                    Dysponujemy odmownymi decyzjami najprawdopodobniej przygotowanymi z mniejszym lub większym
+                    wykorzystaniem AI, ponieważ zawierają halucynowane przepisy, co jest zjawiskiem znacznie częściej
+                    przydarzającym się modelom językowym, niż urzędnikom - opisaliśmy to przy okazji raportu z pierwszej
+                    fazy badania (link), jednak trudno na podstawie kilku przypadków, które wpadły nam w ręce, wyrokować
+                    o skali zjawiska.</p>
+                <p>Dzięki niniejszemu badaniu dowiedzieliśmy się o jednej, względnie pewnej (o ile nie doszło do
+                    jakiegoś nieporozumienia) sytuacji, w której AI użyto do przygotowania dokumentu, ale nie zadbano o
+                    czytelną dla człowieka informację o tym. Otóż istnieje coś takiego, jak wieloletnia prognoza
+                    finansowa (dalej WPF) - obligatoryjny dokument planistyczny polskich samorządów. Prawidłowo
+                    przygotowana wieloletnia prognoza finansowa umożliwia trafne przewidywanie zarówno dochodów
+                    bieżących, jak i majątkowych, wspiera efektywne zarządzanie wydatkami z uwzględnieniem zadłużenia
+                    jednostki samorządu terytorialnego oraz pomaga ustalić właściwe poziomy nakładów na realizację
+                    poszczególnych inwestycji i projektów. Do przygotowania tego ważnego dokumentu gmina Boguchwała (a
+                    także, zgodnie z odpowiedziami w pierwszej fazie, gmina Chojnice i Starostwo Powiatowe w Lidzbarku
+                    Warmińskim) używa oprogramowania wykorzystującego sztuczną inteligencję ogólnego przeznaczenia (w
+                    odpowiedzi urzędu podano angielski akronim GPAI). Sprawdziliśmy trzy uchwały Rady Miejskiej w
+                    Boguchwale dotyczących ww. dokumentu - jego uchwalenia lub zmian (VIII.78.2024 z 30 grudnia 2024,
+                    X.108.2025 z 27 lutego 2025 i XX.203.2025 z 23 grudnia 2025). Ani w treści uchwał, ani w
+                    załącznikach zawierających właściwą treść WPF, nie dostrzegliśmy żadnej wzmianki o wsparciu AI w
+                    przygotowaniu dokumentu.</p>
+                <p>Co ciekawe, o całej tej sytuacji dowiedzieliśmy się przypadkowo, ponieważ do drugiej fazy badania
+                    wytypowaliśmy Boguchwałę nic nie wiedząc o ich WPF - wytypowaliśmy tę gminę, bo w pierwszej fazie
+                    napisali, że w ramach projektu "Smartcity" zainstalowano kamerę, która analizuje zachowania tłumu
+                    pod kątem wychwytywania potencjalnie niebezpiecznych zagrożeń i chodziło nam o zebranie dodatkowych
+                    informacji o tym właśnie rozwiązaniu. Tymczasem, ku naszemu zaskoczeniu, Boguchwała odpowiedziała w
+                    drugiej fazie badania na szczegółowe pytania w odniesieniu do systemu wspierającego przygotowanie
+                    WPF, a z kolei o systemie monitoringu zagrożeń nic nie napisali.</p>
+                <p>Ponadto od jakiegoś czasu (najstarszy snapshot na webarchive 17 stycznia 2025 -
+                    https://web.archive.org/web/20250101000000*/https://danemiejskie.pl/raport-ai/) istnieje na rynku
+                    przynajmniej jedno narzędzie reklamowane jako wspierające generowanie innego, ważnego dokumentu
+                    jednostek samorządu terytorialnego, mianowicie raportu o stanie gminy. Narzędzie nazywa się
+                    Raport_AI i obiecuje przygotowanie raportu na podstawie danych i przy użyciu między innymi
+                    generatywnej sztucznej inteligencji (https://danemiejskie.pl/raport-ai/). Na podstawie informacji na
+                    stronie dostawcy tego oprogramowania a także ogólnej wzmianki we wstępie do Raportu o stanie gminy
+                    Kielce 2024 o podmiotach, które brały udział w procesie przygotowania tego dokumentu, można
+                    zakładać, że powstał z użyciem AI. Mimo to, dokument nie zawiera stosownego oznaczenia a Kielce
+                    odpowiedziały przecząco na pierwsze pytanie wniosku w pierwszej fazie badania (Czy w organie lub na
+                    jego zlecenie są wykorzystywane systemy informatyczne, które automatycznie przetwarzają dane
+                    wejściowe (np. tekst, obraz, dźwięk, dane liczbowe), aby generować raporty…).</p>
+            </section>
+
+            <p>[PLLUM? przydałoby się go opisać, jako projekt rządowy. Może ma kartę modelu? Może udostepniają dane
+                treningowe, coś jeszcze? Na pewno wdrożenia na nim oparte warto wymienić, o asystencie w mObywatelu
+                napisać.]</p>
+
+            <section>
+                <h2>Szczegółowe informacje o systemach AI</h2>
+                <p>Tabela zawiera informacje o systemach AI przysłane przez instytucje publiczne w ramach tego
+                    badania.<br />
+                    Przytrzymaj kursor nad komórką lub nagłówkiem, żeby zobaczyć pełną treść.
+                </p>
+                <div class="dane-container">
+                    <iframe style="border-style: none;" src="data.html" width="1000"></iframe>
+                </div>
+            </section>
+
+
+            <section class="content-section">
+                <h2 id="zrodla">Źródła [DO PODMIANY!!!]</h2>
+                <ul>
+                    <li><a href="https://fedrowanie.siecobywatelska.pl/monitoringi/odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-faza-2"
+                            target="_blank" rel="noopener noreferrer">Korespondencja w sprawach dot. wykorzystywania
+                            AI</a></li>
+                    <li><a href="/monitoringi_wyniki/136/data/136_responses_report_odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-w-sprawach-publicznych.xlsx"
+                            target="_blank" rel="noopener noreferrer">Arkusz z zebranymi odpowiedziami na wnioski,
+                            przygotowany z wykorzystaniem
+                            AI</a></li>
+                    <li><a href="/monitoringi_wyniki/136/data/deklarowane_systemy_ai_w_administracji.csv"
+                            target="_blank" rel="noopener noreferrer">Lista systemów AI wykorzystywanych w administracji
+                            publicznej przygotowana na podstawie odpowiedzi</a></li>
+                    <li><a href="/monitoringi_wyniki/136/docs/BAB_AI-w-e-administracji-publicznej_04032026.pdf"
+                            target="_blank" rel="noopener noreferrer">AI w e-administracji publicznej – perspektywa
+                            urzędników i instytucji</a>
+                    </li>
+                    <li><a href="/monitoringi_wyniki/136/docs/Raport_końcowy_z_badania_samorządów_terytorialnych____MC___2023__10_04.pdf"
+                            target="_blank" rel="noopener noreferrer">W drodze ku doskonałości cyfrowej</a></li>
+                    <li><a href="/monitoringi_wyniki/136/docs/Resortowa_strategia_sztucznej_inteligencji_do_roku_2039.pdf"
+                            target="_blank" rel="noopener noreferrer">Resortowa strategia sztucznej inteligencji do roku
+                            2039</a></li>
+                    <li><a href="/monitoringi_wyniki/136/docs/OJ_L_202401689_PL_TXT.pdf" target="_blank">AI Act -
+                            Rozporządzenie Parlementu Europejskiego i Rady (UE) 2024/1689 - z dnia 13 czerwca 2024
+                            r.</a></li>
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>Podstawowe źródło: <a
+                    href="https://fedrowanie.siecobywatelska.pl/monitoringi/odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-faza-2"
+                    target="_blank">Odpowiedzialne wykorzystywanie sztucznej inteligencji - faza 2</a></p>
+            <p>Opracowanie: <a href="https://siecobywatelska.pl/" target="_blank">Sieć Obywatelska Watchdog Polska</a>,
+                ostatnia aktualizacja: 21 kwietnia 2026.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contentRoot = document.querySelector('main');
+            const tocContent = document.getElementById('toc-content');
+
+            if (!contentRoot || !tocContent) return;
+
+            const headings = contentRoot.querySelectorAll('h2, h3');
+            const usedIds = new Set();
+
+            function slugify(text) {
+                return text
+                    .toLowerCase()
+                    .trim()
+                    .replace(/ą/g, 'a')
+                    .replace(/ć/g, 'c')
+                    .replace(/ę/g, 'e')
+                    .replace(/ł/g, 'l')
+                    .replace(/ń/g, 'n')
+                    .replace(/ó/g, 'o')
+                    .replace(/ś/g, 's')
+                    .replace(/ż/g, 'z')
+                    .replace(/ź/g, 'z')
+                    .replace(/[^a-z0-9\s-]/g, '')
+                    .replace(/\s+/g, '-')
+                    .replace(/-+/g, '-');
+            }
+
+            function getUniqueId(base) {
+                let id = base || 'sekcja';
+                let counter = 2;
+
+                while (usedIds.has(id) || document.getElementById(id)) {
+                    id = `${base}-${counter}`;
+                    counter++;
+                }
+
+                usedIds.add(id);
+                return id;
+            }
+
+            const ul = document.createElement('ul');
+
+            headings.forEach((heading) => {
+                if (heading.closest('#toc-container')) return;
+
+                let text = heading.textContent.trim();
+                if (!text) return;
+
+                if (!heading.id) {
+                    heading.id = getUniqueId(slugify(text));
+                } else {
+                    usedIds.add(heading.id);
+                }
+
+                const li = document.createElement('li');
+                if (heading.tagName.toLowerCase() === 'h3') {
+                    li.classList.add('toc-h3');
+                }
+
+                const a = document.createElement('a');
+                a.href = `#${heading.id}`;
+                a.textContent = text;
+
+                li.appendChild(a);
+                ul.appendChild(li);
+            });
+
+            tocContent.appendChild(ul);
+        });
+    </script>
+
+</body>
+
+</html>
