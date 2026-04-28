@@ -1488,6 +1488,7 @@
                     oznacza nie tylko udzielenie odpowiedzi na wniosek, ale też dokumentowanie użycia AI,
                     udostępnianie informacji osobom dotkniętym, możliwość zakwestionowania decyzji oraz informowanie, że
                     ktoś wchodzi w interakcję z systemem AI.</p>
+
                 <h3 id="kwalifikacja">Kwalifikacja systemu, kwalifikacja ryzyka</h3>
                 <p>Zebrane informacje dotyczącą 37 systemów, z czego w 19 przypadkach wskazano, że nie
                     przeprowadzono kwalifikacji ryzyka. I to
@@ -1495,9 +1496,15 @@
                     powinna w danym kontekście przestrzegać obowiązków wynikających przykładowo z
                     art. 26–27 AI Act: między innymi czy musi informować osoby, rejestrować użycie systemu,
                     przeprowadzić FRIA czy uwzględnić nadzór człowieka w procesach wspieranych przez dany system.</p>
+                <p>Przykładowo nie przeprowadzono analizy ryzyka takich systemów jak <i>eRecruiter</i> (bo moduł AI nie
+                    włączony - a jak
+                    go włączą? a jak się włączy automatycznie po jakiejś aktualizacji?), czy <i>SOS AI</i> (bo nie
+                    uznano go za system AI). Podobnie wydaje się dziać w przypadku korzystania z oprogramowania z serii
+                    LEX, które rozwija funkcje wspomagane AI.</p>
                 <p>Niepokojącym zjawiskiem jest przy tym tendencja niektórych podmiotów do zaprzeczania, że ich
                     rozwiązania są <i>systemami AI</i> w rozumieniu Aktu o AI, co może służyć uniknięciu rygorystycznych
-                    obowiązków. Przykładowo ZUS twierdzi, że jego system SOS AI do typowania zwolnień lekarskich nie
+                    obowiązków. Przykładowo ZUS twierdzi, że jego system <i>SOS AI</i> do typowania zwolnień lekarskich
+                    nie
                     jest oparty na
                     AI, lecz jest <i>narzędziem analitycznym</i>, mimo że wykorzystuje modele predykcyjne do oceny
                     prawdopodobieństwa nadużyć. A zgodnie z wytycznymi, kluczową cechą AI jest zdolność do wnioskowania
@@ -1516,14 +1523,24 @@
                     wrażliwy prawnoczłowieczo. W przypadku świadczeń publicznych wysokim ryzykiem mogą być systemy
                     służące do oceny kwalifikowalności, przyznawania, ograniczania, cofania lub żądania zwrotu
                     świadczeń; w zatrudnieniu — systemy do selekcji kandydatów lub oceny osób; w ściganiu — systemy
-                    wspierające ocenę dowodów, profilowanie lub ocenę ryzyka osób .</p>
+                    wspierające ocenę dowodów, czy profilowanie.</p>
+                <p>Ujawniono tylko jeden system, którego ryzyko w klasyfikacji AI Act zidentyfikowano jako wysokie i
+                    jest to, co ciekawe, używany w Agencji Restrukturyzacji i Modernizacji Rolnictwa <i>System
+                        Identyfikacji Roślin AI</i>. System wykorzystuje algorytmy uczenia maszynowego do klasyfikacji
+                    zdjęć
+                    polowych według rozpoznanego gatunku lub typu uprawy. Wspiera procesy oceny i weryfikacji danych
+                    terenowych wykorzystywanych przez Agencję Restrukturyzacji i Modernizacji Rolnictwa w ramach obsługi
+                    świadczeń. Oznacza to, że wpływa na udzielane świadczenia, co zapewne jest przyczyną, dla której
+                    ryzyko zostało uznane za wysokie (zgodnie z AI Act, art. 6 ust. 2 w powiązaniu z załącznikiem III
+                    pkt 5 lit.
+                    a).</p>
                 <h3 id="dpia">Ocena skutków dla ochrony danych (DPIA, od ang. Data Protection Impact Assessment)</h3>
                 <p>Zgodnie z przepisami RODO (które AI Act uzupełnia, a nie zastępuje), to administrator danych –
                     czyli podmiot, który decyduje o celach i sposobach przetwarzania danych osobowych – jest zobowiązany
                     do przeprowadzenia DPIA. W ekosystemie AI podmiotem tym jest zazwyczaj podmiot stosujący system AI.
                     Stąd częstą odpowiedzią, tłumaczącą niedopełnienie tego obowiazku było zaprzeczenie przetwarzania
                     danych osobowych przez dany system.
-                <p>I o ile w przypadku dajmy na to Systemu Identyfikacji Roślin AI
+                <p>I o ile w przypadku dajmy na to <i>Systemu Identyfikacji Roślin AI</i>
                     przypuszczalnie tak właśnie jest w istocie,
                     o tyle w przypadku chatbotów, czy voicebotów używanych do komunikacji z obywatelami, założenie że
                     żaden użytkownik nigdy sam z siebie nie ujawni danych osobowych tak samo naturalnie, jakby to
@@ -1542,7 +1559,8 @@
                     braku przetwarzania danych osobowych (sic!).</p>
                 <p>Przejdźmy teraz do omówienia sytuacji, w których zadeklarowano przeprowadzenie DPIA. Otóż takich
                     przypadków było... całe osiem, z czego tylko w <strong>trzech</strong> instytucja była uprzejma
-                    udostępnić treść oceny.
+                    udostępnić treść (ocena ich adekwatności, chociaż warta przerpowadzenia, wykracza poza zakres
+                    niniejszego raportu).
                     Oznacza to, że w praktyce audyt społeczny DPIA w odniesieniu do systemów AI jest niemożliwy często
                     nawet
                     tam, gdzie taką ocenę przeprowadzono, a
@@ -1557,33 +1575,92 @@
 
 
                 <h3 id="fria">Ocena wpływu na prawa podstawowe (FRIA, ang. Fundamental Rights Impact Assessment)</h3>
-                <p>Prawie żadna instytucja nie przeprowadziła oceny skutków dla praw podstawowych (FRIA), tłumacząc to
-                    brakiem oficjalnego unijnego kwestionariusza lub niskim ryzykiem, Tymczasem podmioty publiczne
-                    stosujące systemy wysokiego ryzyka (np. w infrastrukturze krytycznej czy ściganiu przestępstw) będą
-                    miały obowiązek przeprowadzenia FRIA przed wdrożeniem.</p>
+                <p>Zgodnie z art. 27 AI Act, który ma zacząć obowiązywać od 2 sierpnia 2026 roku (o ile nie zostanie to
+                    zmienione w ramach pakietu AI Omnibus, nad którym trwają prace)
+                    podmioty publiczne
+                    stosujące systemy wysokiego ryzyka będą
+                    miały obowiązek przeprowadzenia FRIA przed wdrożeniem. Tymczasem prawie żadna instytucja nie
+                    przeprowadziła oceny skutków dla praw podstawowych (FRIA), tłumacząc to niższym poziomem ryzyka,
+                    brakiem oficjalnego unijnego kwestionariusza lub inne powody. Na brak kwestionariusza wskazała
+                    między innymi ARiMR w odniesieniu do <i>Systemu Rozpoznawania Roślin AI</i>, który okazał się
+                    jedynym zgłoszonym w badaniu systemem, zadeklarowanym jako wysokiego ryzyka.</p>
+                <p>W dwóch przypadkach zadeklarowano przeprowadzenie FRIA, pomimo że system nie został sklasyfikowany
+                    jako wysokiego ryzyka. Pierwsza sytuacja, w której ryzyka wcale nie przeprowadzono, dotyczy systemu
+                    AXON, wspierającego miejski monitoring w
+                    Roietnicy. System służy do rozpoznawania zdarzeń takich, jak wypadek, osoba leżąca, zatrzymanie
+                    ruchu, czy rozpoznawanie numerów tablic rejestracyjnych a komponent AI wspiera analizę
+                    behawioralną. Niestety Urząd Gminy Rokietnica uznał ten dokument za niepodlegający udostępnieniu, co
+                    czyni audyt społeczny
+                    niemożliwym do przeprowadzenia a powodów tej decyzji nie podano. Drugim przypadkiem jest
+                    <i>Wirtualny Urzędnik</i> (tekstowy i głosowy)
+                    Ministerstwa Rozwoju i Technologii. W obu tych przypadkach urzędy przypuszczalnie uznały, że mimo
+                    braku klasyfikacji systemu jako wysokiego
+                    ryzyka, przeprowadzenie
+                    FRIA jest zasadne ze względu na potencjalny wpływ systemu na prawa podstawowe, co samo w sobie jest
+                    dobrą, godną
+                    naśladowania praktyką.
+                </p>
+                <p>Ocenę ww. wirtualnego urzędnika, jako jedyną nam udostępnioną, zacytujemy w
+                    całości. Wprawdzie nie spełnia ona wszystkich wymogów ustanowionych wspomnianym już art. 27, jednak
+                    z uwagi na <i>ograniczone ryzyko</i> systemu, którego dotyczy, należy ją traktować jako
+                    opcjonalną, a w związku z tym niezobligowaną do literalnej zgodności z przepisami.
+                </p>
 
-
-
-
-
-                <p>Ujawniono tylko jeden system, którego ryzyko w klasyfikacji AI Act zidentyfikowano jako wysokie i
-                    jest to, co ciekawe, używany w Agencji Restrukturyzacji i Modernizacji Rolnictwa System
-                    Identyfikacji Roślin AI. System wykorzystuje algorytmy uczenia maszynowego do klasyfikacji zdjęć
-                    polowych według rozpoznanego gatunku lub typu uprawy. Wspiera procesy oceny i weryfikacji danych
-                    terenowych wykorzystywanych przez Agencję Restrukturyzacji i Modernizacji Rolnictwa w ramach obsługi
-                    świadczeń. Oznacza to, że wpływa na udzielane świadczenia, co zapewne jest przyczyną, dla której
-                    ryzyko zostało uznane za wysokie (przywołać przepis AI Akt).</p>
-                <p>chatboty (ryzyko minimalne lub ograniczone) - oznaczone w miarę jasno, ale jeśli chodzi o przejście
-                    do kontaktu z człowiekiem bez utraty kontekstu, to już gorzej (Zgierz, Geoportal raczej totalnie
-                    słabo). Gdynia chyba ok, pogłębić test, podobnie wirtualny asystent przedsiębiorcy (upewniłbym się,
-                    że rozmawiam z człowiekiem).</p>
-                <p>Nie przeprowadzono analizy ryzyka dla nawet takich jak eRecruiter (bo moduł AI nie włączony - a jak
-                    go włączą? a jak się włączy automatycznie po jakiejś aktualizacji?), czy SOS zusowy. Dla LEXów też
-                    to się nie dzieje.</p>
-                <p>FRIA tylko w dwóch przypadkach przeprowadzona - chatbot MRiTu i AXON w Rokietnicy (zrobiono, ale
-                    według nich nie podlega udostępnieniu). AXON służy do: Rozpoznawanie wymienionych zdarzeń: wypadek,
-                    osoba leżąca, zatrzymanie ruchu, rozpoznawanie numerów tablic rejestracyjnych a komponent AI wspiera
-                    analizę behawioralną</p>
+                <div class="topic-card">
+                    <strong>Ocena wpływu na prawa podstawowe (FRIA) dla Wirtualnego Urzędnika w MRiT</strong>
+                    <ol style="list-style-type: decimal">
+                        <li>
+                            <h4>Nadzór człowieka i wytłumaczalność</h4>
+                            <ol style="list-style-type: disc">
+                                <li>Model nie działa autonomicznie w krytycznym podejmowaniu decyzji.</li>
+                                <li>Operatorzy ludzcy, tacy jak agenci usług IT, zachowują kontrolę nad wynikami
+                                    generowanymi
+                                    przez AI.</li>
+                                <li>Odpowiedzi mogą być audytowane, przeglądane i modyfikowane przez agentów przed
+                                    wdrożeniem
+                                    w krytycznych procesach.</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h4>Stronniczość i sprawiedliwość</h4>
+                            <ol style="list-style-type: disc">
+                                <li>Model został wytrenowany przy użyciu starannie wyselekcjonowanych zbiorów danych,
+                                    zapewniając, że nie propaguje niesprawiedliwych uprzedzeń w swoich odpowiedziach.
+                                </li>
+                                <li>Mechanizm ciągłego monitorowania pozwala klientom na walidację wyników i dostrajanie
+                                    odpowiedzi zgodnie z wewnętrznymi politykami zgodności.</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h4>Audytowalność i raportowanie zgodności</h4>
+                            <ol style="list-style-type: disc">
+                                <li>System zapewnia logowanie i monitorowanie dla organizacji, które wymagają ścieżek
+                                    audytu
+                                    dla zgodności z ramami zarządzania AI.</li>
+                                <li>Na żądanie wszystkie logi mogą zostać wyłączone, co jest zgodne ze ścisłymi zasadami
+                                    prywatności w fazie projektowania (privacy-by-design).</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <p><strong>W szczególności, wobec całości zamówienia w ramach projektu, dostawca spełnia następujące
+                            wymagania:</strong></p>
+                    <ol style="list-style-type: disc">
+                        <li>Zamawiający posiada opcje monitorowania wolumenów interakcji konsultanta w ramach rozwiązań
+                            wspieranych modelem LLM i ma możliwość wyłączenia opcji korzystania z modelu LLM dla
+                            użytkownika
+                            po przekroczeniu limitów wykorzystania interakcji (rozumianych jako zapytania, wyświetlenia
+                            odpowiedzi)</li>
+                        <li>Wszystkie transkrypty, logiki oraz dane użytkowników pozostają na serwerach kontrolowanych
+                            przez
+                            Wykonawcę.</li>
+                        <li>W chwili przesłania zapytania do modelu AI, dane trafiają do modelu obsługiwanego przez
+                            Wykonawcę, gdzie następuje analiza treści i generowanie odpowiedzi zwracanej do interfejsu
+                            systemu wywołującego (CRM) Zamawiającego.</li>
+                        <li>Dane nie są używane do trenowania modeli AI.</li>
+                        <li>Dane nie są udostępniane podmiotom trzecim, klient pozostaje właścicielem wszystkich swoich
+                            danych przez cały proces.</li>
+                    </ol>
+                </div>
 
                 <h3 id="decyzje">Oznaczanie decyzji</h3>
                 <div class="warning-box">
@@ -1609,7 +1686,8 @@
                 <p>Wiele wskazuje na to, że o ile instytucje publiczne w Polsce sięgają po narzędzia oparte na AI w
                     celach mających mniejszy lub wiekszy wpływ na podejmowane decyzje, o tyle raczej unikają mierzenia
                     się z konsekwencjami. Najprościej nie uznać systemu za system AI, albo zapewniać o ścisłym nadzorze
-                    człowieka nad procesem (tzw. human in the loop) i już instytucja czuje się zwolniona z obowiązku
+                    człowieka nad procesem (tzw. <i>human-in-the-loop</i>) i już instytucja czuje się zwolniona z
+                    obowiązku
                     informowania o użyciu AI oraz innych obowiązków wynikających z przepisów tak aktualnych, jak i
                     wchodzących w życie w nieodległej przyszłości. Prawdopodobnie z taką sytuacją mamy do czynienia w
                     przypadku ZUS.
@@ -1632,8 +1710,13 @@
                     przypadków, to może to pozostawać niezauważone przez długi czas, ponieważ nadzór człowieka wkracza
                     na późniejszym etapie procesu, służąc potwierdzeniu słuszności wytypowanych sytuacji. Ponadto na ile
                     staranny jest ten nadzór? Na ile jest uprzedzony faktem, że przypadek został wytypowany przez AI?
-                    Doświadczenie pokazuje, że ludzie wykazują dużą skłonność do ufania sztucznej inteligencji [poszukać
-                    badań na ten temat, omówień]. Zresztą, skoro system nie został zakwalifikowany przez organ, jako
+                    Doświadczenie pokazuje, że ludzie wykazują dużą skłonność do ufania sztucznej inteligencji.
+                    Badania o automation bias pokazują, że człowiek nadzorujący system może zbyt łatwo przyjmować
+                    rekomendację AI, zwłaszcza pod presją czasu, przy niskiej wiedzy technicznej albo gdy system wygląda
+                    na kompetentny (patrz np. <a href="https://link.springer.com/article/10.1007/s00146-025-02422-7"
+                        target="_blank" rel="noopener noreferrer">metanaliza 35 badań</a> <span class="note"
+                        title="Link prowadzi do strony zewnętrznej. Jeśli jest nieaktualny, to ten dokument możesz również pobrać z innego linku w sekcji 'Źródła' na dole niniejszej strony.">🛈</span>)
+                    Zresztą, skoro system nie został zakwalifikowany przez organ, jako
                     system AI, to jeśli rola człowieka w procesie w przyszłości będzie malała i sprowadzi się do
                     <i>klepania</i> decyzji podjętych przez system lub nawet zostanie całkowicie pominięta, to z punktu
                     widzenia osób oskarżanych o nadużycia będzie to niezauważone, ponieważ decyzje, które otrzymują nie
@@ -1660,122 +1743,148 @@
                 <h2 id="oznaczanie">Oznaczanie treści</h2>
                 <p>Jeszcze we wrześniu 2024 Ministerstwo Cyfryzacji w zamieszczonych na stronie internetowej <a
                         href="https://www.gov.pl/web/ai/generatywna-sztuczna-inteligencja-w-sluzbie-pracownikow-administracji-publicznej---pierwsze-kroki"
-                        target="_blank" rel="noopener noreferrer">poradach</a>
-                    pisało Jeżeli chcesz udostępnić treść wygenerowaną przez GenAI oznacz ją. I dalej, co prawda
+                        target="_blank" rel="noopener noreferrer">poradach</a> <span class="note"
+                        title="Link prowadzi do strony rządowej. Jeśli jest nieaktualny, to ten dokument możesz również pobrać z innego linku w sekcji 'Źródła' na dole niniejszej strony.">🛈</span>
+                    pisało: <i>Jeżeli chcesz udostępnić treść wygenerowaną przez GenAI oznacz ją</i>. I dalej, co prawda
                     bardziej w obawie o potencjalne naruszenia prawa autorskiego, niż w kontekście przejrzystości i
                     prawa do informacji, ale jednak:
-                    W przypadku wykorzystania wyników w dalszej pracy, zawsze informuj, że treści, które przekazujesz
-                    były stworzone lub przetworzone z wykorzystaniem narzędzi GenAI.
-                    Oznacz fragmenty wprost zaczerpnięte z tego narzędzia, np. wskazując w przypisie „Treść została
-                    wygenerowana przez GenAI [tu wstaw nazwę narzędzia i datę wygenerowania]”
-                    Jeżeli na bazie informacji pozyskanych z Gen AI tworzysz własne treści zaznacz: „Ten dokument
-                    powstał z wykorzystaniem GenAI [tu wstaw nazwę narzędzia i datę wygenerowania]” (<a
+                    <i>W przypadku wykorzystania wyników w dalszej pracy, zawsze informuj, że treści, które przekazujesz
+                        były stworzone lub przetworzone z wykorzystaniem narzędzi GenAI.
+                        Oznacz fragmenty wprost zaczerpnięte z tego narzędzia, np. wskazując w przypisie „Treść została
+                        wygenerowana przez GenAI [tu wstaw nazwę narzędzia i datę wygenerowania]”
+                        Jeżeli na bazie informacji pozyskanych z Gen AI tworzysz własne treści zaznacz: „Ten dokument
+                        powstał z wykorzystaniem GenAI [tu wstaw nazwę narzędzia i datę wygenerowania]”</i> (<a
                         href="https://web.archive.org/web/20250416192919/https://www.gov.pl/web/ai/generatywna-sztuczna-inteligencja-w-sluzbie-pracownikow-administracji-publicznej---pierwsze-kroki"
                         target="_blank" rel="noopener noreferrer">snapshot
                         na webarchive</a>).
                     Porady te, chociaż nie wyczerpują w pełni zagadnienia, pozostają w duchu artykułu 50 AI Aktu, który
                     poświęcony jest obowiązkom oznaczania treści generowanych z użyciem AI.
                 </p>
-                <p>Opublikowana 4 marca 2026 roku 99-stronicowa wersja <a
+                <p>Natomiast opublikowana niedawno, tj. 4 marca 2026 roku 99-stronicowa wersja <a
                         href="https://ai.gov.pl/aktualnosci/przewodnik-dla-administracji-publicznej" target="_blank"
                         rel="noopener noreferrer">Przewodnika po sztucznej inteligencji dla
                         administracji publicznej</a> <span class="note"
                         title="Link prowadzi do strony rządowej. Jeśli jest nieaktualny, to ten dokument możesz również pobrać z innego linku w sekcji 'Źródła' na dole niniejszej strony.">🛈</span>
-                    pomimo że znacznie bardziej obszerna i szczegółowa, niż ww. zestaw porad, stosunkowo ogólnie odnosi
+                    pomimo że znacznie bardziej obszerna i szczegółowa, niż ww. zestaw porad, to jednak stosunkowo
+                    ogólnie odnosi
                     się akurat do obowiązków oznaczania treści generowanych z użyciem AI, nakładanych przez art. 50 AI
                     Aktu. Właściwie związane wprost z oznaczaniem są bodaj tylko dwa fragmenty:
-                    Zapewnij przejrzystość wobec mieszkańców. Należy informować mieszkańców o wykorzystywaniu systemów
-                    AI w danym procesie (...)
-                    Informacje o stosowaniu rozwiązań opartych na AI (w szczególności chatbotów) powinny być
-                    przekazywane mieszkańcom w sposób jasny i zrozumiały.
+                    <i>Zapewnij przejrzystość wobec mieszkańców. Należy informować mieszkańców o wykorzystywaniu
+                        systemów
+                        AI w danym procesie (...)
+                        Informacje o stosowaniu rozwiązań opartych na AI (w szczególności chatbotów) powinny być
+                        przekazywane mieszkańcom w sposób jasny i zrozumiały.</i> Można więc odnieść wrażenie, że waga
+                    transparentności oznaczania u decydentów znacznie spadła.
                 </p>
                 <p>Tyle mówi teoria. Bardzo trudno jest ją zweryfikować, ponieważ nie sposób ustalić, jaki odsetek
                     dokumentów wytwarzanych przez administrację powstaje przy mniejszym lub większym udziale sztucznej
-                    inteligencji, tym bardziej że przeważająca część takich zastosowań należy do tzw. shadowy AI, czyli
+                    inteligencji, tym bardziej że przeważająca część takich zastosowań należy do tzw. <i>shadow AI</i>,
+                    czyli
                     zjawiska nieformalnego wspierania się zewnętrznymi narzędziami AI przez pracowników administracji.
                     Dysponujemy odmownymi decyzjami najprawdopodobniej przygotowanymi z mniejszym lub większym
                     wykorzystaniem AI, ponieważ zawierają halucynowane przepisy, co jest zjawiskiem znacznie częściej
-                    przydarzającym się modelom językowym, niż urzędnikom - opisaliśmy to przy okazji raportu z pierwszej
-                    fazy badania (link), jednak trudno na podstawie kilku przypadków, które wpadły nam w ręce, wyrokować
+                    przydarzającym się modelom językowym, niż urzędnikom - opisaliśmy to przy okazji <a
+                        href="https://fedrowanie.siecobywatelska.pl/monitoringi/odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-w-sprawach-publicznych/results"
+                        target="_blank" rel="noopener noreferrer">raportu z pierwszej
+                        fazy badania</a>, jednak trudno na podstawie kilku przypadków, które wpadły nam w ręce,
+                    wyrokować
                     o skali zjawiska.</p>
                 <p>Dzięki niniejszemu badaniu dowiedzieliśmy się o jednej, względnie pewnej (o ile nie doszło do
                     jakiegoś nieporozumienia) sytuacji, w której AI użyto do przygotowania dokumentu, ale nie zadbano o
                     czytelną dla człowieka informację o tym. Otóż istnieje coś takiego, jak wieloletnia prognoza
-                    finansowa (dalej WPF) - obligatoryjny dokument planistyczny polskich samorządów. Prawidłowo
+                    finansowa - obligatoryjny dokument planistyczny polskich samorządów. Prawidłowo
                     przygotowana wieloletnia prognoza finansowa umożliwia trafne przewidywanie zarówno dochodów
                     bieżących, jak i majątkowych, wspiera efektywne zarządzanie wydatkami z uwzględnieniem zadłużenia
                     jednostki samorządu terytorialnego oraz pomaga ustalić właściwe poziomy nakładów na realizację
                     poszczególnych inwestycji i projektów. Do przygotowania tego ważnego dokumentu gmina Boguchwała (a
                     także, zgodnie z odpowiedziami w pierwszej fazie, gmina Chojnice i Starostwo Powiatowe w Lidzbarku
-                    Warmińskim) używa oprogramowania wykorzystującego sztuczną inteligencję ogólnego przeznaczenia (w
+                    Warmińskim) używa oprogramowania o nazwie takiej samej, jak akronim tworzonego dokumentu, czyli
+                    <i>WPF</i>, wykorzystującego sztuczną inteligencję ogólnego przeznaczenia (w
                     odpowiedzi urzędu podano angielski akronim GPAI). Sprawdziliśmy trzy uchwały Rady Miejskiej w
                     Boguchwale dotyczących ww. dokumentu - jego uchwalenia lub zmian (VIII.78.2024 z 30 grudnia 2024,
                     X.108.2025 z 27 lutego 2025 i XX.203.2025 z 23 grudnia 2025). Ani w treści uchwał, ani w
                     załącznikach zawierających właściwą treść WPF, nie dostrzegliśmy żadnej wzmianki o wsparciu AI w
-                    przygotowaniu dokumentu.</p>
+                    przygotowaniu dokumentu.
+                </p>
                 <p>Co ciekawe, o całej tej sytuacji dowiedzieliśmy się przypadkowo, ponieważ do drugiej fazy badania
-                    wytypowaliśmy Boguchwałę nic nie wiedząc o ich WPF - wytypowaliśmy tę gminę, bo w pierwszej fazie
+                    wytypowaliśmy Boguchwałę nic nie wiedząc o tym, że akurat tam stosowane jest oprogramowanie
+                    <i>WPF</i> - wytypowaliśmy tę gminę, bo w pierwszej fazie
                     napisali, że w ramach projektu <i>Smartcity</i> zainstalowano kamerę, która analizuje zachowania
                     tłumu
                     pod kątem wychwytywania potencjalnie niebezpiecznych zagrożeń i chodziło nam o zebranie dodatkowych
                     informacji o tym właśnie rozwiązaniu. Tymczasem, ku naszemu zaskoczeniu, Boguchwała odpowiedziała w
                     drugiej fazie badania na szczegółowe pytania w odniesieniu do systemu wspierającego przygotowanie
-                    WPF, a z kolei o systemie monitoringu zagrożeń nie napisali ani słowa.</p>
+                    wieloletniej prognozy finansowej, a z kolei o systemie monitoringu zagrożeń nie napisali ani słowa.
+                </p>
                 <p>Ponadto od jakiegoś czasu (najstarszy <a
                         href="https://web.archive.org/web/20250101000000*/https://danemiejskie.pl/raport-ai/"
                         target="_blank" rel="noopener noreferrer">snapshot na webarchive</a> z 17 stycznia 2025)
                     istnieje na rynku
                     przynajmniej jedno narzędzie reklamowane jako wspierające generowanie innego, ważnego dokumentu
                     jednostek samorządu terytorialnego, mianowicie raportu o stanie gminy. Narzędzie nazywa się
-                    Raport_AI i <a href="https://danemiejskie.pl/raport-ai/" target="_blank"
-                        rel="noopener noreferrer">obiecuje</a> przygotowanie raportu na podstawie danych i przy użyciu
+                    <i>Raport_AI</i> i obiecuje przygotowanie raportu na podstawie danych i przy użyciu
                     między innymi
                     generatywnej sztucznej inteligencji. Na podstawie informacji na
-                    stronie dostawcy tego oprogramowania a także ogólnej wzmianki we wstępie do Raportu o stanie gminy
-                    Kielce 2024 o podmiotach, które brały udział w procesie przygotowania tego dokumentu, można
+                    stronie dostawcy tego oprogramowania a także ogólnej wzmianki we wstępie do <a
+                        href="https://kielce.eu/pl/dla-mieszkanca/samorzad/raport-o-stanie-gminy/2024/" target="_blank"
+                        rel="noopener noreferrer">Raportu o stanie
+                        gminy
+                        Kielce 2024</a> o podmiotach, które brały udział w procesie przygotowania tego dokumentu, można
                     zakładać, że powstał z użyciem AI. Mimo to, dokument nie zawiera stosownego oznaczenia a Kielce
-                    odpowiedziały przecząco na pierwsze pytanie wniosku w pierwszej fazie badania (Czy w organie lub na
+                    odpowiedziały przecząco na pierwsze pytanie wniosku w pierwszej fazie badania (<i>Czy w organie lub na
                     jego zlecenie są wykorzystywane systemy informatyczne, które automatycznie przetwarzają dane
-                    wejściowe (np. tekst, obraz, dźwięk, dane liczbowe), aby generować raporty…).</p>
+                    wejściowe (np. tekst, obraz, dźwięk, dane liczbowe), aby generować raporty…</i>).
+                </p>
+                <p>chatboty (ryzyko minimalne lub ograniczone) - oznaczone w miarę jasno, ale jeśli chodzi o przejście
+                    do kontaktu z człowiekiem bez utraty kontekstu, to już gorzej (Zgierz, Geoportal raczej totalnie
+                    słabo). Gdynia chyba ok, pogłębić test, podobnie wirtualny asystent przedsiębiorcy (upewniłbym się,
+                    że rozmawiam z człowiekiem).</p>
             </section>
 
-            <p>O projekcie PLLuM Ministerstwo Cyfryzacji <a
-                    href="https://fedrowanie.siecobywatelska.pl/sprawy/odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-143"
-                    target="_blank" rel="noopener noreferrer">pisało</a> w poprzedniej fazie badania: <i>Dla
-                    uwzględnienia
-                    potrzeb administracji publicznej, w szczególności bezpiecznego
-                    przetwarzania danych (w granicach kraju, zgodnie z regulacjami europejskimi) w 2024 r.
-                    powstała ze środków publicznych rodzina modeli PLLuM (Polish Large Language Universal
-                    Model). Na bazie tych modeli będziemy tworzyć narzędzia AI.</i> Dalej Mininterstwo zapowiadało
-                inteligentnego asystenta urzędniczego, który <i>będzie wspierał urzędników w przygotowaniu prostych
-                    odpowiedzi na powtarzające się pytania, w redakcji dłuższych wypowiedzi i w analizie
-                    tekstu, a także prowadził przez procedury obowiązujące w urzędach.</i></p>
-            <p>Wytworzona z publicznych środków rodzina modeli PLLuM wydaje się znajdować rozmaite zastosowania w
-                różnych instytucjach w realnych
-                wdrożeniach.
-                Przykładem jest wirtualny asystent wspierający użytkownika w aplikacji mObywatel, który został
-                uruchomiony w grudniu 2025 roku. Asystent ten wykorzystuje model PLLuM do udzielania odpowiedzi na
-                pytania dotyczące usług publicznych, procedur administracyjnych i innych zagadnień związanych z
-                funkcjonowaniem administracji publicznej. Jego celem jest ułatwienie obywatelom dostępu do informacji i
-                usług publicznych poprzez interakcję w naturalnym języku.
-                Podejmowane są także próby wykorzystnaia PLLuMa jako
-                ułatwienia w przeglądaniu zasobów Biuletyni Informacji Publicznej
-                (https://itreseller.pl/gdynia-uruchamia-pilotaz-pllum-polski-model-ai-wesprze-urzad-i-mieszkancow/).
-                Z kolei w Poznaniu wdrożenie miało charakter wspomagający pracę samych urzędników. Wykorzystano tam
-                opartą na PLLuM aplikację ShpaRAG (wykorzystującą mechanizm Retrieval-Augmented Generation). Narzędzie
-                to działa na miejskiej infolinii, pełniąc funkcję asystenta pracownika – na
-                bieżąco analizuje obszerne bazy wiedzy urzędu i podpowiada urzędnikom poprawne i szybkie odpowiedzi na
-                zapytania dzwoniących mieszkańców
-                (https://pfr.pl/artykul/start-z-polskim-ai-od-pomyslu-do-wdrozenia-pllum).
-                Inny przykład to wyszukiwarka semantyczna/RAG dla pracowników banku, oparta na modelach PLLuM, do
-                szybkiego dostępu do procedur i regulacji.
-                (https://www.nask.pl/aktualnosci/pllum-w-najwiekszym-polskim-banku). [Comarch -
-                https://www.comarch.pl/erp/asystent-ai/]
-                Szczegółowe informacje o rodzinie modeli PLLuM można znaleźć w publikacji naukowej <a
-                    href="https://huggingface.co/papers/2511.03823" target="_blank" rel="noopener noreferrer">PLLuM: A
-                    Family of Polish Large Language Models</a>, która opisuje architekturę, proces treningu, zestaw
-                danych i wyniki ewaluacji tych modeli. [napisać o danych treningowych i aligmencie]</p>
-            </p>
+            <section class="content-section">
+                <h2 id="PLLuM">Polish Large Language Universal Model - PLLuM</h2>
+                <p>O projekcie PLLuM Ministerstwo Cyfryzacji <a
+                        href="https://fedrowanie.siecobywatelska.pl/sprawy/odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-143"
+                        target="_blank" rel="noopener noreferrer">pisało</a> w poprzedniej fazie badania: <i>Dla
+                        uwzględnienia
+                        potrzeb administracji publicznej, w szczególności bezpiecznego
+                        przetwarzania danych (w granicach kraju, zgodnie z regulacjami europejskimi) w 2024 r.
+                        powstała ze środków publicznych rodzina modeli PLLuM (Polish Large Language Universal
+                        Model). Na bazie tych modeli będziemy tworzyć narzędzia AI.</i> Dalej Mininterstwo zapowiadało
+                    inteligentnego asystenta urzędniczego, który <i>będzie wspierał urzędników w przygotowaniu prostych
+                        odpowiedzi na powtarzające się pytania, w redakcji dłuższych wypowiedzi i w analizie
+                        tekstu, a także prowadził przez procedury obowiązujące w urzędach.</i></p>
+                <p>Wytworzona z publicznych środków rodzina modeli PLLuM wydaje się znajdować rozmaite zastosowania w
+                    różnych instytucjach w realnych
+                    wdrożeniach.
+                    Przykładem jest wirtualny asystent wspierający użytkownika w aplikacji mObywatel, który został
+                    uruchomiony w grudniu 2025 roku. Asystent ten wykorzystuje model PLLuM do udzielania odpowiedzi na
+                    pytania dotyczące usług publicznych, procedur administracyjnych i innych zagadnień związanych z
+                    funkcjonowaniem administracji publicznej. Jego celem jest ułatwienie obywatelom dostępu do
+                    informacji i
+                    usług publicznych poprzez interakcję w naturalnym języku.
+                    Podejmowane są także próby wykorzystnaia PLLuMa jako
+                    ułatwienia w przeglądaniu zasobów Biuletyni Informacji Publicznej
+                    (https://itreseller.pl/gdynia-uruchamia-pilotaz-pllum-polski-model-ai-wesprze-urzad-i-mieszkancow/).
+                    Z kolei w Poznaniu wdrożenie miało charakter wspomagający pracę samych urzędników. Wykorzystano tam
+                    opartą na PLLuM aplikację ShpaRAG (wykorzystującą mechanizm Retrieval-Augmented Generation).
+                    Narzędzie
+                    to działa na miejskiej infolinii, pełniąc funkcję asystenta pracownika – na
+                    bieżąco analizuje obszerne bazy wiedzy urzędu i podpowiada urzędnikom poprawne i szybkie odpowiedzi
+                    na
+                    zapytania dzwoniących mieszkańców
+                    (https://pfr.pl/artykul/start-z-polskim-ai-od-pomyslu-do-wdrozenia-pllum).
+                    Inny przykład to wyszukiwarka semantyczna/RAG dla pracowników banku, oparta na modelach PLLuM, do
+                    szybkiego dostępu do procedur i regulacji.
+                    (https://www.nask.pl/aktualnosci/pllum-w-najwiekszym-polskim-banku). [Comarch -
+                    https://www.comarch.pl/erp/asystent-ai/]
+                    Szczegółowe informacje o rodzinie modeli PLLuM można znaleźć w publikacji naukowej <a
+                        href="https://huggingface.co/papers/2511.03823" target="_blank" rel="noopener noreferrer">PLLuM:
+                        A
+                        Family of Polish Large Language Models</a>, która opisuje architekturę, proces treningu, zestaw
+                    danych i wyniki ewaluacji tych modeli. [napisać o danych treningowych i aligmencie]</p>
+                </p>
+            </section>
             <section>
                 <h2>Szczegółowe informacje o systemach AI</h2>
                 <p>Tabela zawiera informacje o systemach AI przysłane przez instytucje publiczne w ramach tego
@@ -1789,6 +1898,7 @@
 
             <section class="content-section">
                 <h2 id="zrodla">Źródła</h2>
+                <p>Zamieszczone poniżej linki prowadzą do naszych zasobów.</p>
                 <ul>
                     <li><a href="https://fedrowanie.siecobywatelska.pl/monitoringi/odpowiedzialne-wykorzystywanie-sztucznej-inteligencji-faza-2"
                             target="_blank" rel="noopener noreferrer">Korespondencja w sprawach dot. wykorzystywania
@@ -1799,7 +1909,7 @@
                     <li><a href="/monitoringi_wyniki/142/docs/OJ_L_202401689_PL_TXT.pdf" target="_blank">AI Act -
                             Rozporządzenie Parlementu Europejskiego i Rady (UE) 2024/1689 - z dnia 13 czerwca 2024
                             r.</a></li>
-                    <li><a href="https://www.gov.pl/web/ai/generatywna-sztuczna-inteligencja-w-sluzbie-pracownikow-administracji-publicznej---pierwsze-kroki"
+                    <li><a href="/monitoringi_wyniki/142/docs/Generatywna sztuczna inteligencja w służbie pracowników administracji publicznej - pierwsze kroki - Portal sztucznej inteligencji - Portal Gov.pl.pdf"
                             target="_blank">Generatywna sztuczna inteligencja w służbie pracowników administracji
                             publicznej - pierwsze kroki</a></li>
                     <li><a href="/monitoringi_wyniki/142/docs/Przewodnik-AI-v2.pdf" target="_blank">Przewodnik po
@@ -1808,6 +1918,9 @@
                             Polish Large Language Models</a></li>
                     <li><a href="/monitoringi_wyniki/142/docs/D2022000090201.pdf" target="_blank">Ustawa o dostępie do
                             informacji publicznej</a></li>
+                    <li><a href="/monitoringi_wyniki/142/docs/s00146-025-02422-7.pdf" target="_blank"
+                            rel="noopener noreferrer">Exploring automation bias in human–AI collaboration: a review and
+                            implications for explainable AI</a></li>
                 </ul>
             </section>
         </main>
