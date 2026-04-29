@@ -690,7 +690,7 @@
 
             <section>
 
-                <h3 id="kogo-pytalismy">Kogo pytaliśmy i czy udzielono informacji? <span class="emoji">🗃️</span>
+                <h3 id="kogo-pytalismy">Kogo pytaliśmy i czy udzielono informacji?
                 </h3>
 
                 <p>Wnioski wysłaliśmy do poniższych <strong>52</strong> instytucji. Oznaczamy, czy dana instytucja
@@ -1534,7 +1534,7 @@
                     ryzyko zostało uznane za wysokie (zgodnie z AI Act, art. 6 ust. 2 w powiązaniu z załącznikiem III
                     pkt 5 lit.
                     a).</p>
-                <h3 id="dpia">Ocena skutków dla ochrony danych (DPIA, od ang. Data Protection Impact Assessment)</h3>
+                <h3 id="dpia">Ocena skutków dla ochrony danych (DPIA)</h3>
                 <p>Zgodnie z przepisami RODO (które AI Act uzupełnia, a nie zastępuje), to administrator danych –
                     czyli podmiot, który decyduje o celach i sposobach przetwarzania danych osobowych – jest zobowiązany
                     do przeprowadzenia DPIA. W ekosystemie AI podmiotem tym jest zazwyczaj podmiot stosujący system AI.
@@ -1574,7 +1574,7 @@
                 </p>
 
 
-                <h3 id="fria">Ocena wpływu na prawa podstawowe (FRIA, ang. Fundamental Rights Impact Assessment)</h3>
+                <h3 id="fria">Ocena wpływu na prawa podstawowe (FRIA)</h3>
                 <p>Zgodnie z art. 27 AI Act, który ma zacząć obowiązywać od 2 sierpnia 2026 roku (o ile nie zostanie to
                     zmienione w ramach pakietu AI Omnibus, nad którym trwają prace)
                     podmioty publiczne
@@ -1831,14 +1831,29 @@
                         gminy
                         Kielce 2024</a> o podmiotach, które brały udział w procesie przygotowania tego dokumentu, można
                     zakładać, że powstał z użyciem AI. Mimo to, dokument nie zawiera stosownego oznaczenia a Kielce
-                    odpowiedziały przecząco na pierwsze pytanie wniosku w pierwszej fazie badania (<i>Czy w organie lub na
-                    jego zlecenie są wykorzystywane systemy informatyczne, które automatycznie przetwarzają dane
-                    wejściowe (np. tekst, obraz, dźwięk, dane liczbowe), aby generować raporty…</i>).
+                    odpowiedziały przecząco na pierwsze pytanie wniosku w pierwszej fazie badania (<i>Czy w organie lub
+                        na
+                        jego zlecenie są wykorzystywane systemy informatyczne, które automatycznie przetwarzają dane
+                        wejściowe (np. tekst, obraz, dźwięk, dane liczbowe), aby generować raporty…</i>).
                 </p>
-                <p>chatboty (ryzyko minimalne lub ograniczone) - oznaczone w miarę jasno, ale jeśli chodzi o przejście
-                    do kontaktu z człowiekiem bez utraty kontekstu, to już gorzej (Zgierz, Geoportal raczej totalnie
-                    słabo). Gdynia chyba ok, pogłębić test, podobnie wirtualny asystent przedsiębiorcy (upewniłbym się,
-                    że rozmawiam z człowiekiem).</p>
+                <h3 id="wirtualni_urzednicy">Wirtualni urzędnicy</h3>
+                <p>Specyficznym przypadkiem, który wydaje się być oczywisty w kontekście oznaczania bez względu na
+                    zidentyfikowany poziom ryzka, są wirtualni urzędnicy, którzy występują najczęściej w dwóch
+                    postaciach (póki co): chatbotów i voicebotów. Kwestia transparentności nie podlega tutaj dyskusji -
+                    tego typu rozwiązania są albo mniej lub bardziej wyraźnie oznaczone (np. <i>Ania
+                        Wirtualny Asystent stron Gminy Zgierz</i> w tytule okna chatu, czy <i>Uwaga: GeoChatbot oparty
+                        jest o
+                        AI</i> małymi literami pod polem do wpisywania wiadości na Geoportalu), albo przedstawiają się w
+                    sposób raczej nie pozostawiający wątpliwości, że z czymkolwiek mamy do czynienia, nie jest to
+                    człowiek (<i>Witaj! Jestem Wirtualnym Urzędnikiem Miasta Gdyni</i>, <i>Dzień dobry! Z tej strony
+                        e-Konsultantka miasta Poznań</i>).</p>
+                <p>Ponadto niektóre z rozwiązań typu chatbot oferują przełączenie na
+                    rozmowę z człowiekiem, bez utraty kontekstu. W ramach weryfikacji tego mechanizmu w dwóch
+                    przypadkach, pytaliśmy konsultanta, co widzi za oknem. Nie doczekawszy odpowiedzi, dodawaliśmy, że
+                    pytamy dla upewnienia się, że rozmawiamy z człowiekiem. W obu przypadkach przyszła odpowiedź, że
+                    tak, ale ostatecznie bez informacji, co konsultant widzi za oknem. Musimy zatem wierzyć na słowo, że
+                    faktycznie doszło do kontaktu z człowiekiem.
+                    Wniosek dodatkowy: warunki pracy konsultantów być może wymagają odrębnego badania.</p>
             </section>
 
             <section class="content-section">
@@ -1853,37 +1868,92 @@
                         Model). Na bazie tych modeli będziemy tworzyć narzędzia AI.</i> Dalej Mininterstwo zapowiadało
                     inteligentnego asystenta urzędniczego, który <i>będzie wspierał urzędników w przygotowaniu prostych
                         odpowiedzi na powtarzające się pytania, w redakcji dłuższych wypowiedzi i w analizie
-                        tekstu, a także prowadził przez procedury obowiązujące w urzędach.</i></p>
+                        tekstu, a także prowadził przez procedury obowiązujące w urzędach</i>, co ziściło się jeszcze
+                    przed
+                    powstaniem tego raportu, do czego niedługo wrócimy.</p>
+                <p>Modele PLLuM przygotowano jako rodzinę polskich dużych modeli językowych, których celem było lepsze
+                    dostosowanie sztucznej inteligencji do języka, kultury i realiów instytucjonalnych Polski. Podstawą
+                    prac był bardzo duży korpus tekstów, przede wszystkim polskojęzycznych, uzupełniony danymi
+                    angielskimi oraz wybranymi językami słowiańskimi i bałtyckimi. Dane pochodziły z wielu typów źródeł,
+                    m.in. tekstów internetowych, prawnych, urzędowych, naukowych, medialnych, literackich i
+                    specjalistycznych.</p>
+                <p>Szczególną wagę przywiązano do legalności i jakości danych. Zanim teksty trafiły do treningu,
+                    analizowano ich status prawny, porządkowano metadane, usuwano duplikaty, filtrowano treści niskiej
+                    jakości oraz sprawdzano poprawność techniczną plików. Dane były też klasyfikowane tematycznie, aby
+                    zapewnić możliwie szerokie pokrycie różnych dziedzin życia społecznego, administracji, nauki i
+                    kultury. Dzięki temu model miał uczyć się nie tylko języka ogólnego, lecz także stylów i pojęć
+                    ważnych w polskim kontekście.</p>
+                <p>Proces treningu przebiegał etapami. Najpierw modele uczono ogólnego rozumienia języka na dużych
+                    zbiorach tekstów. Następnie dostrajano je na specjalnym korpusie instrukcji, czyli przykładach
+                    poleceń i oczekiwanych odpowiedzi. Ten etap miał nauczyć modele praktycznego odpowiadania na
+                    pytania, streszczania, klasyfikowania, prowadzenia dialogu, tłumaczenia czy wykonywania prostych
+                    zadań wymagających rozumowania. Autorzy testowali różne strategie treningu, w tym trenowanie modeli
+                    od podstaw oraz dalsze uczenie istniejących modeli, ostatecznie kładąc duży nacisk na podejście
+                    bardziej efektywne obliczeniowo.</p>
+                <p>Osobnym elementem było zadbanie o alignment, czyli dopasowanie zachowania modelu do oczekiwań
+                    użytkowników, zasad bezpieczeństwa i norm etycznych. W tym celu przygotowano korpus preferencji, w
+                    którym ludzie oceniali i porównywali różne odpowiedzi modeli pod kątem poprawności, pomocności,
+                    bezpieczeństwa i adekwatności. Na tej podstawie modele uczono wybierania lepszych odpowiedzi.
+                    Dodatkowo zastosowano warstwę zabezpieczeń, która analizowała zarówno pytania użytkowników, jak i
+                    odpowiedzi modelu, wykrywając m.in. treści szkodliwe, dane osobowe, agresję czy próby obejścia
+                    zabezpieczeń.</p>
+                <p>Ewaluacja modeli była wielowymiarowa. Nie ograniczała się do jednego rankingu, lecz obejmowała testy
+                    automatyczne, oceny ekspertów, porównania dokonywane przez użytkowników oraz osobne badania
+                    bezpieczeństwa. Sprawdzano m.in. poprawność językową, faktyczność, zwięzłość, przydatność
+                    odpowiedzi, odporność na szkodliwe polecenia oraz zdolność pracy z dokumentami w systemach typu RAG.
+                    Ważnym elementem była też ocena przez rodzimych użytkowników języka polskiego, ponieważ pozwalała
+                    wykrywać problemy niewidoczne w typowych anglojęzycznych benchmarkach, takie jak nienaturalna
+                    polszczyzna czy nieodpowiedni styl komunikacji.</p>
+                <p>
+                    Szczegółowe informacje o rodzinie modeli PLLuM można znaleźć w publikacji naukowej <a
+                        href="https://huggingface.co/papers/2511.03823" target="_blank" rel="noopener noreferrer">PLLuM:
+                        A
+                        Family of Polish Large Language Models</a> <span class="note"
+                        title="Link prowadzi do strony zewnętrznej. Jeśli jest nieaktualny, to ten dokument możesz również pobrać z innego linku w sekcji 'Źródła' na dole niniejszej strony.">🛈</span>,
+                    która opisuje architekturę, proces treningu, zestaw
+                    danych i wyniki ewaluacji tych modeli.</p>
+                </p>
                 <p>Wytworzona z publicznych środków rodzina modeli PLLuM wydaje się znajdować rozmaite zastosowania w
                     różnych instytucjach w realnych
                     wdrożeniach.
-                    Przykładem jest wirtualny asystent wspierający użytkownika w aplikacji mObywatel, który został
+                    Przykładem jest wirtualny asystent wspierający użytkownika w aplikacji <i>mObywatel</i>, który
+                    został
                     uruchomiony w grudniu 2025 roku. Asystent ten wykorzystuje model PLLuM do udzielania odpowiedzi na
                     pytania dotyczące usług publicznych, procedur administracyjnych i innych zagadnień związanych z
                     funkcjonowaniem administracji publicznej. Jego celem jest ułatwienie obywatelom dostępu do
                     informacji i
-                    usług publicznych poprzez interakcję w naturalnym języku.
+                    usług publicznych poprzez interakcję w naturalnym języku.</p>
+                <p>
                     Podejmowane są także próby wykorzystnaia PLLuMa jako
-                    ułatwienia w przeglądaniu zasobów Biuletyni Informacji Publicznej
-                    (https://itreseller.pl/gdynia-uruchamia-pilotaz-pllum-polski-model-ai-wesprze-urzad-i-mieszkancow/).
-                    Z kolei w Poznaniu wdrożenie miało charakter wspomagający pracę samych urzędników. Wykorzystano tam
+                    ułatwienia w przeglądaniu zasobów Biuletynu Informacji Publicznej, np. w <a
+                        href="https://www.gdynia.pl/dla-mediow/komunikaty-dla-mediow,4100/szybsze-i-latwiejsze-wyszukiwanie-w-bip-ie-gdynia-wdrozy-nowoczesny-system-z-wykorzystaniem-ai,591421"
+                        target="_blank" rel="noopener noreferrer">Gdyni</a>.
+                    Z kolei w <a href="https://pfr.pl/artykul/start-z-polskim-ai-od-pomyslu-do-wdrozenia-pllum"
+                        target="_blank" rel="noopener noreferrer">Poznaniu</a> wdrożenie miało charakter wspomagający
+                    pracę samych urzędników. Wykorzystano tam
                     opartą na PLLuM aplikację ShpaRAG (wykorzystującą mechanizm Retrieval-Augmented Generation).
                     Narzędzie
                     to działa na miejskiej infolinii, pełniąc funkcję asystenta pracownika – na
                     bieżąco analizuje obszerne bazy wiedzy urzędu i podpowiada urzędnikom poprawne i szybkie odpowiedzi
                     na
-                    zapytania dzwoniących mieszkańców
-                    (https://pfr.pl/artykul/start-z-polskim-ai-od-pomyslu-do-wdrozenia-pllum).
-                    Inny przykład to wyszukiwarka semantyczna/RAG dla pracowników banku, oparta na modelach PLLuM, do
+                    zapytania dzwoniących mieszkańców.
+                    Inny przykład to wyszukiwarka semantyczna/RAG dla <a
+                        href="https://www.nask.pl/aktualnosci/pllum-w-najwiekszym-polskim-banku" target="_blank"
+                        rel="noopener noreferrer">pracowników banku</a>, oparta na modelach PLLuM, do
                     szybkiego dostępu do procedur i regulacji.
-                    (https://www.nask.pl/aktualnosci/pllum-w-najwiekszym-polskim-banku). [Comarch -
-                    https://www.comarch.pl/erp/asystent-ai/]
-                    Szczegółowe informacje o rodzinie modeli PLLuM można znaleźć w publikacji naukowej <a
-                        href="https://huggingface.co/papers/2511.03823" target="_blank" rel="noopener noreferrer">PLLuM:
-                        A
-                        Family of Polish Large Language Models</a>, która opisuje architekturę, proces treningu, zestaw
-                    danych i wyniki ewaluacji tych modeli. [napisać o danych treningowych i aligmencie]</p>
-                </p>
+                    Z kolei wbudowany w rozwiązania dla przedsiębiorstw oparty na PLLuM <a
+                        href="https://huggingface.co/papers/2511.03823" target="_blank"
+                        rel="noopener noreferrer">ChatERP</a> umożliwia swobodną komunikację z systemami realizującymi
+                    różne zadania przy użyciu języka naturalnego.</p>
+                <div class="warning-box">
+                    <h4>Komentarz</h4>
+                    <p>Wszystkie zagrożenia związane z wykorzystaniem dużych modeli językowych pozostają w
+                        mocy w
+                        przypadku
+                        modeli PLLuM, jednak dzięki trenowaniu ich na polskich zasobach wysokiej jakości, można oczekiwać,
+                        że
+                        niektóre z tych zagrożeń są w mniejszym lub większym stopniu zmitygowane.</p>
+                </div>
             </section>
             <section>
                 <h2>Szczegółowe informacje o systemach AI</h2>
