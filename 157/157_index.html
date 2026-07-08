@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jak zmieniła się liczba wniosków o informację publiczną?</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Informacja publiczna w praktyce — dane za 2025 i porównanie z 2022</title>
+<style>
     :root {
       --yellow: #ffd83d;
       --red: #b94d40;
@@ -18,7 +19,9 @@
       --blue: #2a5d8f;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -53,7 +56,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 clamp(22px, 8vw, 120px);
-      box-shadow: 0 2px 10px rgba(0,0,0,.10);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .10);
       position: relative;
       z-index: 3;
     }
@@ -136,7 +139,7 @@
       font-size: clamp(22px, 4vw, 38px);
       font-weight: 950;
       letter-spacing: .03em;
-      box-shadow: 10px 10px 0 rgba(0,0,0,.12);
+      box-shadow: 10px 10px 0 rgba(0, 0, 0, .12);
     }
 
     .mascot-row {
@@ -154,7 +157,7 @@
       background: var(--white);
       display: grid;
       place-items: center;
-      box-shadow: 0 14px 0 rgba(0,0,0,.07);
+      box-shadow: 0 14px 0 rgba(0, 0, 0, .07);
     }
 
     .mascot img {
@@ -204,7 +207,7 @@
       border: 3px solid var(--black);
       padding: 20px 18px;
       min-height: 142px;
-      box-shadow: 8px 8px 0 rgba(0,0,0,.12);
+      box-shadow: 8px 8px 0 rgba(0, 0, 0, .12);
     }
 
     .kpi-label {
@@ -230,9 +233,19 @@
       font-weight: 700;
     }
 
-    .kpi.positive .kpi-value, .positive { color: var(--green); }
-    .kpi.negative .kpi-value, .negative { color: var(--red); }
-    .neutral { color: var(--blue); }
+    .kpi.positive .kpi-value,
+    .positive {
+      color: var(--green);
+    }
+
+    .kpi.negative .kpi-value,
+    .negative {
+      color: var(--red);
+    }
+
+    .neutral {
+      color: var(--blue);
+    }
 
     .grid {
       display: grid;
@@ -241,7 +254,7 @@
       align-items: start;
     }
 
-    .grid > .panel {
+    .grid>.panel {
       min-width: 0;
     }
 
@@ -250,7 +263,7 @@
       border: 3px solid var(--black);
       padding: 24px;
       margin-bottom: 22px;
-      box-shadow: 8px 8px 0 rgba(0,0,0,.10);
+      box-shadow: 8px 8px 0 rgba(0, 0, 0, .10);
     }
 
     .panel h2 {
@@ -300,9 +313,20 @@
       background: var(--blue);
     }
 
-    .status-fill.positive, .mini-bar-fill.positive { background: var(--green); }
-    .status-fill.negative, .mini-bar-fill.negative { background: var(--red); }
-    .status-fill.neutral, .mini-bar-fill.neutral { background: var(--blue); }
+    .status-fill.positive,
+    .mini-bar-fill.positive {
+      background: var(--green);
+    }
+
+    .status-fill.negative,
+    .mini-bar-fill.negative {
+      background: var(--red);
+    }
+
+    .status-fill.neutral,
+    .mini-bar-fill.neutral {
+      background: var(--blue);
+    }
 
     .status-value {
       text-align: right;
@@ -410,21 +434,28 @@
     }
 
     @media (max-width: 900px) {
-      .kpis, .grid {
+
+      .kpis,
+      .grid {
         grid-template-columns: 1fr;
       }
+
       .nav {
         padding: 0 20px;
       }
+
       .nav .pill {
         display: none;
       }
+
       .status-row {
         grid-template-columns: 1fr;
       }
+
       .status-value {
         text-align: left;
       }
+
       .black-ribbon {
         padding-left: 20px;
         padding-right: 20px;
@@ -432,856 +463,1834 @@
     }
 
     @media print {
-      body { background: var(--white); }
-      .kpi, .panel { box-shadow: none; }
-      main { margin-top: 20px; }
+      body {
+        background: var(--white);
+      }
+
+      .kpi,
+      .panel {
+        box-shadow: none;
+      }
+
+      main {
+        margin-top: 20px;
+      }
     }
-  </style>
+  
+
+    .request-details {
+      background: var(--white);
+      border: 3px solid var(--black);
+      margin-bottom: 22px;
+      box-shadow: 8px 8px 0 rgba(0, 0, 0, .10);
+    }
+
+    .request-details summary {
+      cursor: pointer;
+      padding: 22px 24px;
+      font-size: clamp(22px, 2.8vw, 32px);
+      font-weight: 950;
+      line-height: 1.1;
+      list-style-position: inside;
+    }
+
+    .request-details[open] summary {
+      border-bottom: 2px solid var(--black);
+    }
+
+    .request-content {
+      padding: 20px 24px 24px;
+      white-space: pre-wrap;
+      font-size: 15px;
+    }
+
+    .map-container {
+      border: 2px solid var(--black);
+      background: var(--cream);
+      min-height: 620px;
+      overflow: hidden;
+    }
+
+    .map-container iframe {
+      display: block;
+      width: 100%;
+      height: 620px;
+      border: 0;
+    }
+
+    .stats-quant-table th:not(:first-child),
+    .stats-quant-table td.numeric {
+      text-align: right;
+    }
+
+    .stats-quant-table th:first-child,
+    .stats-quant-table td:first-child {
+      text-align: left;
+    }
+    .dane-container { text-align: center; margin: 0px 0; }
+    .dane-container iframe { width: 1150px; height: 800px; border: none; }
+</style>
 </head>
 <body>
-  <div class="top-strip">SIEĆ OBYWATELSKA WATCHDOG POLSKA</div>
+<div class="top-strip"><span>RAPORT</span> SIEĆ OBYWATELSKA WATCHDOG POLSKA</div>
+<nav class="nav">
+<div class="brand"><img alt="Sprawdzamy jak jest" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjcuNTE2IDE2Ny41MTYiPjxkZWZzPjxzdHlsZT4uYXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMDIxLjMxOSAtMzI0Ni4wNjgpIj48Y2lyY2xlIGNsYXNzPSJhIiBjeD0iODMuNzU4IiBjeT0iODMuNzU4IiByPSI4My43NTgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwMjEuMzE5IDMyNDYuMDY4KSIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwMzguOTg0IDMyOTQuNzA0KSI+PHBhdGggZD0iTTIwMy4yMjgsMjIwLjExMmwtMTMuMDgyLTIuNjU2VjIwNi43NzVsMTIuMTgxLTguMjE2LTUuMDY1LTEwLjg0OUgxNzEuODQ2bC00Ljk3LDExLDEyLjE2NSw3Ljg0OXYxMC45bC0xMy4wODIsMi42MjQtMTYuOTQzLTguMDQ5LTQuNzg2LDEwLjAyNywxOC42MTgsOC44NDZhNS41MTIsNS41MTIsMCwwLDAsMi4zOTMuNTM0LDUuNyw1LjcsMCwwLDAsMS4wOTMtLjFsMTguMjUxLTMuNjY5LDE4LjI1OSwzLjY2OWE1LjU4LDUuNTgsMCwwLDAsMS4wOTMuMSw1LjUxMiw1LjUxMiwwLDAsMCwyLjM5My0uNTM0bDE4LjYxLTguODQ2LTQuNzg2LTEwLjAyN1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTguMDQgLTE0Ni40MzcpIi8+PHBhdGggZD0iTTExMS4yOSwxMzUuOTd2MTEuMTEyaDEwLjk3Nmw2Ljg2OCwyNS43ODloMTEuMzUxbC0zLjItMTIuMjUzLTQuNjY2LTEuMjI4TDEyOS44LDE0Ny4wODJoNC4yNzZMMTM2LjExNCwxNTZsNC41OTUsMS4yMTIsNC4wODQsMTUuNjU5aDIwLjg1Mmw2Ljg2OC0yNS43ODloMTAuODMzbDYuODY4LDI1Ljc4OWgxMC42NjVsLTMuMi0xMi4yNTMtNC42NzUtMS4yMjgtMi44MTYtMTIuMzA4aDQuMjY4bDIuMDUsOC45MTgsNC41ODcsMS4yMTIsNC4wODQsMTUuNjU5aDIxLjU1NGw2Ljg2OC0yNS43ODloMTAuOTY4VjEzNS45N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTEuMjkgLTEzNS45NykiLz48L2c+PC9nPjwvc3ZnPg=="/></div>
+<div class="pill">Stan na 22.06.2026</div>
+</nav>
+<header class="hero">
+<div class="hero-inner">
+<div class="hero-badge">2025 · porównanie z 2022</div>
+<h1>Jak JST i ministerstwa odpowiadają na wnioski o informację?</h1>
+<p class="subtitle">Wyniki monitoringu: liczba wniosków, udostępnienia, odmowy, opłaty, rejestry BIP, osoby
+        odpowiedzialne i przyczyny nieudostępniania informacji.</p>
+<div class="black-ribbon">Sprawdzamy publiczne dane!</div>
+<div class="mascot-row">
+<div class="mascot"><img alt="Sprawdzamy jak jest" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjcuNTE2IDE2Ny41MTYiPjxkZWZzPjxzdHlsZT4uYXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMDIxLjMxOSAtMzI0Ni4wNjgpIj48Y2lyY2xlIGNsYXNzPSJhIiBjeD0iODMuNzU4IiBjeT0iODMuNzU4IiByPSI4My43NTgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwMjEuMzE5IDMyNDYuMDY4KSIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwMzguOTg0IDMyOTQuNzA0KSI+PHBhdGggZD0iTTIwMy4yMjgsMjIwLjExMmwtMTMuMDgyLTIuNjU2VjIwNi43NzVsMTIuMTgxLTguMjE2LTUuMDY1LTEwLjg0OUgxNzEuODQ2bC00Ljk3LDExLDEyLjE2NSw3Ljg0OXYxMC45bC0xMy4wODIsMi42MjQtMTYuOTQzLTguMDQ5LTQuNzg2LDEwLjAyNywxOC42MTgsOC44NDZhNS41MTIsNS41MTIsMCwwLDAsMi4zOTMuNTM0LDUuNyw1LjcsMCwwLDAsMS4wOTMtLjFsMTguMjUxLTMuNjY5LDE4LjI1OSwzLjY2OWE1LjU4LDUuNTgsMCwwLDAsMS4wOTMuMSw1LjUxMiw1LjUxMiwwLDAsMCwyLjM5My0uNTM0bDE4LjYxLTguODQ2LTQuNzg2LTEwLjAyN1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTguMDQgLTE0Ni40MzcpIi8+PHBhdGggZD0iTTExMS4yOSwxMzUuOTd2MTEuMTEyaDEwLjk3Nmw2Ljg2OCwyNS43ODloMTEuMzUxbC0zLjItMTIuMjUzLTQuNjY2LTEuMjI4TDEyOS44LDE0Ny4wODJoNC4yNzZMMTM2LjExNCwxNTZsNC41OTUsMS4yMTIsNC4wODQsMTUuNjU5aDIwLjg1Mmw2Ljg2OC0yNS43ODloMTAuODMzbDYuODY4LDI1Ljc4OWgxMC42NjVsLTMuMi0xMi4yNTMtNC42NzUtMS4yMjgtMi44MTYtMTIuMzA4aDQuMjY4bDIuMDUsOC45MTgsNC41ODcsMS4yMTIsNC4wODQsMTUuNjU5aDIxLjU1NGw2Ljg2OC0yNS43ODloMTAuOTY4VjEzNS45N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTEuMjkgLTEzNS45NykiLz48L2c+PC9nPjwvc3ZnPg=="/></div>
+</div>
+</div>
+</header>
+<main>
+<div class="breaking">85 - mediana liczby wniosków o informację otrzymanych w 2025 roku w 2374 urzędach</div>
+<div class="mascot-row">
+<div class="mascot"><img alt="Piesek strażniczy" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgaWQ9InJvdHR3ZWlsZXIzIgogICB2aWV3Qm94PSIwIDAgNDEwIDQxMCIKICAgdmVyc2lvbj0iMS4xIgogICBzb2RpcG9kaTpkb2NuYW1lPSJyb3R0d2VpbGVyLnN2ZyIKICAgaW5rc2NhcGU6dmVyc2lvbj0iMC45Mi40ICgzM2ZlYzQwLCAyMDE5LTAxLTE2KSI+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhNDciPgogICAgPHJkZjpSREY+CiAgICAgIDxjYzpXb3JrCiAgICAgICAgIHJkZjphYm91dD0iIj4KICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4KICAgICAgICA8ZGM6dHlwZQogICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiIC8+CiAgICAgICAgPGRjOnRpdGxlPiMxOTAwMyBHZXJlcmUgb2R6bmFraV93YXRjaGRvZyBwc3kgZmluYWwgcm90dHdlaWxlcjwvZGM6dGl0bGU+CiAgICAgIDwvY2M6V29yaz4KICAgIDwvcmRmOlJERj4KICA8L21ldGFkYXRhPgogIDxzb2RpcG9kaTpuYW1lZHZpZXcKICAgICBwYWdlY29sb3I9IiNmZmZmZmYiCiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiCiAgICAgYm9yZGVyb3BhY2l0eT0iMSIKICAgICBvYmplY3R0b2xlcmFuY2U9IjEwIgogICAgIGdyaWR0b2xlcmFuY2U9IjEwIgogICAgIGd1aWRldG9sZXJhbmNlPSIxMCIKICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMCIKICAgICBpbmtzY2FwZTpwYWdlc2hhZG93PSIyIgogICAgIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTkyMCIKICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSIxMDIwIgogICAgIGlkPSJuYW1lZHZpZXc0NSIKICAgICBzaG93Z3JpZD0iZmFsc2UiCiAgICAgaW5rc2NhcGU6cGFnZWNoZWNrZXJib2FyZD0idHJ1ZSIKICAgICBpbmtzY2FwZTp6b29tPSIxLjE1MTIxOTUiCiAgICAgaW5rc2NhcGU6Y3g9Ii04LjY4NjQ0MDciCiAgICAgaW5rc2NhcGU6Y3k9IjIwNSIKICAgICBpbmtzY2FwZTp3aW5kb3cteD0iMCIKICAgICBpbmtzY2FwZTp3aW5kb3cteT0iMCIKICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIxIgogICAgIGlua3NjYXBlOmN1cnJlbnQtbGF5ZXI9InJvdHR3ZWlsZXIzIiAvPgogIDxkZWZzCiAgICAgaWQ9ImRlZnM0Ij4KICAgIDxzdHlsZQogICAgICAgaWQ9InN0eWxlMiI+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT4KICA8L2RlZnM+CiAgPHRpdGxlCiAgICAgaWQ9InRpdGxlNiI+IzE5MDAzIEdlcmVyZSBvZHpuYWtpX3dhdGNoZG9nIHBzeSBmaW5hbCByb3R0d2VpbGVyPC90aXRsZT4KICA8cG9seWdvbgogICAgIHBvaW50cz0iMzQ1Ljg0LDM4OS42OCAzMzIuNjYsMzU3LjMzIDMzMC4yNiwyOTMuODMgMzU4LjQyLDI2OC4wNyAzNjMuODEsMzA2LjQxIDM1My42MywzNTcuMzMgMzYxLjE5LDM4MS40MyAzNzEuNiwzNzkuNSAzNzkuMzgsMzkwLjg4ICIKICAgICBpZD0icG9seWdvbjgiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIgLz4KICA8cG9seWxpbmUKICAgICBwb2ludHM9IjMwMS4yOCAzMDkuNTYgMjg0LjQ0IDM0Ny4wMSAyOTMuOTMgMzg4LjU1IDMwNi4wNyAzODMuOCAzMTMuMTkgMzk1Ljk0IDI4MS4yNyAzOTcuMjUgMjUyLjc5IDM0Ny4wMSAyNTguMzMgMzA3LjQ1IgogICAgIGlkPSJwb2x5bGluZTEwIgogICAgIHRyYW5zZm9ybT0ibWF0cml4KDEuNDM5MzE2OSwwLDAsMS40MzkzMTY5LC0xMzguMjQ4MDcsLTE4MC41OTkxNikiIC8+CiAgPHBvbHlnb24KICAgICBwb2ludHM9IjI2Ny41MiwxNDUuMzUgMzMyLjQxLDE0NC4yOSAzNDMuNjksMTU5LjgxIDM2NC4zNSwzMDQuODEgMzEwLjAyLDMzNC4zNSAxNTYsMzEwLjYyIDE1My45NywyODguMTggMTY4Ljc4LDI0MC45MiAyMzguNiwyMzIuNDUgMjUzLjQxLDIxOS4wNSAyNTQuMTIsMTU2LjI4ICIKICAgICBpZD0icG9seWdvbjEyIgogICAgIHRyYW5zZm9ybT0ibWF0cml4KDEuNDM5MzE2OSwwLDAsMS40MzkzMTY5LC0xMzguMjQ4MDcsLTE4MC41OTkxNikiIC8+CiAgPHBvbHlnb24KICAgICBjbGFzcz0iY2xzLTEiCiAgICAgcG9pbnRzPSIyNjQuNjgsMjg3LjkxIDI4NS4xNCwyNzcuMzMgMzA5LjgyLDMwMC42MSAzMDkuNzYsMzEyLjQ2IDI3MS43OCwzMDcuNzEgIgogICAgIGlkPSJwb2x5Z29uMTQiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmIiAvPgogIDxwb2x5Z29uCiAgICAgY2xhc3M9ImNscy0xIgogICAgIHBvaW50cz0iMzIwLjA1LDI5OC4xNSAzMzkuOCwyNzQuMTcgMzUyLjMxLDI4NS45OCAzNTAuNjQsMjk2LjM3IDMyMS4xLDMxMi43MyAiCiAgICAgaWQ9InBvbHlnb24xNiIKICAgICB0cmFuc2Zvcm09Im1hdHJpeCgxLjQzOTMxNjksMCwwLDEuNDM5MzE2OSwtMTM4LjI0ODA3LC0xODAuNTk5MTYpIgogICAgIHN0eWxlPSJmaWxsOiNmZmZmZmYiIC8+CiAgPHBvbHlnb24KICAgICBjbGFzcz0iY2xzLTEiCiAgICAgcG9pbnRzPSIzMjUuOTksMTg3LjMxIDMzNC4xNSwyMDUuNzggMzEzLjM3LDIyNi44MSAyODUuNTYsMjI2LjI4IDI2NS43MSwyMDYuNTcgMjcwLjEzLDE4Ni45OCAyODYuMDQsMTg5LjI2IDI4OS4zOCwxODAuODYgMzEwLjQsMTgxLjQ2IDMxNC4zNywxODguNzcgIgogICAgIGlkPSJwb2x5Z29uMTgiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmIiAvPgogIDxwb2x5Z29uCiAgICAgcG9pbnRzPSIyOTEuMjQsMTg5LjkxIDI5My4xOSwxODQuMzkgMzA2LjgzLDE4NS4wNCAzMDguNDUsMTkxLjIxIDMwMC45OCwxOTcuMDUgMjk3LjI1LDE5Ni41NyAiCiAgICAgaWQ9InBvbHlnb24yMCIKICAgICB0cmFuc2Zvcm09Im1hdHJpeCgxLjQzOTMxNjksMCwwLDEuNDM5MzE2OSwtMTM4LjI0ODA3LC0xODAuNTk5MTYpIiAvPgogIDxwb2x5Z29uCiAgICAgcG9pbnRzPSIyNTcuMjksMTQyLjg4IDI2OS4yOCwxNTMuMTEgMjUyLjcxLDE3MC43NCAyMzYuODQsMTgwLjYxIDIzNC43MiwxNTMuMTEgIgogICAgIGlkPSJwb2x5Z29uMjIiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIgLz4KICA8cG9seWdvbgogICAgIHBvaW50cz0iMzQzLjM0LDE0My45NCAzNjIuMzksMTUyLjQgMzY1LjU2LDE3OS41NiAzNDguMjgsMTczLjkxIDMyNi40MiwxNTYuMjggIgogICAgIGlkPSJwb2x5Z29uMjQiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIgLz4KICA8cGF0aAogICAgIGNsYXNzPSJjbHMtMSIKICAgICBkPSJtIDI3My40ODI5NCw5My44MjEwMDMgLTI3Ljg2NTE4LC0xLjI1MjIxIC05LjM4NDM0LC0xMC4yOTExMDkgLTAuNjQ3NywtMjUuMzg5NTUgNDcuMTM3NjMsMC40MzE3OTUgdiAyMi44OTk1MzIgeiBtIC0yNS40MTgzNCwtNi40NjI1MzEgMjIuNjk4MDMsMS4wMjE5MTIgNi42NDk2NCwtOS43ODczNSBWIDYyLjY0NTQwMSBsIC0zNi4zNzE1NCwtMC4zMzEwNDIgMC40NjA1OSwxNy44OTA3MDkgeiIKICAgICBpZD0icGF0aDI2IgogICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiCiAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtzdHJva2Utd2lkdGg6MS40MzkzMTY4NyIgLz4KICA8cGF0aAogICAgIGNsYXNzPSJjbHMtMSIKICAgICBkPSJtIDM0Mi4xOTU5Myw5NC41ODM4NTMgLTI3Ljg3OTU3LC0xLjI2NjYxIC05LjM2OTk1LC0xMC4yOTExMTQgLTAuNjQ3NywtMjUuMzYwNzY0IDQ3LjEzNzYzLDAuNDMxNzk1IHYgMjIuODk5NTMxIHogbSAtMjUuNDMyNzMsLTYuNDc2OTM1IDIyLjY5ODAzLDEuMDIxOTEzIDYuNjY0MDMsLTkuNzcyOTYxIFYgNjMuMzY1MDYgbCAtMzYuMzcxNTMsLTAuMzMxMDQzIDAuNDQ2MTgsMTcuODc2MzE3IHoiCiAgICAgaWQ9InBhdGgyOCIKICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7c3Ryb2tlLXdpZHRoOjEuNDM5MzE2ODciIC8+CiAgPHBvbHlnb24KICAgICBjbGFzcz0iY2xzLTEiCiAgICAgcG9pbnRzPSIzMjEuMDQsMTU2LjYzIDMxOS44LDE1OS42MyAzMDYuMjIsMTU5LjEgMzE1Ljc1LDE1MS41MiAiCiAgICAgaWQ9InBvbHlnb24zMCIKICAgICB0cmFuc2Zvcm09Im1hdHJpeCgxLjQzOTMxNjksMCwwLDEuNDM5MzE2OSwtMTM4LjI0ODA3LC0xODAuNTk5MTYpIgogICAgIHN0eWxlPSJmaWxsOiNmZmZmZmYiIC8+CiAgPHBvbHlnb24KICAgICBjbGFzcz0iY2xzLTEiCiAgICAgcG9pbnRzPSIyNzguOTQsMTUyLjEzIDI4OC4xNiwxNTkuNzIgMjc1LjExLDE1OS40MyAyNzUuNCwxNTUuMzYgIgogICAgIGlkPSJwb2x5Z29uMzIiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmIiAvPgogIDxwb2x5Z29uCiAgICAgcG9pbnRzPSIxMDkuNTMsMzIwLjI3IDEzNS4yNywzMTguMTUgMTUxLjE0LDI3NC40MiAxNjkuNDgsMjYzLjE0IDE2OC43OCwyNDAuOTIgMTQwLjkyLDI2MS4zNyAxMjguMjIsMzAyLjI4IDEwNi43MSwzMDYuODcgOTcuMTksMzA1LjEgMTAwLjcxLDMxMi44NiAiCiAgICAgaWQ9InBvbHlnb24zNCIKICAgICB0cmFuc2Zvcm09Im1hdHJpeCgxLjQzOTMxNjksMCwwLDEuNDM5MzE2OSwtMTM4LjI0ODA3LC0xODAuNTk5MTYpIiAvPgogIDxwb2x5bGluZQogICAgIHBvaW50cz0iMTU1LjQ3IDMwNy40NSAxMzMuMzIgMzQ3LjAxIDE2MC4yMiAzOTQuNDggMTk1LjgyIDM5NS4yNyAxODcuMTIgMzc3Ljg3IDE3Ny42MyAzODEuNDMgMTYzLjc4IDM0OC41OSAyMDkuMjggMzA0LjgxIDE5Mi42NiAyOTAuMDQgMTU1LjQ3IDMwNy40NSIKICAgICBpZD0icG9seWxpbmUzNiIKICAgICB0cmFuc2Zvcm09Im1hdHJpeCgxLjQzOTMxNjksMCwwLDEuNDM5MzE2OSwtMTM4LjI0ODA3LC0xODAuNTk5MTYpIiAvPgogIDxwb2x5bGluZQogICAgIHBvaW50cz0iMjEwLjMzIDI5My4yMSAxOTIuMTMgMzM0Ljc1IDIxOS4wMyAzODIuMjIgMjU0LjY0IDM4My4wMSAyNDUuOTMgMzY1LjYgMjM2LjQ0IDM2OS4xNyAyMjIuNTkgMzM2LjMzIDI0Ni43MiAzMDAuNTkgMjUxLjQ3IDI3Ny43OCAyMTQuMjkgMjk1LjE5IgogICAgIGlkPSJwb2x5bGluZTM4IgogICAgIHRyYW5zZm9ybT0ibWF0cml4KDEuNDM5MzE2OSwwLDAsMS40MzkzMTY5LC0xMzguMjQ4MDcsLTE4MC41OTkxNikiIC8+CiAgPHBvbHlnb24KICAgICBwb2ludHM9IjI5OC41NSwxOTEuNDEgMjk0Ljk5LDIxNS4yOCAyODMuOTEsMjI4LjcyIDMxNi4zNSwyMjkuNTIgMzAzLjY5LDIxNC40OCAzMDAuNCwxOTEuOTMgIgogICAgIGlkPSJwb2x5Z29uNDAiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIgLz4KICA8cG9seWdvbgogICAgIHBvaW50cz0iMzI0LjI2LDIxOS42MyAzMjQuNjYsMjM0LjY2IDI3NS42LDIzMS4xIDI3NC40MiwyMTguODQgIgogICAgIGlkPSJwb2x5Z29uNDIiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIgLz4KPC9zdmc+Cg=="/></div>
+</div>
+<br/>
+<section class="kpis">
+<article class="kpi">
+<div class="kpi-label">Łączna liczba wniosków</div>
+<div class="kpi-value">266 940</div>
+<div class="kpi-note">mediana: 85; n=2374</div>
+</article>
+<article class="kpi positive">
+<div class="kpi-label">Mediana liczby wniosków</div>
+<div class="kpi-value">85</div>
+<div class="kpi-note">2374 urzędy podały liczbę wniosków</div>
+</article>
+<article class="kpi neutral">
+<div class="kpi-label">Zmiana liczby wniosków</div>
+<div class="kpi-value">+42%</div>
+<div class="kpi-note">względem 2022; n=495</div>
+</article>
+<article class="kpi positive">
+<div class="kpi-label">Pełne udostępnienia</div>
+<div class="kpi-value">92%</div>
+<div class="kpi-note">n=2307</div>
+</article>
+<article class="kpi positive">
+<div class="kpi-label">Decyzje odmowne</div>
+<div class="kpi-value">1%</div>
+<div class="kpi-note">n=2360</div>
+</article>
+<article class="kpi positive">
+<div class="kpi-label">Naliczono opłatę</div>
+<div class="kpi-value">1,6‰</div>
+<div class="kpi-note">n=2352</div>
+</article>
+<article class="kpi negative">
+<div class="kpi-label">Rejestr w BIP</div>
+<div class="kpi-value">5,4%</div>
+<div class="kpi-note">TAK: 129 instytucji; n=2384</div>
+</article>
+<article class="kpi negative">
+<div class="kpi-label">Wyznaczona osoba</div>
+<div class="kpi-value">14%</div>
+<div class="kpi-note">TAK: 339 instytucji; n=2381</div>
+</article>
+</section><details class="request-details"><summary>Treść wniosku o informację, którym pozyskaliśmy dane do raportu</summary><div class="request-content">Wniosek o udostępnienie informacji
 
-  <nav class="nav">
-    <div class="brand"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjcuNTE2IDE2Ny41MTYiPjxkZWZzPjxzdHlsZT4uYXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMDIxLjMxOSAtMzI0Ni4wNjgpIj48Y2lyY2xlIGNsYXNzPSJhIiBjeD0iODMuNzU4IiBjeT0iODMuNzU4IiByPSI4My43NTgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwMjEuMzE5IDMyNDYuMDY4KSIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwMzguOTg0IDMyOTQuNzA0KSI+PHBhdGggZD0iTTIwMy4yMjgsMjIwLjExMmwtMTMuMDgyLTIuNjU2VjIwNi43NzVsMTIuMTgxLTguMjE2LTUuMDY1LTEwLjg0OUgxNzEuODQ2bC00Ljk3LDExLDEyLjE2NSw3Ljg0OXYxMC45bC0xMy4wODIsMi42MjQtMTYuOTQzLTguMDQ5LTQuNzg2LDEwLjAyNywxOC42MTgsOC44NDZhNS41MTIsNS41MTIsMCwwLDAsMi4zOTMuNTM0LDUuNyw1LjcsMCwwLDAsMS4wOTMtLjFsMTguMjUxLTMuNjY5LDE4LjI1OSwzLjY2OWE1LjU4LDUuNTgsMCwwLDAsMS4wOTMuMSw1LjUxMiw1LjUxMiwwLDAsMCwyLjM5My0uNTM0bDE4LjYxLTguODQ2LTQuNzg2LTEwLjAyN1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTguMDQgLTE0Ni40MzcpIi8+PHBhdGggZD0iTTExMS4yOSwxMzUuOTd2MTEuMTEyaDEwLjk3Nmw2Ljg2OCwyNS43ODloMTEuMzUxbC0zLjItMTIuMjUzLTQuNjY2LTEuMjI4TDEyOS44LDE0Ny4wODJoNC4yNzZMMTM2LjExNCwxNTZsNC41OTUsMS4yMTIsNC4wODQsMTUuNjU5aDIwLjg1Mmw2Ljg2OC0yNS43ODloMTAuODMzbDYuODY4LDI1Ljc4OWgxMC42NjVsLTMuMi0xMi4yNTMtNC42NzUtMS4yMjgtMi44MTYtMTIuMzA4aDQuMjY4bDIuMDUsOC45MTgsNC41ODcsMS4yMTIsNC4wODQsMTUuNjU5aDIxLjU1NGw2Ljg2OC0yNS43ODloMTAuOTY4VjEzNS45N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTEuMjkgLTEzNS45NykiLz48L2c+PC9nPjwvc3ZnPg==" alt="Sprawdzamy jak jest" /></div>
-    <div class="pill">Raport</div>
-  </nav>
+Na podstawie art. 61 ust. 1 i 2 Konstytucji RP oraz art. 10 ust. 1 Ustawy o dostępie do informacji publicznej stowarzyszenie Sieć Obywatelska Watchdog Polska wnosi o udostępnienie następujących informacji:
+1. Liczba pisemnych wniosków o udostępnienie informacji publicznej, które organ otrzymał w 2025 r.
+2. Liczba wniosków, które w 2025 r. organ wykonał w całości. Przez wykonanie wniosku w całości należy rozumieć wyłącznie udostępnienie pełnej informacji. Udostępnienie pełnej informacji po przedłużeniu terminu na jej udostępnienie należy potraktować jako wykonanie wniosku w całości.
+3. Liczba wniosków, w sprawie których w 2025 r. organ wydał decyzję administracyjną (decyzje administracyjne) o odmowie udostępnienia informacji publicznej. Nawet jeśli organ wydał więcej niż jedną decyzję administracyjną w odniesieniu do danego wniosku, należy to potraktować jako jedną sprawę (wniosek).
+4. Jakie były najczęściej występujące przyczyny nieudostępnienia przez organ informacji publicznej w 2025 r.? Prosimy o wymienienie w treści wiadomości maksymalnie trzech z poniższych punktów:
+    a) wnioskowana informacja nie stanowiła informacji publicznej,
+    b) wnioskodawca miał zagwarantowany dostęp do informacji w innym trybie,
+    c) informacja nie istniała albo organ jej nie posiadał,
+    d) wnioskodawca nie ujawnił swoich podstawowych danych osobowych (imię, nazwisko),
+    e) wnioskodawca nadużywał dostępu do informacji publicznej,
+    f) wniosek dotyczył informacji przetworzonej,
+    g) informacja podlegała ochronie prywatności osoby fizycznej,
+    h) informacja podlegała ochronie ze względu na tajemnicę przedsiębiorcy,
+    i) inne.
+5. Liczba wniosków, w sprawie których w 2025 r. wnioskodawca skierował skargę (skargi) na bezczynność do sądu administracyjnego. Chodzi o liczbę spraw, w których organ otrzymał skargę na bezczynność i przekazał ją do sądu, począwszy od 1 stycznia 2025 r. Należy przyjąć, że nie chodzi o postępowania przed sądem, które rozpoczęły się przed 1 stycznia 2025 r., ale są wciąż w toku.
+6. Liczba wniosków, w sprawie których w 2025 r. wnioskodawca skierował skargę do sądu administracyjnego lub odwołanie w oparciu o KPA na decyzję (decyzje). Chodzi o liczbę spraw, w których organ otrzymał skargę i odwołanie na decyzję i przekazał ją do sądu lub organu wyższego stopnia, począwszy od 1 stycznia 2025 r. Należy przyjąć, że nie chodzi o postępowania, które rozpoczęły się przed 1 stycznia 2025 r., ale są wciąż w toku.
+7. Liczba wniosków, w sprawie których w 2025 r. organ naliczył opłatę za udostępnienie informacji publicznej.
+8. Czy organ publikuje rejestr wniosków o udostępnienie informacji publicznej w Biuletynie Informacji Publicznej? Prosimy o udzielenie odpowiedzi tak/nie.
+9. Czy w organie jest zatrudniona osoba odpowiedzialna za przygotowywanie odpowiedzi na wnioski o udostępnienie informacji publicznej? Chodzi o wydzielone stanowisko pracownicze, którego zakres obowiązków dotyczy udzielania informacji publicznej.</div></details>
 
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="hero-badge">2022 vs 2025</div>
-      <h1>Jak zmieniła się liczba wniosków o informację publiczną?</h1>
-      <p class="subtitle">Porównanie danych deklarowanych przez gminy w 2022 i 2025 roku</p>
-      <div class="black-ribbon">Sprawdzamy publiczne dane!</div>
-      <div class="mascot-row">
-        <div class="mascot"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjcuNTE2IDE2Ny41MTYiPjxkZWZzPjxzdHlsZT4uYXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMDIxLjMxOSAtMzI0Ni4wNjgpIj48Y2lyY2xlIGNsYXNzPSJhIiBjeD0iODMuNzU4IiBjeT0iODMuNzU4IiByPSI4My43NTgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwMjEuMzE5IDMyNDYuMDY4KSIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwMzguOTg0IDMyOTQuNzA0KSI+PHBhdGggZD0iTTIwMy4yMjgsMjIwLjExMmwtMTMuMDgyLTIuNjU2VjIwNi43NzVsMTIuMTgxLTguMjE2LTUuMDY1LTEwLjg0OUgxNzEuODQ2bC00Ljk3LDExLDEyLjE2NSw3Ljg0OXYxMC45bC0xMy4wODIsMi42MjQtMTYuOTQzLTguMDQ5LTQuNzg2LDEwLjAyNywxOC42MTgsOC44NDZhNS41MTIsNS41MTIsMCwwLDAsMi4zOTMuNTM0LDUuNyw1LjcsMCwwLDAsMS4wOTMtLjFsMTguMjUxLTMuNjY5LDE4LjI1OSwzLjY2OWE1LjU4LDUuNTgsMCwwLDAsMS4wOTMuMSw1LjUxMiw1LjUxMiwwLDAsMCwyLjM5My0uNTM0bDE4LjYxLTguODQ2LTQuNzg2LTEwLjAyN1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTguMDQgLTE0Ni40MzcpIi8+PHBhdGggZD0iTTExMS4yOSwxMzUuOTd2MTEuMTEyaDEwLjk3Nmw2Ljg2OCwyNS43ODloMTEuMzUxbC0zLjItMTIuMjUzLTQuNjY2LTEuMjI4TDEyOS44LDE0Ny4wODJoNC4yNzZMMTM2LjExNCwxNTZsNC41OTUsMS4yMTIsNC4wODQsMTUuNjU5aDIwLjg1Mmw2Ljg2OC0yNS43ODloMTAuODMzbDYuODY4LDI1Ljc4OWgxMC42NjVsLTMuMi0xMi4yNTMtNC42NzUtMS4yMjgtMi44MTYtMTIuMzA4aDQuMjY4bDIuMDUsOC45MTgsNC41ODcsMS4yMTIsNC4wODQsMTUuNjU5aDIxLjU1NGw2Ljg2OC0yNS43ODloMTAuOTY4VjEzNS45N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTEuMjkgLTEzNS45NykiLz48L2c+PC9nPjwvc3ZnPg==" alt="Sprawdzamy jak jest" /></div>
-      </div>
-    </div>
-  </header>
+    <section class="panel">
+<h2>Interaktywna mapa odpowiedzi z gmin</h2>
+<p>Mapa interaktywna, pokazująca szczegółowe rozmieszczenie gmin, które odpowiedziały na wniosek, wraz z linkami do spraw na Fedrowaniu.</p>
+<div class="map-container">
+<iframe src="media/mapa_wnioski_gminy_2025.html" title="Interaktywna mapa liczby wniosków o informację w gminach"></iframe>
+</div>
+<p><a href="media/mapa_wnioski_gminy_2025.html" target="_blank">(Kliknij, żeby otworzyć mapę na nowej stronie)</a></p>
+</section>
 
-  <main>
-    <div class="breaking">Liczba wniosków o informację publiczną w roku 2025 składanych do analizowanych gmin wzrosła w ujęciu łącznym o jedną czwartą względem roku 2022.</div>
-          <div class="mascot-row">
-        <div class="mascot"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgaWQ9InJvdHR3ZWlsZXIzIgogICB2aWV3Qm94PSIwIDAgNDEwIDQxMCIKICAgdmVyc2lvbj0iMS4xIgogICBzb2RpcG9kaTpkb2NuYW1lPSJyb3R0d2VpbGVyLnN2ZyIKICAgaW5rc2NhcGU6dmVyc2lvbj0iMC45Mi40ICgzM2ZlYzQwLCAyMDE5LTAxLTE2KSI+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhNDciPgogICAgPHJkZjpSREY+CiAgICAgIDxjYzpXb3JrCiAgICAgICAgIHJkZjphYm91dD0iIj4KICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4KICAgICAgICA8ZGM6dHlwZQogICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiIC8+CiAgICAgICAgPGRjOnRpdGxlPiMxOTAwMyBHZXJlcmUgb2R6bmFraV93YXRjaGRvZyBwc3kgZmluYWwgcm90dHdlaWxlcjwvZGM6dGl0bGU+CiAgICAgIDwvY2M6V29yaz4KICAgIDwvcmRmOlJERj4KICA8L21ldGFkYXRhPgogIDxzb2RpcG9kaTpuYW1lZHZpZXcKICAgICBwYWdlY29sb3I9IiNmZmZmZmYiCiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiCiAgICAgYm9yZGVyb3BhY2l0eT0iMSIKICAgICBvYmplY3R0b2xlcmFuY2U9IjEwIgogICAgIGdyaWR0b2xlcmFuY2U9IjEwIgogICAgIGd1aWRldG9sZXJhbmNlPSIxMCIKICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMCIKICAgICBpbmtzY2FwZTpwYWdlc2hhZG93PSIyIgogICAgIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTkyMCIKICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSIxMDIwIgogICAgIGlkPSJuYW1lZHZpZXc0NSIKICAgICBzaG93Z3JpZD0iZmFsc2UiCiAgICAgaW5rc2NhcGU6cGFnZWNoZWNrZXJib2FyZD0idHJ1ZSIKICAgICBpbmtzY2FwZTp6b29tPSIxLjE1MTIxOTUiCiAgICAgaW5rc2NhcGU6Y3g9Ii04LjY4NjQ0MDciCiAgICAgaW5rc2NhcGU6Y3k9IjIwNSIKICAgICBpbmtzY2FwZTp3aW5kb3cteD0iMCIKICAgICBpbmtzY2FwZTp3aW5kb3cteT0iMCIKICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIxIgogICAgIGlua3NjYXBlOmN1cnJlbnQtbGF5ZXI9InJvdHR3ZWlsZXIzIiAvPgogIDxkZWZzCiAgICAgaWQ9ImRlZnM0Ij4KICAgIDxzdHlsZQogICAgICAgaWQ9InN0eWxlMiI+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT4KICA8L2RlZnM+CiAgPHRpdGxlCiAgICAgaWQ9InRpdGxlNiI+IzE5MDAzIEdlcmVyZSBvZHpuYWtpX3dhdGNoZG9nIHBzeSBmaW5hbCByb3R0d2VpbGVyPC90aXRsZT4KICA8cG9seWdvbgogICAgIHBvaW50cz0iMzQ1Ljg0LDM4OS42OCAzMzIuNjYsMzU3LjMzIDMzMC4yNiwyOTMuODMgMzU4LjQyLDI2OC4wNyAzNjMuODEsMzA2LjQxIDM1My42MywzNTcuMzMgMzYxLjE5LDM4MS40MyAzNzEuNiwzNzkuNSAzNzkuMzgsMzkwLjg4ICIKICAgICBpZD0icG9seWdvbjgiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIgLz4KICA8cG9seWxpbmUKICAgICBwb2ludHM9IjMwMS4yOCAzMDkuNTYgMjg0LjQ0IDM0Ny4wMSAyOTMuOTMgMzg4LjU1IDMwNi4wNyAzODMuOCAzMTMuMTkgMzk1Ljk0IDI4MS4yNyAzOTcuMjUgMjUyLjc5IDM0Ny4wMSAyNTguMzMgMzA3LjQ1IgogICAgIGlkPSJwb2x5bGluZTEwIgogICAgIHRyYW5zZm9ybT0ibWF0cml4KDEuNDM5MzE2OSwwLDAsMS40MzkzMTY5LC0xMzguMjQ4MDcsLTE4MC41OTkxNikiIC8+CiAgPHBvbHlnb24KICAgICBwb2ludHM9IjI2Ny41MiwxNDUuMzUgMzMyLjQxLDE0NC4yOSAzNDMuNjksMTU5LjgxIDM2NC4zNSwzMDQuODEgMzEwLjAyLDMzNC4zNSAxNTYsMzEwLjYyIDE1My45NywyODguMTggMTY4Ljc4LDI0MC45MiAyMzguNiwyMzIuNDUgMjUzLjQxLDIxOS4wNSAyNTQuMTIsMTU2LjI4ICIKICAgICBpZD0icG9seWdvbjEyIgogICAgIHRyYW5zZm9ybT0ibWF0cml4KDEuNDM5MzE2OSwwLDAsMS40MzkzMTY5LC0xMzguMjQ4MDcsLTE4MC41OTkxNikiIC8+CiAgPHBvbHlnb24KICAgICBjbGFzcz0iY2xzLTEiCiAgICAgcG9pbnRzPSIyNjQuNjgsMjg3LjkxIDI4NS4xNCwyNzcuMzMgMzA5LjgyLDMwMC42MSAzMDkuNzYsMzEyLjQ2IDI3MS43OCwzMDcuNzEgIgogICAgIGlkPSJwb2x5Z29uMTQiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmIiAvPgogIDxwb2x5Z29uCiAgICAgY2xhc3M9ImNscy0xIgogICAgIHBvaW50cz0iMzIwLjA1LDI5OC4xNSAzMzkuOCwyNzQuMTcgMzUyLjMxLDI4NS45OCAzNTAuNjQsMjk2LjM3IDMyMS4xLDMxMi43MyAiCiAgICAgaWQ9InBvbHlnb24xNiIKICAgICB0cmFuc2Zvcm09Im1hdHJpeCgxLjQzOTMxNjksMCwwLDEuNDM5MzE2OSwtMTM4LjI0ODA3LC0xODAuNTk5MTYpIgogICAgIHN0eWxlPSJmaWxsOiNmZmZmZmYiIC8+CiAgPHBvbHlnb24KICAgICBjbGFzcz0iY2xzLTEiCiAgICAgcG9pbnRzPSIzMjUuOTksMTg3LjMxIDMzNC4xNSwyMDUuNzggMzEzLjM3LDIyNi44MSAyODUuNTYsMjI2LjI4IDI2NS43MSwyMDYuNTcgMjcwLjEzLDE4Ni45OCAyODYuMDQsMTg5LjI2IDI4OS4zOCwxODAuODYgMzEwLjQsMTgxLjQ2IDMxNC4zNywxODguNzcgIgogICAgIGlkPSJwb2x5Z29uMTgiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmIiAvPgogIDxwb2x5Z29uCiAgICAgcG9pbnRzPSIyOTEuMjQsMTg5LjkxIDI5My4xOSwxODQuMzkgMzA2LjgzLDE4NS4wNCAzMDguNDUsMTkxLjIxIDMwMC45OCwxOTcuMDUgMjk3LjI1LDE5Ni41NyAiCiAgICAgaWQ9InBvbHlnb24yMCIKICAgICB0cmFuc2Zvcm09Im1hdHJpeCgxLjQzOTMxNjksMCwwLDEuNDM5MzE2OSwtMTM4LjI0ODA3LC0xODAuNTk5MTYpIiAvPgogIDxwb2x5Z29uCiAgICAgcG9pbnRzPSIyNTcuMjksMTQyLjg4IDI2OS4yOCwxNTMuMTEgMjUyLjcxLDE3MC43NCAyMzYuODQsMTgwLjYxIDIzNC43MiwxNTMuMTEgIgogICAgIGlkPSJwb2x5Z29uMjIiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIgLz4KICA8cG9seWdvbgogICAgIHBvaW50cz0iMzQzLjM0LDE0My45NCAzNjIuMzksMTUyLjQgMzY1LjU2LDE3OS41NiAzNDguMjgsMTczLjkxIDMyNi40MiwxNTYuMjggIgogICAgIGlkPSJwb2x5Z29uMjQiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIgLz4KICA8cGF0aAogICAgIGNsYXNzPSJjbHMtMSIKICAgICBkPSJtIDI3My40ODI5NCw5My44MjEwMDMgLTI3Ljg2NTE4LC0xLjI1MjIxIC05LjM4NDM0LC0xMC4yOTExMDkgLTAuNjQ3NywtMjUuMzg5NTUgNDcuMTM3NjMsMC40MzE3OTUgdiAyMi44OTk1MzIgeiBtIC0yNS40MTgzNCwtNi40NjI1MzEgMjIuNjk4MDMsMS4wMjE5MTIgNi42NDk2NCwtOS43ODczNSBWIDYyLjY0NTQwMSBsIC0zNi4zNzE1NCwtMC4zMzEwNDIgMC40NjA1OSwxNy44OTA3MDkgeiIKICAgICBpZD0icGF0aDI2IgogICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiCiAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtzdHJva2Utd2lkdGg6MS40MzkzMTY4NyIgLz4KICA8cGF0aAogICAgIGNsYXNzPSJjbHMtMSIKICAgICBkPSJtIDM0Mi4xOTU5Myw5NC41ODM4NTMgLTI3Ljg3OTU3LC0xLjI2NjYxIC05LjM2OTk1LC0xMC4yOTExMTQgLTAuNjQ3NywtMjUuMzYwNzY0IDQ3LjEzNzYzLDAuNDMxNzk1IHYgMjIuODk5NTMxIHogbSAtMjUuNDMyNzMsLTYuNDc2OTM1IDIyLjY5ODAzLDEuMDIxOTEzIDYuNjY0MDMsLTkuNzcyOTYxIFYgNjMuMzY1MDYgbCAtMzYuMzcxNTMsLTAuMzMxMDQzIDAuNDQ2MTgsMTcuODc2MzE3IHoiCiAgICAgaWQ9InBhdGgyOCIKICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7c3Ryb2tlLXdpZHRoOjEuNDM5MzE2ODciIC8+CiAgPHBvbHlnb24KICAgICBjbGFzcz0iY2xzLTEiCiAgICAgcG9pbnRzPSIzMjEuMDQsMTU2LjYzIDMxOS44LDE1OS42MyAzMDYuMjIsMTU5LjEgMzE1Ljc1LDE1MS41MiAiCiAgICAgaWQ9InBvbHlnb24zMCIKICAgICB0cmFuc2Zvcm09Im1hdHJpeCgxLjQzOTMxNjksMCwwLDEuNDM5MzE2OSwtMTM4LjI0ODA3LC0xODAuNTk5MTYpIgogICAgIHN0eWxlPSJmaWxsOiNmZmZmZmYiIC8+CiAgPHBvbHlnb24KICAgICBjbGFzcz0iY2xzLTEiCiAgICAgcG9pbnRzPSIyNzguOTQsMTUyLjEzIDI4OC4xNiwxNTkuNzIgMjc1LjExLDE1OS40MyAyNzUuNCwxNTUuMzYgIgogICAgIGlkPSJwb2x5Z29uMzIiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmIiAvPgogIDxwb2x5Z29uCiAgICAgcG9pbnRzPSIxMDkuNTMsMzIwLjI3IDEzNS4yNywzMTguMTUgMTUxLjE0LDI3NC40MiAxNjkuNDgsMjYzLjE0IDE2OC43OCwyNDAuOTIgMTQwLjkyLDI2MS4zNyAxMjguMjIsMzAyLjI4IDEwNi43MSwzMDYuODcgOTcuMTksMzA1LjEgMTAwLjcxLDMxMi44NiAiCiAgICAgaWQ9InBvbHlnb24zNCIKICAgICB0cmFuc2Zvcm09Im1hdHJpeCgxLjQzOTMxNjksMCwwLDEuNDM5MzE2OSwtMTM4LjI0ODA3LC0xODAuNTk5MTYpIiAvPgogIDxwb2x5bGluZQogICAgIHBvaW50cz0iMTU1LjQ3IDMwNy40NSAxMzMuMzIgMzQ3LjAxIDE2MC4yMiAzOTQuNDggMTk1LjgyIDM5NS4yNyAxODcuMTIgMzc3Ljg3IDE3Ny42MyAzODEuNDMgMTYzLjc4IDM0OC41OSAyMDkuMjggMzA0LjgxIDE5Mi42NiAyOTAuMDQgMTU1LjQ3IDMwNy40NSIKICAgICBpZD0icG9seWxpbmUzNiIKICAgICB0cmFuc2Zvcm09Im1hdHJpeCgxLjQzOTMxNjksMCwwLDEuNDM5MzE2OSwtMTM4LjI0ODA3LC0xODAuNTk5MTYpIiAvPgogIDxwb2x5bGluZQogICAgIHBvaW50cz0iMjEwLjMzIDI5My4yMSAxOTIuMTMgMzM0Ljc1IDIxOS4wMyAzODIuMjIgMjU0LjY0IDM4My4wMSAyNDUuOTMgMzY1LjYgMjM2LjQ0IDM2OS4xNyAyMjIuNTkgMzM2LjMzIDI0Ni43MiAzMDAuNTkgMjUxLjQ3IDI3Ny43OCAyMTQuMjkgMjk1LjE5IgogICAgIGlkPSJwb2x5bGluZTM4IgogICAgIHRyYW5zZm9ybT0ibWF0cml4KDEuNDM5MzE2OSwwLDAsMS40MzkzMTY5LC0xMzguMjQ4MDcsLTE4MC41OTkxNikiIC8+CiAgPHBvbHlnb24KICAgICBwb2ludHM9IjI5OC41NSwxOTEuNDEgMjk0Ljk5LDIxNS4yOCAyODMuOTEsMjI4LjcyIDMxNi4zNSwyMjkuNTIgMzAzLjY5LDIxNC40OCAzMDAuNCwxOTEuOTMgIgogICAgIGlkPSJwb2x5Z29uNDAiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIgLz4KICA8cG9seWdvbgogICAgIHBvaW50cz0iMzI0LjI2LDIxOS42MyAzMjQuNjYsMjM0LjY2IDI3NS42LDIzMS4xIDI3NC40MiwyMTguODQgIgogICAgIGlkPSJwb2x5Z29uNDIiCiAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS40MzkzMTY5LDAsMCwxLjQzOTMxNjksLTEzOC4yNDgwNywtMTgwLjU5OTE2KSIgLz4KPC9zdmc+Cg==" alt="Piesek strażniczy" /></div>
-      </div>
-                <div class="mascot-row">
-      </div>                <div class="mascot-row">
-      </div>
-
-    <section class="kpis">
-      
-    <article class="kpi ">
-      <div class="kpi-label">Liczba gmin w analizie</div>
-      <div class="kpi-value">253</div>
-      <div class="kpi-note">Rekordy z danymi za rok 2022 i 2025</div>
-    </article>
     
-      
-    <article class="kpi ">
-      <div class="kpi-label">Suma wniosków w 2022</div>
-      <div class="kpi-value">38 105</div>
-      <div class="kpi-note">Dane z odpowiedzi na wniosek</div>
-    </article>
-    
-      
-    <article class="kpi ">
-      <div class="kpi-label">Suma wniosków w 2025</div>
-      <div class="kpi-value">48 244</div>
-      <div class="kpi-note">Dane z odpowiedzi na wniosek</div>
-    </article>
-    
-      
-    <article class="kpi positive">
-      <div class="kpi-label">Zmiana łącznej liczby</div>
-      <div class="kpi-value">+26,6%</div>
-      <div class="kpi-note">+10 139 wniosków</div>
-    </article>
-    
-      
-    <article class="kpi positive">
-      <div class="kpi-label">Średnia różnica w liczbie wniosków</div>
-      <div class="kpi-value">+40,1</div>
-      <div class="kpi-note">Średnio na badaną gminę</div>
-    </article>
-    
-      
-    <article class="kpi positive">
-      <div class="kpi-label">Mediana różnicy w liczbie wniosków</div>
-      <div class="kpi-value">+26,0</div>
-      <div class="kpi-note">Połowa badanych gmin ma wynik powyżej/poniżej tej wartości</div>
-    </article>
-    
-      
-    <article class="kpi positive">
-      <div class="kpi-label">Średnia zmiana liczby wniosków w %</div>
-      <div class="kpi-value">+53,7%</div>
-      <div class="kpi-note">Średnia z procentów per gmina</div>
-    </article>
-    
-      
-    <article class="kpi positive">
-      <div class="kpi-label">Mediana zmiany liczby wniosków w %</div>
-      <div class="kpi-value">+37,7%</div>
-      <div class="kpi-note">Bardziej odporna na skrajne wartości</div>
-    </article>
-    
-    </section>
-
-    <section class="grid">
-
-
-      <article class="panel">
-        <h2>Jak czytać podane liczby?</h2>
-        <p class="note">„Zmiana łącznej liczby” to różnica sum 2025–2022 podzielona przez sumę z 2022 r. „Śr. %” to średnia z procentowych zmian w pojedynczych gminach; na tę wartość mocno wpłynęły pojedyncze przypadki wysokich procentowo wzrostów (które mogą być błędem w danych).</p>
-      </article>
-      
-            <article class="panel">
-        <h2>W ilu gminach odnotowano zmianę?</h2>
-        
-        <div class="status-row">
-          <div class="status-label">Wzrost</div>
+<section class="grid">
+<article class="panel">
+<h2>Jak czytać raport i dane?</h2>
+<p class="note">Arkusz danych (<a href="data/157_wnioski_o_informację_w_2025.xlsx" target="_blank">link</a>) stanowiący podstawę statystyk zawiera przede wszystkim dane za 2025 rok w układzie jeden wiersz - jedna instytucja. W niektórych przypadkach wiersze zawierają dodatkowo dane z 2022 roku (kolumny na końcu). Porównania z 2022 r. są liczone tylko na próbie skutecznie sparowanej, czyli dla instytucji, które dało się jednoznacznie dopasować między latami i tylko dla podzbiorów, w których dla danego pytania dostępne są dane z obu lat. Odsetki względem liczby wniosków (np. odstetek odmów, czy opłat) liczone są wyłącznie na bazie odpowiedzi, w których dysponowaliśmy liczbowymi wartościami dla obu pytań (stąd różnice w "n").</p>
+<p><strong>Q1</strong> oznacza liczbę wniosków, <strong>Q2</strong> udostępnienia informacji w całości, <strong>Q3</strong> decyzje odmowne, <strong>Q4</strong> przyczyny nieudostępnienia, <strong>Q5</strong> skargi
+          na bezczynność, <strong>Q6</strong> skargi lub odwołania od decyzji, <strong>Q7</strong> opłaty, <strong>Q8</strong> publikację rejestru w BIP, a <strong>Q9</strong> osobę
+          odpowiedzialną za udostępnianie informacji. Należy pamiętać, że wszystkie dane mają charakter deklaratywny – opierają się wyłącznie na odpowiedziach udzielonych przez urzędy.</p>
+</article>
+<article class="panel">
+<h2>Kompletność danych</h2>
+<div class="status-row">
+<div class="status-label">Wysłaliśmy</div>
+<div class="status-track">
+<div class="status-fill positive" style="width:100.00%"></div>
+</div>
+<div class="status-value">2828 <span>100%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">Odpowiedzi</div>
+<div class="status-track">
+<div class="status-fill positive" style="width:84.79%"></div>
+</div>
+<div class="status-value">2398 <span>85%</span></div>
+</div>
+<!--<div class="status-row">
+          <div class="status-label">Odp. Q8</div>
           <div class="status-track">
-            <div class="status-fill positive" style="width:85.38%"></div>
+            <div class="status-fill positive" style="width:84.90%"></div>
           </div>
-          <div class="status-value">216 <span>+85,4%</span></div>
+          <div class="status-value">2384 <span>84%</span></div>
         </div>
-        
 
         <div class="status-row">
-          <div class="status-label">Spadek</div>
+          <div class="status-label">Odp. Q9</div>
           <div class="status-track">
-            <div class="status-fill negative" style="width:13.83%"></div>
+            <div class="status-fill positive" style="width:84.19%"></div>
           </div>
-          <div class="status-value">35 <span>+13,8%</span></div>
+          <div class="status-value">2381 <span>84%</span></div>
         </div>
-        
 
         <div class="status-row">
-          <div class="status-label">Bez zmian</div>
+          <div class="status-label">Odp. Q3</div>
           <div class="status-track">
-            <div class="status-fill neutral" style="width:0.79%"></div>
+            <div class="status-fill positive" style="width:84.12%"></div>
           </div>
-          <div class="status-value">2 <span>+0,8%</span></div>
+          <div class="status-value">2379 <span>84%</span></div>
         </div>
-        
-      </article>
-    </section>
 
-    <section class="panel">
-      <h2>Statystyki według kategorii JST</h2>
-      
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Kategoria</th>
-            <th>n</th>
-            <th>2022</th>
-            <th>2025</th>
-            <th>Różnica</th>
-            <th>Zmiana łącznej liczby</th>
-            <th>Śr. liczba per gmina</th>
-            <th>Śr. % per gmina</th>
-            <th>Gminy z wzrostem</th>
-            <th>Gminy ze spadkiem</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-        <tr>
-          <td class="category-name">gmina wiejska</td>
-          <td class="numeric">124</td>
-          <td class="numeric">7 047</td>
-          <td class="numeric">9 665</td>
-          <td class="numeric emph positive">+2 618</td>
-          <td>
-            <div class="mini-bar">
-              <span class="mini-bar-fill positive" style="width:97.36%"></span>
-            </div>
-            <strong class="positive">+37,2%</strong>
-          </td>
-          <td>
-            <div class="mini-bar">
-              <span class="mini-bar-fill positive" style="width:0.79%"></span>
-            </div>
-            <strong class="positive">+21,1</strong>
-          </td>
-          <td class="numeric">+52,4%</td>
-          <td class="numeric">106</td>
-          <td class="numeric">17</td>
-        </tr>
-        
-        <tr>
-          <td class="category-name">gmina miejsko-wiejska</td>
-          <td class="numeric">73</td>
-          <td class="numeric">4 740</td>
-          <td class="numeric">6 520</td>
-          <td class="numeric emph positive">+1 780</td>
-          <td>
-            <div class="mini-bar">
-              <span class="mini-bar-fill positive" style="width:66.20%"></span>
-            </div>
-            <strong class="positive">+37,6%</strong>
-          </td>
-          <td>
-            <div class="mini-bar">
-              <span class="mini-bar-fill positive" style="width:0.91%"></span>
-            </div>
-            <strong class="positive">+24,4</strong>
-          </td>
-          <td class="numeric">+71,7%</td>
-          <td class="numeric">61</td>
-          <td class="numeric">12</td>
-        </tr>
-        
-        <tr>
-          <td class="category-name">miasto na prawach powiatu</td>
-          <td class="numeric">37</td>
-          <td class="numeric">16 234</td>
-          <td class="numeric">18 781</td>
-          <td class="numeric emph positive">+2 547</td>
-          <td>
-            <div class="mini-bar">
-              <span class="mini-bar-fill positive" style="width:94.72%"></span>
-            </div>
-            <strong class="positive">+15,7%</strong>
-          </td>
-          <td>
-            <div class="mini-bar">
-              <span class="mini-bar-fill positive" style="width:2.56%"></span>
-            </div>
-            <strong class="positive">+68,8</strong>
-          </td>
-          <td class="numeric">+27,6%</td>
-          <td class="numeric">32</td>
-          <td class="numeric">4</td>
-        </tr>
-        
-        <tr>
-          <td class="category-name">gmina miejska</td>
-          <td class="numeric">18</td>
-          <td class="numeric">1 577</td>
-          <td class="numeric">2 082</td>
-          <td class="numeric emph positive">+505</td>
-          <td>
-            <div class="mini-bar">
-              <span class="mini-bar-fill positive" style="width:18.78%"></span>
-            </div>
-            <strong class="positive">+32,0%</strong>
-          </td>
-          <td>
-            <div class="mini-bar">
-              <span class="mini-bar-fill positive" style="width:1.04%"></span>
-            </div>
-            <strong class="positive">+28,1</strong>
-          </td>
-          <td class="numeric">+44,8%</td>
-          <td class="numeric">16</td>
-          <td class="numeric">2</td>
-        </tr>
-        
-        <tr>
-          <td class="category-name">miasto stołeczne</td>
-          <td class="numeric">1</td>
-          <td class="numeric">8 507</td>
-          <td class="numeric">11 196</td>
-          <td class="numeric emph positive">+2 689</td>
-          <td>
-            <div class="mini-bar">
-              <span class="mini-bar-fill positive" style="width:100.00%"></span>
-            </div>
-            <strong class="positive">+31,6%</strong>
-          </td>
-          <td>
-            <div class="mini-bar">
-              <span class="mini-bar-fill positive" style="width:100.00%"></span>
-            </div>
-            <strong class="positive">+2 689,0</strong>
-          </td>
-          <td class="numeric">+31,6%</td>
-          <td class="numeric">1</td>
-          <td class="numeric">0</td>
-        </tr>
-        
-        </tbody>
-      </table>
-    </div>
-    
-    </section>
+        <div class="status-row">
+          <div class="status-label">Odp. Q1</div>
+          <div class="status-track">
+            <div class="status-fill positive" style="width:83.95%"></div>
+          </div>
+          <div class="status-value">2374 <span>84%</span></div>
+        </div>
 
-    <section class="grid">
-      
-    <section class="panel">
-      <h2>Top 10: największe wzrosty liczby wniosków</h2>
-      <div class="table-wrap compact">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Gmina</th>
-              <th>2022</th>
-              <th>2025</th>
-              <th>Różnica</th>
-              <th>%</th>
-            </tr>
-          </thead>
-          <tbody>
-        <tr>
-          <td class="rank">1</td>
-          <td>
-            <strong>Warszawa</strong>
-            <span>miasto stołeczne</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-290" target="_blank" rel="noopener noreferrer">8 507</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1248" target="_blank" rel="noopener noreferrer">11 196</a></td>
-          <td class="numeric emph positive">+2 689</td>
-          <td class="numeric positive">+31,6%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">2</td>
-          <td>
-            <strong>Poznań</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-269" target="_blank" rel="noopener noreferrer">990</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2290" target="_blank" rel="noopener noreferrer">1 419</a></td>
-          <td class="numeric emph positive">+429</td>
-          <td class="numeric positive">+43,3%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">3</td>
-          <td>
-            <strong>Kraków</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-254" target="_blank" rel="noopener noreferrer">2 898</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-849" target="_blank" rel="noopener noreferrer">3 311</a></td>
-          <td class="numeric emph positive">+413</td>
-          <td class="numeric positive">+14,3%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">4</td>
-          <td>
-            <strong>Wrocław</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-292" target="_blank" rel="noopener noreferrer">1 119</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-155" target="_blank" rel="noopener noreferrer">1 384</a></td>
-          <td class="numeric emph positive">+265</td>
-          <td class="numeric positive">+23,7%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">5</td>
-          <td>
-            <strong>Koszalin</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-253" target="_blank" rel="noopener noreferrer">235</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2414" target="_blank" rel="noopener noreferrer">454</a></td>
-          <td class="numeric emph positive">+219</td>
-          <td class="numeric positive">+93,2%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">6</td>
-          <td>
-            <strong>Rzeszów</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-274" target="_blank" rel="noopener noreferrer">441</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1478" target="_blank" rel="noopener noreferrer">632</a></td>
-          <td class="numeric emph positive">+191</td>
-          <td class="numeric positive">+43,3%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">7</td>
-          <td>
-            <strong>Częstochowa</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-238" target="_blank" rel="noopener noreferrer">357</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1776" target="_blank" rel="noopener noreferrer">534</a></td>
-          <td class="numeric emph positive">+177</td>
-          <td class="numeric positive">+49,6%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">8</td>
-          <td>
-            <strong>Katowice</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-250" target="_blank" rel="noopener noreferrer">571</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1802" target="_blank" rel="noopener noreferrer">738</a></td>
-          <td class="numeric emph positive">+167</td>
-          <td class="numeric positive">+29,2%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">9</td>
-          <td>
-            <strong>Toruń</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-287" target="_blank" rel="noopener noreferrer">290</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-296" target="_blank" rel="noopener noreferrer">445</a></td>
-          <td class="numeric emph positive">+155</td>
-          <td class="numeric positive">+53,4%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">10</td>
-          <td>
-            <strong>Piekary Śląskie</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-266" target="_blank" rel="noopener noreferrer">141</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1856" target="_blank" rel="noopener noreferrer">290</a></td>
-          <td class="numeric emph positive">+149</td>
-          <td class="numeric positive">+105,7%</td>
-        </tr>
-        </tbody>
-        </table>
-      </div>
-    </section>
-    
-      
-    <section class="panel">
-      <h2>Top 10: największe spadki liczby wniosków</h2>
-      <div class="table-wrap compact">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Gmina</th>
-              <th>2022</th>
-              <th>2025</th>
-              <th>Różnica</th>
-              <th>%</th>
-            </tr>
-          </thead>
-          <tbody>
-        <tr>
-          <td class="rank">1</td>
-          <td>
-            <strong>Kalisz</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-249" target="_blank" rel="noopener noreferrer">738</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2194" target="_blank" rel="noopener noreferrer">217</a></td>
-          <td class="numeric emph negative">-521</td>
-          <td class="numeric negative">-70,6%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">2</td>
-          <td>
-            <strong>Łódź</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-260" target="_blank" rel="noopener noreferrer">1 440</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-693" target="_blank" rel="noopener noreferrer">1 076</a></td>
-          <td class="numeric emph negative">-364</td>
-          <td class="numeric negative">-25,3%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">3</td>
-          <td>
-            <strong>Siemianowice Śląskie</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-276" target="_blank" rel="noopener noreferrer">550</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1882" target="_blank" rel="noopener noreferrer">245</a></td>
-          <td class="numeric emph negative">-305</td>
-          <td class="numeric negative">-55,5%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">4</td>
-          <td>
-            <strong>MIĘDZYRZECZ</strong>
-            <span>gmina miejsko-wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-376" target="_blank" rel="noopener noreferrer">108</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-565" target="_blank" rel="noopener noreferrer">15</a></td>
-          <td class="numeric emph negative">-93</td>
-          <td class="numeric negative">-86,1%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">5</td>
-          <td>
-            <strong>SZCZECINEK</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-640" target="_blank" rel="noopener noreferrer">107</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2461" target="_blank" rel="noopener noreferrer">30</a></td>
-          <td class="numeric emph negative">-77</td>
-          <td class="numeric negative">-72,0%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">6</td>
-          <td>
-            <strong>Bytom</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-235" target="_blank" rel="noopener noreferrer">342</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1766" target="_blank" rel="noopener noreferrer">265</a></td>
-          <td class="numeric emph negative">-77</td>
-          <td class="numeric negative">-22,5%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">7</td>
-          <td>
-            <strong>MARKI</strong>
-            <span>gmina miejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-452" target="_blank" rel="noopener noreferrer">127</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1099" target="_blank" rel="noopener noreferrer">70</a></td>
-          <td class="numeric emph negative">-57</td>
-          <td class="numeric negative">-44,9%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">8</td>
-          <td>
-            <strong>SUWAŁKI</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-281" target="_blank" rel="noopener noreferrer">149</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1608" target="_blank" rel="noopener noreferrer">94</a></td>
-          <td class="numeric emph negative">-55</td>
-          <td class="numeric negative">-36,9%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">9</td>
-          <td>
-            <strong>ŁAGÓW</strong>
-            <span>gmina miejsko-wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-375" target="_blank" rel="noopener noreferrer">53</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1957" target="_blank" rel="noopener noreferrer">13</a></td>
-          <td class="numeric emph negative">-40</td>
-          <td class="numeric negative">-75,5%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">10</td>
-          <td>
-            <strong>ZBÓJNA</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-524" target="_blank" rel="noopener noreferrer">49</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1632" target="_blank" rel="noopener noreferrer">13</a></td>
-          <td class="numeric emph negative">-36</td>
-          <td class="numeric negative">-73,5%</td>
-        </tr>
-        </tbody>
-        </table>
-      </div>
-    </section>
-    
-    </section>
+        <div class="status-row">
+          <div class="status-label">Odp. Q7</div>
+          <div class="status-track">
+            <div class="status-fill positive" style="width:83.91%"></div>
+          </div>
+          <div class="status-value">2373 <span>84%</span></div>
+        </div>
 
-    <section class="grid">
-      
-    <section class="panel">
-      <h2>Top 10: największe wzrosty procentowe</h2>
-      <div class="table-wrap compact">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Gmina</th>
-              <th>2022</th>
-              <th>2025</th>
-              <th>Różnica</th>
-              <th>%</th>
-            </tr>
-          </thead>
-          <tbody>
-        <tr>
-          <td class="rank">1</td>
-          <td>
-            <strong>RAJGRÓD</strong>
-            <span>gmina miejsko-wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-518" target="_blank" rel="noopener noreferrer">3</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1593" target="_blank" rel="noopener noreferrer">58</a></td>
-          <td class="numeric emph positive">+55</td>
-          <td class="numeric positive">+1833,3%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">2</td>
-          <td>
-            <strong>GRÓJEC</strong>
-            <span>gmina miejsko-wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-442" target="_blank" rel="noopener noreferrer">19</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1034" target="_blank" rel="noopener noreferrer">119</a></td>
-          <td class="numeric emph positive">+100</td>
-          <td class="numeric positive">+526,3%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">3</td>
-          <td>
-            <strong>KRASICZYN</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-498" target="_blank" rel="noopener noreferrer">12</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1420" target="_blank" rel="noopener noreferrer">70</a></td>
-          <td class="numeric emph positive">+58</td>
-          <td class="numeric positive">+483,3%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">4</td>
-          <td>
-            <strong>PLATERÓW</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-459" target="_blank" rel="noopener noreferrer">24</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1148" target="_blank" rel="noopener noreferrer">96</a></td>
-          <td class="numeric emph positive">+72</td>
-          <td class="numeric positive">+300,0%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">5</td>
-          <td>
-            <strong>DĘBNO</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-632" target="_blank" rel="noopener noreferrer">49</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-815" target="_blank" rel="noopener noreferrer">164</a></td>
-          <td class="numeric emph positive">+115</td>
-          <td class="numeric positive">+234,7%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">6</td>
-          <td>
-            <strong>NOWOGRÓD</strong>
-            <span>gmina miejsko-wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-516" target="_blank" rel="noopener noreferrer">25</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1580" target="_blank" rel="noopener noreferrer">75</a></td>
-          <td class="numeric emph positive">+50</td>
-          <td class="numeric positive">+200,0%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">7</td>
-          <td>
-            <strong>SKARBIMIERZ</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-483" target="_blank" rel="noopener noreferrer">45</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1339" target="_blank" rel="noopener noreferrer">129</a></td>
-          <td class="numeric emph positive">+84</td>
-          <td class="numeric positive">+186,7%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">8</td>
-          <td>
-            <strong>JASTROWIE</strong>
-            <span>gmina miejsko-wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-600" target="_blank" rel="noopener noreferrer">45</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2191" target="_blank" rel="noopener noreferrer">121</a></td>
-          <td class="numeric emph positive">+76</td>
-          <td class="numeric positive">+168,9%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">9</td>
-          <td>
-            <strong>ŻEGOCINA</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-432" target="_blank" rel="noopener noreferrer">19</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-968" target="_blank" rel="noopener noreferrer">51</a></td>
-          <td class="numeric emph positive">+32</td>
-          <td class="numeric positive">+168,4%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">10</td>
-          <td>
-            <strong>RZEWNIE</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-466" target="_blank" rel="noopener noreferrer">29</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1189" target="_blank" rel="noopener noreferrer">77</a></td>
-          <td class="numeric emph positive">+48</td>
-          <td class="numeric positive">+165,5%</td>
-        </tr>
-        </tbody>
-        </table>
-      </div>
-    </section>
-    
-      
-    <section class="panel">
-      <h2>Top 10: największe spadki procentowe</h2>
-      <div class="table-wrap compact">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Gmina</th>
-              <th>2022</th>
-              <th>2025</th>
-              <th>Różnica</th>
-              <th>%</th>
-            </tr>
-          </thead>
-          <tbody>
-        <tr>
-          <td class="rank">1</td>
-          <td>
-            <strong>MIĘDZYRZECZ</strong>
-            <span>gmina miejsko-wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-376" target="_blank" rel="noopener noreferrer">108</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-565" target="_blank" rel="noopener noreferrer">15</a></td>
-          <td class="numeric emph negative">-93</td>
-          <td class="numeric negative">-86,1%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">2</td>
-          <td>
-            <strong>ŁAGÓW</strong>
-            <span>gmina miejsko-wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-375" target="_blank" rel="noopener noreferrer">53</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1957" target="_blank" rel="noopener noreferrer">13</a></td>
-          <td class="numeric emph negative">-40</td>
-          <td class="numeric negative">-75,5%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">3</td>
-          <td>
-            <strong>IZBICKO</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-478" target="_blank" rel="noopener noreferrer">39</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1301" target="_blank" rel="noopener noreferrer">10</a></td>
-          <td class="numeric emph negative">-29</td>
-          <td class="numeric negative">-74,4%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">4</td>
-          <td>
-            <strong>ZBÓJNA</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-524" target="_blank" rel="noopener noreferrer">49</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1632" target="_blank" rel="noopener noreferrer">13</a></td>
-          <td class="numeric emph negative">-36</td>
-          <td class="numeric negative">-73,5%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">5</td>
-          <td>
-            <strong>SZCZECINEK</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-640" target="_blank" rel="noopener noreferrer">107</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2461" target="_blank" rel="noopener noreferrer">30</a></td>
-          <td class="numeric emph negative">-77</td>
-          <td class="numeric negative">-72,0%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">6</td>
-          <td>
-            <strong>Kalisz</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-249" target="_blank" rel="noopener noreferrer">738</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2194" target="_blank" rel="noopener noreferrer">217</a></td>
-          <td class="numeric emph negative">-521</td>
-          <td class="numeric negative">-70,6%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">7</td>
-          <td>
-            <strong>Siemianowice Śląskie</strong>
-            <span>miasto na prawach powiatu</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-276" target="_blank" rel="noopener noreferrer">550</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1882" target="_blank" rel="noopener noreferrer">245</a></td>
-          <td class="numeric emph negative">-305</td>
-          <td class="numeric negative">-55,5%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">8</td>
-          <td>
-            <strong>DZIEMIANY</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-528" target="_blank" rel="noopener noreferrer">22</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1652" target="_blank" rel="noopener noreferrer">12</a></td>
-          <td class="numeric emph negative">-10</td>
-          <td class="numeric negative">-45,5%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">9</td>
-          <td>
-            <strong>MARKI</strong>
-            <span>gmina miejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-452" target="_blank" rel="noopener noreferrer">127</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1099" target="_blank" rel="noopener noreferrer">70</a></td>
-          <td class="numeric emph negative">-57</td>
-          <td class="numeric negative">-44,9%</td>
-        </tr>
-        
-        <tr>
-          <td class="rank">10</td>
-          <td>
-            <strong>SUWAŁKI</strong>
-            <span>gmina wiejska</span>
-          </td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-281" target="_blank" rel="noopener noreferrer">149</a></td>
-          <td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1608" target="_blank" rel="noopener noreferrer">94</a></td>
-          <td class="numeric emph negative">-55</td>
-          <td class="numeric negative">-36,9%</td>
-        </tr>
-        </tbody>
-        </table>
-      </div>
-    </section>
-    
-    </section>
+        <div class="status-row">
+          <div class="status-label">Odp. Q5</div>
+          <div class="status-track">
+            <div class="status-fill positive" style="width:83.87%"></div>
+          </div>
+          <div class="status-value">2372 <span>84%</span></div>
+        </div>
 
-    <section class="panel">
-      <h2>Dane do zestawienia</h2>
-      <p>W niniejszej analizie użyto danych pozyskanych z <strong>253</strong> gmin, które pytaliśmy o liczbę wniosków o informację otrzymanych w roku 2022 i 2025, w obu przypadkach zadając dokładnie takie samo pytanie. W związku z presją czasową, narzuconą przez pojawiające się inicjatywy legislacyjne, użyto danych wyłącznie z tych gmin, które dały się w łatwy sposób ze sobą połączyć. Nie miało to charakteru wybiórczego, tendencyjnego a jedynie czysto techniczny. W późniejszym terminie opublikujemy analizę uzupełnioną o pozostałe dane.</p>
-    </section>
+        <div class="status-row">
+          <div class="status-label">Odp. Q6</div>
+          <div class="status-track">
+            <div class="status-fill positive" style="width:83.76%"></div>
+          </div>
+          <div class="status-value">2369 <span>84%</span></div>
+        </div>
 
-    <footer class="footer">
-      <div>Raport wygenerowany został w oparciu o dane zebrane półautomatycznie i automatycznie przy wsparciu sztucznej inteligencji, więc może zawierać jednostkowe błędy, pozostające jednak bez istotnego wpływu na uśrednione wartości i wyłaniające się tendencje.</div>
-    </footer>
-  </main>
+        <div class="status-row">
+          <div class="status-label">Odp. Q2</div>
+          <div class="status-track">
+            <div class="status-fill positive" style="width:82.10%"></div>
+          </div>
+          <div class="status-value">2322 <span>82%</span></div>
+        </div>-->
+<div class="status-row">
+<div class="status-label">Pary z 2022</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:18.28%"></div>
+</div>
+<div class="status-value">517 <span>18%</span></div>
+</div>
+<!--<div class="status-row">
+          <div class="status-label">Pary Q1</div>
+          <div class="status-track">
+            <div class="status-fill neutral" style="width:17.50%"></div>
+          </div>
+          <div class="status-value">495 <span>18%</span></div>
+        </div>
+
+        <div class="status-row">
+          <div class="status-label">Pary Q4</div>
+          <div class="status-track">
+            <div class="status-fill neutral" style="width:16.08%"></div>
+          </div>
+          <div class="status-value">455 <span>16%</span></div>
+        </div>-->
+<br/>
+<h2>Liczba urzędów ze zmianą liczby wniosków względem 2022:</h2>
+<div class="status-row">
+<div class="status-label">Wzrost</div>
+<div class="status-track">
+<div class="status-fill positive" style="width:85.05%"></div>
+</div>
+<div class="status-value">421 <span>85%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">Spadek</div>
+<div class="status-track">
+<div class="status-fill negative" style="width:14.34%"></div>
+</div>
+<div class="status-value">71 <span>14%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">Bez zmian</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:0.61%"></div>
+</div>
+<div class="status-value">3 <span>1%</span></div>
+</div>
+</article></section>
+<section class="panel">
+<h2>Najważniejsze statystyki ilościowe za 2025 r.</h2>
+<p>Największa różnica między medianą a średnią dotyczy liczby wniosków: mediana Q1 wynosi 85, średnia 112,44, a maksimum 11 196. To oznacza, że pojedyncze bardzo duże instytucje silnie podnoszą sumę i średnią.</p>
+<div class="table-wrap">
+<table class="stats-quant-table">
+<thead>
+<tr>
+<th>Wskaźnik</th>
+<th>n</th>
+<th>Suma</th>
+<th>Średnia</th>
+<th>Mediana</th>
+<th>P95</th>
+<th>Max</th>
+<th>Zera</th>
+</tr>
+</thead>
+<tbody><tr><td><strong>Liczba wniosków</strong><span>Q1</span></td><td class="numeric">2 374</td><td class="numeric">266 940</td><td class="numeric">112,44</td><td class="numeric">85</td><td class="numeric">196</td><td class="numeric">11 196</td><td class="numeric">0</td></tr><tr><td><strong>Udostępnione w całości</strong><span>Q2</span></td><td class="numeric">2 322</td><td class="numeric">222 352</td><td class="numeric">95,76</td><td class="numeric">82</td><td class="numeric">178</td><td class="numeric">2 864</td><td class="numeric">0</td></tr><tr><td><strong>Decyzje odmowne</strong><span>Q3</span></td><td class="numeric">2 379</td><td class="numeric">2 572</td><td class="numeric">1,08</td><td class="numeric">0</td><td class="numeric">5</td><td class="numeric">126</td><td class="numeric">1 526</td></tr><tr><td><strong>Skargi na bezczynność</strong><span>Q5</span></td><td class="numeric">2 372</td><td class="numeric">565</td><td class="numeric">0,24</td><td class="numeric">0</td><td class="numeric">1</td><td class="numeric">22</td><td class="numeric">2 059</td></tr><tr><td><strong>Skargi/odwołania od decyzji</strong><span>Q6</span></td><td class="numeric">2 369</td><td class="numeric">796</td><td class="numeric">0,34</td><td class="numeric">0</td><td class="numeric">1</td><td class="numeric">60</td><td class="numeric">2 073</td></tr><tr><td><strong>Naliczona opłata</strong><span>Q7</span></td><td class="numeric">2 373</td><td class="numeric">413</td><td class="numeric">0,17</td><td class="numeric">0</td><td class="numeric">0</td><td class="numeric">70</td><td class="numeric">2 280</td></tr></tbody>
+</table>
+</div>
+</section>
+<section class="grid">
+<article class="panel">
+<h2>Rozkład liczby wniosków w 2025 r.</h2>
+<p class="note">Rozkład jest silnie skośny: typowa instytucja mieści się w przedziałach 50–149 wniosków, ale
+          pojedyncze duże jednostki podnoszą średnią i sumę ogólną.</p>
+<div class="status-row">
+<div class="status-label">0–49</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:23.00%"></div>
+</div>
+<div class="status-value">204 <span>8,6%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">50–74</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:63.02%"></div>
+</div>
+<div class="status-value">559 <span>23,6%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">75–99</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:100.00%"></div>
+</div>
+<div class="status-value">887 <span>37,4%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">100–149</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:53.10%"></div>
+</div>
+<div class="status-value">471 <span>19,8%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">150–199</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:15.33%"></div>
+</div>
+<div class="status-value">136 <span>5,7%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">200–499</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:10.48%"></div>
+</div>
+<div class="status-value">93 <span>3,9%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">500–999</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:1.47%"></div>
+</div>
+<div class="status-value">13 <span>0,6%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">1000+</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:1.24%"></div>
+</div>
+<div class="status-value">11 <span>0,5%</span></div>
+</div>
+</article>
+<article class="panel">
+<h2>Wskaźniki per liczba wniosków</h2>
+<p class="note">Wartość agregatowa jest liczona na sumach, a średnia i mediana — po instytucjach. Dla Q2/Q1
+          różnica między agregatem i medianą pokazuje wpływ największych jednostek.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Wskaźnik</th>
+<th>n</th>
+<th>Agregat</th>
+<th>Średnia inst.</th>
+<th>Mediana inst.</th>
+<th>P90</th>
+</tr>
+</thead>
+<tbody><tr><td><strong>udział udostępnień w Q1</strong><span>Q2/Q1</span></td><td class="numeric">2 307</td><td class="numeric emph">92,36%</td><td class="numeric">97,21%</td><td class="numeric">100,00%</td><td class="numeric">100,00%</td></tr><tr><td><strong>udział decyzji odmownych w Q1</strong><span>Q3/Q1</span></td><td class="numeric">2 360</td><td class="numeric emph">0,97%</td><td class="numeric">0,84%</td><td class="numeric">0,00%</td><td class="numeric">2,57%</td></tr><tr><td><strong>udział skarg na bezczynność w Q1</strong><span>Q5/Q1</span></td><td class="numeric">2 352</td><td class="numeric emph">0,21%</td><td class="numeric">0,19%</td><td class="numeric">0,00%</td><td class="numeric">0,72%</td></tr><tr><td><strong>udział skarg/odwołań od decyzji w Q1</strong><span>Q6/Q1</span></td><td class="numeric">2 349</td><td class="numeric emph">0,30%</td><td class="numeric">0,35%</td><td class="numeric">0,00%</td><td class="numeric">0,71%</td></tr><tr><td><strong>udział opłat w Q1</strong><span>Q7/Q1</span></td><td class="numeric">2 352</td><td class="numeric emph">0,16%</td><td class="numeric">0,26%</td><td class="numeric">0,00%</td><td class="numeric">0,00%</td></tr></tbody>
+</table>
+</div>
+</article>
+</section><section class="panel"><h2>Top 10 gmin: najwięcej wniosków na 1000 mieszkańców</h2><div class="table-wrap compact"><table><thead><tr><th>#</th><th>Gmina</th><th>Populacja 2025</th><th>Q1</th><th>Wnioski na 1000 mieszk.</th></tr></thead><tbody><tr><td class="rank">1</td><td><strong>KIKÓŁ</strong><span>Kujawsko-Pomorskie · gmina miejsko-wiejska</span></td><td class="numeric">6 530</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-230" rel="noopener noreferrer" target="_blank">591</a></td><td class="numeric emph">90,5</td></tr><tr><td class="rank">2</td><td><strong>KREMPNA</strong><span>Podkarpackie · gmina wiejska</span></td><td class="numeric">1 650</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1422" rel="noopener noreferrer" target="_blank">121</a></td><td class="numeric emph">73,3</td></tr><tr><td class="rank">3</td><td><strong>KRYNICA MORSKA</strong><span>Pomorskie · gmina miejska</span></td><td class="numeric">1 130</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1675" rel="noopener noreferrer" target="_blank">75</a></td><td class="numeric emph">66,4</td></tr><tr><td class="rank">4</td><td><strong>DUBICZE CERKIEWNE</strong><span>Podlaskie · gmina wiejska</span></td><td class="numeric">1 260</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1534" rel="noopener noreferrer" target="_blank">81</a></td><td class="numeric emph">64,3</td></tr><tr><td class="rank">5</td><td><strong>CZYŻE</strong><span>Podlaskie · gmina wiejska</span></td><td class="numeric">1 700</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1529" rel="noopener noreferrer" target="_blank">102</a></td><td class="numeric emph">60,0</td></tr><tr><td class="rank">6</td><td><strong>PODEDWÓRZE</strong><span>Lubelskie · gmina wiejska</span></td><td class="numeric">1 430</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-434" rel="noopener noreferrer" target="_blank">76</a></td><td class="numeric emph">53,1</td></tr><tr><td class="rank">7</td><td><strong>NOWE WARPNO</strong><span>Zachodniopomorskie · gmina miejsko-wiejska</span></td><td class="numeric">1 510</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2429" rel="noopener noreferrer" target="_blank">80</a></td><td class="numeric emph">53,0</td></tr><tr><td class="rank">8</td><td><strong>MŁYNARZE</strong><span>Mazowieckie · gmina wiejska</span></td><td class="numeric">1 590</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1109" rel="noopener noreferrer" target="_blank">78</a></td><td class="numeric emph">49,1</td></tr><tr><td class="rank">9</td><td><strong>LUTOWISKA</strong><span>Podkarpackie · gmina wiejska</span></td><td class="numeric">1 930</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1435" rel="noopener noreferrer" target="_blank">92</a></td><td class="numeric emph">47,7</td></tr><tr><td class="rank">10</td><td><strong>OLSZANKA</strong><span>Mazowieckie · gmina wiejska</span></td><td class="numeric">2 670</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1130" rel="noopener noreferrer" target="_blank">127</a></td><td class="numeric emph">47,6</td></tr></tbody></table></div></section>
+
+<section class="panel">
+<h2>Top 10 gmin: najmniej wniosków na 1000 mieszkańców</h2>
+<div class="table-wrap compact">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Gmina</th>
+<th>Populacja 2025</th>
+<th>Q1</th>
+<th>Wnioski na 1000 mieszk.</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="rank">1</td><td><strong>MIĘDZYRZECZ</strong><span>Lubuskie · gmina miejsko-wiejska</span></td><td class="numeric">23 290</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-565" rel="noopener noreferrer" target="_blank">15</a></td><td class="numeric emph">0,6</td></tr>
+<tr><td class="rank">2</td><td><strong>SOKÓŁKA</strong><span>Podlaskie · gmina miejsko-wiejska</span></td><td class="numeric">23 420</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1603" rel="noopener noreferrer" target="_blank">19</a></td><td class="numeric emph">0,8</td></tr>
+<tr><td class="rank">3</td><td><strong>WIELICZKA</strong><span>Małopolskie · gmina miejsko-wiejska</span></td><td class="numeric">70 470</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-952" rel="noopener noreferrer" target="_blank">58</a></td><td class="numeric emph">0,8</td></tr>
+<tr><td class="rank">4</td><td><strong>TUREK</strong><span>Wielkopolskie · gmina miejska</span></td><td class="numeric">23 810</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2339" rel="noopener noreferrer" target="_blank">21</a></td><td class="numeric emph">0,9</td></tr>
+<tr><td class="rank">5</td><td><strong>KOŚCIERZYNA</strong><span>Pomorskie · gmina wiejska</span></td><td class="numeric">16 050</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1673" rel="noopener noreferrer" target="_blank">17</a></td><td class="numeric emph">1,1</td></tr>
+<tr><td class="rank">6</td><td><strong>KRAJENKA</strong><span>Wielkopolskie · gmina miejsko-wiejska</span></td><td class="numeric">7 300</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2220" rel="noopener noreferrer" target="_blank">8</a></td><td class="numeric emph">1,1</td></tr>
+<tr><td class="rank">7</td><td><strong>MYŚLIBÓRZ</strong><span>Zachodniopomorskie · gmina miejsko-wiejska</span></td><td class="numeric">18 280</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2428" rel="noopener noreferrer" target="_blank">21</a></td><td class="numeric emph">1,1</td></tr>
+<tr><td class="rank">8</td><td><strong>GŁOGÓW</strong><span>Dolnośląskie · gmina miejska</span></td><td class="numeric">60 610</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-28" rel="noopener noreferrer" target="_blank">77</a></td><td class="numeric emph">1,3</td></tr>
+<tr><td class="rank">9</td><td><strong>NARUSZEWO</strong><span>Mazowieckie · gmina wiejska</span></td><td class="numeric">5 780</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1118" rel="noopener noreferrer" target="_blank">8</a></td><td class="numeric emph">1,4</td></tr>
+<tr><td class="rank">10</td><td><strong>LUBIEŃ</strong><span>Małopolskie · gmina wiejska</span></td><td class="numeric">10 110</td><td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-864" rel="noopener noreferrer" target="_blank">14</a></td><td class="numeric emph">1,4</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+    
+<section class="grid">
+<article class="panel">
+<h2>Top 10 instytucji według liczby wniosków</h2>
+<div class="table-wrap compact">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Instytucja</th>
+<th>Q1</th>
+<th>Q2</th>
+<th>Q3</th>
+<th>Q5</th>
+<th>Q6</th>
+<th>Q7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rank">1</td>
+<td class=""><strong>Warszawa</strong><span>Mazowieckie · miasto stołeczne, na prawach powiatu</span>
+</td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1248" rel="noopener noreferrer" target="_blank">11 196</a></td>
+<td class="numeric">—</td>
+<td class="numeric">126</td>
+<td class="numeric">16</td>
+<td class="numeric">10</td>
+<td class="numeric">0</td>
+</tr>
+<tr>
+<td class="rank">2</td>
+<td class=""><strong>Starostwo Powiatowe w Legionowie</strong><span>Mazowieckie · powiat</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2585" rel="noopener noreferrer" target="_blank">7 266</a></td>
+<td class="numeric">253</td>
+<td class="numeric">3</td>
+<td class="numeric">2</td>
+<td class="numeric">3</td>
+<td class="numeric">1</td>
+</tr>
+<tr>
+<td class="rank">3</td>
+<td class=""><strong>Kraków</strong><span>Małopolskie · miasto na prawach powiatu</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-849" rel="noopener noreferrer" target="_blank">3 311</a></td>
+<td class="numeric">—</td>
+<td class="numeric">18</td>
+<td class="numeric">2</td>
+<td class="numeric">4</td>
+<td class="numeric">0</td>
+</tr>
+<tr>
+<td class="rank">4</td>
+<td class=""><strong>Starostwo Powiatowe w Tarnowie</strong><span>Małopolskie · powiat</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2743" rel="noopener noreferrer" target="_blank">2 877</a></td>
+<td class="numeric">2 864</td>
+<td class="numeric">1</td>
+<td class="numeric">0</td>
+<td class="numeric">0</td>
+<td class="numeric">1</td>
+</tr>
+<tr>
+<td class="rank">5</td>
+<td class=""><strong>Ministerstwo Rozwoju i Technologii</strong><span>Mazowieckie · dzielnica</span>
+</td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2823" rel="noopener noreferrer" target="_blank">2 045</a></td>
+<td class="numeric">1 587</td>
+<td class="numeric">40</td>
+<td class="numeric">3</td>
+<td class="numeric">5</td>
+<td class="numeric">0</td>
+</tr>
+<tr>
+<td class="rank">6</td>
+<td class=""><strong>Ministerstwo Sprawiedliwości</strong><span>Mazowieckie · dzielnica</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2827" rel="noopener noreferrer" target="_blank">1 858</a></td>
+<td class="numeric">—</td>
+<td class="numeric">—</td>
+<td class="numeric">—</td>
+<td class="numeric">—</td>
+<td class="numeric">—</td>
+</tr>
+<tr>
+<td class="rank">7</td>
+<td class=""><strong>Ministerstwo Rolnictwa i Rozwoju Wsi</strong><span>Mazowieckie · dzielnica</span>
+</td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2822" rel="noopener noreferrer" target="_blank">1 515</a></td>
+<td class="numeric">1 462</td>
+<td class="numeric">5</td>
+<td class="numeric">0</td>
+<td class="numeric">0</td>
+<td class="numeric">0</td>
+</tr>
+<tr>
+<td class="rank">8</td>
+<td class=""><strong>Poznań</strong><span>Wielkopolskie · miasto na prawach powiatu</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2290" rel="noopener noreferrer" target="_blank">1 419</a></td>
+<td class="numeric">1 419</td>
+<td class="numeric">25</td>
+<td class="numeric">6</td>
+<td class="numeric">14</td>
+<td class="numeric">0</td>
+</tr>
+<tr>
+<td class="rank">9</td>
+<td class=""><strong>Wrocław</strong><span>Dolnośląskie · miasto na prawach powiatu</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-155" rel="noopener noreferrer" target="_blank">1 384</a></td>
+<td class="numeric">1 384</td>
+<td class="numeric">2</td>
+<td class="numeric">3</td>
+<td class="numeric">2</td>
+<td class="numeric">0</td>
+</tr>
+<tr>
+<td class="rank">10</td>
+<td class=""><strong>Gdańsk</strong><span>Pomorskie · miasto na prawach powiatu</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1655" rel="noopener noreferrer" target="_blank">1 198</a></td>
+<td class="numeric">—</td>
+<td class="numeric">3</td>
+<td class="numeric">4</td>
+<td class="numeric">0</td>
+<td class="numeric">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+<article class="panel">
+<h2>Najwyższy udział decyzji odmownych</h2>
+<div class="table-wrap compact">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Instytucja</th>
+<th>Q1</th>
+<th>Q3</th>
+<th>Q3/Q1</th>
+<th>Q2/Q1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rank">1</td>
+<td class=""><strong>CZEMPIŃ</strong><span>Wielkopolskie · gmina miejsko-wiejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2162" rel="noopener noreferrer" target="_blank">71</a></td>
+<td class="numeric emph">14</td>
+<td class="numeric emph negative">19,7%</td>
+<td class="numeric">80,3%</td>
+</tr>
+<tr>
+<td class="rank">2</td>
+<td class=""><strong>WEJHEROWO</strong><span>Pomorskie · gmina miejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1750" rel="noopener noreferrer" target="_blank">135</a></td>
+<td class="numeric emph">25</td>
+<td class="numeric emph negative">18,5%</td>
+<td class="numeric">75,6%</td>
+</tr>
+<tr>
+<td class="rank">3</td>
+<td class=""><strong>UJŚCIE</strong><span>Wielkopolskie · gmina miejsko-wiejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2341" rel="noopener noreferrer" target="_blank">141</a></td>
+<td class="numeric emph">22</td>
+<td class="numeric emph negative">15,6%</td>
+<td class="numeric">93,6%</td>
+</tr>
+<tr>
+<td class="rank">4</td>
+<td class=""><strong>PAWŁOSIÓW</strong><span>Podkarpackie · gmina wiejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1458" rel="noopener noreferrer" target="_blank">74</a></td>
+<td class="numeric emph">11</td>
+<td class="numeric emph negative">14,9%</td>
+<td class="numeric">85,1%</td>
+</tr>
+<tr>
+<td class="rank">5</td>
+<td class=""><strong>NYSA</strong><span>Opolskie · gmina miejsko-wiejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1321" rel="noopener noreferrer" target="_blank">308</a></td>
+<td class="numeric emph">43</td>
+<td class="numeric emph negative">14,0%</td>
+<td class="numeric">83,8%</td>
+</tr>
+<tr>
+<td class="rank">6</td>
+<td class=""><strong>Starostwo Powiatowe w Ustrzykach Dolnych</strong><span>Podkarpackie · powiat</span>
+</td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2752" rel="noopener noreferrer" target="_blank">68</a></td>
+<td class="numeric emph">9</td>
+<td class="numeric emph negative">13,2%</td>
+<td class="numeric">83,8%</td>
+</tr>
+<tr>
+<td class="rank">7</td>
+<td class=""><strong>BARCIANY</strong><span>Warmińsko-Mazurskie · gmina wiejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2026" rel="noopener noreferrer" target="_blank">167</a></td>
+<td class="numeric emph">20</td>
+<td class="numeric emph negative">12,0%</td>
+<td class="numeric">100,0%</td>
+</tr>
+<tr>
+<td class="rank">8</td>
+<td class=""><strong>BODZANÓW</strong><span>Mazowieckie · gmina miejsko-wiejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-980" rel="noopener noreferrer" target="_blank">85</a></td>
+<td class="numeric emph">10</td>
+<td class="numeric emph negative">11,8%</td>
+<td class="numeric">88,2%</td>
+</tr>
+<tr>
+<td class="rank">9</td>
+<td class=""><strong>BIAŁA PISKA</strong><span>Warmińsko-Mazurskie · gmina miejsko-wiejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2030" rel="noopener noreferrer" target="_blank">182</a></td>
+<td class="numeric emph">21</td>
+<td class="numeric emph negative">11,5%</td>
+<td class="numeric">88,5%</td>
+</tr>
+<tr>
+<td class="rank">10</td>
+<td class=""><strong>Starostwo Powiatowe w Goleniowie</strong><span>Zachodniopomorskie · powiat</span>
+</td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2528" rel="noopener noreferrer" target="_blank">64</a></td>
+<td class="numeric emph">7</td>
+<td class="numeric emph negative">10,9%</td>
+<td class="numeric">—</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</section>
+<section class="grid">
+<article class="panel">
+<h2>Najwyższy udział opłat</h2>
+<div class="table-wrap compact">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Instytucja</th>
+<th>Q1</th>
+<th>Q7</th>
+<th>Q7/Q1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rank">1</td>
+<td class=""><strong>Starostwo Powiatowe w Nisku</strong><span>Podkarpackie · powiat</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2631" rel="noopener noreferrer" target="_blank">80</a></td>
+<td class="numeric emph">70</td>
+<td class="numeric emph negative">87,5%</td>
+</tr>
+<tr>
+<td class="rank">2</td>
+<td class=""><strong>LUBASZ</strong><span>Wielkopolskie · gmina wiejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2238" rel="noopener noreferrer" target="_blank">56</a></td>
+<td class="numeric emph">10</td>
+<td class="numeric emph negative">17,9%</td>
+</tr>
+<tr>
+<td class="rank">3</td>
+<td class=""><strong>Starostwo Powiatowe w Krotoszynie</strong><span>Wielkopolskie · powiat</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2582" rel="noopener noreferrer" target="_blank">74</a></td>
+<td class="numeric emph">13</td>
+<td class="numeric emph negative">17,6%</td>
+</tr>
+<tr>
+<td class="rank">4</td>
+<td class=""><strong>Starostwo Powiatowe w Lesznie</strong><span>Wielkopolskie · powiat</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2588" rel="noopener noreferrer" target="_blank">141</a></td>
+<td class="numeric emph">23</td>
+<td class="numeric emph negative">16,3%</td>
+</tr>
+<tr>
+<td class="rank">5</td>
+<td class=""><strong>LUBIN</strong><span>Dolnośląskie · gmina miejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-69" rel="noopener noreferrer" target="_blank">146</a></td>
+<td class="numeric emph">22</td>
+<td class="numeric emph negative">15,1%</td>
+</tr>
+<tr>
+<td class="rank">6</td>
+<td class=""><strong>Starostwo Powiatowe w Łańcucie</strong><span>Podkarpackie · powiat</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2602" rel="noopener noreferrer" target="_blank">98</a></td>
+<td class="numeric emph">12</td>
+<td class="numeric emph negative">12,2%</td>
+</tr>
+<tr>
+<td class="rank">7</td>
+<td class=""><strong>Starostwo Powiatowe w Złotowie</strong><span>Wielkopolskie · powiat</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2780" rel="noopener noreferrer" target="_blank">85</a></td>
+<td class="numeric emph">8</td>
+<td class="numeric emph negative">9,4%</td>
+</tr>
+<tr>
+<td class="rank">8</td>
+<td class=""><strong>Starostwo Powiatowe w Chodzieży</strong><span>Wielkopolskie · powiat</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2506" rel="noopener noreferrer" target="_blank">61</a></td>
+<td class="numeric emph">5</td>
+<td class="numeric emph negative">8,2%</td>
+</tr>
+<tr>
+<td class="rank">9</td>
+<td class=""><strong>NAKŁO NAD NOTECIĄ</strong><span>Kujawsko-Pomorskie · gmina miejsko-wiejska</span>
+</td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-253" rel="noopener noreferrer" target="_blank">116</a></td>
+<td class="numeric emph">8</td>
+<td class="numeric emph negative">6,9%</td>
+</tr>
+<tr>
+<td class="rank">10</td>
+<td class=""><strong>DĘBNO</strong><span>Małopolskie · gmina wiejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-815" rel="noopener noreferrer" target="_blank">164</a></td>
+<td class="numeric emph">11</td>
+<td class="numeric emph negative">6,7%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+<article class="panel">
+<h2>Największe liczby decyzji odmownych</h2>
+<div class="table-wrap compact">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Instytucja</th>
+<th>Q3</th>
+<th>Q1</th>
+<th>Q2</th>
+<th>Q5</th>
+<th>Q6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rank">1</td>
+<td class=""><strong>Warszawa</strong><span>miasto stołeczne, na prawach powiatu</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1248" rel="noopener noreferrer" target="_blank">126</a></td>
+<td class="numeric">11 196</td>
+<td class="numeric">—</td>
+<td class="numeric">16</td>
+<td class="numeric">10</td>
+</tr>
+<tr>
+<td class="rank">2</td>
+<td class=""><strong>NYSA</strong><span>gmina miejsko-wiejska</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1321" rel="noopener noreferrer" target="_blank">43</a></td>
+<td class="numeric">308</td>
+<td class="numeric">258</td>
+<td class="numeric">3</td>
+<td class="numeric">40</td>
+</tr>
+<tr>
+<td class="rank">3</td>
+<td class=""><strong>Ministerstwo Rozwoju i Technologii</strong><span>dzielnica</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2823" rel="noopener noreferrer" target="_blank">40</a></td>
+<td class="numeric">2 045</td>
+<td class="numeric">1 587</td>
+<td class="numeric">3</td>
+<td class="numeric">5</td>
+</tr>
+<tr>
+<td class="rank">4</td>
+<td class=""><strong>DŁUGOŁĘKA</strong><span>gmina wiejska</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-19" rel="noopener noreferrer" target="_blank">29</a></td>
+<td class="numeric">375</td>
+<td class="numeric">354</td>
+<td class="numeric">13</td>
+<td class="numeric">12</td>
+</tr>
+<tr>
+<td class="rank">5</td>
+<td class=""><strong>Poznań</strong><span>miasto na prawach powiatu</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2290" rel="noopener noreferrer" target="_blank">25</a></td>
+<td class="numeric">1 419</td>
+<td class="numeric">1 419</td>
+<td class="numeric">6</td>
+<td class="numeric">14</td>
+</tr>
+<tr>
+<td class="rank">6</td>
+<td class=""><strong>Starostwo Powiatowe w Krakowie</strong><span>powiat</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2576" rel="noopener noreferrer" target="_blank">25</a></td>
+<td class="numeric">351</td>
+<td class="numeric">251</td>
+<td class="numeric">0</td>
+<td class="numeric">7</td>
+</tr>
+<tr>
+<td class="rank">7</td>
+<td class=""><strong>WEJHEROWO</strong><span>gmina miejska</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1750" rel="noopener noreferrer" target="_blank">25</a></td>
+<td class="numeric">135</td>
+<td class="numeric">102</td>
+<td class="numeric">0</td>
+<td class="numeric">13</td>
+</tr>
+<tr>
+<td class="rank">8</td>
+<td class=""><strong>UJŚCIE</strong><span>gmina miejsko-wiejska</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2341" rel="noopener noreferrer" target="_blank">22</a></td>
+<td class="numeric">141</td>
+<td class="numeric">132</td>
+<td class="numeric">0</td>
+<td class="numeric">22</td>
+</tr>
+<tr>
+<td class="rank">9</td>
+<td class=""><strong>BIAŁA PISKA</strong><span>gmina miejsko-wiejska</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2030" rel="noopener noreferrer" target="_blank">21</a></td>
+<td class="numeric">182</td>
+<td class="numeric">161</td>
+<td class="numeric">3</td>
+<td class="numeric">21</td>
+</tr>
+<tr>
+<td class="rank">10</td>
+<td class=""><strong>BARCIANY</strong><span>gmina wiejska</span></td>
+<td class="numeric emph"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2026" rel="noopener noreferrer" target="_blank">20</a></td>
+<td class="numeric">167</td>
+<td class="numeric">167</td>
+<td class="numeric">0</td>
+<td class="numeric">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</section>
+<section class="panel">
+<h2>Dlaczego informacji nie udostępniano? Przyczyny Q4 w 2025 r.</h2>
+<p>Najczęściej wskazywano, że wnioskowana informacja nie stanowiła informacji publicznej, nie istniała albo organ
+        jej nie posiadał, albo wnioskodawca miał dostęp w innym trybie.</p>
+<svg aria-label="Przyczyny nieudostępnienia informacji w 2025 r." role="img" style="width:100%;height:auto;display:block" viewbox="0 0 1000 374"><text font-family="Arial" font-size="18" font-weight="950" x="0" y="20">Przyczyny nieudostępnienia informacji w 2025 r.</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="50">a: nie stanowiła informacji publicznej</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="35"></rect>
+<rect fill="#2a5d8f" height="20" width="475.0" x="420" y="35"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="50">25,1% / 594</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="86">c: nie istniała albo organ jej nie posiadał</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="71"></rect>
+<rect fill="#2a5d8f" height="20" width="399.8" x="420" y="71"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="86">21,1% / 500</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="122">b: wnioskodawca miał dostęp w innym trybie</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="107"></rect>
+<rect fill="#2a5d8f" height="20" width="326.2" x="420" y="107"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="122">17,3% / 408</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="158">f: informacja przetworzona</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="143"></rect>
+<rect fill="#2a5d8f" height="20" width="311.1" x="420" y="143"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="158">16,5% / 389</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="194">i: inne</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="179"></rect>
+<rect fill="#2a5d8f" height="20" width="137.6" x="420" y="179"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="194">7,3% / 172</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="230">g: ochrona prywatności osoby fizycznej</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="215"></rect>
+<rect fill="#2a5d8f" height="20" width="92.8" x="420" y="215"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="230">4,9% / 116</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="266">d: brak podst. danych osobowych wnioskodawcy</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="251"></rect>
+<rect fill="#2a5d8f" height="20" width="66.3" x="420" y="251"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="266">3,5% / 83</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="302">h: tajemnica przedsiębiorcy</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="287"></rect>
+<rect fill="#2a5d8f" height="20" width="63.1" x="420" y="287"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="302">3,3% / 79</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="338">e: nadużywanie dostępu do informacji</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="323"></rect>
+<rect fill="#2a5d8f" height="20" width="55.2" x="420" y="323"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="338">2,9% / 69</text>
+</svg>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Kod</th>
+<th>Przyczyna</th>
+<th>Liczba wskazań</th>
+<th>% ważnych Q4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rank">a</td>
+<td class="">wnioskowana informacja nie stanowiła informacji publicznej</td>
+<td class="numeric">594</td>
+<td class="numeric emph">25,1%</td>
+</tr>
+<tr>
+<td class="rank">c</td>
+<td class="">informacja nie istniała albo organ jej nie posiadał</td>
+<td class="numeric">500</td>
+<td class="numeric emph">21,1%</td>
+</tr>
+<tr>
+<td class="rank">b</td>
+<td class="">wnioskodawca miał dostęp w innym trybie</td>
+<td class="numeric">408</td>
+<td class="numeric emph">17,3%</td>
+</tr>
+<tr>
+<td class="rank">f</td>
+<td class="">wniosek dotyczył informacji przetworzonej</td>
+<td class="numeric">389</td>
+<td class="numeric emph">16,5%</td>
+</tr>
+<tr>
+<td class="rank">i</td>
+<td class="">inne</td>
+<td class="numeric">172</td>
+<td class="numeric emph">7,3%</td>
+</tr>
+<tr>
+<td class="rank">g</td>
+<td class="">ochrona prywatności osoby fizycznej</td>
+<td class="numeric">116</td>
+<td class="numeric emph">4,9%</td>
+</tr>
+<tr>
+<td class="rank">d</td>
+<td class="">brak podstawowych danych osobowych wnioskodawcy</td>
+<td class="numeric">83</td>
+<td class="numeric emph">3,5%</td>
+</tr>
+<tr>
+<td class="rank">h</td>
+<td class="">tajemnica przedsiębiorcy</td>
+<td class="numeric">79</td>
+<td class="numeric emph">3,3%</td>
+</tr>
+<tr>
+<td class="rank">e</td>
+<td class="">nadużywanie dostępu do informacji publicznej</td>
+<td class="numeric">69</td>
+<td class="numeric emph">2,9%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="panel">
+<h2>Co zmieniło się w Q4 między 2022 a 2025 r.?</h2>
+<p>Najbardziej wzrosła przyczyna „dostęp w innym trybie”. Najbardziej spadły wskazania informacji przetworzonej i
+        kategorii „inne”.</p>
+<svg aria-label="Zmiana częstości przyczyn Q4 w próbie parowanej" role="img" style="width:100%;height:auto;display:block" viewbox="0 0 1000 374"><text font-family="Arial" font-size="18" font-weight="950" x="0" y="20">Zmiana częstości przyczyn Q4 w próbie parowanej</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="50">b: wnioskodawca miał dostęp w innym trybie</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="35"></rect>
+<rect fill="#08885a" height="20" width="475.0" x="420" y="35"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="50">+12,1 p.p.</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="86">a: nie stanowiła informacji publicznej</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="71"></rect>
+<rect fill="#08885a" height="20" width="164.2" x="420" y="71"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="86">+4,2 p.p.</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="122">d: brak podst. danych osobowych wnioskodawcy</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="107"></rect>
+<rect fill="#08885a" height="20" width="60.5" x="420" y="107"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="122">+1,5 p.p.</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="158">e: nadużywanie dostępu do informacji</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="143"></rect>
+<rect fill="#08885a" height="20" width="51.9" x="420" y="143"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="158">+1,3 p.p.</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="194">c: nie istniała albo organ jej nie posiadał</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="179"></rect>
+<rect fill="#08885a" height="20" width="25.9" x="420" y="179"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="194">+0,7 p.p.</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="230">h: tajemnica przedsiębiorcy</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="215"></rect>
+<rect fill="#08885a" height="20" width="25.9" x="420" y="215"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="230">+0,7 p.p.</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="266">g: ochrona prywatności osoby fizycznej</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="251"></rect>
+<rect fill="#b94d40" height="20" width="34.6" x="420" y="251"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="266">-0,9 p.p.</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="302">i: inne</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="287"></rect>
+<rect fill="#b94d40" height="20" width="207.1" x="420" y="287"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="302">-5,3 p.p.</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="338">f: informacja przetworzona</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="475" x="420" y="323"></rect>
+<rect fill="#b94d40" height="20" width="241.6" x="420" y="323"></rect><text font-family="Arial" font-size="14" font-weight="900" x="907" y="338">-6,2 p.p.</text>
+</svg>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Kod</th>
+<th>Przyczyna</th>
+<th>2022</th>
+<th>2025</th>
+<th>Zmiana</th>
+<th>Nowe w 2025</th>
+<th>Zniknęło</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rank">b</td>
+<td class="">wnioskodawca miał dostęp w innym trybie</td>
+<td class="numeric">14,1%</td>
+<td class="numeric">26,1%</td>
+<td class="numeric emph positive">+12,1 p.p.</td>
+<td class="numeric">87</td>
+<td class="numeric">32</td>
+</tr>
+<tr>
+<td class="rank">a</td>
+<td class="">wnioskowana informacja nie stanowiła informacji publicznej</td>
+<td class="numeric">30,8%</td>
+<td class="numeric">35,0%</td>
+<td class="numeric emph positive">+4,2 p.p.</td>
+<td class="numeric">73</td>
+<td class="numeric">54</td>
+</tr>
+<tr>
+<td class="rank">d</td>
+<td class="">brak podstawowych danych osobowych wnioskodawcy</td>
+<td class="numeric">2,4%</td>
+<td class="numeric">4,0%</td>
+<td class="numeric emph positive">+1,5 p.p.</td>
+<td class="numeric">16</td>
+<td class="numeric">9</td>
+</tr>
+<tr>
+<td class="rank">e</td>
+<td class="">nadużywanie dostępu do informacji publicznej</td>
+<td class="numeric">2,4%</td>
+<td class="numeric">3,7%</td>
+<td class="numeric emph positive">+1,3 p.p.</td>
+<td class="numeric">16</td>
+<td class="numeric">10</td>
+</tr>
+<tr>
+<td class="rank">c</td>
+<td class="">informacja nie istniała albo organ jej nie posiadał</td>
+<td class="numeric">32,1%</td>
+<td class="numeric">32,8%</td>
+<td class="numeric emph positive">+0,7 p.p.</td>
+<td class="numeric">66</td>
+<td class="numeric">63</td>
+</tr>
+<tr>
+<td class="rank">h</td>
+<td class="">tajemnica przedsiębiorcy</td>
+<td class="numeric">3,5%</td>
+<td class="numeric">4,2%</td>
+<td class="numeric emph positive">+0,7 p.p.</td>
+<td class="numeric">17</td>
+<td class="numeric">14</td>
+</tr>
+<tr>
+<td class="rank">g</td>
+<td class="">ochrona prywatności osoby fizycznej</td>
+<td class="numeric">5,9%</td>
+<td class="numeric">5,0%</td>
+<td class="numeric emph negative">-0,9 p.p.</td>
+<td class="numeric">22</td>
+<td class="numeric">26</td>
+</tr>
+<tr>
+<td class="rank">i</td>
+<td class="">inne</td>
+<td class="numeric">12,3%</td>
+<td class="numeric">7,0%</td>
+<td class="numeric emph negative">-5,3 p.p.</td>
+<td class="numeric">24</td>
+<td class="numeric">48</td>
+</tr>
+<tr>
+<td class="rank">f</td>
+<td class="">wniosek dotyczył informacji przetworzonej</td>
+<td class="numeric">24,2%</td>
+<td class="numeric">18,0%</td>
+<td class="numeric emph negative">-6,2 p.p.</td>
+<td class="numeric">45</td>
+<td class="numeric">73</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="panel">
+<h2>Porównanie 2022–2025: tylko instytucje sparowane</h2>
+<p class="note">W tej części liczebność próby zależy od wskaźnika. Dla Q1 porównanie obejmuje 495 instytucji, dla
+        Q4 — 455 instytucji.</p>
+<svg aria-label="Zmiana sum 2025 względem 2022 w próbie parowanej" role="img" style="width:100%;height:auto;display:block" viewbox="0 0 920 278"><text font-family="Arial" font-size="18" font-weight="950" x="0" y="20">Zmiana sum 2025 względem 2022 w próbie parowanej</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="50">Liczba wniosków</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="555" x="260" y="35"></rect>
+<rect fill="#08885a" height="20" width="30.1" x="260" y="35"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="50">41,8%</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="88">Udostępnione w całości</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="555" x="260" y="73"></rect>
+<rect fill="#08885a" height="20" width="22.8" x="260" y="73"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="88">31,6%</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="126">Decyzje odmowne</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="555" x="260" y="111"></rect>
+<rect fill="#08885a" height="20" width="51.7" x="260" y="111"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="126">71,7%</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="164">Skargi na bezczynność</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="555" x="260" y="149"></rect>
+<rect fill="#08885a" height="20" width="4.7" x="260" y="149"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="164">6,5%</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="202">Skargi/odwołania od decyzji</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="555" x="260" y="187"></rect>
+<rect fill="#08885a" height="20" width="555.0" x="260" y="187"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="202">770,8%</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="240">Naliczona opłata</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="555" x="260" y="225"></rect>
+<rect fill="#08885a" height="20" width="24.8" x="260" y="225"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="240">34,4%</text>
+</svg>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Wskaźnik</th>
+<th>2022</th>
+<th>2025</th>
+<th>Różnica</th>
+<th>Zmiana %</th>
+<th>Wzrost</th>
+<th>Bez zmian</th>
+<th>Spadek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class=""><strong>Liczba wniosków</strong><span>n=495</span></td>
+<td class="numeric">67 518</td>
+<td class="numeric">95 708</td>
+<td class="numeric emph positive">+28 190</td>
+<td class="numeric positive">41,8%</td>
+<td class="numeric">421</td>
+<td class="numeric">3</td>
+<td class="numeric">71</td>
+</tr>
+<tr>
+<td class=""><strong>Udostępnione w całości</strong><span>n=468</span></td>
+<td class="numeric">46 330</td>
+<td class="numeric">60 973</td>
+<td class="numeric emph positive">+14 643</td>
+<td class="numeric positive">31,6%</td>
+<td class="numeric">392</td>
+<td class="numeric">5</td>
+<td class="numeric">71</td>
+</tr>
+<tr>
+<td class=""><strong>Decyzje odmowne</strong><span>n=493</span></td>
+<td class="numeric">552</td>
+<td class="numeric">948</td>
+<td class="numeric emph positive">+396</td>
+<td class="numeric positive">71,7%</td>
+<td class="numeric">172</td>
+<td class="numeric">250</td>
+<td class="numeric">71</td>
+</tr>
+<tr>
+<td class=""><strong>Skargi na bezczynność</strong><span>n=490</span></td>
+<td class="numeric">168</td>
+<td class="numeric">179</td>
+<td class="numeric emph positive">+11</td>
+<td class="numeric positive">6,5%</td>
+<td class="numeric">68</td>
+<td class="numeric">352</td>
+<td class="numeric">70</td>
+</tr>
+<tr>
+<td class=""><strong>Skargi/odwołania od decyzji</strong><span>n=482</span></td>
+<td class="numeric">24</td>
+<td class="numeric">209</td>
+<td class="numeric emph positive">+185</td>
+<td class="numeric positive">770,8%</td>
+<td class="numeric">85</td>
+<td class="numeric">388</td>
+<td class="numeric">9</td>
+</tr>
+<tr>
+<td class=""><strong>Naliczona opłata</strong><span>n=486</span></td>
+<td class="numeric">64</td>
+<td class="numeric">86</td>
+<td class="numeric emph positive">+22</td>
+<td class="numeric positive">34,4%</td>
+<td class="numeric">18</td>
+<td class="numeric">447</td>
+<td class="numeric">21</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="grid">
+<article class="panel">
+<h2>Top 10: największe wzrosty Q1</h2>
+<div class="table-wrap compact">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Instytucja</th>
+<th>2022</th>
+<th>2025</th>
+<th>Różnica</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rank">1</td>
+<td class=""><strong>Starostwo Powiatowe w Legionowie</strong><span>powiat</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-125" rel="noopener noreferrer" target="_blank">165</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2585" rel="noopener noreferrer" target="_blank">7 266</a></td>
+<td class="numeric emph positive">+7 101</td>
+<td class="numeric positive">4 303,6%</td>
+</tr>
+<tr>
+<td class="rank">2</td>
+<td class=""><strong>Warszawa</strong><span>miasto stołeczne, na prawach powiatu</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-290" rel="noopener noreferrer" target="_blank">8 507</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1248" rel="noopener noreferrer" target="_blank">11 196</a></td>
+<td class="numeric emph positive">+2 689</td>
+<td class="numeric positive">31,6%</td>
+</tr>
+<tr>
+<td class="rank">3</td>
+<td class=""><strong>Ministerstwo Sprawiedliwości</strong><span>dzielnica</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-23" rel="noopener noreferrer" target="_blank">1 149</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2827" rel="noopener noreferrer" target="_blank">1 858</a></td>
+<td class="numeric emph positive">+709</td>
+<td class="numeric positive">61,7%</td>
+</tr>
+<tr>
+<td class="rank">4</td>
+<td class=""><strong>Ministerstwo Rozwoju i Technologii</strong><span>dzielnica</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-19" rel="noopener noreferrer" target="_blank">1 607</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2823" rel="noopener noreferrer" target="_blank">2 045</a></td>
+<td class="numeric emph positive">+438</td>
+<td class="numeric positive">27,3%</td>
+</tr>
+<tr>
+<td class="rank">5</td>
+<td class=""><strong>Poznań</strong><span>miasto na prawach powiatu</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-269" rel="noopener noreferrer" target="_blank">990</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2290" rel="noopener noreferrer" target="_blank">1 419</a></td>
+<td class="numeric emph positive">+429</td>
+<td class="numeric positive">43,3%</td>
+</tr>
+<tr>
+<td class="rank">6</td>
+<td class=""><strong>Kraków</strong><span>miasto na prawach powiatu</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-254" rel="noopener noreferrer" target="_blank">2 898</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-849" rel="noopener noreferrer" target="_blank">3 311</a></td>
+<td class="numeric emph positive">+413</td>
+<td class="numeric positive">14,3%</td>
+</tr>
+<tr>
+<td class="rank">7</td>
+<td class=""><strong>Gdańsk</strong><span>miasto na prawach powiatu</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-241" rel="noopener noreferrer" target="_blank">786</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1655" rel="noopener noreferrer" target="_blank">1 198</a></td>
+<td class="numeric emph positive">+412</td>
+<td class="numeric positive">52,4%</td>
+</tr>
+<tr>
+<td class="rank">8</td>
+<td class=""><strong>Ministerstwo Rodziny i Polityki Społecznej</strong><span>dzielnica</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-17" rel="noopener noreferrer" target="_blank">244</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2821" rel="noopener noreferrer" target="_blank">583</a></td>
+<td class="numeric emph positive">+339</td>
+<td class="numeric positive">138,9%</td>
+</tr>
+<tr>
+<td class="rank">9</td>
+<td class=""><strong>Marszałek Województwa Dolnośląskiego</strong><span>województwo</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-25" rel="noopener noreferrer" target="_blank">297</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2794" rel="noopener noreferrer" target="_blank">629</a></td>
+<td class="numeric emph positive">+332</td>
+<td class="numeric positive">111,8%</td>
+</tr>
+<tr>
+<td class="rank">10</td>
+<td class=""><strong>Ministerstwo Infrastruktury</strong><span>dzielnica</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-13" rel="noopener noreferrer" target="_blank">527</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2816" rel="noopener noreferrer" target="_blank">815</a></td>
+<td class="numeric emph positive">+288</td>
+<td class="numeric positive">54,6%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+<article class="panel">
+<h2>Top 10: największe spadki Q1</h2>
+<div class="table-wrap compact">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Instytucja</th>
+<th>2022</th>
+<th>2025</th>
+<th>Różnica</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rank">1</td>
+<td class=""><strong>Kalisz</strong><span>miasto na prawach powiatu</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-249" rel="noopener noreferrer" target="_blank">738</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2194" rel="noopener noreferrer" target="_blank">217</a></td>
+<td class="numeric emph negative">-521</td>
+<td class="numeric negative">-70,6%</td>
+</tr>
+<tr>
+<td class="rank">2</td>
+<td class=""><strong>Łódź</strong><span>miasto na prawach powiatu</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-260" rel="noopener noreferrer" target="_blank">1 440</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-693" rel="noopener noreferrer" target="_blank">1 076</a></td>
+<td class="numeric emph negative">-364</td>
+<td class="numeric negative">-25,3%</td>
+</tr>
+<tr>
+<td class="rank">3</td>
+<td class=""><strong>Siemianowice Śląskie</strong><span>miasto na prawach powiatu</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-276" rel="noopener noreferrer" target="_blank">550</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1882" rel="noopener noreferrer" target="_blank">245</a></td>
+<td class="numeric emph negative">-305</td>
+<td class="numeric negative">-55,5%</td>
+</tr>
+<tr>
+<td class="rank">4</td>
+<td class=""><strong>MIĘDZYRZECZ</strong><span>gmina miejsko-wiejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-376" rel="noopener noreferrer" target="_blank">108</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-565" rel="noopener noreferrer" target="_blank">15</a></td>
+<td class="numeric emph negative">-93</td>
+<td class="numeric negative">-86,1%</td>
+</tr>
+<tr>
+<td class="rank">5</td>
+<td class=""><strong>Bytom</strong><span>miasto na prawach powiatu</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-235" rel="noopener noreferrer" target="_blank">342</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1766" rel="noopener noreferrer" target="_blank">265</a></td>
+<td class="numeric emph negative">-77</td>
+<td class="numeric negative">-22,5%</td>
+</tr>
+<tr>
+<td class="rank">6</td>
+<td class=""><strong>TUREK</strong><span>gmina miejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-622" rel="noopener noreferrer" target="_blank">95</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2339" rel="noopener noreferrer" target="_blank">21</a></td>
+<td class="numeric emph negative">-74</td>
+<td class="numeric negative">-77,9%</td>
+</tr>
+<tr>
+<td class="rank">7</td>
+<td class=""><strong>Starostwo Powiatowe w Pułtusku</strong><span>powiat</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-133" rel="noopener noreferrer" target="_blank">150</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-2686" rel="noopener noreferrer" target="_blank">82</a></td>
+<td class="numeric emph negative">-68</td>
+<td class="numeric negative">-45,3%</td>
+</tr>
+<tr>
+<td class="rank">8</td>
+<td class=""><strong>BIELSK PODLASKI</strong><span>gmina wiejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-509" rel="noopener noreferrer" target="_blank">200</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1521" rel="noopener noreferrer" target="_blank">134</a></td>
+<td class="numeric emph negative">-66</td>
+<td class="numeric negative">-33,0%</td>
+</tr>
+<tr>
+<td class="rank">9</td>
+<td class=""><strong>MARKI</strong><span>gmina miejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-452" rel="noopener noreferrer" target="_blank">127</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1099" rel="noopener noreferrer" target="_blank">70</a></td>
+<td class="numeric emph negative">-57</td>
+<td class="numeric negative">-44,9%</td>
+</tr>
+<tr>
+<td class="rank">10</td>
+<td class=""><strong>SOŃSK</strong><span>gmina wiejska</span></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2022-469" rel="noopener noreferrer" target="_blank">92</a></td>
+<td class="numeric"><a class="value-link" href="https://fedrowanie.siecobywatelska.pl/sprawy/wnioski-o-informacje-w-2025-1216" rel="noopener noreferrer" target="_blank">52</a></td>
+<td class="numeric emph negative">-40</td>
+<td class="numeric negative">-43,5%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</section>
+<section class="grid">
+<article class="panel">
+<h2>Rejestr wniosków i osoba odpowiedzialna</h2>
+<p>Publikowanie rejestru wniosków w BIP jest rzadkie. Osobę odpowiedzialną za udostępnianie informacji deklaruje
+          większy, ale nadal mniejszościowy odsetek instytucji.</p>
+<div class="table-wrap compact">
+<table>
+<thead>
+<tr>
+<th>Pytanie</th>
+<th>Rok</th>
+<th>% TAK</th>
+<th>Liczba TAK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class=""><strong>Publikacja rejestru w BIP</strong><span>Q8</span></td>
+<td class="numeric">2022</td>
+<td class="numeric emph">5,9%</td>
+<td class="numeric">29</td>
+</tr>
+<tr>
+<td class=""><strong>Publikacja rejestru w BIP</strong><span>Q8</span></td>
+<td class="numeric">2025</td>
+<td class="numeric emph">5,4%</td>
+<td class="numeric">129</td>
+</tr>
+<tr>
+<td class=""><strong>Osoba odpowiedzialna za DIP</strong><span>Q9</span></td>
+<td class="numeric">2022</td>
+<td class="numeric emph">14,7%</td>
+<td class="numeric">66</td>
+</tr>
+<tr>
+<td class=""><strong>Osoba odpowiedzialna za DIP</strong><span>Q9</span></td>
+<td class="numeric">2025</td>
+<td class="numeric emph">14,2%</td>
+<td class="numeric">339</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+<article class="panel">
+<h2>Przejścia 2022 → 2025</h2>
+<h3>Q8: rejestr w BIP</h3>
+<div class="status-row">
+<div class="status-label">NIE → NIE</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:90.98%"></div>
+</div>
+<div class="status-value">444 <span>91,0%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">TAK → TAK</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:3.69%"></div>
+</div>
+<div class="status-value">18 <span>3,7%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">NIE → TAK</div>
+<div class="status-track">
+<div class="status-fill positive" style="width:3.07%"></div>
+</div>
+<div class="status-value">15 <span>3,1%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">TAK → NIE</div>
+<div class="status-track">
+<div class="status-fill negative" style="width:2.25%"></div>
+</div>
+<div class="status-value">11 <span>2,2%</span></div>
+</div>
+<h3>Q9: osoba odpowiedzialna</h3>
+<div class="status-row">
+<div class="status-label">NIE → NIE</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:80.72%"></div>
+</div>
+<div class="status-value">360 <span>80,7%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">TAK → TAK</div>
+<div class="status-track">
+<div class="status-fill neutral" style="width:10.54%"></div>
+</div>
+<div class="status-value">47 <span>10,5%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">NIE → TAK</div>
+<div class="status-track">
+<div class="status-fill positive" style="width:4.71%"></div>
+</div>
+<div class="status-value">21 <span>4,7%</span></div>
+</div>
+<div class="status-row">
+<div class="status-label">TAK → NIE</div>
+<div class="status-track">
+<div class="status-fill negative" style="width:4.04%"></div>
+</div>
+<div class="status-value">18 <span>4,0%</span></div>
+</div>
+</article>
+</section>
+<section class="panel">
+<h2>Województwa: gdzie jest najwięcej wniosków?</h2>
+<p>To zestawienie obejmuje odpowiedzi z gmin, miasta na prawach powiatu i powiaty. Nie uwzględnia ministerstw ani urzędów marszałkowskich, dlatego wyniki pokazują natężenie wniosków w samorządach lokalnych i powiatowych, a nie pełny bilans wszystkich instytucji w województwie. Najwyższą sumę Q1 ma mazowieckie, głównie przez Warszawę; dlatego obok sum warto patrzeć na mediany.</p>
+
+<svg aria-label="Województwa według łącznej liczby wniosków Q1 w 2025 r. — gminy i powiaty" role="img" style="width:100%;height:auto;display:block" viewbox="0 0 900 410">
+<text font-family="Arial" font-size="18" font-weight="950" x="0" y="20">Województwa według łącznej liczby wniosków Q1 w 2025 r. — gminy i powiaty</text>
+<text font-family="Arial" font-size="15" font-weight="900" x="0" y="50">Mazowieckie</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="615" x="180" y="35"></rect>
+<rect fill="#2a5d8f" height="20" width="615.0" x="180" y="35"></rect><text font-family="Arial" font-size="14" font-weight="900" x="807" y="50">47 167</text>
+<text font-family="Arial" font-size="15" font-weight="900" x="0" y="86">Małopolskie</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="615" x="180" y="71"></rect>
+<rect fill="#2a5d8f" height="20" width="319.2" x="180" y="71"></rect><text font-family="Arial" font-size="14" font-weight="900" x="807" y="86">24 484</text>
+<text font-family="Arial" font-size="15" font-weight="900" x="0" y="122">Wielkopolskie</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="615" x="180" y="107"></rect>
+<rect fill="#2a5d8f" height="20" width="279.3" x="180" y="107"></rect><text font-family="Arial" font-size="14" font-weight="900" x="807" y="122">21 422</text>
+<text font-family="Arial" font-size="15" font-weight="900" x="0" y="158">Śląskie</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="615" x="180" y="143"></rect>
+<rect fill="#2a5d8f" height="20" width="247.6" x="180" y="143"></rect><text font-family="Arial" font-size="14" font-weight="900" x="807" y="158">18 987</text>
+<text font-family="Arial" font-size="15" font-weight="900" x="0" y="194">Dolnośląskie</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="615" x="180" y="179"></rect>
+<rect fill="#2a5d8f" height="20" width="230.9" x="180" y="179"></rect><text font-family="Arial" font-size="14" font-weight="900" x="807" y="194">17 706</text>
+<text font-family="Arial" font-size="15" font-weight="900" x="0" y="230">Lubelskie</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="615" x="180" y="215"></rect>
+<rect fill="#2a5d8f" height="20" width="229.4" x="180" y="215"></rect><text font-family="Arial" font-size="14" font-weight="900" x="807" y="230">17 593</text>
+<text font-family="Arial" font-size="15" font-weight="900" x="0" y="266">Łódzkie</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="615" x="180" y="251"></rect>
+<rect fill="#2a5d8f" height="20" width="204.5" x="180" y="251"></rect><text font-family="Arial" font-size="14" font-weight="900" x="807" y="266">15 681</text>
+<text font-family="Arial" font-size="15" font-weight="900" x="0" y="302">Podkarpackie</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="615" x="180" y="287"></rect>
+<rect fill="#2a5d8f" height="20" width="170.1" x="180" y="287"></rect><text font-family="Arial" font-size="14" font-weight="900" x="807" y="302">13 045</text>
+<text font-family="Arial" font-size="15" font-weight="900" x="0" y="338">Kujawsko-Pomorskie</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="615" x="180" y="323"></rect>
+<rect fill="#2a5d8f" height="20" width="169.1" x="180" y="323"></rect><text font-family="Arial" font-size="14" font-weight="900" x="807" y="338">12 969</text>
+<text font-family="Arial" font-size="15" font-weight="900" x="0" y="374">Pomorskie</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="615" x="180" y="359"></rect>
+<rect fill="#2a5d8f" height="20" width="143.4" x="180" y="359"></rect><text font-family="Arial" font-size="14" font-weight="900" x="807" y="374">11 001</text>
+</svg>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Województwo</th>
+<th>Q1 suma</th>
+<th>Q1 mediana</th>
+<th>Q2/Q1</th>
+<th>Q3/Q1</th>
+<th>Q8 TAK</th>
+<th>Q9 TAK</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Mazowieckie n=288</td><td class="numeric">47 167</td><td class="numeric">85</td><td class="numeric">76,1%</td><td class="numeric">0,87%</td><td class="numeric">3,5%</td><td class="numeric">16,5%</td></tr>
+<tr><td>Małopolskie n=174</td><td class="numeric">24 484</td><td class="numeric">98</td><td class="numeric">96,3%</td><td class="numeric">0,94%</td><td class="numeric">1,7%</td><td class="numeric">18,4%</td></tr>
+<tr><td>Wielkopolskie n=224</td><td class="numeric">21 422</td><td class="numeric">81</td><td class="numeric">95,0%</td><td class="numeric">1,05%</td><td class="numeric">2,2%</td><td class="numeric">15,7%</td></tr>
+<tr><td>Śląskie n=159</td><td class="numeric">18 987</td><td class="numeric">96</td><td class="numeric">93,4%</td><td class="numeric">0,98%</td><td class="numeric">8,9%</td><td class="numeric">15,8%</td></tr>
+<tr><td>Dolnośląskie n=157</td><td class="numeric">17 706</td><td class="numeric">93</td><td class="numeric">95,7%</td><td class="numeric">1,04%</td><td class="numeric">6,4%</td><td class="numeric">12,1%</td></tr>
+<tr><td>Lubelskie n=205</td><td class="numeric">17 593</td><td class="numeric">83</td><td class="numeric">96,9%</td><td class="numeric">0,70%</td><td class="numeric">11,7%</td><td class="numeric">8,8%</td></tr>
+<tr><td>Łódzkie n=173</td><td class="numeric">15 681</td><td class="numeric">81</td><td class="numeric">96,5%</td><td class="numeric">0,92%</td><td class="numeric">4,0%</td><td class="numeric">11,6%</td></tr>
+<tr><td>Podkarpackie n=154</td><td class="numeric">13 045</td><td class="numeric">80</td><td class="numeric">96,6%</td><td class="numeric">0,95%</td><td class="numeric">4,6%</td><td class="numeric">11,8%</td></tr>
+<tr><td>Kujawsko-Pomorskie n=141</td><td class="numeric">12 969</td><td class="numeric">81</td><td class="numeric">93,9%</td><td class="numeric">0,66%</td><td class="numeric">7,1%</td><td class="numeric">12,1%</td></tr>
+<tr><td>Pomorskie n=105</td><td class="numeric">11 001</td><td class="numeric">86</td><td class="numeric">96,3%</td><td class="numeric">1,23%</td><td class="numeric">5,8%</td><td class="numeric">15,4%</td></tr>
+<tr><td>Zachodniopomorskie n=108</td><td class="numeric">10 977</td><td class="numeric">84</td><td class="numeric">94,0%</td><td class="numeric">1,17%</td><td class="numeric">7,5%</td><td class="numeric">15,2%</td></tr>
+<tr><td>Warmińsko-Mazurskie n=121</td><td class="numeric">10 658</td><td class="numeric">83</td><td class="numeric">95,6%</td><td class="numeric">1,39%</td><td class="numeric">7,5%</td><td class="numeric">9,2%</td></tr>
+<tr><td>Podlaskie n=120</td><td class="numeric">10 186</td><td class="numeric">81</td><td class="numeric">95,2%</td><td class="numeric">0,79%</td><td class="numeric">2,5%</td><td class="numeric">16,8%</td></tr>
+<tr><td>Świętokrzyskie n=102</td><td class="numeric">7 894</td><td class="numeric">67</td><td class="numeric">96,8%</td><td class="numeric">0,63%</td><td class="numeric">5,9%</td><td class="numeric">13,0%</td></tr>
+<tr><td>Lubuskie n=77</td><td class="numeric">7 743</td><td class="numeric">91</td><td class="numeric">98,0%</td><td class="numeric">0,93%</td><td class="numeric">5,3%</td><td class="numeric">11,8%</td></tr>
+<tr><td>Opolskie n=67</td><td class="numeric">6 920</td><td class="numeric">86</td><td class="numeric">95,0%</td><td class="numeric">1,30%</td><td class="numeric">4,5%</td><td class="numeric">13,4%</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="panel">
+<h2>Typy jednostek i instytucji</h2>
+<p>Gminy wiejskie dominują liczebnie, ale najwyższe mediany Q1 mają duże miasta, ministerstwa, marszałkowie i
+        miasto stołeczne. Wskaźniki Q8 i Q9 też są wyraźnie różne między typami instytucji.</p>
+<svg aria-label="Typy jednostek według mediany Q1 w 2025 r." role="img" style="width:100%;height:auto;display:block" viewbox="0 0 920 338"><text font-family="Arial" font-size="18" font-weight="950" x="0" y="20">Typy jednostek według mediany Q1 w 2025 r.</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="50">gmina wiejska</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="505" x="310" y="35"></rect>
+<rect fill="#2a5d8f" height="20" width="3.6" x="310" y="35"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="50">79</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="86">gmina miejsko-wiejska</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="505" x="310" y="71"></rect>
+<rect fill="#2a5d8f" height="20" width="4.1" x="310" y="71"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="86">90</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="122">powiat</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="505" x="310" y="107"></rect>
+<rect fill="#2a5d8f" height="20" width="4.0" x="310" y="107"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="122">88</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="158">miasto na prawach powiatu</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="505" x="310" y="143"></rect>
+<rect fill="#2a5d8f" height="20" width="12.5" x="310" y="143"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="158">278</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="194">gmina miejska</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="505" x="310" y="179"></rect>
+<rect fill="#2a5d8f" height="20" width="4.6" x="310" y="179"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="194">101</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="230">miasto stołeczne, na prawach powiatu</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="505" x="310" y="215"></rect>
+<rect fill="#2a5d8f" height="20" width="505.0" x="310" y="215"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="230">11 196</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="266">dzielnica</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="505" x="310" y="251"></rect>
+<rect fill="#2a5d8f" height="20" width="21.7" x="310" y="251"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="266">480</text><text font-family="Arial" font-size="15" font-weight="900" x="0" y="302">województwo</text>
+<rect fill="#eee6c7" height="20" stroke="#050505" stroke-width="1.4" width="505" x="310" y="287"></rect>
+<rect fill="#2a5d8f" height="20" width="12.8" x="310" y="287"></rect><text font-family="Arial" font-size="14" font-weight="900" x="827" y="302">284</text>
+</svg>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Kategoria JST</th>
+<th>Q1 suma</th>
+<th>Q1 mediana</th>
+<th>Q2/Q1</th>
+<th>Q3/Q1</th>
+<th>Q8 TAK</th>
+<th>Q9 TAK</th>
+</tr>
+</thead>
+<tbody><tr><td>gmina wiejska n=1 230</td><td class="numeric">99 569</td><td class="numeric">79</td><td class="numeric">97,6%</td><td class="numeric">0,75%</td><td class="numeric">5,1%</td><td class="numeric">10,6%</td></tr><tr><td>gmina miejsko-wiejska n=614</td><td class="numeric">59 888</td><td class="numeric">90</td><td class="numeric">95,9%</td><td class="numeric">1,09%</td><td class="numeric">5,6%</td><td class="numeric">15,0%</td></tr><tr><td>powiat n=275</td><td class="numeric">37 792</td><td class="numeric">88</td><td class="numeric">74,6%</td><td class="numeric">1,02%</td><td class="numeric">2,6%</td><td class="numeric">15,0%</td></tr><tr><td>miasto na prawach powiatu n=52</td><td class="numeric">23 591</td><td class="numeric">278</td><td class="numeric">91,6%</td><td class="numeric">1,06%</td><td class="numeric">19,2%</td><td class="numeric">36,5%</td></tr><tr><td>gmina miejska n=203</td><td class="numeric">22 397</td><td class="numeric">101</td><td class="numeric">93,7%</td><td class="numeric">1,14%</td><td class="numeric">7,4%</td><td class="numeric">21,9%</td></tr><tr><td>miasto stołeczne, na prawach powiatu n=1</td><td class="numeric">11 196</td><td class="numeric">11 196</td><td class="numeric">—</td><td class="numeric">1,13%</td><td class="numeric">0,0%</td><td class="numeric">0,0%</td></tr><tr><td>dzielnica n=12</td><td class="numeric">9 081</td><td class="numeric">480</td><td class="numeric">81,6%</td><td class="numeric">1,56%</td><td class="numeric">0,0%</td><td class="numeric">58,3%</td></tr><tr><td>województwo n=11</td><td class="numeric">3 426</td><td class="numeric">284</td><td class="numeric">90,1%</td><td class="numeric">1,26%</td><td class="numeric">0,0%</td><td class="numeric">63,6%</td></tr></tbody>
+</table>
+</div>
+<h3>Przekrój po tagu instytucji</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Typ instytucji</th>
+<th>Q1 suma</th>
+<th>Q1 mediana</th>
+<th>Q2/Q1</th>
+<th>Q3/Q1</th>
+<th>Q8 TAK</th>
+<th>Q9 TAK</th>
+</tr>
+</thead>
+<tbody><tr><td>samorząd gminy n=2 056</td><td class="numeric">189 358</td><td class="numeric">84,0</td><td class="numeric">96,6%</td><td class="numeric">0,91%</td><td class="numeric">5,7%</td><td class="numeric">13,2%</td></tr><tr><td>starostwo powiatowe n=275</td><td class="numeric">37 792</td><td class="numeric">88,0</td><td class="numeric">74,6%</td><td class="numeric">1,02%</td><td class="numeric">2,6%</td><td class="numeric">15,0%</td></tr><tr><td>miasto na prawach powiatu n=44</td><td class="numeric">27 283</td><td class="numeric">265,5</td><td class="numeric">90,3%</td><td class="numeric">1,13%</td><td class="numeric">13,6%</td><td class="numeric">31,8%</td></tr><tr><td>ministerstwa n=12</td><td class="numeric">9 081</td><td class="numeric">480,0</td><td class="numeric">81,6%</td><td class="numeric">1,56%</td><td class="numeric">0,0%</td><td class="numeric">58,3%</td></tr><tr><td>marszałkowie n=11</td><td class="numeric">3 426</td><td class="numeric">284,0</td><td class="numeric">90,1%</td><td class="numeric">1,26%</td><td class="numeric">0,0%</td><td class="numeric">63,6%</td></tr></tbody>
+</table>
+</div>
+</section>
+<section class="grid">
+<article class="panel">
+<h2>Powiaty z największą sumą Q1</h2>
+<p class="note">Zestawienie obejmuje powiaty, dla których w danych są co najmniej 4 jednostki z podaną liczbą wniosków Q1.</p>
+<div class="table-wrap compact">
+<table>
+<thead>
+<tr>
+<th>Powiat</th>
+<th>Q1 suma</th>
+<th>Q1 mediana</th>
+<th>Q2/Q1</th>
+<th>Q3/Q1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class=""><strong>Legionowski</strong><span>n=6</span></td>
+<td class="numeric emph">8 120</td>
+<td class="numeric">174</td>
+<td class="numeric">13,3%</td>
+<td class="numeric">0,25%</td>
+</tr>
+<tr>
+<td class=""><strong>Tarnowski</strong><span>n=16</span></td>
+<td class="numeric emph">4 266</td>
+<td class="numeric">94</td>
+<td class="numeric">99,1%</td>
+<td class="numeric">0,12%</td>
+</tr>
+<tr>
+<td class=""><strong>Poznański</strong><span>n=14</span></td>
+<td class="numeric emph">2 335</td>
+<td class="numeric">143</td>
+<td class="numeric">88,2%</td>
+<td class="numeric">1,33%</td>
+</tr>
+<tr>
+<td class=""><strong>Krakowski</strong><span>n=15</span></td>
+<td class="numeric emph">2 074</td>
+<td class="numeric">125</td>
+<td class="numeric">93,3%</td>
+<td class="numeric">1,93%</td>
+</tr>
+<tr>
+<td class=""><strong>Bielski</strong><span>n=18</span></td>
+<td class="numeric emph">1 891</td>
+<td class="numeric">97</td>
+<td class="numeric">94,7%</td>
+<td class="numeric">1,11%</td>
+</tr>
+<tr>
+<td class=""><strong>Brzeski</strong><span>n=13</span></td>
+<td class="numeric emph">1 869</td>
+<td class="numeric">123</td>
+<td class="numeric">92,6%</td>
+<td class="numeric">1,28%</td>
+</tr>
+<tr>
+<td class=""><strong>Tomaszowski</strong><span>n=23</span></td>
+<td class="numeric emph">1 756</td>
+<td class="numeric">82</td>
+<td class="numeric">97,2%</td>
+<td class="numeric">0,17%</td>
+</tr>
+<tr>
+<td class=""><strong>Opolski</strong><span>n=21</span></td>
+<td class="numeric emph">1 709</td>
+<td class="numeric">85</td>
+<td class="numeric">97,2%</td>
+<td class="numeric">0,70%</td>
+</tr>
+<tr>
+<td class=""><strong>Kielecki</strong><span>n=19</span></td>
+<td class="numeric emph">1 708</td>
+<td class="numeric">91</td>
+<td class="numeric">98,7%</td>
+<td class="numeric">0,41%</td>
+</tr>
+<tr>
+<td class=""><strong>Częstochowski</strong><span>n=16</span></td>
+<td class="numeric emph">1 679</td>
+<td class="numeric">100</td>
+<td class="numeric">97,3%</td>
+<td class="numeric">0,95%</td>
+</tr>
+<tr>
+<td class=""><strong>Wołomiński</strong><span>n=11</span></td>
+<td class="numeric emph">1 678</td>
+<td class="numeric">186</td>
+<td class="numeric">94,5%</td>
+<td class="numeric">0,95%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+
+<article class="panel">
+<h2>Powiaty z najwyższą med. Q1</h2>
+<p class="note">Zestawienie obejmuje powiaty, dla których w danych są co najmniej 4 jednostki z podaną liczbą wniosków Q1.</p>
+<div class="table-wrap compact">
+<table>
+<thead>
+<tr>
+<th>Powiat</th>
+<th>Mediana Q1</th>
+<th>Q1 suma</th>
+<th>Q8 TAK</th>
+<th>Q9 TAK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class=""><strong>Piaseczyński</strong><span>n=5</span></td>
+<td class="numeric emph">343</td>
+<td class="numeric">1 512</td>
+<td class="numeric">20,0%</td>
+<td class="numeric">60,0%</td>
+</tr>
+<tr>
+<td class=""><strong>Pruszkowski</strong><span>n=7</span></td>
+<td class="numeric emph">203</td>
+<td class="numeric">1 613</td>
+<td class="numeric">0,0%</td>
+<td class="numeric">0,0%</td>
+</tr>
+<tr>
+<td class=""><strong>Wołomiński</strong><span>n=11</span></td>
+<td class="numeric emph">186</td>
+<td class="numeric">1 678</td>
+<td class="numeric">9,1%</td>
+<td class="numeric">50,0%</td>
+</tr>
+<tr>
+<td class=""><strong>Policki</strong><span>n=5</span></td>
+<td class="numeric emph">179</td>
+<td class="numeric">853</td>
+<td class="numeric">0,0%</td>
+<td class="numeric">0,0%</td>
+</tr>
+<tr>
+<td class=""><strong>Legionowski</strong><span>n=6</span></td>
+<td class="numeric emph">174</td>
+<td class="numeric">8 120</td>
+<td class="numeric">0,0%</td>
+<td class="numeric">16,7%</td>
+</tr>
+<tr>
+<td class=""><strong>Wrocławski</strong><span>n=6</span></td>
+<td class="numeric emph">171</td>
+<td class="numeric">1 138</td>
+<td class="numeric">16,7%</td>
+<td class="numeric">0,0%</td>
+</tr>
+<tr>
+<td class=""><strong>Warszawski Zachodni</strong><span>n=7</span></td>
+<td class="numeric emph">164</td>
+<td class="numeric">1 119</td>
+<td class="numeric">14,3%</td>
+<td class="numeric">42,9%</td>
+</tr>
+<tr>
+<td class=""><strong>Tatrzański</strong><span>n=4</span></td>
+<td class="numeric emph">144</td>
+<td class="numeric">618</td>
+<td class="numeric">0,0%</td>
+<td class="numeric">25,0%</td>
+</tr>
+<tr>
+<td class=""><strong>Poznański</strong><span>n=14</span></td>
+<td class="numeric emph">143</td>
+<td class="numeric">2 335</td>
+<td class="numeric">0,0%</td>
+<td class="numeric">14,3%</td>
+</tr>
+<tr>
+<td class=""><strong>Dębicki</strong><span>n=5</span></td>
+<td class="numeric emph">142</td>
+<td class="numeric">632</td>
+<td class="numeric">20,0%</td>
+<td class="numeric">20,0%</td>
+</tr>
+<tr>
+<td class=""><strong>Oławski</strong><span>n=4</span></td>
+<td class="numeric emph">140</td>
+<td class="numeric">519</td>
+<td class="numeric">0,0%</td>
+<td class="numeric">0,0%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</section>
+<section class="panel">
+<h2>Główne obserwacje z raportu</h2>
+<p>Wzrost liczby wniosków składanych do JST i ministerstw względem 2022 roku o około 40%, przy aktualnej medianie 85. Bardzo duża koncentracja liczby wniosków w kilku jednostkach, niski odsetek publikacji rejestru wniosków w BIP, niski odsetek tworzenia osobnych stanowisk do udzielania informacji publicznych, stabilnie niewielki udział decyzji odmownych, wyraźne przesunięcia w przyczynach Q4 oraz różnice między typami instytucji.</p>
+</section>
+    <section>
+        <h2>Odpowiedzi - uproszczony arkusz danych (tylko za 2025, znormalizowane dane)</h2>
+        <p>Przycisk do ściągnięcia arkusza danych znajdziesz pod tabelą, po przewinięciu na sam dół.</p>
+        <div class="dane-container">
+          <iframe style="border-style: none;" src="data.html"></iframe>
+        </div>
+    </section>
+<section class="panel">
+<h2>Kontrola jakości i ostrożność interpretacyjna</h2>
+<p class="note">Dla kilkunastu przypadków występują drobne anomalie w danych. Ich przyczyny mogą być różne, włącznie z logicznym wytłumaczeniem. Chcąc przywołać w publikacji szczegółowe
+        dane konkretnego podmiotu zawsze najpierw sprawdź źródło, tj. konkretną odpowiedź na wniosek na Fedrowaniu. Pamiętaj też, że podawane dane mają charakter deklaratywny i jako takie mogły zostać z różnych powodów zadeklarowane niezgodnie z faktami.</p>
+</section>
+<footer class="footer">
+<div>Raport wygenerowany został w oparciu o dane zebrane półautomatycznie i automatycznie przy wsparciu sztucznej
+        inteligencji, więc może zawierać jednostkowe błędy związaze z nieprawidłowym odczytaniem danych, pozostające jednak bez istotnego wpływu na uśrednione
+        wartości i wyłaniające się tendencje.</div>
+                        <p>Źródło danych: <a
+                        href="https://fedrowanie.siecobywatelska.pl/monitoringi/wnioski-o-informacje-w-2025"
+                        target="_blank">Wnioski o informację w 2025</a></p>
+                <p>Opracowanie:<br/><a href="https://siecobywatelska.pl/" target="_blank">Sieć Obywatelska Watchdog
+                        Polska</a> Stan na: 22.06.2026</p>
+</footer>
+</main>
 </body>
 </html>
