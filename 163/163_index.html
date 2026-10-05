@@ -1,0 +1,1494 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="description" content="Zmiany kadrowe w KRUS, KOWR i ARiMR. Analiza odpowiedzi, metodologia i arkusz źródłowy."><title>Zmiany kadrowe w KRUS, KOWR i ARiMR — raport | Sieć Obywatelska Watchdog Polska</title><style>
+  :root {
+    --red:#e3232a;
+    --red-dark:#8e1832;
+    --ink:#161616;
+    --muted:#686868;
+    --paper:#ffffff;
+    --soft:#f2f2f0;
+    --line:#d9d9d5;
+    --yellow:#f2d45c;
+    --max:1240px;
+  }
+  * { box-sizing:border-box; }
+  [hidden] { display:none !important; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial, Helvetica, sans-serif; line-height:1.5; }
+  a { color:var(--red-dark); text-decoration-thickness:1px; text-underline-offset:3px; }
+  a:hover { color:var(--red); }
+  button, input { font:inherit; }
+  .sitebar { border-bottom:1px solid var(--line); background:#fff; position:sticky; top:0; z-index:10; }
+  .sitebar-inner { max-width:var(--max); margin:auto; min-height:72px; display:flex; align-items:stretch; justify-content:space-between; }
+  .brand { display:flex; align-items:center; padding:9px 24px; text-decoration:none; color:var(--ink); }
+  .brand-logo { display:block; width:202px; height:auto; max-height:50px; }
+  .site-actions { display:flex; align-items:stretch; }
+  .site-actions a { padding:0 22px; display:flex; align-items:center; font-size:12px; letter-spacing:.07em; font-weight:800; text-decoration:none; color:var(--ink); border-left:1px solid var(--line); }
+  .site-actions a.primary { background:var(--red); color:#fff; border-color:var(--red); }
+  .hero { max-width:var(--max); margin:0 auto; padding:74px 24px 48px; display:grid; grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr); gap:70px; align-items:end; }
+  .eyebrow { font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--red-dark); margin:0 0 22px; }
+  h1 { font-size:clamp(52px,7vw,104px); letter-spacing:-.055em; line-height:.88; margin:0; max-width:900px; font-weight:900; }
+  .hero-lead { font-size:clamp(20px,2.2vw,31px); line-height:1.14; max-width:820px; margin:34px 0 0; font-weight:500; letter-spacing:-.02em; }
+  .hero-aside { border-top:5px solid var(--red); padding-top:20px; }
+  .hero-aside strong { font-size:42px; line-height:1; display:block; letter-spacing:-.05em; }
+  .hero-aside p { margin:9px 0 0; color:var(--muted); }
+  .report-meta { margin-top:24px; padding-top:18px; border-top:1px solid var(--line); display:grid; gap:10px; }
+  .report-meta-row { display:grid; grid-template-columns:120px 1fr; gap:12px; align-items:baseline; font-size:12px; }
+  .report-meta-row span { color:var(--muted); text-transform:uppercase; letter-spacing:.05em; font-size:10px; font-weight:800; }
+  .report-meta-row strong { font-size:13px; letter-spacing:0; line-height:1.3; }
+  .section { padding:72px 24px; }
+  .section.alt { background:var(--soft); }
+  .section.red { background:var(--red); color:#fff; }
+  .wrap { max-width:var(--max); margin:auto; }
+  .section-head { display:grid; grid-template-columns:260px 1fr; gap:36px; align-items:start; margin-bottom:38px; }
+  .section-no { font-size:13px; font-weight:900; letter-spacing:.09em; text-transform:uppercase; color:var(--red-dark); border-top:1px solid currentColor; padding-top:12px; }
+  .red .section-no { color:#fff; opacity:.78; }
+  h2 { font-size:clamp(36px,5vw,66px); letter-spacing:-.045em; line-height:.95; margin:0; font-weight:900; }
+  h3 { font-size:28px; line-height:1.05; letter-spacing:-.025em; margin:0 0 16px; }
+  .intro { font-size:21px; max-width:820px; margin:20px 0 0; }
+  .kpis { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+  .kpi { min-height:176px; padding:25px 24px 22px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; flex-direction:column; justify-content:space-between; }
+  .kpi strong { font-size:clamp(34px,4vw,54px); line-height:1; letter-spacing:-.05em; }
+  .kpi span { color:var(--muted); font-size:14px; max-width:180px; }
+  .callout { margin-top:30px; border:3px solid var(--red); display:grid; grid-template-columns:230px 1fr; }
+  .callout-label { background:var(--red); color:#fff; font-weight:900; padding:25px; font-size:21px; line-height:1.05; }
+  .callout-copy { padding:24px 28px; font-size:18px; }
+  .callout-copy p { margin:0; }
+  .metrics-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:22px; }
+  .card { background:#fff; border:1px solid var(--line); padding:28px; }
+  .card.dark { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .metric-hero { display:flex; align-items:flex-end; gap:18px; padding-bottom:24px; border-bottom:1px solid var(--line); margin-bottom:24px; }
+  .metric-hero strong { font-size:clamp(45px,6vw,78px); letter-spacing:-.055em; line-height:.85; }
+  .metric-hero span { color:var(--muted); max-width:180px; font-size:14px; }
+  .dark .metric-hero span { color:#bdbdbd; }
+  .stat-pair { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); }
+  .stat-pair > div { background:#fff; padding:18px; }
+  .stat-pair b { display:block; font-size:28px; line-height:1.05; }
+  .stat-pair span { color:var(--muted); font-size:13px; }
+  .threshold-row + .threshold-row { margin-top:28px; }
+  .threshold-heading { display:flex; justify-content:space-between; gap:16px; align-items:baseline; }
+  .threshold-heading span { font-weight:700; }
+  .threshold-heading strong { font-size:24px; }
+  .threshold-heading small { font-size:14px; font-weight:700; color:var(--muted); }
+  .threshold-track { height:20px; background:#e7e7e4; margin-top:8px; overflow:hidden; }
+  .threshold-track span { height:100%; display:block; background:var(--red); min-width:2px; }
+  .micro { font-size:12px; color:var(--muted); margin:8px 0 0; }
+  .percentile-card { margin-top:22px; background:#fff; border:1px solid var(--line); padding:28px; overflow:hidden; }
+  .percentile-line { margin:34px 0 0; display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); border-top:4px solid var(--ink); }
+  .percentile-marker { position:relative; min-width:0; padding:22px 8px 4px; text-align:center; border-right:1px solid var(--line); }
+  .percentile-marker:last-child { border-right:0; }
+  .marker-dot { position:absolute; top:-10px; left:50%; transform:translateX(-50%); display:block; width:16px; height:16px; background:var(--red); border:3px solid #fff; outline:1px solid var(--red); border-radius:50%; }
+  .marker-label { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); white-space:nowrap; }
+  .percentile-marker strong { display:block; font-size:13px; line-height:1.25; white-space:nowrap; margin-top:4px; font-variant-numeric:tabular-nums; }
+  .chart { margin-top:24px; }
+  .chart-row { display:grid; grid-template-columns:minmax(210px,1.3fr) minmax(150px,2.1fr) 126px; gap:16px; align-items:center; min-height:58px; border-top:1px solid var(--line); }
+  .chart-row:last-child { border-bottom:1px solid var(--line); }
+  .chart-row--compact { min-height:49px; grid-template-columns:minmax(120px,1fr) minmax(120px,1.6fr) 100px; }
+  .chart-label { font-size:13px; line-height:1.2; font-weight:700; }
+  .chart-track { height:12px; background:#dededb; }
+  .chart-track span { display:block; height:100%; background:var(--red); }
+  .chart-value { font-size:13px; font-weight:800; text-align:right; white-space:nowrap; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .table-wrap { overflow:auto; border:1px solid var(--line); background:#fff; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th { text-align:left; padding:14px 14px; font-size:11px; text-transform:uppercase; letter-spacing:.05em; border-bottom:2px solid var(--ink); white-space:nowrap; background:#fff; position:sticky; top:0; z-index:1; }
+  td { padding:14px; vertical-align:top; border-bottom:1px solid var(--line); }
+  tbody tr:hover { background:#fafafa; }
+  td.num, th.num { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  td.rank { width:44px; color:var(--muted); font-weight:800; }
+  td.strong { font-weight:900; }
+  .subcell { display:block; color:var(--muted); font-size:12px; margin-top:4px; }
+  .table-actions { display:flex; justify-content:space-between; gap:14px; align-items:center; margin:20px 0 14px; flex-wrap:wrap; }
+  .btn { border:0; cursor:pointer; background:var(--ink); color:#fff; padding:14px 18px; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px; }
+  .btn.red { background:var(--red); }
+  .btn.ghost { background:#fff; color:var(--ink); border:1px solid var(--ink); }
+  .btn:hover { opacity:.88; color:#fff; }
+  .btn.ghost:hover { color:var(--ink); background:#f5f5f5; }
+  .search { flex:1; min-width:260px; max-width:520px; padding:13px 14px; border:1px solid var(--ink); background:#fff; }
+  .sort-hint { color:var(--muted); font-size:12px; }
+  .sortable.is-interactive th[data-col] { cursor:pointer; user-select:none; }
+  .sortable.is-interactive th[data-col]:after { content:' ↕'; color:var(--muted); }
+  .category-note { border-left:5px solid var(--yellow); padding:3px 0 3px 16px; font-size:14px; color:var(--muted); max-width:780px; }
+  .download-panel { display:grid; grid-template-columns:1.15fr .85fr; gap:50px; align-items:center; }
+  .download-panel h2 { max-width:700px; }
+  .download-box { background:#fff; color:var(--ink); padding:30px; }
+  .file-icon { width:60px; height:72px; border:3px solid var(--ink); display:grid; place-items:center; font-weight:900; margin-bottom:20px; }
+  .file-meta { display:grid; grid-template-columns:1fr auto; gap:8px 20px; margin:22px 0; padding-top:18px; border-top:1px solid var(--line); font-size:13px; }
+  .method { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .method ul { margin:0; padding-left:20px; }
+  .method li + li { margin-top:13px; }
+  .method strong { background:linear-gradient(transparent 64%, #f4df74 64%); }
+  footer { background:var(--ink); color:#fff; padding:48px 24px; }
+  .footer-inner { max-width:var(--max); margin:auto; display:flex; justify-content:space-between; gap:40px; align-items:flex-end; }
+  .footer-brand { display:inline-flex; align-items:center; justify-content:center; background:#fff; padding:10px 12px; flex:0 0 auto; }
+  .footer-logo { display:block; width:230px; height:auto; }
+  footer p { color:#bbb; max-width:760px; font-size:13px; margin:0; }
+  footer a { color:#fff; }
+  footer a:hover { color:#fff; opacity:.8; }
+  .footer-source { display:block; margin-top:10px; overflow-wrap:anywhere; }
+  /* Iframe-safe: treść jest widoczna niezależnie od dostępności JavaScriptu. */
+  .fade-in { opacity:1; transform:none; }
+  .fade-in.visible { opacity:1; transform:none; }
+  @media (max-width:960px) {
+    .site-actions a:not(.primary) { display:none; }
+    .hero { grid-template-columns:1fr; gap:38px; padding-top:52px; }
+    .hero-aside { max-width:360px; }
+    .section-head { grid-template-columns:1fr; gap:15px; }
+    .section-no { width:180px; }
+    .kpis { grid-template-columns:1fr 1fr; }
+    .metrics-grid, .download-panel { grid-template-columns:1fr; }
+    .two-col, .method { grid-template-columns:1fr; }
+    .percentile-line { grid-template-columns:repeat(4,minmax(0,1fr)); border-top:0; gap:1px; background:var(--line); }
+    .percentile-marker { background:var(--soft); border-right:0; padding:16px 13px; text-align:left; }
+    .marker-dot { display:none; }
+  }
+  @media (max-width:660px) {
+    .sitebar { position:static; }
+    .sitebar-inner { min-height:62px; }
+    .brand { padding:8px 15px; }
+    .brand-logo { width:168px; max-height:42px; }
+    .site-actions a { padding:0 13px; font-size:10px; }
+    .hero, .section { padding-left:16px; padding-right:16px; }
+    h1 { font-size:54px; }
+    .kpis { grid-template-columns:1fr; }
+    .callout { grid-template-columns:1fr; }
+    .metric-hero { align-items:flex-start; flex-direction:column; }
+    .percentile-line { grid-template-columns:1fr 1fr; }
+    .report-meta-row { grid-template-columns:1fr; gap:2px; }
+    .chart-row, .chart-row--compact { grid-template-columns:1fr 82px; gap:8px; padding:10px 0; }
+    .chart-track { grid-column:1 / -1; order:3; }
+    .chart-value { grid-column:2; grid-row:1; }
+    .footer-inner { display:block; }
+    .footer-brand { margin-bottom:24px; }
+    .footer-logo { width:200px; }
+  }
+  @media print {
+    .sitebar, .table-actions, .btn { display:none !important; }
+    .section { padding:34px 0; }
+    .hero { padding:34px 0; }
+    .fade-in { opacity:1 !important; transform:none !important; }
+    body { font-size:10pt; }
+    a { color:#000; }
+  }
+
+section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;line-height:1.7} .report-copy p,.report-copy>ul,.report-copy>ol{max-width:960px}.report-copy h3{margin:40px 0 20px;max-width:1000px}.report-copy h4{font-size:23px;line-height:1.2;margin-top:34px}.report-copy li+li{margin-top:8px}.report-copy .table-wrap{margin:24px 0 32px;max-width:100%}.report-copy td{line-height:1.5;min-width:100px}.report-copy th{white-space:normal;min-width:115px}.report-copy code{font-size:.87em;overflow-wrap:anywhere;background:#ececea;padding:2px 4px}pre{padding:22px;background:#ececea;overflow:auto;font-size:13px;line-height:1.55}pre code{padding:0!important;overflow-wrap:normal!important}.report-copy h3+h3{margin-top:24px}.report-copy h3~h3{font-size:25px}.chart-card{margin-bottom:40px}.legend{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;margin:24px 0}.legend span{display:flex;align-items:center;gap:8px}.legend i{display:inline-block;width:16px;height:16px}.hire{background:var(--red)}.leave{background:var(--ink)}.bar-group{display:grid;grid-template-columns:180px 1fr;gap:22px;border-top:1px solid var(--line);padding:18px 0;align-items:center}.bar-label{font-weight:700;font-size:14px}.bar-pair{padding-right:36px}.bar-line{display:flex;align-items:center;gap:9px;margin:7px 0;height:18px}.bar{display:block;height:16px;flex-shrink:0}.bar-line b{font-size:13px;font-variant-numeric:tabular-nums}.filename{overflow-wrap:anywhere;font-size:13px;color:var(--muted)}.download-help{font-size:13px;line-height:1.6;margin:18px 0}.secondary-download{font-size:13px;font-weight:700}.contents{padding:0 24px 30px;max-width:var(--max);margin:auto;display:flex;gap:10px 22px;flex-wrap:wrap;font-size:13px;font-weight:700}.contents a{padding:8px 0}.appendix{border-top:1px solid var(--line);padding:24px 0;margin-top:28px}.appendix summary{font-size:23px;font-weight:800;cursor:pointer}.appendix[open] summary{margin-bottom:20px}.source-intro{font-size:13px;color:var(--muted);margin-bottom:30px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.sort-button{font:inherit;font-weight:800;border:0;background:transparent;color:inherit;text-align:inherit;padding:0;cursor:pointer}.sort-button::after{content:' ↕'}.skip-link{position:absolute;left:16px;top:-100px;background:#fff;padding:12px;z-index:30}.skip-link:focus{top:10px}.hero h1{font-size:clamp(48px,6.7vw,92px);line-height:.98}.hero h1 span{color:var(--red)}.section-head h2{line-height:1.02}.report-copy h2{font-size:36px}.methodology article+article{padding-top:20px;border-top:1px solid var(--line);margin-top:50px}
+@media(max-width:660px){.hero h1{font-size:49px}.contents{padding-left:16px;padding-right:16px}.bar-group{grid-template-columns:1fr;gap:4px}.card{padding:20px}.report-copy{font-size:16px}.search{min-width:0;width:100%}.download-box{padding:24px}.site-actions a:not(.primary){display:none}.appendix summary{font-size:20px}h2{font-size:38px}.report-copy th{min-width:105px}.report-copy th:first-child{min-width:170px}.table-wrap{max-width:100%}}
+@media print{details>div{display:block!important}.contents,.download-help{display:none}.table-wrap{overflow:visible}.report-copy{font-size:10pt}.report-copy h3{break-after:avoid}.kpi{min-height:90px}.section-head{break-after:avoid}pre{white-space:pre-wrap}.chart-card{break-inside:avoid}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style><style>
+.source-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.source-grid>.card{height:100%}
+.card .report-copy{margin-top:0}.card .report-copy h3:first-child{margin-top:0}.kpi strong.small-kpi{font-size:clamp(28px,3vw,45px)}
+@media(max-width:960px){.source-grid{grid-template-columns:1fr}}
+</style></head><body>
+<a class="skip-link" href="#wyniki">Przejdź do wyników</a>
+<header class="sitebar"><div class="sitebar-inner">
+  <a class="brand" href="https://siecobywatelska.pl/" target="_blank" rel="noopener" aria-label="Sieć Obywatelska Watchdog Polska"><img class="brand-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iV2Fyc3R3YV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDQwNC4zMjEgMTAwLjU1NSI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8cGF0aCBkPSJNMTcuMjgyLDIxLjM5NWMwLDIuNzExLTIuMDMsMy45MDUtNC42NTksMy45MDUtMi44ODMsMC01LjIyMi0uMjk1LTUuMjIyLS4yOTV2LTIuMjg0czIuMjkuMjg3LDQuNzc0LjI4N2MxLjIxLDAsMS44MzEtLjM2OCwxLjgzMS0xLjM1OCwwLTIuNTkzLTcuNDUtMi4xNzktNy40NS02LjkxMywwLTIuNzA4LDIuMDA3LTMuODk0LDQuNjMtMy44OTQsMi45MTEsMCw1LjI0OC4yODEsNS4yNDguMjgxdjIuMjg0cy0yLjU5Ni0uMjQ5LTUuMTA4LS4yNDljLTEuMDcxLDAtMS41NDkuNDIyLTEuNTQ5LDEuMzE4LDAsMi4zNDUsNy41MDUsMi4yMDksNy41MDUsNi45MThoMFoiLz4KICA8cGF0aCBkPSJNMjEuODMxLDYuMjFjMS42MTIsMCwxLjgwOS4xMzgsMS44MDksMS42MzgsMCwxLjMyOS0uMTY2LDEuNjY5LTEuODA5LDEuNjY5LTEuNjY4LDAtMS44MDQtLjMxMS0xLjgwNC0xLjY2OSwwLTEuNDA5LjEzNi0xLjYzOCwxLjgwNC0xLjYzOGgwWk0yMC4yMjUsMTEuMTIzaDMuMjV2MTQuMDgyaC0zLjI1di0xNC4wODJoMFpNMjAuMjI1LDI1LjIwNXYtMTQuMDgyLDE0LjA4MloiLz4KICA8cGF0aCBkPSJNMzguNDU2LDE4Ljk3M2gtMS4wMDdjLTIuNTQxLjAyNS01LjA1NC4wMjUtNy41OTIuMDU3LjAyMywxLjkxNy4xNjMsMi44NzkuNjk1LDMuNTI0LjUzOC42NzcsMS43NTYuNjc3LDIuODMuNjc3LjcyOSwwLDIuMzk2LS4wODYsNC4yNjItLjI3N3YxLjk3MWMtMS44NjYuMzE2LTMuNzc4LjUzOS01LjUzNC41MzktNC41NDQsMC01LjM4OS0xLjgwOC01LjM4OS03LjMzNywwLTUuNjc4LjcwMi03LjM0MSw1Ljg2OS03LjM0MSw0Ljk2NiwwLDUuODY2LDEuNjA2LDUuODY2LDcuMzA4di44NzloMFpNMjkuODgsMTYuODIyaDUuNTYzYy0uMTE0LTMuMjQyLS40MjUtMy44NC0yLjg1My0zLjg0LTIuNTkzLDAtMi41OTMsMS4xMzEtMi43MSwzLjg0aDBaIi8+CiAgPHBhdGggZD0iTTQ4LjIxLDIzLjE0NmMxLjA2OCwwLDIuNzY2LS4xMzgsNC4wMzYtLjI1djEuOTc1Yy0xLjQ2NS4zMzUtMy43MjQuNTk0LTUuMjIxLjU5NC0zLjkyMSwwLTUuNzMtLjcwMy01LjczLTYuNjEsMC02LjMyNC41OS04LjA0NCw1LjczLTguMDQ0LjQyNywwLDMuMzY0LjE0LDUuMDc5LjQ1NnYyLjE3MWMtMy4yOTktLjI1Ni00LjQyOC0uMzExLTQuNzEzLS4zMTEtMi44MjYsMC0yLjg3NiwxLjA3Ni0yLjg3Niw1LjgxMiwwLDMuODcuOTI4LDQuMjA3LDMuNjk1LDQuMjA3aDBaTTUwLjA3NCw0Ljk3bC0yLjgyMSw0Ljc2LTEuOTczLTEuMDM1LDIuNjc4LTQuODI3LDIuMTE2LDEuMTAyaDBaIi8+CiAgPHBhdGggZD0iTTYxLjM2NiwxOC4xNTZjMC01Ljc4Ny44NS03LjMxLDUuOTg3LTcuMzEsNS4xOTEsMCw2LjA0MywxLjYzNSw2LjA0Myw3LjMxcy0uODUyLDcuMzA5LTYuMDQzLDcuMzA5Yy01LjIyMywwLTUuOTg3LTEuNjY1LTUuOTg3LTcuMzA5aDBaTTcwLjIzMSwxOC4xNTZjMC00LjQwNi0uMjgzLTUuMjI4LTIuODc3LTUuMjI4LTIuNjMsMC0yLjg1Mi45NC0yLjg1Miw1LjIyOCwwLDQuMjYxLjIyMiw1LjEzNCwyLjg1Miw1LjEzNCwyLjY1MiwwLDIuODc3LS44NzMsMi44NzctNS4xMzRoMFoiLz4KICA8cGF0aCBkPSJNODIuMTU0LDI1LjQ0Yy0xLjM4OCwwLTMuNjcyLS4xNzMtNS4zNy0uMzk2VjUuNjhoMy4wOHY1LjY3YzEuMTA2LS4yNzgsMi43MS0uNDgyLDMuNDY3LS40ODIsMy40MTksMCw0LjY2NiwxLjc4Myw0LjY2Niw2LjI5MywwLDUuNzM1LS41Nyw4LjI3OS01Ljg0Myw4LjI3OWgwWk04Mi42NjUsMTMuMjQzYy0uNzkzLDAtMS44MTUuMTY5LTIuNzc3LjM5N3Y5LjM5NGMuNTk4LjAzMywxLjM4Ny4wMzMsMi4wOTMuMDMzaC4xMTZjMi42OCwwLDIuNzA3LTEuNzU1LDIuNzA3LTUuNzU1LDAtMi45MTQtLjE5Ni00LjA2OS0yLjEzOS00LjA2OWgwWiIvPgogIDxwb2x5Z29uIHBvaW50cz0iOTYuNjQ2IDMwLjU3MyA5My43NTkgMzAuNTczIDk1LjQ1IDI1LjIxMyA5NC42MDkgMjUuMjEzIDg5Ljc4MiAxMS4xMDEgOTMuMDU2IDExLjEwMSA5Ni40NjkgMjEuODAxIDk5Ljg5IDExLjEwMSAxMDMuMTU4IDExLjEwMSA5Ni42NDYgMzAuNTczIDk2LjY0NiAzMC41NzMiLz4KICA8cG9seWdvbiBwb2ludHM9IjEwNC4zODUgMTEuMSAxMDcuNTQ1IDExLjEgMTA5LjYzMSAyMC42NTkgMTEyLjM0NSAxMS4xIDExNS44NjggMTEuMSAxMTguNjEgMjAuNjU5IDEyMC43MjkgMTEuMSAxMjMuODY0IDExLjEgMTIwLjY5NSAyNS4yMTIgMTE2LjkxMSAyNS4yMTIgMTE0LjEyMSAxNS4zMDIgMTExLjM4MiAyNS4yMTIgMTA3LjU0NSAyNS4yMTIgMTA0LjM4NSAxMS4xIDEwNC4zODUgMTEuMSIvPgogIDxwYXRoIGQ9Ik0xMzcuMjQ0LDI1LjIxMmgtMi43MzFsLS4yMzMtMS4wNDVjLTEuMjY3LjY0OS0yLjkwMywxLjI5Ny00LjI4NCwxLjI5Ny0zLjA3OCwwLTQuMDk3LTIuMDU3LTQuMDk3LTQuNjI4LDAtMy4yNTMsMi4yOTQtMy44NjYsNS4zMzctMy44MzhsMi44MjUuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzYtMS41NTItMS42OTUsMC0zLjcyOS4yNzgtNC44ODUuNDQ3LS4wMjctLjA4My0uNDc0LTIuMDkzLS40NzQtMi4yMDIsMi4xMzctLjM5NSw0LjAzMi0uNTYxLDUuNzUtLjU2MSwzLjI0NywwLDQuNzY4LjY0OCw0Ljc2OCwzLjk1MXYxMC40NDRoMFpNMTM0LjA2MSwxOS4wM2MtMy44NjcsMC01LjA1OC4xNjYtNS4wNTgsMS45MiwwLDEuMTc1LjMxNywyLjAwNCwxLjMwMywyLjAwNC45MywwLDIuNjgtLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBhdGggZD0iTTE0Mi44NDYsMTkuOTAzdi02LjU3N2gtMy4xNjF2LTIuMjI1aDMuMTYxdi0zLjQ3NmgzLjE4NXYzLjQ3NmgzLjIxOHYyLjIyNWgtMy4yMTh2Ny4zN2MwLDIuMjU5LjQ4NiwyLjU2NCwxLjg5NSwyLjU2NC40MjUsMCwuOTY0LDAsMS42NDMtLjAyNGwuMDI0LDEuOTQ0Yy0uOTM0LjIzMi0xLjYzNi4yODUtMi4wODguMjg1LTQuMzI0LDAtNC42NTktMi4xNS00LjY1OS01LjU2MmgwWiIvPgogIDxwYXRoIGQ9Ik0xNjMuNTY3LDE4Ljk3M2gtMS4wMTFjLTIuNTQuMDI1LTUuMDUxLjAyNS03LjU5Ni4wNTcuMDMyLDEuOTIuMTcyLDIuODc5LjcwNCwzLjUzNC41MzguNjcxLDEuNzUxLjY3MSwyLjgyNS42NzEuNzM3LDAsMi4zOTgtLjA4Myw0LjI1OC0uMjgxdjEuOTcxYy0xLjg2LjMxNi0zLjc4MS41MzktNS41MjguNTM5LTQuNTQ0LDAtNS4zOTMtMS44MDUtNS4zOTMtNy4zMzUsMC01LjY3Ny43MDQtNy4zNDMsNS44NzEtNy4zNDMsNC45NjgsMCw1Ljg3LDEuNjA5LDUuODcsNy4zMTV2Ljg3MmgwWk0xNTQuOTkzLDE2LjgzaDUuNTU5Yy0uMTExLTMuMjUtLjQyMy0zLjg0MS0yLjg1NC0zLjg0MS0yLjU5MywwLTIuNTkzLDEuMTMyLTIuNzA1LDMuODQxaDBaIi8+CiAgPHBhdGggZD0iTTE3MS40NTIsMjUuMjk5Yy0uOTA1LjE0LTEuMDQyLjE0LTEuMjEzLjE0LTIuMDI5LDAtMy41LS43NjctMy41LTQuMDk3VjUuOTU4aDMuMTg3djE1Ljg5NmMwLC44NzUsMCwxLjYxLDEuNTI2LDEuODM3djEuNjA4aDBaIi8+CiAgPHBhdGggZD0iTTE4My45MDQsMjEuNDAxYzAsMi43MDUtMi4wMywzLjg5OC00LjY1OCwzLjg5OC0yLjg4MSwwLTUuMjIzLS4yODYtNS4yMjMtLjI4NnYtMi4yODRzMi4yODcuMjc5LDQuNzcxLjI3OWMxLjIxOCwwLDEuODM1LS4zNjQsMS44MzUtMS4zNTUsMC0yLjU5LTcuNDUxLTIuMTc2LTcuNDUxLTYuOTEzLDAtMi43MTIsMi4wMDItMy44OTUsNC42My0zLjg5NSwyLjkwNiwwLDUuMjUuMjc4LDUuMjUuMjc4djIuMjg4cy0yLjU5OS0uMjUyLTUuMTA3LS4yNTJjLTEuMDc5LDAtMS41NTYuNDIxLTEuNTU2LDEuMzIyLDAsMi4zNDksNy41MDksMi4yLDcuNTA5LDYuOTJoMFoiLz4KICA8cG9seWdvbiBwb2ludHM9IjE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgNS45MjkgMTg5Ljk3OSA1LjkyOSAxODkuOTc5IDE1LjkxOCAxOTIuMDEyIDE1LjkxOCAxOTUuNzA4IDkuMDY2IDE5OS4wMzkgOS4wNjYgMTk0LjcyMSAxNy4wNTYgMTk5Ljc0NiAyNS4yMTIgMTk2LjMzIDI1LjIxMiAxOTIuMDQgMTguMjYzIDE4OS45NzkgMTguMjYzIDE4OS45NzkgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIi8+CiAgPHBhdGggZD0iTTIxMi4zNDEsMjUuMjEyaC0yLjczMmwtLjIzMy0xLjA0NWMtMS4yNjYuNjQ5LTIuOTAzLDEuMjk3LTQuMjgzLDEuMjk3LTMuMDgsMC00LjA5OS0yLjA1Ny00LjA5OS00LjYyOCwwLTMuMjUzLDIuMjktMy44NjYsNS4zMzMtMy44MzhsMi44MjYuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzctMS41NTItMS42OTEsMC0zLjcyNi4yNzgtNC44ODUuNDQ3LS4wMjEtLjA4My0uNDc3LTIuMDkzLS40NzctMi4yMDIsMi4xNDMtLjM5NSw0LjAzMy0uNTYxLDUuNzU0LS41NjEsMy4yNDgsMCw0Ljc3My42NDgsNC43NzMsMy45NTF2MTAuNDQ0aDBaTTIwOS4xNTMsMTkuMDNjLTMuODY5LDAtNS4wNTQuMTY2LTUuMDU0LDEuOTIsMCwxLjE3NS4zMTcsMi4wMDQsMS4yOTksMi4wMDQuOTI5LDAsMi42NzctLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBvbHlnb24gcG9pbnRzPSI2LjM4IDQyLjE3NiAxNi41NTEgNDIuMTc2IDIxLjc5NSA2Ni40OTUgMjguNTUyIDQyLjE3NiAzOS41MTcgNDIuMTc2IDQ2LjUwOSA2Ni40OTUgNTEuNzU1IDQyLjE3NiA2MS44NDggNDIuMTc2IDUzLjAyNyA4MS45MTEgNDEuMjY2IDgxLjkxMSAzNC4xMTUgNTYuMjQzIDI3LjEyMiA4MS45MTEgMTUuMjggODEuOTExIDYuMzggNDIuMTc2IDYuMzggNDIuMTc2IiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTk5Ljg1OSw4MS45MTFoLTguNzQyYy0uMjM3LS44NzYtLjQ3Ni0yLjMwMy0uNzE1LTMuMTc3LTMuMzM4LDEuOTg0LTcuNDY5LDMuODkyLTExLjIwNSwzLjg5Mi05LjEzNywwLTEyLjE1OC01Ljg4MS0xMi4xNTgtMTMuMTkxLDAtNy4yMzIsMy45NzUtMTAuMDk0LDkuODU1LTEwLjgwNiwxLjc0Ny0uMjM5LDMuNjU1LS4yMzksMTIuNzE1LjIzN3YtNi4zNTdjMC0zLjczNS0xLjY2OS0zLjk3Mi00Ljc3MS0zLjk3Mi00LjYwNiwwLTEwLjI1LjM5NS0xMy45ODUuOTUyLS4wNzgtLjIzOS0xLjUxMS02LjE5OC0xLjUxMS02LjU5OCw2LjI3OC0xLjExLDExLjc2My0xLjUwOCwxNi42OS0xLjUwOCw5LjM3NywwLDEzLjgyNywxLjkwOCwxMy44MjcsMTEuMjgydjI5LjI0NmgwWk04OS42MDksNjQuNzQ2Yy05LjQ1OCwwLTEyLjU1Ni41NTYtMTIuNTU2LDUuMDg3LDAsMi45NC44NzMsNS4wMDUsMy4wMTgsNS4wMDUsMS45ODgsMCw2LjUxNy0xLjM1Miw5LjUzOC0yLjQ2MnYtNy42M2gwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMTE2LjU2NiA4MS45MTEgMTE2LjU2NiA0OC41ODEgMTA1LjI1OCA0OC41ODEgMTA1LjI1OCA0Mi4wMDIgMTM3Ljk4OCA0Mi4wMDIgMTM3Ljk4OCA0OC41ODEgMTI2LjY4IDQ4LjU4MSAxMjYuNjggODEuOTExIDExNi41NjYgODEuOTExIDExNi41NjYgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTE2MC44MjcsNzUuNDc0YzMuMDIxLDAsOC4yNjQtLjM5OCwxMS45Mi0uNzE1djYuMDM5Yy00LjM3MSwxLjExMy0xMC44ODcsMS44MjctMTUuMTc5LDEuODI3LTExLjM2NCwwLTE2LjUyOS0xLjk4Ni0xNi41MjktMTguNjcyLDAtMTcuNDg1LDEuNjctMjIuNTcsMTYuMTMzLTIyLjU3Ljc5NSwwLDkuNjE2LjM5NywxNS4xNzgsMS4zNDl2Ni43NTZjLTguOS0uNzE1LTEyLjg3NS0uOTUxLTEzLjgyNi0uOTUxLTYuOTk1LDAtNy4xNTUsMi44NTktNy4xNTUsMTUuNjUyLDAsMTAuMTcyLDIuNjI0LDExLjI4NSw5LjQ1OCwxMS4yODVoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cG9seWdvbiBwb2ludHM9IjIwMi41NzUgODEuOTExIDIwMi41NzUgNjQuNzM4IDE5MC43ODcgNjQuNzM4IDE5MC43ODcgODEuOTExIDE4MC43MzQgODEuOTExIDE4MC43MzQgNDEuOTQyIDE5MC43ODcgNDEuOTQyIDE5MC43ODcgNTguMjc1IDIwMi41NzUgNTguMjc1IDIwMi41NzUgNDEuOTQyIDIxMi42MjggNDEuOTQyIDIxMi42MjggODEuOTExIDIwMi41NzUgODEuOTExIDIwMi41NzUgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTIyMi43NzQsNDEuODJsMTYuMDk1LjA2MmMxMS4zMTEuMDYsMTUuOTE2LDMuMTY5LDE1LjkxNiwyMC4yMjMsMCwxNi4yMTYtMy43NjksMTkuODA2LTE1LjI1NSwxOS44MDZoLTE2Ljc1NnYtNDAuMDkxaDBaTTIzMi44MjksNDcuOTg0djI3LjUyNGg2LjI4YzQuNjA3LDAsNS43NDUtMi42OTMsNS43NDUtMTMuNDAzLDAtMTIuNjI0LTEuMTk5LTE0LjEyMS01Ljc0NS0xNC4xMjFoLTYuMjhaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTI2MS45MDcsNjIuMDQ1YzAtMTYuMjg5LDIuNDYyLTIwLjU4MSwxNy4yNDQtMjAuNTgxLDE1LjAxOCwwLDE3LjQwMyw0LjYwOCwxNy40MDMsMjAuNTgxcy0yLjQ2NSwyMC41ODEtMTcuNDAzLDIwLjU4MWMtMTUuMDE5LDAtMTcuMjQ0LTQuNjktMTcuMjQ0LTIwLjU4MWgwWk0yODYuNDYxLDYyLjA0NWMwLTExLjkyMi0uNzE2LTE0LjE0Ny03LjMxLTE0LjE0Ny02LjY3NSwwLTcuMTUyLDIuNTQyLTcuMTUyLDE0LjE0NywwLDExLjUyMS40NzcsMTMuOTA1LDcuMTUyLDEzLjkwNyw2LjY3NSwwLDcuMzEtMi4zODYsNy4zMS0xMy45MDdoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzU3LjMxOCw0OS40NjJjNS40NzUsMCw2LjE3Mi42MTksNi4xNzIsNS40NzksMCw0LjU1Mi0uNDYzLDUuNzA4LTYuMTcyLDUuNzA4LTUuNjI5LDAtNi4xNzMtMS4wNzgtNi4xNzMtNS43MDgsMC00LjcwOS41NDQtNS40NzksNi4xNzMtNS40NzloMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzE3LjIyLDcyLjM5MWMtLjA3NywxLjA4LDEuMTUzLDEuNTQzLDIuOTMsMS41NDMsMi4wMDYsMCwzLjYyOS0uMTUxLDUuNjM2LS4xNTEsOC4xNzgsMCwxNi42Ny45MjQsMTYuNjcsMTAuNTY5LDAsOS4yNjUtNi43MTYsMTIuODg3LTE1Ljg5OCwxMi44ODctOS4wMzQsMC0xMy40My0uNjE2LTE3Ljk4NS0uNjE2di03LjA5OXMxMC43MjcuNDY2LDE3LjQ0My40NjZjMy40NzUsMCw1LjA5OC0xLjM5Miw1LjA5OC01LjA5OSwwLTMuMzE4LTIuMTYzLTMuNjIyLTQuNzg5LTMuNjIyLTEuNjk2LDAtMy44NTkuMTUzLTYuMTc1LjE1My03LjAyMiwwLTEzLjUwOC0yLjg2LTEzLjUwOC0xMC42NTcsMC0uOTI3LjIzNC00LjE3MiwxLjE2NC01Ljg2OS0yLjU1My0yLjMxNi0zLjQ3Ni01LjcxMi0zLjQ3Ni0xMC4wMzQsMC04Ljg3NSwzLjAwOS0xMy4wNDEsMTUuNTktMTMuMTIyaDIyLjg0NXY2LjI1MmwtNC4zMjIuNjE4Yy42OTYsMS42OTksMS4wMDIsMy45MzgsMS4wMDIsNi4yNTIsMCwxMC4yNjQtNC41NTQsMTMuMTk3LTEzLjY1OSwxMy4xOTdoLTguNDkybC0uMDc0LDQuMzMyaDBaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTMyMy44NTUsNDguOTE5aC0yLjYyM2MtNC40ODIsMC01LjcwOS4yMzQtNS43MDksNi4xNzUsMCw1LjA5MywxLjE1MSw1Ljk0Myw0LjcwMyw2LjA5M2gzLjU1MmMzLjc4MywwLDQuNjMzLTEuMDgxLDQuNjMzLTYuMDkzLDAtNS4yNDgtLjE1Ni02LjE3NS00LjU1Ni02LjE3NWgwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzY4LjgxOCA0Mi4yMDcgMzgwLjc3OSAxOS40NDIgMzkwLjE5MSAxOS40NDIgNDAyLjA3NSA0Mi4yMDcgMzkxLjQyNCA0Mi4yMDcgMzg1LjQ4OCAyOS4yNDMgMzc5LjYyIDQyLjIwNyAzNjguODE4IDQyLjIwNyAzNjguODE4IDQyLjIwNyIgZmlsbD0iIzk4MzAzOSIvPgo8L3N2Zz4=" alt="Sieć Obywatelska Watchdog Polska"></a>
+  <nav class="site-actions" aria-label="Skróty"><a href="#pobierz">POBIERZ</a><a href="#metodologia">ZASTRZEŻENIA</a><a class="primary" href="https://siecobywatelska.pl/wspieraj/" target="_blank" rel="noopener">WSPIERAJ NAS</a></nav>
+</div></header>
+<main>
+<section class="hero"><div><p class="eyebrow">Monitoring • jawność życia publicznego</p><h1>Zmiany kadrowe<br><span>w KRUS, KOWR<br>i ARiMR</span></h1><p class="hero-lead">Co odpowiedzi z KRUS, KOWR i ARiMR mówią o zmianach na stanowiskach dyrektorskich i kierowniczych w latach 2015–2024?</p></div>
+<aside class="hero-aside"><strong>49 wniosków</strong><p>wysłanych do 16 oddziałów KRUS, 17 oddziałów terenowych KOWR i 16 oddziałów regionalnych ARiMR. Odpowiedzi na wysłane wnioski uzyskano w 18 sprawach; dodatkowo z własnej inicjatywy wypowiedziała się centrala ARiMR.</p><div class="report-meta"><div class="report-meta-row"><span>Ostatnia aktualizacja</span><strong><time datetime="2026-10-05">5 października 2026</time></strong></div><div class="report-meta-row"><span>Status</span><strong>robocza analiza odpowiedzi; kompletna dla KRUS, zbiorcza dla KOWR i szczególnie niepełna dla ARiMR</strong></div></div></aside></section>
+<nav class="contents" aria-label="Spis treści"><a href="#skala">Skala materiału</a><a href="#wyniki">KRUS</a><a href="#inne">KOWR i ARiMR</a><a href="#przypadki">Dalsza weryfikacja</a><a href="#dane">Tabela KRUS</a><a href="#pobierz">Pobierz dane</a><a href="#metodologia">Metodologia</a><a href="#zrodla">Źródła i obliczenia</a></nav>
+
+<section class="section" id="skala"><div class="wrap"><div class="section-head"><div class="section-no">01 / Skala materiału</div><div><h2>Wyraźne sygnały.<br>Niepełny i niejednorodny obraz.</h2></div></div>
+<div class="kpis"><div class="kpi"><strong>49</strong><span>wysłanych wniosków: 16 KRUS, 17 KOWR i 16 ARiMR</span></div><div class="kpi"><strong>36,7%</strong><span>wniosków zakończyło się odpowiedzią na skierowany wniosek (18 z 49)</span></div><div class="kpi"><strong>69,4%</strong><span>adresowanych jednostek jest pokrytych danymi, jeśli odpowiedź KOWR obejmuje wszystkie 17 OT (34 z 49)</span></div><div class="kpi"><strong>5</strong><span>sześciomiesięcznych okresów porównania</span></div></div>
+<div class="callout"><div class="callout-label">KRUS: 8 → 79 ZDARZEŃ</div><div class="callout-copy"><p>Na przełomie 2015/2016 w panelu 15 oddziałów KRUS suma rozpoczęć i zakończeń wzrosła z <strong>8 do 79</strong>. Wzrost nie zależy od jednego oddziału, ale zakres odpowiedzi nie jest w pełni jednolity.</p></div></div>
+<article class="report-copy"><h3>Najważniejsze ustalenia</h3><ol>
+<li>W KRUS widać duży wzrost zgłoszonych zdarzeń kadrowych na przełomie 2015/2016: z 8 do 79 w panelu 15 oddziałów, bez Wrocławia. Wzrost nie zależy od jednego oddziału.</li>
+<li>Na przełomie 2023/2024 liczba zdarzeń także rośnie: z 33 do 57. Zakończeń jest jednak znacznie więcej niż rozpoczęć: 39 wobec 18. W 2015/2016 te wielkości były niemal zrównoważone: 38 wobec 41.</li>
+<li>Odpowiedź KOWR pokazuje jeszcze większą zmianę: z 6 do 89 zdarzeń między dwoma półroczami 2023/2024. Ma charakter zbiorczy i — zgodnie z informacją urzędu — obejmuje wszystkie 17 oddziałów terenowych KOWR, mimo że w eksporcie widnieje pod nazwą Oddziału Terenowego w Rzeszowie. Liczb tych nie należy przypisywać wyłącznie temu oddziałowi.</li>
+<li>Dane ARiMR pochodzą tylko z jednego z 16 pytanych oddziałów regionalnych — Podlaskiego OR. Oznacza to 6,25% odpowiedzi wśród oddziałów ARiMR. Centrala, do której nie kierowano wniosku, z nieustalonej przyczyny przejęła jego procedowanie i odpowiedziała, że wniosek jest nieprecyzyjny; na moment przygotowania raportu zablokowało to odpowiedzi pozostałych 15 oddziałów. Centrala nie dostarczyła danych kadrowych do tej analizy.</li>
+<li>Wnioski opisowe są wyraźniejsze niż statystyczne. Jeden wynik przekracza próg istotności po korekcie 30 testów w panelu 15 oddziałów, ale traci go po wyłączeniu Bydgoszczy. Oddziały jednej organizacji mogą podlegać wspólnym decyzjom; nie są oczywistymi niezależnymi obserwacjami.</li>
+</ol>
+<h3>Jak czytać dane i kompletność odpowiedzi</h3><p>36 wierszy przekłada się na 18 nazw i identyfikatorów instytucji, po dwa pytania każda. Pytanie 1 dotyczy rozpoczęcia współpracy na stanowiskach dyrektorskich, pytanie 2 — zakończenia. Kategorie odpowiedzi to słowniki JSON z liczbami dla pięciu okresów.</p>
+<p>Łącznie wysłano <strong>49 wniosków</strong>: do 16 oddziałów regionalnych KRUS, 17 oddziałów terenowych KOWR i 16 oddziałów regionalnych ARiMR. W eksporcie występuje 16 oddziałów KRUS, jeden rekord KOWR i jeden oddział ARiMR. Jeśli liczyć odpowiedzi na faktycznie wysłane wnioski, odpowiedź uzyskano w <strong>18 z 49 spraw, czyli 36,7%</strong>: odpowiedziało 16 z 16 oddziałów KRUS, jeden z 17 adresatów KOWR przekazał odpowiedź zbiorczą oraz jeden z 16 oddziałów ARiMR. Dodatkowo wypowiedziała się centrala ARiMR, choć nie była adresatem naszego wniosku; z nieustalonej przyczyny przejęła jego procedowanie i uznała go za nieprecyzyjny. Tej korespondencji nie liczymy jako odpowiedzi na osobno skierowany do centrali wniosek.</p><h3>Kompletność odpowiedzi według organizacji</h3><div class="table-wrap"><table><thead><tr><th>Organizacja</th><th>Wysłane wnioski</th><th>Odpowiedzi na wysłane wnioski</th><th>Odsetek odpowiedzi</th><th>Pokrycie danymi</th></tr></thead><tbody><tr><td>KRUS</td><td>16</td><td>16</td><td>100%</td><td>16 z 16 oddziałów (100%)</td></tr><tr><td>KOWR</td><td>17</td><td>1 odpowiedź zbiorcza</td><td>5,9%</td><td>17 z 17 OT (100%), jeśli przyjąć deklarowany przez urząd zakres odpowiedzi zbiorczej</td></tr><tr><td>ARiMR</td><td>16</td><td>1 oddział regionalny</td><td>6,25%</td><td>1 z 16 oddziałów (6,25%); dodatkowa odpowiedź centrali bez danych kadrowych</td></tr><tr><td><strong>Razem</strong></td><td><strong>49</strong></td><td><strong>18</strong></td><td><strong>36,7%</strong></td><td><strong>34 z 49 jednostek (69,4%)</strong>, przy założeniu pełnego pokrycia KOWR</td></tr></tbody></table></div><p>Odsetek odpowiedzi i pokrycie danymi to dwie różne miary. W KOWR jedna odpowiedź zbiorcza stanowi tylko 1 odpowiedź na 17 wysłanych wniosków, ale — jeśli obejmuje zmiany we wszystkich oddziałach terenowych — daje dane o 17 z 17 adresowanych jednostek. Dlatego 69,4% pokrycia nie oznacza, że 69,4% adresatów odpowiedziało samodzielnie ani że raport zawiera 34 niezależne obserwacje.</p>
+<p>Nie łączymy wszystkiego w jedną sumę główną: KRUS jest zestawieniem wielu oddziałów, natomiast rekord KOWR jest jednym agregatem obejmującym 17 oddziałów terenowych i ma niepełną historię dla najwcześniejszych okresów. Nie jest więc jednostką porównywalną z pojedynczym oddziałem KRUS ani z Podlaskim OR ARiMR. W tabelach KRUS liczby obejmują taki zakres, jaki podano w danej odpowiedzi — czasem również placówki terenowe. To robocze zestawienie odpowiedzi, a nie w pełni ujednolicony pomiar samych dyrektorów oddziałów.</p>
+<p>Suma rozpoczęć i zakończeń to suma dwóch rodzajów zgłoszonych zdarzeń, nie liczba unikalnych osób. Jedna osoba może wystąpić w obu kategoriach. Saldo to różnica tych liczb; nie jest automatycznie zmianą zatrudnienia. Powołanie, awans, odwołanie ze stanowiska i rozwiązanie umowy mogą być różnie rozumiane. Okresy są sześciomiesięczne, ale rozdzielone lukami; nie stanowią ciągłego szeregu czasowego.</p>
+<h3>Zastrzeżenie</h3><p>Dane do raportu zbierano przy użyciu sztucznej inteligencji, jak również sam raport, został przez nią w dużej części wygenerowany. Dlatego może zawierać błędy powstałe na różnych etapach gromadzenia i przetwarzania danych oraz halucynacje. Chcąc odnieść się do szczegółowych danych zawsze sprawdź je u źródła!</p>
+</article></div></section>
+
+<section class="section alt" id="wyniki"><div class="wrap"><div class="section-head"><div class="section-no">02 / Wyniki KRUS</div><div><h2>Dwa przełomy.<br>Dwa różne obrazy zmian.</h2></div></div>
+<div class="card chart-card"><h3>Rozpoczęcia i zakończenia — panel 15 oddziałów KRUS</h3><p class="micro">Wrocław wyłączono zgodnie z decyzją opisaną w analizie. Wszystkie słupki mają wspólną skalę od 0 do 45 zdarzeń.</p><div class="legend"><span><i class="hire"></i>Rozpoczęcia</span><span><i class="leave"></i>Zakończenia</span></div><div class="bar-chart"><div class="bar-group"><div class="bar-label">V–X 2015</div><div class="bar-pair">
+      <div class="bar-line"><span class="bar hire" style="width:13.3%"></span><b>6</b><span class="sr-only"> rozpoczęć</span></div>
+      <div class="bar-line"><span class="bar leave" style="width:4.4%"></span><b>2</b><span class="sr-only"> zakończeń</span></div>
+    </div></div><div class="bar-group"><div class="bar-label">XI 2015–IV 2016</div><div class="bar-pair">
+      <div class="bar-line"><span class="bar hire" style="width:91.1%"></span><b>41</b><span class="sr-only"> rozpoczęć</span></div>
+      <div class="bar-line"><span class="bar leave" style="width:84.4%"></span><b>38</b><span class="sr-only"> zakończeń</span></div>
+    </div></div><div class="bar-group"><div class="bar-label">XI 2019–IV 2020</div><div class="bar-pair">
+      <div class="bar-line"><span class="bar hire" style="width:24.4%"></span><b>11</b><span class="sr-only"> rozpoczęć</span></div>
+      <div class="bar-line"><span class="bar leave" style="width:40.0%"></span><b>18</b><span class="sr-only"> zakończeń</span></div>
+    </div></div><div class="bar-group"><div class="bar-label">V–X 2023</div><div class="bar-pair">
+      <div class="bar-line"><span class="bar hire" style="width:20.0%"></span><b>9</b><span class="sr-only"> rozpoczęć</span></div>
+      <div class="bar-line"><span class="bar leave" style="width:53.3%"></span><b>24</b><span class="sr-only"> zakończeń</span></div>
+    </div></div><div class="bar-group"><div class="bar-label">XI 2023–IV 2024</div><div class="bar-pair">
+      <div class="bar-line"><span class="bar hire" style="width:40.0%"></span><b>18</b><span class="sr-only"> rozpoczęć</span></div>
+      <div class="bar-line"><span class="bar leave" style="width:86.7%"></span><b>39</b><span class="sr-only"> zakończeń</span></div>
+    </div></div></div><p class="micro">Suma obu rodzajów zdarzeń nie jest liczbą unikalnych osób. Pomiędzy wskazanymi okresami występują luki.</p></div>
+<article class="report-copy"><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Okres</th>
+<th>Rozpoczęcia</th>
+<th>Zakończenia</th>
+<th>Suma</th>
+<th>Saldo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V–X 2015</td>
+<td>6</td>
+<td>2</td>
+<td>8</td>
+<td>4</td>
+</tr>
+<tr>
+<td>XI 2015–IV 2016</td>
+<td>41</td>
+<td>38</td>
+<td>79</td>
+<td>3</td>
+</tr>
+<tr>
+<td>XI 2019–IV 2020</td>
+<td>11</td>
+<td>18</td>
+<td>29</td>
+<td>-7</td>
+</tr>
+<tr>
+<td>V–X 2023</td>
+<td>9</td>
+<td>24</td>
+<td>33</td>
+<td>-15</td>
+</tr>
+<tr>
+<td>XI 2023–IV 2024</td>
+<td>18</td>
+<td>39</td>
+<td>57</td>
+<td>-21</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Przełom 2015/2016</h3>
+<p>Suma rośnie z 8 do 79, czyli o 71 i o 887,5% (9,875 raza). Tak wysoki procent wynika również z bardzo niskiej podstawy. Rozpoczęcia: 6 → 41; zakończenia: 2 → 38. Saldo pozostaje blisko zera: +4 → +3. To obraz intensywniejszych zmian obsady, ale bez danych o konkretnych stanowiskach nie dowodzi wymiany konkretnych osób na następców.</p>
+<p>Suma rośnie w 11 oddziałach, maleje w jednym (Częstochowa), a w trzech jest bez zmian. Największe przyrosty: Białystok +17, Kraków +13, Gdańsk +9, Lublin +8. Te cztery odpowiedzi odpowiadają za 47 z 71 dodatkowych zdarzeń (66,2%). Po wyłączeniu Białegostoku suma nadal rośnie z 7 do 61. Zatem Białystok wzmacnia wynik, ale go nie tworzy.</p>
+<h3>Przełom 2023/2024</h3>
+<p>Suma: 33 → 57 (+72,7%); rozpoczęcia: 9 → 18 (+100%); zakończenia: 24 → 39 (+62,5%). Suma rośnie w ośmiu oddziałach, maleje w dwóch, a w pięciu się nie zmienia. Największe przyrosty sumy: Lublin +7, Olsztyn +5, Koszalin, Poznań i Rzeszów po +4. Spadki: Białystok i Kraków po −3.</p>
+<p>W ostatnim okresie zakończeń jest 2,17 raza więcej niż rozpoczęć (39/18), saldo wynosi −21. Ujemne saldo występuje w dziewięciu oddziałach, dodatnie w dwóch, zerowe w czterech. Opole, Poznań i Rzeszów wykazują łącznie 16 zakończeń i ani jednego rozpoczęcia. To dobry punkt wyjścia do pytań o dalszy los stanowisk, późniejsze powołania i zakres odpowiedzi.</p>
+<h3>Dwa zimowe półrocza i okres 2019/2020</h3>
+<p>Między XI 2015–IV 2016 a XI 2023–IV 2024 rozpoczęcia spadają z 41 do 18 (−56,1%), a zakończenia pozostają niemal takie same: 38 → 39. Mniej rozpoczęć zgłasza 11 oddziałów, więcej dwa, tyle samo dwa. Tymczasem suma zdarzeń rośnie w pięciu, maleje w pięciu i pozostaje taka sama w pięciu. Niższa suma ogólna (79 → 57) nie oznacza więc jednolitego spadku aktywności we wszystkich oddziałach.</p>
+<p>W 2019/2020 suma wynosi 29, wobec 79 i 57 w dwóch pozostałych zimowych półroczach. Jest to przesłanka do badania, czy charakter zmian zależał od kontekstu politycznego i organizacyjnego. Sam zbiór nie dowodzi przyczyny: brak pełnego kalendarza zmian, liczby stanowisk, jednolitego zakresu i szeregu kontrolnego. Nie można oddzielić efektu wydarzeń politycznych od reorganizacji, emerytur, sezonowości czy zmian zasad sprawozdawania.</p>
+</article></div></section>
+
+<section class="section" id="inne"><div class="wrap"><div class="section-head"><div class="section-no">03 / Pozostałe jednostki</div><div><h2>KOWR i ARiMR.<br>Osobne przypadki.</h2></div></div>
+<div class="callout"><div class="callout-label">KOWR: 1 ODPOWIEDŹ, 17 OT W ZAKRESIE</div><div class="callout-copy"><p>Na 17 wniosków skierowanych do oddziałów terenowych KOWR otrzymano jedną odpowiedź zbiorczą. Zgodnie z informacją urzędu przyjmujemy, że obejmuje ona zmiany we wszystkich 17 OT. Zmiana 6 → 89 dotyczy więc całego KOWR, a nie samego oddziału rzeszowskiego.</p></div></div>
+<div class="source-grid" style="margin-top:22px"><div class="card"><article class="report-copy"><h3>KOWR — odpowiedź zbiorcza dla całej organizacji</h3><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Okres</th>
+<th>Rozpoczęcia</th>
+<th>Zakończenia</th>
+<th>Suma</th>
+<th>Saldo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XI 2019–IV 2020</td>
+<td>8</td>
+<td>6</td>
+<td>14</td>
+<td>+2</td>
+</tr>
+<tr>
+<td>V–X 2023</td>
+<td>3</td>
+<td>3</td>
+<td>6</td>
+<td>0</td>
+</tr>
+<tr>
+<td>XI 2023–IV 2024</td>
+<td>37</td>
+<td>52</td>
+<td>89</td>
+<td>−15</td>
+</tr>
+</tbody>
+</table></div>
+<p>Suma rośnie z 6 do 89: o 83, czyli o 1383,3% (14,83 raza). Rozpoczęcia rosną z 3 do 37, zakończenia z 3 do 52. Dane są zbiorcze dla całego KOWR i przyjmujemy, że obejmują wszystkie 17 oddziałów terenowych, do których kierowano wnioski. Nazwa Oddziału Terenowego w Rzeszowie wskazuje jednostkę, pod którą odpowiedź znalazła się w eksporcie, ale nie wyznacza zakresu liczbowego odpowiedzi. Bez rozbicia danych na oddziały nie można wskazać, gdzie w strukturze KOWR wystąpiły poszczególne zmiany.</p>
+<p>Nie wolno przedstawiać tych liczb jako 89 unikalnych osób ani przypisywać ich oddziałowi w Rzeszowie. Jest to jeden agregat ogólnokrajowy, dlatego nie da się na jego podstawie przeprowadzić testu znaków między jednostkami KOWR. Nie traktujemy 89 zdarzeń jako 89 niezależnych obserwacji.</p>
+</article></div><div class="card"><article class="report-copy"><h3>ARiMR — Podlaski Oddział Regionalny</h3><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Okres</th>
+<th>Rozpoczęcia</th>
+<th>Zakończenia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V–X 2015</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>XI 2015–IV 2016</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>XI 2019–IV 2020</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>V–X 2023</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>XI 2023–IV 2024</td>
+<td>2</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p>W ostatnim okresie zgłoszono dwa rozpoczęcia i brak zakończeń. Na przełomie 2015/2016 nie ma skoku takiego jak w agregacie KRUS. Jest to jednak odpowiedź tylko <strong>jednego z 16</strong> pytanych oddziałów regionalnych ARiMR, czyli 6,25% oddziałów. Nie stanowi to materiału do wnioskowania o tendencji w całej Agencji. Bez stanu kadry nie wiadomo również, czy dwa rozpoczęcia oznaczały istotną część obsady, czy niewielką zmianę.</p><p>Centrala ARiMR nie była adresatem wniosku. Z nieustalonej dla nas przyczyny otrzymała go jednak i przejęła jego procedowanie, po czym odpisała, że wniosek jest nieprecyzyjny. Na moment przygotowania raportu zablokowało to odpowiedzi pozostałych 15 oddziałów regionalnych. Ponieważ odpowiedź centrali nie zawiera danych kadrowych i nie była odpowiedzią na wniosek skierowany do centrali, nie włączamy jej do zestawień liczbowych ani do licznika odpowiedzi na 49 wysłanych wniosków.</p>
+</article></div></div>
+</div></section>
+
+<section class="section alt" id="przypadki"><div class="wrap"><div class="section-head"><div class="section-no">04 / Dalsza weryfikacja</div><div><h2>Które przypadki warto<br>zbadać dokładniej?</h2></div></div><article class="report-copy"><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Priorytet / jednostka</th>
+<th>Obserwacja</th>
+<th>Co zweryfikować</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KOWR — odpowiedź zbiorcza</td>
+<td>1 odpowiedź na 17 wniosków, ale deklarowany zakres obejmuje wszystkie 17 OT; 6 → 89 zdarzeń w porównaniu 2023/2024</td>
+<td>Rozkład zdarzeń między oddziały i jednostki, daty oraz stanowiska; zakres ogólnokrajowy odpowiedzi jest już ustalony.</td>
+</tr>
+<tr>
+<td>ARiMR</td>
+<td>1 z 16 oddziałów odpowiedział merytorycznie (6,25%); centrala, mimo że nie była adresatem, przejęła procedowanie i na moment raportu zablokowała odpowiedzi pozostałych 15 oddziałów.</td>
+<td>Ustalić status 15 pozostałych wniosków, drogę przekazania sprawy do centrali oraz ewentualną potrzebę ponowienia lub doprecyzowania wniosków.</td>
+</tr>
+<tr>
+<td>KRUS Białystok</td>
+<td>2015/2016: 9 rozpoczęć i 9 zakończeń, wobec 1 i 0 wcześniej</td>
+<td>Ile stanowisk i placówek obejmują dane; czy zdarzenia dotyczą tych samych stanowisk; reorganizacje i przyczyny odejść.</td>
+</tr>
+<tr>
+<td>KRUS Kraków</td>
+<td>2015/2016: 6 rozpoczęć i 7 zakończeń; 2023/2024: 2 i 0</td>
+<td>Duża różnica między okresami; osobno dyrekcja OR i kierownicy PT; ewentualne przesunięcie zdarzeń poza okna.</td>
+</tr>
+<tr>
+<td>KRUS Opole</td>
+<td>2023/2024: 0 rozpoczęć i 6 zakończeń, z czego 4 w PT</td>
+<td>Wakaty, likwidacja stanowisk, zastępstwa i powołania po kwietniu; zgodność zakresu obu pytań.</td>
+</tr>
+<tr>
+<td>KRUS Poznań i Rzeszów</td>
+<td>W każdym po 0 rozpoczęć i 5 zakończeń w 2023/2024</td>
+<td>Dalszy los stanowisk, wcześniejsze lub późniejsze powołania, odwołanie z funkcji versus rozwiązanie umowy.</td>
+</tr>
+<tr>
+<td>KRUS Lublin</td>
+<td>Suma 3 → 10 w 2023/2024; ostatnio 5 rozpoczęć i 5 zakończeń</td>
+<td>Wymiana obsady czy różne zdarzenia; w PT 4 rozpoczęcia i 3 zakończenia, w OR 1 i 2.</td>
+</tr>
+<tr>
+<td>KRUS Olsztyn</td>
+<td>Suma 3 → 8; ostatnio 4 rozpoczęcia i 4 zakończenia</td>
+<td>Rozdzielić 3 powołania z zewnątrz i 1 wewnętrzne; porównać tryb i daty obsady.</td>
+</tr>
+<tr>
+<td>KRUS Częstochowa i Zielona Góra</td>
+<td>Niewiele zdarzeń, brak zmian w 2023/2024</td>
+<td>Przypadki kontrastowe: rzeczywista stabilność czy węższa definicja i zakres danych.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Wrocław i Bydgoszcz wymagają przede wszystkim weryfikacji danych, zanim staną się materiałem do opowieści o polityce kadrowej. Nie przypisujemy motywów politycznych konkretnym osobom ani instytucjom na podstawie samych zliczeń.</p>
+<p>Do dalszej weryfikacji potrzebne są: lista i status wszystkich 49 wysłanych spraw oraz osobno korespondencji z centralą ARiMR, która nie była adresatem; dla ARiMR — status 15 nieudzielonych odpowiedzi i wyjaśnienie, dlaczego sprawa trafiła do centrali; dla KOWR — ewentualne rozbicie odpowiedzi zbiorczej na 17 oddziałów terenowych; ponadto liczba stanowisk na początku i końcu okresów, rozdzielenie OR i PT tam, gdzie ma to zastosowanie, daty zdarzeń, identyfikator stanowiska oraz rodzaj zdarzenia (nowa osoba, awans, przeniesienie, odwołanie z funkcji, rozwiązanie umowy, emerytura), a także uzupełnienie okresów między obserwowanymi oknami i po kwietniu 2024. Dopiero wtedy można porównywać odsetek wymienionej obsady i badać następstwo konkretnych decyzji.</p>
+</article></div></section>
+
+<section class="section" id="dane"><div class="wrap"><div class="section-head"><div class="section-no">05 / Dane analityczne</div><div><h2>Pełna tabela KRUS</h2></div></div>
+<div class="table-actions" id="unitTools" hidden><label class="sr-only" for="unitSearch">Szukaj oddziału</label><input class="search" id="unitSearch" type="search" placeholder="Szukaj oddziału…"><span class="sort-hint" id="unitCount" aria-live="polite">15 z 15 oddziałów</span></div><p id="emptySearch" hidden>Brak oddziałów pasujących do wyszukiwania.</p>
+<article class="report-copy" id="krusTableWrap"><p>W komórkach: rozpoczęcia / zakończenia. Dane kategorii dla 15 oddziałów; ograniczenia opisane powyżej.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Oddział KRUS</th>
+<th>V–X 2015</th>
+<th>XI 2015–IV 2016</th>
+<th>XI 2019–IV 2020</th>
+<th>V–X 2023</th>
+<th>XI 2023–IV 2024</th>
+<th>Wiersze źródłowe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w Warszawie</td>
+<td>0 / 0</td>
+<td>2 / 1</td>
+<td>0 / 0</td>
+<td>0 / 0</td>
+<td>1 / 2</td>
+<td>[4, 5]</td>
+</tr>
+<tr>
+<td>w Białymstoku</td>
+<td>1 / 0</td>
+<td>9 / 9</td>
+<td>2 / 1</td>
+<td>1 / 4</td>
+<td>0 / 2</td>
+<td>[6, 7]</td>
+</tr>
+<tr>
+<td>w Bydgoszczy</td>
+<td>0 / 0</td>
+<td>3 / 2</td>
+<td>0 / 0</td>
+<td>1 / 2</td>
+<td>1 / 2</td>
+<td>[8, 9]</td>
+</tr>
+<tr>
+<td>w Częstochowie</td>
+<td>1 / 0</td>
+<td>0 / 0</td>
+<td>1 / 2</td>
+<td>0 / 0</td>
+<td>0 / 0</td>
+<td>[10, 11]</td>
+</tr>
+<tr>
+<td>w Gdańsku</td>
+<td>0 / 0</td>
+<td>4 / 5</td>
+<td>1 / 1</td>
+<td>0 / 2</td>
+<td>0 / 2</td>
+<td>[12, 13]</td>
+</tr>
+<tr>
+<td>w Kielcach</td>
+<td>0 / 0</td>
+<td>0 / 0</td>
+<td>1 / 0</td>
+<td>0 / 2</td>
+<td>3 / 0</td>
+<td>[14, 15]</td>
+</tr>
+<tr>
+<td>w Koszalinie</td>
+<td>1 / 0</td>
+<td>2 / 2</td>
+<td>0 / 2</td>
+<td>0 / 0</td>
+<td>1 / 3</td>
+<td>[16, 17]</td>
+</tr>
+<tr>
+<td>w Krakowie</td>
+<td>0 / 0</td>
+<td>6 / 7</td>
+<td>0 / 1</td>
+<td>2 / 3</td>
+<td>2 / 0</td>
+<td>[18, 19]</td>
+</tr>
+<tr>
+<td>w Lublinie</td>
+<td>1 / 0</td>
+<td>6 / 3</td>
+<td>0 / 1</td>
+<td>0 / 3</td>
+<td>5 / 5</td>
+<td>[20, 21]</td>
+</tr>
+<tr>
+<td>w Łodzi</td>
+<td>0 / 0</td>
+<td>3 / 3</td>
+<td>2 / 2</td>
+<td>0 / 2</td>
+<td>1 / 3</td>
+<td>[22, 23]</td>
+</tr>
+<tr>
+<td>w Olsztynie</td>
+<td>0 / 1</td>
+<td>3 / 1</td>
+<td>0 / 0</td>
+<td>1 / 2</td>
+<td>4 / 4</td>
+<td>[24, 25]</td>
+</tr>
+<tr>
+<td>w Opolu</td>
+<td>2 / 0</td>
+<td>1 / 1</td>
+<td>0 / 1</td>
+<td>3 / 3</td>
+<td>0 / 6</td>
+<td>[26, 27]</td>
+</tr>
+<tr>
+<td>w Poznaniu</td>
+<td>0 / 1</td>
+<td>1 / 4</td>
+<td>1 / 3</td>
+<td>0 / 1</td>
+<td>0 / 5</td>
+<td>[28, 29]</td>
+</tr>
+<tr>
+<td>w Rzeszowie</td>
+<td>0 / 0</td>
+<td>1 / 0</td>
+<td>3 / 3</td>
+<td>1 / 0</td>
+<td>0 / 5</td>
+<td>[30, 31]</td>
+</tr>
+<tr>
+<td>w Zielonej Górze</td>
+<td>0 / 0</td>
+<td>0 / 0</td>
+<td>0 / 1</td>
+<td>0 / 0</td>
+<td>0 / 0</td>
+<td>[34, 35]</td>
+</tr>
+</tbody>
+</table></div>
+</article></div></section>
+
+<section class="section red" id="pobierz"><div class="wrap download-panel"><div><div class="section-no">06 / Dane źródłowe</div><h2 style="margin-top:20px">Pobierz arkusz z danymi</h2><p class="intro">Arkusz źródłowy dołączony do raportu. Zawiera odpowiedzi instytucji, teksty odpowiedzi i zakodowane wartości użyte w analizie opisanej w pliku Markdown.</p><p>Raport nie wykonuje na tym etapie żadnych nowych obliczeń — arkusz jest osadzony w pliku HTML, aby można go było pobrać i samodzielnie zweryfikować dane.</p></div>
+<div class="download-box"><div class="file-icon">XLSX</div><h3>Zmiany kadrowe w KRUS, KOWR i ARiMR</h3><p class="filename">163_liczba-zmian-kadrowych-w-arimr-kowr-i-krus.xlsx</p><div class="file-meta"><span>Rozmiar</span><strong>15,5 KB</strong><span>Zawartość</span><strong>36 wierszy odpowiedzi · 18 nazw instytucji</strong></div><a class="btn red" id="downloadSource" href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,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" download="163_liczba-zmian-kadrowych-w-arimr-kowr-i-krus.xlsx">Pobierz arkusz (jeśli kliknięcie nie działa, otwórz w nowym oknie) ↓</a></div>
+</div></section>
+
+<section class="section" id="metodologia"><div class="wrap"><div class="section-head"><div class="section-no">07 / Jak czytać raport</div><div><h2>Zastrzeżenia<br>metodologiczne</h2></div></div>
+<div class="source-intro"><p>Analiza z 5 października 2026 r. Obejmuje dane i teksty zapisane w eksporcie; nie jest audytem oryginalnych załączników do pism. Informacje o liczbie wysłanych wniosków (16 KRUS, 17 KOWR, 16 ARiMR), zbiorczym zakresie odpowiedzi KOWR oraz przebiegu sprawy w centrali ARiMR pochodzą z uzupełniających metadanych badania i nie są wyliczane z osadzonego arkusza.</p></div>
+<div class="methodology"><article class="report-copy"><h3>1. Kontrola jakości i przyjęte decyzje</h3><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Jednostka / zagadnienie</th>
+<th>Ustalenie w aktualnym pliku</th>
+<th>Decyzja</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KRUS Wrocław, wiersze 32–33</td>
+<td>Tekst opisuje osobę zajmującą stanowisko kierownika PT w Wałbrzychu, a nie pięć nowych rozpoczęć. Kategoria pytania 1 zawiera po 1 w każdym okresie. Zera zakończeń dotyczą opisanego stanowiska.</td>
+<td>Cały wpis wyłączony z głównego panelu. Nie zastąpiono jedynek zerami, bo brak rozpoczęć również nie został wprost wykazany.</td>
+</tr>
+<tr>
+<td>Kompletność odpowiedzi — sposób liczenia</td>
+<td>49 wniosków = 16 KRUS + 17 KOWR + 16 ARiMR. Odpowiedzi na wysłane wnioski: 16 KRUS + 1 zbiorcza KOWR + 1 ARiMR = 18 (36,7%). Przy założeniu, że zbiorcza odpowiedź KOWR obejmuje wszystkie 17 OT, dane pokrywają 34 z 49 adresowanych jednostek (69,4%).</td>
+<td>Odsetek odpowiedzi i pokrycie danymi raportowane są osobno. Odpowiedź centrali ARiMR jest opisana jakościowo, ale nie zwiększa mianownika ani licznika odpowiedzi na wysłane wnioski.</td>
+</tr>
+<tr>
+<td>KOWR, wiersze 2–3</td>
+<td>Pytanie 1 ma zera w obu okresach 2015/2016, choć tekst zaczyna się od 2019/2020. Pytanie 2 nie zawiera wczesnych okresów. Odpowiedź jest zbiorcza dla całego KOWR, mimo że w eksporcie widnieje pod nazwą OT w Rzeszowie; przyjmujemy, że obejmuje wszystkie 17 oddziałów terenowych, do których wysłano wnioski.</td>
+<td>Wczesne okresy traktowane jako brak potwierdzonych danych; analiza osobna, tylko trzy późniejsze okresy. Dane interpretowane jako jeden agregat dla całego KOWR, a nie jako 17 niezależnych odpowiedzi.</td>
+</tr>
+<tr>
+<td>ARiMR — kompletność odpowiedzi</td>
+<td>Wysłano wnioski do 16 oddziałów regionalnych. Odpowiedział tylko Podlaski OR (1 z 16; 6,25%). Centrala nie była adresatem, lecz z nieustalonej przyczyny przejęła procedowanie; uznała wniosek za nieprecyzyjny i na moment przygotowania raportu zablokowała odpowiedzi pozostałych 15 oddziałów.</td>
+<td>Do analizy liczbowej włączono wyłącznie dane Podlaskiego OR. Odpowiedzi centrali nie traktujemy jako merytorycznej odpowiedzi oddziału ani jako odpowiedzi na osobno skierowany do centrali wniosek.</td>
+</tr>
+<tr>
+<td>KRUS Bydgoszcz, wiersze 8–9</td>
+<td>Rozpoczęcia opisano jako OR Bydgoszcz, a zakończenia zsumowano z OR i kilku PT.</td>
+<td>Zachowano kategorie w panelu roboczym i obliczono wariant bez Bydgoszczy. Saldo wymaga szczególnej ostrożności.</td>
+</tr>
+<tr>
+<td>KRUS Gdańsk, Koszalin, Kraków, Lublin, Łódź, Opole</td>
+<td>Widoczne są dane placówek terenowych, a więc szerszy zakres niż wyłącznie dyrekcja OR.</td>
+<td>Sumy zachowano, ale nie nazywamy ich jednolicie nowymi zatrudnieniami dyrektorów OR.</td>
+</tr>
+<tr>
+<td>KRUS Kielce, wiersze 14–15</td>
+<td>Odpowiedź obejmuje stanowiska dyrektorskie lub kierownicze.</td>
+<td>Szerszy zakres jawnie zaznaczony.</td>
+</tr>
+<tr>
+<td>KRUS Olsztyn, wiersze 24–25</td>
+<td>Wśród rozpoczęć są awanse wewnętrzne: 1 w 2015/2016, 1 w V–X 2023 i 1 w 2023/2024.</td>
+<td>Są to objęcia stanowisk; nie wszystkie oznaczają przyjęcie nowej osoby do instytucji.</td>
+</tr>
+<tr>
+<td>KRUS Łódź, wiersz 22</td>
+<td>Zero rozpoczęć w V–X 2023 nie jest podane wprost w przytoczonym tekście pytania 1.</td>
+<td>Zachowano kategorię, zaznaczono niepewność, dodatkowy wariant wyłączenia.</td>
+</tr>
+<tr>
+<td>KRUS Częstochowa, wiersze 10–11</td>
+<td>Tekst potwierdza brak zmian w trzech okresach; zero zakończeń w V–X 2015 nie jest równie jasno opisane. Końcowe zdanie ma niejasne odniesienie czasowe.</td>
+<td>Zachowano kategorię; dodatkowy wariant wyłączenia.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Uwaga: porównanie kategorii z tekstem nie zastępuje sprawdzenia oryginalnych dokumentów.</p>
+</article><article class="report-copy"><h3>2. Formalne porównania statystyczne</h3><p>Zastosowano dwustronny dokładny test kierunków zmian: każdy oddział porównano z nim samym w dwóch okresach; remisy pominięto przy obliczaniu p. Test ocenia przewagę kierunku zmian, nie różnicę sum ani przyczynę. Obliczono wszystkie 10 par okresów dla rozpoczęć, zakończeń i ich sumy: 30 testów. Zastosowano korektę Holma dla całej tej rodziny. Nie wybrano węższej rodziny dopiero po zobaczeniu korzystnych wyników.</p>
+<p>Dokumentacja metod: <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html" rel="noopener noreferrer" target="_blank">test dwumianowy SciPy</a>, <a href="https://www.statsmodels.org/dev/generated/statsmodels.stats.multitest.multipletests.html" rel="noopener noreferrer" target="_blank">korekta Holma w statsmodels</a>.</p>
+<p>Najmniejsze skorygowane p = 0,0293 dotyczy wzrostu zakończeń między V–X 2015 i XI 2023–IV 2024: 11 wzrostów, zero spadków, cztery remisy. Jest to porównanie odległych okresów, a nie test zmiany bezpośrednio po jesieni 2023. Wzrost zakończeń na przełomie 2015/2016 ma p = 0,0020 bez korekty i 0,0547 po korekcie. Żaden test bezpośredniego porównania V–X 2023 z XI 2023–IV 2024 nie osiąga p &lt; 0,05 nawet bez korekty.</p>
+<p>Niezależność oddziałów jest problematyczna: należą do tej samej organizacji i mogą reagować na wspólne decyzje. Korekta wielokrotnych porównań tego problemu nie rozwiązuje. Wyniki p są zatem warunkową analizą eksploracyjną dla panelu KRUS, a nie podstawą do wnioskowania o wszystkich jednostkach objętych monitoringiem ani o KOWR i ARiMR. Brak istotności nie dowodzi braku zjawiska.</p>
+<h3>Wrażliwość na jakość danych</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Wariant</th>
+<th>Suma 2015 → 2015/16</th>
+<th>Suma 2023 → 2023/24</th>
+<th>Najniższe p Holma (30 testów)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15 OR, bez Wrocławia</td>
+<td>8 → 79</td>
+<td>33 → 57</td>
+<td>0.0293</td>
+</tr>
+<tr>
+<td>14 OR, dodatkowo bez Bydgoszczy</td>
+<td>8 → 74</td>
+<td>30 → 54</td>
+<td>0.0586</td>
+</tr>
+<tr>
+<td>12 OR, dodatkowo bez Częstochowy i Łodzi</td>
+<td>7 → 68</td>
+<td>28 → 50</td>
+<td>0.0293</td>
+</tr>
+</tbody>
+</table></div>
+<p>Po wyłączeniu samej Bydgoszczy nie pozostaje żaden wynik poniżej 0,05 po korekcie. W wariancie 12 oddziałów istotny staje się inny wynik: suma zdarzeń w XI 2023–IV 2024 względem V–X 2015 (11 wzrostów, zero spadków, jeden remis; p Holma = 0,0293). Istotność nie zmienia się więc monotonicznie z liczbą wyłączeń; zależy również od tego, które kierunki zmian pozostają w panelu. Kierunki głównych zmian sum pozostają te same. Warianty służą ocenie wrażliwości i nie są dodatkowymi niezależnymi potwierdzeniami. Nie usuwają wszystkich różnic w definicjach i zakresie.</p>
+</article></div>
+</div></section>
+
+<section class="section alt" id="zrodla"><div class="wrap"><div class="section-head"><div class="section-no">08 / Dokumentacja</div><div><h2>Źródła i obliczenia</h2></div></div>
+<article class="report-copy"><h3>Ślad źródłowy</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Instytucja</th>
+<th>Wiersze</th>
+<th>Pismo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Krajowy Ośrodek Wsparcia Rolnictwa Oddział Terenowy w Rzeszowie <span class="subcell">odpowiedź zbiorcza dla całego KOWR</span></td>
+<td>[2, 3]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/492086" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Warszawie</td>
+<td>[4, 5]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/487933" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Białymstoku</td>
+<td>[6, 7]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/483998" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Bydgoszczy</td>
+<td>[8, 9]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/492082" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Częstochowie</td>
+<td>[10, 11]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/485089" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Gdańsku</td>
+<td>[12, 13]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/492093" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Kielcach</td>
+<td>[14, 15]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/484614" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Koszalinie</td>
+<td>[16, 17]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/492092" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Krakowie</td>
+<td>[18, 19]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/492084" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Lublinie</td>
+<td>[20, 21]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/492087" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Łodzi</td>
+<td>[22, 23]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/489773" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Olsztynie</td>
+<td>[24, 25]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/485530" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Opolu</td>
+<td>[26, 27]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/492083" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Poznaniu</td>
+<td>[28, 29]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/488967" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Rzeszowie</td>
+<td>[30, 31]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/485272" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny we Wrocławiu</td>
+<td>[32, 33]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/490056" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Kasa Rolniczego Ubezpieczenia Społecznego Oddział Regionalny w Zielonej Górze</td>
+<td>[34, 35]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/483997" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+<tr>
+<td>Agencja Restrukturyzacji i Modernizacji Rolnictwa Podlaski Oddział Regionalny <span class="subcell">jedyny oddział ARiMR, który odpowiedział</span></td>
+<td>[36, 37]</td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/486744" rel="noopener noreferrer" target="_blank">pismo</a></td>
+</tr>
+</tbody>
+</table></div>
+</article>
+<details class="appendix"><summary>Wszystkie 30 testów — panel 15 oddziałów</summary><div class="report-copy"><p>Kierunek dotyczy późniejszego okresu względem wcześniejszego.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Miara</th>
+<th>Od</th>
+<th>Do</th>
+<th>Wzrost</th>
+<th>Spadek</th>
+<th>Remis</th>
+<th>p</th>
+<th>p Holma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rozpoczęcia</td>
+<td>V–X 2015</td>
+<td>XI 2015–IV 2016</td>
+<td>11</td>
+<td>2</td>
+<td>2</td>
+<td>0.022461</td>
+<td>0.516602</td>
+</tr>
+<tr>
+<td>Rozpoczęcia</td>
+<td>V–X 2015</td>
+<td>XI 2019–IV 2020</td>
+<td>6</td>
+<td>3</td>
+<td>6</td>
+<td>0.507812</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Rozpoczęcia</td>
+<td>V–X 2015</td>
+<td>V–X 2023</td>
+<td>5</td>
+<td>3</td>
+<td>7</td>
+<td>0.726562</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Rozpoczęcia</td>
+<td>V–X 2015</td>
+<td>XI 2023–IV 2024</td>
+<td>7</td>
+<td>3</td>
+<td>5</td>
+<td>0.343750</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Rozpoczęcia</td>
+<td>XI 2015–IV 2016</td>
+<td>XI 2019–IV 2020</td>
+<td>3</td>
+<td>10</td>
+<td>2</td>
+<td>0.092285</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Rozpoczęcia</td>
+<td>XI 2015–IV 2016</td>
+<td>V–X 2023</td>
+<td>1</td>
+<td>10</td>
+<td>4</td>
+<td>0.011719</td>
+<td>0.281250</td>
+</tr>
+<tr>
+<td>Rozpoczęcia</td>
+<td>XI 2015–IV 2016</td>
+<td>XI 2023–IV 2024</td>
+<td>2</td>
+<td>11</td>
+<td>2</td>
+<td>0.022461</td>
+<td>0.516602</td>
+</tr>
+<tr>
+<td>Rozpoczęcia</td>
+<td>XI 2019–IV 2020</td>
+<td>V–X 2023</td>
+<td>4</td>
+<td>7</td>
+<td>4</td>
+<td>0.548828</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Rozpoczęcia</td>
+<td>XI 2019–IV 2020</td>
+<td>XI 2023–IV 2024</td>
+<td>7</td>
+<td>6</td>
+<td>2</td>
+<td>1.000000</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Rozpoczęcia</td>
+<td>V–X 2023</td>
+<td>XI 2023–IV 2024</td>
+<td>6</td>
+<td>3</td>
+<td>6</td>
+<td>0.507812</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Zakończenia</td>
+<td>V–X 2015</td>
+<td>XI 2015–IV 2016</td>
+<td>10</td>
+<td>0</td>
+<td>5</td>
+<td>0.001953</td>
+<td>0.054688</td>
+</tr>
+<tr>
+<td>Zakończenia</td>
+<td>V–X 2015</td>
+<td>XI 2019–IV 2020</td>
+<td>11</td>
+<td>1</td>
+<td>3</td>
+<td>0.006348</td>
+<td>0.165039</td>
+</tr>
+<tr>
+<td>Zakończenia</td>
+<td>V–X 2015</td>
+<td>V–X 2023</td>
+<td>9</td>
+<td>0</td>
+<td>6</td>
+<td>0.003906</td>
+<td>0.105469</td>
+</tr>
+<tr>
+<td>Zakończenia</td>
+<td>V–X 2015</td>
+<td>XI 2023–IV 2024</td>
+<td>11</td>
+<td>0</td>
+<td>4</td>
+<td>0.000977</td>
+<td>0.029297</td>
+</tr>
+<tr>
+<td>Zakończenia</td>
+<td>XI 2015–IV 2016</td>
+<td>XI 2019–IV 2020</td>
+<td>3</td>
+<td>9</td>
+<td>3</td>
+<td>0.145996</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Zakończenia</td>
+<td>XI 2015–IV 2016</td>
+<td>V–X 2023</td>
+<td>3</td>
+<td>7</td>
+<td>5</td>
+<td>0.343750</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Zakończenia</td>
+<td>XI 2015–IV 2016</td>
+<td>XI 2023–IV 2024</td>
+<td>7</td>
+<td>3</td>
+<td>5</td>
+<td>0.343750</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Zakończenia</td>
+<td>XI 2019–IV 2020</td>
+<td>V–X 2023</td>
+<td>8</td>
+<td>5</td>
+<td>2</td>
+<td>0.581055</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Zakończenia</td>
+<td>XI 2019–IV 2020</td>
+<td>XI 2023–IV 2024</td>
+<td>11</td>
+<td>3</td>
+<td>1</td>
+<td>0.057373</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Zakończenia</td>
+<td>V–X 2023</td>
+<td>XI 2023–IV 2024</td>
+<td>8</td>
+<td>3</td>
+<td>4</td>
+<td>0.226562</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Suma zdarzeń</td>
+<td>V–X 2015</td>
+<td>XI 2015–IV 2016</td>
+<td>11</td>
+<td>1</td>
+<td>3</td>
+<td>0.006348</td>
+<td>0.165039</td>
+</tr>
+<tr>
+<td>Suma zdarzeń</td>
+<td>V–X 2015</td>
+<td>XI 2019–IV 2020</td>
+<td>10</td>
+<td>2</td>
+<td>3</td>
+<td>0.038574</td>
+<td>0.810059</td>
+</tr>
+<tr>
+<td>Suma zdarzeń</td>
+<td>V–X 2015</td>
+<td>V–X 2023</td>
+<td>10</td>
+<td>2</td>
+<td>3</td>
+<td>0.038574</td>
+<td>0.810059</td>
+</tr>
+<tr>
+<td>Suma zdarzeń</td>
+<td>V–X 2015</td>
+<td>XI 2023–IV 2024</td>
+<td>13</td>
+<td>1</td>
+<td>1</td>
+<td>0.001831</td>
+<td>0.053101</td>
+</tr>
+<tr>
+<td>Suma zdarzeń</td>
+<td>XI 2015–IV 2016</td>
+<td>XI 2019–IV 2020</td>
+<td>4</td>
+<td>11</td>
+<td>0</td>
+<td>0.118469</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Suma zdarzeń</td>
+<td>XI 2015–IV 2016</td>
+<td>V–X 2023</td>
+<td>2</td>
+<td>10</td>
+<td>3</td>
+<td>0.038574</td>
+<td>0.810059</td>
+</tr>
+<tr>
+<td>Suma zdarzeń</td>
+<td>XI 2015–IV 2016</td>
+<td>XI 2023–IV 2024</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>1.000000</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Suma zdarzeń</td>
+<td>XI 2019–IV 2020</td>
+<td>V–X 2023</td>
+<td>7</td>
+<td>6</td>
+<td>2</td>
+<td>1.000000</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Suma zdarzeń</td>
+<td>XI 2019–IV 2020</td>
+<td>XI 2023–IV 2024</td>
+<td>9</td>
+<td>4</td>
+<td>2</td>
+<td>0.266846</td>
+<td>1.000000</td>
+</tr>
+<tr>
+<td>Suma zdarzeń</td>
+<td>V–X 2023</td>
+<td>XI 2023–IV 2024</td>
+<td>8</td>
+<td>2</td>
+<td>5</td>
+<td>0.109375</td>
+<td>1.000000</td>
+</tr>
+</tbody>
+</table></div>
+</div></details>
+<details class="appendix"><summary>Odtworzenie obliczeń opisanych w analizie</summary><div class="report-copy">
+  <p>Poniższy kod odtwarza obliczenia wykorzystane w raporcie na podstawie pliku źródłowego 163_liczba-zmian-kadrowych-w-arimr-kowr-i-krus.xlsx, dostępnego do pobrania z raportu. Skrypt wymaga bibliotek openpyxl i scipy.</p>
+  <p>Główna analiza panelowa i testy statystyczne dotyczą 15 oddziałów regionalnych KRUS; oddział we Wrocławiu został wyłączony zgodnie z metodologią opisaną wyżej. Dane KOWR i ARiMR nie są włączane do tych testów: odpowiedź KOWR jest traktowana jako jedna odpowiedź zbiorcza obejmująca 17 oddziałów terenowych, natomiast w przypadku ARiMR dane liczbowe pochodzą tylko z jednego z 16 pytanych oddziałów regionalnych.</p>
+  <p>Kod odtwarza również wskaźniki kompletności odpowiedzi i pokrycia danych. Liczby adresowanych jednostek (16 KRUS, 17 KOWR i 16 ARiMR) oraz informacja o zbiorczym charakterze odpowiedzi KOWR są metadanymi badania i nie wynikają z samego arkusza. Wartości dotyczące zmian kadrowych są natomiast odczytywane bezpośrednio z pliku źródłowego.</p>
+  <p>Dla 30 testów porównujących okresy zastosowano dokładny dwustronny test znaków oraz korektę Holma. Skorygowane wartości p są wyliczane przez uporządkowanie surowych wartości p, przemnożenie ich kolejno przez liczbę pozostałych hipotez, ograniczenie wyniku do 1 oraz zastosowanie maksimum narastającego.</p>
+<pre><code class="language-python">import itertools
+import json
+import math
+from pathlib import Path
+
+import openpyxl
+from scipy.stats import binomtest
+
+
+# Plik źródłowy dostępny do pobrania z raportu.
+src = Path("163_liczba-zmian-kadrowych-w-arimr-kowr-i-krus.xlsx")
+
+rows = list(
+    openpyxl.load_workbook(src, data_only=True).active.values
+)
+records = [dict(zip(rows[0], row)) for row in rows[1:]]
+
+data = {}
+for row in records:
+    name = row["Institution name"]
+    question = int(row["Question no"])
+
+    assert question not in data.get(name, {})
+    data.setdefault(name, {})[question] = json.loads(
+        row["Answer category"]
+    )
+
+
+# Okresy pochodzą bezpośrednio z kategorii odpowiedzi w arkuszu.
+periods = list(next(iter(data.values()))[1])
+
+labels = [
+    "V–X 2015",
+    "XI 2015–IV 2016",
+    "XI 2019–IV 2020",
+    "V–X 2023",
+    "XI 2023–IV 2024",
+]
+
+assert len(periods) == len(labels)
+
+
+# ------------------------------------------------------------------
+# Instytucje
+# ------------------------------------------------------------------
+
+krus_all = [
+    name
+    for name in data
+    if name.startswith("Kasa Rolniczego Ubezpieczenia Społecznego")
+]
+
+# Wrocław występuje w materiale, ale zgodnie z metodologią
+# nie wchodzi do głównego panelu porównawczego.
+krus_panel = [
+    name for name in krus_all
+    if "Wrocław" not in name
+]
+
+kowr_name = next(
+    name for name in data
+    if name.startswith("Krajowy Ośrodek Wsparcia Rolnictwa")
+)
+
+arimr_name = next(
+    name for name in data
+    if name.startswith(
+        "Agencja Restrukturyzacji i Modernizacji Rolnictwa"
+    )
+)
+
+assert len(krus_all) == 16
+assert len(krus_panel) == 15
+
+
+# ------------------------------------------------------------------
+# Kompletność odpowiedzi
+# ------------------------------------------------------------------
+#
+# Liczby adresowanych jednostek są metadanymi badania,
+# a nie informacją zapisaną w arkuszu.
+#
+# KOWR: jedna odpowiedź zbiorcza obejmuje wszystkie
+# 17 pytanych oddziałów terenowych.
+#
+# ARiMR: odpowiedział 1 z 16 pytanych oddziałów.
+# Centrala nie była adresatem wniosku i nie jest tu liczona
+# jako dodatkowa wysłana prośba ani jako odpowiedź z danymi.
+# ------------------------------------------------------------------
+
+requested = {
+    "KRUS": 16,
+    "KOWR": 17,
+    "ARiMR": 16,
+}
+
+responses = {
+    "KRUS": len(krus_all),
+    "KOWR": 1,
+    "ARiMR": 1,
+}
+
+covered_units = {
+    "KRUS": 16,
+    "KOWR": 17,
+    "ARiMR": 1,
+}
+
+print("KOMPLETNOŚĆ ODPOWIEDZI")
+
+for institution in requested:
+    sent = requested[institution]
+    answered = responses[institution]
+    covered = covered_units[institution]
+
+    print(
+        institution,
+        f"odpowiedzi: {answered}/{sent}"
+        f" = {100 * answered / sent:.1f}%",
+        f"pokrycie danych: {covered}/{sent}"
+        f" = {100 * covered / sent:.1f}%",
+    )
+
+sent_total = sum(requested.values())
+responses_total = sum(responses.values())
+covered_total = sum(covered_units.values())
+
+print(
+    "ŁĄCZNIE",
+    f"odpowiedzi: {responses_total}/{sent_total}"
+    f" = {100 * responses_total / sent_total:.1f}%",
+    f"pokrycie danych: {covered_total}/{sent_total}"
+    f" = {100 * covered_total / sent_total:.1f}%",
+)
+
+
+# ------------------------------------------------------------------
+# Analiza panelowa KRUS
+# ------------------------------------------------------------------
+
+metrics = [
+    "Rozpoczęcia",
+    "Zakończenia",
+    "Suma zdarzeń",
+]
+
+
+def values(name, metric):
+    starts = [
+        data[name][1][period]
+        for period in periods
+    ]
+    ends = [
+        data[name][2][period]
+        for period in periods
+    ]
+
+    return [
+        starts,
+        ends,
+        [a + b for a, b in zip(starts, ends)],
+    ][metric]
+
+
+def totals(names):
+    return [
+        [
+            sum(values(name, metric)[period] for name in names)
+            for period in range(5)
+        ]
+        for metric in range(3)
+    ]
+
+
+def tests(names):
+    results = []
+
+    for metric in range(3):
+        for i, j in itertools.combinations(range(5), 2):
+
+            differences = [
+                values(name, metric)[j]
+                - values(name, metric)[i]
+                for name in names
+            ]
+
+            up = sum(d &gt; 0 for d in differences)
+            down = sum(d &lt; 0 for d in differences)
+            ties = len(names) - up - down
+            n = up + down
+
+            if n:
+                p = binomtest(
+                    up,
+                    n,
+                    0.5,
+                    alternative="two-sided",
+                ).pvalue
+            else:
+                p = 1.0
+
+            # Niezależne sprawdzenie dokładnej wartości p.
+            independent = (
+                min(
+                    1,
+                    2
+                    * sum(
+                        math.comb(n, k)
+                        for k in range(min(up, down) + 1)
+                    )
+                    / 2**n,
+                )
+                if n
+                else 1.0
+            )
+
+            assert abs(p - independent) &lt; 1e-12
+
+            results.append(
+                {
+                    "metric": metric,
+                    "i": i,
+                    "j": j,
+                    "up": up,
+                    "down": down,
+                    "tie": ties,
+                    "p": p,
+                }
+            )
+
+    # Korekta Holma dla wszystkich 30 porównań.
+    running_max = 0.0
+    ordered = sorted(results, key=lambda x: x["p"])
+
+    for rank, result in enumerate(ordered):
+        adjusted = min(
+            1.0,
+            (len(results) - rank) * result["p"],
+        )
+        running_max = max(running_max, adjusted)
+        result["holm"] = running_max
+
+    return results
+
+
+primary_totals = totals(krus_panel)
+test_results = tests(krus_panel)
+
+print("\nKRUS — GŁÓWNY PANEL")
+print(primary_totals)
+
+
+# Analizy wrażliwości opisane w raporcie.
+for exclusions in [
+    ["Bydgoszczy"],
+    ["Bydgoszczy", "Częstochowie", "Łodzi"],
+    ["Białymstoku"],
+]:
+    names = [
+        name
+        for name in krus_panel
+        if not any(
+            excluded in name
+            for excluded in exclusions
+        )
+    ]
+
+    sensitivity_tests = tests(names)
+
+    print(
+        "SENS",
+        exclusions,
+        totals(names),
+        min(
+            result["holm"]
+            for result in sensitivity_tests
+        ),
+    )
+
+
+print(
+    "BILANS OSTATNIEGO OKRESU",
+    [
+        (
+            name.split("Regionalny ")[1],
+            values(name, 0)[4]
+            - values(name, 1)[4],
+        )
+        for name in krus_panel
+    ],
+)
+
+
+print("\nTESTY KRUS")
+print(test_results)
+
+
+# ------------------------------------------------------------------
+# KOWR
+# ------------------------------------------------------------------
+#
+# W arkuszu rekord jest nazwany jako Oddział Terenowy w Rzeszowie,
+# ale zgodnie z informacją urzędu jest to odpowiedź zbiorcza
+# dotycząca całego KOWR.
+#
+# Dla dwóch najstarszych okresów dane nie są kompletne, dlatego
+# w raporcie wykorzystywane są trzy późniejsze okresy.
+# ------------------------------------------------------------------
+
+kowr_periods = [
+    period
+    for period in periods
+    if (
+        period in data[kowr_name][1]
+        and period in data[kowr_name][2]
+    )
+]
+
+print("\nKOWR — ODPOWIEDŹ ZBIORCZA")
+
+for period in kowr_periods:
+    starts = data[kowr_name][1][period]
+    ends = data[kowr_name][2][period]
+
+    print(
+        labels[periods.index(period)],
+        "rozpoczęcia:",
+        starts,
+        "zakończenia:",
+        ends,
+        "suma:",
+        starts + ends,
+        "bilans:",
+        starts - ends,
+    )
+
+
+# ------------------------------------------------------------------
+# ARiMR
+# ------------------------------------------------------------------
+#
+# Arkusz zawiera dane tylko dla Podlaskiego Oddziału Regionalnego.
+# Nie są one traktowane jako reprezentatywne dla całej ARiMR.
+# ------------------------------------------------------------------
+
+print("\nARiMR — PODLASKI ODDZIAŁ REGIONALNY")
+
+for period, label in zip(periods, labels):
+    starts = data[arimr_name][1][period]
+    ends = data[arimr_name][2][period]
+
+    print(
+        label,
+        "rozpoczęcia:",
+        starts,
+        "zakończenia:",
+        ends,
+        "suma:",
+        starts + ends,
+        "bilans:",
+        starts - ends,
+    )
+</code></pre>
+</div></details>
+</div></section>
+</main>
+<footer><div class="footer-inner"><a class="footer-brand" href="https://siecobywatelska.pl/" target="_blank" rel="noopener" aria-label="Sieć Obywatelska Watchdog Polska"><img class="footer-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iV2Fyc3R3YV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDQwNC4zMjEgMTAwLjU1NSI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8cGF0aCBkPSJNMTcuMjgyLDIxLjM5NWMwLDIuNzExLTIuMDMsMy45MDUtNC42NTksMy45MDUtMi44ODMsMC01LjIyMi0uMjk1LTUuMjIyLS4yOTV2LTIuMjg0czIuMjkuMjg3LDQuNzc0LjI4N2MxLjIxLDAsMS44MzEtLjM2OCwxLjgzMS0xLjM1OCwwLTIuNTkzLTcuNDUtMi4xNzktNy40NS02LjkxMywwLTIuNzA4LDIuMDA3LTMuODk0LDQuNjMtMy44OTQsMi45MTEsMCw1LjI0OC4yODEsNS4yNDguMjgxdjIuMjg0cy0yLjU5Ni0uMjQ5LTUuMTA4LS4yNDljLTEuMDcxLDAtMS41NDkuNDIyLTEuNTQ5LDEuMzE4LDAsMi4zNDUsNy41MDUsMi4yMDksNy41MDUsNi45MThoMFoiLz4KICA8cGF0aCBkPSJNMjEuODMxLDYuMjFjMS42MTIsMCwxLjgwOS4xMzgsMS44MDksMS42MzgsMCwxLjMyOS0uMTY2LDEuNjY5LTEuODA5LDEuNjY5LTEuNjY4LDAtMS44MDQtLjMxMS0xLjgwNC0xLjY2OSwwLTEuNDA5LjEzNi0xLjYzOCwxLjgwNC0xLjYzOGgwWk0yMC4yMjUsMTEuMTIzaDMuMjV2MTQuMDgyaC0zLjI1di0xNC4wODJoMFpNMjAuMjI1LDI1LjIwNXYtMTQuMDgyLDE0LjA4MloiLz4KICA8cGF0aCBkPSJNMzguNDU2LDE4Ljk3M2gtMS4wMDdjLTIuNTQxLjAyNS01LjA1NC4wMjUtNy41OTIuMDU3LjAyMywxLjkxNy4xNjMsMi44NzkuNjk1LDMuNTI0LjUzOC42NzcsMS43NTYuNjc3LDIuODMuNjc3LjcyOSwwLDIuMzk2LS4wODYsNC4yNjItLjI3N3YxLjk3MWMtMS44NjYuMzE2LTMuNzc4LjUzOS01LjUzNC41MzktNC41NDQsMC01LjM4OS0xLjgwOC01LjM4OS03LjMzNywwLTUuNjc4LjcwMi03LjM0MSw1Ljg2OS03LjM0MSw0Ljk2NiwwLDUuODY2LDEuNjA2LDUuODY2LDcuMzA4di44NzloMFpNMjkuODgsMTYuODIyaDUuNTYzYy0uMTE0LTMuMjQyLS40MjUtMy44NC0yLjg1My0zLjg0LTIuNTkzLDAtMi41OTMsMS4xMzEtMi43MSwzLjg0aDBaIi8+CiAgPHBhdGggZD0iTTQ4LjIxLDIzLjE0NmMxLjA2OCwwLDIuNzY2LS4xMzgsNC4wMzYtLjI1djEuOTc1Yy0xLjQ2NS4zMzUtMy43MjQuNTk0LTUuMjIxLjU5NC0zLjkyMSwwLTUuNzMtLjcwMy01LjczLTYuNjEsMC02LjMyNC41OS04LjA0NCw1LjczLTguMDQ0LjQyNywwLDMuMzY0LjE0LDUuMDc5LjQ1NnYyLjE3MWMtMy4yOTktLjI1Ni00LjQyOC0uMzExLTQuNzEzLS4zMTEtMi44MjYsMC0yLjg3NiwxLjA3Ni0yLjg3Niw1LjgxMiwwLDMuODcuOTI4LDQuMjA3LDMuNjk1LDQuMjA3aDBaTTUwLjA3NCw0Ljk3bC0yLjgyMSw0Ljc2LTEuOTczLTEuMDM1LDIuNjc4LTQuODI3LDIuMTE2LDEuMTAyaDBaIi8+CiAgPHBhdGggZD0iTTYxLjM2NiwxOC4xNTZjMC01Ljc4Ny44NS03LjMxLDUuOTg3LTcuMzEsNS4xOTEsMCw2LjA0MywxLjYzNSw2LjA0Myw3LjMxcy0uODUyLDcuMzA5LTYuMDQzLDcuMzA5Yy01LjIyMywwLTUuOTg3LTEuNjY1LTUuOTg3LTcuMzA5aDBaTTcwLjIzMSwxOC4xNTZjMC00LjQwNi0uMjgzLTUuMjI4LTIuODc3LTUuMjI4LTIuNjMsMC0yLjg1Mi45NC0yLjg1Miw1LjIyOCwwLDQuMjYxLjIyMiw1LjEzNCwyLjg1Miw1LjEzNCwyLjY1MiwwLDIuODc3LS44NzMsMi44NzctNS4xMzRoMFoiLz4KICA8cGF0aCBkPSJNODIuMTU0LDI1LjQ0Yy0xLjM4OCwwLTMuNjcyLS4xNzMtNS4zNy0uMzk2VjUuNjhoMy4wOHY1LjY3YzEuMTA2LS4yNzgsMi43MS0uNDgyLDMuNDY3LS40ODIsMy40MTksMCw0LjY2NiwxLjc4Myw0LjY2Niw2LjI5MywwLDUuNzM1LS41Nyw4LjI3OS01Ljg0Myw4LjI3OWgwWk04Mi42NjUsMTMuMjQzYy0uNzkzLDAtMS44MTUuMTY5LTIuNzc3LjM5N3Y5LjM5NGMuNTk4LjAzMywxLjM4Ny4wMzMsMi4wOTMuMDMzaC4xMTZjMi42OCwwLDIuNzA3LTEuNzU1LDIuNzA3LTUuNzU1LDAtMi45MTQtLjE5Ni00LjA2OS0yLjEzOS00LjA2OWgwWiIvPgogIDxwb2x5Z29uIHBvaW50cz0iOTYuNjQ2IDMwLjU3MyA5My43NTkgMzAuNTczIDk1LjQ1IDI1LjIxMyA5NC42MDkgMjUuMjEzIDg5Ljc4MiAxMS4xMDEgOTMuMDU2IDExLjEwMSA5Ni40NjkgMjEuODAxIDk5Ljg5IDExLjEwMSAxMDMuMTU4IDExLjEwMSA5Ni42NDYgMzAuNTczIDk2LjY0NiAzMC41NzMiLz4KICA8cG9seWdvbiBwb2ludHM9IjEwNC4zODUgMTEuMSAxMDcuNTQ1IDExLjEgMTA5LjYzMSAyMC42NTkgMTEyLjM0NSAxMS4xIDExNS44NjggMTEuMSAxMTguNjEgMjAuNjU5IDEyMC43MjkgMTEuMSAxMjMuODY0IDExLjEgMTIwLjY5NSAyNS4yMTIgMTE2LjkxMSAyNS4yMTIgMTE0LjEyMSAxNS4zMDIgMTExLjM4MiAyNS4yMTIgMTA3LjU0NSAyNS4yMTIgMTA0LjM4NSAxMS4xIDEwNC4zODUgMTEuMSIvPgogIDxwYXRoIGQ9Ik0xMzcuMjQ0LDI1LjIxMmgtMi43MzFsLS4yMzMtMS4wNDVjLTEuMjY3LjY0OS0yLjkwMywxLjI5Ny00LjI4NCwxLjI5Ny0zLjA3OCwwLTQuMDk3LTIuMDU3LTQuMDk3LTQuNjI4LDAtMy4yNTMsMi4yOTQtMy44NjYsNS4zMzctMy44MzhsMi44MjUuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzYtMS41NTItMS42OTUsMC0zLjcyOS4yNzgtNC44ODUuNDQ3LS4wMjctLjA4My0uNDc0LTIuMDkzLS40NzQtMi4yMDIsMi4xMzctLjM5NSw0LjAzMi0uNTYxLDUuNzUtLjU2MSwzLjI0NywwLDQuNzY4LjY0OCw0Ljc2OCwzLjk1MXYxMC40NDRoMFpNMTM0LjA2MSwxOS4wM2MtMy44NjcsMC01LjA1OC4xNjYtNS4wNTgsMS45MiwwLDEuMTc1LjMxNywyLjAwNCwxLjMwMywyLjAwNC45MywwLDIuNjgtLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBhdGggZD0iTTE0Mi44NDYsMTkuOTAzdi02LjU3N2gtMy4xNjF2LTIuMjI1aDMuMTYxdi0zLjQ3NmgzLjE4NXYzLjQ3NmgzLjIxOHYyLjIyNWgtMy4yMTh2Ny4zN2MwLDIuMjU5LjQ4NiwyLjU2NCwxLjg5NSwyLjU2NC40MjUsMCwuOTY0LDAsMS42NDMtLjAyNGwuMDI0LDEuOTQ0Yy0uOTM0LjIzMi0xLjYzNi4yODUtMi4wODguMjg1LTQuMzI0LDAtNC42NTktMi4xNS00LjY1OS01LjU2MmgwWiIvPgogIDxwYXRoIGQ9Ik0xNjMuNTY3LDE4Ljk3M2gtMS4wMTFjLTIuNTQuMDI1LTUuMDUxLjAyNS03LjU5Ni4wNTcuMDMyLDEuOTIuMTcyLDIuODc5LjcwNCwzLjUzNC41MzguNjcxLDEuNzUxLjY3MSwyLjgyNS42NzEuNzM3LDAsMi4zOTgtLjA4Myw0LjI1OC0uMjgxdjEuOTcxYy0xLjg2LjMxNi0zLjc4MS41MzktNS41MjguNTM5LTQuNTQ0LDAtNS4zOTMtMS44MDUtNS4zOTMtNy4zMzUsMC01LjY3Ny43MDQtNy4zNDMsNS44NzEtNy4zNDMsNC45NjgsMCw1Ljg3LDEuNjA5LDUuODcsNy4zMTV2Ljg3MmgwWk0xNTQuOTkzLDE2LjgzaDUuNTU5Yy0uMTExLTMuMjUtLjQyMy0zLjg0MS0yLjg1NC0zLjg0MS0yLjU5MywwLTIuNTkzLDEuMTMyLTIuNzA1LDMuODQxaDBaIi8+CiAgPHBhdGggZD0iTTE3MS40NTIsMjUuMjk5Yy0uOTA1LjE0LTEuMDQyLjE0LTEuMjEzLjE0LTIuMDI5LDAtMy41LS43NjctMy41LTQuMDk3VjUuOTU4aDMuMTg3djE1Ljg5NmMwLC44NzUsMCwxLjYxLDEuNTI2LDEuODM3djEuNjA4aDBaIi8+CiAgPHBhdGggZD0iTTE4My45MDQsMjEuNDAxYzAsMi43MDUtMi4wMywzLjg5OC00LjY1OCwzLjg5OC0yLjg4MSwwLTUuMjIzLS4yODYtNS4yMjMtLjI4NnYtMi4yODRzMi4yODcuMjc5LDQuNzcxLjI3OWMxLjIxOCwwLDEuODM1LS4zNjQsMS44MzUtMS4zNTUsMC0yLjU5LTcuNDUxLTIuMTc2LTcuNDUxLTYuOTEzLDAtMi43MTIsMi4wMDItMy44OTUsNC42My0zLjg5NSwyLjkwNiwwLDUuMjUuMjc4LDUuMjUuMjc4djIuMjg4cy0yLjU5OS0uMjUyLTUuMTA3LS4yNTJjLTEuMDc5LDAtMS41NTYuNDIxLTEuNTU2LDEuMzIyLDAsMi4zNDksNy41MDksMi4yLDcuNTA5LDYuOTJoMFoiLz4KICA8cG9seWdvbiBwb2ludHM9IjE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgNS45MjkgMTg5Ljk3OSA1LjkyOSAxODkuOTc5IDE1LjkxOCAxOTIuMDEyIDE1LjkxOCAxOTUuNzA4IDkuMDY2IDE5OS4wMzkgOS4wNjYgMTk0LjcyMSAxNy4wNTYgMTk5Ljc0NiAyNS4yMTIgMTk2LjMzIDI1LjIxMiAxOTIuMDQgMTguMjYzIDE4OS45NzkgMTguMjYzIDE4OS45NzkgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIi8+CiAgPHBhdGggZD0iTTIxMi4zNDEsMjUuMjEyaC0yLjczMmwtLjIzMy0xLjA0NWMtMS4yNjYuNjQ5LTIuOTAzLDEuMjk3LTQuMjgzLDEuMjk3LTMuMDgsMC00LjA5OS0yLjA1Ny00LjA5OS00LjYyOCwwLTMuMjUzLDIuMjktMy44NjYsNS4zMzMtMy44MzhsMi44MjYuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzctMS41NTItMS42OTEsMC0zLjcyNi4yNzgtNC44ODUuNDQ3LS4wMjEtLjA4My0uNDc3LTIuMDkzLS40NzctMi4yMDIsMi4xNDMtLjM5NSw0LjAzMy0uNTYxLDUuNzU0LS41NjEsMy4yNDgsMCw0Ljc3My42NDgsNC43NzMsMy45NTF2MTAuNDQ0aDBaTTIwOS4xNTMsMTkuMDNjLTMuODY5LDAtNS4wNTQuMTY2LTUuMDU0LDEuOTIsMCwxLjE3NS4zMTcsMi4wMDQsMS4yOTksMi4wMDQuOTI5LDAsMi42NzctLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBvbHlnb24gcG9pbnRzPSI2LjM4IDQyLjE3NiAxNi41NTEgNDIuMTc2IDIxLjc5NSA2Ni40OTUgMjguNTUyIDQyLjE3NiAzOS41MTcgNDIuMTc2IDQ2LjUwOSA2Ni40OTUgNTEuNzU1IDQyLjE3NiA2MS44NDggNDIuMTc2IDUzLjAyNyA4MS45MTEgNDEuMjY2IDgxLjkxMSAzNC4xMTUgNTYuMjQzIDI3LjEyMiA4MS45MTEgMTUuMjggODEuOTExIDYuMzggNDIuMTc2IDYuMzggNDIuMTc2IiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTk5Ljg1OSw4MS45MTFoLTguNzQyYy0uMjM3LS44NzYtLjQ3Ni0yLjMwMy0uNzE1LTMuMTc3LTMuMzM4LDEuOTg0LTcuNDY5LDMuODkyLTExLjIwNSwzLjg5Mi05LjEzNywwLTEyLjE1OC01Ljg4MS0xMi4xNTgtMTMuMTkxLDAtNy4yMzIsMy45NzUtMTAuMDk0LDkuODU1LTEwLjgwNiwxLjc0Ny0uMjM5LDMuNjU1LS4yMzksMTIuNzE1LjIzN3YtNi4zNTdjMC0zLjczNS0xLjY2OS0zLjk3Mi00Ljc3MS0zLjk3Mi00LjYwNiwwLTEwLjI1LjM5NS0xMy45ODUuOTUyLS4wNzgtLjIzOS0xLjUxMS02LjE5OC0xLjUxMS02LjU5OCw2LjI3OC0xLjExLDExLjc2My0xLjUwOCwxNi42OS0xLjUwOCw5LjM3NywwLDEzLjgyNywxLjkwOCwxMy44MjcsMTEuMjgydjI5LjI0NmgwWk04OS42MDksNjQuNzQ2Yy05LjQ1OCwwLTEyLjU1Ni41NTYtMTIuNTU2LDUuMDg3LDAsMi45NC44NzMsNS4wMDUsMy4wMTgsNS4wMDUsMS45ODgsMCw2LjUxNy0xLjM1Miw5LjUzOC0yLjQ2MnYtNy42M2gwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMTE2LjU2NiA4MS45MTEgMTE2LjU2NiA0OC41ODEgMTA1LjI1OCA0OC41ODEgMTA1LjI1OCA0Mi4wMDIgMTM3Ljk4OCA0Mi4wMDIgMTM3Ljk4OCA0OC41ODEgMTI2LjY4IDQ4LjU4MSAxMjYuNjggODEuOTExIDExNi41NjYgODEuOTExIDExNi41NjYgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTE2MC44MjcsNzUuNDc0YzMuMDIxLDAsOC4yNjQtLjM5OCwxMS45Mi0uNzE1djYuMDM5Yy00LjM3MSwxLjExMy0xMC44ODcsMS44MjctMTUuMTc5LDEuODI3LTExLjM2NCwwLTE2LjUyOS0xLjk4Ni0xNi41MjktMTguNjcyLDAtMTcuNDg1LDEuNjctMjIuNTcsMTYuMTMzLTIyLjU3Ljc5NSwwLDkuNjE2LjM5NywxNS4xNzgsMS4zNDl2Ni43NTZjLTguOS0uNzE1LTEyLjg3NS0uOTUxLTEzLjgyNi0uOTUxLTYuOTk1LDAtNy4xNTUsMi44NTktNy4xNTUsMTUuNjUyLDAsMTAuMTcyLDIuNjI0LDExLjI4NSw5LjQ1OCwxMS4yODVoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cG9seWdvbiBwb2ludHM9IjIwMi41NzUgODEuOTExIDIwMi41NzUgNjQuNzM4IDE5MC43ODcgNjQuNzM4IDE5MC43ODcgODEuOTExIDE4MC43MzQgODEuOTExIDE4MC43MzQgNDEuOTQyIDE5MC43ODcgNDEuOTQyIDE5MC43ODcgNTguMjc1IDIwMi41NzUgNTguMjc1IDIwMi41NzUgNDEuOTQyIDIxMi42MjggNDEuOTQyIDIxMi42MjggODEuOTExIDIwMi41NzUgODEuOTExIDIwMi41NzUgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTIyMi43NzQsNDEuODJsMTYuMDk1LjA2MmMxMS4zMTEuMDYsMTUuOTE2LDMuMTY5LDE1LjkxNiwyMC4yMjMsMCwxNi4yMTYtMy43NjksMTkuODA2LTE1LjI1NSwxOS44MDZoLTE2Ljc1NnYtNDAuMDkxaDBaTTIzMi44MjksNDcuOTg0djI3LjUyNGg2LjI4YzQuNjA3LDAsNS43NDUtMi42OTMsNS43NDUtMTMuNDAzLDAtMTIuNjI0LTEuMTk5LTE0LjEyMS01Ljc0NS0xNC4xMjFoLTYuMjhaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTI2MS45MDcsNjIuMDQ1YzAtMTYuMjg5LDIuNDYyLTIwLjU4MSwxNy4yNDQtMjAuNTgxLDE1LjAxOCwwLDE3LjQwMyw0LjYwOCwxNy40MDMsMjAuNTgxcy0yLjQ2NSwyMC41ODEtMTcuNDAzLDIwLjU4MWMtMTUuMDE5LDAtMTcuMjQ0LTQuNjktMTcuMjQ0LTIwLjU4MWgwWk0yODYuNDYxLDYyLjA0NWMwLTExLjkyMi0uNzE2LTE0LjE0Ny03LjMxLTE0LjE0Ny02LjY3NSwwLTcuMTUyLDIuNTQyLTcuMTUyLDE0LjE0NywwLDExLjUyMS40NzcsMTMuOTA1LDcuMTUyLDEzLjkwNyw2LjY3NSwwLDcuMzEtMi4zODYsNy4zMS0xMy45MDdoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzU3LjMxOCw0OS40NjJjNS40NzUsMCw2LjE3Mi42MTksNi4xNzIsNS40NzksMCw0LjU1Mi0uNDYzLDUuNzA4LTYuMTcyLDUuNzA4LTUuNjI5LDAtNi4xNzMtMS4wNzgtNi4xNzMtNS43MDgsMC00LjcwOS41NDQtNS40NzksNi4xNzMtNS40NzloMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzE3LjIyLDcyLjM5MWMtLjA3NywxLjA4LDEuMTUzLDEuNTQzLDIuOTMsMS41NDMsMi4wMDYsMCwzLjYyOS0uMTUxLDUuNjM2LS4xNTEsOC4xNzgsMCwxNi42Ny45MjQsMTYuNjcsMTAuNTY5LDAsOS4yNjUtNi43MTYsMTIuODg3LTE1Ljg5OCwxMi44ODctOS4wMzQsMC0xMy40My0uNjE2LTE3Ljk4NS0uNjE2di03LjA5OXMxMC43MjcuNDY2LDE3LjQ0My40NjZjMy40NzUsMCw1LjA5OC0xLjM5Miw1LjA5OC01LjA5OSwwLTMuMzE4LTIuMTYzLTMuNjIyLTQuNzg5LTMuNjIyLTEuNjk2LDAtMy44NTkuMTUzLTYuMTc1LjE1My03LjAyMiwwLTEzLjUwOC0yLjg2LTEzLjUwOC0xMC42NTcsMC0uOTI3LjIzNC00LjE3MiwxLjE2NC01Ljg2OS0yLjU1My0yLjMxNi0zLjQ3Ni01LjcxMi0zLjQ3Ni0xMC4wMzQsMC04Ljg3NSwzLjAwOS0xMy4wNDEsMTUuNTktMTMuMTIyaDIyLjg0NXY2LjI1MmwtNC4zMjIuNjE4Yy42OTYsMS42OTksMS4wMDIsMy45MzgsMS4wMDIsNi4yNTIsMCwxMC4yNjQtNC41NTQsMTMuMTk3LTEzLjY1OSwxMy4xOTdoLTguNDkybC0uMDc0LDQuMzMyaDBaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTMyMy44NTUsNDguOTE5aC0yLjYyM2MtNC40ODIsMC01LjcwOS4yMzQtNS43MDksNi4xNzUsMCw1LjA5MywxLjE1MSw1Ljk0Myw0LjcwMyw2LjA5M2gzLjU1MmMzLjc4MywwLDQuNjMzLTEuMDgxLDQuNjMzLTYuMDkzLDAtNS4yNDgtLjE1Ni02LjE3NS00LjU1Ni02LjE3NWgwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzY4LjgxOCA0Mi4yMDcgMzgwLjc3OSAxOS40NDIgMzkwLjE5MSAxOS40NDIgNDAyLjA3NSA0Mi4yMDcgMzkxLjQyNCA0Mi4yMDcgMzg1LjQ4OCAyOS4yNDMgMzc5LjYyIDQyLjIwNyAzNjguODE4IDQyLjIwNyAzNjguODE4IDQyLjIwNyIgZmlsbD0iIzk4MzAzOSIvPgo8L3N2Zz4=" alt="Sieć Obywatelska Watchdog Polska"></a><p>Ostatnia aktualizacja: <strong>5 października 2026</strong>.<span class="footer-source">Źródło danych: <a href="https://fedrowanie.siecobywatelska.pl/monitoringi/liczba-zmian-kadrowych-w-arimr-kowr-i-krus">odpowiedzi urzędów zebrane w systemie Fedrowanie</a></span></p></div></footer>
+<!-- OSADZANIE: Minimalne uprawnienie do pobierania osadzonego XLSX, także bez JavaScriptu:
+<iframe src="163_index.html" title="Zmiany kadrowe w KRUS, KOWR i ARiMR" sandbox="allow-downloads" style="width:100%;height:1000px;border:0"></iframe>
+Opcjonalne filtrowanie i sortowanie: dodaj allow-scripts.
+Źródłowy XLSX jest osadzony bez modyfikacji. SHA-256: 58fe07fa06a4aa41de33b70b857d15194a7c6931183c1ac90110bde56e5bcdc7
+-->
+<script>
+const table=document.querySelector('#krusTableWrap table');
+if(table){
+  table.id='unitTable';
+  const rows=Array.from(table.tBodies[0].rows);
+  document.getElementById('unitTools').hidden=false;
+  document.getElementById('unitSearch').addEventListener('input',e=>{const q=e.target.value.trim().toLocaleLowerCase('pl');let n=0;rows.forEach(r=>{r.hidden=!r.cells[0].textContent.toLocaleLowerCase('pl').includes(q);if(!r.hidden)n++});document.getElementById('unitCount').textContent=n+' z 15 oddziałów';document.getElementById('emptySearch').hidden=n!==0});
+  const th=table.querySelector('th');const b=document.createElement('button');b.type='button';b.className='sort-button';b.textContent=th.textContent;b.setAttribute('aria-label','Sortuj oddziały alfabetycznie');th.textContent='';th.append(b);let asc=false;b.addEventListener('click',()=>{asc=!asc;th.setAttribute('aria-sort',asc?'ascending':'descending');rows.sort((a,b)=>(asc?1:-1)*a.cells[0].textContent.localeCompare(b.cells[0].textContent,'pl')).forEach(r=>table.tBodies[0].append(r))});
+}
+window.addEventListener('beforeprint',()=>document.querySelectorAll('details').forEach(d=>{d.dataset.wasOpen=d.open;d.open=true}));window.addEventListener('afterprint',()=>document.querySelectorAll('details').forEach(d=>{d.open=d.dataset.wasOpen==='true'}));
+</script></body></html>
