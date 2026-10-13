@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="description" content="Szczegóły zmian kadrowych w spółkach Skarbu Państwa: 20 zapytanych spółek, jedna przekazała dane. Wyniki, zakres wniosku, jawność i zastrzeżenia metodologiczne.">
+<title>Szczegóły zmian kadrowych w spółkach Skarbu Państwa — raport | Sieć Obywatelska Watchdog Polska</title>
+<style>
+  :root {
+    --red:#e3232a;
+    --red-dark:#8e1832;
+    --ink:#161616;
+    --muted:#686868;
+    --paper:#ffffff;
+    --soft:#f2f2f0;
+    --line:#d9d9d5;
+    --yellow:#f2d45c;
+    --max:1240px;
+  }
+  * { box-sizing:border-box; }
+  [hidden] { display:none !important; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial, Helvetica, sans-serif; line-height:1.5; }
+  a { color:var(--red-dark); text-decoration-thickness:1px; text-underline-offset:3px; }
+  a:hover { color:var(--red); }
+  button, input { font:inherit; }
+  .sitebar { border-bottom:1px solid var(--line); background:#fff; position:sticky; top:0; z-index:10; }
+  .sitebar-inner { max-width:var(--max); margin:auto; min-height:72px; display:flex; align-items:stretch; justify-content:space-between; }
+  .brand { display:flex; align-items:center; padding:9px 24px; text-decoration:none; color:var(--ink); }
+  .brand-logo { display:block; width:202px; height:auto; max-height:50px; }
+  .site-actions { display:flex; align-items:stretch; }
+  .site-actions a { padding:0 22px; display:flex; align-items:center; font-size:12px; letter-spacing:.07em; font-weight:800; text-decoration:none; color:var(--ink); border-left:1px solid var(--line); }
+  .site-actions a.primary { background:var(--red); color:#fff; border-color:var(--red); }
+  .hero { max-width:var(--max); margin:0 auto; padding:74px 24px 48px; display:grid; grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr); gap:70px; align-items:end; }
+  .eyebrow { font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--red-dark); margin:0 0 22px; }
+  h1 { font-size:clamp(52px,7vw,104px); letter-spacing:-.055em; line-height:.88; margin:0; max-width:900px; font-weight:900; }
+  .hero-lead { font-size:clamp(20px,2.2vw,31px); line-height:1.14; max-width:820px; margin:34px 0 0; font-weight:500; letter-spacing:-.02em; }
+  .hero-aside { border-top:5px solid var(--red); padding-top:20px; }
+  .hero-aside strong { font-size:42px; line-height:1; display:block; letter-spacing:-.05em; }
+  .hero-aside p { margin:9px 0 0; color:var(--muted); }
+  .report-meta { margin-top:24px; padding-top:18px; border-top:1px solid var(--line); display:grid; gap:10px; }
+  .report-meta-row { display:grid; grid-template-columns:120px 1fr; gap:12px; align-items:baseline; font-size:12px; }
+  .report-meta-row span { color:var(--muted); text-transform:uppercase; letter-spacing:.05em; font-size:10px; font-weight:800; }
+  .report-meta-row strong { font-size:13px; letter-spacing:0; line-height:1.3; }
+  .section { padding:72px 24px; }
+  .section.alt { background:var(--soft); }
+  .section.red { background:var(--red); color:#fff; }
+  .wrap { max-width:var(--max); margin:auto; }
+  .section-head { display:grid; grid-template-columns:260px 1fr; gap:36px; align-items:start; margin-bottom:38px; }
+  .section-no { font-size:13px; font-weight:900; letter-spacing:.09em; text-transform:uppercase; color:var(--red-dark); border-top:1px solid currentColor; padding-top:12px; }
+  .red .section-no { color:#fff; opacity:.78; }
+  h2 { font-size:clamp(36px,5vw,66px); letter-spacing:-.045em; line-height:.95; margin:0; font-weight:900; }
+  h3 { font-size:28px; line-height:1.05; letter-spacing:-.025em; margin:0 0 16px; }
+  .intro { font-size:21px; max-width:820px; margin:20px 0 0; }
+  .kpis { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+  .kpi { min-height:176px; padding:25px 24px 22px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; flex-direction:column; justify-content:space-between; }
+  .kpi strong { font-size:clamp(34px,4vw,54px); line-height:1; letter-spacing:-.05em; }
+  .kpi span { color:var(--muted); font-size:14px; max-width:180px; }
+  .callout { margin-top:30px; border:3px solid var(--red); display:grid; grid-template-columns:230px 1fr; }
+  .callout-label { background:var(--red); color:#fff; font-weight:900; padding:25px; font-size:21px; line-height:1.05; }
+  .callout-copy { padding:24px 28px; font-size:18px; }
+  .callout-copy p { margin:0; }
+  .metrics-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:22px; }
+  .card { background:#fff; border:1px solid var(--line); padding:28px; }
+  .card.dark { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .metric-hero { display:flex; align-items:flex-end; gap:18px; padding-bottom:24px; border-bottom:1px solid var(--line); margin-bottom:24px; }
+  .metric-hero strong { font-size:clamp(45px,6vw,78px); letter-spacing:-.055em; line-height:.85; }
+  .metric-hero span { color:var(--muted); max-width:180px; font-size:14px; }
+  .dark .metric-hero span { color:#bdbdbd; }
+  .stat-pair { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); }
+  .stat-pair > div { background:#fff; padding:18px; }
+  .stat-pair b { display:block; font-size:28px; line-height:1.05; }
+  .stat-pair span { color:var(--muted); font-size:13px; }
+  .threshold-row + .threshold-row { margin-top:28px; }
+  .threshold-heading { display:flex; justify-content:space-between; gap:16px; align-items:baseline; }
+  .threshold-heading span { font-weight:700; }
+  .threshold-heading strong { font-size:24px; }
+  .threshold-heading small { font-size:14px; font-weight:700; color:var(--muted); }
+  .threshold-track { height:20px; background:#e7e7e4; margin-top:8px; overflow:hidden; }
+  .threshold-track span { height:100%; display:block; background:var(--red); min-width:2px; }
+  .micro { font-size:12px; color:var(--muted); margin:8px 0 0; }
+  .percentile-card { margin-top:22px; background:#fff; border:1px solid var(--line); padding:28px; overflow:hidden; }
+  .percentile-line { margin:34px 0 0; display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); border-top:4px solid var(--ink); }
+  .percentile-marker { position:relative; min-width:0; padding:22px 8px 4px; text-align:center; border-right:1px solid var(--line); }
+  .percentile-marker:last-child { border-right:0; }
+  .marker-dot { position:absolute; top:-10px; left:50%; transform:translateX(-50%); display:block; width:16px; height:16px; background:var(--red); border:3px solid #fff; outline:1px solid var(--red); border-radius:50%; }
+  .marker-label { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); white-space:nowrap; }
+  .percentile-marker strong { display:block; font-size:13px; line-height:1.25; white-space:nowrap; margin-top:4px; font-variant-numeric:tabular-nums; }
+  .chart { margin-top:24px; }
+  .chart-row { display:grid; grid-template-columns:minmax(210px,1.3fr) minmax(150px,2.1fr) 126px; gap:16px; align-items:center; min-height:58px; border-top:1px solid var(--line); }
+  .chart-row:last-child { border-bottom:1px solid var(--line); }
+  .chart-row--compact { min-height:49px; grid-template-columns:minmax(120px,1fr) minmax(120px,1.6fr) 100px; }
+  .chart-label { font-size:13px; line-height:1.2; font-weight:700; }
+  .chart-track { height:12px; background:#dededb; }
+  .chart-track span { display:block; height:100%; background:var(--red); }
+  .chart-value { font-size:13px; font-weight:800; text-align:right; white-space:nowrap; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .table-wrap { overflow:auto; border:1px solid var(--line); background:#fff; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th { text-align:left; padding:14px 14px; font-size:11px; text-transform:uppercase; letter-spacing:.05em; border-bottom:2px solid var(--ink); white-space:nowrap; background:#fff; position:sticky; top:0; z-index:1; }
+  td { padding:14px; vertical-align:top; border-bottom:1px solid var(--line); }
+  tbody tr:hover { background:#fafafa; }
+  td.num, th.num { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  td.rank { width:44px; color:var(--muted); font-weight:800; }
+  td.strong { font-weight:900; }
+  .subcell { display:block; color:var(--muted); font-size:12px; margin-top:4px; }
+  .table-actions { display:flex; justify-content:space-between; gap:14px; align-items:center; margin:20px 0 14px; flex-wrap:wrap; }
+  .btn { border:0; cursor:pointer; background:var(--ink); color:#fff; padding:14px 18px; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px; }
+  .btn.red { background:var(--red); }
+  .btn.ghost { background:#fff; color:var(--ink); border:1px solid var(--ink); }
+  .btn:hover { opacity:.88; color:#fff; }
+  .btn.ghost:hover { color:var(--ink); background:#f5f5f5; }
+  .search { flex:1; min-width:260px; max-width:520px; padding:13px 14px; border:1px solid var(--ink); background:#fff; }
+  .sort-hint { color:var(--muted); font-size:12px; }
+  .sortable.is-interactive th[data-col] { cursor:pointer; user-select:none; }
+  .sortable.is-interactive th[data-col]:after { content:' ↕'; color:var(--muted); }
+  .category-note { border-left:5px solid var(--yellow); padding:3px 0 3px 16px; font-size:14px; color:var(--muted); max-width:780px; }
+  .download-panel { display:grid; grid-template-columns:1.15fr .85fr; gap:50px; align-items:center; }
+  .download-panel h2 { max-width:700px; }
+  .download-box { background:#fff; color:var(--ink); padding:30px; }
+  .file-icon { width:60px; height:72px; border:3px solid var(--ink); display:grid; place-items:center; font-weight:900; margin-bottom:20px; }
+  .file-meta { display:grid; grid-template-columns:1fr auto; gap:8px 20px; margin:22px 0; padding-top:18px; border-top:1px solid var(--line); font-size:13px; }
+  .method { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .method ul { margin:0; padding-left:20px; }
+  .method li + li { margin-top:13px; }
+  .method strong { background:linear-gradient(transparent 64%, #f4df74 64%); }
+  footer { background:var(--ink); color:#fff; padding:48px 24px; }
+  .footer-inner { max-width:var(--max); margin:auto; display:flex; justify-content:space-between; gap:40px; align-items:flex-end; }
+  .footer-brand { display:inline-flex; align-items:center; justify-content:center; background:#fff; padding:10px 12px; flex:0 0 auto; }
+  .footer-logo { display:block; width:230px; height:auto; }
+  footer p { color:#bbb; max-width:760px; font-size:13px; margin:0; }
+  footer a { color:#fff; }
+  footer a:hover { color:#fff; opacity:.8; }
+  .footer-source { display:block; margin-top:10px; overflow-wrap:anywhere; }
+  /* Iframe-safe: treść jest widoczna niezależnie od dostępności JavaScriptu. */
+  .fade-in { opacity:1; transform:none; }
+  .fade-in.visible { opacity:1; transform:none; }
+  @media (max-width:960px) {
+    .site-actions a:not(.primary) { display:none; }
+    .hero { grid-template-columns:1fr; gap:38px; padding-top:52px; }
+    .hero-aside { max-width:360px; }
+    .section-head { grid-template-columns:1fr; gap:15px; }
+    .section-no { width:180px; }
+    .kpis { grid-template-columns:1fr 1fr; }
+    .metrics-grid, .download-panel { grid-template-columns:1fr; }
+    .two-col, .method { grid-template-columns:1fr; }
+    .percentile-line { grid-template-columns:repeat(4,minmax(0,1fr)); border-top:0; gap:1px; background:var(--line); }
+    .percentile-marker { background:var(--soft); border-right:0; padding:16px 13px; text-align:left; }
+    .marker-dot { display:none; }
+  }
+  @media (max-width:660px) {
+    .sitebar { position:static; }
+    .sitebar-inner { min-height:62px; }
+    .brand { padding:8px 15px; }
+    .brand-logo { width:168px; max-height:42px; }
+    .site-actions a { padding:0 13px; font-size:10px; }
+    .hero, .section { padding-left:16px; padding-right:16px; }
+    h1 { font-size:54px; }
+    .kpis { grid-template-columns:1fr; }
+    .callout { grid-template-columns:1fr; }
+    .metric-hero { align-items:flex-start; flex-direction:column; }
+    .percentile-line { grid-template-columns:1fr 1fr; }
+    .report-meta-row { grid-template-columns:1fr; gap:2px; }
+    .chart-row, .chart-row--compact { grid-template-columns:1fr 82px; gap:8px; padding:10px 0; }
+    .chart-track { grid-column:1 / -1; order:3; }
+    .chart-value { grid-column:2; grid-row:1; }
+    .footer-inner { display:block; }
+    .footer-brand { margin-bottom:24px; }
+    .footer-logo { width:200px; }
+  }
+  @media print {
+    .sitebar, .table-actions, .btn { display:none !important; }
+    .section { padding:34px 0; }
+    .hero { padding:34px 0; }
+    .fade-in { opacity:1 !important; transform:none !important; }
+    body { font-size:10pt; }
+    a { color:#000; }
+  }
+
+section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;line-height:1.7} .report-copy p,.report-copy>ul,.report-copy>ol{max-width:960px}.report-copy h3{margin:40px 0 20px;max-width:1000px}.report-copy h4{font-size:23px;line-height:1.2;margin-top:34px}.report-copy li+li{margin-top:8px}.report-copy .table-wrap{margin:24px 0 32px;max-width:100%}.report-copy td{line-height:1.5;min-width:100px}.report-copy th{white-space:normal;min-width:115px}.report-copy code{font-size:.87em;overflow-wrap:anywhere;background:#ececea;padding:2px 4px}pre{padding:22px;background:#ececea;overflow:auto;font-size:13px;line-height:1.55}pre code{padding:0!important;overflow-wrap:normal!important}.report-copy h3+h3{margin-top:24px}.report-copy h3~h3{font-size:25px}.chart-card{margin-bottom:40px}.legend{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;margin:24px 0}.legend span{display:flex;align-items:center;gap:8px}.legend i{display:inline-block;width:16px;height:16px}.hire{background:var(--red)}.leave{background:var(--ink)}.bar-group{display:grid;grid-template-columns:180px 1fr;gap:22px;border-top:1px solid var(--line);padding:18px 0;align-items:center}.bar-label{font-weight:700;font-size:14px}.bar-pair{padding-right:36px}.bar-line{display:flex;align-items:center;gap:9px;margin:7px 0;height:18px}.bar{display:block;height:16px;flex-shrink:0}.bar-line b{font-size:13px;font-variant-numeric:tabular-nums}.filename{overflow-wrap:anywhere;font-size:13px;color:var(--muted)}.download-help{font-size:13px;line-height:1.6;margin:18px 0}.secondary-download{font-size:13px;font-weight:700}.contents{padding:0 24px 30px;max-width:var(--max);margin:auto;display:flex;gap:10px 22px;flex-wrap:wrap;font-size:13px;font-weight:700}.contents a{padding:8px 0}.appendix{border-top:1px solid var(--line);padding:24px 0;margin-top:28px}.appendix summary{font-size:23px;font-weight:800;cursor:pointer}.appendix[open] summary{margin-bottom:20px}.source-intro{font-size:13px;color:var(--muted);margin-bottom:30px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.sort-button{font:inherit;font-weight:800;border:0;background:transparent;color:inherit;text-align:inherit;padding:0;cursor:pointer}.sort-button::after{content:' ↕'}.skip-link{position:absolute;left:16px;top:-100px;background:#fff;padding:12px;z-index:30}.skip-link:focus{top:10px}.hero h1{font-size:clamp(48px,6.7vw,92px);line-height:.98}.hero h1 span{color:var(--red)}.section-head h2{line-height:1.02}.report-copy h2{font-size:36px}.methodology article+article{padding-top:20px;border-top:1px solid var(--line);margin-top:50px}
+@media(max-width:660px){.hero h1{font-size:49px}.contents{padding-left:16px;padding-right:16px}.bar-group{grid-template-columns:1fr;gap:4px}.card{padding:20px}.report-copy{font-size:16px}.search{min-width:0;width:100%}.download-box{padding:24px}.site-actions a:not(.primary){display:none}.appendix summary{font-size:20px}h2{font-size:38px}.report-copy th{min-width:105px}.report-copy th:first-child{min-width:170px}.table-wrap{max-width:100%}}
+@media print{details>div{display:block!important}.contents,.download-help{display:none}.table-wrap{overflow:visible}.report-copy{font-size:10pt}.report-copy h3{break-after:avoid}.kpi{min-height:90px}.section-head{break-after:avoid}pre{white-space:pre-wrap}.chart-card{break-inside:avoid}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* RAPORT SZCZEGÓŁOWY — zachowuje system graficzny raportu poprzedniego. */
+:root{--rose:#fbe9e9;--warm:#f7f5f0;--faint:#fafafa;--green:#236455}
+body{line-height:1.58}
+h1{max-width:1000px}
+.hero h1{font-size:clamp(48px,6.4vw,88px);line-height:.98}
+.hero-aside .hero-numeral{font-size:80px;font-weight:900;line-height:.88;letter-spacing:-.085em;display:block;color:var(--red)}
+.hero-aside .hero-numeral small{font-size:31px;letter-spacing:-.035em;color:var(--ink)}
+.hero-aside p{font-size:16px;max-width:285px}
+.kpis .kpi strong{font-size:clamp(44px,5.1vw,66px)}
+.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}
+.kpi--primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.kpi--primary span{color:#d9d9d9}
+.section-head h2{max-width:790px}
+.report-copy{font-size:17px;line-height:1.72;max-width:1100px}
+.report-copy p{max-width:990px}
+.report-copy p:first-child{margin-top:0}
+.report-copy h3{margin:30px 0 14px}
+.lead-copy{font-size:22px;line-height:1.43;max-width:880px;margin:0 0 30px}
+.composition{margin:34px 0 20px}
+.composition-track{display:flex;width:100%;height:40px;overflow:hidden;background:var(--soft);border-radius:0}
+.composition-track div{position:relative;height:100%}
+.composition-track .supplied{width:5%;background:var(--red)}
+.composition-track .other{width:45%;background:var(--ink)}
+.composition-track .silent{width:50%;background:#b9b9b5}
+.composition-legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:20px 0 0}
+.composition-legend article{border-top:4px solid var(--line);padding:14px 0 0}
+.composition-legend article:nth-child(1){border-color:var(--red)}
+.composition-legend article:nth-child(2){border-color:var(--ink)}
+.composition-legend article:nth-child(3){border-color:#b9b9b5}
+.composition-legend b{display:block;font-size:23px;line-height:1.1;letter-spacing:-.025em}
+.composition-legend span{display:block;color:var(--muted);font-size:14px;margin-top:8px;line-height:1.42}
+.callout-copy p{max-width:850px}
+.callout-copy{line-height:1.55}
+.origin-note{font-size:14px;color:var(--muted);max-width:970px;border-left:4px solid var(--yellow);padding-left:16px;margin-top:28px}
+.periods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);margin:30px 0}
+.period{background:#fff;padding:25px 27px}
+.period span{font-size:11px;text-transform:uppercase;letter-spacing:.085em;color:var(--red-dark);font-weight:900}
+.period strong{display:block;font-size:25px;line-height:1.17;letter-spacing:-.03em;margin-top:12px}
+.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:25px 0 0;max-width:970px}
+.checklist article{background:#fff;border:1px solid var(--line);padding:22px 24px}
+.checklist span{display:block;font-size:11px;color:var(--red-dark);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+.checklist b{font-size:18px;line-height:1.25;display:block}
+.checklist p{font-size:14px;color:var(--muted);margin:8px 0 0}
+.case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:32px 0 26px}
+.case{background:#fff;border:1px solid var(--line);min-width:0}
+.case-top{padding:27px 30px 22px;border-top:6px solid var(--red)}
+.case:nth-child(2) .case-top{border-color:var(--ink)}
+.case-badge{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;border:1px solid var(--line);padding:6px 9px}
+.case h3{font-size:33px;line-height:1.08;letter-spacing:-.035em;margin:20px 0 7px}
+.case .role{font-size:17px;line-height:1.3;max-width:430px;margin:0}
+.case dl{margin:0;padding:0 30px 18px}
+.case dl div{padding:15px 0;border-top:1px solid var(--line)}
+.case dt{font-size:11px;text-transform:uppercase;color:var(--muted);font-weight:800;letter-spacing:.06em;margin-bottom:5px}
+.case dd{margin:0;font-size:15px;line-height:1.46;overflow-wrap:anywhere}
+.case-foot{background:var(--warm);padding:20px 30px;font-size:14px;line-height:1.55;border-top:1px solid var(--line)}
+.case-foot strong{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.compact-table{margin:23px 0}
+.compact-table table{font-size:15px}
+.compact-table td,.compact-table th{padding:16px 17px}
+.compact-table th{white-space:normal}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:30px 0}
+.pillars article{padding:28px;border:1px solid var(--line);background:#fff}
+.pillars h3{font-size:24px;line-height:1.12;margin:0 0 17px}
+.pillars p{font-size:15px;line-height:1.6;margin:0}
+.quote-line{font-weight:900;font-size:clamp(28px,3.2vw,48px);line-height:1.1;letter-spacing:-.04em;max-width:950px;margin:0 0 28px}
+.red .quote-line{color:#fff}
+.red .intro{max-width:980px}
+.provenance{margin:25px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.provenance div{border-top:1px solid var(--line);padding-top:14px}
+.provenance b{display:block;font-size:14px;margin-bottom:7px}
+.provenance p{font-size:13px;line-height:1.5;margin:0;color:var(--muted)}
+.report-copy ol li{padding-left:6px;margin-bottom:12px}
+.report-copy ul li{padding-left:5px;margin-bottom:9px}
+.source-list{margin:20px 0 0;padding:0;list-style:none;max-width:1000px;overflow-wrap:anywhere}
+.source-list li{padding:14px 0;border-top:1px solid var(--line);margin:0!important}
+.source-list li:last-child{border-bottom:1px solid var(--line)}
+.source-list small{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+.source-list a{overflow-wrap:anywhere}
+.highlight-text{background:linear-gradient(transparent 64%,#f4df74 64%)}
+.note{background:#fff;border-left:5px solid var(--red);padding:20px 24px;margin:26px 0 10px;max-width:1050px}
+.note p{margin:0;font-size:15px;line-height:1.66}
+.note strong{display:block;margin-bottom:5px}
+.light-note{background:var(--warm);border-color:var(--yellow)}
+.print-link{font-weight:800;font-size:13px}
+.audit{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
+.audit .card{min-width:0;overflow-wrap:anywhere}.audit .card p{font-size:15px;line-height:1.58}
+.footer-date{font-weight:800;color:#fff}
+.site-actions a:not(.primary){font-size:11px}
+@media (max-width:960px){.case-grid,.audit{grid-template-columns:1fr}.periods{grid-template-columns:1fr}.pillars{grid-template-columns:1fr}.composition-legend{grid-template-columns:1fr 1fr}.provenance{grid-template-columns:1fr 1fr}.checklist{grid-template-columns:1fr 1fr}}
+@media (max-width:660px){.hero h1{font-size:clamp(42px,11.5vw,58px)}.hero-aside .hero-numeral{font-size:64px}.composition-legend,.checklist,.provenance{grid-template-columns:1fr}.case-top,.case dl,.case-foot{padding-left:20px;padding-right:20px}.case h3{font-size:30px}.quote-line{font-size:34px}.period{padding:22px}.callout-copy{padding:22px}.pillars article{padding:22px}.report-copy{font-size:16px}.kpis{grid-template-columns:1fr 1fr}.kpi{min-height:140px;padding:20px 18px}.section{padding-top:55px;padding-bottom:55px}.hero .hero-lead{font-size:22px}}
+@media(max-width:420px){.kpis{grid-template-columns:1fr}}
+@media print{.sitebar,.contents,.print-link{display:none!important}.hero{padding-top:26px}.composition-track{-webkit-print-color-adjust:exact;print-color-adjust:exact}.case-grid{display:block}.case{break-inside:avoid;margin-bottom:16px}.section{break-before:auto;break-inside:auto}.section.red{background:#fff;color:#000}.section.red h2,.red .quote-line{color:#000}.pillars{display:block}.pillars article{margin-bottom:12px;break-inside:avoid}a::after{content:' (' attr(href) ')';font-size:9px;font-weight:400;overflow-wrap:anywhere}.brand::after,.footer-brand::after,.site-actions a::after{content:''}}
+</style></head><body>
+<a class="skip-link" href="#wynik">Przejdź do wyników</a>
+<header class="sitebar"><div class="sitebar-inner">
+<a class="brand" href="https://siecobywatelska.pl/" target="_blank" rel="noopener noreferrer" aria-label="Sieć Obywatelska Watchdog Polska — strona główna"><img class="brand-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iV2Fyc3R3YV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDQwNC4zMjEgMTAwLjU1NSI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8cGF0aCBkPSJNMTcuMjgyLDIxLjM5NWMwLDIuNzExLTIuMDMsMy45MDUtNC42NTksMy45MDUtMi44ODMsMC01LjIyMi0uMjk1LTUuMjIyLS4yOTV2LTIuMjg0czIuMjkuMjg3LDQuNzc0LjI4N2MxLjIxLDAsMS44MzEtLjM2OCwxLjgzMS0xLjM1OCwwLTIuNTkzLTcuNDUtMi4xNzktNy40NS02LjkxMywwLTIuNzA4LDIuMDA3LTMuODk0LDQuNjMtMy44OTQsMi45MTEsMCw1LjI0OC4yODEsNS4yNDguMjgxdjIuMjg0cy0yLjU5Ni0uMjQ5LTUuMTA4LS4yNDljLTEuMDcxLDAtMS41NDkuNDIyLTEuNTQ5LDEuMzE4LDAsMi4zNDUsNy41MDUsMi4yMDksNy41MDUsNi45MThoMFoiLz4KICA8cGF0aCBkPSJNMjEuODMxLDYuMjFjMS42MTIsMCwxLjgwOS4xMzgsMS44MDksMS42MzgsMCwxLjMyOS0uMTY2LDEuNjY5LTEuODA5LDEuNjY5LTEuNjY4LDAtMS44MDQtLjMxMS0xLjgwNC0xLjY2OSwwLTEuNDA5LjEzNi0xLjYzOCwxLjgwNC0xLjYzOGgwWk0yMC4yMjUsMTEuMTIzaDMuMjV2MTQuMDgyaC0zLjI1di0xNC4wODJoMFpNMjAuMjI1LDI1LjIwNXYtMTQuMDgyLDE0LjA4MloiLz4KICA8cGF0aCBkPSJNMzguNDU2LDE4Ljk3M2gtMS4wMDdjLTIuNTQxLjAyNS01LjA1NC4wMjUtNy41OTIuMDU3LjAyMywxLjkxNy4xNjMsMi44NzkuNjk1LDMuNTI0LjUzOC42NzcsMS43NTYuNjc3LDIuODMuNjc3LjcyOSwwLDIuMzk2LS4wODYsNC4yNjItLjI3N3YxLjk3MWMtMS44NjYuMzE2LTMuNzc4LjUzOS01LjUzNC41MzktNC41NDQsMC01LjM4OS0xLjgwOC01LjM4OS03LjMzNywwLTUuNjc4LjcwMi03LjM0MSw1Ljg2OS03LjM0MSw0Ljk2NiwwLDUuODY2LDEuNjA2LDUuODY2LDcuMzA4di44NzloMFpNMjkuODgsMTYuODIyaDUuNTYzYy0uMTE0LTMuMjQyLS40MjUtMy44NC0yLjg1My0zLjg0LTIuNTkzLDAtMi41OTMsMS4xMzEtMi43MSwzLjg0aDBaIi8+CiAgPHBhdGggZD0iTTQ4LjIxLDIzLjE0NmMxLjA2OCwwLDIuNzY2LS4xMzgsNC4wMzYtLjI1djEuOTc1Yy0xLjQ2NS4zMzUtMy43MjQuNTk0LTUuMjIxLjU5NC0zLjkyMSwwLTUuNzMtLjcwMy01LjczLTYuNjEsMC02LjMyNC41OS04LjA0NCw1LjczLTguMDQ0LjQyNywwLDMuMzY0LjE0LDUuMDc5LjQ1NnYyLjE3MWMtMy4yOTktLjI1Ni00LjQyOC0uMzExLTQuNzEzLS4zMTEtMi44MjYsMC0yLjg3NiwxLjA3Ni0yLjg3Niw1LjgxMiwwLDMuODcuOTI4LDQuMjA3LDMuNjk1LDQuMjA3aDBaTTUwLjA3NCw0Ljk3bC0yLjgyMSw0Ljc2LTEuOTczLTEuMDM1LDIuNjc4LTQuODI3LDIuMTE2LDEuMTAyaDBaIi8+CiAgPHBhdGggZD0iTTYxLjM2NiwxOC4xNTZjMC01Ljc4Ny44NS03LjMxLDUuOTg3LTcuMzEsNS4xOTEsMCw2LjA0MywxLjYzNSw2LjA0Myw3LjMxcy0uODUyLDcuMzA5LTYuMDQzLDcuMzA5Yy01LjIyMywwLTUuOTg3LTEuNjY1LTUuOTg3LTcuMzA5aDBaTTcwLjIzMSwxOC4xNTZjMC00LjQwNi0uMjgzLTUuMjI4LTIuODc3LTUuMjI4LTIuNjMsMC0yLjg1Mi45NC0yLjg1Miw1LjIyOCwwLDQuMjYxLjIyMiw1LjEzNCwyLjg1Miw1LjEzNCwyLjY1MiwwLDIuODc3LS44NzMsMi44NzctNS4xMzRoMFoiLz4KICA8cGF0aCBkPSJNODIuMTU0LDI1LjQ0Yy0xLjM4OCwwLTMuNjcyLS4xNzMtNS4zNy0uMzk2VjUuNjhoMy4wOHY1LjY3YzEuMTA2LS4yNzgsMi43MS0uNDgyLDMuNDY3LS40ODIsMy40MTksMCw0LjY2NiwxLjc4Myw0LjY2Niw2LjI5MywwLDUuNzM1LS41Nyw4LjI3OS01Ljg0Myw4LjI3OWgwWk04Mi42NjUsMTMuMjQzYy0uNzkzLDAtMS44MTUuMTY5LTIuNzc3LjM5N3Y5LjM5NGMuNTk4LjAzMywxLjM4Ny4wMzMsMi4wOTMuMDMzaC4xMTZjMi42OCwwLDIuNzA3LTEuNzU1LDIuNzA3LTUuNzU1LDAtMi45MTQtLjE5Ni00LjA2OS0yLjEzOS00LjA2OWgwWiIvPgogIDxwb2x5Z29uIHBvaW50cz0iOTYuNjQ2IDMwLjU3MyA5My43NTkgMzAuNTczIDk1LjQ1IDI1LjIxMyA5NC42MDkgMjUuMjEzIDg5Ljc4MiAxMS4xMDEgOTMuMDU2IDExLjEwMSA5Ni40NjkgMjEuODAxIDk5Ljg5IDExLjEwMSAxMDMuMTU4IDExLjEwMSA5Ni42NDYgMzAuNTczIDk2LjY0NiAzMC41NzMiLz4KICA8cG9seWdvbiBwb2ludHM9IjEwNC4zODUgMTEuMSAxMDcuNTQ1IDExLjEgMTA5LjYzMSAyMC42NTkgMTEyLjM0NSAxMS4xIDExNS44NjggMTEuMSAxMTguNjEgMjAuNjU5IDEyMC43MjkgMTEuMSAxMjMuODY0IDExLjEgMTIwLjY5NSAyNS4yMTIgMTE2LjkxMSAyNS4yMTIgMTE0LjEyMSAxNS4zMDIgMTExLjM4MiAyNS4yMTIgMTA3LjU0NSAyNS4yMTIgMTA0LjM4NSAxMS4xIDEwNC4zODUgMTEuMSIvPgogIDxwYXRoIGQ9Ik0xMzcuMjQ0LDI1LjIxMmgtMi43MzFsLS4yMzMtMS4wNDVjLTEuMjY3LjY0OS0yLjkwMywxLjI5Ny00LjI4NCwxLjI5Ny0zLjA3OCwwLTQuMDk3LTIuMDU3LTQuMDk3LTQuNjI4LDAtMy4yNTMsMi4yOTQtMy44NjYsNS4zMzctMy44MzhsMi44MjUuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzYtMS41NTItMS42OTUsMC0zLjcyOS4yNzgtNC44ODUuNDQ3LS4wMjctLjA4My0uNDc0LTIuMDkzLS40NzQtMi4yMDIsMi4xMzctLjM5NSw0LjAzMi0uNTYxLDUuNzUtLjU2MSwzLjI0NywwLDQuNzY4LjY0OCw0Ljc2OCwzLjk1MXYxMC40NDRoMFpNMTM0LjA2MSwxOS4wM2MtMy44NjcsMC01LjA1OC4xNjYtNS4wNTgsMS45MiwwLDEuMTc1LjMxNywyLjAwNCwxLjMwMywyLjAwNC45MywwLDIuNjgtLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBhdGggZD0iTTE0Mi44NDYsMTkuOTAzdi02LjU3N2gtMy4xNjF2LTIuMjI1aDMuMTYxdi0zLjQ3NmgzLjE4NXYzLjQ3NmgzLjIxOHYyLjIyNWgtMy4yMTh2Ny4zN2MwLDIuMjU5LjQ4NiwyLjU2NCwxLjg5NSwyLjU2NC40MjUsMCwuOTY0LDAsMS42NDMtLjAyNGwuMDI0LDEuOTQ0Yy0uOTM0LjIzMi0xLjYzNi4yODUtMi4wODguMjg1LTQuMzI0LDAtNC42NTktMi4xNS00LjY1OS01LjU2MmgwWiIvPgogIDxwYXRoIGQ9Ik0xNjMuNTY3LDE4Ljk3M2gtMS4wMTFjLTIuNTQuMDI1LTUuMDUxLjAyNS03LjU5Ni4wNTcuMDMyLDEuOTIuMTcyLDIuODc5LjcwNCwzLjUzNC41MzguNjcxLDEuNzUxLjY3MSwyLjgyNS42NzEuNzM3LDAsMi4zOTgtLjA4Myw0LjI1OC0uMjgxdjEuOTcxYy0xLjg2LjMxNi0zLjc4MS41MzktNS41MjguNTM5LTQuNTQ0LDAtNS4zOTMtMS44MDUtNS4zOTMtNy4zMzUsMC01LjY3Ny43MDQtNy4zNDMsNS44NzEtNy4zNDMsNC45NjgsMCw1Ljg3LDEuNjA5LDUuODcsNy4zMTV2Ljg3MmgwWk0xNTQuOTkzLDE2LjgzaDUuNTU5Yy0uMTExLTMuMjUtLjQyMy0zLjg0MS0yLjg1NC0zLjg0MS0yLjU5MywwLTIuNTkzLDEuMTMyLTIuNzA1LDMuODQxaDBaIi8+CiAgPHBhdGggZD0iTTE3MS40NTIsMjUuMjk5Yy0uOTA1LjE0LTEuMDQyLjE0LTEuMjEzLjE0LTIuMDI5LDAtMy41LS43NjctMy41LTQuMDk3VjUuOTU4aDMuMTg3djE1Ljg5NmMwLC44NzUsMCwxLjYxLDEuNTI2LDEuODM3djEuNjA4aDBaIi8+CiAgPHBhdGggZD0iTTE4My45MDQsMjEuNDAxYzAsMi43MDUtMi4wMywzLjg5OC00LjY1OCwzLjg5OC0yLjg4MSwwLTUuMjIzLS4yODYtNS4yMjMtLjI4NnYtMi4yODRzMi4yODcuMjc5LDQuNzcxLjI3OWMxLjIxOCwwLDEuODM1LS4zNjQsMS44MzUtMS4zNTUsMC0yLjU5LTcuNDUxLTIuMTc2LTcuNDUxLTYuOTEzLDAtMi43MTIsMi4wMDItMy44OTUsNC42My0zLjg5NSwyLjkwNiwwLDUuMjUuMjc4LDUuMjUuMjc4djIuMjg4cy0yLjU5OS0uMjUyLTUuMTA3LS4yNTJjLTEuMDc5LDAtMS41NTYuNDIxLTEuNTU2LDEuMzIyLDAsMi4zNDksNy41MDksMi4yLDcuNTA5LDYuOTJoMFoiLz4KICA8cG9seWdvbiBwb2ludHM9IjE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgNS45MjkgMTg5Ljk3OSA1LjkyOSAxODkuOTc5IDE1LjkxOCAxOTIuMDEyIDE1LjkxOCAxOTUuNzA4IDkuMDY2IDE5OS4wMzkgOS4wNjYgMTk0LjcyMSAxNy4wNTYgMTk5Ljc0NiAyNS4yMTIgMTk2LjMzIDI1LjIxMiAxOTIuMDQgMTguMjYzIDE4OS45NzkgMTguMjYzIDE4OS45NzkgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIi8+CiAgPHBhdGggZD0iTTIxMi4zNDEsMjUuMjEyaC0yLjczMmwtLjIzMy0xLjA0NWMtMS4yNjYuNjQ5LTIuOTAzLDEuMjk3LTQuMjgzLDEuMjk3LTMuMDgsMC00LjA5OS0yLjA1Ny00LjA5OS00LjYyOCwwLTMuMjUzLDIuMjktMy44NjYsNS4zMzMtMy44MzhsMi44MjYuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzctMS41NTItMS42OTEsMC0zLjcyNi4yNzgtNC44ODUuNDQ3LS4wMjEtLjA4My0uNDc3LTIuMDkzLS40NzctMi4yMDIsMi4xNDMtLjM5NSw0LjAzMy0uNTYxLDUuNzU0LS41NjEsMy4yNDgsMCw0Ljc3My42NDgsNC43NzMsMy45NTF2MTAuNDQ0aDBaTTIwOS4xNTMsMTkuMDNjLTMuODY5LDAtNS4wNTQuMTY2LTUuMDU0LDEuOTIsMCwxLjE3NS4zMTcsMi4wMDQsMS4yOTksMi4wMDQuOTI5LDAsMi42NzctLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBvbHlnb24gcG9pbnRzPSI2LjM4IDQyLjE3NiAxNi41NTEgNDIuMTc2IDIxLjc5NSA2Ni40OTUgMjguNTUyIDQyLjE3NiAzOS41MTcgNDIuMTc2IDQ2LjUwOSA2Ni40OTUgNTEuNzU1IDQyLjE3NiA2MS44NDggNDIuMTc2IDUzLjAyNyA4MS45MTEgNDEuMjY2IDgxLjkxMSAzNC4xMTUgNTYuMjQzIDI3LjEyMiA4MS45MTEgMTUuMjggODEuOTExIDYuMzggNDIuMTc2IDYuMzggNDIuMTc2IiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTk5Ljg1OSw4MS45MTFoLTguNzQyYy0uMjM3LS44NzYtLjQ3Ni0yLjMwMy0uNzE1LTMuMTc3LTMuMzM4LDEuOTg0LTcuNDY5LDMuODkyLTExLjIwNSwzLjg5Mi05LjEzNywwLTEyLjE1OC01Ljg4MS0xMi4xNTgtMTMuMTkxLDAtNy4yMzIsMy45NzUtMTAuMDk0LDkuODU1LTEwLjgwNiwxLjc0Ny0uMjM5LDMuNjU1LS4yMzksMTIuNzE1LjIzN3YtNi4zNTdjMC0zLjczNS0xLjY2OS0zLjk3Mi00Ljc3MS0zLjk3Mi00LjYwNiwwLTEwLjI1LjM5NS0xMy45ODUuOTUyLS4wNzgtLjIzOS0xLjUxMS02LjE5OC0xLjUxMS02LjU5OCw2LjI3OC0xLjExLDExLjc2My0xLjUwOCwxNi42OS0xLjUwOCw5LjM3NywwLDEzLjgyNywxLjkwOCwxMy44MjcsMTEuMjgydjI5LjI0NmgwWk04OS42MDksNjQuNzQ2Yy05LjQ1OCwwLTEyLjU1Ni41NTYtMTIuNTU2LDUuMDg3LDAsMi45NC44NzMsNS4wMDUsMy4wMTgsNS4wMDUsMS45ODgsMCw2LjUxNy0xLjM1Miw5LjUzOC0yLjQ2MnYtNy42M2gwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMTE2LjU2NiA4MS45MTEgMTE2LjU2NiA0OC41ODEgMTA1LjI1OCA0OC41ODEgMTA1LjI1OCA0Mi4wMDIgMTM3Ljk4OCA0Mi4wMDIgMTM3Ljk4OCA0OC41ODEgMTI2LjY4IDQ4LjU4MSAxMjYuNjggODEuOTExIDExNi41NjYgODEuOTExIDExNi41NjYgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTE2MC44MjcsNzUuNDc0YzMuMDIxLDAsOC4yNjQtLjM5OCwxMS45Mi0uNzE1djYuMDM5Yy00LjM3MSwxLjExMy0xMC44ODcsMS44MjctMTUuMTc5LDEuODI3LTExLjM2NCwwLTE2LjUyOS0xLjk4Ni0xNi41MjktMTguNjcyLDAtMTcuNDg1LDEuNjctMjIuNTcsMTYuMTMzLTIyLjU3Ljc5NSwwLDkuNjE2LjM5NywxNS4xNzgsMS4zNDl2Ni43NTZjLTguOS0uNzE1LTEyLjg3NS0uOTUxLTEzLjgyNi0uOTUxLTYuOTk1LDAtNy4xNTUsMi44NTktNy4xNTUsMTUuNjUyLDAsMTAuMTcyLDIuNjI0LDExLjI4NSw5LjQ1OCwxMS4yODVoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cG9seWdvbiBwb2ludHM9IjIwMi41NzUgODEuOTExIDIwMi41NzUgNjQuNzM4IDE5MC43ODcgNjQuNzM4IDE5MC43ODcgODEuOTExIDE4MC43MzQgODEuOTExIDE4MC43MzQgNDEuOTQyIDE5MC43ODcgNDEuOTQyIDE5MC43ODcgNTguMjc1IDIwMi41NzUgNTguMjc1IDIwMi41NzUgNDEuOTQyIDIxMi42MjggNDEuOTQyIDIxMi42MjggODEuOTExIDIwMi41NzUgODEuOTExIDIwMi41NzUgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTIyMi43NzQsNDEuODJsMTYuMDk1LjA2MmMxMS4zMTEuMDYsMTUuOTE2LDMuMTY5LDE1LjkxNiwyMC4yMjMsMCwxNi4yMTYtMy43NjksMTkuODA2LTE1LjI1NSwxOS44MDZoLTE2Ljc1NnYtNDAuMDkxaDBaTTIzMi44MjksNDcuOTg0djI3LjUyNGg2LjI4YzQuNjA3LDAsNS43NDUtMi42OTMsNS43NDUtMTMuNDAzLDAtMTIuNjI0LTEuMTk5LTE0LjEyMS01Ljc0NS0xNC4xMjFoLTYuMjhaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTI2MS45MDcsNjIuMDQ1YzAtMTYuMjg5LDIuNDYyLTIwLjU4MSwxNy4yNDQtMjAuNTgxLDE1LjAxOCwwLDE3LjQwMyw0LjYwOCwxNy40MDMsMjAuNTgxcy0yLjQ2NSwyMC41ODEtMTcuNDAzLDIwLjU4MWMtMTUuMDE5LDAtMTcuMjQ0LTQuNjktMTcuMjQ0LTIwLjU4MWgwWk0yODYuNDYxLDYyLjA0NWMwLTExLjkyMi0uNzE2LTE0LjE0Ny03LjMxLTE0LjE0Ny02LjY3NSwwLTcuMTUyLDIuNTQyLTcuMTUyLDE0LjE0NywwLDExLjUyMS40NzcsMTMuOTA1LDcuMTUyLDEzLjkwNyw2LjY3NSwwLDcuMzEtMi4zODYsNy4zMS0xMy45MDdoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzU3LjMxOCw0OS40NjJjNS40NzUsMCw2LjE3Mi42MTksNi4xNzIsNS40NzksMCw0LjU1Mi0uNDYzLDUuNzA4LTYuMTcyLDUuNzA4LTUuNjI5LDAtNi4xNzMtMS4wNzgtNi4xNzMtNS43MDgsMC00LjcwOS41NDQtNS40NzksNi4xNzMtNS40NzloMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzE3LjIyLDcyLjM5MWMtLjA3NywxLjA4LDEuMTUzLDEuNTQzLDIuOTMsMS41NDMsMi4wMDYsMCwzLjYyOS0uMTUxLDUuNjM2LS4xNTEsOC4xNzgsMCwxNi42Ny45MjQsMTYuNjcsMTAuNTY5LDAsOS4yNjUtNi43MTYsMTIuODg3LTE1Ljg5OCwxMi44ODctOS4wMzQsMC0xMy40My0uNjE2LTE3Ljk4NS0uNjE2di03LjA5OXMxMC43MjcuNDY2LDE3LjQ0My40NjZjMy40NzUsMCw1LjA5OC0xLjM5Miw1LjA5OC01LjA5OSwwLTMuMzE4LTIuMTYzLTMuNjIyLTQuNzg5LTMuNjIyLTEuNjk2LDAtMy44NTkuMTUzLTYuMTc1LjE1My03LjAyMiwwLTEzLjUwOC0yLjg2LTEzLjUwOC0xMC42NTcsMC0uOTI3LjIzNC00LjE3MiwxLjE2NC01Ljg2OS0yLjU1My0yLjMxNi0zLjQ3Ni01LjcxMi0zLjQ3Ni0xMC4wMzQsMC04Ljg3NSwzLjAwOS0xMy4wNDEsMTUuNTktMTMuMTIyaDIyLjg0NXY2LjI1MmwtNC4zMjIuNjE4Yy42OTYsMS42OTksMS4wMDIsMy45MzgsMS4wMDIsNi4yNTIsMCwxMC4yNjQtNC41NTQsMTMuMTk3LTEzLjY1OSwxMy4xOTdoLTguNDkybC0uMDc0LDQuMzMyaDBaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTMyMy44NTUsNDguOTE5aC0yLjYyM2MtNC40ODIsMC01LjcwOS4yMzQtNS43MDksNi4xNzUsMCw1LjA5MywxLjE1MSw1Ljk0Myw0LjcwMyw2LjA5M2gzLjU1MmMzLjc4MywwLDQuNjMzLTEuMDgxLDQuNjMzLTYuMDkzLDAtNS4yNDgtLjE1Ni02LjE3NS00LjU1Ni02LjE3NWgwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzY4LjgxOCA0Mi4yMDcgMzgwLjc3OSAxOS40NDIgMzkwLjE5MSAxOS40NDIgNDAyLjA3NSA0Mi4yMDcgMzkxLjQyNCA0Mi4yMDcgMzg1LjQ4OCAyOS4yNDMgMzc5LjYyIDQyLjIwNyAzNjguODE4IDQyLjIwNyAzNjguODE4IDQyLjIwNyIgZmlsbD0iIzk4MzAzOSIvPgo8L3N2Zz4=" alt="Sieć Obywatelska Watchdog Polska"></a>
+<nav class="site-actions" aria-label="Skróty"><a href="#osoby">UJAWNIONE DANE</a><a href="#metodologia">ZASTRZEŻENIA</a><a class="primary" href="https://siecobywatelska.pl/wspieraj/" target="_blank" rel="noopener noreferrer">WSPIERAJ NAS</a></nav>
+</div></header>
+<main>
+<section class="hero" aria-labelledby="tytul"><div>
+<p class="eyebrow">Raport z monitoringu • zmiany kadrowe w spółkach Skarbu Państwa</p>
+<h1 id="tytul">Specyfika zmian kadrowych SSP<br/><span>Nie ujawniono</span></h1>
+<p class="hero-lead">Zapytaliśmy 20 spółek Skarbu Państwa o nazwiska, stanowiska i okoliczności obsadzania funkcji dyrektorskich oraz kierowniczych w wybranych okresach z lat 2015–2024. Jakiekolwiek dane przekazała <span style="color:red">jedna</span> spółka.</p>
+</div><aside class="hero-aside" aria-label="Główny wynik"><div class="hero-numeral">1 <small>z 20</small></div><p>spółek udostępniła jakieś informacje</p>
+<div class="report-meta"><div class="report-meta-row"><span>Stan na</span><strong><time datetime="2026-10-09">9 października 2026 r.</time></strong></div><div class="report-meta-row"><span>Typ omówienia</span><strong>zreferowanie metadanych, omówienie przypadku</strong></div><div class="report-meta-row"><span>Źródło</span><strong>dane otrzymane w odpowiedzi na wniosek o informację oraz metadane badania</strong></div></div>
+</aside></section>
+<nav class="contents" aria-label="Spis treści"><a href="#wynik">Wynik monitoringu</a><a href="#pytania">O co pytaliśmy?</a><a href="#osoby">Pozyskane dane</a><a href="#ograniczenia">Co wiemy?</a><a href="#jawnosc">Co to oznacza?</a><a href="#metodologia">Metodologia</a><a href="#zrodla">Źródła</a></nav>
+
+<section class="section" id="wynik"><div class="wrap">
+<div class="section-head"><div class="section-no">01 / Wynik monitoringu</div><div><h2>Spółki Skarbu Państwa nie udostępniły informacji</h2><p class="intro">Najważniejszym wynikiem tego działania jest skala nieuzyskanych informacji. Nie powstał materiał pozwalający porównać praktyki kadrowe w badanej grupie.</p></div></div>
+<div class="kpis" aria-label="Podsumowanie reakcji spółek"><div class="kpi"><strong>20</strong><span>spółek, do których skierowano wnioski</span></div><div class="kpi"><strong>10</strong><span>spółek, od których nie odnotowano żadnej wiadomości</span></div><div class="kpi"><strong>9</strong><span>spółek z korespondencją, ale bez żądanych danych</span></div><div class="kpi kpi--primary"><strong>1</strong><span>spółka, od której uzyskano dane dotyczące osób</span></div></div>
+<div class="composition" role="group" aria-label="Podział 20 spółek według wyniku korespondencji">
+<div class="composition-track" role="img" aria-label="5 procent udostępniło dane, 45 procent korespondowało bez udostępnienia danych, 50 procent bez jakiejkolwiek odnotowanej wiadomości"><div class="supplied"></div><div class="other"></div><div class="silent"></div></div>
+<div class="composition-legend"><article><b>1 spółka · 5%</b><span>Przekazała zestawienie osób: PlantiCo.</span></article><article><b>9 spółek · 45%</b><span>Odnotowano odmowy lub pisma o przedłużeniu terminu, ale nie uzyskano odpowiedzi na zadane pytania.</span></article><article><b>10 spółek · 50%</b><span>Według informacji organizatora nie odnotowano żadnej wiadomości, nawet potwierdzenia dostarczenia.</span></article></div>
+</div>
+<div class="callout"><div class="callout-label">95% BEZ ŻĄDANYCH DANYCH</div><div class="callout-copy"><p>W odniesieniu do <strong>19 z 20 spółek</strong> nie uzyskano materiału umożliwiającego analizę konkretnych nominacji, podstaw zatrudnienia ani konkursów. Nie oznacza to, że do zmian kadrowych w tych spółkach nie dochodziło; oznacza jedynie <strong>brak informacji o nich w tym monitoringu</strong>.</p></div></div>
+</div></section>
+
+<section class="section alt" id="pytania"><div class="wrap">
+<div class="section-head"><div class="section-no">02 / Zakres pytania</div><div><h2>Od liczby zmian do konkretnych decyzji kadrowych</h2></div></div>
+<div class="report-copy"><p class="lead-copy">W <a href="https://fedrowanie.siecobywatelska.pl/monitoringi/liczba-zmian-kadrowych-w-spolkach-skarbu-panstwa" target="_blank">poprzednim działaniu</a> pytaliśmy o liczbę rozpoczęć i zakończeń współpracy na stanowiskach dyrektorskich i kierowniczych. Tym razem chcieliśmy sprawdzić <strong>kto obejmował takie funkcje, kiedy, na jakiej podstawie i w jakim trybie</strong>.</p>
+<p>Wniosek nawiązywał do wsponianego wcześniejszego pisma z 8 sierpnia 2026 r. i obejmował trzy półroczne okresy:</p></div>
+<div class="periods"><div class="period"><span>Okres 01</span><strong>1 listopada 2015 –<br>30 kwietnia 2016</strong></div><div class="period"><span>Okres 02</span><strong>1 listopada 2019 –<br>30 kwietnia 2020</strong></div><div class="period"><span>Okres 03</span><strong>1 listopada 2023 –<br>30 kwietnia 2024</strong></div></div>
+<div class="report-copy"><p>Przez stanowiska objęte pytaniem rozumieliśmy te, których <strong>nazwa zawiera „dyrektor” albo „kierownik”</strong>, w tym stanowiska zastępców, dyrektorów departamentów i biur oraz osoby pełniące obowiązki. Interesowało nas rozpoczęcie wykonywania pracy lub usług na takich stanowiskach — również na podstawie umów cywilnoprawnych, kontraktów menedżerskich czy innego stosunku prawnego.</p>
+<p>W odniesieniu do każdej osoby prosiliśmy o siedem rodzajów informacji:</p></div>
+<div class="checklist"><article><span>01 / 02</span><b>Imię i nazwisko oraz stanowisko</b><p>Kto objął funkcję i jak dokładnie się ona nazywała?</p></article><article><span>03 / 04</span><b>Jednostka organizacyjna i data</b><p>Gdzie osoba wykonywała obowiązki i od kiedy?</p></article><article><span>05 / 06</span><b>Stosunek prawny i akt powołania</b><p>Jaka umowa lub inna podstawa prawna i jaki akt korporacyjny uzasadniały objęcie funkcji?</p></article><article><span>07</span><b>Konkurs lub nabór</b><p>Czy stanowisko obsadzono w procedurze konkursowej lub rekrutacyjnej?</p></article></div>
+<div class="report-copy"><p class="origin-note"><strong>Uwaga!</strong> Dobór trzech okresów służył porównaniu wybranych momentów z lat 2015–2024. Jednak samo sąsiedztwo wyborów albo zmian władz państwowych nie wystarcza, by przypisać konkretną decyzję kadrową motywacji politycznej. Do tego konieczna byłaby pogłębiona analiza dat, procedur i okoliczności poszczególnych przypadków.</p></div>
+</div></section>
+
+<section class="section" id="osoby"><div class="wrap">
+<div class="section-head"><div class="section-no">03 / Otrzymane informacje</div><div><h2>Jedna spółka - dwie osoby w zakresie wniosku</h2><p class="intro">PlantiCo – Hodowla i Nasiennictwo Ogrodnicze Zielonki sp. z o.o. wymieniła pięć osób. Do zakresu stanowisk „dyrektor” lub „kierownik” pasują dwie; w jednym przypadku kwalifikacja czasowa pozostaje niepewna.</p></div></div>
+<p class="lead-copy">Poniżej <strong>szczegóły udostępnionych przypadków</strong>, które jednak nie mogą stanowić podstawy do oceny skali rotacji ani udziału konkursów w badanych spółkach.</p>
+<div class="case-grid">
+<article class="case" aria-labelledby="kob-name"><div class="case-top"><span class="case-badge">Okres 2015–2016 · kwalifikacja zgodnie z wnioskiem</span><h3 id="kob-name">Mariusz Kobus</h3><p class="role">Dyrektor ds. Produkcji</p></div>
+<dl><div><dt>Jednostka organizacyjna podana w odpowiedzi</dt><dd>Kwiaciarski Zakład Doświadczalny Instytutu Ogrodnictwa sp. z o.o.</dd></div>
+<div><dt>Data związana z objęciem funkcji</dt><dd><strong>1 marca 2016 r.</strong></dd></div>
+<div><dt>Stosunek prawny</dt><dd>Umowa o pracę z 1 sierpnia 2013 r. oraz aneks zmieniający warunki zatrudnienia ze skutkiem od 1 marca 2016 r.</dd></div>
+<div><dt>Odrębny akt prawny lub korporacyjny</dt><dd>„Nie dotyczy – brak odrębnego aktu” (według odpowiedzi spółki).</dd></div>
+<div><dt>Konkurs lub nabór</dt><dd>Odpowiedź spółki w odniesieniu do tego brzmi: <strong>brak informacji</strong></dd></div></dl>
+<div class="case-foot"><strong>Jak interpretować?</strong> Pierwotne zatrudnienie nastąpiło w 2013 r. W 2016 r. zmieniono warunki zatrudnienia, co zkwalifikowano jako rozpoczęcie współpracy <em>na stanowisku dyrektorskim</em> w badanym okresie. Nie jest to potwierdzenie nowego zatrudnienia w spółce w 2016 r. Ponadto wskazana jednostka ma nazwę innego podmiotu niż spółka odpowiadająca — relacja organizacyjna nie jest znana.</div></article>
+<article class="case" aria-labelledby="mig-name"><div class="case-top"><span class="case-badge">Okres 2023–2024 · kwalifikacja warunkowa</span><h3 id="mig-name">Jarosław Migas</h3><p class="role">p.o. Dyrektor Zakładu / Z-ca Dyrektora Operacyjnego</p></div>
+<dl><div><dt>Jednostka organizacyjna podana w odpowiedzi</dt><dd>PlantiCo Hodowla i Nasiennictwo Ogrodnicze Zielonki sp. z o.o., Zakład Hodowlano-Nasienny POLAN.</dd></div>
+<div><dt>Daty podane w odpowiedzi</dt><dd><strong>1 lipca 2007 r.</strong> — w polu dotyczącym daty rozpoczęcia; <strong>23 kwietnia 2024 r.</strong> — data porozumienia zmieniającego warunki umowy.</dd></div>
+<div><dt>Stosunek prawny</dt><dd>Porozumienie stron zmieniające warunki umowy o pracę, zawarte 23 kwietnia 2024 r.</dd></div>
+<div><dt>Odrębny akt prawny lub korporacyjny</dt><dd>„Nie dotyczy – brak odrębnego aktu” (według odpowiedzi spółki).</dd></div>
+<div><dt>Konkurs lub nabór</dt><dd><strong>Awans wewnętrzny</strong> — informacja przekazana przez spółkę, niejednoznaczna jako odpowiedź o konkursie lub naborze.</dd></div></dl>
+<div class="case-foot"><strong>Jak interpretować?</strong> Nie ustalono jednoznacznie, czy i kiedy osoba objęła wskazaną funkcję dyrektorską. Data z 2007 r. wypada poza wszystkimi okresami wniosku, a porozumienie z kwietnia 2024 r. nie jest samo przez się dowodem daty objęcia stanowiska. Wpis ujęto warunkowo, bez zaliczania go do potwierdzonych objęć funkcji w 2024 r.</div></article>
+</div>
+<div class="note light-note"><strong>Nawet ta jedna odpowiedź nie oznacza dwóch bezspornie potwierdzonych nominacji.</strong><p>Pierwszy wpis można przypisać do okresu 2015–2016 na podstawie daty zmiany warunków umowy; drugi jednak wymaga wyjaśnienia przed zakwalifikowaniem go do okresu 2023–2024.</p></div>
+<div class="report-copy"><h3>Dlaczego nie uwzględniono trzech pozostałych osób?</h3><p>Spółka wymieniła również trzy osoby pełniące funkcje w zarządzie. Nie włączono ich do zestawienia stanowisk dyrektorskich i kierowniczych, ponieważ w podanej nazwie funkcji nie występuje „dyrektor” ani „kierownik”. To <strong>konsekwencja literalnej definicji z wniosku</strong>, a nie ocena znaczenia tych funkcji w spółce.</p></div>
+<div class="table-wrap compact-table"><table><caption class="sr-only">Osoby pominięte przy kwalifikacji stanowisk</caption><thead><tr><th>Osoba</th><th>Funkcja podana przez spółkę</th><th>Dlaczego nie uwzględniono?</th></tr></thead><tbody>
+<tr><td><strong>Adam Mazurkiewicz</strong></td><td>Członek Zarządu, Wiceprezes Zarządu</td><td>W nazwie funkcji brak „dyrektor” i „kierownik”.</td></tr>
+<tr><td><strong>Krzysztof Jarmul</strong></td><td>Członek Zarządu</td><td>W nazwie funkcji brak „dyrektor” i „kierownik”.</td></tr>
+<tr><td><strong>Sławomir Rosiek</strong></td><td>p.o. Członek Zarządu</td><td>W nazwie funkcji brak „dyrektor” i „kierownik”.</td></tr>
+</tbody></table></div>
+<p class="origin-note">Informacje o pięciu osobach i ich stanowiskach pochodzą z załączonego arkusza, który odtwarza odpowiedź PlantiCo. Opis przypadków nie jest wynikiem niezależnego sprawdzenia oryginalnych umów, aktów powołania ani dokumentacji konkursowej.<br/><a href="https://fedrowanie.siecobywatelska.pl/listy/489868" target="_blank" rel="noopener noreferrer">Link do pisma stanowiącego źródło danych ↗</a>.</p>
+</div></section>
+
+<section class="section alt" id="ograniczenia"><div class="wrap">
+<div class="section-head"><div class="section-no">04 / Granice wnioskowania</div><div><h2>Co z tego wynika — czego nie wiemy?</h2></div></div>
+<div class="pillars"><article><h3>Co wiemy</h3><p>Jedna z 20 spółek przekazała dane o konkretnych osobach; w jej piśmie pojawiają się dwie osoby ze stanowiskami odpowiadającymi definicji wniosku. Widać także, że potrzebne jest odróżnianie pierwotnego zatrudnienia od późniejszego awansu lub zmiany umowy.</p></article>
+<article><h3>Czego nie wiemy</h3><p>Nie znamy przebiegu nominacji i rekrutacji w pozostałych 19 spółkach. W przypadku PlantiCo nie mamy pełnej pewności co do jednej daty objęcia funkcji; przy drugiej osobie brak danych o naborze. Nie wiemy, czy i jak rozpatrywano kandydatury ani jakie były podstawy decyzji.</p></article>
+<article><h3>Czego nie należy twierdzić</h3><p>Nie sposób wyliczyć odsetka obsadzeń konkursowych, porównać badanych lat, ocenić przyczyn rotacji ani wnioskować o nominacjach politycznych, nieprawidłowościach czy ich braku. Brak odpowiedzi nie oznacza braku stanowisk, zatrudnień albo decyzji kadrowych.</p></article></div>
+<div class="report-copy"><h3>Im dalej w las...</h3>
+<p>W poprzednim etapie projektu, dotyczącym <strong>samej liczby</strong> rozpoczęć i zakończeń współpracy, w analizowanym materiale znalazły się dane 11 z 20 spółek. Pozwoliło to zestawić podstawowe wielkości dla kilku okresów. Jednak kiedy poproszono o szczegóły personalne i proceduralne, dane przekazała tylko jedna spółka. Jest to <strong>zjawisko znane nam również z innych prowadzonych przez nas badań</strong>, mianowicie, że kiedy zadajemy proste, bezpieczne pytania do tych samych instytucji w tej samej sprawie, to odsetek odpowiedzi jest wyraźnie wyższy, niż kiedy zadajemy niemal te same pytania w tej samej sprawie, ale w sposób bardziej szczegółowy, taki który mógłby ujawnić jakieś nieprawidłowości, czy niedociągnięcia.</p>
+<p>Różnica pokazuje praktyczny problem: <span class="highlight-text">informacja o skali zmian to nie to samo, co możliwość sprawdzenia sposobu obsadzania stanowisk</span>. Dopiero nazwiska, daty, podstawy prawne i tryby rekrutacji pozwalałyby przejść od statystyki do kontroli poszczególnych decyzji.</p>
+</div></div></section>
+
+<section class="section red" id="jawnosc"><div class="wrap"><div class="section-no">05 / Jawność jako wynik badania</div><h2 style="margin-top:20px">Nie sposób kontrolować procesu, którego nie można zobaczyć</h2><p class="intro">Monitoring miał służyć społecznej kontroli nad funkcjonowaniem podmiotów związanych z majątkiem publicznym oraz przejrzystości procesów kadrowych. Jednak przy tak niewielkiej liczbie uzyskanych informacji jedyne, co możemy powiedzieć, to że wnioskowanie o informację publiczną okazało się nieskutecznym instrumentem do kontroli spółek Skarbu Państwa, przynajmniej w badanym zakresie.</p>
+</div></section>
+<section class="section"><div class="wrap"><div class="section-head"><div class="section-no">06 / Szerszy kontekst</div><div><h2>Fikcyjne prawo do informacji</h2></div></div>
+<div class="report-copy">
+<p class="lead-copy">Jawność nie polega na tym, że obywatel może wysłać wniosek o informację publiczną. Polega na tym, że może rzeczywiście uzyskać wiedzę o działaniach instytucji związanych z państwem, a jeśli informacji nie otrzyma — poznać przyczyny i podstawy odmowy. <strong>Prawo do informacji, które nie jest realizowane w praktyce, nie zapewnia społecznej kontroli.</strong></p>
+
+<p>Ustawa o dostępie do informacji publicznej obejmuje m.in. podmioty wykonujące zadania publiczne, dysponujące majątkiem publicznym i określone osoby prawne, w których Skarb Państwa ma pozycję dominującą (art. 4). Przewiduje obowiązek udostępnienia informacji bez zbędnej zwłoki, co do zasady w ciągu 14 dni, możliwość poinformowania o przedłużeniu w terminie ustawowym (art. 13) oraz ograniczenia związane m.in. z prywatnością i tajemnicą przedsiębiorcy (art. 5). Odmowa udostępnienia informacji publicznej wymaga zachowania przewidzianej prawem formy i procedury (art. 16 i 17).</p>
+
+<p><strong>Spółka zobowiązana do udostępniania informacji publicznej nie może po prostu zignorować wniosku.</strong> Jeżeli uważa, że żądane informacje nie podlegają udostępnieniu, powinna przedstawić swoje stanowisko i zastosować właściwą procedurę. Jeżeli nie posiada informacji albo uznaje, że nie ma ona charakteru publicznego, powinna o tym poinformować. Jeżeli odmawia udostępnienia informacji publicznej ze względu na ustawowe ograniczenia jawności, musi odpowiednio uzasadnić odmowę. Milczenie wobec wniosku objętego ustawą, po upływie właściwego terminu, stanowi bezczynność, a nie dopuszczalny sposób odmowy udostępnienia informacji.</p>
+
+<p>W naszym monitoringu połowa z 20 zapytanych spółek Skarbu Państwa nie udzieliła żadnej odpowiedzi. W pozostałych przypadkach otrzymywaliśmy odmowy lub informacje o przedłużeniu terminu. Ostatecznie nie uzyskaliśmy danych pozwalających odpowiedzieć na pytania postawione w monitoringu. <strong>To poważny problem z realizacją prawa do informacji, szczególnie w odniesieniu do podmiotów, które gospodarują majątkiem publicznym lub pozostają pod kontrolą państwa.</strong></p>
+
+<h3>Bez informacji nie ma społecznej kontroli</h3>
+
+<p>Informacje o obsadzaniu stanowisk kierowniczych w spółkach Skarbu Państwa są istotne z punktu widzenia interesu publicznego. Pozwalają badać skalę i charakter zmian kadrowych, porównywać je w różnych okresach, przyglądać się stosowanym procedurom, a także sprawdzać, czy decyzje personalne mogą mieć związek ze zmianami politycznymi. To punkt wyjścia do oceny przejrzystości zarządzania spółkami, sposobu podejmowania decyzji oraz gospodarowania środkami i majątkiem publicznym.</p>
+
+<p>Takiej kontroli nie da się prowadzić bez dostępu do podstawowych danych. Nie można rzetelnie analizować procesów, których przebieg pozostaje nieznany. Nie można porównywać praktyk poszczególnych spółek, jeżeli nie udostępniają one informacji pozwalających na takie porównanie. W rezultacie opinia publiczna zostaje pozbawiona możliwości samodzielnego weryfikowania sposobu działania podmiotów związanych z państwem.</p>
+
+<p><strong>Nie wystarczy więc zapewniać obywateli, że mają prawo pytać, a do dyspozycji pozostaje im ustawa o dostępie do informacji publicznej.</strong> Jeżeli skorzystanie z tego prawa nie prowadzi nawet do uzyskania odpowiedzi, mechanizm jawności zawodzi. Wyniki naszego monitoringu pokazują, jak duża może być przepaść między formalnie zagwarantowanym prawem do informacji a rzeczywistą możliwością korzystania z niego. I właśnie ta przepaść wymaga publicznej uwagi.</p>
+</div></div></section>
+
+<section class="section alt" id="metodologia"><div class="wrap"><div class="section-head"><div class="section-no">07 / Metodologia i ograniczenia</div><div><h2>Jak powstał raport?</h2></div></div>
+<div class="audit">
+<article class="card">
+<h3>Materiał źródłowy</h3>
+<p>Raport powstał na podstawie informacji uzyskanych w ramach monitoringu zmian kadrowych w spółkach Skarbu Państwa oraz dokumentacji prowadzonej korespondencji. Wyniki, wraz z metodologią i zastrzeżeniami zostały uporządkowane i udostępnione w <a href="data/167_szczegoly_zmian_kadrowych_spolki_skarbu_panstwa.xlsx" target="_blank" rel="noopener noreferrer">arkuszu danych</a>, umożliwiającym zapoznanie się ze szczegółami otrzymanych odpowiedzi.</p>
+<p>Jedyna odpowiedź zawierająca szczegółowe dane personalne pochodziła od spółki PlantiCo. Wymieniono w niej pięć osób, z których dwie zakwalifikowano do dalszej analizy ze względu na zakres pytań postawionych w monitoringu, przy czym jeden przypadek wymagał dodatkowych zastrzeżeń interpretacyjnych.</p>
+</article>
+
+<article class="card">
+<h3>Przebieg korespondencji</h3>
+<p>Wnioski skierowano do 20 spółek Skarbu Państwa. Dziesięć z nich nie udzieliło żadnej odpowiedzi. W dziewięciu przypadkach otrzymano korespondencję, która nie dostarczyła żądanych danych, w tym odmowy lub informacje o przedłużeniu terminu. Tylko jedna spółka przekazała informacje pozwalające na częściową analizę objęcia stanowisk kierowniczych.</p>
+<p>Oznacza to, że pomimo skierowania wniosków do 20 spółek uzyskane informacje pozwoliły jedynie na bardzo ograniczoną analizę praktyk kadrowych. Brak odpowiedzi lub odmowy udostępnienia danych stanowią przy tym istotną część wyników samego monitoringu.</p>
+</article>
+</div>
+
+<article class="report-copy">
+<h3>Zasady opracowania i interpretacji danych</h3>
+<p>Otrzymane informacje nie zawsze stanowiły jednoznaczną odpowiedź na pytania zawarte we wniosku. Ich opracowanie wymagało zatem interpretacji i kwalifikacji poszczególnych przypadków zgodnie z zakresem badania. W analizie uwzględniono występujące niejednoznaczności, nie zastępując brakujących informacji domniemaniami. Szczegółowe zastrzeżenia dotyczące interpretacji danych przedstawiono w odpowiednich częściach raportu.</p>
+<p>Monitoring objął 20 celowo wybranych spółek Skarbu Państwa, a nie reprezentatywną próbę wszystkich takich podmiotów. Uzyskane dane nie pozwalają na statystyczne uogólnianie praktyk kadrowych w całym sektorze. Pozwalają natomiast ocenić rezultaty konkretnych prób uzyskania informacji oraz wskazać problemy z dostępem do danych niezbędnych do społecznej kontroli działalności spółek.</p>
+</article>
+<div class="note light-note"><strong>Ograniczenie związane z wykorzystaniem AI</strong><p>Treść raportu opracowano z pomocą sztucznej inteligencji na podstawie danych pochodzących z badania. Możliwe są błędy ekstrakcji, interpretacji i redakcji. W kwestiach dotyczących konkretnych osób oraz oceny prawnej pierwszeństwo powinny mieć oryginalne pisma, dokumenty kadrowe i ustalenia po weryfikacji. Nie należy traktować tego opracowania jako dokumentu potwierdzającego fakty zatrudnienia.</p></div>
+</article></div></section>
+
+<section class="section" id="zrodla"><div class="wrap"><div class="section-head"><div class="section-no">08 / Źródła i kontekst</div><div><h2>Dokumentacja i punkty odniesienia</h2></div></div>
+<div class="report-copy">
+<ul class="source-list">
+<li><a href="https://fedrowanie.siecobywatelska.pl/listy/489868" target="_blank" rel="noopener noreferrer"><strong>Odpowiedź PlantiCo w systemie Fedrowanie ↗</strong></a><small>Jedyna otrzymana odpowiedź na wniosek zawierająca jakiekolwiek wnioskowane informacje.</small></li>
+<li><a href="https://fedrowanie.siecobywatelska.pl/sprawy/szczeg%C3%B3%C5%82y-zmian-kadrowych-w-sp%C3%B3%C5%82kach-skarbu-pa%C5%84stwa-4" target="_blank" rel="noopener noreferrer"><strong>Sprawa PlantiCo w systemie Fedrowanie ↗</strong></a><small>Adres sprawy w systemie Fedrowanie. Zawiera pełną korespondencję wymienioną ze spółką PlantiCo w ramach omawianej fazy badania.</small></li>
+<li><a href="https://fedrowanie.siecobywatelska.pl/monitoringi/szczeg%C3%B3%C5%82y-zmian-kadrowych-w-sp%C3%B3%C5%82kach-skarbu-pa%C5%84stwa" target="_blank" rel="noopener noreferrer"><strong>Szczegóły zmian kadrowych w spółkach skarbu państwa ↗</strong></a><small>Komplet korespondencji wymienionej z wybranymi spółkami w ramach tej fazy badania.</small></li>
+<li><a href="https://fedrowanie.siecobywatelska.pl/monitoringi/liczba-zmian-kadrowych-w-spolkach-skarbu-panstwa/results" target="_blank" rel="noopener noreferrer"><strong>Liczba zmian kadrowych w spółkach skarbu państwa ↗</strong></a><small>Omówienie wyników poprzedniej fazy badania.</small></li>
+<li><a href="data/167_szczegoly_zmian_kadrowych_spolki_skarbu_panstwa.xlsx" target="_blank" rel="noopener noreferrer"><strong>Arkusz z danymi ↗</strong></a><small>Arkusz zawiera usystematyzowane dane otrzymane w odpowiedzi na wniosek o informację wraz z omówieniem wątpliwości interpretacyjnych i przyjętych założeń.</small></li>
+<li><a href="https://informacjapubliczna.org/sentence/nagrody-i-premie-w-spolce-z-udzialem-skarbu-panstwa/" target="_blank" rel="noopener noreferrer"><strong>Orzecznictwo: jawność informacji pracowniczych w spółkach z udziałem Skarbu Państwa ↗</strong></a><small>Omówienie Watchdog Polska z 27 kwietnia 2026 r. dotyczące premii i nagród; przykład odmiennego stanu faktycznego, użyty wyłącznie jako tło prawne.</small></li></ul>
+<div class="provenance"><div><b>Zakres danych</b><p>Jedna spółka, pięć wymienionych osób, dwa rekordy odpowiadające definicji stanowiska (w tym jeden warunkowy).</p></div><div><b>Charakter ustaleń</b><p>Opis jakościowy. Nie wykonano testów statystycznych i nie formułowano oszacowań dla całej populacji.</p></div><div><b>Aktualizacja</b><p>Stan danych i relacji o przebiegu monitoringu z 9 października 2026 r. Ustalenia mogą wymagać aktualizacji wraz z nowymi odpowiedziami.</p></div></div>
+</div></div></section>
+</main>
+<footer><div class="footer-inner"><a class="footer-brand" href="https://siecobywatelska.pl/" target="_blank" rel="noopener noreferrer" aria-label="Sieć Obywatelska Watchdog Polska"><img class="footer-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iV2Fyc3R3YV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDQwNC4zMjEgMTAwLjU1NSI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8cGF0aCBkPSJNMTcuMjgyLDIxLjM5NWMwLDIuNzExLTIuMDMsMy45MDUtNC42NTksMy45MDUtMi44ODMsMC01LjIyMi0uMjk1LTUuMjIyLS4yOTV2LTIuMjg0czIuMjkuMjg3LDQuNzc0LjI4N2MxLjIxLDAsMS44MzEtLjM2OCwxLjgzMS0xLjM1OCwwLTIuNTkzLTcuNDUtMi4xNzktNy40NS02LjkxMywwLTIuNzA4LDIuMDA3LTMuODk0LDQuNjMtMy44OTQsMi45MTEsMCw1LjI0OC4yODEsNS4yNDguMjgxdjIuMjg0cy0yLjU5Ni0uMjQ5LTUuMTA4LS4yNDljLTEuMDcxLDAtMS41NDkuNDIyLTEuNTQ5LDEuMzE4LDAsMi4zNDUsNy41MDUsMi4yMDksNy41MDUsNi45MThoMFoiLz4KICA8cGF0aCBkPSJNMjEuODMxLDYuMjFjMS42MTIsMCwxLjgwOS4xMzgsMS44MDksMS42MzgsMCwxLjMyOS0uMTY2LDEuNjY5LTEuODA5LDEuNjY5LTEuNjY4LDAtMS44MDQtLjMxMS0xLjgwNC0xLjY2OSwwLTEuNDA5LjEzNi0xLjYzOCwxLjgwNC0xLjYzOGgwWk0yMC4yMjUsMTEuMTIzaDMuMjV2MTQuMDgyaC0zLjI1di0xNC4wODJoMFpNMjAuMjI1LDI1LjIwNXYtMTQuMDgyLDE0LjA4MloiLz4KICA8cGF0aCBkPSJNMzguNDU2LDE4Ljk3M2gtMS4wMDdjLTIuNTQxLjAyNS01LjA1NC4wMjUtNy41OTIuMDU3LjAyMywxLjkxNy4xNjMsMi44NzkuNjk1LDMuNTI0LjUzOC42NzcsMS43NTYuNjc3LDIuODMuNjc3LjcyOSwwLDIuMzk2LS4wODYsNC4yNjItLjI3N3YxLjk3MWMtMS44NjYuMzE2LTMuNzc4LjUzOS01LjUzNC41MzktNC41NDQsMC01LjM4OS0xLjgwOC01LjM4OS03LjMzNywwLTUuNjc4LjcwMi03LjM0MSw1Ljg2OS03LjM0MSw0Ljk2NiwwLDUuODY2LDEuNjA2LDUuODY2LDcuMzA4di44NzloMFpNMjkuODgsMTYuODIyaDUuNTYzYy0uMTE0LTMuMjQyLS40MjUtMy44NC0yLjg1My0zLjg0LTIuNTkzLDAtMi41OTMsMS4xMzEtMi43MSwzLjg0aDBaIi8+CiAgPHBhdGggZD0iTTQ4LjIxLDIzLjE0NmMxLjA2OCwwLDIuNzY2LS4xMzgsNC4wMzYtLjI1djEuOTc1Yy0xLjQ2NS4zMzUtMy43MjQuNTk0LTUuMjIxLjU5NC0zLjkyMSwwLTUuNzMtLjcwMy01LjczLTYuNjEsMC02LjMyNC41OS04LjA0NCw1LjczLTguMDQ0LjQyNywwLDMuMzY0LjE0LDUuMDc5LjQ1NnYyLjE3MWMtMy4yOTktLjI1Ni00LjQyOC0uMzExLTQuNzEzLS4zMTEtMi44MjYsMC0yLjg3NiwxLjA3Ni0yLjg3Niw1LjgxMiwwLDMuODcuOTI4LDQuMjA3LDMuNjk1LDQuMjA3aDBaTTUwLjA3NCw0Ljk3bC0yLjgyMSw0Ljc2LTEuOTczLTEuMDM1LDIuNjc4LTQuODI3LDIuMTE2LDEuMTAyaDBaIi8+CiAgPHBhdGggZD0iTTYxLjM2NiwxOC4xNTZjMC01Ljc4Ny44NS03LjMxLDUuOTg3LTcuMzEsNS4xOTEsMCw2LjA0MywxLjYzNSw2LjA0Myw3LjMxcy0uODUyLDcuMzA5LTYuMDQzLDcuMzA5Yy01LjIyMywwLTUuOTg3LTEuNjY1LTUuOTg3LTcuMzA5aDBaTTcwLjIzMSwxOC4xNTZjMC00LjQwNi0uMjgzLTUuMjI4LTIuODc3LTUuMjI4LTIuNjMsMC0yLjg1Mi45NC0yLjg1Miw1LjIyOCwwLDQuMjYxLjIyMiw1LjEzNCwyLjg1Miw1LjEzNCwyLjY1MiwwLDIuODc3LS44NzMsMi44NzctNS4xMzRoMFoiLz4KICA8cGF0aCBkPSJNODIuMTU0LDI1LjQ0Yy0xLjM4OCwwLTMuNjcyLS4xNzMtNS4zNy0uMzk2VjUuNjhoMy4wOHY1LjY3YzEuMTA2LS4yNzgsMi43MS0uNDgyLDMuNDY3LS40ODIsMy40MTksMCw0LjY2NiwxLjc4Myw0LjY2Niw2LjI5MywwLDUuNzM1LS41Nyw4LjI3OS01Ljg0Myw4LjI3OWgwWk04Mi42NjUsMTMuMjQzYy0uNzkzLDAtMS44MTUuMTY5LTIuNzc3LjM5N3Y5LjM5NGMuNTk4LjAzMywxLjM4Ny4wMzMsMi4wOTMuMDMzaC4xMTZjMi42OCwwLDIuNzA3LTEuNzU1LDIuNzA3LTUuNzU1LDAtMi45MTQtLjE5Ni00LjA2OS0yLjEzOS00LjA2OWgwWiIvPgogIDxwb2x5Z29uIHBvaW50cz0iOTYuNjQ2IDMwLjU3MyA5My43NTkgMzAuNTczIDk1LjQ1IDI1LjIxMyA5NC42MDkgMjUuMjEzIDg5Ljc4MiAxMS4xMDEgOTMuMDU2IDExLjEwMSA5Ni40NjkgMjEuODAxIDk5Ljg5IDExLjEwMSAxMDMuMTU4IDExLjEwMSA5Ni42NDYgMzAuNTczIDk2LjY0NiAzMC41NzMiLz4KICA8cG9seWdvbiBwb2ludHM9IjEwNC4zODUgMTEuMSAxMDcuNTQ1IDExLjEgMTA5LjYzMSAyMC42NTkgMTEyLjM0NSAxMS4xIDExNS44NjggMTEuMSAxMTguNjEgMjAuNjU5IDEyMC43MjkgMTEuMSAxMjMuODY0IDExLjEgMTIwLjY5NSAyNS4yMTIgMTE2LjkxMSAyNS4yMTIgMTE0LjEyMSAxNS4zMDIgMTExLjM4MiAyNS4yMTIgMTA3LjU0NSAyNS4yMTIgMTA0LjM4NSAxMS4xIDEwNC4zODUgMTEuMSIvPgogIDxwYXRoIGQ9Ik0xMzcuMjQ0LDI1LjIxMmgtMi43MzFsLS4yMzMtMS4wNDVjLTEuMjY3LjY0OS0yLjkwMywxLjI5Ny00LjI4NCwxLjI5Ny0zLjA3OCwwLTQuMDk3LTIuMDU3LTQuMDk3LTQuNjI4LDAtMy4yNTMsMi4yOTQtMy44NjYsNS4zMzctMy44MzhsMi44MjUuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzYtMS41NTItMS42OTUsMC0zLjcyOS4yNzgtNC44ODUuNDQ3LS4wMjctLjA4My0uNDc0LTIuMDkzLS40NzQtMi4yMDIsMi4xMzctLjM5NSw0LjAzMi0uNTYxLDUuNzUtLjU2MSwzLjI0NywwLDQuNzY4LjY0OCw0Ljc2OCwzLjk1MXYxMC40NDRoMFpNMTM0LjA2MSwxOS4wM2MtMy44NjcsMC01LjA1OC4xNjYtNS4wNTgsMS45MiwwLDEuMTc1LjMxNywyLjAwNCwxLjMwMywyLjAwNC45MywwLDIuNjgtLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBhdGggZD0iTTE0Mi44NDYsMTkuOTAzdi02LjU3N2gtMy4xNjF2LTIuMjI1aDMuMTYxdi0zLjQ3NmgzLjE4NXYzLjQ3NmgzLjIxOHYyLjIyNWgtMy4yMTh2Ny4zN2MwLDIuMjU5LjQ4NiwyLjU2NCwxLjg5NSwyLjU2NC40MjUsMCwuOTY0LDAsMS42NDMtLjAyNGwuMDI0LDEuOTQ0Yy0uOTM0LjIzMi0xLjYzNi4yODUtMi4wODguMjg1LTQuMzI0LDAtNC42NTktMi4xNS00LjY1OS01LjU2MmgwWiIvPgogIDxwYXRoIGQ9Ik0xNjMuNTY3LDE4Ljk3M2gtMS4wMTFjLTIuNTQuMDI1LTUuMDUxLjAyNS03LjU5Ni4wNTcuMDMyLDEuOTIuMTcyLDIuODc5LjcwNCwzLjUzNC41MzguNjcxLDEuNzUxLjY3MSwyLjgyNS42NzEuNzM3LDAsMi4zOTgtLjA4Myw0LjI1OC0uMjgxdjEuOTcxYy0xLjg2LjMxNi0zLjc4MS41MzktNS41MjguNTM5LTQuNTQ0LDAtNS4zOTMtMS44MDUtNS4zOTMtNy4zMzUsMC01LjY3Ny43MDQtNy4zNDMsNS44NzEtNy4zNDMsNC45NjgsMCw1Ljg3LDEuNjA5LDUuODcsNy4zMTV2Ljg3MmgwWk0xNTQuOTkzLDE2LjgzaDUuNTU5Yy0uMTExLTMuMjUtLjQyMy0zLjg0MS0yLjg1NC0zLjg0MS0yLjU5MywwLTIuNTkzLDEuMTMyLTIuNzA1LDMuODQxaDBaIi8+CiAgPHBhdGggZD0iTTE3MS40NTIsMjUuMjk5Yy0uOTA1LjE0LTEuMDQyLjE0LTEuMjEzLjE0LTIuMDI5LDAtMy41LS43NjctMy41LTQuMDk3VjUuOTU4aDMuMTg3djE1Ljg5NmMwLC44NzUsMCwxLjYxLDEuNTI2LDEuODM3djEuNjA4aDBaIi8+CiAgPHBhdGggZD0iTTE4My45MDQsMjEuNDAxYzAsMi43MDUtMi4wMywzLjg5OC00LjY1OCwzLjg5OC0yLjg4MSwwLTUuMjIzLS4yODYtNS4yMjMtLjI4NnYtMi4yODRzMi4yODcuMjc5LDQuNzcxLjI3OWMxLjIxOCwwLDEuODM1LS4zNjQsMS44MzUtMS4zNTUsMC0yLjU5LTcuNDUxLTIuMTc2LTcuNDUxLTYuOTEzLDAtMi43MTIsMi4wMDItMy44OTUsNC42My0zLjg5NSwyLjkwNiwwLDUuMjUuMjc4LDUuMjUuMjc4djIuMjg4cy0yLjU5OS0uMjUyLTUuMTA3LS4yNTJjLTEuMDc5LDAtMS41NTYuNDIxLTEuNTU2LDEuMzIyLDAsMi4zNDksNy41MDksMi4yLDcuNTA5LDYuOTJoMFoiLz4KICA8cG9seWdvbiBwb2ludHM9IjE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgNS45MjkgMTg5Ljk3OSA1LjkyOSAxODkuOTc5IDE1LjkxOCAxOTIuMDEyIDE1LjkxOCAxOTUuNzA4IDkuMDY2IDE5OS4wMzkgOS4wNjYgMTk0LjcyMSAxNy4wNTYgMTk5Ljc0NiAyNS4yMTIgMTk2LjMzIDI1LjIxMiAxOTIuMDQgMTguMjYzIDE4OS45NzkgMTguMjYzIDE4OS45NzkgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIi8+CiAgPHBhdGggZD0iTTIxMi4zNDEsMjUuMjEyaC0yLjczMmwtLjIzMy0xLjA0NWMtMS4yNjYuNjQ5LTIuOTAzLDEuMjk3LTQuMjgzLDEuMjk3LTMuMDgsMC00LjA5OS0yLjA1Ny00LjA5OS00LjYyOCwwLTMuMjUzLDIuMjktMy44NjYsNS4zMzMtMy44MzhsMi44MjYuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzctMS41NTItMS42OTEsMC0zLjcyNi4yNzgtNC44ODUuNDQ3LS4wMjEtLjA4My0uNDc3LTIuMDkzLS40NzctMi4yMDIsMi4xNDMtLjM5NSw0LjAzMy0uNTYxLDUuNzU0LS41NjEsMy4yNDgsMCw0Ljc3My42NDgsNC43NzMsMy45NTF2MTAuNDQ0aDBaTTIwOS4xNTMsMTkuMDNjLTMuODY5LDAtNS4wNTQuMTY2LTUuMDU0LDEuOTIsMCwxLjE3NS4zMTcsMi4wMDQsMS4yOTksMi4wMDQuOTI5LDAsMi42NzctLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBvbHlnb24gcG9pbnRzPSI2LjM4IDQyLjE3NiAxNi41NTEgNDIuMTc2IDIxLjc5NSA2Ni40OTUgMjguNTUyIDQyLjE3NiAzOS41MTcgNDIuMTc2IDQ2LjUwOSA2Ni40OTUgNTEuNzU1IDQyLjE3NiA2MS44NDggNDIuMTc2IDUzLjAyNyA4MS45MTEgNDEuMjY2IDgxLjkxMSAzNC4xMTUgNTYuMjQzIDI3LjEyMiA4MS45MTEgMTUuMjggODEuOTExIDYuMzggNDIuMTc2IDYuMzggNDIuMTc2IiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTk5Ljg1OSw4MS45MTFoLTguNzQyYy0uMjM3LS44NzYtLjQ3Ni0yLjMwMy0uNzE1LTMuMTc3LTMuMzM4LDEuOTg0LTcuNDY5LDMuODkyLTExLjIwNSwzLjg5Mi05LjEzNywwLTEyLjE1OC01Ljg4MS0xMi4xNTgtMTMuMTkxLDAtNy4yMzIsMy45NzUtMTAuMDk0LDkuODU1LTEwLjgwNiwxLjc0Ny0uMjM5LDMuNjU1LS4yMzksMTIuNzE1LjIzN3YtNi4zNTdjMC0zLjczNS0xLjY2OS0zLjk3Mi00Ljc3MS0zLjk3Mi00LjYwNiwwLTEwLjI1LjM5NS0xMy45ODUuOTUyLS4wNzgtLjIzOS0xLjUxMS02LjE5OC0xLjUxMS02LjU5OCw2LjI3OC0xLjExLDExLjc2My0xLjUwOCwxNi42OS0xLjUwOCw5LjM3NywwLDEzLjgyNywxLjkwOCwxMy44MjcsMTEuMjgydjI5LjI0NmgwWk04OS42MDksNjQuNzQ2Yy05LjQ1OCwwLTEyLjU1Ni41NTYtMTIuNTU2LDUuMDg3LDAsMi45NC44NzMsNS4wMDUsMy4wMTgsNS4wMDUsMS45ODgsMCw2LjUxNy0xLjM1Miw5LjUzOC0yLjQ2MnYtNy42M2gwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMTE2LjU2NiA4MS45MTEgMTE2LjU2NiA0OC41ODEgMTA1LjI1OCA0OC41ODEgMTA1LjI1OCA0Mi4wMDIgMTM3Ljk4OCA0Mi4wMDIgMTM3Ljk4OCA0OC41ODEgMTI2LjY4IDQ4LjU4MSAxMjYuNjggODEuOTExIDExNi41NjYgODEuOTExIDExNi41NjYgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTE2MC44MjcsNzUuNDc0YzMuMDIxLDAsOC4yNjQtLjM5OCwxMS45Mi0uNzE1djYuMDM5Yy00LjM3MSwxLjExMy0xMC44ODcsMS44MjctMTUuMTc5LDEuODI3LTExLjM2NCwwLTE2LjUyOS0xLjk4Ni0xNi41MjktMTguNjcyLDAtMTcuNDg1LDEuNjctMjIuNTcsMTYuMTMzLTIyLjU3Ljc5NSwwLDkuNjE2LjM5NywxNS4xNzgsMS4zNDl2Ni43NTZjLTguOS0uNzE1LTEyLjg3NS0uOTUxLTEzLjgyNi0uOTUxLTYuOTk1LDAtNy4xNTUsMi44NTktNy4xNTUsMTUuNjUyLDAsMTAuMTcyLDIuNjI0LDExLjI4NSw5LjQ1OCwxMS4yODVoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cG9seWdvbiBwb2ludHM9IjIwMi41NzUgODEuOTExIDIwMi41NzUgNjQuNzM4IDE5MC43ODcgNjQuNzM4IDE5MC43ODcgODEuOTExIDE4MC43MzQgODEuOTExIDE4MC43MzQgNDEuOTQyIDE5MC43ODcgNDEuOTQyIDE5MC43ODcgNTguMjc1IDIwMi41NzUgNTguMjc1IDIwMi41NzUgNDEuOTQyIDIxMi42MjggNDEuOTQyIDIxMi42MjggODEuOTExIDIwMi41NzUgODEuOTExIDIwMi41NzUgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTIyMi43NzQsNDEuODJsMTYuMDk1LjA2MmMxMS4zMTEuMDYsMTUuOTE2LDMuMTY5LDE1LjkxNiwyMC4yMjMsMCwxNi4yMTYtMy43NjksMTkuODA2LTE1LjI1NSwxOS44MDZoLTE2Ljc1NnYtNDAuMDkxaDBaTTIzMi44MjksNDcuOTg0djI3LjUyNGg2LjI4YzQuNjA3LDAsNS43NDUtMi42OTMsNS43NDUtMTMuNDAzLDAtMTIuNjI0LTEuMTk5LTE0LjEyMS01Ljc0NS0xNC4xMjFoLTYuMjhaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTI2MS45MDcsNjIuMDQ1YzAtMTYuMjg5LDIuNDYyLTIwLjU4MSwxNy4yNDQtMjAuNTgxLDE1LjAxOCwwLDE3LjQwMyw0LjYwOCwxNy40MDMsMjAuNTgxcy0yLjQ2NSwyMC41ODEtMTcuNDAzLDIwLjU4MWMtMTUuMDE5LDAtMTcuMjQ0LTQuNjktMTcuMjQ0LTIwLjU4MWgwWk0yODYuNDYxLDYyLjA0NWMwLTExLjkyMi0uNzE2LTE0LjE0Ny03LjMxLTE0LjE0Ny02LjY3NSwwLTcuMTUyLDIuNTQyLTcuMTUyLDE0LjE0NywwLDExLjUyMS40NzcsMTMuOTA1LDcuMTUyLDEzLjkwNyw2LjY3NSwwLDcuMzEtMi4zODYsNy4zMS0xMy45MDdoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzU3LjMxOCw0OS40NjJjNS40NzUsMCw2LjE3Mi42MTksNi4xNzIsNS40NzksMCw0LjU1Mi0uNDYzLDUuNzA4LTYuMTcyLDUuNzA4LTUuNjI5LDAtNi4xNzMtMS4wNzgtNi4xNzMtNS43MDgsMC00LjcwOS41NDQtNS40NzksNi4xNzMtNS40NzloMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzE3LjIyLDcyLjM5MWMtLjA3NywxLjA4LDEuMTUzLDEuNTQzLDIuOTMsMS41NDMsMi4wMDYsMCwzLjYyOS0uMTUxLDUuNjM2LS4xNTEsOC4xNzgsMCwxNi42Ny45MjQsMTYuNjcsMTAuNTY5LDAsOS4yNjUtNi43MTYsMTIuODg3LTE1Ljg5OCwxMi44ODctOS4wMzQsMC0xMy40My0uNjE2LTE3Ljk4NS0uNjE2di03LjA5OXMxMC43MjcuNDY2LDE3LjQ0My40NjZjMy40NzUsMCw1LjA5OC0xLjM5Miw1LjA5OC01LjA5OSwwLTMuMzE4LTIuMTYzLTMuNjIyLTQuNzg5LTMuNjIyLTEuNjk2LDAtMy44NTkuMTUzLTYuMTc1LjE1My03LjAyMiwwLTEzLjUwOC0yLjg2LTEzLjUwOC0xMC42NTcsMC0uOTI3LjIzNC00LjE3MiwxLjE2NC01Ljg2OS0yLjU1My0yLjMxNi0zLjQ3Ni01LjcxMi0zLjQ3Ni0xMC4wMzQsMC04Ljg3NSwzLjAwOS0xMy4wNDEsMTUuNTktMTMuMTIyaDIyLjg0NXY2LjI1MmwtNC4zMjIuNjE4Yy42OTYsMS42OTksMS4wMDIsMy45MzgsMS4wMDIsNi4yNTIsMCwxMC4yNjQtNC41NTQsMTMuMTk3LTEzLjY1OSwxMy4xOTdoLTguNDkybC0uMDc0LDQuMzMyaDBaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTMyMy44NTUsNDguOTE5aC0yLjYyM2MtNC40ODIsMC01LjcwOS4yMzQtNS43MDksNi4xNzUsMCw1LjA5MywxLjE1MSw1Ljk0Myw0LjcwMyw2LjA5M2gzLjU1MmMzLjc4MywwLDQuNjMzLTEuMDgxLDQuNjMzLTYuMDkzLDAtNS4yNDgtLjE1Ni02LjE3NS00LjU1Ni02LjE3NWgwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzY4LjgxOCA0Mi4yMDcgMzgwLjc3OSAxOS40NDIgMzkwLjE5MSAxOS40NDIgNDAyLjA3NSA0Mi4yMDcgMzkxLjQyNCA0Mi4yMDcgMzg1LjQ4OCAyOS4yNDMgMzc5LjYyIDQyLjIwNyAzNjguODE4IDQyLjIwNyAzNjguODE4IDQyLjIwNyIgZmlsbD0iIzk4MzAzOSIvPgo8L3N2Zz4=" alt="Sieć Obywatelska Watchdog Polska"></a><p>Stan na: <span class="footer-date">9 października 2026 r.</span></p></div></footer>
+</body></html>
