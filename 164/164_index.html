@@ -1,4 +1,5 @@
-<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="description" content="Zmiany kadrowe na stanowiskach dyrektorskich w 11 spółkach Skarbu Państwa. Analiza odpowiedzi, metodologia i arkusz źródłowy."><title>Liczba zmian kadrowych w spółkach Skarbu Państwa — raport | Sieć Obywatelska Watchdog Polska</title><style>
+<!DOCTYPE html>
+<html lang="pl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="light" name="color-scheme"/><meta content="Liczba zmian kadrowych na stanowiskach dyrektorów i kierowników w 12 spółkach Skarbu Państwa. Analiza odpowiedzi, metodologia i arkusz źródłowy." name="description"/><title>Liczba zmian kadrowych w spółkach Skarbu Państwa — raport | Sieć Obywatelska Watchdog Polska</title><style>
   :root {
     --red:#e3232a;
     --red-dark:#8e1832;
@@ -174,23 +175,54 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 @media(max-width:660px){.hero h1{font-size:49px}.contents{padding-left:16px;padding-right:16px}.bar-group{grid-template-columns:1fr;gap:4px}.card{padding:20px}.report-copy{font-size:16px}.search{min-width:0;width:100%}.download-box{padding:24px}.site-actions a:not(.primary){display:none}.appendix summary{font-size:20px}h2{font-size:38px}.report-copy th{min-width:105px}.report-copy th:first-child{min-width:170px}.table-wrap{max-width:100%}}
 @media print{details>div{display:block!important}.contents,.download-help{display:none}.table-wrap{overflow:visible}.report-copy{font-size:10pt}.report-copy h3{break-after:avoid}.kpi{min-height:90px}.section-head{break-after:avoid}pre{white-space:pre-wrap}.chart-card{break-inside:avoid}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+  /* Szczegółowa dokumentacja pozostaje dostępna, ale nie dominuje lektury. */
+  .technical {border-top:1px solid var(--line);margin:24px 0;padding:15px 0 0;}
+  .technical>summary {font-size:17px;font-weight:800;cursor:pointer;list-style:revert;line-height:1.5;}
+  .technical[open]>summary {margin-bottom:18px;}
+  .technical-body {padding:0 0 6px;}
+  .technical-body p {max-width:960px;}
+  .technical-body .table-wrap {margin:20px 0 24px;}
+  .finding {margin:24px 0 34px;max-width:960px;}
+  .finding h4 {font-size:22px;line-height:1.25;margin:0 0 10px;}
+  .finding p {margin:0;}
 </style></head><body><a class="skip-link" href="#wyniki">Przejdź do wyników</a><header class="sitebar">
-  <div class="sitebar-inner">
-    <a class="brand" href="https://siecobywatelska.pl/" target="_blank" rel="noopener" aria-label="Sieć Obywatelska Watchdog Polska">
-      <img class="brand-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iV2Fyc3R3YV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDQwNC4zMjEgMTAwLjU1NSI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8cGF0aCBkPSJNMTcuMjgyLDIxLjM5NWMwLDIuNzExLTIuMDMsMy45MDUtNC42NTksMy45MDUtMi44ODMsMC01LjIyMi0uMjk1LTUuMjIyLS4yOTV2LTIuMjg0czIuMjkuMjg3LDQuNzc0LjI4N2MxLjIxLDAsMS44MzEtLjM2OCwxLjgzMS0xLjM1OCwwLTIuNTkzLTcuNDUtMi4xNzktNy40NS02LjkxMywwLTIuNzA4LDIuMDA3LTMuODk0LDQuNjMtMy44OTQsMi45MTEsMCw1LjI0OC4yODEsNS4yNDguMjgxdjIuMjg0cy0yLjU5Ni0uMjQ5LTUuMTA4LS4yNDljLTEuMDcxLDAtMS41NDkuNDIyLTEuNTQ5LDEuMzE4LDAsMi4zNDUsNy41MDUsMi4yMDksNy41MDUsNi45MThoMFoiLz4KICA8cGF0aCBkPSJNMjEuODMxLDYuMjFjMS42MTIsMCwxLjgwOS4xMzgsMS44MDksMS42MzgsMCwxLjMyOS0uMTY2LDEuNjY5LTEuODA5LDEuNjY5LTEuNjY4LDAtMS44MDQtLjMxMS0xLjgwNC0xLjY2OSwwLTEuNDA5LjEzNi0xLjYzOCwxLjgwNC0xLjYzOGgwWk0yMC4yMjUsMTEuMTIzaDMuMjV2MTQuMDgyaC0zLjI1di0xNC4wODJoMFpNMjAuMjI1LDI1LjIwNXYtMTQuMDgyLDE0LjA4MloiLz4KICA8cGF0aCBkPSJNMzguNDU2LDE4Ljk3M2gtMS4wMDdjLTIuNTQxLjAyNS01LjA1NC4wMjUtNy41OTIuMDU3LjAyMywxLjkxNy4xNjMsMi44NzkuNjk1LDMuNTI0LjUzOC42NzcsMS43NTYuNjc3LDIuODMuNjc3LjcyOSwwLDIuMzk2LS4wODYsNC4yNjItLjI3N3YxLjk3MWMtMS44NjYuMzE2LTMuNzc4LjUzOS01LjUzNC41MzktNC41NDQsMC01LjM4OS0xLjgwOC01LjM4OS03LjMzNywwLTUuNjc4LjcwMi03LjM0MSw1Ljg2OS03LjM0MSw0Ljk2NiwwLDUuODY2LDEuNjA2LDUuODY2LDcuMzA4di44NzloMFpNMjkuODgsMTYuODIyaDUuNTYzYy0uMTE0LTMuMjQyLS40MjUtMy44NC0yLjg1My0zLjg0LTIuNTkzLDAtMi41OTMsMS4xMzEtMi43MSwzLjg0aDBaIi8+CiAgPHBhdGggZD0iTTQ4LjIxLDIzLjE0NmMxLjA2OCwwLDIuNzY2LS4xMzgsNC4wMzYtLjI1djEuOTc1Yy0xLjQ2NS4zMzUtMy43MjQuNTk0LTUuMjIxLjU5NC0zLjkyMSwwLTUuNzMtLjcwMy01LjczLTYuNjEsMC02LjMyNC41OS04LjA0NCw1LjczLTguMDQ0LjQyNywwLDMuMzY0LjE0LDUuMDc5LjQ1NnYyLjE3MWMtMy4yOTktLjI1Ni00LjQyOC0uMzExLTQuNzEzLS4zMTEtMi44MjYsMC0yLjg3NiwxLjA3Ni0yLjg3Niw1LjgxMiwwLDMuODcuOTI4LDQuMjA3LDMuNjk1LDQuMjA3aDBaTTUwLjA3NCw0Ljk3bC0yLjgyMSw0Ljc2LTEuOTczLTEuMDM1LDIuNjc4LTQuODI3LDIuMTE2LDEuMTAyaDBaIi8+CiAgPHBhdGggZD0iTTYxLjM2NiwxOC4xNTZjMC01Ljc4Ny44NS03LjMxLDUuOTg3LTcuMzEsNS4xOTEsMCw2LjA0MywxLjYzNSw2LjA0Myw3LjMxcy0uODUyLDcuMzA5LTYuMDQzLDcuMzA5Yy01LjIyMywwLTUuOTg3LTEuNjY1LTUuOTg3LTcuMzA5aDBaTTcwLjIzMSwxOC4xNTZjMC00LjQwNi0uMjgzLTUuMjI4LTIuODc3LTUuMjI4LTIuNjMsMC0yLjg1Mi45NC0yLjg1Miw1LjIyOCwwLDQuMjYxLjIyMiw1LjEzNCwyLjg1Miw1LjEzNCwyLjY1MiwwLDIuODc3LS44NzMsMi44NzctNS4xMzRoMFoiLz4KICA8cGF0aCBkPSJNODIuMTU0LDI1LjQ0Yy0xLjM4OCwwLTMuNjcyLS4xNzMtNS4zNy0uMzk2VjUuNjhoMy4wOHY1LjY3YzEuMTA2LS4yNzgsMi43MS0uNDgyLDMuNDY3LS40ODIsMy40MTksMCw0LjY2NiwxLjc4Myw0LjY2Niw2LjI5MywwLDUuNzM1LS41Nyw4LjI3OS01Ljg0Myw4LjI3OWgwWk04Mi42NjUsMTMuMjQzYy0uNzkzLDAtMS44MTUuMTY5LTIuNzc3LjM5N3Y5LjM5NGMuNTk4LjAzMywxLjM4Ny4wMzMsMi4wOTMuMDMzaC4xMTZjMi42OCwwLDIuNzA3LTEuNzU1LDIuNzA3LTUuNzU1LDAtMi45MTQtLjE5Ni00LjA2OS0yLjEzOS00LjA2OWgwWiIvPgogIDxwb2x5Z29uIHBvaW50cz0iOTYuNjQ2IDMwLjU3MyA5My43NTkgMzAuNTczIDk1LjQ1IDI1LjIxMyA5NC42MDkgMjUuMjEzIDg5Ljc4MiAxMS4xMDEgOTMuMDU2IDExLjEwMSA5Ni40NjkgMjEuODAxIDk5Ljg5IDExLjEwMSAxMDMuMTU4IDExLjEwMSA5Ni42NDYgMzAuNTczIDk2LjY0NiAzMC41NzMiLz4KICA8cG9seWdvbiBwb2ludHM9IjEwNC4zODUgMTEuMSAxMDcuNTQ1IDExLjEgMTA5LjYzMSAyMC42NTkgMTEyLjM0NSAxMS4xIDExNS44NjggMTEuMSAxMTguNjEgMjAuNjU5IDEyMC43MjkgMTEuMSAxMjMuODY0IDExLjEgMTIwLjY5NSAyNS4yMTIgMTE2LjkxMSAyNS4yMTIgMTE0LjEyMSAxNS4zMDIgMTExLjM4MiAyNS4yMTIgMTA3LjU0NSAyNS4yMTIgMTA0LjM4NSAxMS4xIDEwNC4zODUgMTEuMSIvPgogIDxwYXRoIGQ9Ik0xMzcuMjQ0LDI1LjIxMmgtMi43MzFsLS4yMzMtMS4wNDVjLTEuMjY3LjY0OS0yLjkwMywxLjI5Ny00LjI4NCwxLjI5Ny0zLjA3OCwwLTQuMDk3LTIuMDU3LTQuMDk3LTQuNjI4LDAtMy4yNTMsMi4yOTQtMy44NjYsNS4zMzctMy44MzhsMi44MjUuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzYtMS41NTItMS42OTUsMC0zLjcyOS4yNzgtNC44ODUuNDQ3LS4wMjctLjA4My0uNDc0LTIuMDkzLS40NzQtMi4yMDIsMi4xMzctLjM5NSw0LjAzMi0uNTYxLDUuNzUtLjU2MSwzLjI0NywwLDQuNzY4LjY0OCw0Ljc2OCwzLjk1MXYxMC40NDRoMFpNMTM0LjA2MSwxOS4wM2MtMy44NjcsMC01LjA1OC4xNjYtNS4wNTgsMS45MiwwLDEuMTc1LjMxNywyLjAwNCwxLjMwMywyLjAwNC45MywwLDIuNjgtLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBhdGggZD0iTTE0Mi44NDYsMTkuOTAzdi02LjU3N2gtMy4xNjF2LTIuMjI1aDMuMTYxdi0zLjQ3NmgzLjE4NXYzLjQ3NmgzLjIxOHYyLjIyNWgtMy4yMTh2Ny4zN2MwLDIuMjU5LjQ4NiwyLjU2NCwxLjg5NSwyLjU2NC40MjUsMCwuOTY0LDAsMS42NDMtLjAyNGwuMDI0LDEuOTQ0Yy0uOTM0LjIzMi0xLjYzNi4yODUtMi4wODguMjg1LTQuMzI0LDAtNC42NTktMi4xNS00LjY1OS01LjU2MmgwWiIvPgogIDxwYXRoIGQ9Ik0xNjMuNTY3LDE4Ljk3M2gtMS4wMTFjLTIuNTQuMDI1LTUuMDUxLjAyNS03LjU5Ni4wNTcuMDMyLDEuOTIuMTcyLDIuODc5LjcwNCwzLjUzNC41MzguNjcxLDEuNzUxLjY3MSwyLjgyNS42NzEuNzM3LDAsMi4zOTgtLjA4Myw0LjI1OC0uMjgxdjEuOTcxYy0xLjg2LjMxNi0zLjc4MS41MzktNS41MjguNTM5LTQuNTQ0LDAtNS4zOTMtMS44MDUtNS4zOTMtNy4zMzUsMC01LjY3Ny43MDQtNy4zNDMsNS44NzEtNy4zNDMsNC45NjgsMCw1Ljg3LDEuNjA5LDUuODcsNy4zMTV2Ljg3MmgwWk0xNTQuOTkzLDE2LjgzaDUuNTU5Yy0uMTExLTMuMjUtLjQyMy0zLjg0MS0yLjg1NC0zLjg0MS0yLjU5MywwLTIuNTkzLDEuMTMyLTIuNzA1LDMuODQxaDBaIi8+CiAgPHBhdGggZD0iTTE3MS40NTIsMjUuMjk5Yy0uOTA1LjE0LTEuMDQyLjE0LTEuMjEzLjE0LTIuMDI5LDAtMy41LS43NjctMy41LTQuMDk3VjUuOTU4aDMuMTg3djE1Ljg5NmMwLC44NzUsMCwxLjYxLDEuNTI2LDEuODM3djEuNjA4aDBaIi8+CiAgPHBhdGggZD0iTTE4My45MDQsMjEuNDAxYzAsMi43MDUtMi4wMywzLjg5OC00LjY1OCwzLjg5OC0yLjg4MSwwLTUuMjIzLS4yODYtNS4yMjMtLjI4NnYtMi4yODRzMi4yODcuMjc5LDQuNzcxLjI3OWMxLjIxOCwwLDEuODM1LS4zNjQsMS44MzUtMS4zNTUsMC0yLjU5LTcuNDUxLTIuMTc2LTcuNDUxLTYuOTEzLDAtMi43MTIsMi4wMDItMy44OTUsNC42My0zLjg5NSwyLjkwNiwwLDUuMjUuMjc4LDUuMjUuMjc4djIuMjg4cy0yLjU5OS0uMjUyLTUuMTA3LS4yNTJjLTEuMDc5LDAtMS41NTYuNDIxLTEuNTU2LDEuMzIyLDAsMi4zNDksNy41MDksMi4yLDcuNTA5LDYuOTJoMFoiLz4KICA8cG9seWdvbiBwb2ludHM9IjE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgNS45MjkgMTg5Ljk3OSA1LjkyOSAxODkuOTc5IDE1LjkxOCAxOTIuMDEyIDE1LjkxOCAxOTUuNzA4IDkuMDY2IDE5OS4wMzkgOS4wNjYgMTk0LjcyMSAxNy4wNTYgMTk5Ljc0NiAyNS4yMTIgMTk2LjMzIDI1LjIxMiAxOTIuMDQgMTguMjYzIDE4OS45NzkgMTguMjYzIDE4OS45NzkgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIi8+CiAgPHBhdGggZD0iTTIxMi4zNDEsMjUuMjEyaC0yLjczMmwtLjIzMy0xLjA0NWMtMS4yNjYuNjQ5LTIuOTAzLDEuMjk3LTQuMjgzLDEuMjk3LTMuMDgsMC00LjA5OS0yLjA1Ny00LjA5OS00LjYyOCwwLTMuMjUzLDIuMjktMy44NjYsNS4zMzMtMy44MzhsMi44MjYuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzctMS41NTItMS42OTEsMC0zLjcyNi4yNzgtNC44ODUuNDQ3LS4wMjEtLjA4My0uNDc3LTIuMDkzLS40NzctMi4yMDIsMi4xNDMtLjM5NSw0LjAzMy0uNTYxLDUuNzU0LS41NjEsMy4yNDgsMCw0Ljc3My42NDgsNC43NzMsMy45NTF2MTAuNDQ0aDBaTTIwOS4xNTMsMTkuMDNjLTMuODY5LDAtNS4wNTQuMTY2LTUuMDU0LDEuOTIsMCwxLjE3NS4zMTcsMi4wMDQsMS4yOTksMi4wMDQuOTI5LDAsMi42NzctLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBvbHlnb24gcG9pbnRzPSI2LjM4IDQyLjE3NiAxNi41NTEgNDIuMTc2IDIxLjc5NSA2Ni40OTUgMjguNTUyIDQyLjE3NiAzOS41MTcgNDIuMTc2IDQ2LjUwOSA2Ni40OTUgNTEuNzU1IDQyLjE3NiA2MS44NDggNDIuMTc2IDUzLjAyNyA4MS45MTEgNDEuMjY2IDgxLjkxMSAzNC4xMTUgNTYuMjQzIDI3LjEyMiA4MS45MTEgMTUuMjggODEuOTExIDYuMzggNDIuMTc2IDYuMzggNDIuMTc2IiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTk5Ljg1OSw4MS45MTFoLTguNzQyYy0uMjM3LS44NzYtLjQ3Ni0yLjMwMy0uNzE1LTMuMTc3LTMuMzM4LDEuOTg0LTcuNDY5LDMuODkyLTExLjIwNSwzLjg5Mi05LjEzNywwLTEyLjE1OC01Ljg4MS0xMi4xNTgtMTMuMTkxLDAtNy4yMzIsMy45NzUtMTAuMDk0LDkuODU1LTEwLjgwNiwxLjc0Ny0uMjM5LDMuNjU1LS4yMzksMTIuNzE1LjIzN3YtNi4zNTdjMC0zLjczNS0xLjY2OS0zLjk3Mi00Ljc3MS0zLjk3Mi00LjYwNiwwLTEwLjI1LjM5NS0xMy45ODUuOTUyLS4wNzgtLjIzOS0xLjUxMS02LjE5OC0xLjUxMS02LjU5OCw2LjI3OC0xLjExLDExLjc2My0xLjUwOCwxNi42OS0xLjUwOCw5LjM3NywwLDEzLjgyNywxLjkwOCwxMy44MjcsMTEuMjgydjI5LjI0NmgwWk04OS42MDksNjQuNzQ2Yy05LjQ1OCwwLTEyLjU1Ni41NTYtMTIuNTU2LDUuMDg3LDAsMi45NC44NzMsNS4wMDUsMy4wMTgsNS4wMDUsMS45ODgsMCw2LjUxNy0xLjM1Miw5LjUzOC0yLjQ2MnYtNy42M2gwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMTE2LjU2NiA4MS45MTEgMTE2LjU2NiA0OC41ODEgMTA1LjI1OCA0OC41ODEgMTA1LjI1OCA0Mi4wMDIgMTM3Ljk4OCA0Mi4wMDIgMTM3Ljk4OCA0OC41ODEgMTI2LjY4IDQ4LjU4MSAxMjYuNjggODEuOTExIDExNi41NjYgODEuOTExIDExNi41NjYgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTE2MC44MjcsNzUuNDc0YzMuMDIxLDAsOC4yNjQtLjM5OCwxMS45Mi0uNzE1djYuMDM5Yy00LjM3MSwxLjExMy0xMC44ODcsMS44MjctMTUuMTc5LDEuODI3LTExLjM2NCwwLTE2LjUyOS0xLjk4Ni0xNi41MjktMTguNjcyLDAtMTcuNDg1LDEuNjctMjIuNTcsMTYuMTMzLTIyLjU3Ljc5NSwwLDkuNjE2LjM5NywxNS4xNzgsMS4zNDl2Ni43NTZjLTguOS0uNzE1LTEyLjg3NS0uOTUxLTEzLjgyNi0uOTUxLTYuOTk1LDAtNy4xNTUsMi44NTktNy4xNTUsMTUuNjUyLDAsMTAuMTcyLDIuNjI0LDExLjI4NSw5LjQ1OCwxMS4yODVoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cG9seWdvbiBwb2ludHM9IjIwMi41NzUgODEuOTExIDIwMi41NzUgNjQuNzM4IDE5MC43ODcgNjQuNzM4IDE5MC43ODcgODEuOTExIDE4MC43MzQgODEuOTExIDE4MC43MzQgNDEuOTQyIDE5MC43ODcgNDEuOTQyIDE5MC43ODcgNTguMjc1IDIwMi41NzUgNTguMjc1IDIwMi41NzUgNDEuOTQyIDIxMi42MjggNDEuOTQyIDIxMi42MjggODEuOTExIDIwMi41NzUgODEuOTExIDIwMi41NzUgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTIyMi43NzQsNDEuODJsMTYuMDk1LjA2MmMxMS4zMTEuMDYsMTUuOTE2LDMuMTY5LDE1LjkxNiwyMC4yMjMsMCwxNi4yMTYtMy43NjksMTkuODA2LTE1LjI1NSwxOS44MDZoLTE2Ljc1NnYtNDAuMDkxaDBaTTIzMi44MjksNDcuOTg0djI3LjUyNGg2LjI4YzQuNjA3LDAsNS43NDUtMi42OTMsNS43NDUtMTMuNDAzLDAtMTIuNjI0LTEuMTk5LTE0LjEyMS01Ljc0NS0xNC4xMjFoLTYuMjhaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTI2MS45MDcsNjIuMDQ1YzAtMTYuMjg5LDIuNDYyLTIwLjU4MSwxNy4yNDQtMjAuNTgxLDE1LjAxOCwwLDE3LjQwMyw0LjYwOCwxNy40MDMsMjAuNTgxcy0yLjQ2NSwyMC41ODEtMTcuNDAzLDIwLjU4MWMtMTUuMDE5LDAtMTcuMjQ0LTQuNjktMTcuMjQ0LTIwLjU4MWgwWk0yODYuNDYxLDYyLjA0NWMwLTExLjkyMi0uNzE2LTE0LjE0Ny03LjMxLTE0LjE0Ny02LjY3NSwwLTcuMTUyLDIuNTQyLTcuMTUyLDE0LjE0NywwLDExLjUyMS40NzcsMTMuOTA1LDcuMTUyLDEzLjkwNyw2LjY3NSwwLDcuMzEtMi4zODYsNy4zMS0xMy45MDdoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzU3LjMxOCw0OS40NjJjNS40NzUsMCw2LjE3Mi42MTksNi4xNzIsNS40NzksMCw0LjU1Mi0uNDYzLDUuNzA4LTYuMTcyLDUuNzA4LTUuNjI5LDAtNi4xNzMtMS4wNzgtNi4xNzMtNS43MDgsMC00LjcwOS41NDQtNS40NzksNi4xNzMtNS40NzloMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzE3LjIyLDcyLjM5MWMtLjA3NywxLjA4LDEuMTUzLDEuNTQzLDIuOTMsMS41NDMsMi4wMDYsMCwzLjYyOS0uMTUxLDUuNjM2LS4xNTEsOC4xNzgsMCwxNi42Ny45MjQsMTYuNjcsMTAuNTY5LDAsOS4yNjUtNi43MTYsMTIuODg3LTE1Ljg5OCwxMi44ODctOS4wMzQsMC0xMy40My0uNjE2LTE3Ljk4NS0uNjE2di03LjA5OXMxMC43MjcuNDY2LDE3LjQ0My40NjZjMy40NzUsMCw1LjA5OC0xLjM5Miw1LjA5OC01LjA5OSwwLTMuMzE4LTIuMTYzLTMuNjIyLTQuNzg5LTMuNjIyLTEuNjk2LDAtMy44NTkuMTUzLTYuMTc1LjE1My03LjAyMiwwLTEzLjUwOC0yLjg2LTEzLjUwOC0xMC42NTcsMC0uOTI3LjIzNC00LjE3MiwxLjE2NC01Ljg2OS0yLjU1My0yLjMxNi0zLjQ3Ni01LjcxMi0zLjQ3Ni0xMC4wMzQsMC04Ljg3NSwzLjAwOS0xMy4wNDEsMTUuNTktMTMuMTIyaDIyLjg0NXY2LjI1MmwtNC4zMjIuNjE4Yy42OTYsMS42OTksMS4wMDIsMy45MzgsMS4wMDIsNi4yNTIsMCwxMC4yNjQtNC41NTQsMTMuMTk3LTEzLjY1OSwxMy4xOTdoLTguNDkybC0uMDc0LDQuMzMyaDBaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTMyMy44NTUsNDguOTE5aC0yLjYyM2MtNC40ODIsMC01LjcwOS4yMzQtNS43MDksNi4xNzUsMCw1LjA5MywxLjE1MSw1Ljk0Myw0LjcwMyw2LjA5M2gzLjU1MmMzLjc4MywwLDQuNjMzLTEuMDgxLDQuNjMzLTYuMDkzLDAtNS4yNDgtLjE1Ni02LjE3NS00LjU1Ni02LjE3NWgwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzY4LjgxOCA0Mi4yMDcgMzgwLjc3OSAxOS40NDIgMzkwLjE5MSAxOS40NDIgNDAyLjA3NSA0Mi4yMDcgMzkxLjQyNCA0Mi4yMDcgMzg1LjQ4OCAyOS4yNDMgMzc5LjYyIDQyLjIwNyAzNjguODE4IDQyLjIwNyAzNjguODE4IDQyLjIwNyIgZmlsbD0iIzk4MzAzOSIvPgo8L3N2Zz4=" alt="Sieć Obywatelska Watchdog Polska">
-    </a>
-    <nav class="site-actions" aria-label="Skróty">
-      <a href="#pobierz">POBIERZ</a>
-      <a href="#metodologia">ZASTRZEŻENIA</a>
-      <a class="primary" href="https://siecobywatelska.pl/wspieraj/" target="_blank" rel="noopener">WSPIERAJ NAS</a>
-    </nav>
-  </div>
-</header><main><section class="hero"><div><p class="eyebrow">Monitoring • jawność życia publicznego</p><h1>Liczba zmian kadrowych<br>w spółkach<br><span>Skarbu Państwa</span></h1><p class="hero-lead">Co odpowiedzi spółek mówią o liczbie zmian na stanowiskach dyrektorskich w latach 2015–2024?</p></div><aside class="hero-aside"><strong>11 z 20</strong><p>zapytanych spółek jest reprezentowanych w analizowanym arkuszu.</p><div class="report-meta"><div class="report-meta-row"><span>Ostatnia aktualizacja</span><strong><time datetime="2026-10-05">5 października 2026</time></strong></div><div class="report-meta-row"><span>Status</span><strong>raport może być aktualizowany wraz z napływem i opracowaniem nowych odpowiedzi</strong></div></div></aside></section><nav class="contents" aria-label="Spis treści"><a href="#skala">Skala materiału</a><a href="#wyniki">Wyniki</a><a href="#przypadki">Spółki do weryfikacji</a><a href="#dane">Tabela spółek</a><a href="#pobierz">Pobierz dane</a><a href="#metodologia">Metodologia</a><a href="#zrodla">Źródła i obliczenia</a></nav><section class="section " id="skala"><div class="wrap"><div class="section-head"><div class="section-no">01 / Skala materiału</div><div><h2>Wyraźne tendencje.<br>Niepełny obraz.</h2></div></div><div class="kpis"><div class="kpi"><strong>20</strong><span>spółek, do których wysłano wnioski</span></div><div class="kpi"><strong>11</strong><span>spółek z danymi w analizowanym eksporcie</span></div><div class="kpi"><strong>55%</strong><span>zapytanych spółek reprezentowanych w arkuszu</span></div><div class="kpi"><strong>5</strong><span>sześciomiesięcznych okresów porównania</span></div></div><div class="callout"><div class="callout-label">WYRAŹNY WZROST W 2015/2016</div><div class="callout-copy"><p>Suma rozpoczęć i zakończeń współpracy wzrosła z <strong>35 do 87</strong>. Wzrost odnotowano w ośmiu spółkach, w żadnej nie było spadku. Liczby wskazują kierunek dalszej weryfikacji — nie przesądzają przyczyn zmian.</p></div></div><article class="report-copy"><h3>Najważniejsze ustalenia</h3><p>Najwyraźniejszy wzorzec opisowy dotyczy przełomu 2015/2016. W porównaniu z V–X 2015 liczba rozpoczęć współpracy wzrosła z 19 do 45, a zakończeń z 16 do 42. Łącznie jest to wzrost z 35 do 87 zgłoszonych rozpoczęć i zakończeń, czyli o 148,6%. W ośmiu spółkach suma ta wzrosła, w żadnej nie spadła, w trzech była taka sama. Saldo rozpoczęć minus zakończenia pozostało na poziomie +3.</p>
-<p>Na przełomie 2023/2024 występuje inny obraz: mniej rozpoczęć współpracy, więcej zakończeń, ujemne saldo. Nie ma jednak równie zgodnego wzrostu łącznej liczby ruchów kadrowych. Wynik zbiorczy bardzo zależy od Polskiego Holdingu Hotelowego.</p>
-<p>W XI 2023–IV 2024 rozpoczęć współpracy było mniej niż w XI 2015–IV 2016 w dziewięciu spółkach i tyle samo w dwóch. W żadnej nie było ich więcej. To najmocniejsza zgodność kierunku spośród badanych porównań, z surowym p = 0,0039.</p>
-<p>Żaden z 30 eksploracyjnych testów nie utrzymuje istotności na poziomie 0,05 po korekcie Holma. Najniższe skorygowane p wynosi 0,1172. Wyraźne tendencje opisowe uzasadniają dalszą weryfikację, ale te dane nie dają mocnego, odpornego na wszystkie sprawdzenia potwierdzenia statystycznego.</p>
-<h3>Zastrzeżenie</h3><p>Dane do raportu zbierano przy użyciu sztucznej inteligencji, jak również sam raport, został przez nią w dużej części wygenerowany. Dlatego może zawierać błędy powstałe na różnych etapach gromadzenia i przetwarzania danych oraz halucynacje. Chcąc odnieść się do szczegółowych danych zawsze sprawdź je u źródła!</p>
-</article></div></section><section class="section alt" id="wyniki"><div class="wrap"><div class="section-head"><div class="section-no">02 / Wyniki zbiorcze</div><div><h2>Dwa przełomy.<br>Różne obrazy zmian.</h2></div></div><div class="card chart-card"><h3>Rozpoczęcia i zakończenia współpracy</h3><p class="micro">Łączne liczby zgłoszone przez 11 spółek. Wszystkie słupki mają wspólną skalę od 0 do 50 zdarzeń.</p><div class="legend"><span><i class="hire"></i>Rozpoczęcia</span><span><i class="leave"></i>Zakończenia</span></div><div class="bar-chart"><div class="bar-group"><div class="bar-label">V–X 2015</div><div class="bar-pair"><div class="bar-line"><span class="bar hire" style="width:38%"></span><b>19</b><span class="sr-only"> rozpoczęć</span></div><div class="bar-line"><span class="bar leave" style="width:32%"></span><b>16</b><span class="sr-only"> zakończeń</span></div></div></div><div class="bar-group"><div class="bar-label">XI 2015–IV 2016</div><div class="bar-pair"><div class="bar-line"><span class="bar hire" style="width:90%"></span><b>45</b><span class="sr-only"> rozpoczęć</span></div><div class="bar-line"><span class="bar leave" style="width:84%"></span><b>42</b><span class="sr-only"> zakończeń</span></div></div></div><div class="bar-group"><div class="bar-label">XI 2019–IV 2020</div><div class="bar-pair"><div class="bar-line"><span class="bar hire" style="width:62%"></span><b>31</b><span class="sr-only"> rozpoczęć</span></div><div class="bar-line"><span class="bar leave" style="width:68%"></span><b>34</b><span class="sr-only"> zakończeń</span></div></div></div><div class="bar-group"><div class="bar-label">V–X 2023</div><div class="bar-pair"><div class="bar-line"><span class="bar hire" style="width:60%"></span><b>30</b><span class="sr-only"> rozpoczęć</span></div><div class="bar-line"><span class="bar leave" style="width:48%"></span><b>24</b><span class="sr-only"> zakończeń</span></div></div></div><div class="bar-group"><div class="bar-label">XI 2023–IV 2024</div><div class="bar-pair"><div class="bar-line"><span class="bar hire" style="width:32%"></span><b>16</b><span class="sr-only"> rozpoczęć</span></div><div class="bar-line"><span class="bar leave" style="width:62%"></span><b>31</b><span class="sr-only"> zakończeń</span></div></div></div></div><p class="micro">Suma obu rodzajów zdarzeń nie jest liczbą unikalnych osób. Pomiędzy wskazanymi okresami występują luki.</p></div><div class="report-copy"><div class="table-wrap"><table>
+<div class="sitebar-inner">
+<a aria-label="Sieć Obywatelska Watchdog Polska" class="brand" href="https://siecobywatelska.pl/" rel="noopener" target="_blank">
+<img alt="Sieć Obywatelska Watchdog Polska" class="brand-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iV2Fyc3R3YV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDQwNC4zMjEgMTAwLjU1NSI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8cGF0aCBkPSJNMTcuMjgyLDIxLjM5NWMwLDIuNzExLTIuMDMsMy45MDUtNC42NTksMy45MDUtMi44ODMsMC01LjIyMi0uMjk1LTUuMjIyLS4yOTV2LTIuMjg0czIuMjkuMjg3LDQuNzc0LjI4N2MxLjIxLDAsMS44MzEtLjM2OCwxLjgzMS0xLjM1OCwwLTIuNTkzLTcuNDUtMi4xNzktNy40NS02LjkxMywwLTIuNzA4LDIuMDA3LTMuODk0LDQuNjMtMy44OTQsMi45MTEsMCw1LjI0OC4yODEsNS4yNDguMjgxdjIuMjg0cy0yLjU5Ni0uMjQ5LTUuMTA4LS4yNDljLTEuMDcxLDAtMS41NDkuNDIyLTEuNTQ5LDEuMzE4LDAsMi4zNDUsNy41MDUsMi4yMDksNy41MDUsNi45MThoMFoiLz4KICA8cGF0aCBkPSJNMjEuODMxLDYuMjFjMS42MTIsMCwxLjgwOS4xMzgsMS44MDksMS42MzgsMCwxLjMyOS0uMTY2LDEuNjY5LTEuODA5LDEuNjY5LTEuNjY4LDAtMS44MDQtLjMxMS0xLjgwNC0xLjY2OSwwLTEuNDA5LjEzNi0xLjYzOCwxLjgwNC0xLjYzOGgwWk0yMC4yMjUsMTEuMTIzaDMuMjV2MTQuMDgyaC0zLjI1di0xNC4wODJoMFpNMjAuMjI1LDI1LjIwNXYtMTQuMDgyLDE0LjA4MloiLz4KICA8cGF0aCBkPSJNMzguNDU2LDE4Ljk3M2gtMS4wMDdjLTIuNTQxLjAyNS01LjA1NC4wMjUtNy41OTIuMDU3LjAyMywxLjkxNy4xNjMsMi44NzkuNjk1LDMuNTI0LjUzOC42NzcsMS43NTYuNjc3LDIuODMuNjc3LjcyOSwwLDIuMzk2LS4wODYsNC4yNjItLjI3N3YxLjk3MWMtMS44NjYuMzE2LTMuNzc4LjUzOS01LjUzNC41MzktNC41NDQsMC01LjM4OS0xLjgwOC01LjM4OS03LjMzNywwLTUuNjc4LjcwMi03LjM0MSw1Ljg2OS03LjM0MSw0Ljk2NiwwLDUuODY2LDEuNjA2LDUuODY2LDcuMzA4di44NzloMFpNMjkuODgsMTYuODIyaDUuNTYzYy0uMTE0LTMuMjQyLS40MjUtMy44NC0yLjg1My0zLjg0LTIuNTkzLDAtMi41OTMsMS4xMzEtMi43MSwzLjg0aDBaIi8+CiAgPHBhdGggZD0iTTQ4LjIxLDIzLjE0NmMxLjA2OCwwLDIuNzY2LS4xMzgsNC4wMzYtLjI1djEuOTc1Yy0xLjQ2NS4zMzUtMy43MjQuNTk0LTUuMjIxLjU5NC0zLjkyMSwwLTUuNzMtLjcwMy01LjczLTYuNjEsMC02LjMyNC41OS04LjA0NCw1LjczLTguMDQ0LjQyNywwLDMuMzY0LjE0LDUuMDc5LjQ1NnYyLjE3MWMtMy4yOTktLjI1Ni00LjQyOC0uMzExLTQuNzEzLS4zMTEtMi44MjYsMC0yLjg3NiwxLjA3Ni0yLjg3Niw1LjgxMiwwLDMuODcuOTI4LDQuMjA3LDMuNjk1LDQuMjA3aDBaTTUwLjA3NCw0Ljk3bC0yLjgyMSw0Ljc2LTEuOTczLTEuMDM1LDIuNjc4LTQuODI3LDIuMTE2LDEuMTAyaDBaIi8+CiAgPHBhdGggZD0iTTYxLjM2NiwxOC4xNTZjMC01Ljc4Ny44NS03LjMxLDUuOTg3LTcuMzEsNS4xOTEsMCw2LjA0MywxLjYzNSw2LjA0Myw3LjMxcy0uODUyLDcuMzA5LTYuMDQzLDcuMzA5Yy01LjIyMywwLTUuOTg3LTEuNjY1LTUuOTg3LTcuMzA5aDBaTTcwLjIzMSwxOC4xNTZjMC00LjQwNi0uMjgzLTUuMjI4LTIuODc3LTUuMjI4LTIuNjMsMC0yLjg1Mi45NC0yLjg1Miw1LjIyOCwwLDQuMjYxLjIyMiw1LjEzNCwyLjg1Miw1LjEzNCwyLjY1MiwwLDIuODc3LS44NzMsMi44NzctNS4xMzRoMFoiLz4KICA8cGF0aCBkPSJNODIuMTU0LDI1LjQ0Yy0xLjM4OCwwLTMuNjcyLS4xNzMtNS4zNy0uMzk2VjUuNjhoMy4wOHY1LjY3YzEuMTA2LS4yNzgsMi43MS0uNDgyLDMuNDY3LS40ODIsMy40MTksMCw0LjY2NiwxLjc4Myw0LjY2Niw2LjI5MywwLDUuNzM1LS41Nyw4LjI3OS01Ljg0Myw4LjI3OWgwWk04Mi42NjUsMTMuMjQzYy0uNzkzLDAtMS44MTUuMTY5LTIuNzc3LjM5N3Y5LjM5NGMuNTk4LjAzMywxLjM4Ny4wMzMsMi4wOTMuMDMzaC4xMTZjMi42OCwwLDIuNzA3LTEuNzU1LDIuNzA3LTUuNzU1LDAtMi45MTQtLjE5Ni00LjA2OS0yLjEzOS00LjA2OWgwWiIvPgogIDxwb2x5Z29uIHBvaW50cz0iOTYuNjQ2IDMwLjU3MyA5My43NTkgMzAuNTczIDk1LjQ1IDI1LjIxMyA5NC42MDkgMjUuMjEzIDg5Ljc4MiAxMS4xMDEgOTMuMDU2IDExLjEwMSA5Ni40NjkgMjEuODAxIDk5Ljg5IDExLjEwMSAxMDMuMTU4IDExLjEwMSA5Ni42NDYgMzAuNTczIDk2LjY0NiAzMC41NzMiLz4KICA8cG9seWdvbiBwb2ludHM9IjEwNC4zODUgMTEuMSAxMDcuNTQ1IDExLjEgMTA5LjYzMSAyMC42NTkgMTEyLjM0NSAxMS4xIDExNS44NjggMTEuMSAxMTguNjEgMjAuNjU5IDEyMC43MjkgMTEuMSAxMjMuODY0IDExLjEgMTIwLjY5NSAyNS4yMTIgMTE2LjkxMSAyNS4yMTIgMTE0LjEyMSAxNS4zMDIgMTExLjM4MiAyNS4yMTIgMTA3LjU0NSAyNS4yMTIgMTA0LjM4NSAxMS4xIDEwNC4zODUgMTEuMSIvPgogIDxwYXRoIGQ9Ik0xMzcuMjQ0LDI1LjIxMmgtMi43MzFsLS4yMzMtMS4wNDVjLTEuMjY3LjY0OS0yLjkwMywxLjI5Ny00LjI4NCwxLjI5Ny0zLjA3OCwwLTQuMDk3LTIuMDU3LTQuMDk3LTQuNjI4LDAtMy4yNTMsMi4yOTQtMy44NjYsNS4zMzctMy44MzhsMi44MjUuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzYtMS41NTItMS42OTUsMC0zLjcyOS4yNzgtNC44ODUuNDQ3LS4wMjctLjA4My0uNDc0LTIuMDkzLS40NzQtMi4yMDIsMi4xMzctLjM5NSw0LjAzMi0uNTYxLDUuNzUtLjU2MSwzLjI0NywwLDQuNzY4LjY0OCw0Ljc2OCwzLjk1MXYxMC40NDRoMFpNMTM0LjA2MSwxOS4wM2MtMy44NjcsMC01LjA1OC4xNjYtNS4wNTgsMS45MiwwLDEuMTc1LjMxNywyLjAwNCwxLjMwMywyLjAwNC45MywwLDIuNjgtLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBhdGggZD0iTTE0Mi44NDYsMTkuOTAzdi02LjU3N2gtMy4xNjF2LTIuMjI1aDMuMTYxdi0zLjQ3NmgzLjE4NXYzLjQ3NmgzLjIxOHYyLjIyNWgtMy4yMTh2Ny4zN2MwLDIuMjU5LjQ4NiwyLjU2NCwxLjg5NSwyLjU2NC40MjUsMCwuOTY0LDAsMS42NDMtLjAyNGwuMDI0LDEuOTQ0Yy0uOTM0LjIzMi0xLjYzNi4yODUtMi4wODguMjg1LTQuMzI0LDAtNC42NTktMi4xNS00LjY1OS01LjU2MmgwWiIvPgogIDxwYXRoIGQ9Ik0xNjMuNTY3LDE4Ljk3M2gtMS4wMTFjLTIuNTQuMDI1LTUuMDUxLjAyNS03LjU5Ni4wNTcuMDMyLDEuOTIuMTcyLDIuODc5LjcwNCwzLjUzNC41MzguNjcxLDEuNzUxLjY3MSwyLjgyNS42NzEuNzM3LDAsMi4zOTgtLjA4Myw0LjI1OC0uMjgxdjEuOTcxYy0xLjg2LjMxNi0zLjc4MS41MzktNS41MjguNTM5LTQuNTQ0LDAtNS4zOTMtMS44MDUtNS4zOTMtNy4zMzUsMC01LjY3Ny43MDQtNy4zNDMsNS44NzEtNy4zNDMsNC45NjgsMCw1Ljg3LDEuNjA5LDUuODcsNy4zMTV2Ljg3MmgwWk0xNTQuOTkzLDE2LjgzaDUuNTU5Yy0uMTExLTMuMjUtLjQyMy0zLjg0MS0yLjg1NC0zLjg0MS0yLjU5MywwLTIuNTkzLDEuMTMyLTIuNzA1LDMuODQxaDBaIi8+CiAgPHBhdGggZD0iTTE3MS40NTIsMjUuMjk5Yy0uOTA1LjE0LTEuMDQyLjE0LTEuMjEzLjE0LTIuMDI5LDAtMy41LS43NjctMy41LTQuMDk3VjUuOTU4aDMuMTg3djE1Ljg5NmMwLC44NzUsMCwxLjYxLDEuNTI2LDEuODM3djEuNjA4aDBaIi8+CiAgPHBhdGggZD0iTTE4My45MDQsMjEuNDAxYzAsMi43MDUtMi4wMywzLjg5OC00LjY1OCwzLjg5OC0yLjg4MSwwLTUuMjIzLS4yODYtNS4yMjMtLjI4NnYtMi4yODRzMi4yODcuMjc5LDQuNzcxLjI3OWMxLjIxOCwwLDEuODM1LS4zNjQsMS44MzUtMS4zNTUsMC0yLjU5LTcuNDUxLTIuMTc2LTcuNDUxLTYuOTEzLDAtMi43MTIsMi4wMDItMy44OTUsNC42My0zLjg5NSwyLjkwNiwwLDUuMjUuMjc4LDUuMjUuMjc4djIuMjg4cy0yLjU5OS0uMjUyLTUuMTA3LS4yNTJjLTEuMDc5LDAtMS41NTYuNDIxLTEuNTU2LDEuMzIyLDAsMi4zNDksNy41MDksMi4yLDcuNTA5LDYuOTJoMFoiLz4KICA8cG9seWdvbiBwb2ludHM9IjE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgNS45MjkgMTg5Ljk3OSA1LjkyOSAxODkuOTc5IDE1LjkxOCAxOTIuMDEyIDE1LjkxOCAxOTUuNzA4IDkuMDY2IDE5OS4wMzkgOS4wNjYgMTk0LjcyMSAxNy4wNTYgMTk5Ljc0NiAyNS4yMTIgMTk2LjMzIDI1LjIxMiAxOTIuMDQgMTguMjYzIDE4OS45NzkgMTguMjYzIDE4OS45NzkgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIi8+CiAgPHBhdGggZD0iTTIxMi4zNDEsMjUuMjEyaC0yLjczMmwtLjIzMy0xLjA0NWMtMS4yNjYuNjQ5LTIuOTAzLDEuMjk3LTQuMjgzLDEuMjk3LTMuMDgsMC00LjA5OS0yLjA1Ny00LjA5OS00LjYyOCwwLTMuMjUzLDIuMjktMy44NjYsNS4zMzMtMy44MzhsMi44MjYuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzctMS41NTItMS42OTEsMC0zLjcyNi4yNzgtNC44ODUuNDQ3LS4wMjEtLjA4My0uNDc3LTIuMDkzLS40NzctMi4yMDIsMi4xNDMtLjM5NSw0LjAzMy0uNTYxLDUuNzU0LS41NjEsMy4yNDgsMCw0Ljc3My42NDgsNC43NzMsMy45NTF2MTAuNDQ0aDBaTTIwOS4xNTMsMTkuMDNjLTMuODY5LDAtNS4wNTQuMTY2LTUuMDU0LDEuOTIsMCwxLjE3NS4zMTcsMi4wMDQsMS4yOTksMi4wMDQuOTI5LDAsMi42NzctLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBvbHlnb24gcG9pbnRzPSI2LjM4IDQyLjE3NiAxNi41NTEgNDIuMTc2IDIxLjc5NSA2Ni40OTUgMjguNTUyIDQyLjE3NiAzOS41MTcgNDIuMTc2IDQ2LjUwOSA2Ni40OTUgNTEuNzU1IDQyLjE3NiA2MS44NDggNDIuMTc2IDUzLjAyNyA4MS45MTEgNDEuMjY2IDgxLjkxMSAzNC4xMTUgNTYuMjQzIDI3LjEyMiA4MS45MTEgMTUuMjggODEuOTExIDYuMzggNDIuMTc2IDYuMzggNDIuMTc2IiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTk5Ljg1OSw4MS45MTFoLTguNzQyYy0uMjM3LS44NzYtLjQ3Ni0yLjMwMy0uNzE1LTMuMTc3LTMuMzM4LDEuOTg0LTcuNDY5LDMuODkyLTExLjIwNSwzLjg5Mi05LjEzNywwLTEyLjE1OC01Ljg4MS0xMi4xNTgtMTMuMTkxLDAtNy4yMzIsMy45NzUtMTAuMDk0LDkuODU1LTEwLjgwNiwxLjc0Ny0uMjM5LDMuNjU1LS4yMzksMTIuNzE1LjIzN3YtNi4zNTdjMC0zLjczNS0xLjY2OS0zLjk3Mi00Ljc3MS0zLjk3Mi00LjYwNiwwLTEwLjI1LjM5NS0xMy45ODUuOTUyLS4wNzgtLjIzOS0xLjUxMS02LjE5OC0xLjUxMS02LjU5OCw2LjI3OC0xLjExLDExLjc2My0xLjUwOCwxNi42OS0xLjUwOCw5LjM3NywwLDEzLjgyNywxLjkwOCwxMy44MjcsMTEuMjgydjI5LjI0NmgwWk04OS42MDksNjQuNzQ2Yy05LjQ1OCwwLTEyLjU1Ni41NTYtMTIuNTU2LDUuMDg3LDAsMi45NC44NzMsNS4wMDUsMy4wMTgsNS4wMDUsMS45ODgsMCw2LjUxNy0xLjM1Miw5LjUzOC0yLjQ2MnYtNy42M2gwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMTE2LjU2NiA4MS45MTEgMTE2LjU2NiA0OC41ODEgMTA1LjI1OCA0OC41ODEgMTA1LjI1OCA0Mi4wMDIgMTM3Ljk4OCA0Mi4wMDIgMTM3Ljk4OCA0OC41ODEgMTI2LjY4IDQ4LjU4MSAxMjYuNjggODEuOTExIDExNi41NjYgODEuOTExIDExNi41NjYgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTE2MC44MjcsNzUuNDc0YzMuMDIxLDAsOC4yNjQtLjM5OCwxMS45Mi0uNzE1djYuMDM5Yy00LjM3MSwxLjExMy0xMC44ODcsMS44MjctMTUuMTc5LDEuODI3LTExLjM2NCwwLTE2LjUyOS0xLjk4Ni0xNi41MjktMTguNjcyLDAtMTcuNDg1LDEuNjctMjIuNTcsMTYuMTMzLTIyLjU3Ljc5NSwwLDkuNjE2LjM5NywxNS4xNzgsMS4zNDl2Ni43NTZjLTguOS0uNzE1LTEyLjg3NS0uOTUxLTEzLjgyNi0uOTUxLTYuOTk1LDAtNy4xNTUsMi44NTktNy4xNTUsMTUuNjUyLDAsMTAuMTcyLDIuNjI0LDExLjI4NSw5LjQ1OCwxMS4yODVoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cG9seWdvbiBwb2ludHM9IjIwMi41NzUgODEuOTExIDIwMi41NzUgNjQuNzM4IDE5MC43ODcgNjQuNzM4IDE5MC43ODcgODEuOTExIDE4MC43MzQgODEuOTExIDE4MC43MzQgNDEuOTQyIDE5MC43ODcgNDEuOTQyIDE5MC43ODcgNTguMjc1IDIwMi41NzUgNTguMjc1IDIwMi41NzUgNDEuOTQyIDIxMi42MjggNDEuOTQyIDIxMi42MjggODEuOTExIDIwMi41NzUgODEuOTExIDIwMi41NzUgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTIyMi43NzQsNDEuODJsMTYuMDk1LjA2MmMxMS4zMTEuMDYsMTUuOTE2LDMuMTY5LDE1LjkxNiwyMC4yMjMsMCwxNi4yMTYtMy43NjksMTkuODA2LTE1LjI1NSwxOS44MDZoLTE2Ljc1NnYtNDAuMDkxaDBaTTIzMi44MjksNDcuOTg0djI3LjUyNGg2LjI4YzQuNjA3LDAsNS43NDUtMi42OTMsNS43NDUtMTMuNDAzLDAtMTIuNjI0LTEuMTk5LTE0LjEyMS01Ljc0NS0xNC4xMjFoLTYuMjhaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTI2MS45MDcsNjIuMDQ1YzAtMTYuMjg5LDIuNDYyLTIwLjU4MSwxNy4yNDQtMjAuNTgxLDE1LjAxOCwwLDE3LjQwMyw0LjYwOCwxNy40MDMsMjAuNTgxcy0yLjQ2NSwyMC41ODEtMTcuNDAzLDIwLjU4MWMtMTUuMDE5LDAtMTcuMjQ0LTQuNjktMTcuMjQ0LTIwLjU4MWgwWk0yODYuNDYxLDYyLjA0NWMwLTExLjkyMi0uNzE2LTE0LjE0Ny03LjMxLTE0LjE0Ny02LjY3NSwwLTcuMTUyLDIuNTQyLTcuMTUyLDE0LjE0NywwLDExLjUyMS40NzcsMTMuOTA1LDcuMTUyLDEzLjkwNyw2LjY3NSwwLDcuMzEtMi4zODYsNy4zMS0xMy45MDdoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzU3LjMxOCw0OS40NjJjNS40NzUsMCw2LjE3Mi42MTksNi4xNzIsNS40NzksMCw0LjU1Mi0uNDYzLDUuNzA4LTYuMTcyLDUuNzA4LTUuNjI5LDAtNi4xNzMtMS4wNzgtNi4xNzMtNS43MDgsMC00LjcwOS41NDQtNS40NzksNi4xNzMtNS40NzloMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzE3LjIyLDcyLjM5MWMtLjA3NywxLjA4LDEuMTUzLDEuNTQzLDIuOTMsMS41NDMsMi4wMDYsMCwzLjYyOS0uMTUxLDUuNjM2LS4xNTEsOC4xNzgsMCwxNi42Ny45MjQsMTYuNjcsMTAuNTY5LDAsOS4yNjUtNi43MTYsMTIuODg3LTE1Ljg5OCwxMi44ODctOS4wMzQsMC0xMy40My0uNjE2LTE3Ljk4NS0uNjE2di03LjA5OXMxMC43MjcuNDY2LDE3LjQ0My40NjZjMy40NzUsMCw1LjA5OC0xLjM5Miw1LjA5OC01LjA5OSwwLTMuMzE4LTIuMTYzLTMuNjIyLTQuNzg5LTMuNjIyLTEuNjk2LDAtMy44NTkuMTUzLTYuMTc1LjE1My03LjAyMiwwLTEzLjUwOC0yLjg2LTEzLjUwOC0xMC42NTcsMC0uOTI3LjIzNC00LjE3MiwxLjE2NC01Ljg2OS0yLjU1My0yLjMxNi0zLjQ3Ni01LjcxMi0zLjQ3Ni0xMC4wMzQsMC04Ljg3NSwzLjAwOS0xMy4wNDEsMTUuNTktMTMuMTIyaDIyLjg0NXY2LjI1MmwtNC4zMjIuNjE4Yy42OTYsMS42OTksMS4wMDIsMy45MzgsMS4wMDIsNi4yNTIsMCwxMC4yNjQtNC41NTQsMTMuMTk3LTEzLjY1OSwxMy4xOTdoLTguNDkybC0uMDc0LDQuMzMyaDBaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTMyMy44NTUsNDguOTE5aC0yLjYyM2MtNC40ODIsMC01LjcwOS4yMzQtNS43MDksNi4xNzUsMCw1LjA5MywxLjE1MSw1Ljk0Myw0LjcwMyw2LjA5M2gzLjU1MmMzLjc4MywwLDQuNjMzLTEuMDgxLDQuNjMzLTYuMDkzLDAtNS4yNDgtLjE1Ni02LjE3NS00LjU1Ni02LjE3NWgwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzY4LjgxOCA0Mi4yMDcgMzgwLjc3OSAxOS40NDIgMzkwLjE5MSAxOS40NDIgNDAyLjA3NSA0Mi4yMDcgMzkxLjQyNCA0Mi4yMDcgMzg1LjQ4OCAyOS4yNDMgMzc5LjYyIDQyLjIwNyAzNjguODE4IDQyLjIwNyAzNjguODE4IDQyLjIwNyIgZmlsbD0iIzk4MzAzOSIvPgo8L3N2Zz4="/>
+</a>
+<nav aria-label="Skróty" class="site-actions">
+<a href="#pobierz">POBIERZ</a>
+<a href="#metodologia">ZASTRZEŻENIA</a>
+<a class="primary" href="https://siecobywatelska.pl/wspieraj/" rel="noopener" target="_blank">WSPIERAJ NAS</a>
+</nav>
+</div>
+</header><main><section class="hero"><div><p class="eyebrow">Monitoring • jawność życia publicznego</p><h1>Liczba zmian kadrowych<br/>w spółkach<br/><span>Skarbu Państwa</span></h1><p class="hero-lead">Co odpowiedzi spółek mówią o liczbie zmian na stanowiskach dyrektorskich i kierowniczych w latach 2015–2024?</p></div><aside class="hero-aside"><strong>12 z 20</strong><p>zapytanych spółek przekazało dane uwzględnione w raporcie.</p><div class="report-meta"><div class="report-meta-row"><span>Ostatnia aktualizacja</span><strong><time datetime="2026-10-15">15 października 2026</time></strong></div><div class="report-meta-row"><span>Status</span><strong>raport może być aktualizowany wraz z napływem i opracowaniem nowych odpowiedzi</strong></div></div></aside></section><nav aria-label="Spis treści" class="contents"><a href="#skala">Najważniejsze ustalenia</a><a href="#wyniki">Porównanie okresów</a><a href="#przypadki">Przykłady ze spółek</a><a href="#dane">Dane dla spółek</a><a href="#pobierz">Pobierz dane</a><a href="#metodologia">Jak czytać wyniki</a><a href="#zrodla">Dokumentacja</a></nav><section class="section" id="skala"><div class="wrap">
+<div class="section-head"><div class="section-no">01 / Najważniejsze ustalenia</div><div><h2>Wyraźne tendencje.<br/>Niepełny obraz.</h2></div></div>
+<div class="kpis"><div class="kpi"><strong>20</strong><span>spółek, do których wysłano wnioski</span></div><div class="kpi"><strong>12</strong><span>spółek, których odpowiedzi uwzględniono w analizie</span></div><div class="kpi"><strong>60%</strong><span>zapytanych spółek uwzględnionych w analizie</span></div><div class="kpi"><strong>5</strong><span>sześciomiesięcznych okresów porównania</span></div></div>
+<div class="callout"><div class="callout-label">WYRAŹNY WZROST W 2015/2016</div><div class="callout-copy"><p>Suma rozpoczęć i zakończeń współpracy wzrosła z <strong>40 do 90</strong>. Wzrost odnotowano w ośmiu spółkach, w jednej wystąpił spadek, a w trzech nie było zmian. Liczby wskazują kierunek dalszej weryfikacji — nie przesądzają przyczyn zmian.</p></div></div>
+<article class="report-copy">
+<h3>Co pokazały odpowiedzi spółek?</h3>
+<div class="finding"><h4>1. Na przełomie 2015 i 2016 roku zmian kadrowych było znacznie więcej.</h4>
+<p>W porównaniu z poprzednim półroczem liczba osób rozpoczynających współpracę wzrosła z <strong>24 do 46</strong>, a kończących — z <strong>16 do 44</strong>. Wzrost łącznej liczby tych zdarzeń odnotowano w <strong>ośmiu z dwunastu spółek</strong>; w jednej wystąpił spadek, a w trzech liczba pozostała taka sama.</p>
+</div>
+<div class="finding"><h4>2. Na przełomie 2023 i 2024 roku obraz był inny.</h4>
+<p>Rozpoczęć współpracy było mniej (<strong>39 → 22</strong>), a zakończeń więcej (<strong>26 → 36</strong>). Łączna liczba zgłoszonych zdarzeń nie wzrosła. Wynik całej grupy silnie zależał jednak od <strong>Polskiego Holdingu Hotelowego</strong> — w pozostałych spółkach łączna liczba zdarzeń wzrosła.</p>
+</div>
+<div class="finding"><h4>3. Osiem lat później spółki zgłosiły mniej rozpoczęć współpracy na badanych stanowiskach.</h4>
+<p>W okresie XI 2023–IV 2024 liczba rozpoczęć była niższa niż w XI 2015–IV 2016 w <strong>dziewięciu spółkach</strong>, w dwóch pozostała taka sama, a w <strong>Polskich Elektrowniach Jądrowych wzrosła</strong>. Zmiany nie przebiegały więc jednakowo w całej grupie.</p>
+</div>
+<h3>Co te wyniki oznaczają — a czego nie dowodzą?</h3>
+<p>Widzimy wyraźne różnice między badanymi półroczami, ale same liczby nie wyjaśniają przyczyn zmian kadrowych. Raport obejmuje odpowiedzi <strong>12 z 20</strong> zapytanych spółek i pięć wybranych okresów, a nie wszystkie spółki Skarbu Państwa ani ciągłą historię zmian. Dodatkowe sprawdzenia statystyczne nie pozwalają uznać zaobserwowanych tendencji za jednoznacznie potwierdzone prawidłowości.</p>
+<details class="technical"><summary>Jakie są wyniki sprawdzeń statystycznych?</summary><div class="technical-body"><p>Wzrost liczby zakończeń współpracy między V–X 2015 a XI 2015–IV 2016 odnotowano w dziewięciu spółkach; w żadnej nie wystąpił spadek, a w trzech wynik był taki sam. To najsilniejsza zgodność kierunku zmian wśród 30 wykonanych testów (p bez korekty = 0,0039).</p><p>Żaden z 30 eksploracyjnych testów nie utrzymuje istotności na poziomie 0,05 po korekcie Holma. Najniższe skorygowane p wynosi 0,1172. Obserwowane różnice uzasadniają dalszą weryfikację, ale nie dają jednoznacznego potwierdzenia statystycznego.</p><p>Opis metod i pełne wyniki testów znajdują się w częściach „Jak czytać wyniki” oraz „Źródła i obliczenia”.</p></div></details>
+<h3>Zastrzeżenie dotyczące wykorzystania sztucznej inteligencji</h3>
+<p>Przy gromadzeniu danych i przygotowywaniu raportu w dużym zakresie korzystano ze sztucznej inteligencji. Materiał może zawierać błędy powstałe na etapach zbierania, porządkowania i interpretowania odpowiedzi. Przed wykorzystaniem szczegółowych danych należy sprawdzić je w dokumentach źródłowych.</p>
+</article>
+</div></section><section class="section alt" id="wyniki"><div class="wrap">
+<div class="section-head"><div class="section-no">02 / Porównanie okresów</div><div><h2>Dwa przełomy.<br/>Różne obrazy zmian.</h2></div></div>
+<div class="card chart-card"><h3>Rozpoczęcia i zakończenia współpracy</h3><p class="micro">Łączne liczby zgłoszone przez 12 spółek. V–X oznacza maj–październik, a XI–IV — listopad–kwiecień. Wszystkie słupki mają wspólną skalę od 0 do 50 zdarzeń.</p><div class="legend"><span><i class="hire"></i>Rozpoczęcia</span><span><i class="leave"></i>Zakończenia</span></div><div class="bar-chart"><div class="bar-group"><div class="bar-label">V–X 2015</div><div class="bar-pair"><div class="bar-line"><span class="bar hire" style="width:48%"></span><b>24</b><span class="sr-only"> rozpoczęć</span></div><div class="bar-line"><span class="bar leave" style="width:32%"></span><b>16</b><span class="sr-only"> zakończeń</span></div></div></div><div class="bar-group"><div class="bar-label">XI 2015–IV 2016</div><div class="bar-pair"><div class="bar-line"><span class="bar hire" style="width:92%"></span><b>46</b><span class="sr-only"> rozpoczęć</span></div><div class="bar-line"><span class="bar leave" style="width:88%"></span><b>44</b><span class="sr-only"> zakończeń</span></div></div></div><div class="bar-group"><div class="bar-label">XI 2019–IV 2020</div><div class="bar-pair"><div class="bar-line"><span class="bar hire" style="width:62%"></span><b>31</b><span class="sr-only"> rozpoczęć</span></div><div class="bar-line"><span class="bar leave" style="width:72%"></span><b>36</b><span class="sr-only"> zakończeń</span></div></div></div><div class="bar-group"><div class="bar-label">V–X 2023</div><div class="bar-pair"><div class="bar-line"><span class="bar hire" style="width:78%"></span><b>39</b><span class="sr-only"> rozpoczęć</span></div><div class="bar-line"><span class="bar leave" style="width:52%"></span><b>26</b><span class="sr-only"> zakończeń</span></div></div></div><div class="bar-group"><div class="bar-label">XI 2023–IV 2024</div><div class="bar-pair"><div class="bar-line"><span class="bar hire" style="width:44%"></span><b>22</b><span class="sr-only"> rozpoczęć</span></div><div class="bar-line"><span class="bar leave" style="width:72%"></span><b>36</b><span class="sr-only"> zakończeń</span></div></div></div></div><p class="micro">Suma obu rodzajów zdarzeń nie jest liczbą unikalnych osób. Pomiędzy wskazanymi okresami występują luki.</p></div>
+<div class="report-copy">
+<details class="technical"><summary>Pokaż dokładne liczby dla wszystkich pięciu okresów</summary><div class="technical-body"><div class="table-wrap"><table>
 <thead>
 <tr>
 <th>Okres</th>
@@ -202,79 +234,78 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 </thead>
 <tbody><tr>
 <td>V–X 2015</td>
-<td>19</td>
+<td>24</td>
 <td>16</td>
-<td>35</td>
-<td>3</td>
+<td>40</td>
+<td>8</td>
 </tr>
 <tr>
 <td>XI 2015–IV 2016</td>
-<td>45</td>
-<td>42</td>
-<td>87</td>
-<td>3</td>
+<td>46</td>
+<td>44</td>
+<td>90</td>
+<td>2</td>
 </tr>
 <tr>
 <td>XI 2019–IV 2020</td>
 <td>31</td>
-<td>34</td>
-<td>65</td>
-<td>-3</td>
+<td>36</td>
+<td>67</td>
+<td>-5</td>
 </tr>
 <tr>
 <td>V–X 2023</td>
-<td>30</td>
-<td>24</td>
-<td>54</td>
-<td>6</td>
+<td>39</td>
+<td>26</td>
+<td>65</td>
+<td>13</td>
 </tr>
 <tr>
 <td>XI 2023–IV 2024</td>
-<td>16</td>
-<td>31</td>
-<td>47</td>
-<td>-15</td>
+<td>22</td>
+<td>36</td>
+<td>58</td>
+<td>-14</td>
 </tr>
-</tbody></table></div>
-<h3>Przełom 2015/2016: wzrost rozpoczęć i zakończeń</h3>
-<ul>
-<li>Rozpoczęcia: 19 → 45, czyli +26 i +136,8%. Wzrost w sześciu spółkach, bez zmian w pięciu, brak spadków.</li>
-<li>Zakończenia: 16 → 42, czyli +26 i +162,5%. Wzrost w ośmiu spółkach, bez zmian w trzech, brak spadków.</li>
-<li>Suma obu miar: 35 → 87, czyli +52 i +148,6%. Wzrost w ośmiu spółkach, bez zmian w trzech, brak spadków.</li>
-<li>Saldo: +3 → +3. Przybywało rozpoczęć i zakończeń w tej samej liczbie. Jest to zgodne z intensywniejszymi zmianami obsady, choć nie dowodzi wymiany konkretnych osób na tych samych stanowiskach.</li>
-</ul>
-<p>PKP odpowiada za 22 z 52 dodatkowych ruchów, czyli 42,3% zbiorczego wzrostu. Wynik nie pochodzi jednak tylko z PKP: po wyłączeniu tej spółki suma rośnie z 28 do 58. Po wyłączeniu również PHH rośnie z 17 do 40.</p>
-<h3>Przełom 2023/2024: mniej rozpoczęć, więcej zakończeń</h3>
-<ul>
-<li>Rozpoczęcia: 30 → 16, czyli −46,7%. Spadek w pięciu spółkach, wzrost w dwóch, bez zmian w czterech.</li>
-<li>Zakończenia: 24 → 31, czyli +29,2%. Wzrost w sześciu spółkach, spadek w jednej, bez zmian w czterech.</li>
-<li>Suma obu miar: 54 → 47, czyli −13,0%. Wzrost w dwóch spółkach, spadek w trzech, bez zmian w sześciu.</li>
-<li>Saldo: +6 → −15. W ostatnim oknie pięć spółek miało więcej zakończeń niż rozpoczęć; żadna nie miała dodatniego salda.</li>
-</ul>
-<p>Największe ujemne salda ostatniego okresu mają ARP (−5), Exatel (−4) i PHH (−3). Łącznie odpowiadają za 12 z 15 jednostek ujemnego salda. Nie przesądza to, czy stanowiska zlikwidowano, pozostawiono nieobsadzone, obsadzono później lub zmieniono ich klasyfikację.</p>
-<p>W PHH rozpoczęcia spadły z 16 do 6. To 10 z 14 jednostek spadku w całej grupie, czyli 71,4%. PHH miał 29 z 54 ruchów w V–X 2023, czyli 53,7% sumy. Po wyłączeniu PHH suma ruchów rośnie z 25 do 32 (+28%), a zakończenia rosną z 11 do 22. Dlatego określenie „po 2023 roku rotacja spadła w spółkach” byłoby zbyt szerokie.</p>
-<h3>XI 2015–IV 2016 wobec XI 2023–IV 2024</h3>
-<p>Liczba rozpoczęć spada z 45 do 16 (−64,4%). W każdej z dziewięciu spółek z dodatnią liczbą rozpoczęć w pierwszym oknie późniejsza wartość jest niższa. Gryf i Dobre z Lasu mają zero w obu oknach. Zbieżność kierunku nie jest wyłącznie wynikiem jednej dużej spółki.</p>
-<p>Suma rozpoczęć i zakończeń spada z 87 do 47. Spadek występuje w ośmiu spółkach; w PERN, Gryfie i Dobre z Lasu suma jest identyczna. W PERN jednak skład tej sumy się zmienia: 4 rozpoczęcia i 3 zakończenia wobec 3 rozpoczęć i 4 zakończeń.</p>
-<h3>XI 2019–IV 2020</h3>
-<p>Suma 65 jest niższa niż 87 w XI 2015–IV 2016 i wyższa niż 47 w XI 2023–IV 2024. Nie jest to dowód, że w 2019/2020 nastąpił wzrost wobec okresu bezpośrednio wcześniejszego: brakuje danych dla V–X 2019. ARP ma w tym oknie najwyższe własne wartości: 10 rozpoczęć i 6 zakończeń. PHH ma 12 rozpoczęć i 14 zakończeń. To dobre przypadki do ustalenia indywidualnych przyczyn.</p>
-</div></div></section><section class="section " id="przypadki"><div class="wrap"><div class="section-head"><div class="section-no">03 / Dalsza weryfikacja</div><div><h2>Które spółki warto<br>zbadać dokładniej?</h2></div></div><div class="report-copy"><h3>1. Polskie Koleje Państwowe: silny wzrost na przełomie 2015/2016</h3>
-<p>Rozpoczęcia rosną z 2 do 12, zakończenia z 5 do 17, suma z 7 do 29. To największy indywidualny wkład we wzrost grupy. Na przełomie 2023/2024 również jest wzrost: z 0/2 do 5/5.</p>
-<p>Warto sprawdzić daty miesięczne, stanowiska, powody zakończeń i tryb obsadzenia stanowisk. Należy ustalić, ile zdarzeń było zmianą osoby na istniejącym stanowisku, a ile skutkiem reorganizacji, tworzenia lub likwidacji stanowisk. Trzeba również oddzielić zmiany związane z wiekiem, końcem umowy lub awansem od innych przyczyn. Ujemne saldo w 2015/2016 nie oznacza samo w sobie likwidacji pięciu stanowisk.</p>
-<h3>2. Polski Holding Hotelowy: wysoka aktywność przed ostatnim badanym oknem</h3>
-<p>W V–X 2023 spółka zgłasza 16 rozpoczęć i 13 zakończeń. W XI 2023–IV 2024 jest to 6 i 9. W XI 2019–IV 2020 występuje również dużo zmian: 12 i 14. Spółka ma najwyższą łączną liczbę ruchów w całej pięciookresowej obserwacji: 99.</p>
-<p>To ważny przypadek, ponieważ dominuje w agregatach i wskazuje na wysoką aktywność także przed oknem XI 2023–IV 2024. Należy ustalić, czy odpowiedź dotyczy samej PHH sp. z o.o. czy również innych spółek grupy, jakie stanowiska obejmuje oraz czy zakres organizacyjny w 2015 i 2023 był porównywalny. Potencjalne wyjaśnienia do sprawdzenia to zmiany skali działalności, reorganizacje, sezonowość i wymiana obsady. Dane nie potwierdzają żadnego z tych wyjaśnień samodzielnie.</p>
-<h3>3. Agencja Rozwoju Przemysłu: zero rozpoczęć i pięć zakończeń w ostatnim oknie</h3>
-<p>V–X 2023 to 4 rozpoczęcia i 3 zakończenia, a XI 2023–IV 2024 to 0 i 5. Wcześniej, w XI 2019–IV 2020, spółka deklaruje 10 rozpoczęć i 6 zakończeń — najwyższą aktywność w swojej serii.</p>
-<p>Warto ustalić, co stało się ze stanowiskami po pięciu zakończeniach: czy były wakaty, obowiązki przejęły inne osoby, nastąpiły wewnętrzne powierzenia, likwidacja stanowisk czy późniejsze zatrudnienia po kwietniu 2024. Należy wyjaśnić również przyczynę wzmożonych zmian w 2019/2020 oraz kompletność różnych podstaw współpracy, ponieważ przedstawione tabelki mówią o stosunku pracy i umowach o pracę.</p>
-<h3>4. Exatel: przypadek ujemnego salda z problemem zakresu</h3>
-<p>W XI 2023–IV 2024 występuje 0 rozpoczęć i 4 zakończenia, wobec 3 i 2 pół roku wcześniej. Najpierw trzeba ustalić, które stanowiska „managerskie” policzono. Potem można sprawdzić powody zakończeń, dalszy los stanowisk oraz ewentualne obsadzenie poza badanym oknem. Bez ujednolicenia definicji nie należy bezpośrednio porównywać tej liczby z dyrektorami innych spółek.</p>
-<h3>5. PERN: przydatny przypadek porównawczy</h3>
-<p>Suma ruchów jest identyczna w V–X 2023 i XI 2023–IV 2024: po 7. Zmienia się jednak relacja rozpoczęć do zakończeń, z 4/3 do 3/4. W 2015/2016 występował wcześniejszy wzrost z 0/0 do 4/3. Taki przypadek pomaga sprawdzić, dlaczego spółki reagują różnie, i przeciwdziała budowaniu interpretacji wyłącznie na skrajnych przypadkach.</p>
-<h3>Dodatkowo: Janów Podlaski i Gryf</h3>
-<p>Janów jest ważny dla rozumienia zdarzeń: liczba oznaczająca awans pracownika i liczba oznaczająca emeryturę pokazują, jak różne procesy mogą kryć się pod tym samym licznikiem. Dane te same w sobie nie wskazują na nietypową wymianę kadrową.</p>
-<p>Gryf, ze wszystkimi zerami, może służyć jako przypadek porównawczy dopiero po ustaleniu, czy w każdym okresie istniały stanowiska dyrektorskie i ile ich było. Dobre z Lasu ma wprost wskazany brak takich stanowisk, więc jest przede wszystkim przypadkiem do oznaczenia jako strukturalnie odmienny.</p>
-</div></div></section><section class="section alt" id="dane"><div class="wrap"><div class="section-head"><div class="section-no">04 / Dane analityczne</div><div><h2>Tabela spółek</h2></div></div><div class="table-actions" id="companyTools" hidden><label class="sr-only" for="companySearch">Szukaj spółki</label><input class="search" id="companySearch" type="search" placeholder="Szukaj spółki…"><span class="sort-hint" id="companyCount" aria-live="polite">11 z 11 spółek</span></div><p id="emptySearch" hidden>Brak spółek pasujących do wyszukiwania.</p><div class="report-copy"><p>W każdej komórce: <strong>rozpoczęcia / zakończenia współpracy</strong>. To wartości z <code>Answer category</code>, ze wskazanymi wcześniej ograniczeniami.</p>
+</tbody></table></div></div></details>
+<h3>Przełom 2015/2016: więcej rozpoczęć i zakończeń</h3>
+<p>Między majem a październikiem 2015 roku badane spółki zgłosiły razem <strong>40</strong> rozpoczęć i zakończeń współpracy. W następnym półroczu — <strong>90</strong>, czyli ponad dwa razy więcej. Rosła zarówno liczba osób obejmujących badane stanowiska, jak i liczba osób kończących na nich współpracę. Wzrost łącznej liczby zdarzeń wystąpił w ośmiu spółkach, w jednej odnotowano spadek (Polskie Elektrownie Jądrowe), a w trzech brak zmian.</p>
+<p>Największy udział w zwiększeniu liczby zmian miały Polskie Koleje Państwowe. Jednak nawet po pominięciu PKP wzrost pozostaje widoczny: z <strong>33 do 61</strong> zdarzeń w pozostałych spółkach. Same liczby nie mówią, czy doszło do wymiany osób na tych samych stanowiskach, czy np. do reorganizacji.</p>
+<details class="technical"><summary>Szczegółowe porównanie dla przełomu 2015/2016</summary><div class="technical-body"><ul><li>Rozpoczęcia: 24 → 46, czyli +22 i +91,7%. Wzrost w sześciu spółkach, spadek w jednej, bez zmian w pięciu.</li><li>Zakończenia: 16 → 44, czyli +28 i +175,0%. Wzrost w dziewięciu spółkach, bez zmian w trzech, brak spadków.</li><li>Suma obu miar: 40 → 90, czyli +50 i +125,0%. Wzrost w ośmiu spółkach, spadek w jednej, bez zmian w trzech.</li><li>Saldo: +8 → +2. Rozpoczęć przybyło o 22, a zakończeń o 28. Nie dowodzi to wymiany konkretnych osób na tych samych stanowiskach.</li></ul><p>PKP odpowiada za 22 z 50 dodatkowych zdarzeń, czyli 44,0% zbiorczego wzrostu. Wynik nie pochodzi jednak tylko z PKP: po wyłączeniu tej spółki suma rośnie z 33 do 61. Po wyłączeniu również PHH rośnie z 22 do 43. W Polskich Elektrowniach Jądrowych łączna liczba zdarzeń spadła z 5 do 3.</p></div></details>
+<h3>Przełom 2023/2024: mniej osób zaczynało, więcej kończyło współpracę</h3>
+<p>W porównaniu z poprzednim półroczem liczba rozpoczęć współpracy spadła z <strong>39 do 22</strong>, a zakończeń wzrosła z <strong>26 do 36</strong>. Łącznie było nieco mniej zgłoszonych zmian (<strong>58 zamiast 65</strong>). W ostatnim okresie w pięciu spółkach więcej osób kończyło współpracę, niż ją rozpoczynało; w jednej — Polskich Elektrowniach Jądrowych — było odwrotnie.</p>
+<p>Trzeba jednak uważać z oceną całej grupy. Na wynik mocno wpłynął <strong>Polski Holding Hotelowy</strong>, w którym liczba rozpoczęć spadła z 16 do 6. Po pominięciu tej jednej spółki łączna liczba rozpoczęć i zakończeń w pozostałych jedenastu <strong>wzrosła z 36 do 43</strong>. Nie można więc powiedzieć, że we wszystkich badanych spółkach zmiany kadrowe wyhamowały.</p>
+<details class="technical"><summary>Szczegółowe porównanie dla przełomu 2023/2024</summary><div class="technical-body"><ul><li>Rozpoczęcia: 39 → 22, czyli −43,6%. Spadek w sześciu spółkach, wzrost w dwóch, bez zmian w czterech.</li><li>Zakończenia: 26 → 36, czyli +38,5%. Wzrost w siedmiu spółkach, spadek w jednej, bez zmian w czterech.</li><li>Suma obu miar: 65 → 58, czyli −10,8%. Wzrost w dwóch spółkach, spadek w trzech, bez zmian w siedmiu.</li><li>Saldo: +13 → -14. W ostatnim oknie pięć spółek miało więcej zakończeń niż rozpoczęć; jedna spółka (PEJ) miała dodatnie saldo.</li></ul><p>Największe ujemne salda ostatniego okresu mają ARP (−5), Exatel (−4) i PHH (−3). Łącznie ich salda wynoszą −12, podczas gdy saldo całej grupy to −14. Nie przesądza to, czy stanowiska zlikwidowano, pozostawiono nieobsadzone, obsadzono później lub zmieniono ich klasyfikację.</p><p>W PHH rozpoczęcia spadły z 16 do 6. To 10 z 17 jednostek spadku w całej grupie, czyli 58,8%. PHH miał 29 z 65 zdarzeń w V–X 2023, czyli 44,6%. Po wyłączeniu PHH suma zdarzeń rośnie z 36 do 43 (+19,4%), a zakończenia rosną z 13 do 27. Dlatego określenie „po 2023 roku rotacja spadła w spółkach” byłoby zbyt szerokie.</p></div></details>
+<h3>Osiem lat później: znacznie mniej rozpoczęć współpracy</h3>
+<p>Gdy porównamy półrocza XI 2015–IV 2016 i XI 2023–IV 2024, liczba rozpoczęć współpracy spada z <strong>46 do 22</strong>. Spadek wystąpił w dziewięciu spółkach, w dwóch liczby były identyczne, a w <strong>Polskich Elektrowniach Jądrowych</strong> odnotowano wzrost z 1 do 6 rozpoczęć.</p>
+<p>Łączna liczba rozpoczęć i zakończeń współpracy zmniejszyła się z <strong>90 do 58</strong>. To wyraźna różnica, lecz nie dowód, że te same mechanizmy działały w każdej spółce.</p>
+<details class="technical"><summary>Dodatkowe informacje o porównaniu obu przełomów</summary><div class="technical-body"><p>Liczba rozpoczęć spada z 46 do 22 (−52,2%). Spadek występuje w dziewięciu spółkach, wzrost w Polskich Elektrowniach Jądrowych (1 → 6), a Gryf i Dobre z Lasu mają zero w obu okresach. Przewaga spadków nie jest więc wynikiem jednej dużej spółki, ale nie jest też jednakowa we wszystkich.</p><p>Suma rozpoczęć i zakończeń spada z 90 do 58. Spadek występuje w ośmiu spółkach, wzrost w Polskich Elektrowniach Jądrowych (3 → 11), a w PERN, Gryfie i Dobre z Lasu suma jest identyczna. W PERN jednak skład tej sumy się zmienia: 4 rozpoczęcia i 3 zakończenia wobec 3 rozpoczęć i 4 zakończeń.</p></div></details>
+<h3>2019/2020: dodatkowy punkt odniesienia</h3>
+<p>W półroczu XI 2019–IV 2020 spółki zgłosiły łącznie <strong>67</strong> rozpoczęć i zakończeń współpracy — mniej niż na przełomie 2015/2016, ale więcej niż na przełomie 2023/2024. Nie wiemy jednak, co działo się bezpośrednio wcześniej, bo badanie nie obejmuje okresu V–X 2019. Szczególnie dużo zmian zgłosiły wtedy ARP i Polski Holding Hotelowy.</p>
+<details class="technical"><summary>Szczegółowe liczby dla 2019/2020</summary><div class="technical-body"><p>Suma 67 jest niższa niż 90 w XI 2015–IV 2016 i wyższa niż 58 w XI 2023–IV 2024. Nie jest to dowód, że w 2019/2020 nastąpił wzrost wobec okresu bezpośrednio wcześniejszego: brakuje danych dla V–X 2019. ARP ma w tym oknie najwyższe własne wartości: 10 rozpoczęć i 6 zakończeń. PHH ma 12 rozpoczęć i 14 zakończeń. To dobre przypadki do ustalenia indywidualnych przyczyn.</p></div></details>
+</div>
+</div></section><section class="section" id="przypadki"><div class="wrap">
+<div class="section-head"><div class="section-no">03 / Przykłady ze spółek</div><div><h2>Które spółki warto<br/>zbadać dokładniej?</h2></div></div>
+<div class="report-copy">
+<h3>1. Polskie Koleje Państwowe: duży wzrost na przełomie 2015/2016</h3>
+<p>W PKP liczba rozpoczęć współpracy wzrosła z 2 do 12, a zakończeń z 5 do 17. Razem oznaczało to wzrost z 7 do 29 zdarzeń — największy spośród badanych spółek. Także na przełomie 2023/2024 zgłoszono więcej zmian: wcześniej 0 rozpoczęć i 2 zakończenia, później po 5 obu rodzajów.</p>
+<p>Same liczby nie wyjaśniają, dlaczego tak się stało. Warto sprawdzić, czy zmieniały się osoby na istniejących stanowiskach, czy tworzono lub likwidowano stanowiska, a także jakie były powody odejść. Więcej zakończeń niż rozpoczęć nie oznacza automatycznie likwidacji stanowisk.</p>
+<h3>2. Polski Holding Hotelowy: jedna spółka mocno zmienia obraz całości</h3>
+<p>W PHH w okresie V–X 2023 odnotowano 16 rozpoczęć i 13 zakończeń współpracy, a w następnym półroczu — 6 rozpoczęć i 9 zakończeń. Dużo zmian było też na przełomie 2019/2020 (12 rozpoczęć i 14 zakończeń). We wszystkich pięciu badanych okresach PHH zgłosił łącznie <strong>99 zdarzeń</strong> — najwięcej w całej grupie.</p>
+<p>Ta spółka ma tak duży wpływ na sumy, że po jej pominięciu obraz przełomu 2023/2024 się zmienia. Warto ustalić, czy odpowiedź obejmuje tylko samą spółkę, czy także inne podmioty z grupy, i czy jej struktura była podobna w porównywanych latach. Zmiany mogą wynikać m.in. ze skali działalności, reorganizacji lub sezonowości; dostępne liczby nie pozwalają wybrać jednego wyjaśnienia.</p>
+<h3>3. Agencja Rozwoju Przemysłu: pięć zakończeń i żadnego rozpoczęcia</h3>
+<p>Na przełomie 2023/2024 ARP zgłosiła <strong>pięć zakończeń</strong> współpracy i <strong>żadnego rozpoczęcia</strong>. W poprzednim półroczu były cztery rozpoczęcia i trzy zakończenia. Wysokie liczby pojawiały się też na przełomie 2019/2020: dziesięć rozpoczęć i sześć zakończeń.</p>
+<p>Nie wiadomo, czy po odejściach stanowiska pozostały wolne, zostały zlikwidowane, czy objęły je inne osoby później lub w ramach wewnętrznych zmian. Warto również sprawdzić, czy odpowiedź uwzględnia wszystkie podstawy współpracy objęte wnioskiem — podane w niej tabele odnoszą się do stosunku pracy i umów o pracę.</p>
+<h3>4. Exatel: cztery zakończenia bez rozpoczęć</h3>
+<p>W okresie XI 2023–IV 2024 spółka zgłosiła <strong>cztery zakończenia i zero rozpoczęć</strong>, wobec dwóch zakończeń i trzech rozpoczęć pół roku wcześniej. Przyjęliśmy, że jej odpowiedź obejmuje stanowiska wskazane we wniosku. Spółka użyła jednak szerszego określenia „stanowiska managerskie”, dlatego pozostaje niewielka niepewność co do dokładnego zakresu. Warto sprawdzić, co stało się ze stanowiskami po zakończeniu współpracy.</p>
+<h3>5. PERN: tyle samo zmian, ale inne proporcje</h3>
+<p>W PERN w obu półroczach 2023/2024 było po <strong>siedem</strong> rozpoczęć i zakończeń razem. Najpierw były to cztery rozpoczęcia i trzy zakończenia, potem trzy rozpoczęcia i cztery zakończenia. Na przełomie 2015/2016 liczba zdarzeń wzrosła z zera do siedmiu. Ten przykład przypomina, że taki sam ogólny wynik może oznaczać inny przebieg zmian kadrowych.</p>
+<h3>6. Polskie Elektrownie Jądrowe: inny kierunek zmian niż w większości spółek</h3>
+<p>Ta spółka jest ważnym uzupełnieniem badania, bo nie wpisuje się we wszystkie tendencje widoczne wcześniej. Na przełomie 2015/2016 łączna liczba rozpoczęć i zakończeń współpracy spadła w niej z <strong>5 do 3</strong>, podczas gdy w większości pozostałych spółek wzrosła.</p>
+<p>Na przełomie 2023/2024 PEJ zgłosiły <strong>9 rozpoczęć i 2 zakończenia</strong> w pierwszym półroczu oraz <strong>6 rozpoczęć i 5 zakończeń</strong> w kolejnym. Łączna liczba zdarzeń pozostała taka sama (po 11), choć ich proporcje się zmieniły. W ostatnim okresie PEJ były jedyną badaną spółką z przewagą rozpoczęć nad zakończeniami. Wyniki pokazują, dlaczego nie należy traktować sum dla całej grupy jako opisu sytuacji każdej spółki.</p><h3>Dodatkowo: Janów Podlaski, Gryf i Dobre z Lasu</h3>
+<p>W Stadninie Koni Janów Podlaski jedno rozpoczęcie współpracy na stanowisku kierowniczym oznaczało w praktyce awans osoby już zatrudnionej, a jedno zakończenie — przejście kierownika na emeryturę. Obie osoby mieszczą się w zakresie wniosku, ale te zdarzenia pokazują, dlaczego liczby nie zawsze oznaczają nowe zatrudnienia i zwolnienia.</p>
+<p>Centrum Logistyczne Gryf podało zera we wszystkich okresach. Aby właściwie je zinterpretować, przydałaby się wiedza, ile stanowisk objętych wnioskiem wówczas istniało. Spółka Dobre z Lasu wskazała natomiast, że takich stanowisk nie było — dlatego jej zera nie oznaczają braku rotacji na istniejących stanowiskach.</p>
+</div></div></section><section class="section alt" id="dane"><div class="wrap"><div class="section-head"><div class="section-no">04 / Dane dla spółek</div><div><h2>Wyniki dla poszczególnych spółek</h2></div></div><div class="table-actions" hidden="" id="companyTools"><label class="sr-only" for="companySearch">Szukaj spółki</label><input class="search" id="companySearch" placeholder="Szukaj spółki…" type="search"/><span aria-live="polite" class="sort-hint" id="companyCount">12 z 12 spółek</span></div><p hidden="" id="emptySearch">Brak spółek pasujących do wyszukiwania.</p><div class="report-copy"><p>W każdej komórce pierwsza liczba oznacza <strong>rozpoczęcia</strong>, a druga <strong>zakończenia współpracy</strong> w danej spółce i okresie. Są to wartości przekazane w odpowiedziach, z opisanymi w raporcie ograniczeniami.</p>
 <div class="table-wrap"><table id="companyTable">
 <thead>
 <tr>
@@ -374,21 +405,25 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <td>0 / 0</td>
 <td>0 / 0</td>
 </tr>
-</tbody></table></div>
-</div></div></section><section class="section red" id="pobierz"><div class="wrap download-panel"><div><div class="section-no">05 / Dane źródłowe</div><h2 style="margin-top:20px">Pobierz arkusz z danymi</h2><p class="intro">Oryginalny eksport odpowiedzi, na którym oparto analizę. Zawiera nazwy spółek, pytania, teksty odpowiedzi i zakodowane liczby. Plik umożliwia własne obliczenia oraz weryfikację wniosków.</p><p>Arkusz obejmuje 11 z 20 zapytanych spółek. Brak pozostałych danych nie oznacza zera zmian kadrowych, tylko brak odpowiedzi.</p></div><div class="download-box"><div class="file-icon">XLSX</div><h3>Zmiany kadrowe w spółkach Skarbu Państwa</h3><p class="filename">164_liczba-zmian-kadrowych-w-spolkach-skarbu-panstwa.xlsx</p><div class="file-meta"><span>Rozmiar</span><strong>12,5 KB</strong><span>Zawartość</span><strong>22 odpowiedzi · 11 spółek</strong></div><a class="btn red" id="downloadSource" href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,UEsDBBQACAgIAOs+RV0AAAAAAAAAAAAAAAAaAAAAeGwvX3JlbHMvd29ya2Jvb2sueG1sLnJlbHOtUkFqwzAQvOcVYu+17KSEUiznEgq5pukDhLy2TGxJaDdt8vuqTWgcCKEHn8TMameGYcvVcejFJ0bqvFNQZDkIdMbXnWsVfOzenl5gVc3KLfaa0xeyXSCRdhwpsMzhVUoyFgdNmQ/o0qTxcdCcYGxl0GavW5TzPF/KONaA6kZTbGoFcVMXIHangP/R9k3TGVx7cxjQ8R0LyWkXk6COLbKCX3gmiyyJgbyfYT5lBuJTj3QNccaP7BdT2n/5uCeLyNcEf1QK9/M87OJ50i6sjli/c0zHNa5kTF/CzEp5c3LVN1BLBwi+0DoZ4AAAAKkCAABQSwMEFAAICAgA6z5FXQAAAAAAAAAAAAAAAA8AAAB4bC93b3JrYm9vay54bWyNU9uO2jAQfe9XpBavkIRbARFWlIt2pe1FsGUfV048IS6OHdkOsK367504hC5qH/qQ2DNjnzlzZjy9O+fCO4I2XMmIhJ2AeCATxbjcR+Tb07o9Ip6xVDIqlISIvIIhd7N305PSh1ipg4f3pYlIZm0x8X2TZJBT01EFSIykSufUoqn3vik0UGYyAJsLvxsEQz+nXJIaYaL/B0OlKU9gqZIyB2lrEA2CWmRvMl4YMpumXMCuLsijRfGZ5kh7QUVC/NmV9lftxTQ5lMUaT0ckpcIAFpqp05f4OyQWK6JCEI9RC+E46DdHbiCUxZOYBp2VY8fhZP7EK9Mh3ivNfyhpqdgmWgkREavLSzYkannyr8i2EuqJxqZxnp+5ZOoUEWzR65v9yW2fObMZNnDYG/Ub3z3wfWYjMgrHXeJZGm8qoSIyCPBayrWxLolDoVjJETBfZWFB/puKXM+a1ZNO0A2YAjXHafCc+4FhcjcqFqNHbngskLSecAzoB9ZzoA0Sg5RLYFVvbi0vLaXT9NqTjDMGshFBqEqsJiHyrtm8nIXMOy/YTAt6SbFUWt09xtikBFiprz2eXYm/b81b4aS1a3V7U/8NhdmNhfQwY4LzwhEai1uoUqJkYaWhhvSTYog9x9Iv8Svxi70EYSlS7QRBEFYiwNk+GuvWy+gLhfu/xl/wWEM98G72iVdqHpGfH4bd4WI07La787DXDsPVoP2x1x+016v1Gju9WC7G61/4DhzqBL9Fzd9YjY96A+n2FWfxHJHVOQExd5x8PFb/HTW/meHZb1BLBwgV5sjuTgIAACAEAABQSwMEFAAICAgA6z5FXQAAAAAAAAAAAAAAABMAAAB4bC90aGVtZS90aGVtZTEueG1szVfBctsgEL33KxjuCZIsObIndg5JPT10pjNN+gEIIYkGIQ3QpP77IrAlFDmu0zqd+oBhebxdHuxiX9/8rDl4olKxRqxgeBlAQAVpcibKFfz2sLlIIVAaixzzRtAV3FIFb9YfrvFSV7SmwCwXaolXsNK6XSKkiDFjddm0VJi5opE11mYoS5RL/Gxoa46iIJijGjMBd+vlKeubomCE3jXkR02FdiSScqxN6KpirYJA4NrE+MUCwUMXIFzvQ/3IabdOdQbC5T2x8fsrLDZ/DLsvJcvslkvwhPkKBvYD0foa9QCup7jCfna4HSB/jCa4sIgXV3nPFzm+KY5SSmjY81kAJsTsYuo7LtIw23N6INedcpMgCeIx3uOfTfCLLMuSxQg/G/DxBJ8G8xhHI3w84JNp/JmZmY/wyYCfT7W+WszjMd6CKs7E48ET7E+mhxQN/3QQnhp4uj/wAYW8m+PWC/3aParx90ZuDMAerrmkAuhtSwtMDO4W15lkGIKWaVJtcM341gQJAamwVFSbK9I5x0uKvVXORNQLE3rhrGbimGfOjOvzeR6cIV8QK0/tDxjn93rL6WdlA1MNZ/nGGO3Awnr528p0oWXsZ9zIX1RKPPTVjrZUoG1Ut6MjvKYiMKGdLfFSe+ysVD7hrAOeSjq7Oo00dIXlRNYwOcaKPBXMdQW4q+DhPHIugCKY07w/Xs04/UqJBtyevrattG3Wtc7LSOK/kFtVOKc7vcPTpEl/r4zHupidT3CfNj6D4sGfKY6mOcPFeASeTYhJlJjsxa0piSbZTbdujVMlSggwL82jTrTbVyuVvsOqcluzqbR/WsTAFyVxF/z5CGdpeB5C9FIAWhRGz1csw9DMOZKDs+cHo0ORZeXmPy2A8YkFMH5LqYr3pWqcTot3ydLo6A78LG2xrkDXmDvHJOHuqe7S7KHZ56Z7ELr8vHA1qEvSndEkaph63jqqf19NB5nTE8/ujYLO3knQ5ICeyRnkRNP8QqOfH2jyH2BvWf8CUEsHCDuh3wr0AgAAAg0AAFBLAwQUAAgICADrPkVdAAAAAAAAAAAAAAAADQAAAHhsL3N0eWxlcy54bWztWF1vmzAUfd+vsPy+QlKathNQdZmY9jJVaypNmvbggAGrxka20yb99fMHIZA265ZOWzqRh4Av95x7ONjEueHFsqLgDgtJOIvg6MiHALOUZ4QVEbyZJW/PIJAKsQxRznAEV1jCi/hNKNWK4usSYwU0A5MRLJWq33meTEtcIXnEa8z0lZyLCik9FIUna4FRJg2oot7Y9ydehQiDccgWVVIpCVK+YErLaEPAHT5lOjgJIHB0U55pKR8xwwJR6MWh1xDEYc7ZhieALhCH8gHcIapJRiY95ZQLoLRQbIrpCEMVdhlTRMlcEBPMUUXoyoXHFlciIfUdOypb2NFvFfH7lJeCOJldQv9g4PZgrCOUttaNoQvEYY2UwoIlegCa89mq1sYxPSEcjc17JrsQaDUan3QA9qDrzrnI9ATsPnwXAhlBBWeI3tQRzBGVGLahD/yerYNxSHGuNLEgRWmOiteeIVGKV/pkjTGlHXN7osunmNJrM5u/5pu79zXpMn88+5gd6EVitDenjqkZoLqmq4QbEiUWuAm8tym90CUlBavwVuKV4Aqnyi5GG45DtE4EJRfkQVObB1g0k9+sXUVSE3L3C4HCS/WFK+RYtKZ7geqZDrYmEpbZwvqaLAVhtzOekPaytqluZQDK01ucrUWWJNPQTqa3zLec8jc+jfb1qdG5bVQ33HVqPQ1ej5jxIGaHmL3X1iBmEDOIGcQMYvYRExwf0i9lMDooNcFBqRkfkprzfyzG627f3Wa+s48P9t3GL/PHyrt6Xij9te3p/5Jt/9cfoZeY9uurZPDskD1zlf60ZV7zmus0L9pX3gR2osC0gSL42XTNaMe1+YJQRZgbeY8BU15VaJ0/OukBjncCwDf/ewua9ECTJ0ELITBLVy3mtIcJfobp1Trr4U6fwl1hkepn0ELOexDXltqYGYfZMu/1wjLj+zMtLskpyUz3qpjaBqMo5hFMEt9+bIUOdNMGs9S/w5/v4t+nsPnW9+ttGrrxD1BLBwi3iKIs7QIAABUWAABQSwMEFAAICAgA6z5FXQAAAAAAAAAAAAAAACMAAAB4bC93b3Jrc2hlZXRzL19yZWxzL3NoZWV0MS54bWwucmVsc42PywrCMBBF935FmL1J60JEmnYjQrdSPyAk0zTYPEji6+/NRrHgwuXMvXOG03QPO5MbxmS841DTCgg66ZVxmsN5OK530LWr5oSzyKWSJhMSKTcucZhyDnvGkpzQikR9QFeS0UcrchmjZkHIi9DINlW1ZfGbAe2CSXrFIfaqBjI8A/7D9uNoJB68vFp0+ccLpqK4F4+CFFFj5kDpe/cJa1qwwIoiWzi2L1BLBwjC1TGXqAAAABoBAABQSwMEFAAICAgA6z5FXQAAAAAAAAAAAAAAABgAAAB4bC93b3Jrc2hlZXRzL3NoZWV0MS54bWzFnV1T28gahO/Pr3D5frFGtmQ5BWwtJsBmCYKQsFXnTrFFUMW2fGQBSX79juQP7O42Vp1arJsNyO2eV+/oGQm51zr8/cd41HiKs1mSTo6a5sBpNuLJIB0mk29HzS+fz34Lmo1ZHk2G0SidxEfNn/Gs+fvxfw6f0+z77CGO84Y1mMyOmg95Pn3Xas0GD/E4mh2k03hiX7lPs3GU21+zb63ZNIujYfmm8ajlOo7fGkfJpDl3eJdV8Ujv75NBfJoOHsfxJJ+bZPEoym35s4dkOlu6/RhW8htm0bPd1WU9ayWezl9Z+ZkO+Y2TQZbO0vv8YJCOF6XxXvZavY39/JG5/5+T8eyuPiXFTLlLs/Ggyl6Oo+z74/Q36z21nfqajJL8Z7nDzePD0v86a9wnozzOPqZDO8n30WgW29em0bf4Ns6/TMvX88/ptd2wfLl1fNhavPn4cJjY+Sgqa2Tx/VHzD/PuzjidwOv6ha6U3SXx82zt58bsIX0+s1U+jqLZ0rTceJ4lw8tkEtutefa42Pgpfe6nowvbEXuwrr/w39i2brkhS7492Dov4/t8ZZlHX2/jUTzI4+H6+8LHfGQHuf05/pqOVgbD+D56HOVFCXa4NFtuf7IVHzUnRVNH1jKdFkP049Go2NlmY1Bo/7T+fqfZ+JWm49tBNLKtMo6z9vtV+XbcWjT1MvqZPpZtWbxa8PU1Tb8Xmwpfp5iqci+KJk+jgsVFFc1GZLc+xfNq/jbrv8/f2pj9r5wW+9pq1grj9Z+XU3NWHjd2whedsF34OxnmD0fN4MDv9vyg6626ZOfkIi46ftRsBweOfeGXnYzlpkX703mfL+OneGTfUNazvs0OMN+91sb4x4e2p7Pyv0V3R9F0VszfwnTwOMvT8aKw+Qw9JMNhPJHDlmOOox+2t/bfZFL+O8t/ljNkez23cZ2DwCsa9O8O6S7HdOWgvYOe+fcHNX476Cz31f78MrSzGtqYA69dHhDzTs+XvSiPjg+z9LmRlWXOC5hPymrMtQmHauby5REwL5gqpN20e18MV4BkQbSLm33vzG59OnYOW09FgQvFCSvMpqLPCndTccqK9qbiPSs6m4ozVnibinNW+JuKC1Z0NxV/siLYVHxgRW9T8ZfoGDT1Ukigqx+FBNp6JSTQ11BIoLHXQgKdvRESaO0nIYHe3goJNPezkEB3v4ijDbp7JyQv3W1Z0la4uXvGzS0rM+uVwaSerEsmi3n3nAAmti+cQHIqJDD374UE5v6M6wkcLPpc+CB7QoLwCQnSJySIH0vaiJ+QIH5CgvjtLjcULjBL19zfThD0etCbG+EEk/lJSGAyb4UE5umzkEAtX+aS9roEdvxOuPQ0gu09I9jejWC7GoLCCREUEkRQSBBBrkcgKHwQQSFBBIUEERQSRJAlhKCQIIJCggjuLjcULogg91ciKJwQQSFBBFnSgd58FhLozZc2IdiB3twJl7ZGsLNnBDtcGTTypKMRhGb2hRNIToUEuHgvJDD3Z1xPQAvCufCBo/GCJYSgcAG+PrDEg2PoLyGBY+hSSOAY+igksNNXu8sNhQtehHJ/O0HX9aF9N8IJ5vuTkMB837KEzoJCgmfBDiHogeRO1BJoBL09I+jtRtCrhqBwQgSFBBEUEkSQ6xEICh9EkCWEoHBBBFlCCAoJIigkiKCQIIK7yw2FCyLI/ZUICidEUEgQQVEyngWFBM+CHiMIO37HLr6jEfT3jKDPlcH+nfgaQWhmXzjhHRghwVswQoL3YLiewMHZPxc+ILlgCSEoXGC3PwgJuPwlJHA8XwoJHEMfWdKFg/Vqd7mhcIH5vub+dgIvcMDpRjjBfH8SEpjvW5bQWVBI8CzoE4JdOGruRC2eRrC7ZwS7uxHsVkNQOCGCQoIICgkiyPUIBIUPIsgSQlC4IIJCgggKCSIoJIggSwjB3eWGwgUR5P5KBIUTIigkiCBL6CwoJHgW7O5GUNTiawSDPSMYcGVwBJ0EGkE4RPrCCQ60UyEBl/csCWBKzriewO3BAXIufGDeLlhCCAoXOMw+CBe8HSNc4Ei8ZAndjhESvB2zu9xQSPBClPvb6RknwNsxwgkvRIUEL0TFXuFZUEjwLBgQgljunahly9+CvT0j2NuNYK8agsIJERQSRJAlhCDXIxAUPoggSwhB4YIIChdEULgggiwhBIUEEdxdbigkiCD3VyIonBBBIUEEWUJnQSHBs2CPEcS/Bdmlt+VvQePs+3N4h2vDS9ENzQuFPWhWX3nRJ/JCQ5/JCw19Ks81BcaB4+RcOeEFqdAQi8oHL0mVD31CL3xgrEuhIR6Vhj6k311zqDSwcF6LTnd6roMzcqO8YP8/CY1x4DC6VTuHp0alwXPjQtPeGAw6eScrcrfAafYNp6kAp6kIp/AiOIWG4BQagpNrUnAKJ4KTNQyn8CE4hQ/BKXwITtYwnEJDcO6uOVQagpM7reEUXgQnawScLKKTptLgWXOh2YSzjXCqijpb4Nx3pMZw1MA4HtKpUzV4nPelmY94KlEX+VSiAAEV4Q9aG8+lVQ8JrZCvUUYYTfsgRQYZVSIXIVWiNlKqRB3EtELhoRR5CKqK2/Qch0BVZpR5UyJKvVXI3CgNnUY5dWMwP3cnK9oSvDH7Tt4YTiQIUnX4hklVZkSqEhGpSkSkioyIIFVZEakVYjjKiElVIiJViYhUJSJSlYhIrVB4KEVEqkrlKFKVGZGqRERqhWiO0tA5lcM5hjOqoqJtKVWz74CO4eCCoZSc0RkdvH7qSzMMykkRRuWkCMNyoqzAxXsO59KK4uIV0jrSqIukKlGApCpRD0kVwRS68K1Q0lUVUahEmOS7Fg23oAb4+cyNNDMIqhK5CGqFAI/S0CmVIzwGw4F3sqJtF7/7jvEYjjcIUHWSh0FVZgSqEhGoSkSgikCPAFVZEagVMj3SiEBVIgJViQhUFjGoFUq6qiIKlYhBVQkfBaoyI1CViECtEPNRGjqjctBHgKoq2hI0MPsO+xgOQRhcs06Mzvvg3Y++NOsiqEoUIKhK1ENQRezHxZzaubLCyb4QIgZVGRkEVYgYVOVE175KRNe+FWq6qiIKpYj+lywZBPLwsvZGmuEnMFKEn8EIEZ9SK8SBDOeBDCY572RFWz4MNfvOBBnOSghSdSyISVVmRKoSEalKRKSKdJAgVVgxqRUCQtKISBUiJlU5EalKRKRWqOmqiiiUIiJV5oUEqcqMSFUiIrVCaEhp6JzKsSFBqqpo2/2kfUeHDEcqDIawT4xOD+Fd9740M0iqErlIqhK1kVQRIqJL5HNp1UFSK+SIpJGHpFaIEkkjH0GtkCZSGvp0pkLVoRR1EVOZKephIO9GmgWIqRL1ENMKwSKloRMqR4uMTzeTREX+tptJ+44XGY5dCEx1wogxVWaEqRIRpkpEmIqgkcBUWRGmFbJG0ogwrRA3kkaEaYXEkdIQphWqDqWIMJW5I4GpMiNMlYgwrRA+Uho6m3L8SGAqKvK3hBzcfSeQXJHAwID6icshFIsDfTzdl2ZAxKkUwXHzXorgSD4TZQV0y/1cWsEheCFE/D0Fyoi+qaBCDkka4Z0kIeJvK6gQRKpSdahEeIPoWrS7E/Q8zNLfSDO8kSRFeCNJ7R99cUGFLJIrski4utzJirbc8S2+YWi/mJoqmJqKmCozwlSJCFMlIky5LIWpsiJMWcSYKiPCVBgRpsqIMGURYyo0hGmFqkMlYky53RpTZUaYKhFhyiI6myoNnk0Xmk1MPcRUVbTl/2px9/5FPyKIQal6V6aS1nOPC0yVGQbrpQij9UpE4XpRVse0MU19Lr0wYC9EzOnu79r5IAdzkVMlwpi9Go043V1RKAfD20OqlUGnh5ehN9IMbw9JEd4eUqXTmbLKd/yowfD2kBJtu5Hr7jtu5IqEBSMo40YCQWVGCCoRIShEjKCKGwkElRchWCFvJDSMoBqMEFQiQrDCl/9UqCiUgxGCKkekEFRmhKASEYIVckRKQ2dBNRghKERbP0spvh+2/VpGwbgHwb+GoRj7tY9d33rs1z5IeuuxX7s1/tZjv3a/743H7rx2E+Otx37tL7O3Hvu1y823Hvu18+xbj/1aUPGtx65xXevUuK51alzXOjWua50a1zWvxnXNq3Fd82pc17wa1zWvxnXNq3Fd82pc17wa1zWvxnXNq3Fd82tc1/wa1zW/xnXNr3Fd82tc1/wa1zW/xnXNr3Fd82tc1/wa17Vujetat8Z1rVvjutatcV3r1riudWtc17p7Xtdaaw+wiR7z9Kx8otXLA6ncdiF9eeX4cJolkzyclg8PazzEUfHUs9mqmm8vj6HCLbfxqr6HNEt+pZM8GvXjiXVde3jPU5zlyYBfaM2frPUxyr4lduBR+bAq56CYq2y+6/Nf8nRa3kv9mua2LeWPD+XzrwqBZ0xgjOO2fdd1ij+779M01y+1Vk/yepw2ptE0zm6TX3H51V6ztcdUlU/4WjxqyCx+Xc6F/b2wCLNy9GH6PPn8EE9Cu4d2hrLE7mD5CLaj5jTN8ixKclv1KBp8/2My/PshyVcPDWsMs2jt0VyDeDTqp+PiWW6z4ulak42Gnk6To2a7KG3ZyZctg3SaxOWtZrt3866clQ1oDJP7e9vtSX6WZLOXoVabw+Hw/dPLQXd8mA6H88eK2aNj7Wf749xxvnn18/pgx4eLB8g1sneJnd/sz+H8EVurx+Md/wNQSwcI1NXbUbwNAABibwAAUEsDBBQACAgIAOs+RV0AAAAAAAAAAAAAAAAUAAAAeGwvc2hhcmVkU3RyaW5ncy54bWztHF1z28bxvb9iR57JuBqSOoAfIhnbkeKkTSLZVuW4nvqlcwJPEggCx+DDDFl1JtUkvyBPTl76H/zWyVMl/pH8ku7hiyBFkAuLUJwmHEoihb3dvcN+3e4eHnz0tT2A18L1TOk83NJqbAuEY8ie6Zw93Hrx5Z+q7S3wfO70+EA64uHWWHhbHz36wwPP8wGHOt7DrXPfH3Z3djzjXNjcq8mhcPDKqXRt7uNX92zHG7qC97xzIXx7sKMz1tqxuelsgSEDx3+41agjlcAxvwrE4+g/Wru99eiBZz56EJLpekNuIHXE4wn3tdh69Jh7Ahxuiwc7/qMHOwpyHbTZo8N6g+CMDh24AxLw547nm37g41rTec8OIk4hOwTviVmcO5+feaRBX3g+FQ4M7osz6Y7pA2SPtkZ/leZriQJmDmk3TQkZjY3H0rZRMonQiunTYDCg391D4fvCpd7YGJoqb8fCEOZr0QPpkOD/EggvEk5ZCJ4EvO94I+EWAC0mL4emMTnhMLFN7oDFe64cjY1zGIE3vHo7vbQ4fvEs7p4EMOTTbz1/xOGeRkI9CFFXQ9TVFHV1VPWGcqAQVyPE1SF3FN4qDa2ymx4azlOhMHLHFDXPFIY8GY9w4gPEWRsOlO3ko/FOSTzsP3kJX378HD74KpD+hwcv97/89Hg/+gLPhzWYgKzJGgmVpbh2+R63R/FHZJ80MrlDi/eHNPiJtKR/9XZEAu5NTDFwTIOGWmu0mqzZprHBJ3KEd88yaXr/krvehFPnOEMOO5AMxY/J5OF+zGsF0in+cYNCODA9f7zTaLc7nV0SWp3prSprV/U2aKyr3nXaktOgahDqwxikd/X2pIJiauEyuGPbRKmNhcmVk6E0JtdvppccRpGMoS4Z12/QKPS4M7ZBWojSVHFEGOPgGnuhneiNXWH50vUsE7/h1SE6F5/jLYDARsUDCRGmSvzdGI/MgSOVqjqiXwFLOr7LLT8AWziiN/1JKFxozIAPTiSYDkIlSMcw/XFk8p4xEY7JQ8RjRdOdCGMCR4mtMlGtx35g9E2a6U9m78v5yX9wT2Mfhr8YRnvNms60ZrWu1TQWfpxd1ucgNS2GZDXWUB9bs8uNJZCdFFJnmcs3qev1lLpen13WbuJUkAnODEmdtB7/iIxaOAeGb+3v4UeNIfXoUhf0CmSgNC2GQkFuIOUEqpGB6qRQOpuHYjMo5DuhiB/nKGpzUCmuxjwu/Z80naNBUXRnwi05/daYjG+pO5UIt0hFHBGOY93ZCbzpZXBm/jr161W8QtJ5V/1aIuG31i/9vdYvbYP6pd+9fr1ThElze4WjOxraciNMGg/Pfd5zTNS3A+mY8AV3VLhyJHsDjhpbNMY8MQNX7nlWXxkcani5QJM05sxWLNum6HuWrI7Cv7RYjbWYxpq0tTkMTtRdIIaMH5t8QOU/xYxBYjwOPy2u/v2Y2QosnW8ZEeSu3qIF1GkEyUDb7dab3TrNECWxIf//jw3j6Zjd0E5XQfZAA5v3OSgDC24NehLqmrJG/1HbAtcxrdm1KgJLT+JC/fzN9+m0sqjUPZND3pvHx8DCyfqKH2W8b6LCrYnjKS5xVigRIVGFr514tko4kfAKRhq+G6CBkM4Ylz6akSEUvHJgyi2xXSSRy1ZnKVsoNCFbLBKCJeuj1/PXJ7q2dHSW9gzFPO3G3Og79p7aBqNTRvKejBidUvTytxN33lZ318hmAXVNtVSp5UT0pz8a0fIKW7gYEbtxTPvb1j7269a+d4pdG+XErjS05cauNB7mY9cnaFj49FJFUAXDVnl6ahpiz4vR2QrRgB7AzggXiF2LxKx6i7UZMb6a/jAyVVbJcidjcuh6ZIZ75RE1fF0kgrFrBoVKfM7uxf2Y+ySILTF4bbZZq1DwqjVA07qa3mW0DcEFwDPl3+ACDjPOMusr3bzEHiqzn/GP+RgmeamLBQxwEdreC6hWqzD3O/5/MadVUaPDnwUEVL+lEGjhzyoEK1ySQqCHP8unsNYrkaaw0jHNxr+XnomWVdmoZyJMkVXWT1CrrJ+eXlk/OVZZP7UyfS6tvFLY39HQlutzaTzsnwnHQHU8lpOR7AdwhDGpPVYhOzyv7dP8rTKQPt/j7pDqYqc/uFdve7YpwuiXXB3UWOHq4HwBb55uVMZDpOWW8TpIoUgZTykUaPUuY12NVqC7hy94ihur6+8mihncqkkvcKxgtg1KN2/BLNWM5vRwqIzkUid4oRJXamfF06xBuLPK91Pz3kr5jkWPtXKXFbkbtRPk6c4wY/n1BB9543UBzVUI60sRrtpjIYdsFcbGwpTX77suwjG5CJvLWFzj8ZZyeMdpkSbJ/Wm0nVljk/7vHrxQqvC7jqQ6slIA30VHWptWkfqmVWSpWXgv624tkobUSRrSLDGOovnlwjEMDW25cRSNhyMZ1X8O5ED0RVLnliNBD6NOzOHe0CLHUM+Mc+kX6KwiFoJyY6eIXtz61Co7ZtJZh5Y0CmMm1Aamq71/s4FhE2lcFbZnHQM/f/P9rGdgu6sys+P+9RvDjHK223qYwB1vJ4WR7VkLgRqaNhEsGarpka9YMraTGaszItm4yyDDsV5fMpTlUY2Gpo0HS4Y2k6F33Omj6Xe+aSaaxJWyIntREn9x9daLysJIbZcuKQtDCwgKYWSOnORNdGNi0qSJye4GxUT/xT0nsVOzeEPy+9CzQmQiWucXrz45fvby8+cHz+B4/+ODtC/66Or76b8O9mH/4PHfvni6T+txFhiu+9w1ub8XTBSjpuq0cPmJRe6TPlbA1Vc99+ptnzQAlwVDUJpH1jVN02ke7gmfXsqhpHeuPJUj9NQuNfufxY9+fjYav2TXAF1/xHUFopmWkfPvMFbA78ctz7pqea7T4pvtl2nGfWnHYH7Gv6usZWgmQ5NZ2f7vvzMF9GXAsWndnm0nM9SXNSFub2+vJh9hrERsrKRenzPsecSzfY2whvZs6tuVlaTjcncO6aWdkqRp33VAssl4hOZoiEmM32X4F5bhZS28sE1byTsW4jotFbfBoLrM/l6tpCYJIt6SoyUaE0efHj8tUJwRrrOnflHDniOUXsMq3LZLzkSgHNKqGvOZiIit2Yf7Mar5ZtpS+hA67V1aTiGp37CGikmaGr6pfQhwAekZIlWaypiPMVQzvXfZzjvVdpCcjBAOfRSp1YAVaJCLqg4MFhEspKFX5qDrq0evzjkv6TNghcswqzlYk1Ouh0juvNFgk8c3aIWW+sYaDYhTpHkw2hRpmfJGmR6sWZIHo+Et2YPRmHgsHN8NbDiUZ8rEGhNHwJ/d8WnRRj/TOZV7xvlA9lAXzxAB1cc9n6DBNEzaSfq6TvdZr3BRFDe4n7YjY/uOw9DRJUxmP96PmbkDr9dsagW77+rA2l1N6zY6tDPZaGSHysOjPVbl1/Rs4AgXwhMWiKp6mAZICHrS86/fDMPqqgB1212bG30ThUXdemgDTsQdxhYZnYq0gkpoymG+75y7fg1aGgQe/tXARKdxINOjiHB8BNLlkwhMYwlYEDWYS4j5QEQ9mWEjpjQMTpTGqKb06FrQF/a4AtOf0DNHewe8z90YWiw29K3p58sOK9DFlx02AHrz3nIu1/fsraC3yoMm49KzCepGz50bQnkN/5l3aGGsLIfas9nmmtMKMakJd6/ejhy5+mRCn1tLzy7knlWIsd84sYDsrz2wsLnNIc21MpJr/QUa6DfUpsgIbYrsV9CmqJXUp0jEW3LQQGMiqrDDZ3KgnpaFf5GyUkTvXc60Ds/PqbHCS7XfPKc9FSfsJ9y9ZaE9Jhh3J+6W3p3Y2aVVaZLdrR522TdYl5ipxx2qap3qcf/nby7xDbmv2cW5LqtbvLJ4YsN8i9fqw6lFgG/PS/jKHDOAo88+y+jCbcaGzEX3alNvWHUGmDLR3JOKax4AkeHgxqt9g8nSX/X8B1Dks6HV75hLgGb+4y9W8KnfKZNIRmvkP3xjBZ+tO2VS8Tl/3+fqBqvWrHX3Egq0zRslBm3T+jmIFQriI0hapDC0tbkkVp00S2JHdIM2SVoaq1NmRFpSxycRb8kRKY2JT79WtAo0eEprT4RjyLUYl5/x6pGcXoat5fRmz9vGoAuE467PsmPRdqe5S8uzpZUWHXWmq7W6xE3Ei/DMvZ0mkTIZmuzjEm4EbzZ3+JmIA72+mP44MEGl7CYmyGzrv6jAaHw2uP6ux1Wk4vAwXxT0r78zZHcWqoS5oA/udT7M/swxUJ0FTEaY9JidLogw9DKl/zQnM2sAqCmM9QxoHHCkGZgk7MgF7SyAhmkhBaotMpBJCiXONw9rJgWU1s0jUFqFbXMGeZN1cZo5JiYIXoElB8K8lTxmSoJZydmccOaSoAtngy6cN0FzhbNJF06dLpy0jS5FOBsbrOo1ScJJ6zwqs+Sl03S7sJsm4i03ViAy8Yk8cVFT4JB7AUR1rho5Z5XtZu0pRJMBoqEGEVGzpjrvNr0UqjxRCfPZOF11t1QFhvsBObS4TVwRRhFJ9+gahsoILxqdJm13k5a0GGjNLtO7Ou1pHbMqj8rycyfUDREVtKxgVtxIahl5SZFsLSOxrupxTDcrG6oVv8+tLJXwoWDFiiU+Dx1JFnMNXibVGEOEj6pAgHR2Cvdp4FhGX+IIrh73pHCIDIqMaO94nv/of1BLBwhh0grAnQ0AAPxgAABQSwMEFAAICAgA6z5FXQAAAAAAAAAAAAAAABgAAAB4bC9kcmF3aW5ncy9kcmF3aW5nMS54bWydkM0OgjAQhO8+Bdm7FD0YQ/i5EJ9AH2BDF2hCt023Cr69TZC78TiZzJeZqdrVztmLghjHNZzyAjLi3mnDYw2P++14hUwissbZMdXwJoG2OVSrDuUiXchSnqVMsoYpRl8qJf1EFiV3nji5gwsWY5JhVDrgksh2VueiuCjxgVDLRBS7zYEvD/+gWTS8539q44bB9NS5/mmJ4wYJNGNMX8hkvEBTqX1o8wFQSwcIx81Oq6gAAAArAQAAUEsDBBQACAgIAOs+RV0AAAAAAAAAAAAAAAALAAAAX3JlbHMvLnJlbHOtksFOwzAMhu97iir3Nd1ACKGmu0xIuyE0HsAkbhu1iaPEg/L2RBMSDI2yw45xfn/+YqXeTG4s3jAmS16JVVmJAr0mY32nxMv+cXkvNs2ifsYROEdSb0Mqco9PSvTM4UHKpHt0kEoK6PNNS9EB52PsZAA9QIdyXVV3Mv5kiOaEWeyMEnFnVqLYfwS8hE1tazVuSR8cej4z4lcikyF2yEpMo3ynOLwSDWWGCnneZX25y9/vlA4ZDDBITRGXIebuyBbTt44h/ZTL6ZiYE7q55nJwYvQGzbwShDBndHtNI31ITO6fFR0zX0qLWp78y+YTUEsHCIWaNJruAAAAzgIAAFBLAwQUAAgICADrPkVdAAAAAAAAAAAAAAAAEQAAAGRvY1Byb3BzL2NvcmUueG1sjVLLTsMwELzzFZHvifNQC7WaVALUUytVogjEzTjb1OA4lu2+/h47aUKBHrjtzoxnX57OjrUI9qANb2SOkihGAUjWlFxWOXpez8M7FBhLZUlFIyFHJzBoVtxMmSKs0bDSjQJtOZjAGUlDmMrR1lpFMDZsCzU1kVNIR24aXVPrUl1hRdknrQCncTzGNVhaUkuxNwzV4IjOliUbLNVOi9agZBgE1CCtwUmU4G+tBV2bqw9a5kJZc3tScFXak4P6aPggPBwO0SFrpa7/BL8uF0/tqCGXflUMUDE9N0KYBmqhDJwB6cr1zEv28LieoyKN03GYxGE8Wsdjkt6SePI2xb/ee8MubnThF6pOR+FVA+gFJRimubLulkVL/gBcLqisdm7xhRLhatFKBsifVFBjl+74Gw7l/cl5XMH6zuoz9s/RJmQ0Iml2MVpv0FbWsOf+DxZZW3RIfddm9/4BzHYjDYmLLbcCOrgP//zL4gtQSwcI8lMHp2oBAADjAgAAUEsDBBQACAgIAOs+RV0AAAAAAAAAAAAAAAAQAAAAZG9jUHJvcHMvYXBwLnhtbJ2QwW7CMAyG73uKKuLapFRdQSgN2jTthLQdOrRblaUuZGqTKHFRefsF0IAzPtm/rc/2z9fT0CcH8EFbU5E5zUgCRtlWm11Fvur3dEmSgNK0srcGKnKEQNbiiX9668CjhpBEggkV2SO6FWNB7WGQgca2iZ3O+kFiLP2O2a7TCt6sGgcwyPIsKxlMCKaFNnVXILkQVwd8FNpadbovbOujizzBaxhcLxEEZ7e0tij7Wg8gFlG+FvzFuV4ridERsdE/Hj7OK1he0JwuaD7baDNOzfeybMoiuZto4g+/oJAVeTZ7HXXfpjln97gTe3sxW8yfaRbjPPCvcXbzVfwBUEsHCJSXxqT7AAAAnAEAAFBLAwQUAAgICADrPkVdAAAAAAAAAAAAAAAAEwAAAGRvY1Byb3BzL2N1c3RvbS54bWydzrEKwjAUheHdpwjZ21QHkdK0izg7VPeQ3rYBc2/ITYt9eyOC7o6HHz5O0z39Q6wQ2RFquS8rKQAtDQ4nLW/9pThJwcngYB6EoOUGLLt211wjBYjJAYssIGs5pxRqpdjO4A2XOWMuI0VvUp5xUjSOzsKZ7OIBkzpU1VHZhRP5Inw5+fHqNf1LDmTf7/jebyF7baN+Z9sXUEsHCOHWAICXAAAA8QAAAFBLAwQUAAgICADrPkVdAAAAAAAAAAAAAAAAEwAAAFtDb250ZW50X1R5cGVzXS54bWy9VTtvgzAQ3vMrEGsFTjpUVQXJ0MfYRmo6Vy4+wA3Ylu28/n3PQNIoTUIjUBbAvvsed2eZaLIuC28J2nApYn8UDn0PRCIZF1nsf8xegnt/Mh5Es40C42GuMLGfW6seCDFJDiU1oVQgMJJKXVKLS50RRZM5zYDcDod3JJHCgrCBdRz+OHqClC4K6z2vcbvWRbjvPdZ5Tir2qVIFT6jFMHFRchSnoTBngEvBDtwFjbMQkVWOybkyN6cVlMgOBHjpKnP7xxHfCo5DqgBi3rDdmjPwplTbV1piAlkX5NMVQ1ZSz7+knIdoKey5vBPC+5KXqck05QkwmSxKhIRGaaDM5AAWzVfvsKRctOhbPEZQP0edPVQ0LYLGbgowfZdbkf6j1RXANOOuFqMrD7tx8KvdYxt2/G0zyKkG9m41XjS9j2Kfu8UH03Tl0rYf3fvREJ3TrWd/jYmjq6mWyuAlrOHy0rZ6Dh0oJAJt+flTvlNE6s69BHetMmCXaicLY2XZWb6m+Ss+iEj1Qxz/AFBLBwgQ1MpaiAEAAD8HAABQSwECFAAUAAgICADrPkVdvtA6GeAAAACpAgAAGgAAAAAAAAAAAAAAAAAAAAAAeGwvX3JlbHMvd29ya2Jvb2sueG1sLnJlbHNQSwECFAAUAAgICADrPkVdFebI7k4CAAAgBAAADwAAAAAAAAAAAAAAAAAoAQAAeGwvd29ya2Jvb2sueG1sUEsBAhQAFAAICAgA6z5FXTuh3wr0AgAAAg0AABMAAAAAAAAAAAAAAAAAswMAAHhsL3RoZW1lL3RoZW1lMS54bWxQSwECFAAUAAgICADrPkVdt4iiLO0CAAAVFgAADQAAAAAAAAAAAAAAAADoBgAAeGwvc3R5bGVzLnhtbFBLAQIUABQACAgIAOs+RV3C1TGXqAAAABoBAAAjAAAAAAAAAAAAAAAAABAKAAB4bC93b3Jrc2hlZXRzL19yZWxzL3NoZWV0MS54bWwucmVsc1BLAQIUABQACAgIAOs+RV3U1dtRvA0AAGJvAAAYAAAAAAAAAAAAAAAAAAkLAAB4bC93b3Jrc2hlZXRzL3NoZWV0MS54bWxQSwECFAAUAAgICADrPkVdYdIKwJ0NAAD8YAAAFAAAAAAAAAAAAAAAAAALGQAAeGwvc2hhcmVkU3RyaW5ncy54bWxQSwECFAAUAAgICADrPkVdx81Oq6gAAAArAQAAGAAAAAAAAAAAAAAAAADqJgAAeGwvZHJhd2luZ3MvZHJhd2luZzEueG1sUEsBAhQAFAAICAgA6z5FXYWaNJruAAAAzgIAAAsAAAAAAAAAAAAAAAAA2CcAAF9yZWxzLy5yZWxzUEsBAhQAFAAICAgA6z5FXfJTB6dqAQAA4wIAABEAAAAAAAAAAAAAAAAA/ygAAGRvY1Byb3BzL2NvcmUueG1sUEsBAhQAFAAICAgA6z5FXZSXxqT7AAAAnAEAABAAAAAAAAAAAAAAAAAAqCoAAGRvY1Byb3BzL2FwcC54bWxQSwECFAAUAAgICADrPkVd4dYAgJcAAADxAAAAEwAAAAAAAAAAAAAAAADhKwAAZG9jUHJvcHMvY3VzdG9tLnhtbFBLAQIUABQACAgIAOs+RV0Q1MpaiAEAAD8HAAATAAAAAAAAAAAAAAAAALksAABbQ29udGVudF9UeXBlc10ueG1sUEsFBgAAAAANAA0AWAMAAIIuAAAAAA==" download="164_liczba-zmian-kadrowych-w-spolkach-skarbu-panstwa.xlsx">Pobierz arkusz (jeśli kliknięcie nie działa, otwórz w nowym oknie) ↓</a></div></div></section><section class="section " id="metodologia"><div class="wrap"><div class="section-head"><div class="section-no">06 / Jak czytać raport</div><div><h2>Zastrzeżenia<br>metodologiczne</h2></div></div><div class="source-intro"><p>Analiza przygotowana 5 października 2026 r. Źródło: <code>164_liczba-zmian-kadrowych-w-spolkach-skarbu-panstwa.xlsx</code>, arkusz <code>Responses</code>, wiersze 2–23. Liczba wszystkich zapytanych spółek: 20.</p>
-</div><div class="methodology"><article class="report-copy"><h3>1. Jak czytać dane</h3><p>Każdy wiersz odpowiada jednej odpowiedzi na jedno pytanie, a nie jednej osobie lub jednemu zatrudnieniu. Dwie odpowiedzi tej samej spółki to:</p>
-<ul>
-<li>pytanie 1: liczba osób, z którymi rozpoczęto współpracę na stanowiskach dyrektorskich;</li>
-<li>pytanie 2: liczba osób, z którymi zakończono współpracę na takich stanowiskach.</li>
-</ul>
-<p>Pytania obejmują różne podstawy współpracy: umowę o pracę, umowę cywilnoprawną, kontrakt menedżerski lub inną podstawę świadczenia pracy. Dlatego określenia „rozpoczęcia” i „zakończenia współpracy” są dokładniejsze niż „nowe zatrudnienia” i „zwolnienia”.</p>
-<p>Kolumna <code>Answer category</code> zawiera obiekt JSON: klucze oznaczają przedział dat, wartości — liczby osób. Przykładowo <code>2015-11-01_2016-04-30</code> oznacza okres od 1 listopada 2015 do 30 kwietnia 2016. Wszystkie 22 takie obiekty są poprawne składniowo, zawierają pięć oczekiwanych przedziałów i nieujemne liczby całkowite. Daje to 110 zakodowanych wartości. Nie znaleziono duplikatów klucza spółka–pytanie.</p>
-<p>Wszystkie okna obejmują po sześć miesięcy. Okresy V–X mają 184 dni, a XI–IV w tych latach po 182 dni. Ta niewielka różnica długości nie tłumaczy dużych różnic liczebności. Okna mają jednak inny sezon, co ogranicza interpretację porównań V–X z XI–IV.</p>
-<p>Zsumowane rozpoczęcia i zakończenia są miarą liczby zgłoszonych ruchów kadrowych. Nie oznaczają liczby unikalnych osób: ta sama osoba może wystąpić w obu rodzajach zdarzeń albo w kilku okresach. Nie mamy danych osobowych pozwalających to zidentyfikować. Saldo jest różnicą tych dwóch liczników, a nie potwierdzoną zmianą stanu zatrudnienia.</p>
-</article><article class="report-copy"><h3>2. Kompletność i jakość odpowiedzi</h3><p>W pliku znajdują się dane 11 spółek, czyli 55% z 20 zapytanych. Każda z tych 11 ma obie odpowiedzi. Dla dziewięciu spółek, czyli 45% badanej grupy, eksport nie dostarcza danych - są to spółki, które nie odpowiedziały do czasu ostatniej aktualizacji raportu. Plik nie zawiera również listy wszystkich 20 adresatów.</p>
-<p>Brak danych nie oznacza zera zmian kadrowych, tylko brak odpowiedzi. Nie można zakładać, że odpowiadające spółki są podobne do nieodpowiadających. Dobór 20 spółek był celowy, a nie losowy. Wyników nie należy uogólniać na wszystkie spółki Skarbu Państwa.</p>
-<p>Ważne problemy porównywalności:</p>
-<div class="table-wrap"><table>
+<tr><td>Polskie Elektrownie Jądrowe</td><td>5 / 0</td><td>1 / 2</td><td>0 / 2</td><td>9 / 2</td><td>6 / 5</td></tr></tbody></table></div>
+</div></div></section><section class="section red" id="pobierz"><div class="wrap download-panel"><div><div class="section-no">05 / Dane źródłowe</div><h2 style="margin-top:20px">Pobierz arkusz z danymi</h2><p class="intro">Oryginalny arkusz z odpowiedziami, na którym oparto analizę. Zawiera nazwy spółek, pytania, treść odpowiedzi oraz dane liczbowe. Można dzięki niemu sprawdzić ustalenia raportu i samodzielnie wykonać obliczenia.</p><p>Arkusz obejmuje 12 z 20 zapytanych spółek. Brak pozostałych danych nie oznacza zera zmian kadrowych, tylko brak odpowiedzi.</p></div><div class="download-box"><div class="file-icon">XLSX</div><h3>Zmiany kadrowe w spółkach Skarbu Państwa</h3><p class="filename">164_liczba-zmian-kadrowych-w-spolkach-skarbu-panstwa.xlsx</p><div class="file-meta"><span>Rozmiar</span><strong>12,8 KB</strong><span>Zawartość</span><strong>24 odpowiedzi · 12 spółek</strong></div><a class="btn red" download="164_liczba-zmian-kadrowych-w-spolkach-skarbu-panstwa.xlsx" href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,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" id="downloadSource">Pobierz arkusz (jeśli kliknięcie nie działa, otwórz w nowym oknie) ↓</a></div></div></section><section class="section" id="metodologia"><div class="wrap">
+<div class="section-head"><div class="section-no">06 / Jak czytać wyniki</div><div><h2>Jak zbadaliśmy zmiany<br/>i czego nie wiemy?</h2></div></div>
+<div class="source-intro"><p>Podstawą raportu są odpowiedzi 12 spośród 20 zapytanych spółek. Poniżej wyjaśniamy, co liczyliśmy, jak sprawdzaliśmy wyniki i gdzie przebiegają granice ich interpretacji. Szczegóły techniczne można rozwinąć.</p></div>
+<div class="methodology">
+<article class="report-copy">
+<h3>1. Co dokładnie liczyliśmy?</h3>
+<p>Pytaliśmy spółki o osoby, które <strong>rozpoczęły lub zakończyły współpracę</strong> na stanowiskach mających w nazwie słowo <strong>„dyrektor” lub „kierownik”</strong>. Oznacza to także zastępców dyrektorów i kierowników, a nie wyłącznie osoby z tytułem dyrektora. Wniosek obejmował różne formy współpracy — nie tylko umowę o pracę.</p>
+<p>Porównaliśmy pięć wybranych sześciomiesięcznych okresów z lat 2015–2024. Liczymy zgłoszone rozpoczęcia i zakończenia współpracy na badanych stanowiskach. <strong>Ich suma nie jest liczbą różnych osób</strong>, a przewaga zakończeń nad rozpoczęciami nie musi oznaczać likwidacji stanowisk. Awans wewnętrzny także może być wykazany jako objęcie stanowiska.</p>
+<details class="technical"><summary>Pełna definicja, zakres pytania i sposób zapisania danych</summary><div class="technical-body"><p>Każdy wiersz odpowiada jednej odpowiedzi na jedno pytanie, a nie jednej osobie lub jednemu zatrudnieniu.</p><p>We wniosku określenie „stanowiska dyrektorskie” zostało zdefiniowane szerzej niż wynikałoby to z jego potocznego rozumienia. Obejmowało wszystkie stanowiska, których nazwa zawiera słowo „dyrektor” lub „kierownik”, w tym m.in. dyrektorów i zastępców dyrektorów, dyrektorów departamentów, biur i oddziałów, kierowników oraz zastępców kierowników, kierowników departamentów i biur.</p><p>Tym samym badanie nie ograniczało się do osób zatrudnionych na stanowiskach dyrektorów. Nie obejmowało jednak automatycznie wszystkich stanowisk menedżerskich — decydującym kryterium była nazwa stanowiska.</p><p>Dwie odpowiedzi tej samej spółki to:</p><ul>
+<li>pytanie 1: liczba osób, z którymi rozpoczęto współpracę na stanowiskach objętych przyjętą we wniosku definicją;</li>
+<li>pytanie 2: liczba osób, z którymi zakończono współpracę na stanowiskach objętych tą samą definicją.</li>
+</ul><p>Pytania obejmują różne podstawy współpracy: umowę o pracę, umowę cywilnoprawną, kontrakt menedżerski lub inną podstawę świadczenia pracy. Dlatego określenia „rozpoczęcia” i „zakończenia współpracy” są dokładniejsze niż „nowe zatrudnienia” i „zwolnienia”.</p><p>Kolumna <code>Answer category</code> zawiera liczby przypisane do pięciu przedziałów dat. Są one zapisane jako obiekty JSON. Wszystkie 24 rekordy zawierają pięć oczekiwanych przedziałów i nieujemne liczby całkowite. Daje to <strong>120 zakodowanych wartości</strong>. Nie znaleziono duplikatów pary spółka–pytanie.</p><p>Wszystkie okna obejmują po sześć miesięcy. Okresy V–X mają 184 dni, a XI–IV w tych latach po 182 dni. Ta niewielka różnica długości nie tłumaczy dużych różnic liczebności. Okna mają jednak inny sezon, co ogranicza interpretację porównań V–X z XI–IV.</p><p>Zsumowane rozpoczęcia i zakończenia są miarą liczby zgłoszonych ruchów kadrowych. Nie oznaczają liczby unikalnych osób: ta sama osoba może wystąpić w obu rodzajach zdarzeń albo w kilku okresach. Nie mamy danych osobowych pozwalających to zidentyfikować. Saldo jest różnicą tych dwóch liczników, a nie potwierdzoną zmianą stanu zatrudnienia.</p></div></details>
+</article>
+<article class="report-copy">
+<h3>2. Na ile odpowiedzi pokazują pełny obraz?</h3>
+<p>Otrzymaliśmy dane od <strong>12 z 20</strong> zapytanych spółek. Dla ośmiu pozostałych w analizowanym materiale nie ma odpowiedzi — nie oznacza to, że nie było w nich zmian. Spółki dobrano celowo, więc <strong>wyników nie można uogólniać na wszystkie spółki Skarbu Państwa</strong>.</p>
+<p>Niektóre odpowiedzi wymagają dodatkowej ostrożności: np. awans wewnętrzny nie jest nowym zatrudnieniem, a odpowiedź może używać skróconej nazwy stanowisk. W analizie podstawowej przyjęliśmy, że spółki odpowiadały zgodnie z treścią wniosku, o ile nie ma wyraźnych powodów, by sądzić inaczej. Wybrane kwestie sprawdziliśmy również w obliczeniach pomocniczych.</p>
+<details class="technical"><summary>Szczegółowa ocena odpowiedzi poszczególnych spółek</summary><div class="technical-body"><p>W pliku znajdują się dane 12 spółek, czyli 60% z 20 zapytanych. Każda z tych 12 ma obie odpowiedzi. Dla ośmiu spółek, czyli 40% badanej grupy, eksport nie dostarcza danych — są to spółki, które nie odpowiedziały do czasu ostatniej aktualizacji raportu. Plik nie zawiera również listy wszystkich 20 adresatów.</p><p>Brak danych nie oznacza zera zmian kadrowych, tylko brak odpowiedzi. Nie można zakładać, że odpowiadające spółki są podobne do nieodpowiadających. Dobór 20 spółek był celowy, a nie losowy. Wyników nie należy uogólniać na wszystkie spółki Skarbu Państwa.</p><p>Ważne problemy porównywalności:</p><div class="table-wrap"><table>
 <thead>
 <tr>
 <th>Spółka</th>
@@ -399,22 +434,22 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <tbody><tr>
 <td>Stadnina Koni Janów Podlaski</td>
 <td>„Rozpoczęcie” w XI 2015–IV 2016 to awans na kierownika osoby zatrudnionej od 2007 r. „Zakończenie” to przejście kierownika na emeryturę.</td>
-<td>Liczba 1 nie oznacza nowego zatrudnienia w spółce. W odpowiedzi pojawia się też kierownik zamiast wyłącznie dyrektora.</td>
+<td>Stanowisko kierownika mieści się w definicji przyjętej we wniosku, dlatego jego uwzględnienie jest prawidłowe. Zastrzeżenie dotyczy natomiast charakteru zdarzenia: awans osoby wcześniej zatrudnionej w spółce oznacza objęcie nowego stanowiska, ale nie rozpoczęcie zatrudnienia w spółce. Rozróżnienie to ma znaczenie dla interpretacji liczby rozpoczęć współpracy.</td>
 </tr>
 <tr>
 <td>Exatel</td>
-<td>Odpowiedź dotyczy stanowisk „managerskich”.</td>
-<td>Zakres może być szerszy od stanowisk dyrektorskich. Trzeba ustalić, jakie poziomy kierownicze policzono.</td>
+<td>W odpowiedzi spółka użyła określenia „stanowiska managerskie”.</td>
+<td>W analizie przyjęto, że dane odnoszą się do stanowisk wskazanych we wniosku. Użyte określenie nie pozwala jednak tego jednoznacznie potwierdzić.</td>
 </tr>
 <tr>
 <td>Dobre z Lasu</td>
 <td>W badanych okresach nie funkcjonowały takie stanowiska.</td>
-<td>Zera są skutkiem struktury organizacyjnej. Nie dowodzą stabilności obsady istniejących stanowisk dyrektorskich.</td>
+<td>Zera wynikają z deklarowanego braku stanowisk objętych wnioskiem, a nie ze stabilności ich obsady. Spółka wskazała, że takie stanowiska w badanych okresach nie funkcjonowały.</td>
 </tr>
 <tr>
 <td>Centrum Logistyczne Gryf</td>
 <td>Wprost stwierdzono brak rozpoczęć i zakończeń współpracy na stanowiskach dyrektorskich w każdym z okresów.</td>
-<td>Zera są potwierdzone tekstem. Nie wiadomo jednak, ile takich stanowisk istniało.</td>
+<td>Zera są potwierdzone tekstem. Przyjęto, że odnoszą się do pełnego zakresu wniosku, mimo że nie wymieniono osobno kierowników. Nie wiadomo jednak, ile takich stanowisk istniało.</td>
 </tr>
 <tr>
 <td>Stadnina Koni Michałów</td>
@@ -426,13 +461,13 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <td>Tekst nie podaje wprost liczby zakończeń w V–X 2023 ani liczby rozpoczęć w XI 2023–IV 2024. W JSON oba miejsca mają 0.</td>
 <td>To dwa zera niepotwierdzone wprost tekstem odpowiedzi w eksporcie. Mogą wynikać ze skrótu pisma lub ekstrakcji. Wymagają sprawdzenia oryginału.</td>
 </tr>
-</tbody></table></div>
-<p>Poza tymi zastrzeżeniami zakodowane wartości odpowiadają liczbom widocznym w tekstach odpowiedzi. W analizie podstawowej zachowano wartości z <code>Answer category</code>; oddzielnie sprawdzono warianty wyłączeń. Oryginalnego arkusza nie zmieniano.</p>
-</article><article class="report-copy"><h3>3. Sprawdzenie statystyczne</h3><p>Jednostką porównania była spółka. Dla każdego zestawienia okresów porównywano tę samą spółkę ze sobą. Nie traktowano 110 komórek ani poszczególnych zgłoszonych zdarzeń jako niezależnych obserwacji.</p>
-<p>Podstawową metodą był dokładny, dwustronny test kierunków zmian w poszczególnych spółkach. Dla spółek, w których liczba się zmieniła, sprawdzano zgodność kierunku: wzrost lub spadek. Remisy wyłączano z liczebności testu. Hipoteza zerowa zakładała jednakowe prawdopodobieństwo obu kierunków. Obliczenia wykonano funkcją <code>scipy.stats.binomtest(k, n, p=0.5, alternative=&#39;two-sided&#39;)</code>, SciPy 1.17.0. Metoda nie wymaga rozkładu normalnego i ogranicza wpływ wielkości pojedynczej spółki, ale nie uwzględnia wielkości zmian. Może mieć małą moc przy kilku niezerowych różnicach.</p>
-<p>Pomocniczo sprawdzono dokładną enumerację kierunków zmian rang różnic, z rangami średnimi dla remisów i wyłączeniem zer. Dla najmocniejszych zgodnych kierunkowo wyników daje te same p. Ten pomocniczy test wymaga silniejszych założeń i nie zmienia zasadniczego wniosku.</p>
-<p>Ze względu na eksploracyjny charakter analizy uwzględniono wszystkie dziesięć par spośród pięciu okresów i trzy miary: rozpoczęcia, zakończenia oraz ich sumę. To 30 testów. Do ich p zastosowano korektę Holma, aby nie wybierać jedynie najkorzystniejszych porównań. Miary są zależne od siebie; Holm zachowuje kontrolę wielokrotnego testowania także przy takich zależnościach. Saldo omówiono opisowo, bez osobnej rodziny testów potwierdzających.</p>
-<div class="table-wrap"><table>
+</tbody></table></div><p>Poza opisanymi zastrzeżeniami zakodowane wartości odpowiadają liczbom widocznym w tekstach odpowiedzi. W analizie podstawowej zachowano wartości z <code>Answer category</code>; oddzielnie sprawdzono warianty wyłączeń. Oryginalnego arkusza nie zmieniano.</p></div></details>
+</article>
+<article class="report-copy">
+<h3>3. Czy wyniki sprawdziliśmy statystycznie?</h3>
+<p>Tak. Nie ograniczyliśmy się do sumowania zmian: sprawdziliśmy także, czy <strong>podobny kierunek zmian powtarzał się w wielu spółkach</strong>, a nie tylko w jednej dużej. Przykładowo na przełomie 2015/2016 łączna liczba zgłoszonych zdarzeń wzrosła w ośmiu spółkach, spadła w jednej, a w trzech nie zmieniła się.</p>
+<p>To wyraźna obserwacja, lecz nie wystarcza, by uznać ją za potwierdzoną prawidłowość. Po uwzględnieniu wszystkich wykonanych porównań <strong>testy statystyczne nie dały jednoznacznego potwierdzenia</strong> tendencji. Dlatego opisujemy, co widać w danych, ale nie przedstawiamy tych wyników jako dowodu na ogólny mechanizm zmian kadrowych.</p>
+<details class="technical"><summary>Metody, wartości p, korekta Holma i wyniki testów</summary><div class="technical-body"><p>Jednostką porównania była spółka. Dla każdego zestawienia okresów porównywano tę samą spółkę ze sobą. Nie traktowano 120 zakodowanych wartości ani poszczególnych zgłoszonych zdarzeń jako niezależnych obserwacji.</p><p>Podstawową metodą był dokładny, dwustronny test kierunków zmian w poszczególnych spółkach. Dla spółek, w których liczba się zmieniła, sprawdzano zgodność kierunku: wzrost lub spadek. Remisy wyłączano z liczebności testu. Hipoteza zerowa zakładała jednakowe prawdopodobieństwo obu kierunków. Obliczenia wykonano funkcją <code>scipy.stats.binomtest(k, n, p=0.5, alternative='two-sided')</code>, SciPy 1.17.0. Metoda nie wymaga rozkładu normalnego i ogranicza wpływ wielkości pojedynczej spółki, ale nie uwzględnia wielkości zmian. Może mieć małą moc przy kilku niezerowych różnicach.</p><p>Pomocniczo ponownie sprawdzono dokładną enumerację kierunków zmian rang różnic, z rangami średnimi dla remisów i wyłączeniem zer. Dla najsilniejszego wyniku (wzrost liczby zakończeń w 2015/2016) uzyskano takie samo p = 0,00390625. Dla pozostałych porównań wyniki testu rang mogą różnić się od testu kierunków (np. p = 0,0234375 dla wzrostu sumy zdarzeń w 2015/2016). Ta analiza pomocnicza wymaga silniejszych założeń i nie zmienia zasadniczego wniosku.</p><p>Ze względu na eksploracyjny charakter analizy uwzględniono wszystkie dziesięć par spośród pięciu okresów i trzy miary: rozpoczęcia, zakończenia oraz ich sumę. To 30 testów. Do ich p zastosowano korektę Holma, aby nie wybierać jedynie najkorzystniejszych porównań. Miary są zależne od siebie; Holm zachowuje kontrolę wielokrotnego testowania także przy takich zależnościach. Saldo omówiono opisowo, bez osobnej rodziny testów potwierdzających.</p><div class="table-wrap"><table>
 <thead>
 <tr>
 <th>Porównanie: drugi okres wobec pierwszego</th>
@@ -445,71 +480,72 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <tbody><tr>
 <td>V–X 2015 → XI 2015–IV 2016</td>
 <td>Rozpoczęcia</td>
-<td>6 / 0 / 5</td>
-<td>0,0312</td>
-<td>0,8125</td>
-</tr>
-<tr>
-<td>V–X 2015 → XI 2015–IV 2016</td>
-<td>Zakończenia</td>
-<td>8 / 0 / 3</td>
-<td>0,0078</td>
-<td>0,2266</td>
-</tr>
-<tr>
-<td>V–X 2015 → XI 2015–IV 2016</td>
-<td>Rozpoczęcia + zakończenia</td>
-<td>8 / 0 / 3</td>
-<td>0,0078</td>
-<td>0,2266</td>
-</tr>
-<tr>
-<td>XI 2015–IV 2016 → XI 2023–IV 2024</td>
-<td>Rozpoczęcia</td>
-<td>0 / 9 / 2</td>
-<td>0,0039</td>
-<td>0,1172</td>
-</tr>
-<tr>
-<td>XI 2015–IV 2016 → XI 2023–IV 2024</td>
-<td>Zakończenia</td>
-<td>3 / 5 / 3</td>
-<td>0,7266</td>
-<td>1,0000</td>
-</tr>
-<tr>
-<td>XI 2015–IV 2016 → XI 2023–IV 2024</td>
-<td>Rozpoczęcia + zakończenia</td>
-<td>0 / 8 / 3</td>
-<td>0,0078</td>
-<td>0,2266</td>
-</tr>
-<tr>
-<td>V–X 2023 → XI 2023–IV 2024</td>
-<td>Rozpoczęcia</td>
-<td>2 / 5 / 4</td>
-<td>0,4531</td>
-<td>1,0000</td>
-</tr>
-<tr>
-<td>V–X 2023 → XI 2023–IV 2024</td>
-<td>Zakończenia</td>
-<td>6 / 1 / 4</td>
+<td>6 / 1 / 5</td>
 <td>0,1250</td>
 <td>1,0000</td>
 </tr>
 <tr>
-<td>V–X 2023 → XI 2023–IV 2024</td>
+<td>V–X 2015 → XI 2015–IV 2016</td>
+<td>Zakończenia</td>
+<td>9 / 0 / 3</td>
+<td>0,0039</td>
+<td>0,1172</td>
+</tr>
+<tr>
+<td>V–X 2015 → XI 2015–IV 2016</td>
 <td>Rozpoczęcia + zakończenia</td>
-<td>2 / 3 / 6</td>
+<td>8 / 1 / 3</td>
+<td>0,0391</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>XI 2015–IV 2016 → XI 2023–IV 2024</td>
+<td>Rozpoczęcia</td>
+<td>1 / 9 / 2</td>
+<td>0,0215</td>
+<td>0,6230</td>
+</tr>
+<tr>
+<td>XI 2015–IV 2016 → XI 2023–IV 2024</td>
+<td>Zakończenia</td>
+<td>4 / 5 / 3</td>
 <td>1,0000</td>
 <td>1,0000</td>
 </tr>
-</tbody></table></div>
-<p>Najmocniejszy pojedynczy wynik to niższa liczba rozpoczęć w XI 2023–IV 2024 niż w XI 2015–IV 2016: dziewięć spadków i zero wzrostów, p = 0,00390625. Dla 2015/2016 wzrost zakończeń i wzrost sumy ruchów mają p = 0,0078125. Są to niskie p dla pojedynczych hipotez. Po korekcie 30 porównań żaden wynik nie spełnia p &lt; 0,05.</p>
-<p>Nie jest to dowód braku wzorców. Mała liczba spółek i remisów ogranicza moc testów. Jednocześnie niskie nieskorygowane p nie daje automatycznie potwierdzenia wzorca po szerokim przeglądzie danych. Testy należy traktować jako narzędzia eksploracji: ich interpretacja dodatkowo wymaga niezależności kierunków zmian między spółkami, której wspólne decyzje właścicielskie lub powiązania mogą nie zapewniać. Celowy dobór i braki odpowiedzi uniemożliwiają wiarygodne wnioskowanie o całej populacji.</p>
-<h3>Odporność na jakość danych</h3>
-<div class="table-wrap"><table>
+<tr>
+<td>XI 2015–IV 2016 → XI 2023–IV 2024</td>
+<td>Rozpoczęcia + zakończenia</td>
+<td>1 / 8 / 3</td>
+<td>0,0391</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>V–X 2023 → XI 2023–IV 2024</td>
+<td>Rozpoczęcia</td>
+<td>2 / 6 / 4</td>
+<td>0,2891</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>V–X 2023 → XI 2023–IV 2024</td>
+<td>Zakończenia</td>
+<td>7 / 1 / 4</td>
+<td>0,0703</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>V–X 2023 → XI 2023–IV 2024</td>
+<td>Rozpoczęcia + zakończenia</td>
+<td>2 / 3 / 7</td>
+<td>1,0000</td>
+<td>1,0000</td>
+</tr>
+</tbody></table></div><p>Najmocniejszy pojedynczy wynik to wzrost liczby zakończeń współpracy między V–X 2015 a XI 2015–IV 2016: dziewięć wzrostów i zero spadków (p = 0,00390625). Dla porównania rozpoczęć współpracy XI 2015–IV 2016 wobec XI 2023–IV 2024 występuje dziewięć spadków, jeden wzrost i dwa remisy (p = 0,021484375). Dla wzrostu łącznej liczby zdarzeń w 2015/2016 p = 0,0390625. Po korekcie na 30 porównań żaden wynik nie spełnia p &lt; 0,05.</p><p>Nie jest to dowód braku wzorców. Mała liczba spółek i remisów ogranicza moc testów. Jednocześnie niskie nieskorygowane p nie daje automatycznie potwierdzenia wzorca po szerokim przeglądzie danych. Testy należy traktować jako narzędzia eksploracji: ich interpretacja dodatkowo wymaga niezależności kierunków zmian między spółkami, której wspólne decyzje właścicielskie lub powiązania mogą nie zapewniać. Celowy dobór i braki odpowiedzi uniemożliwiają wiarygodne wnioskowanie o całej populacji.</p></div></details>
+</article>
+<article class="report-copy">
+<h3>4. Czy wynik zależy od pojedynczych odpowiedzi?</h3>
+<p>Sprawdziliśmy, co się dzieje po pominięciu spółek, których odpowiedzi wymagają dodatkowej interpretacji. <strong>Główne kierunki zmian pozostały podobne</strong>, ale wyniki testów statystycznych były mniej przekonujące. To kolejny powód, by traktować je jako przesłanki do dalszego badania, a nie ostateczne rozstrzygnięcia.</p>
+<details class="technical"><summary>Tabela wariantów analizy i dokładne wyjaśnienia</summary><div class="technical-body"><div class="table-wrap"><table>
 <thead>
 <tr>
 <th>Wariant</th>
@@ -520,47 +556,49 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 </tr>
 </thead>
 <tbody><tr>
-<td>Wszystkie 11 spółek</td>
-<td>19 → 45</td>
-<td>16 → 42</td>
-<td>35 → 87</td>
-<td>45 → 16</td>
+<td>Wszystkie 12 spółek</td>
+<td>24 → 46</td>
+<td>16 → 44</td>
+<td>40 → 90</td>
+<td>46 → 22</td>
 </tr>
 <tr>
-<td>Bez Rabki i Michałowa (9 spółek)</td>
-<td>17 → 42</td>
-<td>14 → 38</td>
-<td>31 → 80</td>
-<td>42 → 16</td>
+<td>Bez Rabki i Michałowa (10 spółek)</td>
+<td>22 → 43</td>
+<td>14 → 40</td>
+<td>36 → 83</td>
+<td>43 → 22</td>
 </tr>
 <tr>
-<td>Bez Rabki, Michałowa i Janowa (8 spółek)</td>
-<td>16 → 41</td>
-<td>14 → 37</td>
-<td>30 → 78</td>
-<td>41 → 16</td>
+<td>Bez Rabki, Michałowa i Janowa (9 spółek)</td>
+<td>21 → 42</td>
+<td>14 → 39</td>
+<td>35 → 81</td>
+<td>42 → 22</td>
 </tr>
 <tr>
-<td>Bez Rabki, Michałowa, Janowa i Exatela (7 spółek)</td>
-<td>13 → 38</td>
-<td>10 → 33</td>
-<td>23 → 71</td>
-<td>38 → 16</td>
+<td>Bez Rabki, Michałowa, Janowa i Exatela (8 spółek)</td>
+<td>18 → 39</td>
+<td>10 → 35</td>
+<td>28 → 74</td>
+<td>39 → 22</td>
 </tr>
-</tbody></table></div>
-<p>W ostatnim wariancie kierunek najmocniejszych wzorców pozostaje taki sam, ale dla każdego z trzech wzrostów w 2015/2016 i dla spadku rozpoczęć 2023/2024 wobec 2015/2016 zostaje pięć spółek ze zmianą w jednym kierunku. Dokładne dwustronne p wynosi wtedy 0,0625, jeszcze przed korektą. Zera Gryfu i Dobre z Lasu są remisami i nie zwiększają efektywnej liczebności testu. Usunięcie dodatkowo Dobre z Lasu nie zmienia tych p ani sum.</p>
-<p>Przy ostrożniejszym traktowaniu niejednorodnych odpowiedzi widoczny jest więc nadal podobny kierunek, ale formalna istotność słabnie. Nie należy przedstawiać tych danych jako jednoznacznego statystycznego dowodu.</p>
-</article><article class="report-copy"><h3>6. Co jeszcze przydałoby się do wzmocnienia wnioskuów</h3><p>Najbardziej użyteczne uzupełnienia to:</p>
-<ol>
-<li>Liczba stanowisk dyrektorskich i osób je zajmujących na początku i końcu każdego okresu. Umożliwiłoby to porównanie zmian w relacji do wielkości kadry, zamiast samych liczników.</li>
-<li>Jednolita definicja dyrektora, kierownika i menedżera oraz rozdzielenie nowego zatrudnienia od awansu, powierzenia obowiązków i zmiany kontraktu.</li>
+</tbody></table></div><p>Janów pominięto w jednym z wariantów z uwagi na uwzględnienie awansu wewnętrznego jako rozpoczęcia współpracy, a nie z powodu stanowiska kierownika, które mieści się w zakresie wniosku. Wyłączenie Exatela w ostatnim wariancie jest wyłącznie sprawdzeniem odporności na możliwą niejednoznaczność określenia „stanowiska managerskie”; w analizie podstawowej przyjęto w całości dane przekazane przez spółkę.</p><p>W ostatnim wariancie (osiem spółek) wzrost zakończeń w 2015/2016 występuje w sześciu spółkach bez spadków (p = 0,03125 przed korektą). Wzrost rozpoczęć oraz łącznej liczby zdarzeń w 2015/2016 ma po pięć wzrostów i po jednym spadku (p = 0,21875). Porównanie rozpoczęć XI 2015–IV 2016 z XI 2023–IV 2024 daje pięć spadków, jeden wzrost i dwa remisy (p = 0,21875). Zera Gryfu i Dobre z Lasu są remisami; dodatkowe usunięcie Dobre z Lasu nie zmienia wyników tych testów.</p><p>Przy ostrożniejszym traktowaniu niejednorodnych odpowiedzi widoczny jest więc nadal podobny kierunek, ale formalna istotność słabnie. Nie należy przedstawiać tych danych jako jednoznacznego statystycznego dowodu.</p></div></details>
+</article>
+<article class="report-copy">
+<h3>5. Czego jeszcze nie wiemy?</h3>
+<p>Nie znamy dokładnych przyczyn poszczególnych rozpoczęć i zakończeń współpracy. Nie wiemy też, ile stanowisk istniało w każdej spółce w danym czasie. Okresy badania nie tworzą nieprzerwanego szeregu danych. W szczególności same liczby <strong>nie dowodzą politycznych nominacji, nieprawidłowości ani nieuzasadnionych zwolnień</strong>.</p>
+<p>Warto byłoby uzyskać daty zmian i ich przyczyny, liczbę stanowisk w poszczególnych okresach oraz dane za dodatkowe półrocza. Pozwoliłoby to lepiej rozróżnić zwykłe zmiany organizacyjne, awanse i zmiany obsady stanowisk.</p>
+<p>Badane okresy z listopada 2015 i listopada 2023 obejmują także czas <strong>przed powołaniem nowych rządów</strong>. Nie należy więc automatycznie przypisywać wszystkich zdarzeń decyzjom nowej ekipy rządzącej.</p>
+<details class="technical"><summary>Dokładne propozycje dalszych badań i zastrzeżenia dotyczące porównywania okresów</summary><div class="technical-body"><p>Najbardziej użyteczne uzupełnienia to:</p><ol>
+<li>Liczba stanowisk objętych definicją przyjętą we wniosku (stanowisk zawierających w nazwie słowo „dyrektor” lub „kierownik”) oraz osób je zajmujących na początku i końcu każdego okresu. Umożliwiłoby to porównanie zmian w relacji do wielkości badanej kadry, zamiast samych liczników.</li>
+<li>Potwierdzenie, że wszystkie spółki zastosowały definicję stanowisk wskazaną we wniosku, obejmującą nazwy zawierające słowo „dyrektor” lub „kierownik”. W przypadkach niejednoznacznych, takich jak odpowiedź Exatela, konieczne jest ustalenie rzeczywistego zakresu przekazanych danych. Należy również rozróżniać rozpoczęcie zatrudnienia w spółce od objęcia stanowiska w wyniku awansu, powierzenia obowiązków czy zmiany podstawy współpracy.</li>
 <li>Miesiące lub dokładne daty zdarzeń i powody zakończeń. W razie weryfikacji powiązań politycznych potrzebne są dalsze dane o konkretnych osobach, z zachowaniem właściwej podstawy ich pozyskania, a nie sama liczba zmian.</li>
 <li>Dodatkowe okna: V–X 2019, V–X 2024 oraz te same półrocza w latach bez wyborów. Pozwolą ocenić sezonowość, typowy poziom zmian i opóźnienie decyzji kadrowych.</li>
 <li>Oryginały odpowiedzi Rabki i Michałowa oraz doprecyzowanie odpowiedzi Janowa, Exatela i ARP.</li>
-</ol>
-<p>Półrocza w danych obejmują okresy związane czasowo ze zmianami rządów, lecz nie są idealnymi oknami „przed” i „po” faktycznym przejęciu władzy. Rząd Beaty Szydło powołano 16 listopada 2015 r., a rząd Donalda Tuska 13 grudnia 2023 r. Okno zaczynające się 1 listopada obejmuje więc również czas przed powołaniem nowego rządu, a w 2023 roku odcinek ten jest dłuższy. Decyzje w samych spółkach mogą być jeszcze późniejsze. To dodatkowy powód, by pozyskać daty zdarzeń, zanim przypisze się obserwowane różnice konkretnej zmianie politycznej.</p>
-<p>Są też inne niekontrolowane różnice: sytuacja gospodarcza, reorganizacje, wielkość spółek, zmiany zakresu raportowania oraz brak ciągłej serii czasowej. Obserwacja liczb nie pozwala sama ustalić, czy wystąpiły nieprawidłowości, polityczne nominacje ani niezasadne zakończenia współpracy.</p>
-</article></div></div></section><section class="section alt" id="zrodla"><div class="wrap"><div class="section-head"><div class="section-no">07 / Dokumentacja</div><div><h2>Źródła i obliczenia</h2></div></div><article class="report-copy"><h3>8. Źródła i lokalizacja danych</h3><div class="table-wrap"><table>
+</ol><p>Półrocza w danych obejmują okresy związane czasowo ze zmianami rządów, lecz nie są idealnymi oknami „przed” i „po” faktycznym przejęciu władzy. Rząd Beaty Szydło powołano 16 listopada 2015 r., a rząd Donalda Tuska 13 grudnia 2023 r. Okno zaczynające się 1 listopada obejmuje więc również czas przed powołaniem nowego rządu, a w 2023 roku odcinek ten jest dłuższy. Decyzje w samych spółkach mogą być jeszcze późniejsze. To dodatkowy powód, by pozyskać daty zdarzeń, zanim przypisze się obserwowane różnice konkretnej zmianie politycznej.</p><p>Są też inne niekontrolowane różnice: sytuacja gospodarcza, reorganizacje, wielkość spółek, zmiany zakresu raportowania oraz brak ciągłej serii czasowej. Obserwacja liczb nie pozwala sama ustalić, czy wystąpiły nieprawidłowości, polityczne nominacje ani niezasadne zakończenia współpracy.</p></div></details>
+</article>
+</div></div></section><section class="section alt" id="zrodla"><div class="wrap"><div class="section-head"><div class="section-no">07 / Dokumentacja</div><div><h2>Źródła i obliczenia</h2></div></div><article class="report-copy"><h3>Odpowiedzi spółek i materiały źródłowe</h3><p>Analiza zaktualizowana 15 października 2026 r. Źródło: <code>164_liczba-zmian-kadrowych-w-spolkach-skarbu-panstwa.xlsx</code>, arkusz <code>Responses</code>, wiersze 2–25. Liczba wszystkich zapytanych spółek: 20.</p><div class="table-wrap"><table>
 <thead>
 <tr>
 <th>Spółka</th>
@@ -571,68 +609,68 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <tbody><tr>
 <td>AMW TBS „KWATERA”</td>
 <td>2, 3</td>
-<td><a href="https://fedrowanie.siecobywatelska.pl/listy/488997" target="_blank" rel="noopener noreferrer">Pismo</a></td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/488997" rel="noopener noreferrer" target="_blank">Pismo</a></td>
 </tr>
 <tr>
 <td>Stadnina Koni Janów Podlaski</td>
 <td>4, 5</td>
-<td><a href="https://fedrowanie.siecobywatelska.pl/listy/487268" target="_blank" rel="noopener noreferrer">Pismo</a></td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/487268" rel="noopener noreferrer" target="_blank">Pismo</a></td>
 </tr>
 <tr>
 <td>Stadnina Koni Michałów</td>
 <td>6, 7</td>
-<td><a href="https://fedrowanie.siecobywatelska.pl/listy/485806" target="_blank" rel="noopener noreferrer">Pismo</a></td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/485806" rel="noopener noreferrer" target="_blank">Pismo</a></td>
 </tr>
 <tr>
 <td>Agencja Rozwoju Przemysłu</td>
 <td>8, 9</td>
-<td><a href="https://fedrowanie.siecobywatelska.pl/listy/491087" target="_blank" rel="noopener noreferrer">Pismo</a></td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/491087" rel="noopener noreferrer" target="_blank">Pismo</a></td>
 </tr>
 <tr>
 <td>Polskie Koleje Państwowe</td>
 <td>10, 11</td>
-<td><a href="https://fedrowanie.siecobywatelska.pl/listy/492094" target="_blank" rel="noopener noreferrer">Pismo</a></td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/492094" rel="noopener noreferrer" target="_blank">Pismo</a></td>
 </tr>
 <tr>
 <td>Uzdrowisko Rabka</td>
 <td>12, 13</td>
-<td><a href="https://fedrowanie.siecobywatelska.pl/listy/489004" target="_blank" rel="noopener noreferrer">Pismo</a></td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/489004" rel="noopener noreferrer" target="_blank">Pismo</a></td>
 </tr>
 <tr>
 <td>PERN</td>
 <td>14, 15</td>
-<td><a href="https://fedrowanie.siecobywatelska.pl/listy/489870" target="_blank" rel="noopener noreferrer">Pismo</a></td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/489870" rel="noopener noreferrer" target="_blank">Pismo</a></td>
 </tr>
 <tr>
 <td>Centrum Logistyczne Gryf</td>
 <td>16, 17</td>
-<td><a href="https://fedrowanie.siecobywatelska.pl/listy/485516" target="_blank" rel="noopener noreferrer">Pismo</a></td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/485516" rel="noopener noreferrer" target="_blank">Pismo</a></td>
 </tr>
 <tr>
 <td>Polski Holding Hotelowy</td>
 <td>18, 19</td>
-<td><a href="https://fedrowanie.siecobywatelska.pl/listy/491973" target="_blank" rel="noopener noreferrer">Pismo</a></td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/491973" rel="noopener noreferrer" target="_blank">Pismo</a></td>
 </tr>
 <tr>
 <td>Exatel</td>
 <td>20, 21</td>
-<td><a href="https://fedrowanie.siecobywatelska.pl/listy/489571" target="_blank" rel="noopener noreferrer">Pismo</a></td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/489571" rel="noopener noreferrer" target="_blank">Pismo</a></td>
 </tr>
 <tr>
 <td>Dobre z Lasu</td>
 <td>22, 23</td>
-<td><a href="https://fedrowanie.siecobywatelska.pl/listy/484959" target="_blank" rel="noopener noreferrer">Pismo</a></td>
+<td><a href="https://fedrowanie.siecobywatelska.pl/listy/484959" rel="noopener noreferrer" target="_blank">Pismo</a></td>
 </tr>
-</tbody></table></div>
+<tr><td>Polskie Elektrownie Jądrowe</td><td>24, 25</td><td><a href="https://fedrowanie.siecobywatelska.pl/listy/493660" rel="noopener noreferrer" target="_blank">Pismo</a></td></tr></tbody></table></div>
 <p>Linki do pism pochodzą z eksportu i ułatwiają weryfikację.</p>
 <p>Dodatkowe źródła dotyczą tylko metod i kontekstu dat, a nie liczb spółek:</p>
 <ul>
-<li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html" target="_blank" rel="noopener noreferrer">Dokumentacja SciPy: binomtest</a>.</li>
-<li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wilcoxon.html" target="_blank" rel="noopener noreferrer">Dokumentacja SciPy: wilcoxon</a>.</li>
-<li><a href="https://www.prezydent.pl/kancelaria/archiwum/andrzej-duda/aktualnosci/nominacje/prezydent-powolal-rzad,7469" target="_blank" rel="noopener noreferrer">Prezydent RP: powołanie rządu 16 listopada 2015 r.</a>.</li>
-<li><a href="https://www.prezydent.pl/kancelaria/archiwum/andrzej-duda/aktualnosci/nominacje/prezydent-powolal-premiera-oraz-rade-ministrow,78734" target="_blank" rel="noopener noreferrer">Prezydent RP: powołanie rządu 13 grudnia 2023 r.</a>.</li>
+<li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html" rel="noopener noreferrer" target="_blank">Dokumentacja SciPy: binomtest</a>.</li>
+<li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wilcoxon.html" rel="noopener noreferrer" target="_blank">Dokumentacja SciPy: wilcoxon</a>.</li>
+<li><a href="https://www.prezydent.pl/kancelaria/archiwum/andrzej-duda/aktualnosci/nominacje/prezydent-powolal-rzad,7469" rel="noopener noreferrer" target="_blank">Prezydent RP: powołanie rządu 16 listopada 2015 r.</a>.</li>
+<li><a href="https://www.prezydent.pl/kancelaria/archiwum/andrzej-duda/aktualnosci/nominacje/prezydent-powolal-premiera-oraz-rade-ministrow,78734" rel="noopener noreferrer" target="_blank">Prezydent RP: powołanie rządu 13 grudnia 2023 r.</a>.</li>
 </ul>
-</article><details class="appendix"><summary>9. Wszystkie 30 wyników testów kierunków zmian w poszczególnych spółkach</summary><div class="report-copy"><p>Kierunek zmiany: drugi okres wobec pierwszego. „Remis” oznacza identyczne liczby w obu okresach.</p>
+</article><details class="appendix"><summary>Pełne wyniki 30 testów statystycznych</summary><div class="report-copy"><p>Kierunek zmiany: drugi okres wobec pierwszego. „Remis” oznacza identyczne liczby w obu okresach.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -651,159 +689,159 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <td>XI 2015–IV 2016</td>
 <td>Rozpoczęcia</td>
 <td>6</td>
-<td>0</td>
+<td>1</td>
 <td>5</td>
-<td>0,0312</td>
-<td>0,8125</td>
-</tr>
-<tr>
-<td>V–X 2015</td>
-<td>XI 2015–IV 2016</td>
-<td>Zakończenia</td>
-<td>8</td>
-<td>0</td>
-<td>3</td>
-<td>0,0078</td>
-<td>0,2266</td>
-</tr>
-<tr>
-<td>V–X 2015</td>
-<td>XI 2015–IV 2016</td>
-<td>Rozpoczęcia + zakończenia</td>
-<td>8</td>
-<td>0</td>
-<td>3</td>
-<td>0,0078</td>
-<td>0,2266</td>
-</tr>
-<tr>
-<td>V–X 2015</td>
-<td>XI 2019–IV 2020</td>
-<td>Rozpoczęcia</td>
-<td>4</td>
-<td>3</td>
-<td>4</td>
-<td>1,0000</td>
-<td>1,0000</td>
-</tr>
-<tr>
-<td>V–X 2015</td>
-<td>XI 2019–IV 2020</td>
-<td>Zakończenia</td>
-<td>6</td>
-<td>2</td>
-<td>3</td>
-<td>0,2891</td>
-<td>1,0000</td>
-</tr>
-<tr>
-<td>V–X 2015</td>
-<td>XI 2019–IV 2020</td>
-<td>Rozpoczęcia + zakończenia</td>
-<td>4</td>
-<td>5</td>
-<td>2</td>
-<td>1,0000</td>
-<td>1,0000</td>
-</tr>
-<tr>
-<td>V–X 2015</td>
-<td>V–X 2023</td>
-<td>Rozpoczęcia</td>
-<td>3</td>
-<td>3</td>
-<td>5</td>
-<td>1,0000</td>
-<td>1,0000</td>
-</tr>
-<tr>
-<td>V–X 2015</td>
-<td>V–X 2023</td>
-<td>Zakończenia</td>
-<td>3</td>
-<td>3</td>
-<td>5</td>
-<td>1,0000</td>
-<td>1,0000</td>
-</tr>
-<tr>
-<td>V–X 2015</td>
-<td>V–X 2023</td>
-<td>Rozpoczęcia + zakończenia</td>
-<td>3</td>
-<td>5</td>
-<td>3</td>
-<td>0,7266</td>
-<td>1,0000</td>
-</tr>
-<tr>
-<td>V–X 2015</td>
-<td>XI 2023–IV 2024</td>
-<td>Rozpoczęcia</td>
-<td>2</td>
-<td>5</td>
-<td>4</td>
-<td>0,4531</td>
-<td>1,0000</td>
-</tr>
-<tr>
-<td>V–X 2015</td>
-<td>XI 2023–IV 2024</td>
-<td>Zakończenia</td>
-<td>4</td>
-<td>0</td>
-<td>7</td>
 <td>0,1250</td>
 <td>1,0000</td>
 </tr>
 <tr>
 <td>V–X 2015</td>
-<td>XI 2023–IV 2024</td>
+<td>XI 2015–IV 2016</td>
+<td>Zakończenia</td>
+<td>9</td>
+<td>0</td>
+<td>3</td>
+<td>0,0039</td>
+<td>0,1172</td>
+</tr>
+<tr>
+<td>V–X 2015</td>
+<td>XI 2015–IV 2016</td>
 <td>Rozpoczęcia + zakończenia</td>
+<td>8</td>
+<td>1</td>
+<td>3</td>
+<td>0,0391</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>V–X 2015</td>
+<td>XI 2019–IV 2020</td>
+<td>Rozpoczęcia</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>1,0000</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>V–X 2015</td>
+<td>XI 2019–IV 2020</td>
+<td>Zakończenia</td>
+<td>7</td>
+<td>2</td>
+<td>3</td>
+<td>0,1797</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>V–X 2015</td>
+<td>XI 2019–IV 2020</td>
+<td>Rozpoczęcia + zakończenia</td>
+<td>4</td>
+<td>6</td>
+<td>2</td>
+<td>0,7539</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>V–X 2015</td>
+<td>V–X 2023</td>
+<td>Rozpoczęcia</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td>1,0000</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>V–X 2015</td>
+<td>V–X 2023</td>
+<td>Zakończenia</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td>1,0000</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>V–X 2015</td>
+<td>V–X 2023</td>
+<td>Rozpoczęcia + zakończenia</td>
+<td>4</td>
 <td>5</td>
 <td>3</td>
+<td>1,0000</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>V–X 2015</td>
+<td>XI 2023–IV 2024</td>
+<td>Rozpoczęcia</td>
 <td>3</td>
+<td>5</td>
+<td>4</td>
 <td>0,7266</td>
 <td>1,0000</td>
 </tr>
 <tr>
-<td>XI 2015–IV 2016</td>
-<td>XI 2019–IV 2020</td>
-<td>Rozpoczęcia</td>
-<td>2</td>
-<td>6</td>
-<td>3</td>
-<td>0,2891</td>
-<td>1,0000</td>
-</tr>
-<tr>
-<td>XI 2015–IV 2016</td>
-<td>XI 2019–IV 2020</td>
+<td>V–X 2015</td>
+<td>XI 2023–IV 2024</td>
 <td>Zakończenia</td>
-<td>4</td>
 <td>5</td>
-<td>2</td>
-<td>1,0000</td>
+<td>0</td>
+<td>7</td>
+<td>0,0625</td>
 <td>1,0000</td>
 </tr>
 <tr>
-<td>XI 2015–IV 2016</td>
-<td>XI 2019–IV 2020</td>
+<td>V–X 2015</td>
+<td>XI 2023–IV 2024</td>
 <td>Rozpoczęcia + zakończenia</td>
-<td>3</td>
 <td>6</td>
-<td>2</td>
+<td>3</td>
+<td>3</td>
 <td>0,5078</td>
 <td>1,0000</td>
 </tr>
 <tr>
 <td>XI 2015–IV 2016</td>
+<td>XI 2019–IV 2020</td>
+<td>Rozpoczęcia</td>
+<td>2</td>
+<td>7</td>
+<td>3</td>
+<td>0,1797</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>XI 2015–IV 2016</td>
+<td>XI 2019–IV 2020</td>
+<td>Zakończenia</td>
+<td>4</td>
+<td>5</td>
+<td>3</td>
+<td>1,0000</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>XI 2015–IV 2016</td>
+<td>XI 2019–IV 2020</td>
+<td>Rozpoczęcia + zakończenia</td>
+<td>3</td>
+<td>7</td>
+<td>2</td>
+<td>0,3438</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>XI 2015–IV 2016</td>
 <td>V–X 2023</td>
 <td>Rozpoczęcia</td>
-<td>1</td>
+<td>2</td>
 <td>5</td>
 <td>5</td>
-<td>0,2188</td>
+<td>0,4531</td>
 <td>1,0000</td>
 </tr>
 <tr>
@@ -812,7 +850,7 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <td>Zakończenia</td>
 <td>1</td>
 <td>7</td>
-<td>3</td>
+<td>4</td>
 <td>0,0703</td>
 <td>1,0000</td>
 </tr>
@@ -820,50 +858,50 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <td>XI 2015–IV 2016</td>
 <td>V–X 2023</td>
 <td>Rozpoczęcia + zakończenia</td>
-<td>1</td>
+<td>2</td>
 <td>7</td>
 <td>3</td>
-<td>0,0703</td>
+<td>0,1797</td>
 <td>1,0000</td>
 </tr>
 <tr>
 <td>XI 2015–IV 2016</td>
 <td>XI 2023–IV 2024</td>
 <td>Rozpoczęcia</td>
-<td>0</td>
+<td>1</td>
 <td>9</td>
 <td>2</td>
-<td>0,0039</td>
-<td>0,1172</td>
+<td>0,0215</td>
+<td>0,6230</td>
 </tr>
 <tr>
 <td>XI 2015–IV 2016</td>
 <td>XI 2023–IV 2024</td>
 <td>Zakończenia</td>
-<td>3</td>
+<td>4</td>
 <td>5</td>
 <td>3</td>
-<td>0,7266</td>
+<td>1,0000</td>
 <td>1,0000</td>
 </tr>
 <tr>
 <td>XI 2015–IV 2016</td>
 <td>XI 2023–IV 2024</td>
 <td>Rozpoczęcia + zakończenia</td>
-<td>0</td>
+<td>1</td>
 <td>8</td>
 <td>3</td>
-<td>0,0078</td>
-<td>0,2266</td>
+<td>0,0391</td>
+<td>1,0000</td>
 </tr>
 <tr>
 <td>XI 2019–IV 2020</td>
 <td>V–X 2023</td>
 <td>Rozpoczęcia</td>
-<td>4</td>
+<td>5</td>
 <td>3</td>
 <td>4</td>
-<td>1,0000</td>
+<td>0,7266</td>
 <td>1,0000</td>
 </tr>
 <tr>
@@ -872,7 +910,7 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <td>Zakończenia</td>
 <td>1</td>
 <td>6</td>
-<td>4</td>
+<td>5</td>
 <td>0,1250</td>
 <td>1,0000</td>
 </tr>
@@ -880,27 +918,27 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <td>XI 2019–IV 2020</td>
 <td>V–X 2023</td>
 <td>Rozpoczęcia + zakończenia</td>
-<td>2</td>
+<td>3</td>
 <td>5</td>
 <td>4</td>
-<td>0,4531</td>
-<td>1,0000</td>
-</tr>
-<tr>
-<td>XI 2019–IV 2020</td>
-<td>XI 2023–IV 2024</td>
-<td>Rozpoczęcia</td>
-<td>3</td>
-<td>5</td>
-<td>3</td>
 <td>0,7266</td>
 <td>1,0000</td>
 </tr>
 <tr>
 <td>XI 2019–IV 2020</td>
 <td>XI 2023–IV 2024</td>
-<td>Zakończenia</td>
+<td>Rozpoczęcia</td>
+<td>4</td>
+<td>5</td>
 <td>3</td>
+<td>1,0000</td>
+<td>1,0000</td>
+</tr>
+<tr>
+<td>XI 2019–IV 2020</td>
+<td>XI 2023–IV 2024</td>
+<td>Zakończenia</td>
+<td>4</td>
 <td>4</td>
 <td>4</td>
 <td>1,0000</td>
@@ -910,10 +948,10 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <td>XI 2019–IV 2020</td>
 <td>XI 2023–IV 2024</td>
 <td>Rozpoczęcia + zakończenia</td>
-<td>3</td>
+<td>4</td>
 <td>5</td>
 <td>3</td>
-<td>0,7266</td>
+<td>1,0000</td>
 <td>1,0000</td>
 </tr>
 <tr>
@@ -921,19 +959,19 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <td>XI 2023–IV 2024</td>
 <td>Rozpoczęcia</td>
 <td>2</td>
-<td>5</td>
+<td>6</td>
 <td>4</td>
-<td>0,4531</td>
+<td>0,2891</td>
 <td>1,0000</td>
 </tr>
 <tr>
 <td>V–X 2023</td>
 <td>XI 2023–IV 2024</td>
 <td>Zakończenia</td>
-<td>6</td>
+<td>7</td>
 <td>1</td>
 <td>4</td>
-<td>0,1250</td>
+<td>0,0703</td>
 <td>1,0000</td>
 </tr>
 <tr>
@@ -942,19 +980,19 @@ section[id]{scroll-margin-top:90px} .report-copy{margin:36px 0 0;font-size:17px;
 <td>Rozpoczęcia + zakończenia</td>
 <td>2</td>
 <td>3</td>
-<td>6</td>
+<td>7</td>
 <td>1,0000</td>
 <td>1,0000</td>
 </tr>
 </tbody></table></div>
-</div></details><details class="appendix"><summary>10. Odtworzenie podstawowych obliczeń</summary><div class="report-copy"><p>Poniższy kod odczytuje dostarczony eksport, liczy sumy i wykonuje wszystkie 30 dokładnych testów kierunków zmian w poszczególnych spółkach wraz z korektą Holma. Zatrzymuje odczyt po 30 kolejnych pustych wierszach, ponieważ arkusz ma rozciągnięte formatowanie do ostatniego wiersza. W tym pliku po wierszu 23 nie znaleziono kolejnych rekordów.</p>
+</div></details><details class="appendix"><summary>Kod umożliwiający odtworzenie obliczeń</summary><div class="report-copy"><p>Poniższy kod odczytuje dostarczony eksport, liczy sumy i wykonuje wszystkie 30 dokładnych testów kierunków zmian w poszczególnych spółkach wraz z korektą Holma. Zatrzymuje odczyt po 30 kolejnych pustych wierszach, ponieważ arkusz ma rozciągnięte formatowanie. W tym pliku po wierszu 25 nie znaleziono kolejnych rekordów.</p>
 <pre><code class="language-python">import itertools
 import json
 import numpy as np
 import openpyxl
 from scipy.stats import binomtest
 
-path = &#39;164_liczba-zmian-kadrowych-w-spolkach-skarbu-panstwa.xlsx&#39;
+path = '164_liczba-zmian-kadrowych-w-spolkach-skarbu-panstwa.xlsx'
 ws = openpyxl.load_workbook(path, read_only=True, data_only=True).active
 iterator = ws.iter_rows(values_only=True)
 headers = next(iterator)
@@ -969,23 +1007,23 @@ for values in iterator:
     empty = 0
     records.append(dict(zip(headers, values)))
 
-periods = sorted(json.loads(records[0][&#39;Answer category&#39;]))
+periods = sorted(json.loads(records[0]['Answer category']))
 companies = {}
 for row in records:
-    company = companies.setdefault(row[&#39;Institution id&#39;], {})
-    metric = &#39;H&#39; if str(row[&#39;Question no&#39;]) == &#39;1&#39; else &#39;D&#39;
+    company = companies.setdefault(row['Institution id'], {})
+    metric = 'H' if str(row['Question no']) == '1' else 'D'
     assert metric not in company  # wykrywa powtórzenie spółki i pytania
-    category = json.loads(row[&#39;Answer category&#39;])
+    category = json.loads(row['Answer category'])
     assert set(category) == set(periods)
     assert all(type(category[p]) is int and category[p] &gt;= 0 for p in periods)
     company[metric] = [category[p] for p in periods]
 
-H = np.array([c[&#39;H&#39;] for c in companies.values()])
-D = np.array([c[&#39;D&#39;] for c in companies.values()])
-metrics = {&#39;H&#39;: H, &#39;D&#39;: D, &#39;G&#39;: H + D}
+H = np.array([c['H'] for c in companies.values()])
+D = np.array([c['D'] for c in companies.values()])
+metrics = {'H': H, 'D': D, 'G': H + D}
 for label, values in metrics.items():
     print(label, values.sum(axis=0))
-print(&#39;Saldo&#39;, (H - D).sum(axis=0))
+print('Saldo', (H - D).sum(axis=0))
 
 tests = []
 for left, right in itertools.combinations(range(5), 2):
@@ -1000,26 +1038,26 @@ for left, right in itertools.combinations(range(5), 2):
                           ties=int((delta == 0).sum()), p=p))
 
 previous = 0.0
-for rank, result in enumerate(sorted(tests, key=lambda t: t[&#39;p&#39;])):
-    previous = max(previous, min(1.0, (len(tests) - rank) * result[&#39;p&#39;]))
-    result[&#39;p_holm&#39;] = previous
+for rank, result in enumerate(sorted(tests, key=lambda t: t['p'])):
+    previous = max(previous, min(1.0, (len(tests) - rank) * result['p']))
+    result['p_holm'] = previous
 for result in tests:
     print(result)
 </code></pre>
-</div></details></div></section></main><footer><div class="footer-inner"><a class="footer-brand" href="https://siecobywatelska.pl/" target="_blank" rel="noopener" aria-label="Sieć Obywatelska Watchdog Polska">
-      <img class="footer-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iV2Fyc3R3YV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDQwNC4zMjEgMTAwLjU1NSI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8cGF0aCBkPSJNMTcuMjgyLDIxLjM5NWMwLDIuNzExLTIuMDMsMy45MDUtNC42NTksMy45MDUtMi44ODMsMC01LjIyMi0uMjk1LTUuMjIyLS4yOTV2LTIuMjg0czIuMjkuMjg3LDQuNzc0LjI4N2MxLjIxLDAsMS44MzEtLjM2OCwxLjgzMS0xLjM1OCwwLTIuNTkzLTcuNDUtMi4xNzktNy40NS02LjkxMywwLTIuNzA4LDIuMDA3LTMuODk0LDQuNjMtMy44OTQsMi45MTEsMCw1LjI0OC4yODEsNS4yNDguMjgxdjIuMjg0cy0yLjU5Ni0uMjQ5LTUuMTA4LS4yNDljLTEuMDcxLDAtMS41NDkuNDIyLTEuNTQ5LDEuMzE4LDAsMi4zNDUsNy41MDUsMi4yMDksNy41MDUsNi45MThoMFoiLz4KICA8cGF0aCBkPSJNMjEuODMxLDYuMjFjMS42MTIsMCwxLjgwOS4xMzgsMS44MDksMS42MzgsMCwxLjMyOS0uMTY2LDEuNjY5LTEuODA5LDEuNjY5LTEuNjY4LDAtMS44MDQtLjMxMS0xLjgwNC0xLjY2OSwwLTEuNDA5LjEzNi0xLjYzOCwxLjgwNC0xLjYzOGgwWk0yMC4yMjUsMTEuMTIzaDMuMjV2MTQuMDgyaC0zLjI1di0xNC4wODJoMFpNMjAuMjI1LDI1LjIwNXYtMTQuMDgyLDE0LjA4MloiLz4KICA8cGF0aCBkPSJNMzguNDU2LDE4Ljk3M2gtMS4wMDdjLTIuNTQxLjAyNS01LjA1NC4wMjUtNy41OTIuMDU3LjAyMywxLjkxNy4xNjMsMi44NzkuNjk1LDMuNTI0LjUzOC42NzcsMS43NTYuNjc3LDIuODMuNjc3LjcyOSwwLDIuMzk2LS4wODYsNC4yNjItLjI3N3YxLjk3MWMtMS44NjYuMzE2LTMuNzc4LjUzOS01LjUzNC41MzktNC41NDQsMC01LjM4OS0xLjgwOC01LjM4OS03LjMzNywwLTUuNjc4LjcwMi03LjM0MSw1Ljg2OS03LjM0MSw0Ljk2NiwwLDUuODY2LDEuNjA2LDUuODY2LDcuMzA4di44NzloMFpNMjkuODgsMTYuODIyaDUuNTYzYy0uMTE0LTMuMjQyLS40MjUtMy44NC0yLjg1My0zLjg0LTIuNTkzLDAtMi41OTMsMS4xMzEtMi43MSwzLjg0aDBaIi8+CiAgPHBhdGggZD0iTTQ4LjIxLDIzLjE0NmMxLjA2OCwwLDIuNzY2LS4xMzgsNC4wMzYtLjI1djEuOTc1Yy0xLjQ2NS4zMzUtMy43MjQuNTk0LTUuMjIxLjU5NC0zLjkyMSwwLTUuNzMtLjcwMy01LjczLTYuNjEsMC02LjMyNC41OS04LjA0NCw1LjczLTguMDQ0LjQyNywwLDMuMzY0LjE0LDUuMDc5LjQ1NnYyLjE3MWMtMy4yOTktLjI1Ni00LjQyOC0uMzExLTQuNzEzLS4zMTEtMi44MjYsMC0yLjg3NiwxLjA3Ni0yLjg3Niw1LjgxMiwwLDMuODcuOTI4LDQuMjA3LDMuNjk1LDQuMjA3aDBaTTUwLjA3NCw0Ljk3bC0yLjgyMSw0Ljc2LTEuOTczLTEuMDM1LDIuNjc4LTQuODI3LDIuMTE2LDEuMTAyaDBaIi8+CiAgPHBhdGggZD0iTTYxLjM2NiwxOC4xNTZjMC01Ljc4Ny44NS03LjMxLDUuOTg3LTcuMzEsNS4xOTEsMCw2LjA0MywxLjYzNSw2LjA0Myw3LjMxcy0uODUyLDcuMzA5LTYuMDQzLDcuMzA5Yy01LjIyMywwLTUuOTg3LTEuNjY1LTUuOTg3LTcuMzA5aDBaTTcwLjIzMSwxOC4xNTZjMC00LjQwNi0uMjgzLTUuMjI4LTIuODc3LTUuMjI4LTIuNjMsMC0yLjg1Mi45NC0yLjg1Miw1LjIyOCwwLDQuMjYxLjIyMiw1LjEzNCwyLjg1Miw1LjEzNCwyLjY1MiwwLDIuODc3LS44NzMsMi44NzctNS4xMzRoMFoiLz4KICA8cGF0aCBkPSJNODIuMTU0LDI1LjQ0Yy0xLjM4OCwwLTMuNjcyLS4xNzMtNS4zNy0uMzk2VjUuNjhoMy4wOHY1LjY3YzEuMTA2LS4yNzgsMi43MS0uNDgyLDMuNDY3LS40ODIsMy40MTksMCw0LjY2NiwxLjc4Myw0LjY2Niw2LjI5MywwLDUuNzM1LS41Nyw4LjI3OS01Ljg0Myw4LjI3OWgwWk04Mi42NjUsMTMuMjQzYy0uNzkzLDAtMS44MTUuMTY5LTIuNzc3LjM5N3Y5LjM5NGMuNTk4LjAzMywxLjM4Ny4wMzMsMi4wOTMuMDMzaC4xMTZjMi42OCwwLDIuNzA3LTEuNzU1LDIuNzA3LTUuNzU1LDAtMi45MTQtLjE5Ni00LjA2OS0yLjEzOS00LjA2OWgwWiIvPgogIDxwb2x5Z29uIHBvaW50cz0iOTYuNjQ2IDMwLjU3MyA5My43NTkgMzAuNTczIDk1LjQ1IDI1LjIxMyA5NC42MDkgMjUuMjEzIDg5Ljc4MiAxMS4xMDEgOTMuMDU2IDExLjEwMSA5Ni40NjkgMjEuODAxIDk5Ljg5IDExLjEwMSAxMDMuMTU4IDExLjEwMSA5Ni42NDYgMzAuNTczIDk2LjY0NiAzMC41NzMiLz4KICA8cG9seWdvbiBwb2ludHM9IjEwNC4zODUgMTEuMSAxMDcuNTQ1IDExLjEgMTA5LjYzMSAyMC42NTkgMTEyLjM0NSAxMS4xIDExNS44NjggMTEuMSAxMTguNjEgMjAuNjU5IDEyMC43MjkgMTEuMSAxMjMuODY0IDExLjEgMTIwLjY5NSAyNS4yMTIgMTE2LjkxMSAyNS4yMTIgMTE0LjEyMSAxNS4zMDIgMTExLjM4MiAyNS4yMTIgMTA3LjU0NSAyNS4yMTIgMTA0LjM4NSAxMS4xIDEwNC4zODUgMTEuMSIvPgogIDxwYXRoIGQ9Ik0xMzcuMjQ0LDI1LjIxMmgtMi43MzFsLS4yMzMtMS4wNDVjLTEuMjY3LjY0OS0yLjkwMywxLjI5Ny00LjI4NCwxLjI5Ny0zLjA3OCwwLTQuMDk3LTIuMDU3LTQuMDk3LTQuNjI4LDAtMy4yNTMsMi4yOTQtMy44NjYsNS4zMzctMy44MzhsMi44MjUuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzYtMS41NTItMS42OTUsMC0zLjcyOS4yNzgtNC44ODUuNDQ3LS4wMjctLjA4My0uNDc0LTIuMDkzLS40NzQtMi4yMDIsMi4xMzctLjM5NSw0LjAzMi0uNTYxLDUuNzUtLjU2MSwzLjI0NywwLDQuNzY4LjY0OCw0Ljc2OCwzLjk1MXYxMC40NDRoMFpNMTM0LjA2MSwxOS4wM2MtMy44NjcsMC01LjA1OC4xNjYtNS4wNTgsMS45MiwwLDEuMTc1LjMxNywyLjAwNCwxLjMwMywyLjAwNC45MywwLDIuNjgtLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBhdGggZD0iTTE0Mi44NDYsMTkuOTAzdi02LjU3N2gtMy4xNjF2LTIuMjI1aDMuMTYxdi0zLjQ3NmgzLjE4NXYzLjQ3NmgzLjIxOHYyLjIyNWgtMy4yMTh2Ny4zN2MwLDIuMjU5LjQ4NiwyLjU2NCwxLjg5NSwyLjU2NC40MjUsMCwuOTY0LDAsMS42NDMtLjAyNGwuMDI0LDEuOTQ0Yy0uOTM0LjIzMi0xLjYzNi4yODUtMi4wODguMjg1LTQuMzI0LDAtNC42NTktMi4xNS00LjY1OS01LjU2MmgwWiIvPgogIDxwYXRoIGQ9Ik0xNjMuNTY3LDE4Ljk3M2gtMS4wMTFjLTIuNTQuMDI1LTUuMDUxLjAyNS03LjU5Ni4wNTcuMDMyLDEuOTIuMTcyLDIuODc5LjcwNCwzLjUzNC41MzguNjcxLDEuNzUxLjY3MSwyLjgyNS42NzEuNzM3LDAsMi4zOTgtLjA4Myw0LjI1OC0uMjgxdjEuOTcxYy0xLjg2LjMxNi0zLjc4MS41MzktNS41MjguNTM5LTQuNTQ0LDAtNS4zOTMtMS44MDUtNS4zOTMtNy4zMzUsMC01LjY3Ny43MDQtNy4zNDMsNS44NzEtNy4zNDMsNC45NjgsMCw1Ljg3LDEuNjA5LDUuODcsNy4zMTV2Ljg3MmgwWk0xNTQuOTkzLDE2LjgzaDUuNTU5Yy0uMTExLTMuMjUtLjQyMy0zLjg0MS0yLjg1NC0zLjg0MS0yLjU5MywwLTIuNTkzLDEuMTMyLTIuNzA1LDMuODQxaDBaIi8+CiAgPHBhdGggZD0iTTE3MS40NTIsMjUuMjk5Yy0uOTA1LjE0LTEuMDQyLjE0LTEuMjEzLjE0LTIuMDI5LDAtMy41LS43NjctMy41LTQuMDk3VjUuOTU4aDMuMTg3djE1Ljg5NmMwLC44NzUsMCwxLjYxLDEuNTI2LDEuODM3djEuNjA4aDBaIi8+CiAgPHBhdGggZD0iTTE4My45MDQsMjEuNDAxYzAsMi43MDUtMi4wMywzLjg5OC00LjY1OCwzLjg5OC0yLjg4MSwwLTUuMjIzLS4yODYtNS4yMjMtLjI4NnYtMi4yODRzMi4yODcuMjc5LDQuNzcxLjI3OWMxLjIxOCwwLDEuODM1LS4zNjQsMS44MzUtMS4zNTUsMC0yLjU5LTcuNDUxLTIuMTc2LTcuNDUxLTYuOTEzLDAtMi43MTIsMi4wMDItMy44OTUsNC42My0zLjg5NSwyLjkwNiwwLDUuMjUuMjc4LDUuMjUuMjc4djIuMjg4cy0yLjU5OS0uMjUyLTUuMTA3LS4yNTJjLTEuMDc5LDAtMS41NTYuNDIxLTEuNTU2LDEuMzIyLDAsMi4zNDksNy41MDksMi4yLDcuNTA5LDYuOTJoMFoiLz4KICA8cG9seWdvbiBwb2ludHM9IjE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgNS45MjkgMTg5Ljk3OSA1LjkyOSAxODkuOTc5IDE1LjkxOCAxOTIuMDEyIDE1LjkxOCAxOTUuNzA4IDkuMDY2IDE5OS4wMzkgOS4wNjYgMTk0LjcyMSAxNy4wNTYgMTk5Ljc0NiAyNS4yMTIgMTk2LjMzIDI1LjIxMiAxOTIuMDQgMTguMjYzIDE4OS45NzkgMTguMjYzIDE4OS45NzkgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIi8+CiAgPHBhdGggZD0iTTIxMi4zNDEsMjUuMjEyaC0yLjczMmwtLjIzMy0xLjA0NWMtMS4yNjYuNjQ5LTIuOTAzLDEuMjk3LTQuMjgzLDEuMjk3LTMuMDgsMC00LjA5OS0yLjA1Ny00LjA5OS00LjYyOCwwLTMuMjUzLDIuMjktMy44NjYsNS4zMzMtMy44MzhsMi44MjYuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzctMS41NTItMS42OTEsMC0zLjcyNi4yNzgtNC44ODUuNDQ3LS4wMjEtLjA4My0uNDc3LTIuMDkzLS40NzctMi4yMDIsMi4xNDMtLjM5NSw0LjAzMy0uNTYxLDUuNzU0LS41NjEsMy4yNDgsMCw0Ljc3My42NDgsNC43NzMsMy45NTF2MTAuNDQ0aDBaTTIwOS4xNTMsMTkuMDNjLTMuODY5LDAtNS4wNTQuMTY2LTUuMDU0LDEuOTIsMCwxLjE3NS4zMTcsMi4wMDQsMS4yOTksMi4wMDQuOTI5LDAsMi42NzctLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBvbHlnb24gcG9pbnRzPSI2LjM4IDQyLjE3NiAxNi41NTEgNDIuMTc2IDIxLjc5NSA2Ni40OTUgMjguNTUyIDQyLjE3NiAzOS41MTcgNDIuMTc2IDQ2LjUwOSA2Ni40OTUgNTEuNzU1IDQyLjE3NiA2MS44NDggNDIuMTc2IDUzLjAyNyA4MS45MTEgNDEuMjY2IDgxLjkxMSAzNC4xMTUgNTYuMjQzIDI3LjEyMiA4MS45MTEgMTUuMjggODEuOTExIDYuMzggNDIuMTc2IDYuMzggNDIuMTc2IiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTk5Ljg1OSw4MS45MTFoLTguNzQyYy0uMjM3LS44NzYtLjQ3Ni0yLjMwMy0uNzE1LTMuMTc3LTMuMzM4LDEuOTg0LTcuNDY5LDMuODkyLTExLjIwNSwzLjg5Mi05LjEzNywwLTEyLjE1OC01Ljg4MS0xMi4xNTgtMTMuMTkxLDAtNy4yMzIsMy45NzUtMTAuMDk0LDkuODU1LTEwLjgwNiwxLjc0Ny0uMjM5LDMuNjU1LS4yMzksMTIuNzE1LjIzN3YtNi4zNTdjMC0zLjczNS0xLjY2OS0zLjk3Mi00Ljc3MS0zLjk3Mi00LjYwNiwwLTEwLjI1LjM5NS0xMy45ODUuOTUyLS4wNzgtLjIzOS0xLjUxMS02LjE5OC0xLjUxMS02LjU5OCw2LjI3OC0xLjExLDExLjc2My0xLjUwOCwxNi42OS0xLjUwOCw5LjM3NywwLDEzLjgyNywxLjkwOCwxMy44MjcsMTEuMjgydjI5LjI0NmgwWk04OS42MDksNjQuNzQ2Yy05LjQ1OCwwLTEyLjU1Ni41NTYtMTIuNTU2LDUuMDg3LDAsMi45NC44NzMsNS4wMDUsMy4wMTgsNS4wMDUsMS45ODgsMCw2LjUxNy0xLjM1Miw5LjUzOC0yLjQ2MnYtNy42M2gwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMTE2LjU2NiA4MS45MTEgMTE2LjU2NiA0OC41ODEgMTA1LjI1OCA0OC41ODEgMTA1LjI1OCA0Mi4wMDIgMTM3Ljk4OCA0Mi4wMDIgMTM3Ljk4OCA0OC41ODEgMTI2LjY4IDQ4LjU4MSAxMjYuNjggODEuOTExIDExNi41NjYgODEuOTExIDExNi41NjYgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTE2MC44MjcsNzUuNDc0YzMuMDIxLDAsOC4yNjQtLjM5OCwxMS45Mi0uNzE1djYuMDM5Yy00LjM3MSwxLjExMy0xMC44ODcsMS44MjctMTUuMTc5LDEuODI3LTExLjM2NCwwLTE2LjUyOS0xLjk4Ni0xNi41MjktMTguNjcyLDAtMTcuNDg1LDEuNjctMjIuNTcsMTYuMTMzLTIyLjU3Ljc5NSwwLDkuNjE2LjM5NywxNS4xNzgsMS4zNDl2Ni43NTZjLTguOS0uNzE1LTEyLjg3NS0uOTUxLTEzLjgyNi0uOTUxLTYuOTk1LDAtNy4xNTUsMi44NTktNy4xNTUsMTUuNjUyLDAsMTAuMTcyLDIuNjI0LDExLjI4NSw5LjQ1OCwxMS4yODVoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cG9seWdvbiBwb2ludHM9IjIwMi41NzUgODEuOTExIDIwMi41NzUgNjQuNzM4IDE5MC43ODcgNjQuNzM4IDE5MC43ODcgODEuOTExIDE4MC43MzQgODEuOTExIDE4MC43MzQgNDEuOTQyIDE5MC43ODcgNDEuOTQyIDE5MC43ODcgNTguMjc1IDIwMi41NzUgNTguMjc1IDIwMi41NzUgNDEuOTQyIDIxMi42MjggNDEuOTQyIDIxMi42MjggODEuOTExIDIwMi41NzUgODEuOTExIDIwMi41NzUgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTIyMi43NzQsNDEuODJsMTYuMDk1LjA2MmMxMS4zMTEuMDYsMTUuOTE2LDMuMTY5LDE1LjkxNiwyMC4yMjMsMCwxNi4yMTYtMy43NjksMTkuODA2LTE1LjI1NSwxOS44MDZoLTE2Ljc1NnYtNDAuMDkxaDBaTTIzMi44MjksNDcuOTg0djI3LjUyNGg2LjI4YzQuNjA3LDAsNS43NDUtMi42OTMsNS43NDUtMTMuNDAzLDAtMTIuNjI0LTEuMTk5LTE0LjEyMS01Ljc0NS0xNC4xMjFoLTYuMjhaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTI2MS45MDcsNjIuMDQ1YzAtMTYuMjg5LDIuNDYyLTIwLjU4MSwxNy4yNDQtMjAuNTgxLDE1LjAxOCwwLDE3LjQwMyw0LjYwOCwxNy40MDMsMjAuNTgxcy0yLjQ2NSwyMC41ODEtMTcuNDAzLDIwLjU4MWMtMTUuMDE5LDAtMTcuMjQ0LTQuNjktMTcuMjQ0LTIwLjU4MWgwWk0yODYuNDYxLDYyLjA0NWMwLTExLjkyMi0uNzE2LTE0LjE0Ny03LjMxLTE0LjE0Ny02LjY3NSwwLTcuMTUyLDIuNTQyLTcuMTUyLDE0LjE0NywwLDExLjUyMS40NzcsMTMuOTA1LDcuMTUyLDEzLjkwNyw2LjY3NSwwLDcuMzEtMi4zODYsNy4zMS0xMy45MDdoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzU3LjMxOCw0OS40NjJjNS40NzUsMCw2LjE3Mi42MTksNi4xNzIsNS40NzksMCw0LjU1Mi0uNDYzLDUuNzA4LTYuMTcyLDUuNzA4LTUuNjI5LDAtNi4xNzMtMS4wNzgtNi4xNzMtNS43MDgsMC00LjcwOS41NDQtNS40NzksNi4xNzMtNS40NzloMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzE3LjIyLDcyLjM5MWMtLjA3NywxLjA4LDEuMTUzLDEuNTQzLDIuOTMsMS41NDMsMi4wMDYsMCwzLjYyOS0uMTUxLDUuNjM2LS4xNTEsOC4xNzgsMCwxNi42Ny45MjQsMTYuNjcsMTAuNTY5LDAsOS4yNjUtNi43MTYsMTIuODg3LTE1Ljg5OCwxMi44ODctOS4wMzQsMC0xMy40My0uNjE2LTE3Ljk4NS0uNjE2di03LjA5OXMxMC43MjcuNDY2LDE3LjQ0My40NjZjMy40NzUsMCw1LjA5OC0xLjM5Miw1LjA5OC01LjA5OSwwLTMuMzE4LTIuMTYzLTMuNjIyLTQuNzg5LTMuNjIyLTEuNjk2LDAtMy44NTkuMTUzLTYuMTc1LjE1My03LjAyMiwwLTEzLjUwOC0yLjg2LTEzLjUwOC0xMC42NTcsMC0uOTI3LjIzNC00LjE3MiwxLjE2NC01Ljg2OS0yLjU1My0yLjMxNi0zLjQ3Ni01LjcxMi0zLjQ3Ni0xMC4wMzQsMC04Ljg3NSwzLjAwOS0xMy4wNDEsMTUuNTktMTMuMTIyaDIyLjg0NXY2LjI1MmwtNC4zMjIuNjE4Yy42OTYsMS42OTksMS4wMDIsMy45MzgsMS4wMDIsNi4yNTIsMCwxMC4yNjQtNC41NTQsMTMuMTk3LTEzLjY1OSwxMy4xOTdoLTguNDkybC0uMDc0LDQuMzMyaDBaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTMyMy44NTUsNDguOTE5aC0yLjYyM2MtNC40ODIsMC01LjcwOS4yMzQtNS43MDksNi4xNzUsMCw1LjA5MywxLjE1MSw1Ljk0Myw0LjcwMyw2LjA5M2gzLjU1MmMzLjc4MywwLDQuNjMzLTEuMDgxLDQuNjMzLTYuMDkzLDAtNS4yNDgtLjE1Ni02LjE3NS00LjU1Ni02LjE3NWgwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzY4LjgxOCA0Mi4yMDcgMzgwLjc3OSAxOS40NDIgMzkwLjE5MSAxOS40NDIgNDAyLjA3NSA0Mi4yMDcgMzkxLjQyNCA0Mi4yMDcgMzg1LjQ4OCAyOS4yNDMgMzc5LjYyIDQyLjIwNyAzNjguODE4IDQyLjIwNyAzNjguODE4IDQyLjIwNyIgZmlsbD0iIzk4MzAzOSIvPgo8L3N2Zz4=" alt="Sieć Obywatelska Watchdog Polska">
-    </a><p>Ostatnia aktualizacja: <strong>5 października 2026</strong>.<span class="footer-source">Źródło danych: <a href="https://fedrowanie.siecobywatelska.pl/monitoringi/liczba-zmian-kadrowych-w-spolkach-skarbu-panstwa">odpowiedzi spółek zebrane w systemie Fedrowanie</a></span></p></div></footer>
+</div></details></div></section></main><footer><div class="footer-inner"><a aria-label="Sieć Obywatelska Watchdog Polska" class="footer-brand" href="https://siecobywatelska.pl/" rel="noopener" target="_blank">
+<img alt="Sieć Obywatelska Watchdog Polska" class="footer-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iV2Fyc3R3YV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDQwNC4zMjEgMTAwLjU1NSI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8cGF0aCBkPSJNMTcuMjgyLDIxLjM5NWMwLDIuNzExLTIuMDMsMy45MDUtNC42NTksMy45MDUtMi44ODMsMC01LjIyMi0uMjk1LTUuMjIyLS4yOTV2LTIuMjg0czIuMjkuMjg3LDQuNzc0LjI4N2MxLjIxLDAsMS44MzEtLjM2OCwxLjgzMS0xLjM1OCwwLTIuNTkzLTcuNDUtMi4xNzktNy40NS02LjkxMywwLTIuNzA4LDIuMDA3LTMuODk0LDQuNjMtMy44OTQsMi45MTEsMCw1LjI0OC4yODEsNS4yNDguMjgxdjIuMjg0cy0yLjU5Ni0uMjQ5LTUuMTA4LS4yNDljLTEuMDcxLDAtMS41NDkuNDIyLTEuNTQ5LDEuMzE4LDAsMi4zNDUsNy41MDUsMi4yMDksNy41MDUsNi45MThoMFoiLz4KICA8cGF0aCBkPSJNMjEuODMxLDYuMjFjMS42MTIsMCwxLjgwOS4xMzgsMS44MDksMS42MzgsMCwxLjMyOS0uMTY2LDEuNjY5LTEuODA5LDEuNjY5LTEuNjY4LDAtMS44MDQtLjMxMS0xLjgwNC0xLjY2OSwwLTEuNDA5LjEzNi0xLjYzOCwxLjgwNC0xLjYzOGgwWk0yMC4yMjUsMTEuMTIzaDMuMjV2MTQuMDgyaC0zLjI1di0xNC4wODJoMFpNMjAuMjI1LDI1LjIwNXYtMTQuMDgyLDE0LjA4MloiLz4KICA8cGF0aCBkPSJNMzguNDU2LDE4Ljk3M2gtMS4wMDdjLTIuNTQxLjAyNS01LjA1NC4wMjUtNy41OTIuMDU3LjAyMywxLjkxNy4xNjMsMi44NzkuNjk1LDMuNTI0LjUzOC42NzcsMS43NTYuNjc3LDIuODMuNjc3LjcyOSwwLDIuMzk2LS4wODYsNC4yNjItLjI3N3YxLjk3MWMtMS44NjYuMzE2LTMuNzc4LjUzOS01LjUzNC41MzktNC41NDQsMC01LjM4OS0xLjgwOC01LjM4OS03LjMzNywwLTUuNjc4LjcwMi03LjM0MSw1Ljg2OS03LjM0MSw0Ljk2NiwwLDUuODY2LDEuNjA2LDUuODY2LDcuMzA4di44NzloMFpNMjkuODgsMTYuODIyaDUuNTYzYy0uMTE0LTMuMjQyLS40MjUtMy44NC0yLjg1My0zLjg0LTIuNTkzLDAtMi41OTMsMS4xMzEtMi43MSwzLjg0aDBaIi8+CiAgPHBhdGggZD0iTTQ4LjIxLDIzLjE0NmMxLjA2OCwwLDIuNzY2LS4xMzgsNC4wMzYtLjI1djEuOTc1Yy0xLjQ2NS4zMzUtMy43MjQuNTk0LTUuMjIxLjU5NC0zLjkyMSwwLTUuNzMtLjcwMy01LjczLTYuNjEsMC02LjMyNC41OS04LjA0NCw1LjczLTguMDQ0LjQyNywwLDMuMzY0LjE0LDUuMDc5LjQ1NnYyLjE3MWMtMy4yOTktLjI1Ni00LjQyOC0uMzExLTQuNzEzLS4zMTEtMi44MjYsMC0yLjg3NiwxLjA3Ni0yLjg3Niw1LjgxMiwwLDMuODcuOTI4LDQuMjA3LDMuNjk1LDQuMjA3aDBaTTUwLjA3NCw0Ljk3bC0yLjgyMSw0Ljc2LTEuOTczLTEuMDM1LDIuNjc4LTQuODI3LDIuMTE2LDEuMTAyaDBaIi8+CiAgPHBhdGggZD0iTTYxLjM2NiwxOC4xNTZjMC01Ljc4Ny44NS03LjMxLDUuOTg3LTcuMzEsNS4xOTEsMCw2LjA0MywxLjYzNSw2LjA0Myw3LjMxcy0uODUyLDcuMzA5LTYuMDQzLDcuMzA5Yy01LjIyMywwLTUuOTg3LTEuNjY1LTUuOTg3LTcuMzA5aDBaTTcwLjIzMSwxOC4xNTZjMC00LjQwNi0uMjgzLTUuMjI4LTIuODc3LTUuMjI4LTIuNjMsMC0yLjg1Mi45NC0yLjg1Miw1LjIyOCwwLDQuMjYxLjIyMiw1LjEzNCwyLjg1Miw1LjEzNCwyLjY1MiwwLDIuODc3LS44NzMsMi44NzctNS4xMzRoMFoiLz4KICA8cGF0aCBkPSJNODIuMTU0LDI1LjQ0Yy0xLjM4OCwwLTMuNjcyLS4xNzMtNS4zNy0uMzk2VjUuNjhoMy4wOHY1LjY3YzEuMTA2LS4yNzgsMi43MS0uNDgyLDMuNDY3LS40ODIsMy40MTksMCw0LjY2NiwxLjc4Myw0LjY2Niw2LjI5MywwLDUuNzM1LS41Nyw4LjI3OS01Ljg0Myw4LjI3OWgwWk04Mi42NjUsMTMuMjQzYy0uNzkzLDAtMS44MTUuMTY5LTIuNzc3LjM5N3Y5LjM5NGMuNTk4LjAzMywxLjM4Ny4wMzMsMi4wOTMuMDMzaC4xMTZjMi42OCwwLDIuNzA3LTEuNzU1LDIuNzA3LTUuNzU1LDAtMi45MTQtLjE5Ni00LjA2OS0yLjEzOS00LjA2OWgwWiIvPgogIDxwb2x5Z29uIHBvaW50cz0iOTYuNjQ2IDMwLjU3MyA5My43NTkgMzAuNTczIDk1LjQ1IDI1LjIxMyA5NC42MDkgMjUuMjEzIDg5Ljc4MiAxMS4xMDEgOTMuMDU2IDExLjEwMSA5Ni40NjkgMjEuODAxIDk5Ljg5IDExLjEwMSAxMDMuMTU4IDExLjEwMSA5Ni42NDYgMzAuNTczIDk2LjY0NiAzMC41NzMiLz4KICA8cG9seWdvbiBwb2ludHM9IjEwNC4zODUgMTEuMSAxMDcuNTQ1IDExLjEgMTA5LjYzMSAyMC42NTkgMTEyLjM0NSAxMS4xIDExNS44NjggMTEuMSAxMTguNjEgMjAuNjU5IDEyMC43MjkgMTEuMSAxMjMuODY0IDExLjEgMTIwLjY5NSAyNS4yMTIgMTE2LjkxMSAyNS4yMTIgMTE0LjEyMSAxNS4zMDIgMTExLjM4MiAyNS4yMTIgMTA3LjU0NSAyNS4yMTIgMTA0LjM4NSAxMS4xIDEwNC4zODUgMTEuMSIvPgogIDxwYXRoIGQ9Ik0xMzcuMjQ0LDI1LjIxMmgtMi43MzFsLS4yMzMtMS4wNDVjLTEuMjY3LjY0OS0yLjkwMywxLjI5Ny00LjI4NCwxLjI5Ny0zLjA3OCwwLTQuMDk3LTIuMDU3LTQuMDk3LTQuNjI4LDAtMy4yNTMsMi4yOTQtMy44NjYsNS4zMzctMy44MzhsMi44MjUuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzYtMS41NTItMS42OTUsMC0zLjcyOS4yNzgtNC44ODUuNDQ3LS4wMjctLjA4My0uNDc0LTIuMDkzLS40NzQtMi4yMDIsMi4xMzctLjM5NSw0LjAzMi0uNTYxLDUuNzUtLjU2MSwzLjI0NywwLDQuNzY4LjY0OCw0Ljc2OCwzLjk1MXYxMC40NDRoMFpNMTM0LjA2MSwxOS4wM2MtMy44NjcsMC01LjA1OC4xNjYtNS4wNTgsMS45MiwwLDEuMTc1LjMxNywyLjAwNCwxLjMwMywyLjAwNC45MywwLDIuNjgtLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBhdGggZD0iTTE0Mi44NDYsMTkuOTAzdi02LjU3N2gtMy4xNjF2LTIuMjI1aDMuMTYxdi0zLjQ3NmgzLjE4NXYzLjQ3NmgzLjIxOHYyLjIyNWgtMy4yMTh2Ny4zN2MwLDIuMjU5LjQ4NiwyLjU2NCwxLjg5NSwyLjU2NC40MjUsMCwuOTY0LDAsMS42NDMtLjAyNGwuMDI0LDEuOTQ0Yy0uOTM0LjIzMi0xLjYzNi4yODUtMi4wODguMjg1LTQuMzI0LDAtNC42NTktMi4xNS00LjY1OS01LjU2MmgwWiIvPgogIDxwYXRoIGQ9Ik0xNjMuNTY3LDE4Ljk3M2gtMS4wMTFjLTIuNTQuMDI1LTUuMDUxLjAyNS03LjU5Ni4wNTcuMDMyLDEuOTIuMTcyLDIuODc5LjcwNCwzLjUzNC41MzguNjcxLDEuNzUxLjY3MSwyLjgyNS42NzEuNzM3LDAsMi4zOTgtLjA4Myw0LjI1OC0uMjgxdjEuOTcxYy0xLjg2LjMxNi0zLjc4MS41MzktNS41MjguNTM5LTQuNTQ0LDAtNS4zOTMtMS44MDUtNS4zOTMtNy4zMzUsMC01LjY3Ny43MDQtNy4zNDMsNS44NzEtNy4zNDMsNC45NjgsMCw1Ljg3LDEuNjA5LDUuODcsNy4zMTV2Ljg3MmgwWk0xNTQuOTkzLDE2LjgzaDUuNTU5Yy0uMTExLTMuMjUtLjQyMy0zLjg0MS0yLjg1NC0zLjg0MS0yLjU5MywwLTIuNTkzLDEuMTMyLTIuNzA1LDMuODQxaDBaIi8+CiAgPHBhdGggZD0iTTE3MS40NTIsMjUuMjk5Yy0uOTA1LjE0LTEuMDQyLjE0LTEuMjEzLjE0LTIuMDI5LDAtMy41LS43NjctMy41LTQuMDk3VjUuOTU4aDMuMTg3djE1Ljg5NmMwLC44NzUsMCwxLjYxLDEuNTI2LDEuODM3djEuNjA4aDBaIi8+CiAgPHBhdGggZD0iTTE4My45MDQsMjEuNDAxYzAsMi43MDUtMi4wMywzLjg5OC00LjY1OCwzLjg5OC0yLjg4MSwwLTUuMjIzLS4yODYtNS4yMjMtLjI4NnYtMi4yODRzMi4yODcuMjc5LDQuNzcxLjI3OWMxLjIxOCwwLDEuODM1LS4zNjQsMS44MzUtMS4zNTUsMC0yLjU5LTcuNDUxLTIuMTc2LTcuNDUxLTYuOTEzLDAtMi43MTIsMi4wMDItMy44OTUsNC42My0zLjg5NSwyLjkwNiwwLDUuMjUuMjc4LDUuMjUuMjc4djIuMjg4cy0yLjU5OS0uMjUyLTUuMTA3LS4yNTJjLTEuMDc5LDAtMS41NTYuNDIxLTEuNTU2LDEuMzIyLDAsMi4zNDksNy41MDksMi4yLDcuNTA5LDYuOTJoMFoiLz4KICA8cG9seWdvbiBwb2ludHM9IjE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgNS45MjkgMTg5Ljk3OSA1LjkyOSAxODkuOTc5IDE1LjkxOCAxOTIuMDEyIDE1LjkxOCAxOTUuNzA4IDkuMDY2IDE5OS4wMzkgOS4wNjYgMTk0LjcyMSAxNy4wNTYgMTk5Ljc0NiAyNS4yMTIgMTk2LjMzIDI1LjIxMiAxOTIuMDQgMTguMjYzIDE4OS45NzkgMTguMjYzIDE4OS45NzkgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIDE4Ni44NDcgMjUuMjEyIi8+CiAgPHBhdGggZD0iTTIxMi4zNDEsMjUuMjEyaC0yLjczMmwtLjIzMy0xLjA0NWMtMS4yNjYuNjQ5LTIuOTAzLDEuMjk3LTQuMjgzLDEuMjk3LTMuMDgsMC00LjA5OS0yLjA1Ny00LjA5OS00LjYyOCwwLTMuMjUzLDIuMjktMy44NjYsNS4zMzMtMy44MzhsMi44MjYuMDMydi0yLjM0NWMwLTEuNDQzLS43MDYtMS41NTItMS45NzctMS41NTItMS42OTEsMC0zLjcyNi4yNzgtNC44ODUuNDQ3LS4wMjEtLjA4My0uNDc3LTIuMDkzLS40NzctMi4yMDIsMi4xNDMtLjM5NSw0LjAzMy0uNTYxLDUuNzU0LS41NjEsMy4yNDgsMCw0Ljc3My42NDgsNC43NzMsMy45NTF2MTAuNDQ0aDBaTTIwOS4xNTMsMTkuMDNjLTMuODY5LDAtNS4wNTQuMTY2LTUuMDU0LDEuOTIsMCwxLjE3NS4zMTcsMi4wMDQsMS4yOTksMi4wMDQuOTI5LDAsMi42NzctLjU3MiwzLjc1NS0uOTN2LTIuOTk0aDBaIi8+CiAgPHBvbHlnb24gcG9pbnRzPSI2LjM4IDQyLjE3NiAxNi41NTEgNDIuMTc2IDIxLjc5NSA2Ni40OTUgMjguNTUyIDQyLjE3NiAzOS41MTcgNDIuMTc2IDQ2LjUwOSA2Ni40OTUgNTEuNzU1IDQyLjE3NiA2MS44NDggNDIuMTc2IDUzLjAyNyA4MS45MTEgNDEuMjY2IDgxLjkxMSAzNC4xMTUgNTYuMjQzIDI3LjEyMiA4MS45MTEgMTUuMjggODEuOTExIDYuMzggNDIuMTc2IDYuMzggNDIuMTc2IiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTk5Ljg1OSw4MS45MTFoLTguNzQyYy0uMjM3LS44NzYtLjQ3Ni0yLjMwMy0uNzE1LTMuMTc3LTMuMzM4LDEuOTg0LTcuNDY5LDMuODkyLTExLjIwNSwzLjg5Mi05LjEzNywwLTEyLjE1OC01Ljg4MS0xMi4xNTgtMTMuMTkxLDAtNy4yMzIsMy45NzUtMTAuMDk0LDkuODU1LTEwLjgwNiwxLjc0Ny0uMjM5LDMuNjU1LS4yMzksMTIuNzE1LjIzN3YtNi4zNTdjMC0zLjczNS0xLjY2OS0zLjk3Mi00Ljc3MS0zLjk3Mi00LjYwNiwwLTEwLjI1LjM5NS0xMy45ODUuOTUyLS4wNzgtLjIzOS0xLjUxMS02LjE5OC0xLjUxMS02LjU5OCw2LjI3OC0xLjExLDExLjc2My0xLjUwOCwxNi42OS0xLjUwOCw5LjM3NywwLDEzLjgyNywxLjkwOCwxMy44MjcsMTEuMjgydjI5LjI0NmgwWk04OS42MDksNjQuNzQ2Yy05LjQ1OCwwLTEyLjU1Ni41NTYtMTIuNTU2LDUuMDg3LDAsMi45NC44NzMsNS4wMDUsMy4wMTgsNS4wMDUsMS45ODgsMCw2LjUxNy0xLjM1Miw5LjUzOC0yLjQ2MnYtNy42M2gwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMTE2LjU2NiA4MS45MTEgMTE2LjU2NiA0OC41ODEgMTA1LjI1OCA0OC41ODEgMTA1LjI1OCA0Mi4wMDIgMTM3Ljk4OCA0Mi4wMDIgMTM3Ljk4OCA0OC41ODEgMTI2LjY4IDQ4LjU4MSAxMjYuNjggODEuOTExIDExNi41NjYgODEuOTExIDExNi41NjYgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTE2MC44MjcsNzUuNDc0YzMuMDIxLDAsOC4yNjQtLjM5OCwxMS45Mi0uNzE1djYuMDM5Yy00LjM3MSwxLjExMy0xMC44ODcsMS44MjctMTUuMTc5LDEuODI3LTExLjM2NCwwLTE2LjUyOS0xLjk4Ni0xNi41MjktMTguNjcyLDAtMTcuNDg1LDEuNjctMjIuNTcsMTYuMTMzLTIyLjU3Ljc5NSwwLDkuNjE2LjM5NywxNS4xNzgsMS4zNDl2Ni43NTZjLTguOS0uNzE1LTEyLjg3NS0uOTUxLTEzLjgyNi0uOTUxLTYuOTk1LDAtNy4xNTUsMi44NTktNy4xNTUsMTUuNjUyLDAsMTAuMTcyLDIuNjI0LDExLjI4NSw5LjQ1OCwxMS4yODVoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cG9seWdvbiBwb2ludHM9IjIwMi41NzUgODEuOTExIDIwMi41NzUgNjQuNzM4IDE5MC43ODcgNjQuNzM4IDE5MC43ODcgODEuOTExIDE4MC43MzQgODEuOTExIDE4MC43MzQgNDEuOTQyIDE5MC43ODcgNDEuOTQyIDE5MC43ODcgNTguMjc1IDIwMi41NzUgNTguMjc1IDIwMi41NzUgNDEuOTQyIDIxMi42MjggNDEuOTQyIDIxMi42MjggODEuOTExIDIwMi41NzUgODEuOTExIDIwMi41NzUgODEuOTExIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTIyMi43NzQsNDEuODJsMTYuMDk1LjA2MmMxMS4zMTEuMDYsMTUuOTE2LDMuMTY5LDE1LjkxNiwyMC4yMjMsMCwxNi4yMTYtMy43NjksMTkuODA2LTE1LjI1NSwxOS44MDZoLTE2Ljc1NnYtNDAuMDkxaDBaTTIzMi44MjksNDcuOTg0djI3LjUyNGg2LjI4YzQuNjA3LDAsNS43NDUtMi42OTMsNS43NDUtMTMuNDAzLDAtMTIuNjI0LTEuMTk5LTE0LjEyMS01Ljc0NS0xNC4xMjFoLTYuMjhaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTI2MS45MDcsNjIuMDQ1YzAtMTYuMjg5LDIuNDYyLTIwLjU4MSwxNy4yNDQtMjAuNTgxLDE1LjAxOCwwLDE3LjQwMyw0LjYwOCwxNy40MDMsMjAuNTgxcy0yLjQ2NSwyMC41ODEtMTcuNDAzLDIwLjU4MWMtMTUuMDE5LDAtMTcuMjQ0LTQuNjktMTcuMjQ0LTIwLjU4MWgwWk0yODYuNDYxLDYyLjA0NWMwLTExLjkyMi0uNzE2LTE0LjE0Ny03LjMxLTE0LjE0Ny02LjY3NSwwLTcuMTUyLDIuNTQyLTcuMTUyLDE0LjE0NywwLDExLjUyMS40NzcsMTMuOTA1LDcuMTUyLDEzLjkwNyw2LjY3NSwwLDcuMzEtMi4zODYsNy4zMS0xMy45MDdoMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzU3LjMxOCw0OS40NjJjNS40NzUsMCw2LjE3Mi42MTksNi4xNzIsNS40NzksMCw0LjU1Mi0uNDYzLDUuNzA4LTYuMTcyLDUuNzA4LTUuNjI5LDAtNi4xNzMtMS4wNzgtNi4xNzMtNS43MDgsMC00LjcwOS41NDQtNS40NzksNi4xNzMtNS40NzloMFoiIGZpbGw9IiM5ODMwMzkiLz4KICA8cGF0aCBkPSJNMzE3LjIyLDcyLjM5MWMtLjA3NywxLjA4LDEuMTUzLDEuNTQzLDIuOTMsMS41NDMsMi4wMDYsMCwzLjYyOS0uMTUxLDUuNjM2LS4xNTEsOC4xNzgsMCwxNi42Ny45MjQsMTYuNjcsMTAuNTY5LDAsOS4yNjUtNi43MTYsMTIuODg3LTE1Ljg5OCwxMi44ODctOS4wMzQsMC0xMy40My0uNjE2LTE3Ljk4NS0uNjE2di03LjA5OXMxMC43MjcuNDY2LDE3LjQ0My40NjZjMy40NzUsMCw1LjA5OC0xLjM5Miw1LjA5OC01LjA5OSwwLTMuMzE4LTIuMTYzLTMuNjIyLTQuNzg5LTMuNjIyLTEuNjk2LDAtMy44NTkuMTUzLTYuMTc1LjE1My03LjAyMiwwLTEzLjUwOC0yLjg2LTEzLjUwOC0xMC42NTcsMC0uOTI3LjIzNC00LjE3MiwxLjE2NC01Ljg2OS0yLjU1My0yLjMxNi0zLjQ3Ni01LjcxMi0zLjQ3Ni0xMC4wMzQsMC04Ljg3NSwzLjAwOS0xMy4wNDEsMTUuNTktMTMuMTIyaDIyLjg0NXY2LjI1MmwtNC4zMjIuNjE4Yy42OTYsMS42OTksMS4wMDIsMy45MzgsMS4wMDIsNi4yNTIsMCwxMC4yNjQtNC41NTQsMTMuMTk3LTEzLjY1OSwxMy4xOTdoLTguNDkybC0uMDc0LDQuMzMyaDBaIiBmaWxsPSIjOTgzMDM5Ii8+CiAgPHBhdGggZD0iTTMyMy44NTUsNDguOTE5aC0yLjYyM2MtNC40ODIsMC01LjcwOS4yMzQtNS43MDksNi4xNzUsMCw1LjA5MywxLjE1MSw1Ljk0Myw0LjcwMyw2LjA5M2gzLjU1MmMzLjc4MywwLDQuNjMzLTEuMDgxLDQuNjMzLTYuMDkzLDAtNS4yNDgtLjE1Ni02LjE3NS00LjU1Ni02LjE3NWgwWiIgZmlsbD0iIzk4MzAzOSIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzY4LjgxOCA0Mi4yMDcgMzgwLjc3OSAxOS40NDIgMzkwLjE5MSAxOS40NDIgNDAyLjA3NSA0Mi4yMDcgMzkxLjQyNCA0Mi4yMDcgMzg1LjQ4OCAyOS4yNDMgMzc5LjYyIDQyLjIwNyAzNjguODE4IDQyLjIwNyAzNjguODE4IDQyLjIwNyIgZmlsbD0iIzk4MzAzOSIvPgo8L3N2Zz4="/>
+</a><p>Ostatnia aktualizacja: <strong>15 października 2026</strong>.<span class="footer-source">Źródło danych: <a href="https://fedrowanie.siecobywatelska.pl/monitoringi/liczba-zmian-kadrowych-w-spolkach-skarbu-panstwa">odpowiedzi spółek zebrane w systemie Fedrowanie</a></span></p></div></footer>
 <!-- OSADZANIE: Minimalne uprawnienie do pobierania osadzonego XLSX, także bez JavaScriptu:
 <iframe src="spolki_index.html" title="Zmiany kadrowe w spółkach Skarbu Państwa" sandbox="allow-downloads" style="width:100%;height:1000px;border:0"></iframe>
 Opcjonalne filtrowanie i sortowanie: dodaj allow-scripts.
 Link do nowej karty: dodaj allow-popups allow-popups-to-escape-sandbox.
 allow-same-origin nie jest wymagane. Całkowita blokada pobierania i nowych kart przez stronę nadrzędną lub CSP nie może zostać zniesiona przez ten HTML.
-Źródłowy XLSX jest osadzony bez modyfikacji. SHA-256: c4b134b0f3acdd2b120028ed2254a207ccebe7189041eb4a73c6fa156a0c1a03
+Źródłowy XLSX jest osadzony bez modyfikacji.
 --><script>
 const table=document.getElementById('companyTable');
 const rows=Array.from(table.tBodies[0].rows);
 document.getElementById('companyTools').hidden=false;
-document.getElementById('companySearch').addEventListener('input',e=>{const q=e.target.value.trim().toLocaleLowerCase('pl');let n=0;rows.forEach(r=>{r.hidden=!r.cells[0].textContent.toLocaleLowerCase('pl').includes(q);if(!r.hidden)n++});document.getElementById('companyCount').textContent=n+' z 11 spółek';document.getElementById('emptySearch').hidden=n!==0});
+document.getElementById('companySearch').addEventListener('input',e=>{const q=e.target.value.trim().toLocaleLowerCase('pl');let n=0;rows.forEach(r=>{r.hidden=!r.cells[0].textContent.toLocaleLowerCase('pl').includes(q);if(!r.hidden)n++});document.getElementById('companyCount').textContent=n+' z 12 spółek';document.getElementById('emptySearch').hidden=n!==0});
 const th=table.querySelector('th');const b=document.createElement('button');b.type='button';b.className='sort-button';b.textContent=th.textContent;b.setAttribute('aria-label','Sortuj spółki alfabetycznie');th.textContent='';th.append(b);let asc=false;b.addEventListener('click',()=>{asc=!asc;th.setAttribute('aria-sort',asc?'ascending':'descending');rows.sort((a,b)=>(asc?1:-1)*a.cells[0].textContent.localeCompare(b.cells[0].textContent,'pl')).forEach(r=>table.tBodies[0].append(r))});
 window.addEventListener('beforeprint',()=>document.querySelectorAll('details').forEach(d=>{d.dataset.wasOpen=d.open;d.open=true}));window.addEventListener('afterprint',()=>document.querySelectorAll('details').forEach(d=>{d.open=d.dataset.wasOpen==='true'}));
 </script></body></html>
